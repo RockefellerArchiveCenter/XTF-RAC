@@ -1,0 +1,3499 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Transformed with v1v2002_4.xsl -->
+<!DOCTYPE ead PUBLIC "+//ISBN 1-931666-00-8//DTD ead.dtd (Encoded Archival Description (EAD) Version 2002)//EN" "http://lcweb2.loc.gov/xmlcommon/dtds/ead2002/ead.dtd" [
+<!ENTITY lcseal SYSTEM "http://lcweb2.loc.gov/xmlcommon/lcseal.jpg" NDATA jpeg>
+]>
+<ead>
+   <eadheader repositoryencoding="iso15511" relatedencoding="MARC21" countryencoding="iso3166-1" scriptencoding="iso15924" dateencoding="iso8601" langencoding="iso639-2b">
+      <eadid mainagencycode="dlc" countrycode="us" identifier="hdl:loc.mss/eadmss.ms006013" encodinganalog="856$u">http://hdl.loc.gov/loc.mss/eadmss.ms006013</eadid>
+      <filedesc>
+         <titlestmt>
+            <titleproper encodinganalog="245$a">Jules Feiffer</titleproper>
+            <subtitle>A Register of His Papers in the Library of Congress</subtitle>
+            <author encodinganalog="245$c">Prepared by Nan Thompson Ernst with the assistance of Douglas G. Weaver</author>
+         </titlestmt>
+         <publicationstmt>
+            <publisher encodinganalog="260$b">
+               <extptr href="lcseal" show="embed" actuate="onload"/>Manuscript Division, Library of Congress</publisher>
+            <address>
+               <addressline>Washington, D.C. </addressline>
+            </address>
+            <date normal="2000" encodinganalog="260$c">2000</date>
+         </publicationstmt>
+         <notestmt>
+            <note>
+               <p>Contact information: <extref href="http://lcweb.loc.gov/rr/mss/address.html" show="new" actuate="onrequest">http://lcweb.loc.gov/rr/mss/address.html</extref>
+
+               </p>
+            </note>
+         </notestmt>
+      </filedesc>
+      <profiledesc>
+         <creation>Finding aid encoded by Library of Congress Manuscript Division, <date normal="2006">2006</date>
+         </creation>
+         <langusage>Finding aid written in <language encodinganalog="041">English.</language>
+         </langusage>
+      </profiledesc>
+      
+   </eadheader>
+   <archdesc level="collection" relatedencoding="MARC21">
+      <did>
+         <head>Collection Summary</head>
+         <unittitle label="Title" encodinganalog="245$a">Papers of Jules Feiffer
+<unitdate label="Span Dates" type="inclusive" normal="1919/1995" encodinganalog="245$f">1919-1995</unitdate>
+
+            <unitdate label="Bulk Dates" type="bulk" normal="1950/1990" encodinganalog="245$g">(bulk 1950-1990)</unitdate>
+         </unittitle>
+         <unitid label="ID No." encodinganalog="590" countrycode="US" repositorycode="DLC">MSS83993</unitid>
+         <origination label="Creator">
+
+            <persname source="lcnaf" encodinganalog="100">Feiffer, Jules</persname>
+         </origination>
+         <physdesc label="Extent">
+            <extent encodinganalog="300">15,000 items</extent> 
+            <extent encodinganalog="300">59 containers plus 3 oversize</extent> 
+            <extent encodinganalog="300">25 linear feet</extent></physdesc>
+         <langmaterial label="Language">Collection material in <language encodinganalog="041" langcode="eng">English</language>
+         </langmaterial><repository label="Repository" encodinganalog="852">
+            <corpname>
+               <subarea>Manuscript Division</subarea> Library of Congress</corpname>
+            <address>
+               <addressline>Washington, D.C.</addressline>
+            </address>
+         </repository>
+         <abstract label="Abstract" encodinganalog="520$a">Cartoonist, playwright, author, and illustrator.  Family correspondence, appointment calendars, awards and citations, financial records, newspaper clippings of articles about Feiffer, general correspondence, art publication file, and writings relating primarily to Feiffer's novels and stage and screenplays. 
+</abstract>
+         
+      </did>
+      <controlaccess>
+         <head>Selected Search Terms</head>
+         <note>
+            <p>The following terms have been used to index the description of this collection in the Library's online catalog. They are grouped by name of person or organization, by subject or location, and by occupation and listed alphabetically therein.</p>
+         </note>
+         <controlaccess>
+            <head>Names:</head>
+            <persname source="lcnaf" encodinganalog="100" role="creator">Feiffer, Jules</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Allen, Steve, 1921-2000--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Arkin, Alan--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Baraka, Imamu Amiri, 1934- --Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Burnshaw, Stanley, 1906- --Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Caniff, Milton Arthur, 1907- --Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Crichton, Robert--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Doctorow, E. L., 1931- --Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Hefner, Hugh M. (Hugh Marston), 1926- --Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Hellman, Lillian, 1906- --Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Just, Ward S.--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Kubrick, Stanley--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Lantz, Robert--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Mailer, Norman--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">May, Elaine, 1932- --Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">McCarthy, Eugene J., 1916-2005--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">McGovern, George S. (George Stanley), 1922- --Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Nichols, Mike--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Onassis, Jacqueline Kennedy, 1929-1994--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Osborn, Robert Chesley, 1904- --Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Reiner, Carl, 1922- --Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Riley, Ted--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Roth, Philip--Correspondence.</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Schlesinger, Arthur Meier, 1917---Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Schulz, Charles M.--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Sondheim, Stephen--Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Sorel, Edward, 1929---Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Trudeau, G. B., 1948---Correspondence</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Wertham, Fredric, 1895-1981--Correspondence</persname>
+            <famname source="lcnaf" encodinganalog="600" role="subject">Feiffer family</famname>
+            <famname source="lcnaf" encodinganalog="600" role="subject">Feiffer family--Correspondence</famname>
+            <corpname source="lcnaf" encodinganalog="610" role="subject">Playboy Enterprises--Correspondence</corpname>
+            <persname source="lcnaf" encodinganalog="700">Feiffer, Jules. Carnal knowledge (1971)</persname>
+            <persname source="lcnaf" encodinganalog="700">Feiffer, Jules. God bless (1968)</persname>
+            <persname source="lcnaf" encodinganalog="700">Feiffer, Jules. Knock, knock : a play (1976)</persname>
+            <persname source="lcnaf" encodinganalog="700">Feiffer, Jules. Little murders (1968)</persname>
+            <persname source="lcnaf" encodinganalog="700">Feiffer, Jules. Popeye, the movie novel (1980)</persname>
+         </controlaccess>
+         <controlaccess>
+            <head>Subjects:</head>
+            <subject source="lcsh" encodinganalog="650">American drama</subject>
+            <subject source="lcsh" encodinganalog="650">American fiction</subject>
+            <subject source="lcsh" encodinganalog="650">Caricatures and cartoons</subject>
+            <subject source="lcsh" encodinganalog="650">Motion picture plays</subject>
+         <geogname encodinganalog="651" source="lcsh">  United States--Politics and government</geogname></controlaccess>
+         <controlaccess>
+            <head>Occupations:</head>
+            <occupation source="itoamc" encodinganalog="656">Authors</occupation>
+            <occupation source="itoamc" encodinganalog="656">Cartoonists</occupation>
+            <occupation source="itoamc" encodinganalog="656">Illustrators</occupation>
+            <occupation source="itoamc" encodinganalog="656">Playwrights
+</occupation>
+         </controlaccess>
+      </controlaccess>
+      <descgrp type="admininfo">
+         <head>Administrative Information</head>
+         <acqinfo encodinganalog="541">
+            <head>Provenance:</head>
+            <p>The papers of  Jules Feiffer, cartoonist, playwright and author, were donated to the Library of Congress by Feiffer in 1997.</p>
+         </acqinfo>
+         <processinfo encodinganalog="583">
+            <head>Processing History:</head>
+            <p> The papers of Jules Feiffer were arranged and described in 2000.</p>
+         </processinfo>
+         <separatedmaterial encodinganalog="544 0">
+            <head>Transfers:</head>
+            <p>  Items have been transferred from the Manuscript Division to other custodial divisions of the Library.  Drawings and photographs have been transferred to the Prints and Photographs Division.  Motion picture films and audiotapes have been transferred to the Motion Picture, Broadcasting, and Recorded Sound Division.  Some comic books have been transferred to the Serial and Government Publications Division.  All transfers are identified in these divisions as part of the Jules Feiffer Papers.</p>
+         </separatedmaterial>
+         <userestrict encodinganalog="540">
+            <head>Copyright Status:</head>
+            <p> Copyright in the unpublished writings of Jules Feiffer in these papers and in other collections in the custody of the Library of Congress is reserved.  Consult a reference librarian in the Manuscript Division for further information.</p>
+         </userestrict>
+         <prefercite encodinganalog="524">
+            <head>Preferred Citation:</head>
+            <p>Researchers wishing to cite this collection should include the following information: Container number, Jules Feiffer Papers, Manuscript Division, Library of Congress, Washington, D.C.</p>
+         </prefercite>
+      </descgrp>
+      <bioghist encodinganalog="545">
+         <head>Biographical Note</head>
+         <chronlist>
+            <listhead>
+               <head01>Date</head01>
+               <head02>Event</head02>
+            </listhead>
+            <chronitem>
+               <date>1929, Jan. 26</date>
+               <event>Born, New York, N.Y. </event>
+            </chronitem>
+            <chronitem>
+               <date>1946</date>
+               <event>Attended Art Students League, New York, N.Y.</event>
+            </chronitem>
+            <chronitem>
+               <date>1946-1951</date>
+               <event>Assistant to cartoonist Will Eisner for comic book “The Spirit”</event>
+            </chronitem>
+            <chronitem>
+               <date>1947-1951</date>
+               <event>Attended Pratt Institute Art School, Brooklyn, N.Y.</event>
+            </chronitem>
+            <chronitem>
+               <date>1949-1951</date>
+               <event>Syndicated cartoon strip, “Clifford”</event>
+            </chronitem>
+            <chronitem>
+               <date>1951-1953</date>
+               <event>United States Army, Signal Corps; worked in cartoon animation unit</event>
+            </chronitem>
+            <chronitem>
+               <date>1953-1956</date>
+               <event>Held various positions in the art field, including producer of slide films, writer for CBS Films, Inc. “Terrytoons,” and designer of booklets</event>
+            </chronitem>
+            <chronitem>
+               <date>1956-1997</date>
+               <event>Published cartoon strip in the <title>Village Voice</title> originally entitled “Sick, Sick, Sick,” soon changed to “Feiffer”</event>
+            </chronitem>
+            <chronitem>
+               <date>1957</date>
+               <event>Published <bibref><title>Passionella and Other Stories</title> (New York: McGraw Hill.  190 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1958</date>
+               <eventgrp>
+                  <event>Published <bibref><title>Sick, Sick, Sick</title> (New York: McGraw Hill.  130 pp.)</bibref> </event>
+                  <event>Illustrated <bibref><title>My Mind Went All to Pieces</title> by Robert Mines (New York: Dial Press.  93 pp.)</bibref> </event>
+               </eventgrp>
+            </chronitem>
+            <chronitem>
+               <date>1959</date>
+               <eventgrp>
+                  <event>Began syndicating his cartoon strip, “Feiffer”</event>
+                  <event>Published <bibref><title>The Unexpurgated Memoirs of Bernard Mergendeiler</title> (New York: Random House.  85 pp.)</bibref> </event>
+               </eventgrp>
+            </chronitem>
+            <chronitem>
+               <date>1960</date>
+               <event>Published <bibref><title>The Explainers</title> (New York: McGraw Hill.  120 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1961</date>
+               <eventgrp>
+                  <event>Married Judith Sheftel (divorced 1983)</event>
+                  <event>Published <bibref><title>Boy, Girl, Boy, Girl</title> (New York: Random House.  120 pp.)</bibref> </event>
+                  <event>Illustrated <bibref><title>The Phantom Tollbooth</title>, by Norton Juster (New York: Epstein &amp; Carroll.  256 pp.)</bibref></event>
+                  <event>Recipient, George Polk Memorial Award</event>
+               </eventgrp>
+            </chronitem>
+            <chronitem>
+               <date>1963</date>
+               <event>Published <bibref><title>Harry, the Rat with Women</title> (New York: McGraw Hill.  181 pp.),</bibref>  <bibref><title>Hold Me!</title> (New York: Random House.  unpaged.),  </bibref> <bibref><title>Feiffer's Album</title> (New York: Random House.  132 pp.)</bibref> , and <bibref><title>Crawling Arnold</title> (New York : Dramatists Play Service.  23 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1965</date>
+               <event>Published <bibref><title>Great Comic Book Heroes</title> (New York: Dial Press.  189 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1966</date>
+               <event>Published <bibref><title>The Penguin Feiffer</title> (Harmondworth, U.K.: Penguin. [121] pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1967</date>
+               <event>Published <bibref><title>Feiffer's Marriage Manual</title> (New York: Random House.  60 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1968</date>
+               <event>Published <bibref><title>Little Murders</title> (New York: Random House.  113 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1970</date>
+               <event>Published <bibref><title>The White House Murder Case: A Play in Two Acts &amp; Dick and Jane: A One-Act Play</title> (New York: Grove Press.  122 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1971</date>
+               <event>Published <bibref><title>Carnal Knowledge: A Screenplay</title> (New York: Farrar, Straus and Giroux.  117 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1973-1974</date>
+               <event>Taught at Yale Drama School, Yale University, New Haven, Conn.</event>
+            </chronitem>
+            <chronitem>
+               <date>1974</date>
+               <event>Published <bibref><title>Feiffer on Nixon: The Cartoon Presidency</title> (New York: Random House.   64 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1976</date>
+               <event>Published <bibref><title>Knock, Knock: A Play</title> (New York: Hill and Wang.  120 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1977</date>
+               <event>Published <bibref><title>Ackroyd: A Novel  </title> (New York: Simon and Schuster.  349 pp.)</bibref> and <bibref><title>Hold Me! An Entertainment</title> (New York: Dramatists Play Service.  52 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1979</date>
+               <event>Published <bibref><title>Tantrum: A Novel in Cartoons</title> (New York: Knopf.  183  pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1982</date>
+               <event>Published <bibref><title>Jules Feiffer's America: From Eisenhower to Reagan</title>, edited by Steven Heller (New York: Alfred A. Knopf.  254 pp.)</bibref>, and <bibref><title>Grown Ups: A Play</title> (New York: Samuel French.  92 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1983</date>
+               <event>Married Jennifer Allen</event>
+            </chronitem>
+            <chronitem>
+               <date>1984</date>
+               <event>Published <bibref><title>Marriage Is an Invasion of Privacy, and Other Dangerous Views</title>(Kansas City, Kan.: Andrews, McMeel &amp; Parker.  128 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1986</date>
+               <event>Received Pulitzer Prize for editorial cartoons, a lifetime achievement award</event>
+            </chronitem>
+            <chronitem>
+               <date>1988</date>
+               <event>Published <bibref><title>Ronald Reagan in Movie America</title> (Kansas City, Kan.: Andrews, McMeel &amp; Parker.  128 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1990</date>
+               <event>Published <bibref><title>Elliot Loves: A Play</title> (New York: Grove Press.  82 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1993</date>
+               <event>Published <bibref><title>The Man in the Ceiling</title> (New York: HarperCollins.  185 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1995</date>
+               <event>Published <bibref><title>A Barrel of Laughs, A Vale of Tears</title> (New York:  HarperCollins.  180 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1997</date>
+               <event>Published <bibref><title>Meanwhile</title> (New York: HarperCollins.  30 pp.)</bibref> </event>
+            </chronitem>
+            <chronitem>
+               <date>1998</date>
+               <event>Published <bibref><title>I Lost My Bear </title> (New York : Morrow Junior Books.  ca. 40 pp.)</bibref></event>
+            </chronitem>
+            <chronitem>
+               <date>1999</date>
+               <event>Pulished <bibref><title>Bark, George</title> (New York: HarperCollins.  30 pp.)</bibref> </event>
+            </chronitem>
+         </chronlist>
+      </bioghist>
+      <scopecontent encodinganalog="520">
+         <head>Scope and Content Note</head>
+         <p>The papers of Jules Ralph Feiffer (1929-    ), cartoonist, playwright, and author, span the years 1919-1995 with the bulk dated from 1950 to 1990.  The collection principally documents Feiffer's writing career and is organized in five series: <ref target="fambio" show="replace" actuate="onrequest">Family and Biographical File</ref>, <ref target="general" show="replace" actuate="onrequest">General Correspondence</ref>, <ref target="art" show="replace" actuate="onrequest">Art Publications</ref>, <ref target="writings" show="replace" actuate="onrequest">Writings</ref>, and <ref target="over" show="replace" actuate="onrequest">Oversize</ref>.  </p>
+         <p>In 1956, Feiffer offered his cartoons to the <title>Village Voice</title>, just then making its reputation as a newspaper with influence beyond its locus in Greenwich Village in New York City.   Feiffer's cartoons were simply-rendered drawings of people talking and explaining, talking to each other, to themselves, and, ostensibly, to the reader, sometimes in psychoanalytic language.  His satire was compared to the stage acts of Elaine May and Mike Nichols, Mort Sahl, and Lenny Bruce.  By the 1960s, when “Feiffer” was widely syndicated in the United States and Europe as a weekly strip, he turned his narrative sense and penchant for dialogue to writing novels and plays.  Feiffer's cartooning style parallels his work for stage and screen in character development and theme, sometimes concentrating on relations between the sexes, as in his 1971 film <title>Carnal Knowledge</title>, other times exploring political and philosophical questions in <title>Little Murders</title>, <title>God Bless</title>, and <title>Knock, Knock</title>, and his youthful comic book heroes for the 1981 film, <title>Popeye</title>, all of which are well documented in the <ref target="writings" show="replace" actuate="onrequest">Writings</ref> series.</p>
+         <p>The <ref target="writings" show="replace" actuate="onrequest">Writings</ref> series comprises the largest group of  papers.   Included with drafts, notes, and background material is documentation on the publication or production of the work, such as correspondence and contracts, playbills and promotional material, and newspaper clippings of reviews and notices.  The files for <title>Carnal Knowledge</title> also include legal documents concerning obscenity charges made against the film.</p>
+         <p>The <ref target="fambio" show="replace" actuate="onrequest">Family and Biographical File</ref> features correspondence between Feiffer and his parents Rhoda and David Feiffer, and sisters, Alice and  “Mimi,” during the 1950s when Feiffer was drafted into military service and in the early stages of his cartooning career.  The series also includes appointment calendars, awards and citations, financial records for the years 1965-1980, high school records, legal documents, and newspaper clippings of articles about Feiffer.</p>
+         <p>The <ref target="general" show="replace" actuate="onrequest">General Correspondence</ref>, organized in two parts as a chronological file and an alphabetical subject file, includes letters to Feiffer from friends, neighbors, acquaintances, fans and readers, writers, journalists, editors, publishers, cartoonists, academics, political activists, actors, directors, attorneys, and representatives of cultural, social, political, and religious organizations.   The correspondence mostly concerns Feiffer's creative projects and includes comments sent by readers or audience members along with evaluations and reactions written by colleagues and friends in the publishing and theater worlds.  Feiffer's political interests are also discussed in his correspondence and indicate his views and activities in behalf of various social issues in New York.   </p>
+         <p>Frequent correspondents include Ted Riley, an agent who placed Feiffer's drawings in publication before they were widely syndicated, literary agent Robert Lantz, Hugh Hefner and Playboy Enterprises, and writers with whom Feiffer was friendly during sojourns to Martha's Vinyard, such as Robert Crichton and Ward Just.  Other prominent correspondents include Steve Allen, Alan Arkin, Imamu Amiri Baraka, Stanley Burnshaw, Milton Arthur Caniff, E. L. Doctorow, Lillian Hellman, Stanley Kubrick, Norman Mailer, Elaine May, Eugene J. McCarthy, George S. McGovern, Mike Nichols, Jacqueline Kennedy Onassis, Robert Chesley Osborn, Carl Reiner, Philip Roth, Arthur Meier Schlesinger (1917-    ), Charles M. Schulz, Stephen Sondheim, Edward Sorel, G. B. Trudeau, and Fredric Wertham.</p>
+         <p>The <ref target="art" show="replace" actuate="onrequest">Art Publications</ref> series includes files relating to Feiffer's illustrations in advertisements, articles, and books, especially his own books of cartoon collections, as well as calendars, cards, cartoons, and comic strips.   A small file documents exhibitions of Feiffer's drawings in museums and galleries.</p>
+      </scopecontent>
+      <separatedmaterial><head>Related Material</head><p>Drawings, photographs, and related material documenting Feiffer's career as a cartoonist are held by the Library's Prints and Photographs Division.  </p></separatedmaterial><arrangement encodinganalog="351$b">
+         <head>Organization of the Papers</head>
+         <p>The collection is arranged in five series:</p>
+         <list type="simple">
+            <item>
+               <ref target="fambio" show="replace" actuate="onrequest">
+                  <unittitle encodinganalog="245$a">Family and Biographical File, 1919-1995, n.d.</unittitle>
+               </ref>
+            </item>
+            <item>
+               <ref target="general" show="replace" actuate="onrequest">
+                  <unittitle encodinganalog="245$a">General Correspondence, 1951-1993, n.d.</unittitle>
+               </ref>
+            </item>
+            <item>
+               <ref target="art" show="replace" actuate="onrequest">
+                  <unittitle encodinganalog="245$a">Art Publications, 1950-1995, n.d.</unittitle>
+               </ref>
+            </item>
+            <item>
+               <ref target="writings" show="replace" actuate="onrequest">
+                  <unittitle encodinganalog="245$a">Writings, ca. 1940-1995, n.d.</unittitle>
+               </ref>
+            </item>
+            <item>
+               <ref target="over" show="replace" actuate="onrequest">
+                  <unittitle encodinganalog="245$a">Oversize, 1958-1989, n.d.</unittitle>
+               </ref>
+            </item>
+         </list>
+      </arrangement>
+      <dsc type="combined">
+         <head>Container List</head>
+         <thead valign="bottom">
+            <row>
+               <entry morerows="0">Box</entry>
+               <entry morerows="0">Contents</entry>
+            </row>
+         </thead>
+         <c01 level="series">
+            <did>
+               <container type="box">1-8</container>
+               <unittitle id="fambio" encodinganalog="245$a">Family and Biographical File, <unitdate normal="1919/1995" encodinganalog="245$f" type="inclusive">1919-1995, </unitdate><unitdate encodinganalog="245$f" type="inclusive">n.d.</unitdate>
+               </unittitle>
+            </did>
+            <scopecontent encodinganalog="520">
+               <p>Appointment calendars; awards, certificates, and citations; biographical sketches; family correspondence and papers relating to family members; financial records; interview transcripts; high school records; legal documents; and newspaper clippings of articles about Feiffer.</p>
+            </scopecontent>
+            <arrangement encodinganalog="351$b">
+               <p>  Arranged alphabetically by name of person, topic, or type of material and chronologically thereunder.</p>
+            </arrangement>
+            <c02 level="file">
+               <did>
+                  <container type="box">1</container>
+                  <unittitle id="calenders1" encodinganalog="245$a">Appointment calendars   <ref show="replace" actuate="onrequest" target="appoint1"><emph render="italic">See also Oversize</emph></ref>
+                  </unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1967-1983 </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(5 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">2</container>
+                     <unittitle encodinganalog="245$a">1984-1992 </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(2 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Awards, certificates, and citations, 1958-1976, 1986-1989, 1995, n.d.</unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Biographical sketches, 1960-ca. 1980</unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Family correspondence with Feiffer</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Feiffer, David and Rhoda (father and mother), 1919, 1950-1974 </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(5 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">3</container>
+                     <unittitle encodinganalog="245$a">Feiffer, Jennifer Allen (wife), 1981-1983</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Feiffer, Judy Sheftel (wife), 1941, 1961-1971</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Feiffer, Kate (daughter), 1964-1990</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Moody, Miriam (Mimi) Feiffer (sister), 1951-1988</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Korman, Alice Feiffer (sister), 1945-1974</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="ov1other" encodinganalog="245$a">Other family members, 1964, n.d. <ref show="replace" actuate="onrequest" target="other1"><emph render="italic">See also Oversize</emph></ref></unittitle>
+                  </did>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Feiffer, Jennifer Allen, papers</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Correspondence, 1980-1986</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Miscellany, 1972, 1978-1981</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Writings</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Articles and drafts, 1981-1983, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Notes and research material, n.d. </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(3 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <container type="box">4</container>
+                  <unittitle encodinganalog="245$a">Financial records</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Bernard Mergendeiler Corp., deposits, 1975-1980 </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(2 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="theater35" encodinganalog="245$a">Royalty statements, plays and books, 1968-1979</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Tax files</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">1965-1970 </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(6 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <container type="box">5</container>
+                        <unittitle encodinganalog="245$a">1971-1980 </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(10 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <container type="box">6</container>
+                        <unittitle encodinganalog="245$a">1981-1992 </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(3 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Interview transcripts, 1963, n.d.</unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">James Monroe High School, Bronx, New York, N.Y., 1943-1946, 1963, 1976</unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">
+                     <title>Levinson v. United States</title>, amici curiae briefs, 1969</unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Miscellany, 1959-1965, 1975-1980, 1990-1993, n.d.</unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <container type="box">7</container>
+                  <unittitle encodinganalog="245$a">Newspaper clippings and related material about Feiffer</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1957-1968 </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(9 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">8</container>
+                     <unittitle encodinganalog="245$a">1969-1995 </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(5 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+            </c02>
+         </c01>
+         <c01 level="series">
+            <did>
+               <container type="box">8-18</container>
+               <unittitle id="general" encodinganalog="245$a">General Correspondence, <unitdate normal="1951/1993" encodinganalog="245$f" type="inclusive">1951-1993, </unitdate><unitdate encodinganalog="245$f" type="inclusive">n.d.</unitdate>
+               </unittitle>
+            </did>
+            <scopecontent encodinganalog="520">
+               <p>Letters received  with occasional copies of Feiffer's response.   </p>
+            </scopecontent>
+            <arrangement encodinganalog="351$b">
+               <p>Arranged as received in two parts as a chronological file and an alphabetical subject file.</p>
+            </arrangement>
+            <c02 level="file">
+               <did>
+                  <container type="box">8</container><unittitle encodinganalog="245$a">Chronological file</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1951-1958 <emph render="italic">  Correspondents include</emph> Steve Allen and Stanley Kubrick</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1959   <emph render="italic">Correspondents include</emph> Steve Allen, Stanley Kubrick, Charles M. Schulz, and Norman Thomas</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1960   <emph render="italic">Correspondents include</emph> Jacqueline Kennedy Onassis</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1961 </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-June   <emph render="italic">Correspondents include</emph> Milton Caniff</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        
+
+                        <container type="box">9</container>
+                        <unittitle encodinganalog="245$a">July-Dec.   <emph render="italic">Correspondents include</emph> Imamu Amiri Baraka, Arthur Meier Schlesinger (1917-    ), and Eric Sevareid</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1962</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-July </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(2 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Aug.-Dec.  <emph render="italic">Correspondents include</emph> Milton Caniff, E. L. Doctorow, Edward Sorel, Rex Stout, and Louis Untermeyer</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1963</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-June <emph render="italic"> Correspondents include</emph> Art Buchwald, Herbert Gold, Rose Fitzgerald Kennedy, Norman Mailer, Norman Rosten, Dore Schary, and Arthur Meier Schlesinger (1917-    )</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">July-Dec. <emph render="italic"> Correspondents include</emph> Steve Allen, Walter Cronkite, Carl Reiner, and Abigail Van Buren</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1964</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-Apr. <emph render="italic"> Correspondents include</emph> William F. Buckley</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <container type="box">10</container>
+                        <unittitle encodinganalog="245$a">May-Aug. <emph render="italic">  Correspondents include</emph> E. L. Doctorow</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Sept.-Dec. <emph render="italic"> Correspondents include</emph> William F.  Buckley and George Plimpton</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1965</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-Mar.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Apr.-June <emph render="italic">  Correspondents include</emph> Art Buchwald, E. L. Doctorow, and Norman Mailer</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">July-Sept. <emph render="italic">  Correspondents include</emph> Milton Caniff, Clare Boothe Luce, and Benjamin Spock</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Oct.-Nov. <emph render="italic">  Correspondents include</emph> Will Eisner and Fredric Wertham</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Dec.   <emph render="italic">Correspondents include</emph> Fredric Wertham</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">11</container>
+                     <unittitle encodinganalog="245$a">1966</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-May <emph render="italic">  Correspondents include</emph> Al Capp, Paul Johnson, and Gene Kelly</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">June-Dec. <emph render="italic">  Correspondents include</emph> Walter Cronkite, E. L. Doctorow, Rowland Evans, Mike Nichols, Robert Chesley Osborn, Jerome Robbins, and Bayard Rustin</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1967</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-July <emph render="italic">  Correspondents include</emph> William F. Buckley, Lillian Hellman, Elaine May, Mike Nichols, and Maurice Sendak</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Aug.-Dec. <emph render="italic">  Correspondents include</emph> William F.  Buckley, William O.  Douglas, Burton Lane, Dwight MacDonald, Norman Mailer, Mike Nichols, Arthur Meier Schlesinger (1917-    ), and William Styron</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1968 <emph render="italic">  Correspondents include</emph> Milton Caniff, Penelope Gilliatt, Tom Hayden, Ethel Kennedy, Coretta Scott King, Anthony Lewis, Eugene J. McCarthy, Philip Roth, and Arthur Meier Schlesinger (1917-    )</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1969 </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-June <emph render="italic">  Correspondents include</emph> Alan Arkin, Milton Caniff, Nathan Glazer, Lillian Hellman, Herbert Klein, Bernard Malamud, James Reston, and Arthur M.  Schlesinger (1917-    )</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">July-Dec.   <emph render="italic">Correspondents include</emph> Alan Arkin, Milton Caniff,  Anthony Perkins, Philip Roth, and Edward Sorel</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">12</container>
+                     <unittitle encodinganalog="245$a">1970</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-June <emph render="italic">  Correspondents include</emph> Will Eisner, Merv Griffin, Lillian Hellman, Ann Landers, Mike Nichols, and Philip Roth</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">July-Dec. <emph render="italic">  Correspondents include</emph> Stanley Burnshaw, Elliott Gould, Buck Henry, Norman Rosten, and Studs Terkel</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1971</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-June <emph render="italic">  Correspondents include</emph> George Gallup, Lillian Hellman, Bernard Malamud, Jack Nicholson, George Plimpton, and Stephen Sondheim</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">July-Dec. <emph render="italic">  Correspondents include</emph> Roddy McDowall and Philip Roth</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1972 <emph render="italic">  Correspondents include</emph> William O.  Douglas, George S.  McGovern, and Adam Walinsky</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1973 </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-June   <emph render="italic">Correspondents include</emph> Stephen Sondheim </unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">July-Dec.</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1974</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-June <emph render="italic"> Correspondents include</emph> Jane Fonda, Shirley MacLaine, and Bernard Malamud</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">July-Dec. </unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">13</container>
+                     <unittitle encodinganalog="245$a">1975</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-June</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">July-Dec.   <emph render="italic">Correspondents include</emph> Stanley Burnshaw, Dorothy Day, Groucho Marx, and Robert Chesley Osborn</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1976</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-Apr. <emph render="italic">  Correspondents include</emph> John Brooks and Barry Goldwater</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">May-Dec. <emph render="italic">  Correspondents include</emph> Lillian Hellman</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1977</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-June <emph render="italic">  Correspondents include</emph>  Russell Baker, Stanley Burnshaw, John Conyers, and Lillian Hellman</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">July-Dec., n.d.   <emph render="italic">Correspondents include</emph> Nora Ephron</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">14</container>
+                     <unittitle encodinganalog="245$a">1978</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-July <emph render="italic">  Correspondents include</emph> David Halberstam</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Aug.-Dec. <emph render="italic">  Correspondents include</emph> Milton Caniff, John Hersey, and Carey McWilliams</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="ov114" encodinganalog="245$a">1979</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-Aug. <emph render="italic">  Correspondents include</emph> Milton Caniff and Mike Nichols   <ref target="chrono14" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                        </unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Sept.-Dec. <emph render="italic">  Correspondents include</emph> Frances Fitzgerald, John Hersey, and Anthony Lewis</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1980 </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(2 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">15</container>
+                     <unittitle encodinganalog="245$a">1981</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-July <emph render="italic">  Correspondents include</emph> Alexander Cockburn, Jim Davis, and Mort Walker</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Aug.-Dec. <emph render="italic">  Correspondents include</emph> John Marquand and G. B. Trudeau</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1982</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-Aug. <emph render="italic">  Correspondents include</emph> Milton Caniff and David Halberstam </unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Sept.-Dec. <emph render="italic">  Correspondents include</emph> Stanley Burnshaw, Lillian Hellman, Edward Sorel, and G. B. Trudeau</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1983 <emph render="italic">  Correspondents include</emph> Stanley Burnshaw and Milton Caniff</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1984-1988   <emph render="italic">Correspondents include</emph> Will Eisner and Thomas B.  Morgan</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="ov115" encodinganalog="245$a">1989</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-July <emph render="italic">  Correspondents include</emph> Stanley Burnshaw, Hume Cronyn, and Elliott Gould   <ref target="cronyn15" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                        </unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Aug.-Oct. <emph render="italic">  Correspondents include</emph> Garson Kanin and Anthony Lewis</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <container type="box">16</container>
+                        <unittitle encodinganalog="245$a">Nov.-Dec., n.d. <emph render="italic">  Correspondents include</emph> Norman Lear, Thomas B.  Morgan, and Edward Sorel</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1990</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Jan.-Aug.<emph render="italic">  Correspondents include</emph> Roddy McDowall, Larry McMurtry, Bill Melendez, and Robert Chesley Osborn</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Sept.-Dec.   <emph render="italic">Correspondents include</emph> Adolph Green, Bill Melendez, Mike Peters, and Edward Sorel</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1991-1993   <emph render="italic">Correspondents include</emph> Edward Sorel</unittitle>
+                  </did>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Subject file</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Contracts, miscellaneous</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">1957-1963 </unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <container type="box">17</container>
+                        <unittitle encodinganalog="245$a">1964-1991 </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(2 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="ov117" encodinganalog="245$a">Crile, Susan, 1971-1980, n.d.  <ref target="crile17" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                     </unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Permissions, play productions, 1966-1969</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Playboy Club and Hugh Hefner, 1958-1990 </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(3 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Robert Lantz Agency</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">1961-1969 </unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <container type="box">18</container>
+                        <unittitle encodinganalog="245$a">1970-1991 </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(6 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Yaddo (Artist colony), 1966-1991 </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(2 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+            </c02>
+         </c01>
+         <c01 level="series">
+            <did>
+               <container type="box">19-22</container>
+               <unittitle id="art" encodinganalog="245$a">Art Publications, <unitdate normal="1950/1995" encodinganalog="245$f" type="inclusive">1950-1995, </unitdate><unitdate encodinganalog="245$f" type="inclusive">n.d.</unitdate>
+               </unittitle>
+            </did>
+            <scopecontent encodinganalog="520">
+               <p>Illustrations created by Feiffer for advertisements, articles, books, calendars, cards, cartoons and comic strips, and records of exhibitions of his drawings.</p>
+            </scopecontent>
+            <arrangement encodinganalog="351$b">
+               <p>  Arranged alphabetically by  type of illustration and chronologically thereunder.</p>
+            </arrangement>
+            <c02 level="file">
+               <did>
+                  <container type="box">19</container>
+                  <unittitle id="ov219" encodinganalog="245$a">Advertisements, 1956-1964, n.d.  <ref target="adver19" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                  </unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Articles, 1956-1976, 1992</unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Books </unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Boy, Girl, Boy, Girl</title>, 1961-1963</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="ov2ex" encodinganalog="245$a">
+                        <title>Explainers</title>, 1960-1961   <ref target="explainers19" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                     </unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Feiffer's Album</title>, 1963</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Feiffer's America</title>, 1983, n.d. </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(4 folders)</extent>
+                     </physdesc>
+                     <container type="box">20</container>
+                     <physdesc>
+                        <extent encodinganalog="300">(3 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Feiffer's Children</title>, 1986, n.d.</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Hold Me!</title> 1963-1964</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Man in the Radical Middle,” 1960-1981, n.d.   </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(2 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Munro</title>, 1961</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>My Mind Went All to Pieces</title> by Robert Mines, 1959, n.d.</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="ov20" encodinganalog="245$a">
+                        <title>Passionella</title>, 1959-1960, n.d.  <ref target="passionella19" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                     </unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>The Phantom Tollbooth</title> by Norton Juster, 1961-1962</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="ov2sick" encodinganalog="245$a">
+                        <title>Sick, Sick, Sick</title>, 1958-1959   <ref target="sick19" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                     </unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">21</container>
+                     <unittitle encodinganalog="245$a">
+                        <title>Tantrum</title>, 1979</unittitle>
+                  </did>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle id="ov2cal" encodinganalog="245$a">Calendars, 1966, 1977, 1983    <ref target="calendars21" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph>.</ref>  
+                     <ref target="calenders1" show="replace" actuate="onrequest"><emph render="italic">For additional material see Container 1</emph>, Appointment calendars, 1967</ref>
+                  </unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle id="ov2card" encodinganalog="245$a">Cards, announcements, invitations, and miscellany, 1958-1988, n.d.  <ref target="cards21" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                  </unittitle>
+                  <physdesc>
+                     <extent encodinganalog="300">(2 folders)</extent>
+                  </physdesc>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Cartoons and comic strips</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Drawings</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">1950- 1959 </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(5 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <container type="box">22</container>
+                        <unittitle encodinganalog="245$a">1960-1980, 1986, 1995, n.d. </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(6 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="ov2notes" encodinganalog="245$a">Notes, promotional material, and self portrait, 1969, n.d.  <ref target="notes22" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                     </unittitle>
+                  </did>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Exhibitions, 1958-1993, n.d.</unittitle>
+               </did>
+            </c02>
+         </c01>
+         <c01 level="series">
+            <did>
+               <container type="box">22-59</container>
+               <unittitle id="writings" encodinganalog="245$a">Writings, <unitdate normal="1940/1995" encodinganalog="245$f" type="inclusive">ca. 1940-1995, </unitdate><unitdate encodinganalog="245$f" type="inclusive">n.d.</unitdate>
+               </unittitle>
+            </did>
+            <scopecontent encodinganalog="520">
+               <p>Drafts of articles, essays, nonfiction books, journal notes, novels, plays, speeches, and short stories along with records related to the publication or theatrical production of these works, including correspondence and contracts; film and theater production records such as photographs, playbills, promotional materials, and shooting schedules; financial records; legal documents; and newspaper clippings of reviews and reports on projects.</p>
+            </scopecontent>
+            <c02 level="file">
+               <did>
+                  <container type="box">22</container><unittitle encodinganalog="245$a">Articles,  essays, and notes</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1957-1988, 1995 </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(3 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     
+                     
+                     <container type="box">23</container>
+                     <unittitle encodinganalog="245$a">Undated</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Fragments</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Miscellaneous articles</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">“Strip Time: The Comics Observed,” by Milton Caniff and Jules Feiffer, n.d.</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Books, nonfiction</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Bouncy Bouncy Ballie: The Folk Rhymes and Street Chants of Children in the U.S.A.,” ca. 1955</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Great Comic Book Heroes</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Introduction, ca. 1965</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1965-1966</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Journal notes, 1957, n.d.</unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Novels</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Ackroyd</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Correspondence and contract, 1976-1977</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Drafts</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">First draft, n.d </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(2 folders)</extent>
+                           </physdesc>
+                           <container type="box">24</container>
+                           <physdesc>
+                              <extent encodinganalog="300">(2 folders)</extent>
+                           </physdesc></did></c05>
+                           <c05 level="file"><did><unittitle encodinganalog="245$a">Revisions, n.d.</unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(3 folders)</extent>
+                           </physdesc>
+                           <container type="box">25</container>
+                           <physdesc>
+                              <extent encodinganalog="300">(2 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Subsequent drafts</unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(4 folders)</extent>
+                           </physdesc>
+                           <container type="box">26</container>
+                           <physdesc>
+                              <extent encodinganalog="300">(2 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Final draft, 1976 </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(3 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1977-1978</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>A Barrel of Laughs, a Vale of Tears</title> (juvenile)</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Drafts</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">First draft, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <container type="box">27</container>
+                           <unittitle encodinganalog="245$a">Revisions, n.d. </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(2 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Subsequent drafts, 1993-1995 </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(4 folders)</extent>
+                           </physdesc>
+                        <container type="box">28</container>
+                              <physdesc>
+                                 <extent encodinganalog="300">(2 folders)</extent>
+                              </physdesc></did>
+                        
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Notes, n.d.</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“The Big Glitter,” novel or screenplay ideas</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Correspondence with Edward Sorel, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Notes, n.d.  </unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="little48" encodinganalog="245$a">“Car Ride”   <ref target="car28" show="replace" actuate="onrequest"><emph render="italic">See also Containers 45-48</emph>, <title>Little Murders</title>
+                        </ref>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Drafts, 1964</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Notes</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">“Little Murders,” n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">“The Mother Questions,” n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Harry, the Rat with Women</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Correspondence, contracts, and critique, 1961-1970, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Drafts</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Fragments, n.d. </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(2 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <container type="box">29</container>
+                           <unittitle encodinganalog="245$a">Full text, 1962, n.d. </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(4 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1963</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle id="harry41" encodinganalog="245$a">Playscript, n.d.</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">30</container>
+                     <unittitle encodinganalog="245$a">“Little Murders”  <ref target="little30" show="replace" actuate="onrequest"><emph render="italic">See Container 46</emph></ref>
+                     </unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>The Man in the Ceiling</title> 
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Drafts</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Full text, 1992 </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(3 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Revisions</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Holograph, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Typescript, n.d. </unittitle>
+                              <physdesc>
+                                 <extent encodinganalog="300">(2 folders)</extent>
+                              </physdesc>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <container type="box">31</container>
+                              <unittitle encodinganalog="245$a">Typescript and galley, n.d.</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1993</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Plays</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Answers,” drafts of screenplay </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Fragments, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Full text, 1971 </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(2 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Anthony Rose</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Drafts</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Fragments, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Full text, n.d. </unittitle>
+                              <physdesc>
+                                 <extent encodinganalog="300">(3 folders)</extent>
+                              </physdesc>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <container type="box">32</container>
+                           <unittitle encodinganalog="245$a">Reading script, Philadelphia Festival for New Plays, Philadelphia, Pa., 1989</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater production and promotion records, 1988-1990</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Baby Pictures,” drafts of screenplay</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Holograph, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Typescript, 1991</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Revisions, n.d. </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(2 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Bea Plus” </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Script for television, drafts, 1975, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Sketch for “Carol Burnett Special,” n.d.</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Bernard and Huey”</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Contract, 1986</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Drafts of screenplay</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Fragments and notes</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Holograph, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <container type="box">33</container>
+                              <unittitle encodinganalog="245$a">Typescript, 1987, n.d.</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Full text, n.d</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Boomtown,” n.d.</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Carnal Knowledge</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Correspondence, 1969-1987</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Dust jacket, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Film production</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Financial statements, 1973-1978</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1971-1972, 1978</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Legal documents, 1973-1977</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1973-1974</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Notes, n.d.</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Photographs and promotional material, 1971</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Shooting schedule, 1970</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Fragments, “True Confessions,” n.d. </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(3 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <container type="box">34</container>
+                           <unittitle encodinganalog="245$a">Full text, 1969 </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(2 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Revisions, n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Screenplay</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">First draft, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Subsequent drafts, 1970 </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(2 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater productions</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Kaufman Theater, New York, N.Y., 1990</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Pasadena Playhouse, Pasadena, Calif., 1988</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Stages Repertory Theater, Houston, Tex., 1988</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">35</container>
+                     <unittitle encodinganalog="245$a">“Cherry Tree Lane,” musical adaptation of <title>Mary Poppins</title>, with P. L. Travers</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Correspondence and memoranda, 1982-1985</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Draft fragments and notes</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Holograph, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Typescript, n.d.</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Outlines, 1981, n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Come Back, Go Away, I Love You”   <ref target="comeback35" show="replace" actuate="onrequest"><emph render="italic">See Container 50</emph>, “Passionella”</ref>
+                     </unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Comedy Zone,” television script, pilot episode, n.d.</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Crawling Arnold </title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Drafts</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Holograph</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Typescripts</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Printed text</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater productions, 1961-1965   <ref target="theater35" show="replace" actuate="onrequest"><emph render="italic">For additional material see Container 4</emph>, Royalty statements</ref>
+                        </unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Deep Pockets,” drafts of screenplay </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Fragments, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <container type="box">36</container>
+                        <unittitle encodinganalog="245$a">Full text, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Revisions, n.d.</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Elliot Loves</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript, drafts </unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Fragments, n.d. </unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Full text</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Early,  n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Revised, 1987-1988 </unittitle>
+                              <physdesc>
+                                 <extent encodinganalog="300">(2 folders)</extent>
+                              </physdesc>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <container type="box">37</container>
+                           <unittitle encodinganalog="245$a">Revisions, n.d. </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(2 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater productions</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Correspondence, contracts, and miscellany, 1988-1990   <emph render="italic">Correspondents include</emph> Mike Nichols</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1990</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Photographs and sketches, 1990</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Playbills and promotional material, 1990</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>The Explainers</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript, drafts, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater productions</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1961, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Playbills and promotional material, 1961, n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">38</container>
+                     <unittitle encodinganalog="245$a">
+                        <title>Feiffer's America</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript, drafts, by Russell Vandenbroucke, 1988 </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(2 folders)</extent>
+                        </physdesc>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">British production, 1985 </unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Northlight Theater, Evanston, Ill.</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Correspondence and promotional material, 1987-1988</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1988</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Feiffer's Corner,” drafts, possibly for television, 1984, n.d.</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Feiffer's People</title> 
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript, drafts</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Fragments, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Full text, n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater productions, 1962-1975, n.d.</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>God Bless</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Background material, 1967-1969</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Correspondence, 1968-1970</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Character sketches, outlines, and notes, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <container type="box">39</container>
+                           <unittitle encodinganalog="245$a">Drafts</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Fragments, n.d. </unittitle>
+                              <physdesc>
+                                 <extent encodinganalog="300">(2 folders)</extent>
+                              </physdesc>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Full text, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Half hour version, 1969</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Revisions, n.d.</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Printed text from <title>Plays and Players</title>, 1969</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater productions</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">New Theater for Now, Los Angeles, Calif., 1969</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Royal Shakespeare Company, London, England</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Correspondence and playbill, 1968</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1968</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Photographs, 1968</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Yale School of Drama, New Haven, Conn.</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Correspondence and playbill, 1968</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1968</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Grown Ups</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript, drafts</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Full text</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">1978</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <container type="box">40</container>
+                              <unittitle encodinganalog="245$a">1981-1985, n.d. </unittitle>
+                              <physdesc>
+                                 <extent encodinganalog="300">(6 folders)</extent>
+                              </physdesc>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Revisions</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Holograph, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Typescript</unittitle>
+                           </did>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">1983</unittitle>
+                              </did>
+                           </c07>
+                           <c07 level="file">
+                              <did>
+                                 <container type="box">41</container>
+                                 <unittitle encodinganalog="245$a">Undated </unittitle>
+                                 <physdesc>
+                                    <extent encodinganalog="300">(2 folders)</extent>
+                                 </physdesc>
+                              </did>
+                           </c07>
+                        </c06>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Television productions, “Showtime” and “Great Performances,” 1985-1986</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater productions</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">American Repertory Theatre, Cambridge, Mass., 1981</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Lyceum Theater, New York, N.Y., 1981-1982</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Mark Taper Forum, Los Angeles, Calif., 1983</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Miscellaneous, 1982-1986</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Harold Swerg,” n.d</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Harry, the Rat with Women</title>
+                        <ref target="harry41" show="replace" actuate="onrequest"><emph render="italic">See Container 29</emph></ref>
+
+                     </unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="ov3head" encodinganalog="245$a">“Head for the DMZ: Political Satire Cabaret,” New York, N.Y., 1968 <ref target="head41" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                     </unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Hold Me!</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <container type="box">42</container>
+                        <unittitle encodinganalog="245$a">Theater productions</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Correspondence, contracts, programs, and promotional material, 1977-1980, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle id="ov3news" encodinganalog="245$a">Newspaper clippings and related material, 1977</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>I Want to Go Home</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Film production</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Correspondence, contracts, and miscellany, 1987-1991, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Newspaper clippings and promotional material, 1989  <ref target="newspaper42" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                           </unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Screenplay</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Correspondence, notes, sketches, and synopsis, n.d.   <emph render="italic">Correspondents include</emph> Alain Renais</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Drafts</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Fragments, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Full text</unittitle>
+                           </did>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">“Faux Ami,” n.d. </unittitle>
+                              <physdesc>
+                                       <extent encodinganalog="300">(2 folders)</extent>
+                                    </physdesc>
+                                    <container type="box">43</container>
+                                    <physdesc>
+                                       <extent encodinganalog="300">(1 folder)</extent>
+                                    </physdesc></did>
+                              
+                           </c07>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">Final? n.d.</unittitle>
+                              </did>
+                           </c07>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Revisions, 1988, n.d. </unittitle>
+                              <physdesc>
+                                 <extent encodinganalog="300">(2 folders)</extent>
+                              </physdesc>
+                           </did>
+                        </c06>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Knock, Knock</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Book contract, 1985</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript, drafts</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">“Cohn of Arc”</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Fragments, n.d.</unittitle>
+                           </did>
+                           
+                        </c06>
+                        <c06 level="file"><did>
+                                 <unittitle encodinganalog="245$a">Full text, 1971, n.d.</unittitle>
+                                 <physdesc>
+                                    <extent encodinganalog="300">(3 folders)</extent>
+                                 </physdesc>
+                              </did></c06><c06 level="file">
+                           <did>
+                              <container type="box">44</container>
+                              <unittitle encodinganalog="245$a">Revisions, n.d.</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">“Knock, Knock,” n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater productions</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Correspondence and miscellany, 1976, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1976-1978, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Playbills and promotional material, 1976-1978, n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Little Brucie”</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Screenplay</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Background material, 1973-1979, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <container type="box">45</container>
+                           <unittitle encodinganalog="245$a">Drafts</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Full text, n.d. </unittitle>
+                              <physdesc>
+                                 <extent encodinganalog="300">(3 folders)</extent>
+                              </physdesc>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Revisions, n.d.</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Memoranda and notes, 1981, n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="car28" encodinganalog="245$a">
+                        <title id="little30">Little Murders</title>   
+                        <ref target="little48" show="replace" actuate="onrequest"><emph render="italic">See also Container 28</emph>, “Car Ride”</ref>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Articles by Feiffer, 1967, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Book publication, 1966, 1989, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Film production</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Correspondence and contracts, 1968-1970</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <container type="box">46</container>
+                           <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1970-1974, 1988, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Production records, 1970, n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">General correspondence, 1966-1970   <emph render="italic">Correspondents include</emph> Charles Marowitz, Walter Matthau, and Mike Nichols</unittitle>
+                     <physdesc>
+                              <extent encodinganalog="300">(2 folders)</extent>
+                           </physdesc></did>
+                     
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript </unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Drafts</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Full text, 1966, n.d. </unittitle>
+                              <physdesc>
+                                 <extent encodinganalog="300">(2 folders)</extent>
+                              </physdesc>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Revisions</unittitle>
+                           </did>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">Holograph, n.d.</unittitle>
+                              </did>
+                           </c07>
+                           <c07 level="file">
+                              <did>
+                                 <container type="box">47</container>
+                                 <unittitle encodinganalog="245$a">Typescript, n.d.</unittitle>
+                              </did>
+                           </c07>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Royal Shakespeare Company, London, England, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Schubert Theater, New York, N.Y., n.d. </unittitle>
+                              <physdesc>
+                                 <extent encodinganalog="300">(2 folders)</extent>
+                              </physdesc>
+                           </did>
+                        </c06>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Screenplay, draft, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater productions</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Great Britain</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Correspondence and contracts, 1966-1967</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Photographs, playbills, and newspaper clippings, 1967, n.d. </unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <container type="box">48</container>
+                           <unittitle encodinganalog="245$a">Greece, 1974</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Italy, 1968, 1985-1986</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Miscellaneous</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">United States, 1966-1977, 1988-1991</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Other countries, 1967-1969, 1987, n.d.</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">New York, N.Y.</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Booth Theater and Broadhurst Theatre</unittitle>
+                           </did>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">Correspondence, playbill, and miscellany, 1967</unittitle>
+                              </did>
+                           </c07>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1967</unittitle>
+                              </did>
+                           </c07>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Circle in the Square Theater</unittitle>
+                           </did>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">Correspondence and playbills, 1968-1970    <emph render="italic">Correspondents include</emph> Lillian Hellman and John Herse</unittitle>
+                              </did>
+                              
+                           </c07>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">Financial records, 1969</unittitle>
+                              </did>
+                           </c07>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1969</unittitle>
+                              </did>
+                           </c07>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Second Stage Theater, 1987</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle id="ov3north" encodinganalog="245$a">Northern Europe and Scandinavia, 1968-1972   <ref target="northern48" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                           </unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">49</container>
+                     <unittitle encodinganalog="245$a">Miscellaneous </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle id="ov3play" encodinganalog="245$a">Play notes and ideas, ca. 1950s-ca. 1980s   <ref target="play48" show="replace" actuate="onrequest"><emph render="italic">See also Oversize</emph></ref>
+                        </unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Television situation comedy ideas, ca. 1980s</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater productions based on Feiffer's work, 1962-1966, 1974-1975, 1987</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“The Needler,” playscript, draft fragments,  n.d.</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Nevins,” playscript or screenplay ideas</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Dialogue drafts, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Notes, n.d.</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Nuclear Follies,” television script and correspondence, 1984-1985, n.d.</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“N.V.,” filmscript </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Full text, 1989 </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(2 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Revisions, n.d.</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">50</container>
+                     <unittitle encodinganalog="245$a">“The Page Boys,” television script, pilot episode, 1990-1991 </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(7 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="comeback35" encodinganalog="245$a">“Passionella” or “Come Back, Go Away, I Love You”</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Correspondence and contracts, 1960-1967</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Musical lyrics by Stephen Sondheim, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript, drafts, 1959-1963 </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(2 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“Play for Two Characters,” playscript, draft, n.d.</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Popeye</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Essay, “Popeye Introduction,” 1984</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Film production</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Correspondence, contract, essay by Marie Segar Clausen, and promotional material, 1977-1980</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1980, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <container type="box">51</container>
+                           <unittitle encodinganalog="245$a">Shooting schedule, 1980</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Screenplay</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Drafts</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Fragments</unittitle>
+                           </did>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">Holograph, n.d.</unittitle>
+                              </did>
+                           </c07>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">Typescript, n.d.</unittitle>
+                              </did>
+                           </c07>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Full text, 1979, n.d. </unittitle>
+                              <physdesc>
+                                 <extent encodinganalog="300">(4 folders)</extent>
+                              </physdesc>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Film treatment, 1978, n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Puss in Boots</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Screenplay, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <container type="box">52</container>
+                        <unittitle encodinganalog="245$a">Television production, 1984</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“The Satan Prize”</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Correspondence and background material, 1992, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Script for television, drafts</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Fragments</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Holograph, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Typescript, n.d.</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Full text, 1992</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>Sessions</title>, “Gunfight at the Bookman Corral” episode for Billy Crystal</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Correspondence and transcript of conversation, 1991</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Script, drafts</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Fragments, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Full text, 1991</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">“So True,” screenplay</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Correspondence and storyline transcript, 1992</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Drafts</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Fragments</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Holograph, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Typescript, 1993, n.d.</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Full text, 1993</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">53</container>
+                     <unittitle encodinganalog="245$a">“Street Song,” playscript, act one, by Calvin Trillin and Jules Feiffer</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Full text</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">“The Steinettes Musical,” draft, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">“Streetsong,” draft with article about the Steinettes by Trillin, 1979</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Notes, n.d.</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Revisions, n.d.</unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>A Think Piece</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript </unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Drafts</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Fragment, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Full text, 1978-1979, n.d. </unittitle>
+                              <physdesc>
+                                 <extent encodinganalog="300">(5 folders)</extent>
+                              </physdesc>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Revisions</unittitle>
+                           </did>
+                           <c07 level="file">
+                              <did>
+                                 <unittitle encodinganalog="245$a">Holograph and typescript, n.d.</unittitle>
+                              </did>
+                           </c07>
+                           <c07 level="file">
+                              <did>
+                                 <container type="box">54</container>
+                                 <unittitle encodinganalog="245$a">Typescript, n.d.</unittitle>
+                              </did>
+                           </c07>
+                        </c06>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Reading scripts</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Circle Repertory Company, preproduction script, n.d.</unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">Manhattan Theater Club, New York, N.Y., 1979, n.d.</unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater production</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Correspondence and contract, 1982, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1982, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Playbills and production and promotional material, 1982-1986, n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">
+                        <title>White House Murder Case</title>
+                     </unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Playscript, drafts</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Fragments, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Full text, 1969, n.d. </unittitle>
+                           <physdesc>
+                              <extent encodinganalog="300">(2 folders)</extent>
+                           </physdesc>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <container type="box">55</container>
+                           <unittitle encodinganalog="245$a">Revisions, n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Theater productions</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Correspondence and contract, 1970, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Financial records, 1970</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Newspaper clippings and related material, 1970-1976, n.d.</unittitle>
+                        </did>
+                     </c05>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Playbills and photograph, and promotional material, 1970-1976, n.d.</unittitle>
+                        </did>
+                     </c05>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Untitled juggler skit, n.d.</unittitle>
+                  </did>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Speeches</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1959-1965, miscellaneous </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(2 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1965, “The Role of the Social Critic,” Center Club luncheon, New York, N.Y.; University of Massachusetts, Amherst, Mass., Distinguished Visitors Program</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1966-1971, miscellaneous </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(2 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1972, speeches concerning the Vietnamese conflict and George S. McGovern's presidential election campaign</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1974, “Speech at Yale Political Union,” Yale University, New Haven, Conn.</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">56</container>
+                     <unittitle encodinganalog="245$a">1977, “How Not to Talk to Each Other”</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1978-1981, miscellaneous </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(2 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1981, “Movie-America,” Pratt Institute, Brooklyn, N.Y.</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1982-1985, miscellaneous </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(3 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">57</container>
+                     <unittitle encodinganalog="245$a">1986-1987, miscellaneous</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1987, “The Superhero in America,” Smithsonian Institution, Washington, D.C.</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">1988-1994, miscellaneous </unittitle>
+                     <physdesc>
+                        <extent encodinganalog="300">(3 folders)</extent>
+                     </physdesc>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <container type="box">58</container>
+                     <unittitle encodinganalog="245$a">1995, miscellaneous</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Undated</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Introductions and memorial tributes</unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Notes and fragments </unittitle>
+                        <physdesc>
+                           <extent encodinganalog="300">(2 folders)</extent>
+                        </physdesc>
+                     </did>
+                  </c04>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle id="ov3story" encodinganalog="245$a">Stories and notes for stories, ca. 1940s-ca. 1950s   <ref show="replace" actuate="onrequest" target="stories58">ٌ<emph render="italic">See also Oversize</emph></ref>
+                  </unittitle>
+                  <physdesc>
+                     <extent encodinganalog="300">(2 folders)</extent>
+                  </physdesc>
+                  <container type="box">59</container>
+                  <physdesc>
+                     <extent encodinganalog="300">(2 folders)</extent>
+                  </physdesc>
+               </did>
+            </c02>
+         </c01>
+         <c01 level="series">
+            <did>
+               <container type="box">OV 1-OV 3</container>
+               <unittitle id="over" encodinganalog="245$a">Oversize, <unitdate normal="1958/1989" encodinganalog="245$f" type="inclusive">1958-1989, </unitdate><unitdate encodinganalog="245$f" type="inclusive">n.d.</unitdate>
+               </unittitle>
+            </did>
+            <scopecontent encodinganalog="520">
+               <p>Calendars, correspondence, invitations, advertisements, posters, and writings.  </p>
+            </scopecontent>
+            <arrangement encodinganalog="351$b">
+               <p>Arranged and described according to the series, containers, and folders from which the items were removed.</p>
+            </arrangement>
+            <c02 level="file">
+               <did>
+                  <container type="box">OV 1</container>
+                  <unittitle encodinganalog="245$a">Family and Biographical File</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="appoint1" encodinganalog="245$a">Appointment calendars, 1967  <ref target="calenders1">(Container 1)</ref></unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Family correspondence</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle id="other1" encodinganalog="245$a">Other family members, n.d.  <ref target="ov1other">(Container 3)</ref></unittitle>
+                     </did>
+                  </c04>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">General Correspondence</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Chronological file</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle id="chrono14" encodinganalog="245$a">1979  <ref target="ov114">(Container 14)</ref></unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle id="cronyn15" encodinganalog="245$a">1989  <ref target="ov115">(Container 15)</ref></unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Subject file</unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="crile17" encodinganalog="245$a">Crile, Susan, n.d.  <ref target="ov117">(Container 17)</ref></unittitle>
+                  </did>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <container type="box">OV 2</container>
+                  <unittitle encodinganalog="245$a">Art Publication File</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="adver19" encodinganalog="245$a">Advertisements, 1959  <ref target="ov219">(Container 19)</ref></unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Books</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle id="explainers19" encodinganalog="245$a">
+                           <title>Explainers</title>, poster, n.d.  <ref target="ov2ex">(Container 19)</ref></unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle id="passionella19" encodinganalog="245$a">
+                           <title>Passionella</title>, poster, 1960  <ref target="ov20">(Container 20)</ref></unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle id="sick19" encodinganalog="245$a">
+                           <title>Sick, Sick, Sick</title>, poster, n.d.  <ref target="ov2sick">(Container 20)</ref> </unittitle>
+                     </did>
+                  </c04>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="calendars21" encodinganalog="245$a">Calendars, 1966  <ref target="ov2cal">(Container 21)</ref></unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle id="cards21" encodinganalog="245$a">Cards, announcements, and invitations, 1960  <ref target="ov2card">(Container 21)</ref></unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Cartoons and comic strips</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle id="notes22" encodinganalog="245$a">Notes and promotional material, posters, n.d.  <ref target="ov2notes">(Container 22)</ref></unittitle>
+                     </did>
+                  </c04>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <container type="box">OV 3</container>
+                  <unittitle encodinganalog="245$a">Writings</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Plays</unittitle>
+                  </did>
+                  <c04 level="file">
+                     <did>
+                        <unittitle id="head41" encodinganalog="245$a">“Head for the DMZ: Political Satire Cabaret,” New York, N.Y., poster, 1968  <ref target="ov3head">(Container 41)</ref></unittitle>
+                     </did>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">
+                           <title>I Want to Go Home</title>
+                        </unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Film production</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle id="newspaper42" encodinganalog="245$a">Newspaper clippings and promotional material, poster, 1989  <ref target="ov3news">(Container 42)</ref></unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">
+                           <title>Little Murders</title>
+                        </unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle encodinganalog="245$a">Theater productions</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle id="northern48" encodinganalog="245$a">Northern Europe and Scandinavia, poster, Teatr Polski, 1969  <ref target="ov3north">(Container 48)</ref></unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                  </c04>
+                  <c04 level="file">
+                     <did>
+                        <unittitle encodinganalog="245$a">Miscellaneous</unittitle>
+                     </did>
+                     <c05 level="file">
+                        <did>
+                           <unittitle id="play48" encodinganalog="245$a">Play notes and ideas</unittitle>
+                        </did>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">“The Boy Who Was a Window Shade,” ca. 1950s <ref target="ov3play">(Container 49)</ref></unittitle>
+                           </did>
+                        </c06>
+                        <c06 level="file">
+                           <did>
+                              <unittitle encodinganalog="245$a">“Red, White, and Walter Birdwell,” ca. 1950s  <ref target="ov3play">(Container 49)</ref></unittitle>
+                           </did>
+                        </c06>
+                     </c05>
+                  <c05 level="file"><did><unittitle encodinganalog="245$a">Writings</unittitle></did><c06 level="file"><did><unittitle id="stories58" encodinganalog="245$a">Stories and notes for stories, ca. 1940s-ca. 1950s    <ref target="ov3story">(Container 58)</ref></unittitle></did></c06></c05></c04>
+               </c03>
+            </c02>
+         </c01>
+      </dsc>
+   </archdesc>
+</ead>

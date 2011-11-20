@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE DjVuXML>
+<DjVuXML>
+<BODY>
+<OBJECT data="file://localhost//tmp/derive/japanjapanese00hildiala//japanjapanese00hildiala.djvu" height="2534" type="image/x.djvu" usemap="japanjapanese00hildiala_0002.djvu" width="1632">
+<PARAM name="PAGE" value="japanjapanese00hildiala_0002.djvu"/>
+<PARAM name="DPI" value="400"/>
+<HIDDENTEXT>
+<PAGECOLUMN></PAGECOLUMN>
+<PAGECOLUMN>
+<REGION>
+<PARAGRAPH>
+<LINE>
+<WORD coords="520,1100,690,1034">THE</WORD>
+<WORD coords="722,1098,1076,1034">LIBRARY</WORD>
+</LINE>
+</PARAGRAPH>
+<PARAGRAPH>
+<LINE>
+<WORD coords="750,1198,862,1136">OF</WORD>
+</LINE>
+</PARAGRAPH>
+<PARAGRAPH>
+<LINE>
+<WORD coords="446,1298,618,1234">THE</WORD>
+<WORD coords="648,1298,1160,1234">UNIVERSITY</WORD>
+</LINE>
+<LINE>
+<WORD coords="468,1398,582,1334">OF</WORD>
+<WORD coords="614,1396,1140,1332">CALIFORNIA</WORD>
+</LINE>
+</PARAGRAPH>
+<PARAGRAPH>
+<LINE>
+<WORD coords="514,1498,670,1434">LOS</WORD>
+<WORD coords="696,1498,1086,1432">ANGELES</WORD>
+</LINE>
+</PARAGRAPH>
+</REGION>
+</PAGECOLUMN>
+</HIDDENTEXT>
+</OBJECT>
+</BODY>
+</DjVuXML>

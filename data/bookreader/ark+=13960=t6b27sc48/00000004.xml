@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE DjVuXML>
+<DjVuXML>
+<BODY>
+<OBJECT data="file://localhost//tmp/derive/japaneseinterior00bacoiala//japaneseinterior00bacoiala.djvu" height="2620" type="image/x.djvu" usemap="japaneseinterior00bacoiala_0004.djvu" width="1518">
+<PARAM name="PAGE" value="japaneseinterior00bacoiala_0004.djvu"/>
+<PARAM name="DPI" value="400"/>
+<HIDDENTEXT>
+<PAGECOLUMN>
+<REGION backgroundColor="13563118">
+<PARAGRAPH>
+<LINE>
+<WORD coords="21,176,29,81">1</WORD>
+<WORD coords="29,176,36,112">I</WORD>
+<WORD coords="107,176,451,60">LIBRARY^)</WORD>
+</LINE>
+</PARAGRAPH>
+<PARAGRAPH>
+<LINE>
+<WORD coords="95,203,307,171">UNIVERSITY</WORD>
+<WORD coords="321,206,367,180">OF</WORD>
+</LINE>
+<LINE>
+<WORD coords="123,249,332,215">CALIFORNIA</WORD>
+</LINE>
+</PARAGRAPH>
+<PARAGRAPH>
+<LINE>
+<WORD coords="14,299,29,246">f</WORD>
+<WORD coords="105,298,191,263">SAN</WORD>
+<WORD coords="213,309,346,268">DIEGO</WORD>
+<WORD coords="419,330,446,246">j</WORD>
+</LINE>
+</PARAGRAPH>
+</REGION>
+</PAGECOLUMN>
+</HIDDENTEXT>
+</OBJECT>
+</BODY>
+</DjVuXML>

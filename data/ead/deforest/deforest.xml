@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Transformed with v1v2002_4.xsl -->
+
+<!DOCTYPE ead PUBLIC "+//ISBN 1-931666-00-8//DTD ead.dtd (Encoded Archival Description (EAD) Version 2002)//EN" "http://lcweb2.loc.gov/xmlcommon/dtds/ead2002/ead.dtd" [
+	 <!ENTITY lcseal SYSTEM "http://lcweb2.loc.gov/xmlcommon/lcseal.jpg" NDATA jpeg>
+]>
+<ead>
+   <eadheader repositoryencoding="iso15511" relatedencoding="MARC21" countryencoding="iso3166-1" scriptencoding="iso15924" dateencoding="iso8601" langencoding="iso639-2b">
+      <eadid mainagencycode="dlc" countrycode="us" identifier="hdl:loc.mss/eadmss.ms998006" encodinganalog="856$u">http://hdl.loc.gov/loc.mss/eadmss.ms998006</eadid>
+      <filedesc>
+         <titlestmt>
+            <titleproper type="245$a">Lee De Forest</titleproper>
+            <subtitle>A Register of His Papers in the Library of
+			 Congress</subtitle>
+            <author encodinganalog="245$c">Prepared by Manuscript Division staff
+			 <lb/>Revised by Harry G. Heiss</author>
+         </titlestmt>
+         <publicationstmt>
+            <publisher encodinganalog="260$b">
+               <extptr href="lcseal" show="embed" actuate="onload"/>Manuscript Division, Library of
+			 Congress</publisher>
+            <address>
+               <addressline>Washington, D.C. </addressline>
+            </address>
+            <date normal="1997" encodinganalog="260$c">1997</date>
+         </publicationstmt>
+         <notestmt>
+            <note>
+               <p>Contact information: 
+				<extref href="http://lcweb.loc.gov/rr/mss/address.html" show="new" actuate="onrequest">http://lcweb.loc.gov/rr/mss/address.html</extref> 
+               </p>
+            </note>
+         </notestmt>
+      </filedesc>
+      <profiledesc>
+         <creation>Text converted and initial EAD tagging provided by Apex Data
+		  Services, 
+		  <date normal="1999-01">1999 January;</date> encoding completed by
+		  Manuscript Division, 
+		  <date normal="1999">1999</date>
+         </creation>
+         <langusage>Finding aid written in <language encodinganalog="041">English.</language>
+         </langusage>
+      </profiledesc>
+      <revisiondesc>
+         <change encodinganalog="583">
+            <date normal="2004-12-01">2004-12-01</date>
+            <item>converted from EAD 1.0 to EAD 2002 </item>
+         </change>
+      </revisiondesc>
+   </eadheader>
+   <archdesc type="register" level="collection">
+      <did>
+         <head>Collection Summary</head>
+         <unittitle label="Title" encodinganalog="245$a">Papers of Lee De Forest 
+		  <unitdate label="Span Dates" type="inclusive" encodinganalog="245$f" normal="1884/1955">1884-1955</unitdate> 
+         </unittitle>
+         <unitid label="ID No." encodinganalog="590" countrycode="US" repositorycode="DLC">MSS18168</unitid>
+         <origination label="Creator"> 
+		  
+            <persname source="lcnaf" encodinganalog="100">De Forest, Lee,
+			 1873-1961</persname> 
+         </origination>
+         <physdesc label="Extent">
+            <extent encodinganalog="300">375
+		  items</extent>
+            <extent encodinganalog="300">4 containers</extent>
+            <extent encodinganalog="300">1.6 linear feet</extent>
+            <extent encodinganalog="300">2
+		  microfilm reels</extent>
+         </physdesc>
+         <langmaterial label="Language">Collection material in <language encodinganalog="041" langcode="eng">English.</language>
+         </langmaterial>
+         <repository label="Repository" encodinganalog="852"> 
+		  
+            <corpname>
+               <subarea>Manuscript Division</subarea> Library of
+			 Congress</corpname>
+		  
+            <address>
+               <addressline>Washington, D.C.</addressline>
+            </address>
+         </repository>
+         <abstract label="Abstract" encodinganalog="520$a">Radio pioneer and
+		  inventor. Correspondence, diaries, technical notes and other material relating
+		  to Lee De Forest's inventions in radio and electronics and their effect in
+		  sound recording and transmission, efforts to exploit his discoveries through
+		  various business ventures, and his competition with Guglielmo Marconi in the
+		  field of wireless communication. </abstract>
+      </did>
+      <controlaccess>
+         <head>Selected Search Terms</head>
+         <note>
+            <p>The following terms have been used to index the description of this
+			 collection in the Library's online catalog. They are grouped by name of person
+			 or organization, by subject or location, and by occupation and listed
+			 alphabetically therein.</p>
+         </note>
+         <controlaccess>
+            <head>Names:</head>
+            <persname source="lcnaf" encodinganalog="100" role="creator">De Forest,
+			 Lee, 1873-1961</persname>
+            <persname source="lcnaf" encodinganalog="600" role="subject">Marconi,
+			 Guglielmo, marchese, 1874-1937</persname>
+            <corpname source="lcnaf" encodinganalog="610" role="subject">Yale
+			 University--Students</corpname>
+         </controlaccess>
+         <controlaccess>
+            <head>Subjects:</head>
+            <subject source="lcsh" encodinganalog="650">Electronics</subject>
+            <subject source="lcsh" encodinganalog="650">Inventions</subject>
+            <subject source="lcsh" encodinganalog="650">Preparatory
+			 schools</subject>
+            <subject source="lcsh" encodinganalog="650">Radio</subject>
+            <subject source="lcsh" encodinganalog="650">Sound--Recording and
+			 reproducing</subject>
+            <subject source="lcsh" encodinganalog="650">Sound--Transmission</subject>
+            <subject source="lcsh" encodinganalog="650">Wireless communication
+			 systems</subject>
+         </controlaccess>
+         <controlaccess>
+            <head>Occupations:</head>
+            <occupation source="itoamc" encodinganalog="656">Inventors</occupation>
+            <occupation source="itoamc" encodinganalog="656">Radio pioneers</occupation>
+         </controlaccess>
+      </controlaccess>
+      <descgrp type="admininfo">
+         <head>Administrative Information</head>
+         <acqinfo encodinganalog="541">
+            <head>Provenance:</head>
+            <p>The papers of Lee De Forest, radio pioneer and inventor, were given
+			 to the Library of Congress by De Forest in 1955.</p>
+         </acqinfo>
+         <processinfo encodinganalog="583">
+            <head>Processing History:</head>
+            <p>The papers of Lee De Forest were arranged and described in 1955. The
+			 description was revised in 1997.</p>
+         </processinfo>
+         <userestrict encodinganalog="540">
+            <head>Copyright Status:</head>
+            <p>The status of copyright in the unpublished writings of Lee De Forest
+			 is governed by the Copyright Law of the United States (Title 17, U.S.C.).</p>
+         </userestrict>
+         <altformavail encodinganalog="530">
+            <head>Microfilm:</head>
+            <p>A microfilm edition of part of these papers is available on two reels.  Consult a reference librarian in the Manuscript Division concerning availability for purchase or interlibrary loan.</p>
+         </altformavail>
+         <prefercite encodinganalog="524">
+            <head>Preferred Citation:</head>
+            <p>Researchers wishing to cite this collection should include the
+			 following information: Container or reel number, Lee De Forest Papers,
+			 Manuscript Division, Library of Congress, Washington, D.C.</p>
+         </prefercite>
+      </descgrp>
+      <bioghist encodinganalog="545">
+         <head>Biographical Note</head>
+         <chronlist>
+            <listhead>
+               <head01>Date</head01>
+               <head02>Event</head02>
+            </listhead>
+            <chronitem>
+               <date>1873, Aug. 26</date>
+               <event>Born, 
+				<geogname>Council Bluffs, Iowa</geogname>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>1896</date>
+               <event>Ph.B., 
+				<corpname>Yale University,</corpname> 
+				
+                  <geogname>New Haven, Conn.</geogname>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>1899</date>
+               <event>Ph.D., 
+				<corpname>Yale University,</corpname> 
+				
+                  <geogname>New Haven, Conn.</geogname>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>1900</date>
+               <eventgrp>
+                  <event>Joined 
+				  <corpname>Western Electric Co.</corpname>, 
+				  <geogname>Chicago, Ill.</geogname> 
+                  </event>
+                  <event>Designed alternating current transmitter </event>
+                  <event>Developed electrolytic receiver</event>
+               </eventgrp>
+            </chronitem>
+            <chronitem>
+               <date>1901</date>
+               <event>Founded 
+				<corpname>American De Forest Wireless Telegraph Co.</corpname>
+				(later 
+				<corpname>United Wireless Telegraph Co.</corpname>)</event>
+            </chronitem>
+            <chronitem>
+               <date>1905</date>
+               <event>Developed first model of audion amplifier</event>
+            </chronitem>
+            <chronitem>
+               <date>1906</date>
+               <eventgrp>
+                  <event>Developed triode vacuum tube </event>
+                  <event>Married 
+				  <persname>Lucille Sheardown</persname> (divorced 1907)</event>
+               </eventgrp>
+            </chronitem>
+            <chronitem>
+               <date>1908</date>
+               <event>Married 
+				<persname>Nora Blatch</persname> (divorced 1911)</event>
+            </chronitem>
+            <chronitem>
+               <date>1910</date>
+               <event>Broadcast voice of 
+				<persname>Enrico Caruso</persname> by radio from the 
+				<corpname>Metropolitan Opera House,</corpname> 
+				
+                  <geogname>New York, N.Y.</geogname>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>1912</date>
+               <eventgrp>
+                  <event>Sold telephone repeater rights to 
+				  <corpname>American Telephone and Telegraph Co.</corpname>, which
+				  used his three electrode vacuum tube in first transcontinental telephony
+				  </event>
+                  <event>Married 
+				  <persname>Mary Mayo</persname> (divorced 1930)</event>
+               </eventgrp>
+            </chronitem>
+            <chronitem>
+               <date>1913</date>
+               <eventgrp>
+                  <event>Demonstrated first oscillating audion tube </event>
+                  <event>Became vice president, 
+				  <corpname>Radio Telegraph Co.</corpname> 
+                  </event>
+                  <event>Became vice president, 
+				  <corpname>De Forest Radio Co.</corpname>
+                  </event>
+               </eventgrp>
+            </chronitem>
+            <chronitem>
+               <date>1916</date>
+               <eventgrp>
+                  <event>Made first radio news broadcast </event>
+                  <event>Established radio broadcast station</event>
+               </eventgrp>
+            </chronitem>
+            <chronitem>
+               <date>1919</date>
+               <event>Patented phonofilm device for making talking pictures</event>
+            </chronitem>
+            <chronitem>
+               <date>ca. 1920</date>
+               <event>Published 
+				<bibref>
+				  
+                     <title render="italic">How to Set Up an Amateur Radio Receiving
+					 Station</title> (New York, N.Y.: De Forest Radio Telephone and Telegraph Co. 32
+				  pp.)</bibref>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>ca. 1922</date>
+               <event>Published 
+				<bibref>
+				  
+                     <title render="italic">Wireless in the Home</title> (New York,
+				  N.Y.: De Forest Radio Telephone and Telegraph Co. 32 pp.)</bibref>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>1923</date>
+               <eventgrp>
+                  <event>Demonstrated sound on film at 
+				  <corpname>Rivoli Theater</corpname>, 
+				  <geogname>New York, N.Y.</geogname> 
+                  </event>
+                  <event>Organized 
+				  <corpname>De Forest Phonofilm Co.</corpname>
+                  </event>
+               </eventgrp>
+            </chronitem>
+            <chronitem>
+               <date>1926</date>
+               <event>D.Sc., 
+				<corpname>Yale University</corpname>, New Haven, Conn.</event>
+            </chronitem>
+            <chronitem>
+               <date>1930</date>
+               <event>Married 
+				<persname>Marie Mosquini</persname>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>1934</date>
+               <event>Established 
+				<corpname>Lee De Forest, Inc.,</corpname>
+				
+                  <geogname> Los Angeles, Calif.</geogname>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>1942</date>
+               <event>Published 
+				<bibref>
+				  
+                     <title render="italic">Television, Today and Tomorrow</title>
+				  (New York, N.Y.: Dial Press. 361 pp.)</bibref>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>1947</date>
+               <event>Edison Medal of the 
+				<corpname>American Institute of Electrical
+				  Engineers</corpname>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>1950</date>
+               <event>Published 
+				<bibref>
+				  
+                     <title render="italic">Father of Radio</title> (Chicago, Ill.:
+				  Wilcox and Fallett. 502 pp.)</bibref>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>1951</date>
+               <event>Vice president, 
+				<corpname>National Association for Better Radio and
+				  Television</corpname>
+               </event>
+            </chronitem>
+            <chronitem>
+               <date>1961, June 30</date>
+               <event>Died, 
+				<geogname>Hollywood, Calif.</geogname>
+               </event>
+            </chronitem>
+         </chronlist>
+      </bioghist>
+      <scopecontent encodinganalog="520">
+         <head>Scope and Content Note</head>
+         <p>The papers of 
+		  <persname>Lee De Forest (1873-1961)</persname> span the years 1884-1955
+		  and include biographical sketches, booklets, correspondence, diaries, drawings,
+		  essays, newspaper and magazine clippings, photographs, poetry, and research
+		  notes. De Forest was a pioneer in wireless communications who made possible the
+		  long distance transmission and reception of the human voice, which led to the
+		  foundation of the radio industry and long distance telephone communication. His
+		  inventions, particularly the audion amplifier in 1905, the triode vacuum tube
+		  in 1906, and the oscillating audion in 1913, revolutionized wireless
+		  communications and earned him the title, “the father of radio.” De
+		  Forest also perfected the phonofilm method of sound recording and the
+		  glow-light recording of sound films, made important contributions to the
+		  development of television and high speed facsimile transmission, and invented
+		  radio therapy and the radio knife.</p>
+         <p>The collection contains letters from De Forest to members of his
+		  family, friends, and business associates, with only a few to fellow scientists.
+		  The correspondence is arranged chronologically. A subject file contains
+		  biographical material on De Forest, published and manuscript scientific
+		  writings, photographs of early audion tubes, and technical schematics,
+		  sketches, and notes on several of De Forest's inventions. The subject file is
+		  arranged alphabetically by type of material.</p>
+         <p>De Forest's diaries, or notebook journals, span the years 1891-1949
+		  and contain references to the difficulties encountered in the early years of
+		  his career as he struggled for recognition in the face of persistent lack of
+		  funds and inconstant friends. There are frequent allusions to his inventions
+		  and business ventures, both successes and failures, descriptions of the natural
+		  world, and original poetry. The diaries are arranged chronologically and have
+		  been microfilmed.</p>
+      </scopecontent>
+      <dsc type="in-depth">
+         <head>Container List</head>
+         <c01 level="file">
+            <did>
+               <container type="box">1</container>
+               <unittitle encodinganalog="245$a">Correspondence, 
+				<unitdate type="inclusive" encodinganalog="245$f">1884-1950,
+				  n.d.</unitdate> 
+               </unittitle>
+               <physdesc>
+                  <extent encodinganalog="300">(29
+				folders)</extent>
+               </physdesc>
+            </did>
+         </c01>
+         <c01 level="file">
+            <did>
+               <container type="box">2</container>
+               <unittitle encodinganalog="245$a">Subject file</unittitle>
+            </did>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Clippings, 
+				  <unitdate type="inclusive" encodinganalog="245$f">1890-1953,
+					 n.d.</unitdate> 
+                  </unittitle>
+                  <physdesc>
+                     <extent encodinganalog="300">(2
+				  folders)</extent>
+                  </physdesc>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">La Lumière
+				  Électrique, 
+				  <unitdate type="inclusive" encodinganalog="245$f">1911</unitdate>
+				  
+                  </unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Photographs</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Early audions, 
+					 <unitdate type="inclusive" encodinganalog="245$f">n.d.</unitdate> 
+                     </unittitle>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle encodinganalog="245$a">Personal, 
+					 <unitdate type="inclusive" encodinganalog="245$f">n.d.</unitdate> 
+                     </unittitle>
+                  </did>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Printed matter, 
+				  <unitdate type="inclusive" encodinganalog="245$f">1904-1950,
+					 n.d.</unitdate> 
+                  </unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Schematics, sketches, and
+				  technical notes, 
+				  <unitdate type="inclusive" encodinganalog="245$f">1910-1911,
+					 n.d.</unitdate> 
+                  </unittitle>
+                  <physdesc>
+                     <extent encodinganalog="300">(2
+				  folders)</extent>
+                  </physdesc>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Yale University, New Haven,
+				  Conn., entrance examination, biographical sketch, and class book form, 
+				  <unitdate type="inclusive" encodinganalog="245$f">1892-1937,
+					 n.d.</unitdate> 
+                  </unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle encodinganalog="245$a">Writings, 
+				  <unitdate type="inclusive" encodinganalog="245$f">1896-1955,
+					 n.d.</unitdate> 
+                  </unittitle>
+               </did>
+            </c02>
+         </c01>
+         <c01 level="file">
+            <did>
+               <unittitle encodinganalog="245$a">Diaries</unittitle>
+            </did>
+            <altformavail encodinganalog="530">
+               <p>Microfilm edition available. Shelf no. 17,174</p>
+            </altformavail>
+            <c02 level="file">
+               <did>
+                  <container type="box">3</container>
+                  <container type="reel">1</container>
+                  <unittitle encodinganalog="245$a">Vols. 1-15, 
+				  <unitdate type="inclusive" encodinganalog="245$f">1891-1902</unitdate> 
+                  </unittitle>
+               </did>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <container type="box">4</container>
+                  <container type="reel">2</container>
+                  <unittitle encodinganalog="245$a">Vols. 16-23, 
+				  <unitdate type="inclusive" encodinganalog="245$f">1903-1949</unitdate> 
+                  </unittitle>
+               </did>
+            </c02>
+         </c01>
+      </dsc>
+   </archdesc>
+</ead>

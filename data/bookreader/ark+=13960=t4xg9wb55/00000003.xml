@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE DjVuXML>
+<DjVuXML>
+<BODY>
+<OBJECT data="file://localhost//tmp/derive/narrativeofexped01perr//narrativeofexped01perr.djvu" height="3178" type="image/x.djvu" usemap="narrativeofexped01perr_0003.djvu" width="2253">
+<PARAM name="PAGE" value="narrativeofexped01perr_0003.djvu"/>
+<PARAM name="DPI" value="300"/>
+<HIDDENTEXT>
+<PAGECOLUMN></PAGECOLUMN>
+<PAGECOLUMN>
+<REGION>
+<PARAGRAPH>
+<LINE>
+<WORD coords="608,173,671,158,170">.&apos;^—</WORD>
+<WORD coords="670,173,714,150,173">&lt;«l</WORD>
+</LINE>
+</PARAGRAPH>
+</REGION>
+</PAGECOLUMN>
+<PAGECOLUMN>
+<REGION backgroundColor="0" inverted="true">
+<PARAGRAPH>
+<LINE>
+<WORD coords="566,1950,774,1876,1950">3V</WORD>
+</LINE>
+</PARAGRAPH>
+</REGION>
+</PAGECOLUMN>
+<PAGECOLUMN>
+<REGION backgroundColor="0" inverted="true">
+<PARAGRAPH>
+<LINE>
+<WORD coords="980,1562,1112,1516,1554">-j^</WORD>
+</LINE>
+</PARAGRAPH>
+</REGION>
+</PAGECOLUMN>
+</HIDDENTEXT>
+</OBJECT>
+</BODY>
+</DjVuXML>

@@ -1,0 +1,1773 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<METS:mets xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd info:lc/xmlns/premis-v2 http://www.loc.gov/standards/premis/v2/premis-v2-0.xsd" OBJID="uc2.ark:/13960/t0cv4fp34" xmlns:METS="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:PREMIS="info:lc/xmlns/premis-v2" xmlns:HT="http://www.hathitrust.org/premis_extension">
+ <METS:metsHdr CREATEDATE="2010-05-02T00:07:12" RECORDSTATUS="NEW">
+  <METS:agent ROLE="CREATOR" TYPE="ORGANIZATION">
+   <METS:name>DLPS</METS:name>
+  </METS:agent>
+  <METS:altRecordID ID="ia.winterinjapanchi00goodiala" TYPE="IAidentifier" />
+ </METS:metsHdr>
+ <METS:dmdSec ID="DMD1">
+  <METS:mdWrap MIMETYPE="text/xml" MDTYPE="MARC" LABEL="IA MARC record">
+   <METS:xmlData><record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>00655nam a2200241K  4500</leader>
+  <controlfield tag="001">1529498</controlfield>
+  <controlfield tag="005">19860312124153.0</controlfield>
+  <controlfield tag="008">860312s1890    xx c          000 0 eng d</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)13285888</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="9">07-AEO-4009</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="c">CLU</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Goodwin, L. C.</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="2">
+    <subfield code="a">A winter in Japan and China.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">[n.p.,</subfield>
+    <subfield code="c">1890?]</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">67 p. incl. front. (port.)</subfield>
+    <subfield code="c">23 cm.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Caption title.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Signed: L.C. Goodwin.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Author&apos;s autographed presentation copy.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Japan</subfield>
+    <subfield code="x">Description and travel.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">China</subfield>
+    <subfield code="x">Description and travel.</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">rcp 36</subfield>
+  </datafield>
+  <datafield tag="935" ind1=" " ind2=" ">
+    <subfield code="a">MC2921975</subfield>
+  </datafield>
+  <datafield tag="910" ind1=" " ind2=" ">
+    <subfield code="a">MARS</subfield>
+  </datafield>
+</record>
+</METS:xmlData>
+  </METS:mdWrap>
+ </METS:dmdSec>
+ <METS:dmdSec ID="DMD2">
+  <METS:mdWrap MIMETYPE="text/xml" MDTYPE="OTHER" LABEL="IA metadata">
+   <METS:xmlData><metadata>
+  <title>A winter in Japan and China</title>
+  <creator>Goodwin, L. C</creator>
+  <subject>Japan -- Description and travel</subject>
+  <subject>China -- Description and travel</subject>
+  <publisher>[n.p.</publisher>
+  <date>1890?]</date>
+  <language>eng</language>
+  <copyright-evidence-operator>tomworkman</copyright-evidence-operator>
+  <possible-copyright-status>NOT_IN_COPYRIGHT</possible-copyright-status>
+  <copyright-region>US</copyright-region>
+  <copyright-evidence>Evidence reported by tomworkman for item winterinjapanchi00goodiala on November 15, 2007: no visible notice of copyright; exact publication date unknown.</copyright-evidence>
+  <copyright-evidence-date>20071115025638</copyright-evidence-date>
+  <sponsor>MSN</sponsor>
+  <contributor>University of California Libraries</contributor>
+  <scanningcenter>iala</scanningcenter>
+  <mediatype>texts</mediatype>
+  <collection>americana</collection>
+  <collection>cdl</collection>
+  <call_number>SRLF:LAGE-1529498</call_number>
+  <collection-library>SRLF</collection-library>
+  <identifier-bib>LAGE-1529498</identifier-bib>
+  
+  <repub_state>-1</repub_state>
+  <updatedate>2007-11-15 02:57:04</updatedate>
+  <updater>tomworkman</updater>
+  <identifier>winterinjapanchi00goodiala</identifier>
+  <uploader>tomworkman@archive.org</uploader>
+  <addeddate>2007-11-15 02:57:06</addeddate>
+  <publicdate>2007-11-15 02:57:19</publicdate>
+<imagecount>84</imagecount><ppi>400</ppi><lcamid>1721200377</lcamid><rcamid>1020707243</rcamid><camera>5D</camera><operator>scanner-bryan-adams@archive.org</operator><scanner>iala5</scanner><scandate>20071115221235</scandate><identifier-access>http://www.archive.org/details/winterinjapanchi00goodiala</identifier-access><identifier-ark>ark:/13960/t0cv4fp34</identifier-ark><bookplateleaf>0004</bookplateleaf><curation>[curator]tomworkman@archive.org[/curator][date]20071117012034[/date][state]approved[/state]</curation><sponsordate>20071130</sponsordate><filesxml>Thu Mar 18 14:21:49 UTC 2010</filesxml></metadata>
+</METS:xmlData>
+  </METS:mdWrap>
+ </METS:dmdSec>
+ <METS:amdSec>
+  <METS:techMD ID="TMD1">
+   <METS:mdWrap MDTYPE="OTHER" LABEL="IA scandata">
+    <METS:xmlData><book xmlns="http://archive.org/scribe/xml">
+  <bookData>
+    <version>2.2.4</version>
+    <bookId>winterinjapanchi00goodiala</bookId>
+    <spreadCount>43</spreadCount>
+    <leafCount>84</leafCount>
+    <maxSpreadNum>43</maxSpreadNum>
+    <cameraModel>5D</cameraModel>
+    <leftCameraId>1721200377</leftCameraId>
+    <rightCameraId>1020707243</rightCameraId>
+    <dpi>400</dpi>
+    <jpgToCr2Multiplier>1.427725</jpgToCr2Multiplier>
+    <pageNumData>
+      <assertion>
+        <leafNum>10</leafNum>
+        <pageNum>4</pageNum>
+      </assertion>
+      <assertion>
+        <leafNum>22</leafNum>
+        <pageNum>16</pageNum>
+      </assertion>
+      <assertion>
+        <leafNum>44</leafNum>
+        <pageNum>38</pageNum>
+      </assertion>
+      <assertion>
+        <leafNum>61</leafNum>
+        <pageNum>55</pageNum>
+      </assertion>
+      <assertion>
+        <leafNum>73</leafNum>
+        <pageNum>67</pageNum>
+      </assertion>
+    </pageNumData>
+  </bookData>
+  <scanLog>
+    <scanEvent>
+      <scannerEmail>scanner-bryan-adams@archive.org</scannerEmail>
+      <scribe>iala5</scribe>
+      <startTimeStamp>20071115220006</startTimeStamp>
+      <endTimeStamp>20071115221235</endTimeStamp>
+      <spreadShots>43</spreadShots>
+      <maxSpreadNum>43</maxSpreadNum>
+      <missingPages/>
+      <damage/>
+      <scanFactor1/>
+      <scanFactor2/>
+    </scanEvent>
+  </scanLog>
+  <pageData>
+    <page leafNum="1">
+      <handSide>RIGHT</handSide>
+      <pageNumber/>
+      <pageType>Cover</pageType>
+      <addToAccessFormats>true</addToAccessFormats>
+      <rotateDegree>90</rotateDegree>
+      <skewActive>true</skewActive>
+      <skewAngle>0.125</skewAngle>
+      <skewAngleDetect>0.125</skewAngleDetect>
+      <skewScore>3.46</skewScore>
+      <paperLum>177</paperLum>
+      <threshold>165</threshold>
+      <gmtTimeStamp>20071115220028</gmtTimeStamp>
+      <cropBox>
+        <x>262.0</x>
+        <y>632.0</y>
+        <w>2130.0</w>
+        <h>3466.0</h>
+      </cropBox>
+      <pageNumBox>
+        <x>398.0</x>
+        <y>1426.0</y>
+        <w>342.0</w>
+        <h>284.0</h>
+      </pageNumBox>
+    </page>
+    <page leafNum="2">
+      <handSide>LEFT</handSide>
+      <pageNumber/>
+      <pageType>Normal</pageType>
+      <addToAccessFormats>true</addToAccessFormats>
+      <rotateDegree>270</rotateDegree>
+      <skewActive>true</skewActive>
+      <skewAngle>1.125</skewAngle>
+      <skewAngleDetect>1.125</skewAngleDetect>
+      <skewScore>2.93</skewScore>
+      <paperLum>169</paperLum>
+      <threshold>163</threshold>
+      <gmtTimeStamp>20071115220055</gmtTimeStamp>
+      <cropBox>
+        <x>718.0</x>
+        <y>872.0</y>
+        <w>1838.0</w>
+        <h>2848.0</h>
+      </cropBox>
+      <pageNumBox>
+        <x>398.0</x>
+        <y>1426.0</y>
+        <w>342.0</w>
+        <h>284.0</h>
+      </pageNumBox>
+    </page>
+    <page leafNum="3">
+      <handSide>RIGHT</handSide>
+      <pageNumber/>
+      <pageType>Normal</pageType>
+      <addToAccessFormats>true</addToAccessFormats>
+      <rotateDegree>90</rotateDegree>
+      <skewActive>true</skewActive>
+      <skewAngle>0.766</skewAngle>
+      <skewAngleDetect>0.766</skewAngleDetect>
+      <skewScore>5.15</skewScore>
+      <paperLum>24</paperLum>
+      <threshold>19</threshold>
+      <gmtTimeStamp>20071115220055</gmtTimeStamp>
+      <cropBox>
+        <x>336.0</x>
+        <y>986.0</y>
+        <w>1838.0</w>
+        <h>2848.0</h>
+      </cropBox>
+      <pageNumBox>
+        <x>398.0</x>
+        <y>1426.0</y>
+        <w>342.0</w>
+        <h>284.0</h>
+      </pageNumBox>
+    </page>
+    <page leafNum="4">
+      <handSide>LEFT</handSide>
+      <pageNumber/>
+      <pageType>Normal</pageType>
+      <addToAccessFormats>true</addToAccessFormats>
+      <rotateDegree>270</rotateDegree>
+      <skewActive>false</skewActive>
+      <skewAngle>1.859</skewAngle>
+      <skewAngleDetect>1.859</skewAngleDetect>
+      <skewScore>1.31</skewScore>
+      <paperLum>156</paperLum>
+      <threshold>144</threshold>
+      <gmtTimeStamp>20071115220113</gmtTimeStamp>
+      <cropBox>
+        <x>776.0</x>
+        <y>884.0</y>
+        <w>1838.0</w>
+        <h>2848.0</h>
+      </cropBox>
+      <pageNumBox>
+        <x>398.0</x>
+        <y>1426.0</y>
+        <w>342.0</w>
+        <h>284.0</h>
+      </pageNumBox>
+    </page>
+    <page leafNum="5">
+      <handSide>RIGHT</handSide>
+      <pageNumber/>
+      <pageType>Normal</pageType>
+      <addToAccessFormats>true</addToAccessFormats>
+      <rotateDegree>90</rotateDegree>
+      <skewActive>true</skewActive>
+      <skewAngle>0.266</skewAngle>
+      <skewAngleDetect>0.266</skewAngleDetect>
+      <skewScore>2.96</skewScore>
+      <paperLum>158</paperLum>
+      <threshold>141</threshold>
+      <gmtTimeStamp>20071115220113</gmtTimeStamp>
+      <cropBox>
+        <x>336.0</x>
+        <y>986.0</y>
+        <w>1838.0</w>
+        <h>2848.0</h>
+      </cropBox>
+      <pageNumBox>
+        <x>398.0</x>
+        <y>1426.0</y>
+        <w>342.0</w>
+        <h>284.0</h>
+      </pageNumBox>
+    </page>
+    <page leafNum="6">
+      <handSide>LEFT</handSide>
+      <pageNumber/>
+      <pageType>Normal</pageType>
+      <addToAccessFormats>true</addToAccessFormats>
+      <rotateDegree>270</rotateDegree>
+      <skewActive>false</skewActive>
+      <skewAngle>1.75</skewAngle>
+      <skewAngleDetect>1.75</skewAngleDetect>
+      <skewScore>1.48</skewScore>
+      <paperLum>158</paperLum>
+      <threshold>147</threshold>
+      <gmtTimeStamp>20071115220126</gmtTimeStamp>
+      <cropBox>
+        <x>748.0</x>
+        <y>976.0</y>
+        <w>1970.0</w>
+        <h>2900.0</h>
+      </cropBox>
+      <pageNumBox>
+        <x>398.0</x>
+        <y>1426.0</y>
+        <w>342.0</w>
+        <h>284.0</h>
+      </pageNumBox>
+    </page>
+    <page leafNum="7">
+      <handSide>RIGHT</handSide>
+      <pageNumber/>
+      <pageType>Normal</pageType>
+      <addToAccessFormats>true</addToAccessFormats>
+      <rotateDegree>90</rotateDegree>
+      <skewActive>true</skewActive>
+      <skewAngle>0.234</skewAngle>
+      <skewAngleDetect>0.234</skewAngleDetect>
+      <skewScore>2.96</skewScore>
+      <paperLum>159</paperLum>
+      <threshold>143</threshold>
+      <gmtTimeStamp>20071115220126</gmtTimeStamp>
+      <cropBox>
+        <x>228.0</x>
+        <y>952.0</y>
+        <w>1970.0</w>
+        <h>2900.0</h>
+      </cropBox>
+      <pageNumBox>
+        <x>398.0</x>
+        <y>1426.0</y>
+        <w>342.0</w>
+        <h>284.0</h>
+      </pageNumBox>
+    </page>
+    <page leafNum="8">
+      <handSide>LEFT</handSide>
+      <pageNumber/>
+      <pageType>Normal</pageType>
+      <addToAccessFormats>true</addToAccessFormats>
+      <rotateDegree>270</rotateDegree>
+      <skewActive>true</skewActive>
+      <skewAngle>1.891</skewAngle>
+      <skewAngleDetect>1.891</skewAngleDetect>
+      <skewScore>1.99</skewScore>
+      <paperLum>159</paperLum>
+      <threshold>147</threshold>
+      <gmtTimeStamp>20071115220159</gmtTimeStamp>
+      <cropBox>
+        <x>702.0</x>
+        <y>872.0</y>
+        <w>1986.0</w>
+        <h>3168.0</h>
+      </cropBox>
+      <pageNumBox>
+        <x>398.0</x>
+        <y>1426.0</y>
+        <w>342.0</w>
+        <h>284.0</h>
+      </pageNumBox>
+    </page>
+    <page leafNum="9">
+      <handSide>RIGHT</handSide>
+      <pageNumber/>
+      <pageType>Title Page</pageType>
+      <addToAccessFormats>true</addToAccessFormats>
+      <rotateDegree>90</rotateDegree>
+      <skewActive>true</skewActive>
+      <skewAngle>0.531</skewAngle>
+      <skewAngleDetect>0.531</skewAngleDetect>
+      <skewScore>9.57</skewScore>
+      <paperLum>156</paperLum>
+      <threshold>140</threshold>
+      <gmtTimeStamp>20071115220159</gmtTimeStamp>
+      <cropBox>
+        <x>222.0</x>
+        <y>798.0</y>
+        <w>1986.0</w>
+        <h>3168.0</h>
+      </cropBox>
+      <pageNumBox>
+        <x>398.0</x>
+        <y>1426.0</y>
+        <w>342.0</w>
+        <h>284.0</h>
+      </pageNumBox>
+    </page>
+    <page leafNum="10">
+      <handSide>LEFT</handSide>
+      <pageNumber>4</pageNumber>
+      <pageType>Copyright</pageType>
+      <addToAccessFormats>true</addToAccessFormats>
+      <rotateDegree>270</rotateDegree>
+      <skewActive>true</skewActive>
+      <skewAngle>1.594</skewAngle>
+      <skewAngleDetect>1.594</skewAngleDetect>
+      <skewScore>9.82</skewScore>
+      <paperLum>153</paperLum>
+      <threshold>140</threshold>
+      <gmtTimeStamp>20071115220221</gmtTimeStamp>
+      <cropBox>
+        <x>724.0</x>
+        <y>764.0</y>
+        <w>1992.0</w>
+        <h>3238.0</h>
+      </cropBox>
+      <pageNumBox>
+        <x>764.0</x>
+        <y>810.0</y>
+        <w>342.0</w>
+        <h>284.0</h>
+      </pageNumBox>
+    </page>
+</pageData>
+</book>
+</METS:xmlData>
+   </METS:mdWrap>
+  </METS:techMD>
+  <METS:digiprovMD ID="premis1">
+   <METS:mdWrap MDTYPE="PREMIS">
+    <METS:xmlData>
+     <PREMIS:premis version="2.0">
+      <PREMIS:object xsi:type="PREMIS:representation">
+       <PREMIS:objectIdentifier>
+        <PREMIS:objectIdentifierType>ark</PREMIS:objectIdentifierType>
+        <PREMIS:objectIdentifierValue>uc2.ark:/13960/t0cv4fp34</PREMIS:objectIdentifierValue>
+       </PREMIS:objectIdentifier>
+       <PREMIS:preservationLevel>
+        <PREMIS:preservationLevelValue>1</PREMIS:preservationLevelValue>
+       </PREMIS:preservationLevel>
+      </PREMIS:object>
+      <PREMIS:event>
+       <PREMIS:eventIdentifier>
+        <PREMIS:eventIdentifierType>Internet Archive</PREMIS:eventIdentifierType>
+        <PREMIS:eventIdentifierValue>capture1</PREMIS:eventIdentifierValue>
+       </PREMIS:eventIdentifier>
+       <PREMIS:eventType>capture</PREMIS:eventType>
+       <PREMIS:eventDateTime>2007-11-15T22:12:35</PREMIS:eventDateTime>
+       <PREMIS:eventDetail>Initial capture of item</PREMIS:eventDetail>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>AgentID</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>Internet Archive</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>Executor</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>tool</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>iala5</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>image capture</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+      </PREMIS:event>
+      <PREMIS:event>
+       <PREMIS:eventIdentifier>
+        <PREMIS:eventIdentifierType>UM</PREMIS:eventIdentifierType>
+        <PREMIS:eventIdentifierValue>fixity check1</PREMIS:eventIdentifierValue>
+       </PREMIS:eventIdentifier>
+       <PREMIS:eventType>fixity check</PREMIS:eventType>
+       <PREMIS:eventDateTime>2010-05-02T00:07:03</PREMIS:eventDateTime>
+       <PREMIS:eventDetail>Calculation of md5 hash values for downloaded IA files, comparison with pre-download md5 values</PREMIS:eventDetail>
+       <PREMIS:eventOutcomeInformation>
+        <PREMIS:eventOutcome>warning</PREMIS:eventOutcome>
+        <PREMIS:eventOutcomeDetail>
+         <PREMIS:eventOutcomeDetailNote>files failed checksum validation</PREMIS:eventOutcomeDetailNote>
+         <PREMIS:eventOutcomeDetailExtension>
+          <HT:fileList status="failed">
+           <HT:file>winterinjapanchi00goodiala_files.xml</HT:file>
+           <HT:file>winterinjapanchi00goodiala_meta.xml</HT:file>
+          </HT:fileList>
+         </PREMIS:eventOutcomeDetailExtension>
+        </PREMIS:eventOutcomeDetail>
+       </PREMIS:eventOutcomeInformation>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>AgentID</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>UM</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>Executor</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>tool</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>md5sum</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>software</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+      </PREMIS:event>
+      <PREMIS:event>
+       <PREMIS:eventIdentifier>
+        <PREMIS:eventIdentifierType>UM</PREMIS:eventIdentifierType>
+        <PREMIS:eventIdentifierValue>package inspection1</PREMIS:eventIdentifierValue>
+       </PREMIS:eventIdentifier>
+       <PREMIS:eventType>package inspection</PREMIS:eventType>
+       <PREMIS:eventDateTime>2010-05-02T00:07:02</PREMIS:eventDateTime>
+       <PREMIS:eventDetail>Inspection of IA download package for missing files</PREMIS:eventDetail>
+       <PREMIS:eventOutcomeInformation>
+        <PREMIS:eventOutcome>warning</PREMIS:eventOutcome>
+        <PREMIS:eventOutcomeDetail>
+         <PREMIS:eventOutcomeDetailNote>files missing</PREMIS:eventOutcomeDetailNote>
+         <PREMIS:eventOutcomeDetailExtension>
+          <HT:fileList status="missing">
+           <HT:file>winterinjapanchi00goodiala_scanfactors.xml</HT:file>
+          </HT:fileList>
+         </PREMIS:eventOutcomeDetailExtension>
+        </PREMIS:eventOutcomeDetail>
+       </PREMIS:eventOutcomeInformation>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>AgentID</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>UM</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>Executor</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>tool</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>ingest_ia_volumes.pl</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>software</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+      </PREMIS:event>
+      <PREMIS:event>
+       <PREMIS:eventIdentifier>
+        <PREMIS:eventIdentifierType>UM</PREMIS:eventIdentifierType>
+        <PREMIS:eventIdentifierValue>mod1_image_header</PREMIS:eventIdentifierValue>
+       </PREMIS:eventIdentifier>
+       <PREMIS:eventType>image header modification</PREMIS:eventType>
+       <PREMIS:eventDateTime>2010-05-02T00:07:11</PREMIS:eventDateTime>
+       <PREMIS:eventDetail>Image header modification to HathiTrust conventions</PREMIS:eventDetail>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>AgentID</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>UM</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>Executor</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>tool</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>ingest_ia_volumes.pl</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>software</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>tool</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>exiftool</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>software</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+      </PREMIS:event>
+      <PREMIS:event>
+       <PREMIS:eventIdentifier>
+        <PREMIS:eventIdentifierType>UM</PREMIS:eventIdentifierType>
+        <PREMIS:eventIdentifierValue>mod2_file_rename</PREMIS:eventIdentifierValue>
+       </PREMIS:eventIdentifier>
+       <PREMIS:eventType>file rename</PREMIS:eventType>
+       <PREMIS:eventDateTime>2010-05-02T00:07:03</PREMIS:eventDateTime>
+       <PREMIS:eventDetail>File renaming to HathiTrust conventions</PREMIS:eventDetail>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>AgentID</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>UM</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>Executor</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>tool</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>ingest_ia_volumes.pl</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>software</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+      </PREMIS:event>
+      <PREMIS:event>
+       <PREMIS:eventIdentifier>
+        <PREMIS:eventIdentifierType>UM</PREMIS:eventIdentifierType>
+        <PREMIS:eventIdentifierValue>mod3_ocr_split</PREMIS:eventIdentifierValue>
+       </PREMIS:eventIdentifier>
+       <PREMIS:eventType>ocr split</PREMIS:eventType>
+       <PREMIS:eventDateTime>2010-05-02T00:07:04</PREMIS:eventDateTime>
+       <PREMIS:eventDetail>Splitting of IA XML OCR into one plain text OCR file and one XML file (with coordinates) per page</PREMIS:eventDetail>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>AgentID</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>UM</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>Executor</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>tool</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>ingest_ia_volumes.pl</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>software</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+      </PREMIS:event>
+      <PREMIS:event>
+       <PREMIS:eventIdentifier>
+        <PREMIS:eventIdentifierType>UM</PREMIS:eventIdentifierType>
+        <PREMIS:eventIdentifierValue>mod4_ia_mets_creation</PREMIS:eventIdentifierValue>
+       </PREMIS:eventIdentifier>
+       <PREMIS:eventType>ia mets creation</PREMIS:eventType>
+       <PREMIS:eventDateTime>2010-05-02T00:07:12</PREMIS:eventDateTime>
+       <PREMIS:eventDetail>Creation of IA METS file</PREMIS:eventDetail>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>AgentID</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>UM</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>Executor</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>tool</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>ingest_ia_volumes.pl</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>software</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+      </PREMIS:event>
+      <PREMIS:event>
+       <PREMIS:eventIdentifier>
+        <PREMIS:eventIdentifierType>UM</PREMIS:eventIdentifierType>
+        <PREMIS:eventIdentifierValue>message digest calculation1</PREMIS:eventIdentifierValue>
+       </PREMIS:eventIdentifier>
+       <PREMIS:eventType>message digest calculation</PREMIS:eventType>
+       <PREMIS:eventDateTime>2010-05-02T00:07:12</PREMIS:eventDateTime>
+       <PREMIS:eventDetail>Calculation of page-level md5 checksums</PREMIS:eventDetail>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>AgentID</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>UM</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>Executor</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>tool</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>md5sum</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>software</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+      </PREMIS:event>
+      <PREMIS:event>
+       <PREMIS:eventIdentifier>
+        <PREMIS:eventIdentifierType>UM</PREMIS:eventIdentifierType>
+        <PREMIS:eventIdentifierValue>validation1</PREMIS:eventIdentifierValue>
+       </PREMIS:eventIdentifier>
+       <PREMIS:eventType>validation</PREMIS:eventType>
+       <PREMIS:eventDateTime>2010-05-02T00:07:12</PREMIS:eventDateTime>
+       <PREMIS:eventDetail>IA METS validation</PREMIS:eventDetail>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>AgentID</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>UM</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>Executor</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+       <PREMIS:linkingAgentIdentifier>
+        <PREMIS:linkingAgentIdentifierType>tool</PREMIS:linkingAgentIdentifierType>
+        <PREMIS:linkingAgentIdentifierValue>Xerces-C 3.1.0</PREMIS:linkingAgentIdentifierValue>
+        <PREMIS:linkingAgentRole>software</PREMIS:linkingAgentRole>
+       </PREMIS:linkingAgentIdentifier>
+      </PREMIS:event>
+     </PREMIS:premis>
+    </METS:xmlData>
+   </METS:mdWrap>
+  </METS:digiprovMD>
+ </METS:amdSec>
+ <METS:fileSec>
+  <METS:fileGrp ID="FG1" USE="image">
+   <METS:file ID="IMG00000001" MIMETYPE="image/jp2" SEQ="00000001" CREATED="2010-05-02T00:07:04" SIZE="674159" CHECKSUM="4add22e3b944a63a94b3e4749e0642f1" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000001.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000002" MIMETYPE="image/jp2" SEQ="00000002" CREATED="2010-05-02T00:07:04" SIZE="382178" CHECKSUM="c3b31dd95368d69b4a4ca559633688ec" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000002.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000003" MIMETYPE="image/jp2" SEQ="00000003" CREATED="2010-05-02T00:07:04" SIZE="242706" CHECKSUM="a883d88793e536307975a3d54f28463a" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000003.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000004" MIMETYPE="image/jp2" SEQ="00000004" CREATED="2010-05-02T00:07:04" SIZE="468440" CHECKSUM="65eff927a2da6d22d48a4284c36e1da2" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000004.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000005" MIMETYPE="image/jp2" SEQ="00000005" CREATED="2010-05-02T00:07:04" SIZE="223978" CHECKSUM="167a2955f8f362cb0c6ef2b1782a3652" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000005.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000006" MIMETYPE="image/jp2" SEQ="00000006" CREATED="2010-05-02T00:07:04" SIZE="398975" CHECKSUM="881c43d6bba1d3de740a44840fe58d0a" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000006.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000007" MIMETYPE="image/jp2" SEQ="00000007" CREATED="2010-05-02T00:07:04" SIZE="593031" CHECKSUM="0b5b08150b29e51219ddbda0345e82b3" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000007.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000008" MIMETYPE="image/jp2" SEQ="00000008" CREATED="2010-05-02T00:07:04" SIZE="256749" CHECKSUM="2019e81c0a36f3c8e7fc49897bf6b5d6" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000008.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000009" MIMETYPE="image/jp2" SEQ="00000009" CREATED="2010-05-02T00:07:04" SIZE="521996" CHECKSUM="2ba0af7a01329a82c078ae49503c13ee" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000009.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000010" MIMETYPE="image/jp2" SEQ="00000010" CREATED="2010-05-02T00:07:04" SIZE="593012" CHECKSUM="faa40379ee7870bcaae3205a25d731e8" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000010.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000011" MIMETYPE="image/jp2" SEQ="00000011" CREATED="2010-05-02T00:07:04" SIZE="871980" CHECKSUM="fde747ff6c6c7214b4518f3c787ca6e7" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000011.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000012" MIMETYPE="image/jp2" SEQ="00000012" CREATED="2010-05-02T00:07:05" SIZE="665176" CHECKSUM="2f95fa39fb0adff28ba768b3c69d19ec" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000012.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000013" MIMETYPE="image/jp2" SEQ="00000013" CREATED="2010-05-02T00:07:05" SIZE="717619" CHECKSUM="2b98013cde93895111dbcc6718ad12dd" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000013.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000014" MIMETYPE="image/jp2" SEQ="00000014" CREATED="2010-05-02T00:07:05" SIZE="699763" CHECKSUM="5c73d10054814de98ed64039882d36b3" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000014.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000015" MIMETYPE="image/jp2" SEQ="00000015" CREATED="2010-05-02T00:07:05" SIZE="739137" CHECKSUM="7d0434fca30e98dc27314d8e3e1f8b7a" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000015.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000016" MIMETYPE="image/jp2" SEQ="00000016" CREATED="2010-05-02T00:07:05" SIZE="683922" CHECKSUM="30fa3d216e341851240c056a3dd01de0" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000016.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000017" MIMETYPE="image/jp2" SEQ="00000017" CREATED="2010-05-02T00:07:05" SIZE="720941" CHECKSUM="74da5e93215b81e19d14bc825f2427b6" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000017.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000018" MIMETYPE="image/jp2" SEQ="00000018" CREATED="2010-05-02T00:07:05" SIZE="704034" CHECKSUM="8fe6735ab6c44285fc0cae558313dac3" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000018.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000019" MIMETYPE="image/jp2" SEQ="00000019" CREATED="2010-05-02T00:07:05" SIZE="721057" CHECKSUM="aaa83ad872a6e76e9c436a386151acb6" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000019.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000020" MIMETYPE="image/jp2" SEQ="00000020" CREATED="2010-05-02T00:07:05" SIZE="678401" CHECKSUM="19d319a7e145d043c487d90d92c5cc10" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000020.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000021" MIMETYPE="image/jp2" SEQ="00000021" CREATED="2010-05-02T00:07:05" SIZE="711144" CHECKSUM="1a76e3158403c24106eddb96bec2bb4b" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000021.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000022" MIMETYPE="image/jp2" SEQ="00000022" CREATED="2010-05-02T00:07:05" SIZE="690062" CHECKSUM="af4cdb77247c142adf31ed1c5c544c6b" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000022.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000023" MIMETYPE="image/jp2" SEQ="00000023" CREATED="2010-05-02T00:07:05" SIZE="722809" CHECKSUM="75de76978572acd8d8bc9f32de5cf8e4" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000023.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000024" MIMETYPE="image/jp2" SEQ="00000024" CREATED="2010-05-02T00:07:05" SIZE="707935" CHECKSUM="c17838d1b39644bacc4ac83ce27eec30" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000024.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000025" MIMETYPE="image/jp2" SEQ="00000025" CREATED="2010-05-02T00:07:05" SIZE="701901" CHECKSUM="02f84c304405b0546b98defe40c1fed8" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000025.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000026" MIMETYPE="image/jp2" SEQ="00000026" CREATED="2010-05-02T00:07:05" SIZE="683050" CHECKSUM="f298facc032d5f0daa7453fda9338867" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000026.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000027" MIMETYPE="image/jp2" SEQ="00000027" CREATED="2010-05-02T00:07:05" SIZE="721404" CHECKSUM="20935f155e89c098e74277cb584ce857" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000027.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000028" MIMETYPE="image/jp2" SEQ="00000028" CREATED="2010-05-02T00:07:05" SIZE="678991" CHECKSUM="257f5822b86202d769de445ed2faf38f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000028.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000029" MIMETYPE="image/jp2" SEQ="00000029" CREATED="2010-05-02T00:07:05" SIZE="731633" CHECKSUM="0ee6d3ca3498dfb524de59a93a852c24" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000029.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000030" MIMETYPE="image/jp2" SEQ="00000030" CREATED="2010-05-02T00:07:06" SIZE="688509" CHECKSUM="a7ef30137d1bfa32292871d3b063e6fe" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000030.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000031" MIMETYPE="image/jp2" SEQ="00000031" CREATED="2010-05-02T00:07:06" SIZE="727225" CHECKSUM="9c28336ce1a873328762a9a15fab2ae8" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000031.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000032" MIMETYPE="image/jp2" SEQ="00000032" CREATED="2010-05-02T00:07:06" SIZE="685402" CHECKSUM="7bb0e26ece06e6d77a31d11361ba3e9e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000032.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000033" MIMETYPE="image/jp2" SEQ="00000033" CREATED="2010-05-02T00:07:06" SIZE="707058" CHECKSUM="7e8779fa19f65ee0480d7f385c8a6194" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000033.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000034" MIMETYPE="image/jp2" SEQ="00000034" CREATED="2010-05-02T00:07:06" SIZE="698475" CHECKSUM="cebbc318b89d2c839ad96e754c67c3b6" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000034.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000035" MIMETYPE="image/jp2" SEQ="00000035" CREATED="2010-05-02T00:07:06" SIZE="752138" CHECKSUM="08d8f3a1bc5d03ad82ba18092735d437" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000035.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000036" MIMETYPE="image/jp2" SEQ="00000036" CREATED="2010-05-02T00:07:06" SIZE="666635" CHECKSUM="0bb0bf76f9f9b11f1586d812731881fe" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000036.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000037" MIMETYPE="image/jp2" SEQ="00000037" CREATED="2010-05-02T00:07:06" SIZE="703408" CHECKSUM="519a7382dd4685331a3c4c0f6e2d58fb" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000037.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000038" MIMETYPE="image/jp2" SEQ="00000038" CREATED="2010-05-02T00:07:06" SIZE="677664" CHECKSUM="2e337195deedb8e721fb5da8d5e1df5d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000038.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000039" MIMETYPE="image/jp2" SEQ="00000039" CREATED="2010-05-02T00:07:06" SIZE="699764" CHECKSUM="bcf7917c7777ec53ead76c3d6b284c7d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000039.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000040" MIMETYPE="image/jp2" SEQ="00000040" CREATED="2010-05-02T00:07:06" SIZE="680914" CHECKSUM="03975d3eab94b08bad3e188c94bbdb99" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000040.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000041" MIMETYPE="image/jp2" SEQ="00000041" CREATED="2010-05-02T00:07:06" SIZE="710904" CHECKSUM="2ec0a5304c9f69d1e5941cc51e7261a7" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000041.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000042" MIMETYPE="image/jp2" SEQ="00000042" CREATED="2010-05-02T00:07:06" SIZE="683355" CHECKSUM="577cccbd6b147893f6c78435ad602973" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000042.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000043" MIMETYPE="image/jp2" SEQ="00000043" CREATED="2010-05-02T00:07:06" SIZE="713470" CHECKSUM="0e708428780a9fc59ff198c3499c3e01" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000043.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000044" MIMETYPE="image/jp2" SEQ="00000044" CREATED="2010-05-02T00:07:07" SIZE="709120" CHECKSUM="91629afa8bf45c1d7ab6357c0fab688d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000044.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000045" MIMETYPE="image/jp2" SEQ="00000045" CREATED="2010-05-02T00:07:07" SIZE="719281" CHECKSUM="d52ccc1ed9802c6544477266bf070e9c" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000045.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000046" MIMETYPE="image/jp2" SEQ="00000046" CREATED="2010-05-02T00:07:07" SIZE="692360" CHECKSUM="dcf67578a70eeaa9fb9c576c0afc7a5e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000046.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000047" MIMETYPE="image/jp2" SEQ="00000047" CREATED="2010-05-02T00:07:07" SIZE="750830" CHECKSUM="02e6919561f16a58569f0ac4dd8cb12d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000047.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000048" MIMETYPE="image/jp2" SEQ="00000048" CREATED="2010-05-02T00:07:07" SIZE="678767" CHECKSUM="5914e770e281d49725c68bc4c58051f0" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000048.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000049" MIMETYPE="image/jp2" SEQ="00000049" CREATED="2010-05-02T00:07:07" SIZE="713376" CHECKSUM="2e0d5f689ebc6c994843b004fdb82b43" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000049.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000050" MIMETYPE="image/jp2" SEQ="00000050" CREATED="2010-05-02T00:07:07" SIZE="656627" CHECKSUM="4fc5b1d6b0d1d2a2a7bdea53bccfdb8b" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000050.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000051" MIMETYPE="image/jp2" SEQ="00000051" CREATED="2010-05-02T00:07:07" SIZE="702934" CHECKSUM="1b5cb683312e4bd15722c35f3a24ebe1" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000051.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000052" MIMETYPE="image/jp2" SEQ="00000052" CREATED="2010-05-02T00:07:07" SIZE="705187" CHECKSUM="7dd51607b2750274d258062880e35eee" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000052.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000053" MIMETYPE="image/jp2" SEQ="00000053" CREATED="2010-05-02T00:07:07" SIZE="742122" CHECKSUM="46398897d38e11d3503f4fa37ab06c41" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000053.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000054" MIMETYPE="image/jp2" SEQ="00000054" CREATED="2010-05-02T00:07:08" SIZE="653855" CHECKSUM="946f2ac41fb18b13038726d0a78c4b9f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000054.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000055" MIMETYPE="image/jp2" SEQ="00000055" CREATED="2010-05-02T00:07:08" SIZE="662864" CHECKSUM="33cc9484dc0e96e45007dd571d350343" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000055.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000056" MIMETYPE="image/jp2" SEQ="00000056" CREATED="2010-05-02T00:07:09" SIZE="685873" CHECKSUM="5f7dead51ef994fbe79327457351dc2b" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000056.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000057" MIMETYPE="image/jp2" SEQ="00000057" CREATED="2010-05-02T00:07:09" SIZE="720526" CHECKSUM="204c65704dc64815befad5f04b46461c" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000057.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000058" MIMETYPE="image/jp2" SEQ="00000058" CREATED="2010-05-02T00:07:09" SIZE="676765" CHECKSUM="eae9fe7e93b64c268738795b6b69c227" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000058.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000059" MIMETYPE="image/jp2" SEQ="00000059" CREATED="2010-05-02T00:07:09" SIZE="673953" CHECKSUM="969881bb3584d8e7532d5b597ea7cfc0" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000059.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000060" MIMETYPE="image/jp2" SEQ="00000060" CREATED="2010-05-02T00:07:09" SIZE="661459" CHECKSUM="d7782421944deaefd25415ef864f3fec" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000060.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000061" MIMETYPE="image/jp2" SEQ="00000061" CREATED="2010-05-02T00:07:09" SIZE="679912" CHECKSUM="77e23b27b3c521ac1d358326945f3043" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000061.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000062" MIMETYPE="image/jp2" SEQ="00000062" CREATED="2010-05-02T00:07:09" SIZE="675629" CHECKSUM="b1b8a9123ae41acccadbcc34534e7ea0" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000062.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000063" MIMETYPE="image/jp2" SEQ="00000063" CREATED="2010-05-02T00:07:09" SIZE="694492" CHECKSUM="7f3f9ba9cb7a37ca8cf45ced01a8d349" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000063.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000064" MIMETYPE="image/jp2" SEQ="00000064" CREATED="2010-05-02T00:07:09" SIZE="661191" CHECKSUM="22b78b5b809d17aa4ce71930588cf1ee" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000064.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000065" MIMETYPE="image/jp2" SEQ="00000065" CREATED="2010-05-02T00:07:09" SIZE="897267" CHECKSUM="9f830f02b6b113e159acc1b8c2f85dec" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000065.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000066" MIMETYPE="image/jp2" SEQ="00000066" CREATED="2010-05-02T00:07:10" SIZE="696777" CHECKSUM="f3a280fa1dd91c1be5810d6df285cfdd" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000066.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000067" MIMETYPE="image/jp2" SEQ="00000067" CREATED="2010-05-02T00:07:10" SIZE="724931" CHECKSUM="ee21678be86031cd6cfc5a4f011ad6a8" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000067.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000068" MIMETYPE="image/jp2" SEQ="00000068" CREATED="2010-05-02T00:07:10" SIZE="675392" CHECKSUM="6b283ea9c1574e4b1ce507d74f03029d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000068.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000069" MIMETYPE="image/jp2" SEQ="00000069" CREATED="2010-05-02T00:07:10" SIZE="692578" CHECKSUM="79585d2d42a3f69fd5060d11ffbaa983" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000069.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000070" MIMETYPE="image/jp2" SEQ="00000070" CREATED="2010-05-02T00:07:10" SIZE="681377" CHECKSUM="96a8788beaec30ac35c45d5a69c09235" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000070.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000071" MIMETYPE="image/jp2" SEQ="00000071" CREATED="2010-05-02T00:07:10" SIZE="700821" CHECKSUM="6448222603f4ce36999e1b8a93449e2b" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000071.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000072" MIMETYPE="image/jp2" SEQ="00000072" CREATED="2010-05-02T00:07:10" SIZE="669977" CHECKSUM="6a73cd2e7c9836c0a13687fbc796825f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000072.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000073" MIMETYPE="image/jp2" SEQ="00000073" CREATED="2010-05-02T00:07:10" SIZE="431887" CHECKSUM="eacb7069541308672468d4a754e0da6b" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000073.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000074" MIMETYPE="image/jp2" SEQ="00000074" CREATED="2010-05-02T00:07:10" SIZE="242315" CHECKSUM="8074b822a5c583d7bdccd6197ae2acbb" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000074.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000075" MIMETYPE="image/jp2" SEQ="00000075" CREATED="2010-05-02T00:07:10" SIZE="220304" CHECKSUM="1842d712c6c18a43b4eb587141505983" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000075.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000076" MIMETYPE="image/jp2" SEQ="00000076" CREATED="2010-05-02T00:07:11" SIZE="354214" CHECKSUM="b426a9a5401a3c8a9f30876fa9a98e1d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000076.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000077" MIMETYPE="image/jp2" SEQ="00000077" CREATED="2010-05-02T00:07:11" SIZE="442397" CHECKSUM="67e3eeb0560e6f6eb1a08261f4fea2a9" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000077.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000078" MIMETYPE="image/jp2" SEQ="00000078" CREATED="2010-05-02T00:07:11" SIZE="397135" CHECKSUM="ec92927fdb7f500aa2bd5ae3cebd9885" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000078.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000079" MIMETYPE="image/jp2" SEQ="00000079" CREATED="2010-05-02T00:07:11" SIZE="315515" CHECKSUM="9bc444da331914157cff7af581fa53c1" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000079.jp2" />
+   </METS:file>
+   <METS:file ID="IMG00000080" MIMETYPE="image/jp2" SEQ="00000080" CREATED="2010-05-02T00:07:11" SIZE="512452" CHECKSUM="018e53b04282fb0ae69168a7ec0f1d1f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000080.jp2" />
+   </METS:file>
+  </METS:fileGrp>
+  <METS:fileGrp ID="FG2" USE="ocr">
+   <METS:file ID="TXT00000001" MIMETYPE="text/plain" SEQ="00000001" CREATED="2010-05-02T00:07:04" SIZE="0" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000001.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000002" MIMETYPE="text/plain" SEQ="00000002" CREATED="2010-05-02T00:07:04" SIZE="42" CHECKSUM="f0e9786e0797c202c34ca41b85e95f4d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000002.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000003" MIMETYPE="text/plain" SEQ="00000003" CREATED="2010-05-02T00:07:04" SIZE="0" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000003.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000004" MIMETYPE="text/plain" SEQ="00000004" CREATED="2010-05-02T00:07:04" SIZE="0" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000004.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000005" MIMETYPE="text/plain" SEQ="00000005" CREATED="2010-05-02T00:07:04" SIZE="0" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000005.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000006" MIMETYPE="text/plain" SEQ="00000006" CREATED="2010-05-02T00:07:04" SIZE="0" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000006.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000007" MIMETYPE="text/plain" SEQ="00000007" CREATED="2010-05-02T00:07:04" SIZE="0" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000007.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000008" MIMETYPE="text/plain" SEQ="00000008" CREATED="2010-05-02T00:07:04" SIZE="0" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000008.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000009" MIMETYPE="text/plain" SEQ="00000009" CREATED="2010-05-02T00:07:04" SIZE="1782" CHECKSUM="68da7ac0b3bdf224c1c8c03cd0e5d889" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000009.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000010" MIMETYPE="text/plain" SEQ="00000010" CREATED="2010-05-02T00:07:04" SIZE="2697" CHECKSUM="f5edf73a12d49bb913162bf5660b03de" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000010.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000011" MIMETYPE="text/plain" SEQ="00000011" CREATED="2010-05-02T00:07:04" SIZE="3754" CHECKSUM="f04496eb32f74d10136fbcbc39ac9c20" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000011.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000012" MIMETYPE="text/plain" SEQ="00000012" CREATED="2010-05-02T00:07:04" SIZE="3560" CHECKSUM="33956f1f297126f35dc9115d660f17e1" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000012.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000013" MIMETYPE="text/plain" SEQ="00000013" CREATED="2010-05-02T00:07:04" SIZE="3799" CHECKSUM="d12cf6e5b0670b93a204967bfdfdae97" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000013.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000014" MIMETYPE="text/plain" SEQ="00000014" CREATED="2010-05-02T00:07:04" SIZE="3902" CHECKSUM="aad62da8b7425a9b3fa990cf7a3f69d8" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000014.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000015" MIMETYPE="text/plain" SEQ="00000015" CREATED="2010-05-02T00:07:04" SIZE="3937" CHECKSUM="9a1a7c9331b63bfe272590a5e0ee7652" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000015.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000016" MIMETYPE="text/plain" SEQ="00000016" CREATED="2010-05-02T00:07:04" SIZE="3719" CHECKSUM="f9aef125c8eb62aa355f6c4c0a06011b" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000016.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000017" MIMETYPE="text/plain" SEQ="00000017" CREATED="2010-05-02T00:07:04" SIZE="3542" CHECKSUM="643bcea33fcf498305f3cbeb77ca100e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000017.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000018" MIMETYPE="text/plain" SEQ="00000018" CREATED="2010-05-02T00:07:04" SIZE="3734" CHECKSUM="e24e7c63847e705f47d683374c945f29" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000018.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000019" MIMETYPE="text/plain" SEQ="00000019" CREATED="2010-05-02T00:07:04" SIZE="3363" CHECKSUM="50d68ff0d601a3eaf92129c94f3e464b" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000019.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000020" MIMETYPE="text/plain" SEQ="00000020" CREATED="2010-05-02T00:07:04" SIZE="3624" CHECKSUM="3a5f63c958eca1b9fadf029040f19dad" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000020.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000021" MIMETYPE="text/plain" SEQ="00000021" CREATED="2010-05-02T00:07:04" SIZE="3709" CHECKSUM="b9e15b022dcc8df1cfbde2b762c28d5d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000021.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000022" MIMETYPE="text/plain" SEQ="00000022" CREATED="2010-05-02T00:07:04" SIZE="3798" CHECKSUM="ab041454ab7255152fe99fec382a2492" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000022.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000023" MIMETYPE="text/plain" SEQ="00000023" CREATED="2010-05-02T00:07:04" SIZE="3659" CHECKSUM="5ca602322c89e6b854e59b4135b07b64" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000023.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000024" MIMETYPE="text/plain" SEQ="00000024" CREATED="2010-05-02T00:07:04" SIZE="3841" CHECKSUM="6929df29d4e910e2a6f7aae7d093c9fe" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000024.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000025" MIMETYPE="text/plain" SEQ="00000025" CREATED="2010-05-02T00:07:04" SIZE="3706" CHECKSUM="7701372d40c89c595f89435dfbbc72e2" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000025.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000026" MIMETYPE="text/plain" SEQ="00000026" CREATED="2010-05-02T00:07:04" SIZE="3845" CHECKSUM="14db4a3629f4ac80c5cd769592c11605" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000026.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000027" MIMETYPE="text/plain" SEQ="00000027" CREATED="2010-05-02T00:07:04" SIZE="3811" CHECKSUM="65fbea3f2c8a9919a2d61a99be6b86ed" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000027.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000028" MIMETYPE="text/plain" SEQ="00000028" CREATED="2010-05-02T00:07:04" SIZE="3529" CHECKSUM="9dbf85ddc84a4571ec132014f3a2f215" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000028.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000029" MIMETYPE="text/plain" SEQ="00000029" CREATED="2010-05-02T00:07:04" SIZE="3811" CHECKSUM="51c1f2e11587c0c8f31e851bc51efacb" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000029.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000030" MIMETYPE="text/plain" SEQ="00000030" CREATED="2010-05-02T00:07:04" SIZE="3893" CHECKSUM="a8ca6553823f5d657c648d3b76fdba38" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000030.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000031" MIMETYPE="text/plain" SEQ="00000031" CREATED="2010-05-02T00:07:04" SIZE="3802" CHECKSUM="010ef07cc7983192cb73c391846df101" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000031.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000032" MIMETYPE="text/plain" SEQ="00000032" CREATED="2010-05-02T00:07:04" SIZE="3723" CHECKSUM="a4042366b33a814b1434a788e550f8b9" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000032.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000033" MIMETYPE="text/plain" SEQ="00000033" CREATED="2010-05-02T00:07:04" SIZE="3856" CHECKSUM="e8d21aacee63a6ed14af3427fe997165" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000033.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000034" MIMETYPE="text/plain" SEQ="00000034" CREATED="2010-05-02T00:07:04" SIZE="3871" CHECKSUM="345f4bef691d038447b5525742df9a8f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000034.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000035" MIMETYPE="text/plain" SEQ="00000035" CREATED="2010-05-02T00:07:04" SIZE="3934" CHECKSUM="59b1b6ad1bd0156d46df94cc543a78f0" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000035.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000036" MIMETYPE="text/plain" SEQ="00000036" CREATED="2010-05-02T00:07:04" SIZE="3629" CHECKSUM="017880ba2f6a4eec843709b5b36ebd2f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000036.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000037" MIMETYPE="text/plain" SEQ="00000037" CREATED="2010-05-02T00:07:04" SIZE="3766" CHECKSUM="f947193c251db682d8a1961ca8872afb" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000037.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000038" MIMETYPE="text/plain" SEQ="00000038" CREATED="2010-05-02T00:07:04" SIZE="3806" CHECKSUM="5f11851e02b35297b04c0a9a5491351d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000038.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000039" MIMETYPE="text/plain" SEQ="00000039" CREATED="2010-05-02T00:07:04" SIZE="3795" CHECKSUM="cc62e7fbcd4b6897f1425b5dd68abf9e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000039.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000040" MIMETYPE="text/plain" SEQ="00000040" CREATED="2010-05-02T00:07:04" SIZE="3826" CHECKSUM="b42280d380175a4b485cbd9581ac6466" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000040.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000041" MIMETYPE="text/plain" SEQ="00000041" CREATED="2010-05-02T00:07:04" SIZE="3779" CHECKSUM="045a5a0d386c3b39e31912a5f8e22b09" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000041.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000042" MIMETYPE="text/plain" SEQ="00000042" CREATED="2010-05-02T00:07:04" SIZE="3853" CHECKSUM="1d0fd344a00ba9dda5d7e27e0d5164a0" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000042.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000043" MIMETYPE="text/plain" SEQ="00000043" CREATED="2010-05-02T00:07:04" SIZE="3718" CHECKSUM="951dc7bf5853e6e71a16f2e3f4abaae8" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000043.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000044" MIMETYPE="text/plain" SEQ="00000044" CREATED="2010-05-02T00:07:04" SIZE="3917" CHECKSUM="182302e97a8b00dfcd45f77c7d7f32af" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000044.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000045" MIMETYPE="text/plain" SEQ="00000045" CREATED="2010-05-02T00:07:04" SIZE="3581" CHECKSUM="e58c0f01316366c2a521915b1f4ab3c2" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000045.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000046" MIMETYPE="text/plain" SEQ="00000046" CREATED="2010-05-02T00:07:04" SIZE="3656" CHECKSUM="2d81078789a30b29658bffae973bc5b6" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000046.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000047" MIMETYPE="text/plain" SEQ="00000047" CREATED="2010-05-02T00:07:04" SIZE="3816" CHECKSUM="ecc04b7b0b3a3d1494d092f7bf0a0734" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000047.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000048" MIMETYPE="text/plain" SEQ="00000048" CREATED="2010-05-02T00:07:04" SIZE="3733" CHECKSUM="36081f2b3702223c1ac586c981843003" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000048.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000049" MIMETYPE="text/plain" SEQ="00000049" CREATED="2010-05-02T00:07:04" SIZE="3541" CHECKSUM="d20e57bb7677a1e6df8e08950a016c00" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000049.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000050" MIMETYPE="text/plain" SEQ="00000050" CREATED="2010-05-02T00:07:04" SIZE="3644" CHECKSUM="41431d4b6954444c23847ea537becd2a" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000050.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000051" MIMETYPE="text/plain" SEQ="00000051" CREATED="2010-05-02T00:07:04" SIZE="3738" CHECKSUM="145327ffbee386d7ee188fd3e8f82bbb" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000051.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000052" MIMETYPE="text/plain" SEQ="00000052" CREATED="2010-05-02T00:07:04" SIZE="3726" CHECKSUM="6db1cad3a844aebfc00f2727889a6872" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000052.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000053" MIMETYPE="text/plain" SEQ="00000053" CREATED="2010-05-02T00:07:04" SIZE="3765" CHECKSUM="5a6f7eee20a5dd1ffac83c3a9d224f30" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000053.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000054" MIMETYPE="text/plain" SEQ="00000054" CREATED="2010-05-02T00:07:04" SIZE="3769" CHECKSUM="20e6c627cfcdf65fa2b705bb54e8d0ec" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000054.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000055" MIMETYPE="text/plain" SEQ="00000055" CREATED="2010-05-02T00:07:04" SIZE="3555" CHECKSUM="c767eb6781cb0bfc105f69edb051e49a" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000055.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000056" MIMETYPE="text/plain" SEQ="00000056" CREATED="2010-05-02T00:07:04" SIZE="3611" CHECKSUM="f2cbddd888db7130f8f7e6ed3ba06a3f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000056.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000057" MIMETYPE="text/plain" SEQ="00000057" CREATED="2010-05-02T00:07:04" SIZE="3549" CHECKSUM="6ce558d6924917baca7e06f0ffcd8afe" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000057.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000058" MIMETYPE="text/plain" SEQ="00000058" CREATED="2010-05-02T00:07:04" SIZE="3600" CHECKSUM="ed2aa453c9cdf1a5fc1c3f9d224b7e1a" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000058.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000059" MIMETYPE="text/plain" SEQ="00000059" CREATED="2010-05-02T00:07:04" SIZE="3530" CHECKSUM="dd1bef3cb433db362e44750b504b1ff9" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000059.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000060" MIMETYPE="text/plain" SEQ="00000060" CREATED="2010-05-02T00:07:04" SIZE="3482" CHECKSUM="80661ca155c6975852fbbee3cb73b3c2" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000060.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000061" MIMETYPE="text/plain" SEQ="00000061" CREATED="2010-05-02T00:07:04" SIZE="3533" CHECKSUM="0ea6f7f615336cda5d354493b39eff9b" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000061.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000062" MIMETYPE="text/plain" SEQ="00000062" CREATED="2010-05-02T00:07:04" SIZE="3712" CHECKSUM="e8bf35d5b9f731229c237d0d5fd7da1d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000062.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000063" MIMETYPE="text/plain" SEQ="00000063" CREATED="2010-05-02T00:07:04" SIZE="3622" CHECKSUM="1c6b9ba64f62343d0e1c09771b146438" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000063.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000064" MIMETYPE="text/plain" SEQ="00000064" CREATED="2010-05-02T00:07:04" SIZE="3505" CHECKSUM="48368ad38afa86fa3af64ce401ce80fb" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000064.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000065" MIMETYPE="text/plain" SEQ="00000065" CREATED="2010-05-02T00:07:04" SIZE="3690" CHECKSUM="00b37ca119ddbccf4b5bfc2cfd5490b7" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000065.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000066" MIMETYPE="text/plain" SEQ="00000066" CREATED="2010-05-02T00:07:04" SIZE="3587" CHECKSUM="b14c51fbbebb9e57fbc2aec936a59d51" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000066.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000067" MIMETYPE="text/plain" SEQ="00000067" CREATED="2010-05-02T00:07:04" SIZE="3548" CHECKSUM="f84678eb8e32e79b0ff7fde56b4359a7" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000067.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000068" MIMETYPE="text/plain" SEQ="00000068" CREATED="2010-05-02T00:07:04" SIZE="3614" CHECKSUM="dbb837c56ffb1a9527400d72fe9b09c5" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000068.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000069" MIMETYPE="text/plain" SEQ="00000069" CREATED="2010-05-02T00:07:04" SIZE="3532" CHECKSUM="11a17a73c08d4c37dba1872896a520dd" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000069.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000070" MIMETYPE="text/plain" SEQ="00000070" CREATED="2010-05-02T00:07:04" SIZE="3808" CHECKSUM="c2da041101b09a71be5aaa716867999c" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000070.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000071" MIMETYPE="text/plain" SEQ="00000071" CREATED="2010-05-02T00:07:04" SIZE="3686" CHECKSUM="37c0c3a526e28b60f1760652051c5a5d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000071.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000072" MIMETYPE="text/plain" SEQ="00000072" CREATED="2010-05-02T00:07:04" SIZE="3552" CHECKSUM="076551aee2455c6db6f1903c78b26201" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000072.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000073" MIMETYPE="text/plain" SEQ="00000073" CREATED="2010-05-02T00:07:04" SIZE="1664" CHECKSUM="59fa92231756d6a77680070d717ba303" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000073.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000074" MIMETYPE="text/plain" SEQ="00000074" CREATED="2010-05-02T00:07:04" SIZE="0" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000074.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000075" MIMETYPE="text/plain" SEQ="00000075" CREATED="2010-05-02T00:07:04" SIZE="0" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000075.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000076" MIMETYPE="text/plain" SEQ="00000076" CREATED="2010-05-02T00:07:04" SIZE="60" CHECKSUM="f406159e1edc5e14a64eec7a76e9391e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000076.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000077" MIMETYPE="text/plain" SEQ="00000077" CREATED="2010-05-02T00:07:04" SIZE="0" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000077.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000078" MIMETYPE="text/plain" SEQ="00000078" CREATED="2010-05-02T00:07:04" SIZE="169" CHECKSUM="4b87cceba3f5ed37f4f3651304d2afe4" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000078.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000079" MIMETYPE="text/plain" SEQ="00000079" CREATED="2010-05-02T00:07:04" SIZE="106" CHECKSUM="9487ee964062829cf9cf0c6a18638ac7" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000079.txt" />
+   </METS:file>
+   <METS:file ID="TXT00000080" MIMETYPE="text/plain" SEQ="00000080" CREATED="2010-05-02T00:07:04" SIZE="0" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000080.txt" />
+   </METS:file>
+  </METS:fileGrp>
+  <METS:fileGrp ID="FG3" USE="coordOCR">
+   <METS:file ID="XML00000001" MIMETYPE="text/xml" SEQ="00000001" CREATED="2010-05-02T00:07:04" SIZE="453" CHECKSUM="424b6317188b4ea7e774cc64e8c7d0a1" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000001.xml" />
+   </METS:file>
+   <METS:file ID="XML00000002" MIMETYPE="text/xml" SEQ="00000002" CREATED="2010-05-02T00:07:04" SIZE="783" CHECKSUM="b314a49ff62700123e80c97563052362" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000002.xml" />
+   </METS:file>
+   <METS:file ID="XML00000003" MIMETYPE="text/xml" SEQ="00000003" CREATED="2010-05-02T00:07:04" SIZE="453" CHECKSUM="90588e55e97117e27076fd091ece9a8f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000003.xml" />
+   </METS:file>
+   <METS:file ID="XML00000004" MIMETYPE="text/xml" SEQ="00000004" CREATED="2010-05-02T00:07:04" SIZE="414" CHECKSUM="51a9a5eec6ef8ac17aa5d7846ffcbc36" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000004.xml" />
+   </METS:file>
+   <METS:file ID="XML00000005" MIMETYPE="text/xml" SEQ="00000005" CREATED="2010-05-02T00:07:04" SIZE="414" CHECKSUM="73b5b2bbf4179da015d0106e21ad7647" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000005.xml" />
+   </METS:file>
+   <METS:file ID="XML00000006" MIMETYPE="text/xml" SEQ="00000006" CREATED="2010-05-02T00:07:04" SIZE="414" CHECKSUM="af55910ad5b1bd87c1fbfb688cdb7f2a" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000006.xml" />
+   </METS:file>
+   <METS:file ID="XML00000007" MIMETYPE="text/xml" SEQ="00000007" CREATED="2010-05-02T00:07:04" SIZE="479" CHECKSUM="6aa7579b2bd43a164ae6df1a2095c362" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000007.xml" />
+   </METS:file>
+   <METS:file ID="XML00000008" MIMETYPE="text/xml" SEQ="00000008" CREATED="2010-05-02T00:07:04" SIZE="414" CHECKSUM="bd291029875f1d1e88a1195f30c48c1c" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000008.xml" />
+   </METS:file>
+   <METS:file ID="XML00000009" MIMETYPE="text/xml" SEQ="00000009" CREATED="2010-05-02T00:07:04" SIZE="16565" CHECKSUM="8f0d9ae08a406b159d1ae1ba089e1aed" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000009.xml" />
+   </METS:file>
+   <METS:file ID="XML00000010" MIMETYPE="text/xml" SEQ="00000010" CREATED="2010-05-02T00:07:04" SIZE="23491" CHECKSUM="b2ded67e321fd9504ddaf239aeeffe33" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000010.xml" />
+   </METS:file>
+   <METS:file ID="XML00000011" MIMETYPE="text/xml" SEQ="00000011" CREATED="2010-05-02T00:07:04" SIZE="33322" CHECKSUM="954c58727441ff3e0380a0016315ae13" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000011.xml" />
+   </METS:file>
+   <METS:file ID="XML00000012" MIMETYPE="text/xml" SEQ="00000012" CREATED="2010-05-02T00:07:04" SIZE="30535" CHECKSUM="eb60364a0d32ed46cf8cceddab485695" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000012.xml" />
+   </METS:file>
+   <METS:file ID="XML00000013" MIMETYPE="text/xml" SEQ="00000013" CREATED="2010-05-02T00:07:04" SIZE="33112" CHECKSUM="097a2e926e9b120741fe10fbb72bbffe" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000013.xml" />
+   </METS:file>
+   <METS:file ID="XML00000014" MIMETYPE="text/xml" SEQ="00000014" CREATED="2010-05-02T00:07:04" SIZE="34710" CHECKSUM="2de17f571049cf3f9672cae95a536420" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000014.xml" />
+   </METS:file>
+   <METS:file ID="XML00000015" MIMETYPE="text/xml" SEQ="00000015" CREATED="2010-05-02T00:07:04" SIZE="34878" CHECKSUM="70210fa647aecb4ee7e31b1a3df08662" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000015.xml" />
+   </METS:file>
+   <METS:file ID="XML00000016" MIMETYPE="text/xml" SEQ="00000016" CREATED="2010-05-02T00:07:04" SIZE="31611" CHECKSUM="ee81cde33e2fbc58cbb61ea2ff2dbe09" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000016.xml" />
+   </METS:file>
+   <METS:file ID="XML00000017" MIMETYPE="text/xml" SEQ="00000017" CREATED="2010-05-02T00:07:04" SIZE="30327" CHECKSUM="c5e0aa3758429959ecc3c70ba513addc" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000017.xml" />
+   </METS:file>
+   <METS:file ID="XML00000018" MIMETYPE="text/xml" SEQ="00000018" CREATED="2010-05-02T00:07:04" SIZE="32755" CHECKSUM="4cfb17af3328efd8adf12aa014462a2d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000018.xml" />
+   </METS:file>
+   <METS:file ID="XML00000019" MIMETYPE="text/xml" SEQ="00000019" CREATED="2010-05-02T00:07:04" SIZE="29971" CHECKSUM="f4487a97b7526e109f9a20039c3f6c92" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000019.xml" />
+   </METS:file>
+   <METS:file ID="XML00000020" MIMETYPE="text/xml" SEQ="00000020" CREATED="2010-05-02T00:07:04" SIZE="32347" CHECKSUM="d0c715fe78201901b272f1bb02037240" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000020.xml" />
+   </METS:file>
+   <METS:file ID="XML00000021" MIMETYPE="text/xml" SEQ="00000021" CREATED="2010-05-02T00:07:04" SIZE="32850" CHECKSUM="3fd8f50e1dd922e6731395d6e03e4eba" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000021.xml" />
+   </METS:file>
+   <METS:file ID="XML00000022" MIMETYPE="text/xml" SEQ="00000022" CREATED="2010-05-02T00:07:04" SIZE="33758" CHECKSUM="773dcd56fdccc34465f464c084896edc" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000022.xml" />
+   </METS:file>
+   <METS:file ID="XML00000023" MIMETYPE="text/xml" SEQ="00000023" CREATED="2010-05-02T00:07:04" SIZE="31628" CHECKSUM="db202bf6c712f2ba07df9085729c47d2" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000023.xml" />
+   </METS:file>
+   <METS:file ID="XML00000024" MIMETYPE="text/xml" SEQ="00000024" CREATED="2010-05-02T00:07:04" SIZE="34572" CHECKSUM="82ba5a2454bcbfe20e8ab5b4c4746a36" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000024.xml" />
+   </METS:file>
+   <METS:file ID="XML00000025" MIMETYPE="text/xml" SEQ="00000025" CREATED="2010-05-02T00:07:04" SIZE="32929" CHECKSUM="fc0af727eee1e4d0b2eaef172ebd80e0" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000025.xml" />
+   </METS:file>
+   <METS:file ID="XML00000026" MIMETYPE="text/xml" SEQ="00000026" CREATED="2010-05-02T00:07:04" SIZE="34784" CHECKSUM="2857b1cc7dd5e6b6272efbf151980263" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000026.xml" />
+   </METS:file>
+   <METS:file ID="XML00000027" MIMETYPE="text/xml" SEQ="00000027" CREATED="2010-05-02T00:07:04" SIZE="32713" CHECKSUM="36c863cae49b9c530d2bacd46cc7c800" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000027.xml" />
+   </METS:file>
+   <METS:file ID="XML00000028" MIMETYPE="text/xml" SEQ="00000028" CREATED="2010-05-02T00:07:04" SIZE="31166" CHECKSUM="255b30b8facef030a8e5f48906208d96" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000028.xml" />
+   </METS:file>
+   <METS:file ID="XML00000029" MIMETYPE="text/xml" SEQ="00000029" CREATED="2010-05-02T00:07:04" SIZE="33988" CHECKSUM="8dbb609718f609fb65729e1692a5a615" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000029.xml" />
+   </METS:file>
+   <METS:file ID="XML00000030" MIMETYPE="text/xml" SEQ="00000030" CREATED="2010-05-02T00:07:04" SIZE="35000" CHECKSUM="b38ac761d904567b0631ba90b095eb37" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000030.xml" />
+   </METS:file>
+   <METS:file ID="XML00000031" MIMETYPE="text/xml" SEQ="00000031" CREATED="2010-05-02T00:07:04" SIZE="32908" CHECKSUM="4d4d4bee35798cf9813fd27b1a936f04" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000031.xml" />
+   </METS:file>
+   <METS:file ID="XML00000032" MIMETYPE="text/xml" SEQ="00000032" CREATED="2010-05-02T00:07:04" SIZE="33424" CHECKSUM="fb2f088dbece204907477e7f6bf1c8e6" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000032.xml" />
+   </METS:file>
+   <METS:file ID="XML00000033" MIMETYPE="text/xml" SEQ="00000033" CREATED="2010-05-02T00:07:04" SIZE="34182" CHECKSUM="85b7df88b9cb22ac50b5a78f8cee2776" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000033.xml" />
+   </METS:file>
+   <METS:file ID="XML00000034" MIMETYPE="text/xml" SEQ="00000034" CREATED="2010-05-02T00:07:04" SIZE="34512" CHECKSUM="88b91e0db9a9b4623e6ea57a52d90739" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000034.xml" />
+   </METS:file>
+   <METS:file ID="XML00000035" MIMETYPE="text/xml" SEQ="00000035" CREATED="2010-05-02T00:07:04" SIZE="34941" CHECKSUM="17e4a8796c16a62f31342d452c9fc25b" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000035.xml" />
+   </METS:file>
+   <METS:file ID="XML00000036" MIMETYPE="text/xml" SEQ="00000036" CREATED="2010-05-02T00:07:04" SIZE="33006" CHECKSUM="edaf22d002f142d77f437a63044d9cc8" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000036.xml" />
+   </METS:file>
+   <METS:file ID="XML00000037" MIMETYPE="text/xml" SEQ="00000037" CREATED="2010-05-02T00:07:04" SIZE="32785" CHECKSUM="f46253866fded848914704654e85d386" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000037.xml" />
+   </METS:file>
+   <METS:file ID="XML00000038" MIMETYPE="text/xml" SEQ="00000038" CREATED="2010-05-02T00:07:04" SIZE="33483" CHECKSUM="0cb935bcdfe7cd3bb06176eafbe9f3a8" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000038.xml" />
+   </METS:file>
+   <METS:file ID="XML00000039" MIMETYPE="text/xml" SEQ="00000039" CREATED="2010-05-02T00:07:04" SIZE="33763" CHECKSUM="6e90b1f23a609e54e4bbff335ac3024f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000039.xml" />
+   </METS:file>
+   <METS:file ID="XML00000040" MIMETYPE="text/xml" SEQ="00000040" CREATED="2010-05-02T00:07:04" SIZE="33168" CHECKSUM="570917d17439687780e0445410d96425" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000040.xml" />
+   </METS:file>
+   <METS:file ID="XML00000041" MIMETYPE="text/xml" SEQ="00000041" CREATED="2010-05-02T00:07:04" SIZE="33333" CHECKSUM="cbe52d04cde086502ed87a11b8d35172" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000041.xml" />
+   </METS:file>
+   <METS:file ID="XML00000042" MIMETYPE="text/xml" SEQ="00000042" CREATED="2010-05-02T00:07:04" SIZE="33247" CHECKSUM="c4011e07105cd634c97d09edfc7aa2d9" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000042.xml" />
+   </METS:file>
+   <METS:file ID="XML00000043" MIMETYPE="text/xml" SEQ="00000043" CREATED="2010-05-02T00:07:04" SIZE="32266" CHECKSUM="4a0735b7bc0a24ffc0ca04ded83e247c" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000043.xml" />
+   </METS:file>
+   <METS:file ID="XML00000044" MIMETYPE="text/xml" SEQ="00000044" CREATED="2010-05-02T00:07:04" SIZE="35253" CHECKSUM="33f005d7429edb31dd762bb87743dbbe" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000044.xml" />
+   </METS:file>
+   <METS:file ID="XML00000045" MIMETYPE="text/xml" SEQ="00000045" CREATED="2010-05-02T00:07:04" SIZE="32783" CHECKSUM="38688ef2cc15e67aebfe87c5bcc64365" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000045.xml" />
+   </METS:file>
+   <METS:file ID="XML00000046" MIMETYPE="text/xml" SEQ="00000046" CREATED="2010-05-02T00:07:04" SIZE="32464" CHECKSUM="d38281db787ee48953ad59c4b0981ed1" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000046.xml" />
+   </METS:file>
+   <METS:file ID="XML00000047" MIMETYPE="text/xml" SEQ="00000047" CREATED="2010-05-02T00:07:04" SIZE="34227" CHECKSUM="d1da3fb08f387eeb85a5c54ec5d4d3ca" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000047.xml" />
+   </METS:file>
+   <METS:file ID="XML00000048" MIMETYPE="text/xml" SEQ="00000048" CREATED="2010-05-02T00:07:04" SIZE="33203" CHECKSUM="39a7a34682d7d17e88f4dd3be817251d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000048.xml" />
+   </METS:file>
+   <METS:file ID="XML00000049" MIMETYPE="text/xml" SEQ="00000049" CREATED="2010-05-02T00:07:04" SIZE="31451" CHECKSUM="0ff62fadee0512401608d36937ec6abd" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000049.xml" />
+   </METS:file>
+   <METS:file ID="XML00000050" MIMETYPE="text/xml" SEQ="00000050" CREATED="2010-05-02T00:07:04" SIZE="32773" CHECKSUM="7ecbb243bd49bdc109cacc597a19d98f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000050.xml" />
+   </METS:file>
+   <METS:file ID="XML00000051" MIMETYPE="text/xml" SEQ="00000051" CREATED="2010-05-02T00:07:04" SIZE="33533" CHECKSUM="667b149c42fcb4cf80521ea3c426b673" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000051.xml" />
+   </METS:file>
+   <METS:file ID="XML00000052" MIMETYPE="text/xml" SEQ="00000052" CREATED="2010-05-02T00:07:04" SIZE="33874" CHECKSUM="947d205ecf9e776b09b494b03f3f752f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000052.xml" />
+   </METS:file>
+   <METS:file ID="XML00000053" MIMETYPE="text/xml" SEQ="00000053" CREATED="2010-05-02T00:07:04" SIZE="33389" CHECKSUM="fa1986f3f142291c6153596203420c6c" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000053.xml" />
+   </METS:file>
+   <METS:file ID="XML00000054" MIMETYPE="text/xml" SEQ="00000054" CREATED="2010-05-02T00:07:04" SIZE="34363" CHECKSUM="90fbe9fe94d1d4025bc7ea8759482503" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000054.xml" />
+   </METS:file>
+   <METS:file ID="XML00000055" MIMETYPE="text/xml" SEQ="00000055" CREATED="2010-05-02T00:07:04" SIZE="31449" CHECKSUM="e286ddf858baf52d3b7bec845e89b4bd" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000055.xml" />
+   </METS:file>
+   <METS:file ID="XML00000056" MIMETYPE="text/xml" SEQ="00000056" CREATED="2010-05-02T00:07:04" SIZE="33083" CHECKSUM="b1bdf085462c6a71b3741ed65a0fda70" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000056.xml" />
+   </METS:file>
+   <METS:file ID="XML00000057" MIMETYPE="text/xml" SEQ="00000057" CREATED="2010-05-02T00:07:04" SIZE="31225" CHECKSUM="7a813eadb8beed20a8bc2d297c0d4a86" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000057.xml" />
+   </METS:file>
+   <METS:file ID="XML00000058" MIMETYPE="text/xml" SEQ="00000058" CREATED="2010-05-02T00:07:04" SIZE="32044" CHECKSUM="b50debb9238b168041957073fccfbb88" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000058.xml" />
+   </METS:file>
+   <METS:file ID="XML00000059" MIMETYPE="text/xml" SEQ="00000059" CREATED="2010-05-02T00:07:04" SIZE="31807" CHECKSUM="0e3a846bf8c5a007afad3e185e2eebbb" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000059.xml" />
+   </METS:file>
+   <METS:file ID="XML00000060" MIMETYPE="text/xml" SEQ="00000060" CREATED="2010-05-02T00:07:04" SIZE="31121" CHECKSUM="74a4c686b474f2113aec5e05764ce6b3" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000060.xml" />
+   </METS:file>
+   <METS:file ID="XML00000061" MIMETYPE="text/xml" SEQ="00000061" CREATED="2010-05-02T00:07:04" SIZE="30587" CHECKSUM="d55a7bb094ff19c8ffd2ad6d77cb4428" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000061.xml" />
+   </METS:file>
+   <METS:file ID="XML00000062" MIMETYPE="text/xml" SEQ="00000062" CREATED="2010-05-02T00:07:04" SIZE="32912" CHECKSUM="5e269b7cfb8bd00b52df6c42ea22d638" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000062.xml" />
+   </METS:file>
+   <METS:file ID="XML00000063" MIMETYPE="text/xml" SEQ="00000063" CREATED="2010-05-02T00:07:04" SIZE="32836" CHECKSUM="c02b2fce5047dbda87a4261fb9da27fa" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000063.xml" />
+   </METS:file>
+   <METS:file ID="XML00000064" MIMETYPE="text/xml" SEQ="00000064" CREATED="2010-05-02T00:07:04" SIZE="31231" CHECKSUM="d503e2e6e584ad5d1fd887da7c5444d0" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000064.xml" />
+   </METS:file>
+   <METS:file ID="XML00000065" MIMETYPE="text/xml" SEQ="00000065" CREATED="2010-05-02T00:07:04" SIZE="32365" CHECKSUM="0fc35015835f2946fa0c0ba0e248a23e" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000065.xml" />
+   </METS:file>
+   <METS:file ID="XML00000066" MIMETYPE="text/xml" SEQ="00000066" CREATED="2010-05-02T00:07:04" SIZE="32432" CHECKSUM="ef80d30f0d0b734db93cebeea5f8b63d" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000066.xml" />
+   </METS:file>
+   <METS:file ID="XML00000067" MIMETYPE="text/xml" SEQ="00000067" CREATED="2010-05-02T00:07:04" SIZE="31806" CHECKSUM="b9de8ec58ec013cb73aa25e3f099b503" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000067.xml" />
+   </METS:file>
+   <METS:file ID="XML00000068" MIMETYPE="text/xml" SEQ="00000068" CREATED="2010-05-02T00:07:04" SIZE="32690" CHECKSUM="87a0d645e6eb571a8085cc1af3274551" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000068.xml" />
+   </METS:file>
+   <METS:file ID="XML00000069" MIMETYPE="text/xml" SEQ="00000069" CREATED="2010-05-02T00:07:04" SIZE="30740" CHECKSUM="6ba9e337a0a1bbede9e960e729cdcdff" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000069.xml" />
+   </METS:file>
+   <METS:file ID="XML00000070" MIMETYPE="text/xml" SEQ="00000070" CREATED="2010-05-02T00:07:04" SIZE="34756" CHECKSUM="96bbccbe761ea99e8cb82258c00c7fd6" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000070.xml" />
+   </METS:file>
+   <METS:file ID="XML00000071" MIMETYPE="text/xml" SEQ="00000071" CREATED="2010-05-02T00:07:04" SIZE="32529" CHECKSUM="80dfb81bee9c357e55ec702673c29dce" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000071.xml" />
+   </METS:file>
+   <METS:file ID="XML00000072" MIMETYPE="text/xml" SEQ="00000072" CREATED="2010-05-02T00:07:04" SIZE="31400" CHECKSUM="489be70282f01905b7ac57e9d8f52adc" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000072.xml" />
+   </METS:file>
+   <METS:file ID="XML00000073" MIMETYPE="text/xml" SEQ="00000073" CREATED="2010-05-02T00:07:04" SIZE="14905" CHECKSUM="fe69ff3b9de177aa5671669e14c9c366" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000073.xml" />
+   </METS:file>
+   <METS:file ID="XML00000074" MIMETYPE="text/xml" SEQ="00000074" CREATED="2010-05-02T00:07:04" SIZE="414" CHECKSUM="c634e3f13f6ca4e79746d133e52563a1" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000074.xml" />
+   </METS:file>
+   <METS:file ID="XML00000075" MIMETYPE="text/xml" SEQ="00000075" CREATED="2010-05-02T00:07:04" SIZE="414" CHECKSUM="654b0b6fad1ace0ba2c077918e2ad76a" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000075.xml" />
+   </METS:file>
+   <METS:file ID="XML00000076" MIMETYPE="text/xml" SEQ="00000076" CREATED="2010-05-02T00:07:04" SIZE="1014" CHECKSUM="ea64d43cc640dfc422997f93bbbc4fa2" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000076.xml" />
+   </METS:file>
+   <METS:file ID="XML00000077" MIMETYPE="text/xml" SEQ="00000077" CREATED="2010-05-02T00:07:04" SIZE="414" CHECKSUM="3b58d06e878cc74e2717297d3e8d6e7a" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000077.xml" />
+   </METS:file>
+   <METS:file ID="XML00000078" MIMETYPE="text/xml" SEQ="00000078" CREATED="2010-05-02T00:07:04" SIZE="2012" CHECKSUM="164d86d43bff6b4bdde9a4bea4d4463f" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000078.xml" />
+   </METS:file>
+   <METS:file ID="XML00000079" MIMETYPE="text/xml" SEQ="00000079" CREATED="2010-05-02T00:07:04" SIZE="1605" CHECKSUM="5f310ef65622ea00d8aa8543b3e197c3" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000079.xml" />
+   </METS:file>
+   <METS:file ID="XML00000080" MIMETYPE="text/xml" SEQ="00000080" CREATED="2010-05-02T00:07:04" SIZE="453" CHECKSUM="2bc37829e37b164d4eadefb73973ef38" CHECKSUMTYPE="MD5">
+    <METS:FLocat LOCTYPE="OTHER" OTHERLOCTYPE="SYSTEM" xlink:href="00000080.xml" />
+   </METS:file>
+  </METS:fileGrp>
+ </METS:fileSec>
+ <METS:structMap ID="SM1" TYPE="physical">
+  <METS:div TYPE="volume">
+   <METS:div ORDER="1" TYPE="page">
+    <METS:fptr FILEID="IMG00000001" />
+    <METS:fptr FILEID="TXT00000001" />
+    <METS:fptr FILEID="XML00000001" />
+   </METS:div>
+   <METS:div ORDER="2" TYPE="page">
+    <METS:fptr FILEID="IMG00000002" />
+    <METS:fptr FILEID="TXT00000002" />
+    <METS:fptr FILEID="XML00000002" />
+   </METS:div>
+   <METS:div ORDER="3" TYPE="page">
+    <METS:fptr FILEID="IMG00000003" />
+    <METS:fptr FILEID="TXT00000003" />
+    <METS:fptr FILEID="XML00000003" />
+   </METS:div>
+   <METS:div ORDER="4" TYPE="page">
+    <METS:fptr FILEID="IMG00000004" />
+    <METS:fptr FILEID="TXT00000004" />
+    <METS:fptr FILEID="XML00000004" />
+   </METS:div>
+   <METS:div ORDER="5" TYPE="page">
+    <METS:fptr FILEID="IMG00000005" />
+    <METS:fptr FILEID="TXT00000005" />
+    <METS:fptr FILEID="XML00000005" />
+   </METS:div>
+   <METS:div ORDER="6" TYPE="page">
+    <METS:fptr FILEID="IMG00000006" />
+    <METS:fptr FILEID="TXT00000006" />
+    <METS:fptr FILEID="XML00000006" />
+   </METS:div>
+   <METS:div ORDER="7" TYPE="page">
+    <METS:fptr FILEID="IMG00000007" />
+    <METS:fptr FILEID="TXT00000007" />
+    <METS:fptr FILEID="XML00000007" />
+   </METS:div>
+   <METS:div ORDER="8" TYPE="page">
+    <METS:fptr FILEID="IMG00000008" />
+    <METS:fptr FILEID="TXT00000008" />
+    <METS:fptr FILEID="XML00000008" />
+   </METS:div>
+   <METS:div ORDER="9" TYPE="page">
+    <METS:fptr FILEID="IMG00000009" />
+    <METS:fptr FILEID="TXT00000009" />
+    <METS:fptr FILEID="XML00000009" />
+   </METS:div>
+   <METS:div ORDER="10" TYPE="page">
+    <METS:fptr FILEID="IMG00000010" />
+    <METS:fptr FILEID="TXT00000010" />
+    <METS:fptr FILEID="XML00000010" />
+   </METS:div>
+   <METS:div ORDER="11" TYPE="page">
+    <METS:fptr FILEID="IMG00000011" />
+    <METS:fptr FILEID="TXT00000011" />
+    <METS:fptr FILEID="XML00000011" />
+   </METS:div>
+   <METS:div ORDER="12" TYPE="page">
+    <METS:fptr FILEID="IMG00000012" />
+    <METS:fptr FILEID="TXT00000012" />
+    <METS:fptr FILEID="XML00000012" />
+   </METS:div>
+   <METS:div ORDER="13" TYPE="page">
+    <METS:fptr FILEID="IMG00000013" />
+    <METS:fptr FILEID="TXT00000013" />
+    <METS:fptr FILEID="XML00000013" />
+   </METS:div>
+   <METS:div ORDER="14" TYPE="page">
+    <METS:fptr FILEID="IMG00000014" />
+    <METS:fptr FILEID="TXT00000014" />
+    <METS:fptr FILEID="XML00000014" />
+   </METS:div>
+   <METS:div ORDER="15" TYPE="page">
+    <METS:fptr FILEID="IMG00000015" />
+    <METS:fptr FILEID="TXT00000015" />
+    <METS:fptr FILEID="XML00000015" />
+   </METS:div>
+   <METS:div ORDER="16" TYPE="page">
+    <METS:fptr FILEID="IMG00000016" />
+    <METS:fptr FILEID="TXT00000016" />
+    <METS:fptr FILEID="XML00000016" />
+   </METS:div>
+   <METS:div ORDER="17" TYPE="page">
+    <METS:fptr FILEID="IMG00000017" />
+    <METS:fptr FILEID="TXT00000017" />
+    <METS:fptr FILEID="XML00000017" />
+   </METS:div>
+   <METS:div ORDER="18" TYPE="page">
+    <METS:fptr FILEID="IMG00000018" />
+    <METS:fptr FILEID="TXT00000018" />
+    <METS:fptr FILEID="XML00000018" />
+   </METS:div>
+   <METS:div ORDER="19" TYPE="page">
+    <METS:fptr FILEID="IMG00000019" />
+    <METS:fptr FILEID="TXT00000019" />
+    <METS:fptr FILEID="XML00000019" />
+   </METS:div>
+   <METS:div ORDER="20" TYPE="page">
+    <METS:fptr FILEID="IMG00000020" />
+    <METS:fptr FILEID="TXT00000020" />
+    <METS:fptr FILEID="XML00000020" />
+   </METS:div>
+   <METS:div ORDER="21" TYPE="page">
+    <METS:fptr FILEID="IMG00000021" />
+    <METS:fptr FILEID="TXT00000021" />
+    <METS:fptr FILEID="XML00000021" />
+   </METS:div>
+   <METS:div ORDER="22" TYPE="page">
+    <METS:fptr FILEID="IMG00000022" />
+    <METS:fptr FILEID="TXT00000022" />
+    <METS:fptr FILEID="XML00000022" />
+   </METS:div>
+   <METS:div ORDER="23" TYPE="page">
+    <METS:fptr FILEID="IMG00000023" />
+    <METS:fptr FILEID="TXT00000023" />
+    <METS:fptr FILEID="XML00000023" />
+   </METS:div>
+   <METS:div ORDER="24" TYPE="page">
+    <METS:fptr FILEID="IMG00000024" />
+    <METS:fptr FILEID="TXT00000024" />
+    <METS:fptr FILEID="XML00000024" />
+   </METS:div>
+   <METS:div ORDER="25" TYPE="page">
+    <METS:fptr FILEID="IMG00000025" />
+    <METS:fptr FILEID="TXT00000025" />
+    <METS:fptr FILEID="XML00000025" />
+   </METS:div>
+   <METS:div ORDER="26" TYPE="page">
+    <METS:fptr FILEID="IMG00000026" />
+    <METS:fptr FILEID="TXT00000026" />
+    <METS:fptr FILEID="XML00000026" />
+   </METS:div>
+   <METS:div ORDER="27" TYPE="page">
+    <METS:fptr FILEID="IMG00000027" />
+    <METS:fptr FILEID="TXT00000027" />
+    <METS:fptr FILEID="XML00000027" />
+   </METS:div>
+   <METS:div ORDER="28" TYPE="page">
+    <METS:fptr FILEID="IMG00000028" />
+    <METS:fptr FILEID="TXT00000028" />
+    <METS:fptr FILEID="XML00000028" />
+   </METS:div>
+   <METS:div ORDER="29" TYPE="page">
+    <METS:fptr FILEID="IMG00000029" />
+    <METS:fptr FILEID="TXT00000029" />
+    <METS:fptr FILEID="XML00000029" />
+   </METS:div>
+   <METS:div ORDER="30" TYPE="page">
+    <METS:fptr FILEID="IMG00000030" />
+    <METS:fptr FILEID="TXT00000030" />
+    <METS:fptr FILEID="XML00000030" />
+   </METS:div>
+   <METS:div ORDER="31" TYPE="page">
+    <METS:fptr FILEID="IMG00000031" />
+    <METS:fptr FILEID="TXT00000031" />
+    <METS:fptr FILEID="XML00000031" />
+   </METS:div>
+   <METS:div ORDER="32" TYPE="page">
+    <METS:fptr FILEID="IMG00000032" />
+    <METS:fptr FILEID="TXT00000032" />
+    <METS:fptr FILEID="XML00000032" />
+   </METS:div>
+   <METS:div ORDER="33" TYPE="page">
+    <METS:fptr FILEID="IMG00000033" />
+    <METS:fptr FILEID="TXT00000033" />
+    <METS:fptr FILEID="XML00000033" />
+   </METS:div>
+   <METS:div ORDER="34" TYPE="page">
+    <METS:fptr FILEID="IMG00000034" />
+    <METS:fptr FILEID="TXT00000034" />
+    <METS:fptr FILEID="XML00000034" />
+   </METS:div>
+   <METS:div ORDER="35" TYPE="page">
+    <METS:fptr FILEID="IMG00000035" />
+    <METS:fptr FILEID="TXT00000035" />
+    <METS:fptr FILEID="XML00000035" />
+   </METS:div>
+   <METS:div ORDER="36" TYPE="page">
+    <METS:fptr FILEID="IMG00000036" />
+    <METS:fptr FILEID="TXT00000036" />
+    <METS:fptr FILEID="XML00000036" />
+   </METS:div>
+   <METS:div ORDER="37" TYPE="page">
+    <METS:fptr FILEID="IMG00000037" />
+    <METS:fptr FILEID="TXT00000037" />
+    <METS:fptr FILEID="XML00000037" />
+   </METS:div>
+   <METS:div ORDER="38" TYPE="page">
+    <METS:fptr FILEID="IMG00000038" />
+    <METS:fptr FILEID="TXT00000038" />
+    <METS:fptr FILEID="XML00000038" />
+   </METS:div>
+   <METS:div ORDER="39" TYPE="page">
+    <METS:fptr FILEID="IMG00000039" />
+    <METS:fptr FILEID="TXT00000039" />
+    <METS:fptr FILEID="XML00000039" />
+   </METS:div>
+   <METS:div ORDER="40" TYPE="page">
+    <METS:fptr FILEID="IMG00000040" />
+    <METS:fptr FILEID="TXT00000040" />
+    <METS:fptr FILEID="XML00000040" />
+   </METS:div>
+   <METS:div ORDER="41" TYPE="page">
+    <METS:fptr FILEID="IMG00000041" />
+    <METS:fptr FILEID="TXT00000041" />
+    <METS:fptr FILEID="XML00000041" />
+   </METS:div>
+   <METS:div ORDER="42" TYPE="page">
+    <METS:fptr FILEID="IMG00000042" />
+    <METS:fptr FILEID="TXT00000042" />
+    <METS:fptr FILEID="XML00000042" />
+   </METS:div>
+   <METS:div ORDER="43" TYPE="page">
+    <METS:fptr FILEID="IMG00000043" />
+    <METS:fptr FILEID="TXT00000043" />
+    <METS:fptr FILEID="XML00000043" />
+   </METS:div>
+   <METS:div ORDER="44" TYPE="page">
+    <METS:fptr FILEID="IMG00000044" />
+    <METS:fptr FILEID="TXT00000044" />
+    <METS:fptr FILEID="XML00000044" />
+   </METS:div>
+   <METS:div ORDER="45" TYPE="page">
+    <METS:fptr FILEID="IMG00000045" />
+    <METS:fptr FILEID="TXT00000045" />
+    <METS:fptr FILEID="XML00000045" />
+   </METS:div>
+   <METS:div ORDER="46" TYPE="page">
+    <METS:fptr FILEID="IMG00000046" />
+    <METS:fptr FILEID="TXT00000046" />
+    <METS:fptr FILEID="XML00000046" />
+   </METS:div>
+   <METS:div ORDER="47" TYPE="page">
+    <METS:fptr FILEID="IMG00000047" />
+    <METS:fptr FILEID="TXT00000047" />
+    <METS:fptr FILEID="XML00000047" />
+   </METS:div>
+   <METS:div ORDER="48" TYPE="page">
+    <METS:fptr FILEID="IMG00000048" />
+    <METS:fptr FILEID="TXT00000048" />
+    <METS:fptr FILEID="XML00000048" />
+   </METS:div>
+   <METS:div ORDER="49" TYPE="page">
+    <METS:fptr FILEID="IMG00000049" />
+    <METS:fptr FILEID="TXT00000049" />
+    <METS:fptr FILEID="XML00000049" />
+   </METS:div>
+   <METS:div ORDER="50" TYPE="page">
+    <METS:fptr FILEID="IMG00000050" />
+    <METS:fptr FILEID="TXT00000050" />
+    <METS:fptr FILEID="XML00000050" />
+   </METS:div>
+   <METS:div ORDER="51" TYPE="page">
+    <METS:fptr FILEID="IMG00000051" />
+    <METS:fptr FILEID="TXT00000051" />
+    <METS:fptr FILEID="XML00000051" />
+   </METS:div>
+   <METS:div ORDER="52" TYPE="page">
+    <METS:fptr FILEID="IMG00000052" />
+    <METS:fptr FILEID="TXT00000052" />
+    <METS:fptr FILEID="XML00000052" />
+   </METS:div>
+   <METS:div ORDER="53" TYPE="page">
+    <METS:fptr FILEID="IMG00000053" />
+    <METS:fptr FILEID="TXT00000053" />
+    <METS:fptr FILEID="XML00000053" />
+   </METS:div>
+   <METS:div ORDER="54" TYPE="page">
+    <METS:fptr FILEID="IMG00000054" />
+    <METS:fptr FILEID="TXT00000054" />
+    <METS:fptr FILEID="XML00000054" />
+   </METS:div>
+   <METS:div ORDER="55" TYPE="page">
+    <METS:fptr FILEID="IMG00000055" />
+    <METS:fptr FILEID="TXT00000055" />
+    <METS:fptr FILEID="XML00000055" />
+   </METS:div>
+   <METS:div ORDER="56" TYPE="page">
+    <METS:fptr FILEID="IMG00000056" />
+    <METS:fptr FILEID="TXT00000056" />
+    <METS:fptr FILEID="XML00000056" />
+   </METS:div>
+   <METS:div ORDER="57" TYPE="page">
+    <METS:fptr FILEID="IMG00000057" />
+    <METS:fptr FILEID="TXT00000057" />
+    <METS:fptr FILEID="XML00000057" />
+   </METS:div>
+   <METS:div ORDER="58" TYPE="page">
+    <METS:fptr FILEID="IMG00000058" />
+    <METS:fptr FILEID="TXT00000058" />
+    <METS:fptr FILEID="XML00000058" />
+   </METS:div>
+   <METS:div ORDER="59" TYPE="page">
+    <METS:fptr FILEID="IMG00000059" />
+    <METS:fptr FILEID="TXT00000059" />
+    <METS:fptr FILEID="XML00000059" />
+   </METS:div>
+   <METS:div ORDER="60" TYPE="page">
+    <METS:fptr FILEID="IMG00000060" />
+    <METS:fptr FILEID="TXT00000060" />
+    <METS:fptr FILEID="XML00000060" />
+   </METS:div>
+   <METS:div ORDER="61" TYPE="page">
+    <METS:fptr FILEID="IMG00000061" />
+    <METS:fptr FILEID="TXT00000061" />
+    <METS:fptr FILEID="XML00000061" />
+   </METS:div>
+   <METS:div ORDER="62" TYPE="page">
+    <METS:fptr FILEID="IMG00000062" />
+    <METS:fptr FILEID="TXT00000062" />
+    <METS:fptr FILEID="XML00000062" />
+   </METS:div>
+   <METS:div ORDER="63" TYPE="page">
+    <METS:fptr FILEID="IMG00000063" />
+    <METS:fptr FILEID="TXT00000063" />
+    <METS:fptr FILEID="XML00000063" />
+   </METS:div>
+   <METS:div ORDER="64" TYPE="page">
+    <METS:fptr FILEID="IMG00000064" />
+    <METS:fptr FILEID="TXT00000064" />
+    <METS:fptr FILEID="XML00000064" />
+   </METS:div>
+   <METS:div ORDER="65" TYPE="page">
+    <METS:fptr FILEID="IMG00000065" />
+    <METS:fptr FILEID="TXT00000065" />
+    <METS:fptr FILEID="XML00000065" />
+   </METS:div>
+   <METS:div ORDER="66" TYPE="page">
+    <METS:fptr FILEID="IMG00000066" />
+    <METS:fptr FILEID="TXT00000066" />
+    <METS:fptr FILEID="XML00000066" />
+   </METS:div>
+   <METS:div ORDER="67" TYPE="page">
+    <METS:fptr FILEID="IMG00000067" />
+    <METS:fptr FILEID="TXT00000067" />
+    <METS:fptr FILEID="XML00000067" />
+   </METS:div>
+   <METS:div ORDER="68" TYPE="page">
+    <METS:fptr FILEID="IMG00000068" />
+    <METS:fptr FILEID="TXT00000068" />
+    <METS:fptr FILEID="XML00000068" />
+   </METS:div>
+   <METS:div ORDER="69" TYPE="page">
+    <METS:fptr FILEID="IMG00000069" />
+    <METS:fptr FILEID="TXT00000069" />
+    <METS:fptr FILEID="XML00000069" />
+   </METS:div>
+   <METS:div ORDER="70" TYPE="page">
+    <METS:fptr FILEID="IMG00000070" />
+    <METS:fptr FILEID="TXT00000070" />
+    <METS:fptr FILEID="XML00000070" />
+   </METS:div>
+   <METS:div ORDER="71" TYPE="page">
+    <METS:fptr FILEID="IMG00000071" />
+    <METS:fptr FILEID="TXT00000071" />
+    <METS:fptr FILEID="XML00000071" />
+   </METS:div>
+   <METS:div ORDER="72" TYPE="page">
+    <METS:fptr FILEID="IMG00000072" />
+    <METS:fptr FILEID="TXT00000072" />
+    <METS:fptr FILEID="XML00000072" />
+   </METS:div>
+   <METS:div ORDER="73" TYPE="page">
+    <METS:fptr FILEID="IMG00000073" />
+    <METS:fptr FILEID="TXT00000073" />
+    <METS:fptr FILEID="XML00000073" />
+   </METS:div>
+   <METS:div ORDER="74" TYPE="page">
+    <METS:fptr FILEID="IMG00000074" />
+    <METS:fptr FILEID="TXT00000074" />
+    <METS:fptr FILEID="XML00000074" />
+   </METS:div>
+   <METS:div ORDER="75" TYPE="page">
+    <METS:fptr FILEID="IMG00000075" />
+    <METS:fptr FILEID="TXT00000075" />
+    <METS:fptr FILEID="XML00000075" />
+   </METS:div>
+   <METS:div ORDER="76" TYPE="page">
+    <METS:fptr FILEID="IMG00000076" />
+    <METS:fptr FILEID="TXT00000076" />
+    <METS:fptr FILEID="XML00000076" />
+   </METS:div>
+   <METS:div ORDER="77" TYPE="page">
+    <METS:fptr FILEID="IMG00000077" />
+    <METS:fptr FILEID="TXT00000077" />
+    <METS:fptr FILEID="XML00000077" />
+   </METS:div>
+   <METS:div ORDER="78" TYPE="page">
+    <METS:fptr FILEID="IMG00000078" />
+    <METS:fptr FILEID="TXT00000078" />
+    <METS:fptr FILEID="XML00000078" />
+   </METS:div>
+   <METS:div ORDER="79" TYPE="page">
+    <METS:fptr FILEID="IMG00000079" />
+    <METS:fptr FILEID="TXT00000079" />
+    <METS:fptr FILEID="XML00000079" />
+   </METS:div>
+   <METS:div ORDER="80" TYPE="page">
+    <METS:fptr FILEID="IMG00000080" />
+    <METS:fptr FILEID="TXT00000080" />
+    <METS:fptr FILEID="XML00000080" />
+   </METS:div>
+  </METS:div>
+ </METS:structMap>
+</METS:mets>

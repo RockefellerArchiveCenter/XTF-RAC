@@ -1,0 +1,2481 @@
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Archiving and Interchange DTD v2.3 20070202//EN" "http://dtd.nlm.nih.gov/publishing/2.3/journalpublishing.dtd">
+<article article-type="review-article" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <front>
+      <journal-meta>
+         <journal-id journal-id-type="nlm-ta">Diagn Pathol</journal-id>
+         <journal-title>Diagnostic Pathology</journal-title>
+         <issn pub-type="epub">1746-1596</issn>
+         <publisher>
+            <publisher-name>BioMed Central</publisher-name>
+            <publisher-loc>London</publisher-loc>
+         </publisher>
+      </journal-meta>
+      <article-meta>
+         <article-id pub-id-type="publisher-id">1746-1596-1-32</article-id>
+         <article-id pub-id-type="pmid">16999866</article-id>
+         <article-id pub-id-type="doi">10.1186/1746-1596-1-32</article-id>
+         <article-categories>
+            <subj-group subj-group-type="heading">
+               <subject>Review</subject>
+            </subj-group>
+         </article-categories>
+         <title-group>
+            <article-title>Prevention of an additional surgery for regional lymphadenectomy in melanoma: rapid intraoperative immunostaining of sentinel lymph node imprint smears</article-title>
+         </title-group>
+         <contrib-group>
+            <contrib contrib-type="author" corresp="yes" id="A1">
+               <name>
+                  <surname>Shidham</surname>
+                  <given-names>Vinod B</given-names>
+               </name>
+               <xref ref-type="aff" rid="I1">1</xref>
+               <email>vshidham@mcw.edu</email>
+            </contrib>
+            <contrib contrib-type="author" id="A2">
+               <name>
+                  <surname>Komorowski</surname>
+                  <given-names>Richard</given-names>
+               </name>
+               <xref ref-type="aff" rid="I1">1</xref>
+               <email>rkomor@mcw.edu</email>
+            </contrib>
+            <contrib contrib-type="author" id="A3">
+               <name>
+                  <surname>Neuberg</surname>
+                  <given-names>Marcelle</given-names>
+               </name>
+               <xref ref-type="aff" rid="I2">2</xref>
+               <email>mneuburg@mcw.edu</email>
+            </contrib>
+            <contrib contrib-type="author" id="A4">
+               <name>
+                  <surname>Walker</surname>
+                  <given-names>Alonzo</given-names>
+               </name>
+               <xref ref-type="aff" rid="I3">3</xref>
+               <email>awalker@mcw.edu</email>
+            </contrib>
+            <contrib contrib-type="author" id="A5">
+               <name>
+                  <surname>Campbell</surname>
+                  <given-names>Bruce H</given-names>
+               </name>
+               <xref ref-type="aff" rid="I4">4</xref>
+               <email>bcampbel@mcw.edu</email>
+            </contrib>
+            <contrib contrib-type="author" id="A6">
+               <name>
+                  <surname>Chang</surname>
+                  <given-names>Chung-Che</given-names>
+               </name>
+               <xref ref-type="aff" rid="I5">5</xref>
+               <email>jeffchang@pol.net</email>
+            </contrib>
+            <contrib contrib-type="author" id="A7">
+               <name>
+                  <surname>Dzwierzynski</surname>
+                  <given-names>William W</given-names>
+               </name>
+               <xref ref-type="aff" rid="I6">6</xref>
+               <email>billd@mcw.edu</email>
+            </contrib>
+         </contrib-group>
+         <aff id="I1"><label>1</label>Department of Pathology, Medical College of Wisconsin, Milwaukee, WI, USA</aff>
+         <aff id="I2"><label>2</label>Department of Dermatology, Medical College of Wisconsin, Milwaukee, WI, USA</aff>
+         <aff id="I3"><label>3</label>Department of Otolaryngology, Medical College of Wisconsin, Milwaukee, WI, USA</aff>
+         <aff id="I4"><label>4</label>Department of Surgery, Medical College of Wisconsin, Milwaukee, WI, USA</aff>
+         <aff id="I5"><label>5</label>Department of Pathology, The Methodist Hospital, Houston, TX, USA</aff>
+         <aff id="I6"><label>6</label>Department of Plastic Surgery, Medical College of Wisconsin, Milwaukee, WI, USA</aff>
+         <pub-date pub-type="collection">
+            <year>2006</year>
+         </pub-date>
+         <pub-date pub-type="epub">
+            <day>25</day>
+            <month>09</month>
+            <year>2006</year>
+         </pub-date>
+         <volume>1</volume>
+         <fpage>32</fpage>
+         <lpage>32</lpage>
+         <ext-link ext-link-type="uri" xlink:href="http://www.diagnosticpathology.org/content/1/1/32"/>
+         <history>
+            <date date-type="received">
+               <day>13</day>
+               <month>9</month>
+               <year>2006</year>
+            </date>
+            <date date-type="accepted">
+               <day>25</day>
+               <month>9</month>
+               <year>2006</year>
+            </date>
+         </history>
+         <permissions>
+            <copyright-statement>Copyright &#x000a9; 2006 Shidham et al; licensee BioMed Central Ltd.</copyright-statement>
+            <copyright-year>2006</copyright-year>
+            <copyright-holder>Shidham et al; licensee BioMed Central Ltd.</copyright-holder>
+            <license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/2.0">
+               <p>This is an Open Access article distributed under the terms of the Creative Commons Attribution License (<ext-link ext-link-type="uri"
+                     xlink:href="http://creativecommons.org/licenses/by/2.0"/>), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly
+                  cited.</p>
+               <!--<rdf xmlns="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1" xmlns:dcterms="http://purl.org/dc/terms"><Work xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" rdf:about=""><license rdf:resource="http://creativecommons.org/licenses/by/2.0"/><dc:type rdf:resource="http://purl.org/dc/dcmitype/Text"/><dc:author>
+               Shidham
+               B
+               Vinod
+               
+               vshidham@mcw.edu
+            </dc:author><dc:title>
+            Prevention of an additional surgery for regional lymphadenectomy in melanoma: rapid intraoperative immunostaining of sentinel lymph node imprint smears
+         </dc:title><dc:date>2006</dc:date><dcterms:bibliographicCitation>Diagnostic Pathology 1(1): 32-. (2006)</dcterms:bibliographicCitation><dc:identifier type="sici">1746-1596(2006)1:1&#x0003c;32&#x0003e;</dc:identifier><dcterms:isPartOf>urn:ISSN:1746-1596</dcterms:isPartOf><License rdf:about="http://creativecommons.org/licenses/by/2.0"><permits rdf:resource="http://web.resource.org/cc/Reproduction" xmlns=""/><permits rdf:resource="http://web.resource.org/cc/Distribution" xmlns=""/><requires rdf:resource="http://web.resource.org/cc/Notice" xmlns=""/><requires rdf:resource="http://web.resource.org/cc/Attribution" xmlns=""/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" xmlns=""/></License></Work></rdf>-->
+            </license>
+         </permissions>
+         <abstract>
+            <sec id="id1">
+               <title>Background</title>
+               <p>Sentinel lymph node (SLN) biopsy is performed at many institutions and is considered a standard of care in the management of cutaneous melanoma. The discriminatory immunostaining
+                  pattern with the 'MCW Melanoma Cocktail' (a mixture of MART-1 {1:500}, Melan- A {1:100}, and Tyrosinase {1:50} monoclonal antibodies) allows intraoperative immunocytochemical
+                  evaluation of imprint smears of SLNs for melanoma metastases. Cohesive cells of benign capsular melanocytic nevi that were also immunoreactive with the cocktail do not exfoliate
+                  easily for imprint smear detection.</p>
+            </sec>
+            <sec id="id2" sec-type="methods">
+               <title>Methods</title>
+               <p>We prospectively evaluated 73 lymph nodes (70 SLN &#x00026; 3 non-SLN) from 41 cases (mean 1.8, 1 to 4 SLNs/case) of cutaneous melanoma using a rapid 17-minute immunostaining
+                  previously published protocol. The results were compared with permanent sections also immunostained with 'the cocktail'.</p>
+            </sec>
+            <sec id="id3">
+               <title>Results</title>
+               <p>19.5%, 8/41 cases (12%, 9/73 lymph nodes) were positive for melanoma metastases on permanent sections immunostained with the 'MCW melanoma cocktail'. Melanoma metastases in 87.5%
+                  (7/8) of these cases were also detected in rapidly immunostained imprint smears, with 100% specificity and 90% sensitivity. None of the 7 SLNs from 7 cases with capsular nevi showed
+                  false positive results.</p>
+            </sec>
+            <sec id="id4">
+               <title>Conclusion</title>
+               <p>Melanoma metastases could be detected in imprint smears immunostained with 'MCW Melanoma Cocktail' utilizing a rapid intraoperative protocol. The cohesive cells of the capsular nevi
+                  do not readily exfoliate and do not lead to false positive interpretation. In a majority of positive cases, a regional lymphadenectomy could have been completed during the same
+                  surgery for SLN biopsy and wide excision of primary melanoma site, potentially eliminating the need for an additional surgery.</p>
+            </sec>
+         </abstract>
+      </article-meta>
+   </front>
+   <body>
+      <sec id="id5">
+         <title>Background</title>
+         <p>Skin melanoma is the sixth most common cancer in US with an increasing rate in men [<xref ref-type="bibr" rid="B1">1</xref>]. Due to rapidly progressive nature of the disease, aggressive
+            definitive therapy at earliest stage is the best option. Because of associated high morbidity and the scarcity of follow up studies evaluating its survival benefits, the role of routine
+            performance of regional lymphadenectomy in all cases irrespective of their status is controversial [<xref ref-type="bibr" rid="B2">2</xref>,<xref ref-type="bibr" rid="B3">3</xref>]. An
+            international multi-centre randomized prospective trial by the Intergroup Melanoma Surgical Program, reported that regional node dissection offers increased survival in subset of patients
+            with nodal metastases (60 years of age or younger with intermediate-thickness nonulcerative melanomas) [<xref ref-type="bibr" rid="B4">4</xref>]. Sentinel lymph node (SLN) biopsy is
+            recommended as a tool to identify this subset of patients, who could then undergo elective regional lymph node dissection [<xref ref-type="bibr" rid="B5">5</xref>]. The negative status of
+            SLN for melanoma metastases correlates closely with the negative status of regional lymph nodes [<xref ref-type="bibr" rid="B6">6</xref>].</p>
+         <p>Thus, prevailing evidence supports the evaluation of SLN for melanoma metastases as the standard of care to identify subset of patients with metastases in cutaneous melanoma. It is
+            practiced throughout the academic centers as well as regional and community hospitals with increasing frequency [<xref ref-type="bibr" rid="B2">2</xref>-<xref ref-type="bibr" rid="B22"
+            >22</xref>].</p>
+         <p>Although, it is beneficial to complete a regional lymphadenectomy during the same initial surgical procedure for 'SLN biopsy with wide excision of primary melanoma', currently the patient
+            has to undergo regional lymphadenectomy at later date under separate anesthesia, if SLNs are positive for melanoma metastases. In the current situation the results can not be obtained
+            intraoperatively. Preoperative or intraoperative evaluation technique would result in a cost saving with numerous other benefits [<xref ref-type="bibr" rid="B23">23</xref>-<xref
+               ref-type="bibr" rid="B31">31</xref>].</p>
+         <p>Frozen-section examination (with or without immunohistochemical evaluation) and the morphological evaluation of imprint cytology smears are some of the methods evaluated for the
+            intraoperative examination of SLN in cutaneous melanoma. However, the studies evaluating these methods did not demonstrate encouraging results [<xref ref-type="bibr" rid="B25"
+               >25</xref>-<xref ref-type="bibr" rid="B31">31</xref>], primarily due to lack of adequate sensitivity.</p>
+         <p>The 'MCW Melanoma Cocktail' (a mixture of MART-1 {1:500}, Melan- A {1:100}, and Tyrosinase {1:50} monoclonal antibodies) demonstrated an excellent discriminatory immunostaining pattern
+               [<xref ref-type="bibr" rid="B32">32</xref>,<xref ref-type="bibr" rid="B33">33</xref>]. This has facilitated rapid intraoperative evaluation of SLNs for melanoma micrometastases by
+            examining imprint smears of SLNs immunostained with the cocktail [<xref ref-type="bibr" rid="B34">34</xref>,<xref ref-type="bibr" rid="B35">35</xref>]. This was not previously possible
+            with conventional immunomarkers such as the S-100 protein and HMB45 due to significant interference caused by non-melanoma cells such as dendritic cells and mast cells resulting in a high
+            noise to signal ratio [<xref ref-type="bibr" rid="B33">33</xref>,<xref ref-type="bibr" rid="B36">36</xref>].</p>
+         <p>In this article we report the results on a series of cutaneous melanoma cases studied with rapid intraoperative evaluation of SLN for melanoma metastases employing imprint smears
+            immunostained with 'MCW melanoma cocktail'.</p>
+      </sec>
+      <sec id="id6" sec-type="materials|methods">
+         <title>Materials and methods</title>
+         <sec id="id7">
+            <title>Patients</title>
+            <p>73 lymph nodes (70 SLNs &#x00026; 3 non-SLNs) from 41 cases with clinically localized cutaneous melanoma were studied prospectively under the IRB approved protocol. The demographics
+               are shown in table <xref ref-type="table" rid="T1">1</xref>. As this was as a research study, intraoperative decisions for the continuation of a regional lymphadenectomy were not
+               executed regardless of positive results with immunostained imprint smear(s) of SLNs. This was explained to the patients participating in the study as a component of the informed
+               consent.</p>
+            <table-wrap id="T1" position="float">
+               <label>Table 1</label>
+               <caption>
+                  <p>Demographics of all the cases.</p>
+               </caption>
+               <table frame="hsides" rules="groups">
+                  <thead>
+                     <tr>
+                        <td/>
+                        <td align="left">
+                           <bold>Feature</bold>
+                        </td>
+                        <td align="left">
+                           <bold>Details</bold>
+                        </td>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td align="left">
+                           <bold>1</bold>
+                        </td>
+                        <td align="left">Number of case studied</td>
+                        <td align="left">Total- 41 case</td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td align="left">&#x02003;Males- 21, Females- 20</td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td align="left">&#x02003;Mean age- 56 years (14 &#x02013; 48 years)</td>
+                     </tr>
+                     <tr>
+                        <td colspan="3">
+                           <hr/>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">
+                           <bold>2</bold>
+                        </td>
+                        <td align="left">Total lymph nodes studied</td>
+                        <td align="left">73 lymph nodes (SLN- 70, non-SLN- 3*) Mean- 1.7 SLN per case (1&#x02013;4 SLN per case)</td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td align="left">&#x02003;1 SLN- 16 cases</td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td align="left">&#x02003;2 SLN- 17 cases</td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td align="left">&#x02003;3 SLN- 4 cases</td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td align="left">&#x02003;4 SLN- 4 cases</td>
+                     </tr>
+                     <tr>
+                        <td colspan="3">
+                           <hr/>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">
+                           <bold>3</bold>
+                        </td>
+                        <td align="left">Pigmented lesions as indication for SLN biopsy</td>
+                        <td align="left">Melanomas- 39</td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td align="left">Atypical Spitzoid nevus- 1</td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td align="left">Dysplastic nevus- 1</td>
+                     </tr>
+                     <tr>
+                        <td colspan="3">
+                           <hr/>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">
+                           <bold>4</bold>
+                        </td>
+                        <td align="left">Location of primary pigmented lesion</td>
+                        <td align="left">Head and neck (15), the trunk (11), the upper extremity (6), and the lower extremity (9).</td>
+                     </tr>
+                     <tr>
+                        <td colspan="3">
+                           <hr/>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">
+                           <bold>5</bold>
+                        </td>
+                        <td align="left">Histological type of melanomas (known in 17 cases)<sup>&#x000b6;</sup></td>
+                        <td align="left">Superficial spreading- 11</td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td align="left">Nodular- 5</td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td align="left">Superficial spreading with nodular- 1</td>
+                     </tr>
+                     <tr>
+                        <td colspan="3">
+                           <hr/>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">
+                           <bold>6</bold>
+                        </td>
+                        <td align="left">Breslow thickness of primary melanoma (known in 38 patients)</td>
+                        <td align="left">Mean- 2.1 mm (range 0.7 to 8.9 mm)</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <table-wrap-foot>
+                  <p>*Case no. 23 (Table 2) had 5 lymph nodes (2 SLN and 3 non-SLN).</p>
+                  <p><sup>&#x000b6; </sup>In most cases, the biopsy of primary lesion was performed and interpreted at outside institutions.</p>
+               </table-wrap-foot>
+            </table-wrap>
+            <p>All patients underwent mappings and biopsies of SLNs with a wide excision of the primary site at Froedert Memorial Lutheran Hospital/Medical College of Wisconsin, Milwaukee, WI. A
+               standard surgical protocol was used to identify the SLN [<xref ref-type="bibr" rid="B37">37</xref>]. The tumor bed was injected preoperatively with technetium sulfur colloid.
+               Additionally, dermis around the lesion was injected intraoperatively with isosulfan blue dye to facilitate the visual identification of the SLN [<xref ref-type="bibr" rid="B37"
+               >37</xref>]. The SLNs were harvested and submitted fresh without any fixative to pathology for intraoperative and permanent section evaluation.</p>
+         </sec>
+         <sec id="id8">
+            <title>Pathologic examination (Figure <xref ref-type="fig" rid="F1">1</xref>)</title>
+            <fig id="F1" position="float">
+               <label>Figure 1</label>
+               <caption>
+                  <p>Pathological evaluation of sentinel lymph nodes for melanoma metastases. Section number 2, 5, &#x00026; 8- stained with HE; 4- immunostained with 'MCW melanoma cocktail'; 6-
+                     negative control; 1, 3, 7, &#x00026; 9- unstained sections on coated slides for immunostaining (but may be used for any stain). Number of slices of SLN shown (a,b,c) is for
+                     illustration only and would vary according to the size of the lymph node. (FPTS, formalin-fixed paraffin-embedded tissue sections; H&#x00026;E, hematoxylin and eosin stain;
+                     immuno, immunohistochemistry)</p>
+               </caption>
+               <graphic xlink:href="1746-1596-1-32-1"/>
+            </fig>
+            <p>The excised lymph nodes were transected perpendicular to the long axis and processed to make imprint smears as previously reported [<xref ref-type="bibr" rid="B35">35</xref>]. The
+               imprint smears were immunostained with the 'MCW melanoma cocktail' using either a manual method or the Dako<sup>&#x000ae; </sup>Autostainer with a rapid 17-minute immunostaining
+               protocol utilizing the Dako EnvisionTM+ System which does not contain avidin-biotin [<xref ref-type="bibr" rid="B35">35</xref>]. One smear of a previously prepared positive control from
+               a known melanoma tumor and processed similar to test smears [<xref ref-type="bibr" rid="B35">35</xref>] was also immunostained with each staining batch.</p>
+            <p>The immunostained imprint smears were examined and interpreted as positive, indeterminate, or negative for melanoma metastases. The time required to go from preparation of imprint
+               smears to evaluation of immunostained smears was also tracked. Based on the algorithm for intraoperative decision, indeterminate interpretations with immunostained imprint smears were
+               considered as negative for statistical analysis.</p>
+            <p>After imprint smear preparation, the slices of SLNs were fixed in 10% formalin and processed in the usual manner for paraffin embedding. Three FPTS levels, each cut at
+               200-&#x003bc;m intervals were stained with hematoxylin and eosin (H&#x00026;E). The levels adjacent to the middle H&#x00026;E section were immunostained with 'MCW melanoma
+               cocktail' using the avidin-biotin-peroxidase complex (ABC) method described previously [<xref ref-type="bibr" rid="B33">33</xref>].</p>
+            <p>The results were considered positive for melanoma metastases if cytoplasmic immunoreactivity was detected in cell clusters or individual cells that demonstrated morphologic features of
+               melanoma tumor cells. When discrepancies existed between immunostained imprint smears and the immunostained FPTS, the slides were reviewed by another pathologist in an attempt to
+               determine the cause of the discrepancy and to arrive at a conclusion (Table <xref ref-type="table" rid="T2">2</xref>).</p>
+            <table-wrap id="T2" position="float">
+               <label>Table 2</label>
+               <caption>
+                  <p>Results with rapid intraoperative immunocytochemical evaluation of imprint smears.</p>
+               </caption>
+               <table frame="hsides" rules="groups">
+                  <thead>
+                     <tr>
+                        <td align="left">
+                           <bold>Serial No.</bold>
+                        </td>
+                        <td align="left">
+                           <bold>No. of SLN per case</bold>
+                        </td>
+                        <td align="left" colspan="3">
+                           <bold>SLN</bold>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td colspan="3">
+                           <hr/>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td/>
+                        <td/>
+                        <td align="left">
+                           <bold>IC</bold>
+                        </td>
+                        <td align="left">
+                           <bold>SP</bold>
+                        </td>
+                        <td align="left">
+                           <bold>FR</bold>
+                           <sup>4</sup>
+                        </td>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td align="left">1</td>
+                        <td align="left">2</td>
+                        <td align="left">B-,C-</td>
+                        <td align="left">B-<bold>cn</bold>,C-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">2</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-<bold>cn</bold></td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">3<sup>&#x000b6;</sup></td>
+                        <td align="left">2</td>
+                        <td align="left">A1+,A2+,B-</td>
+                        <td align="left">A1+,A2-,B-</td>
+                        <td align="left">
+                           <bold>P</bold>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">4</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-<bold>cn</bold></td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">5</td>
+                        <td align="left">3</td>
+                        <td align="left">A-,B-,C-</td>
+                        <td align="left">A-,B-<bold>cn</bold>,C-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">6</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">7</td>
+                        <td align="left">2</td>
+                        <td align="left">B-,C-</td>
+                        <td align="left">B-,C-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">8</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">9</td>
+                        <td align="left">2</td>
+                        <td align="left">A-, C-</td>
+                        <td align="left">A-, C-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">10</td>
+                        <td align="left">2</td>
+                        <td align="left">A-,C-</td>
+                        <td align="left">A-<bold>cn</bold>,C-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">11*</td>
+                        <td align="left">4</td>
+                        <td align="left"><bold>A-</bold>,B-,C-,D-</td>
+                        <td align="left">A+,B-,C-,D-</td>
+                        <td align="left">
+                           <bold>P</bold>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">12<sup>&#x000b6;</sup></td>
+                        <td align="left">4</td>
+                        <td align="left">A-,B+,C+,<bold>D+</bold></td>
+                        <td align="left">A-,B+,C+,D-</td>
+                        <td align="left">
+                           <bold>P</bold>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">13<sup>&#x02020;</sup></td>
+                        <td align="left">1</td>
+                        <td align="left">
+                           <bold>A(Intm)</bold>
+                        </td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">14</td>
+                        <td align="left">1</td>
+                        <td align="left">B+</td>
+                        <td align="left">B+</td>
+                        <td align="left">
+                           <bold>P</bold>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">15</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">16</td>
+                        <td align="left">3</td>
+                        <td align="left">A+,B-,C-</td>
+                        <td align="left">A+,B-,C-</td>
+                        <td align="left">
+                           <bold>P</bold>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">17<sup>&#x02020;</sup></td>
+                        <td align="left">2</td>
+                        <td align="left">A<bold>(Intm)</bold>,B-</td>
+                        <td align="left">A-,B-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">18</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">19</td>
+                        <td align="left">2</td>
+                        <td align="left">A-,B-</td>
+                        <td align="left">A-,B-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">20</td>
+                        <td align="left">2</td>
+                        <td align="left">A1-, C+</td>
+                        <td align="left">A1-, C+</td>
+                        <td align="left">
+                           <bold>P</bold>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">21</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">22</td>
+                        <td align="left">2</td>
+                        <td align="left">A-,B-</td>
+                        <td align="left">A-,B-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">23<sup>1</sup></td>
+                        <td align="left"><sup>1</sup>2</td>
+                        <td align="left"><sup>1</sup>A1-,<sup>1</sup>B+,<sup>1</sup>C-,D-,E-</td>
+                        <td align="left"><sup>1</sup>A1-,<sup>1</sup>B+,<sup>1</sup>C-,D-,E-</td>
+                        <td align="left">
+                           <bold>P</bold>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td align="left">24</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">25</td>
+                        <td align="left">2</td>
+                        <td align="left">A-,B-</td>
+                        <td align="left">A-,B-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">26</td>
+                        <td align="left">2</td>
+                        <td align="left">A-,C-</td>
+                        <td align="left">A-,C-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">27</td>
+                        <td align="left">1</td>
+                        <td align="left">B-</td>
+                        <td align="left">B-<bold>cn</bold></td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">28</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">29</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-<bold>cn</bold></td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">30</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">31<sup>2</sup></td>
+                        <td align="left">4</td>
+                        <td align="left">A-,B-,C-,D-</td>
+                        <td align="left">A-,B-,C-,D-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">32</td>
+                        <td align="left">2</td>
+                        <td align="left">A-,B-</td>
+                        <td align="left">A-,B-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">33</td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">34</td>
+                        <td align="left">4</td>
+                        <td align="left">A-,B-,C-,D-</td>
+                        <td align="left">A-,B-,C-,D-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">35</td>
+                        <td align="left">3</td>
+                        <td align="left">A-,B-,C-</td>
+                        <td align="left">A-,B-,C-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">36<sup>3</sup></td>
+                        <td align="left">1</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">37</td>
+                        <td align="left">2</td>
+                        <td align="left">A-</td>
+                        <td align="left">A-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">38</td>
+                        <td align="left">2</td>
+                        <td align="left">B-,C-</td>
+                        <td align="left">B-,C-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">39</td>
+                        <td align="left">2</td>
+                        <td align="left">A-,B-</td>
+                        <td align="left">A-,B-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">40</td>
+                        <td align="left">3</td>
+                        <td align="left">A-,B-,D-</td>
+                        <td align="left">A-,B-,D-</td>
+                        <td align="left">N</td>
+                     </tr>
+                     <tr>
+                        <td align="left">41</td>
+                        <td align="left">2</td>
+                        <td align="left">A-,B+</td>
+                        <td align="left">A-,B+</td>
+                        <td align="left">
+                           <bold>P</bold>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <table-wrap-foot>
+                  <p>*One false negative</p>
+                  <p><sup>&#x02020;</sup>Two negative cases showed indeterminate results with IC</p>
+                  <p><sup>&#x000b6;</sup>Two SLN were positive unequivocally with IC but negative by SP</p>
+                  <p><sup>1</sup>Only D&#x00026;E were submitted as sentinel LN (A,B,C were submitted as non-SLN);</p>
+                  <p><sup>2</sup>Atypical Spitzoid nevus, recommended SLN biopsy;</p>
+                  <p><sup>3</sup>Dysplastic nevus, recommended SLN biopsy;</p>
+                  <p><sup>4</sup>Final results summarizing findings in all SLN in a particular case after immunostaining of permanent sections: total number of positive cases- 8 and negative cases-
+                     33.</p>
+                  <p><italic>Abbreviations in alphabetical order</italic>: +, positive for melanoma metastases; -, negative for melanoma metastases; <bold>cn</bold>, capsular nevus; FR, final result;
+                     IC, rapid intraoperative immunocytochemistry; <bold>Intm</bold>, indeterminate for melanoma metastases; LN, sentinel and non-sentinel lymph nodes; N, negative; <bold>P</bold>,
+                     positive; SP, final result on permanent sections.</p>
+               </table-wrap-foot>
+            </table-wrap>
+         </sec>
+      </sec>
+      <sec id="id9">
+         <title>Results</title>
+         <p>The time required for completing the entire procedure from preparation of imprint smears to evaluation of immunostained smears ranged from 24 to 45 (mean, 35) minutes and depended on the
+            size-number of SLNs.</p>
+         <p>At the case level, melanoma metastases were identified in lymph nodes of 19.5% (8 out of 41) of patients by the immunohistochemical evaluation of FPTS. 87.5% (7 out of 8) of these cases
+            showed metastases in imprint smears immunostained rapidly with the 'MCW melanoma cocktail', potentially saving a second surgery in all these cases. The test demonstrated a sensitivity of
+            89%, a specificity of 100%, the negative predictive value of 97%, and the positive predictive value of 100%.</p>
+         <p>At the lymph node level, 12% (9/73) nodes were positive for melanoma metastases with immunostained FPTS. Of these, 89% (8/9) showed melanoma metastases in intraoperatively immunostained
+            imprint smears utilizing the cocktail demonstrating a sensitivity of 90%, a specificity of 100%, the negative predictive value of 99%, and the positive predictive value of 100%).</p>
+         <p>The immunostained tumor cells of melanoma metastases (Figure <xref ref-type="fig" rid="F2">2</xref>) showed a high nuclear to cytoplasmic ratio with non-granular cytoplasmic staining
+            around the nuclei facilitating easy evaluation of nuclear details [<xref ref-type="bibr" rid="B35">35</xref>]. All 7 SLNs from 7 cases with benign capsular melanocytic nevi showed negative
+            results with the intraoperative evaluation of imprint smears.</p>
+         <fig id="F2" position="float">
+            <label>Figure 2</label>
+            <caption>
+               <p>Cytomorphological spectrum of tumor cells (arrows) of melanoma metastases immunostained with 'MCW melanoma cocktail'. The tumor cells were larger and showed high N/C ratio with
+                  non-granular cytoplasmic staining around the nuclei with usually clear nuclear details. The nuclear chromatin did not simulate the chromatin of lymphocytes in the background. The
+                  nucleoli may be prominent. The cell margins were well defined. (HE-FPTS, Hematoxylin-eosin stained formalin-fixed paraffin-embedded tissue sections; ICIS, immunocytochemical
+                  evaluation of imprint smears).</p>
+            </caption>
+            <graphic xlink:href="1746-1596-1-32-2"/>
+         </fig>
+         <p>An immunostained imprint smear was negative in one case with a small focus of melanoma metastases (4 small groups of 4&#x02013;12 cells each in one small area) in one slice of a single
+            SLN. 2 SLNs showed unequivocal melanoma metastases in rapid immunostained imprint smear (Table <xref ref-type="table" rid="T2">2</xref>, case 3 &#x00026; 12). In these 2 SLNs,
+            metastases were not detected by immunostained FPTS.</p>
+         <p>Two SLNs from 2 patients (Table <xref ref-type="table" rid="T2">2</xref>, case 13 &#x00026; 17) were interpreted as indeterminate. Both of these SLNs were negative for melanoma
+            metastases by immunohistochemical evaluation of FPTS. In 2 other cases, rare, singly scattered cells with benign morphology but with cytoplasmic immunostaining with the cocktail were
+            observed in both immunostained imprint smears and permanent sections.</p>
+      </sec>
+      <sec id="id10">
+         <title>Discussion</title>
+         <p>In the current study, 8 out of 41 patients showed melanoma metastases in lymph nodes employing immunohistochemical evaluation of FPTS. 7 out of these 8 cases showed metastases on imprint
+            smears immunostained with the 'MCW melanoma cocktail', potentially avoiding a second surgery at a later date in 87.5% of these patients.</p>
+         <p>On a case basis, rapid intraoperative evaluation of imprint smears with the 'MCW melanoma cocktail' yielded a sensitivity of 89% and a specificity of 100%. On a lymph node basis,
+            sensitivity was 90% and specificity was 100% (Table <xref ref-type="table" rid="T2">2</xref>). These encouraging results are more promising than alternative intraoperative approaches such
+            as the frozen-section alone [<xref ref-type="bibr" rid="B27">27</xref>], immunostaining frozen sections with a cocktail of Melan- A, HMB-45, &#x00026; tyrosinase [<xref ref-type="bibr"
+               rid="B32">32</xref>], or a morphological evaluation of imprint smears alone [<xref ref-type="bibr" rid="B30">30</xref>,<xref ref-type="bibr" rid="B38">38</xref>] (Table <xref
+               ref-type="table" rid="T3">3</xref>).</p>
+         <table-wrap id="T3" position="float">
+            <label>Table 3</label>
+            <caption>
+               <p>Comparison of studies evaluating melanoma SLNs intraoperatively</p>
+            </caption>
+            <table frame="hsides" rules="groups">
+               <thead>
+                  <tr>
+                     <td align="left">Authors</td>
+                     <td align="left">Intraoperative evaluation</td>
+                     <td align="center">Sensitivity (%)</td>
+                     <td align="center">Specificity (%)</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td align="left">Gibbs et al [20A]</td>
+                     <td align="left">FS</td>
+                     <td align="center">43</td>
+                     <td align="center">100</td>
+                  </tr>
+                  <tr>
+                     <td align="left">Clary et al [20B]</td>
+                     <td align="left">FS</td>
+                     <td align="center">56</td>
+                     <td align="center">100</td>
+                  </tr>
+                  <tr>
+                     <td align="left">Tanis et al [20C]</td>
+                     <td align="left">FS</td>
+                     <td align="center">47</td>
+                     <td align="center">100</td>
+                  </tr>
+                  <tr>
+                     <td align="left">Stojadinovic [20]</td>
+                     <td align="left">FS</td>
+                     <td align="center">59</td>
+                     <td align="center">100</td>
+                  </tr>
+                  <tr>
+                     <td align="left">Creager et al [21]</td>
+                     <td align="left">IS</td>
+                     <td align="center">38</td>
+                     <td align="center">100</td>
+                  </tr>
+                  <tr>
+                     <td align="left">Eudy et al [23]</td>
+                     <td align="left">FS with IHC</td>
+                     <td align="center">86</td>
+                     <td align="center">97</td>
+                  </tr>
+                  <tr>
+                     <td align="left">Current study</td>
+                     <td align="left">ICIS</td>
+                     <td align="center">90</td>
+                     <td align="center">100</td>
+                  </tr>
+               </tbody>
+            </table>
+            <table-wrap-foot>
+               <p>FPTS, formalin-fixed paraffin-embedded tissue section; FS, frozen section, ICIS, immunocytochemical evaluation of imprint smears with 'MCW melanoma cocktail' (mixture of Melan- A,
+                  MART- 1, &#x00026; tyrosinase); , IHC, immunohistochemistry with cocktail of Melan- A, HMB-45, &#x00026; tyrosinase); IS, imprint smear; SLNs, sentinel lymph nodes; MM,
+                  melanoma metastases.</p>
+            </table-wrap-foot>
+         </table-wrap>
+         <p>Finding a positive SLN and completing the regional lymphadenectomy under the same anesthesia offers many advantages. The extra cost for the second procedure was predominantly the hospital
+            cost. In this series with 41 patients, the extra cost (after deducting the cost for the regional lymph node dissection procedure and adding the cost for extended anesthesia) for 8 regional
+            lymph node dissections that needed to be performed at a later date was $ 60,000 (average $ 7,500 per case). In comparison, the cost of the intraoperative immunocytochemical evaluation for
+            70 SLNs in all 41 cases ([CPT codes 88329 (for intraoperative consult) + 88161 (for preparation and processing of imprint smears for immunostaining) + 88342 (immunostaining and
+            interpretation of immunostained smears)] X 70) was only $33,233, resulting in nearly 50% cost saving.</p>
+         <p>The most important benefit that cannot be quantified easily is the total avoidance of potential morbidity and mortality associated with an additional surgery at a later date, improving
+            patient care. Additionally, saving the patient from a second visit to the surgical suite and its substantial attendant costs along with a decreased number of office visits (to reschedule
+            the regional lymphadenectomy), lessens the inconvenience for the patient.</p>
+         <p>In cases with positive intraoperative SLN results, the duration of the surgical procedure would be lengthened for the completion of the regional lymphadenectomy. Though it demands
+            flexibility in surgical scheduling, it may be worth at most institutions.</p>
+         <p>As observed in one case, immunostained imprint smears of SLN that turn out negative may be followed by positive results after immunostaining the FPTS. This may require the patient to
+            return to the surgical suite for a lymphadenectomy at a later date. The patients should be made aware of this possibility during preoperative consultations.</p>
+         <p>Due to sampling benefits associated with imprint smears [<xref ref-type="bibr" rid="B35">35</xref>], the immunostaining of imprint smears identified metastases that may have been missed by
+            studying immunostained FPTS alone. This was observed in 2 cases in which immunostained imprint smears of 2 SLNs were unequivocally positive for melanoma metastases, but immunostained FPTS
+            were negative (Table <xref ref-type="table" rid="T2">2</xref>, case 3 &#x00026; 12). Additional SLNs submitted in these 2 patients were positive with both immunostained imprint smears
+            and FPTS, further endorsing the true positive nature of finding.</p>
+         <p>One SLN from another case showed a micro-focus of melanoma metastases in a single slice in immunostained FPTS. However, the cells from this micro-focus with very few tumor cells were not
+            sampled by the imprint smears leading to a false negative result. This underscores the significance of chance factor associated with sampling in general during the evaluation of SLN by any
+            method. Unequivocal positive result, obtained with either immunostained imprint smears or with immunostained FPTS, are significant. In cases where the intraoperative results are positive,
+            SLNs need not be evaluated further by immunohistochemistry on FPTS. However, if the intraoperative result is negative, immunohistochemical evaluation of SLNs should go forward on FPTS.
+            This would enhance the sampling and increase the chances of detecting additional melanoma metastases [<xref ref-type="bibr" rid="B35">35</xref>].</p>
+         <p>As a significant advantage, the cells of capsular nevi in 7 SLNs from 7 cases located in lymph node capsule and/or septa as collections of spindle cells, did not exfoliate and adhere to
+            slides during the preparation of imprint smears. As discussed previously, this is related to the cohesive nature of benign nevus cells in capsular melanocytic nevi, which would not
+            exfoliate cells to the glass slide in contrast to poorly cohesive melanoma cells [<xref ref-type="bibr" rid="B33">33</xref>,<xref ref-type="bibr" rid="B35">35</xref>]. This result in a
+            distinct advantage for the immunocytochemical evaluation of imprint smears over other methods such as RT-PCR, which may not have the benefit of a morphological correlation to avoid false
+            positive results with benign melanocytic capsular nevi (24).</p>
+         <p>Two SLNs from 2 patients, negative for melanoma metastases by immunohistochemical evaluation of FPTS, were interpreted as indeterminate in immunostained imprint smears (Table <xref
+               ref-type="table" rid="T2">2</xref> case 13 &#x00026; 17). Retrospectively, the rare doubtful cells observed in immunostained imprint smears were consistent with mast cells which
+            demonstrated brown staining (even in respective negative controls) due to endogenous peroxidase activity which could not be blocked during the brief endogenous peroxidase blocking step
+            required by the rapid protocol [<xref ref-type="bibr" rid="B35">35</xref>]. Familiarity with morphological spectrum of immunostained tumor cells (Figure <xref ref-type="fig" rid="F1"
+            >1</xref>) and other non-specifically stained structures including mast cells in imprint smears prevents indeterminate interpretation [<xref ref-type="bibr" rid="B35">35</xref>]. In two
+            other cases, singly scattered cells showing cytoplasmic immunostaining accompanied by small and inconspicuous nuclei were observed. These rare single cells were also present in
+            immunostained permanent sections. The cytomorphology was consistent with a benign interpretation in both immunostained imprint smears and the permanent sections. Similar rare cells with
+            benign morphology have been reported in SLNs evaluated with MART-1 and Melan-A [<xref ref-type="bibr" rid="B39">39</xref>].</p>
+         <p>For various reasons every laboratory may not be comfortable using cytological methods. However, objective nature of interpreting immunostained tumor cells in imprint smears would allow
+            interpretation by most of the pathology laboratories after a minor learning curve [<xref ref-type="bibr" rid="B35">35</xref>].</p>
+         <p>Imprint smears are less expensive and faster than frozen sectioning without cryostat related tissue loss. They avoid the frequently observed problems associated with the frozen sectioning
+            of fatty lymph nodes. If imprint smears are made and the tissue is not frozen, it would prevent the introduction of freezing artifacts and the associated interpretation challenges on the
+            permanent sections of such frozen tissue.</p>
+         <p>Other approaches for the intraoperative evaluation of SLN have demonstrated lower sensitivities (Table <xref ref-type="table" rid="T3">3</xref>) but had 100% specificity, which is
+            extremely important in order to avoid un-indicated regional lymph-adenectomies [<xref ref-type="bibr" rid="B26">26</xref>-<xref ref-type="bibr" rid="B32">32</xref>]. One study evaluating
+            immunostaining of frozen sections demonstrated a slightly increased sensitivity than when imprint smears or frozen sections alone were used without immunostaining. However, the specificity
+            was less than 100% (Table <xref ref-type="table" rid="T3">3</xref>). The immunostained frozen sections may show significant artifacts along with folds, background staining, missing areas,
+            and poor morphology. As HMB45 is known to stain non-melanoma cells in SLN [<xref ref-type="bibr" rid="B33">33</xref>,<xref ref-type="bibr" rid="B40">40</xref>-<xref ref-type="bibr"
+               rid="B42">42</xref>], incorporation of HMB45 in the cocktail used in this study may have contributed further to a reduction in the specificity [<xref ref-type="bibr" rid="B32"
+               >32</xref>,<xref ref-type="bibr" rid="B41">41</xref>,<xref ref-type="bibr" rid="B42">42</xref>]. As stated by the reporting authors of the study, a recent consensus group has
+            discouraged frozen-section examination of SLN [<xref ref-type="bibr" rid="B32">32</xref>].</p>
+         <p>In summary, imprint smears, rapidly immunostained with the 'MCW melanoma cocktail' is a sensitive and specific method for the rapid intraoperative evaluation of SLNs. If a SLN is found to
+            be positive for melanoma metastases in this way, the completion of a regional lymphadenectomy during the same surgical procedure for SLN biopsy is feasible. Both negative and indeterminate
+            results should be regarded as negative when considering intraoperative decision making for a regional lymph node dissection during a given surgical procedure. In such cases, the final
+            decision for a regional lymph node dissection should be deferred until the final results with FPTS are available.</p>
+      </sec>
+      <sec id="id11">
+         <title>Abbreviations</title>
+         <p>FPTS, formalin-fixed paraffin-embedded tissue section; H&#x00026;E, hematoxylin and eosin; SLN, sentinel lymph node;</p>
+      </sec>
+   </body>
+   <back>
+      <ack>
+         <sec id="id12">
+            <title>Acknowledgements</title>
+            <p>Part of this study was supported by the Cancer Center Research Multidisciplinary Grant from Medical College of Wisconsin, Milwaukee, WI and in part by Armour family grant through
+               Chicago Marathon.</p>
+            <p>Authors thank Virgilia Macias, MD; Sushma Kaul, MS; Glen Dawson, BS,HT,QIHC(ASCP); Aurora Kallenbach, HT(ASCP); and Jerome Jacobson, HT, QIHC(ASCP) for their expert technical assistance
+               in immunochemistry. We also thank Christine M. Santiago, Compliance Education Coordinator at MCW for reviewing the cost and CPT code related comments.</p>
+         </sec>
+      </ack>
+      <ref-list>
+         <ref id="B1">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Landis</surname>
+                     <given-names>SH</given-names>
+                  </name>
+                  <name>
+                     <surname>Murray</surname>
+                     <given-names>T</given-names>
+                  </name>
+                  <name>
+                     <surname>Bolden</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Wingo</surname>
+                     <given-names>PA</given-names>
+                  </name>
+               </person-group>
+               <article-title>Cancer statistics, 1999</article-title>
+               <source>CA Cancer J Clin</source>
+               <year>1999</year>
+               <volume>49</volume>
+               <fpage>8</fpage>
+               <lpage>31,1</lpage>
+               <pub-id pub-id-type="pmid">10200775</pub-id>
+            </citation>
+         </ref>
+         <ref id="B2">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Medalie</surname>
+                     <given-names>NS</given-names>
+                  </name>
+                  <name>
+                     <surname>Ackerman</surname>
+                     <given-names>AB</given-names>
+                  </name>
+               </person-group>
+               <article-title>Sentinel lymph node biopsy has no benefit for patients with primary cutaneous melanoma metastatic to a lymph node: an assertion based on comprehensive, critical analysis:
+                  part I</article-title>
+               <source>Am J Dermatopathol</source>
+               <year>2003</year>
+               <volume>25</volume>
+               <fpage>399</fpage>
+               <lpage>417</lpage>
+               <pub-id pub-id-type="pmid">14501289</pub-id>
+            </citation>
+         </ref>
+         <ref id="B3">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Medalie</surname>
+                     <given-names>NS</given-names>
+                  </name>
+                  <name>
+                     <surname>Ackerman</surname>
+                     <given-names>AB</given-names>
+                  </name>
+               </person-group>
+               <article-title>Sentinel lymph node biopsy has no benefit for patients with primary cutaneous melanoma metastatic to a lymph node: an assertion based on comprehensive, critical analysis:
+                  part II</article-title>
+               <source>Am J Dermatopathol</source>
+               <year>2003</year>
+               <volume>25</volume>
+               <fpage>473</fpage>
+               <lpage>84</lpage>
+               <pub-id pub-id-type="pmid">14631188</pub-id>
+            </citation>
+         </ref>
+         <ref id="B4">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Balch</surname>
+                     <given-names>CM</given-names>
+                  </name>
+                  <name>
+                     <surname>Soong</surname>
+                     <given-names>SJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Bartolucci</surname>
+                     <given-names>AA</given-names>
+                  </name>
+                  <name>
+                     <surname>Urist</surname>
+                     <given-names>MM</given-names>
+                  </name>
+                  <name>
+                     <surname>Karakousis</surname>
+                     <given-names>CP</given-names>
+                  </name>
+                  <name>
+                     <surname>Smith</surname>
+                     <given-names>TJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Temple</surname>
+                     <given-names>WJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Ross</surname>
+                     <given-names>MI</given-names>
+                  </name>
+                  <name>
+                     <surname>Jewell</surname>
+                     <given-names>WR</given-names>
+                  </name>
+                  <name>
+                     <surname>Mihm</surname>
+                     <given-names>MC</given-names>
+                  </name>
+                  <name>
+                     <surname>Barnhill</surname>
+                     <given-names>RL</given-names>
+                  </name>
+                  <name>
+                     <surname>Wanebo</surname>
+                     <given-names>HJ</given-names>
+                  </name>
+               </person-group>
+               <article-title>Efficacy of an elective regional lymph node dissection of 1 to 4 mm thick melanomas for patients 60 years of age and younger</article-title>
+               <source>Ann Surg</source>
+               <year>1996</year>
+               <volume>224</volume>
+               <fpage>255</fpage>
+               <lpage>63</lpage>
+               <comment>discussion 263&#x02013;6.</comment>
+               <pub-id pub-id-type="pmid">8813254</pub-id>
+               <pub-id pub-id-type="doi">10.1097/00000658-199609000-00002</pub-id>
+            </citation>
+         </ref>
+         <ref id="B5">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Cascinelli</surname>
+                     <given-names>N</given-names>
+                  </name>
+                  <name>
+                     <surname>Morabito</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Santinami</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>MacKie</surname>
+                     <given-names>RM</given-names>
+                  </name>
+                  <name>
+                     <surname>Belli</surname>
+                     <given-names>F</given-names>
+                  </name>
+               </person-group>
+               <article-title>Immediate or delayed dissection of regional nodes in patients with melanoma of the trunk: a randomised trial</article-title>
+               <source>WHO Melanoma Programme Lancet</source>
+               <year>1998</year>
+               <volume>351</volume>
+               <fpage>793</fpage>
+               <lpage>6</lpage>
+            </citation>
+         </ref>
+         <ref id="B6">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Salti</surname>
+                     <given-names>GI</given-names>
+                  </name>
+                  <name>
+                     <surname>Das Gupta</surname>
+                     <given-names>TK</given-names>
+                  </name>
+               </person-group>
+               <article-title>Predicting residual lymph node basin disease in melanoma patients with sentinel lymph node metastases</article-title>
+               <source>Am J Surg</source>
+               <year>2003</year>
+               <volume>186</volume>
+               <fpage>98</fpage>
+               <lpage>101</lpage>
+               <pub-id pub-id-type="pmid">12885597</pub-id>
+               <pub-id pub-id-type="doi">10.1016/S0002-9610(03)00169-7</pub-id>
+            </citation>
+         </ref>
+         <ref id="B7">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Nowecki</surname>
+                     <given-names>ZI</given-names>
+                  </name>
+                  <name>
+                     <surname>Rutkowski</surname>
+                     <given-names>P</given-names>
+                  </name>
+                  <name>
+                     <surname>Nasierowska-Guttmejer</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Ruka</surname>
+                     <given-names>W</given-names>
+                  </name>
+               </person-group>
+               <article-title>Sentinel lymph node biopsy in melanoma patients with clinically negative regional lymph nodes &#x02013; one institution's experience</article-title>
+               <source>Melanoma Res</source>
+               <year>2003</year>
+               <volume>13</volume>
+               <fpage>35</fpage>
+               <lpage>43</lpage>
+               <pub-id pub-id-type="pmid">12569283</pub-id>
+               <pub-id pub-id-type="doi">10.1097/00008390-200302000-00007</pub-id>
+            </citation>
+         </ref>
+         <ref id="B8">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Manca</surname>
+                     <given-names>G</given-names>
+                  </name>
+                  <name>
+                     <surname>Facchetti</surname>
+                     <given-names>F</given-names>
+                  </name>
+                  <name>
+                     <surname>Pizzocaro</surname>
+                     <given-names>C</given-names>
+                  </name>
+                  <name>
+                     <surname>Biasca</surname>
+                     <given-names>F</given-names>
+                  </name>
+                  <name>
+                     <surname>Farfaglia</surname>
+                     <given-names>R</given-names>
+                  </name>
+                  <name>
+                     <surname>Simoncini</surname>
+                     <given-names>E</given-names>
+                  </name>
+                  <name>
+                     <surname>Cristinelli</surname>
+                     <given-names>MR</given-names>
+                  </name>
+                  <name>
+                     <surname>Flocchini</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Parrinello</surname>
+                     <given-names>G</given-names>
+                  </name>
+                  <name>
+                     <surname>Manganoni</surname>
+                     <given-names>A</given-names>
+                  </name>
+               </person-group>
+               <article-title>Nodal staging in localized melanoma. The experience of the Brescia Melanoma Unit</article-title>
+               <source>Br J Plast Surg</source>
+               <year>2003</year>
+               <volume>56</volume>
+               <fpage>534</fpage>
+               <lpage>9</lpage>
+               <pub-id pub-id-type="pmid">12946370</pub-id>
+               <pub-id pub-id-type="doi">10.1016/S0007-1226(03)00208-X</pub-id>
+            </citation>
+         </ref>
+         <ref id="B9">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Rutkowski</surname>
+                     <given-names>P</given-names>
+                  </name>
+                  <name>
+                     <surname>Nowecki</surname>
+                     <given-names>ZI</given-names>
+                  </name>
+                  <name>
+                     <surname>Nasierowska-Guttmejer</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Ruka</surname>
+                     <given-names>W</given-names>
+                  </name>
+               </person-group>
+               <article-title>Lymph node status and survival in cutaneous malignant melanoma &#x02013; sentinel lymph node biopsy impact</article-title>
+               <source>Eur J Surg Oncol</source>
+               <year>2003</year>
+               <volume>29</volume>
+               <fpage>611</fpage>
+               <lpage>8</lpage>
+               <pub-id pub-id-type="pmid">12943629</pub-id>
+               <pub-id pub-id-type="doi">10.1016/S0748-7983(03)00118-5</pub-id>
+            </citation>
+         </ref>
+         <ref id="B10">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Wagner</surname>
+                     <given-names>JD</given-names>
+                  </name>
+                  <name>
+                     <surname>Ranieri</surname>
+                     <given-names>J</given-names>
+                  </name>
+                  <name>
+                     <surname>Evdokimow</surname>
+                     <given-names>DZ</given-names>
+                  </name>
+                  <name>
+                     <surname>Logan</surname>
+                     <given-names>T</given-names>
+                  </name>
+                  <name>
+                     <surname>Chuang</surname>
+                     <given-names>TY</given-names>
+                  </name>
+                  <name>
+                     <surname>Johnson</surname>
+                     <given-names>CS</given-names>
+                  </name>
+                  <name>
+                     <surname>Jung</surname>
+                     <given-names>SH</given-names>
+                  </name>
+                  <name>
+                     <surname>Wenck</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Coleman</surname>
+                     <given-names>JJ</given-names>
+                     <suffix>3rd</suffix>
+                  </name>
+               </person-group>
+               <article-title>Patterns of initial recurrence and prognosis after sentinel lymph node biopsy and selective lymphadenectomy for melanoma</article-title>
+               <source>Plast Reconstr Surg</source>
+               <year>2003</year>
+               <volume>112</volume>
+               <fpage>486</fpage>
+               <lpage>97</lpage>
+               <pub-id pub-id-type="pmid">12900606</pub-id>
+               <pub-id pub-id-type="doi">10.1097/01.PRS.0000070989.23469.1F</pub-id>
+            </citation>
+         </ref>
+         <ref id="B11">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Zapas</surname>
+                     <given-names>JL</given-names>
+                  </name>
+                  <name>
+                     <surname>Coley</surname>
+                     <given-names>HC</given-names>
+                  </name>
+                  <name>
+                     <surname>Beam</surname>
+                     <given-names>SL</given-names>
+                  </name>
+                  <name>
+                     <surname>Brown</surname>
+                     <given-names>SD</given-names>
+                  </name>
+                  <name>
+                     <surname>Jablonski</surname>
+                     <given-names>KA</given-names>
+                  </name>
+                  <name>
+                     <surname>Elias</surname>
+                     <given-names>EG</given-names>
+                  </name>
+               </person-group>
+               <article-title>The risk of regional lymph node metastases in patients with melanoma less than 1.0 mm thick: recommendations for sentinel lymph node biopsy</article-title>
+               <source>J Am Coll Surg</source>
+               <year>2003</year>
+               <volume>197</volume>
+               <fpage>403</fpage>
+               <lpage>7</lpage>
+               <pub-id pub-id-type="pmid">12946795</pub-id>
+               <pub-id pub-id-type="doi">10.1016/S1072-7515(03)00432-0</pub-id>
+            </citation>
+         </ref>
+         <ref id="B12">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Gad</surname>
+                     <given-names>D</given-names>
+                  </name>
+                  <name>
+                     <surname>Sjogren</surname>
+                     <given-names>P</given-names>
+                  </name>
+               </person-group>
+               <article-title>[Sentinel lymph node biopsy in patients with cutaneous malignant melanoma]</article-title>
+               <source>Ugeskr Laeger</source>
+               <year>2003</year>
+               <volume>165</volume>
+               <fpage>2567</fpage>
+               <lpage>70</lpage>
+               <comment>Danish.</comment>
+               <pub-id pub-id-type="pmid">12854268</pub-id>
+            </citation>
+         </ref>
+         <ref id="B13">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Kaikaris</surname>
+                     <given-names>V</given-names>
+                  </name>
+                  <name>
+                     <surname>Valiukeviciene</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Rimdeika</surname>
+                     <given-names>R</given-names>
+                  </name>
+                  <name>
+                     <surname>Gollnick</surname>
+                     <given-names>H</given-names>
+                  </name>
+                  <name>
+                     <surname>Ulrich</surname>
+                     <given-names>J</given-names>
+                  </name>
+               </person-group>
+               <article-title>[Sentinel lymph node biopsy in melanoma patients: methods, indications, and clinical significance]</article-title>
+               <source>Medicina (Kaunas)</source>
+               <year>2003</year>
+               <volume>39</volume>
+               <fpage>621</fpage>
+               <lpage>30</lpage>
+               <comment>Review. Lithuanian.</comment>
+               <pub-id pub-id-type="pmid">12878814</pub-id>
+            </citation>
+         </ref>
+         <ref id="B14">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Arens</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Osinga</surname>
+                     <given-names>J</given-names>
+                  </name>
+                  <name>
+                     <surname>Schwipper</surname>
+                     <given-names>V</given-names>
+                  </name>
+                  <name>
+                     <surname>Schober</surname>
+                     <given-names>O</given-names>
+                  </name>
+                  <name>
+                     <surname>Tilkorn</surname>
+                     <given-names>H</given-names>
+                  </name>
+                  <name>
+                     <surname>Liebau</surname>
+                     <given-names>J</given-names>
+                  </name>
+               </person-group>
+               <article-title>[Sentinel lymph node dissection in patients with malignant melanoma. Diagnostic and therapeutic standards]</article-title>
+               <source>Chirurg</source>
+               <year>2003</year>
+               <volume>74</volume>
+               <fpage>665</fpage>
+               <lpage>70</lpage>
+               <comment>German.</comment>
+               <pub-id pub-id-type="pmid">12883795</pub-id>
+               <pub-id pub-id-type="doi">10.1007/s00104-003-0659-x</pub-id>
+            </citation>
+         </ref>
+         <ref id="B15">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Santinami</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Baldi</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Tragni</surname>
+                     <given-names>G</given-names>
+                  </name>
+                  <name>
+                     <surname>Maurichi</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Moglia</surname>
+                     <given-names>D</given-names>
+                  </name>
+                  <name>
+                     <surname>Bono</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Bartoli</surname>
+                     <given-names>C</given-names>
+                  </name>
+                  <name>
+                     <surname>Patuzzo</surname>
+                     <given-names>R</given-names>
+                  </name>
+                  <name>
+                     <surname>Pennacchioli</surname>
+                     <given-names>E</given-names>
+                  </name>
+                  <name>
+                     <surname>Cascinelli</surname>
+                     <given-names>N</given-names>
+                  </name>
+               </person-group>
+               <article-title>[Impact of sentinel lymph node biopsy on the treatment of melanoma]</article-title>
+               <source>Tumori</source>
+               <year>2003</year>
+               <volume>89</volume>
+               <fpage>273</fpage>
+               <lpage>5</lpage>
+               <comment>Italian.</comment>
+               <pub-id pub-id-type="pmid">12903619</pub-id>
+            </citation>
+         </ref>
+         <ref id="B16">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Al-Hiari</surname>
+                     <given-names>AA</given-names>
+                  </name>
+                  <name>
+                     <surname>Al-Kaylani</surname>
+                     <given-names>H</given-names>
+                  </name>
+               </person-group>
+               <article-title>Sentinel node in management of malignant melanoma</article-title>
+               <source>Saudi Med J</source>
+               <year>2002</year>
+               <volume>23</volume>
+               <fpage>1462</fpage>
+               <lpage>5</lpage>
+               <pub-id pub-id-type="pmid">12518192</pub-id>
+            </citation>
+         </ref>
+         <ref id="B17">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Pu</surname>
+                     <given-names>LL</given-names>
+                  </name>
+                  <name>
+                     <surname>Wells</surname>
+                     <given-names>KE</given-names>
+                  </name>
+                  <name>
+                     <surname>Cruse</surname>
+                     <given-names>CW</given-names>
+                  </name>
+                  <name>
+                     <surname>Shons</surname>
+                     <given-names>AR</given-names>
+                  </name>
+                  <name>
+                     <surname>Reintgen</surname>
+                     <given-names>DS</given-names>
+                  </name>
+               </person-group>
+               <article-title>Prevalence of additional positive lymph nodes in complete lymphadenectomy specimens after positive sentinel lymphadenectomy findings for early-stage melanoma of the head
+                  and neck</article-title>
+               <source>Plast Reconstr Surg</source>
+               <year>2003</year>
+               <volume>112</volume>
+               <fpage>43</fpage>
+               <lpage>9</lpage>
+               <pub-id pub-id-type="pmid">12832875</pub-id>
+               <pub-id pub-id-type="doi">10.1097/01.PRS.0000065912.20180.A9</pub-id>
+            </citation>
+         </ref>
+         <ref id="B18">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Buonomo</surname>
+                     <given-names>O</given-names>
+                  </name>
+                  <name>
+                     <surname>Felici</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Granai</surname>
+                     <given-names>AV</given-names>
+                  </name>
+                  <name>
+                     <surname>Piccirillo</surname>
+                     <given-names>R</given-names>
+                  </name>
+                  <name>
+                     <surname>De Liguori Carino</surname>
+                     <given-names>N</given-names>
+                  </name>
+                  <name>
+                     <surname>Guadagni</surname>
+                     <given-names>F</given-names>
+                  </name>
+                  <name>
+                     <surname>Mariotti</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Orlandi</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Tipaldi</surname>
+                     <given-names>G</given-names>
+                  </name>
+                  <name>
+                     <surname>Cipriani</surname>
+                     <given-names>C</given-names>
+                  </name>
+                  <name>
+                     <surname>Chimenti</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Cervelli</surname>
+                     <given-names>V</given-names>
+                  </name>
+                  <name>
+                     <surname>Casciani</surname>
+                     <given-names>CU</given-names>
+                  </name>
+                  <name>
+                     <surname>Roselli</surname>
+                     <given-names>M</given-names>
+                  </name>
+               </person-group>
+               <article-title>Sentinel lymphadenectomy in cutaneous melanoma</article-title>
+               <source>Tumori</source>
+               <year>2002</year>
+               <volume>88</volume>
+               <fpage>S49</fpage>
+               <lpage>51</lpage>
+               <pub-id pub-id-type="pmid">12369552</pub-id>
+            </citation>
+         </ref>
+         <ref id="B19">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Nieweg</surname>
+                     <given-names>OE</given-names>
+                  </name>
+                  <name>
+                     <surname>Eggermont</surname>
+                     <given-names>AM</given-names>
+                  </name>
+                  <name>
+                     <surname>Kroon</surname>
+                     <given-names>BB</given-names>
+                  </name>
+               </person-group>
+               <article-title>[Sentinel node biopsy in melanoma: some critical questions]</article-title>
+               <source>Ned Tijdschr Geneeskd</source>
+               <year>2002</year>
+               <volume>146</volume>
+               <fpage>1774</fpage>
+               <lpage>7</lpage>
+               <comment>Review. Dutch</comment>
+               <pub-id pub-id-type="pmid">12369437</pub-id>
+            </citation>
+         </ref>
+         <ref id="B20">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Essner</surname>
+                     <given-names>R</given-names>
+                  </name>
+                  <name>
+                     <surname>Cochran</surname>
+                     <given-names>AJ</given-names>
+                  </name>
+               </person-group>
+               <article-title>Sentinel node biopsy: not only a staging tool?</article-title>
+               <source>Recent Results Cancer Res</source>
+               <year>2002</year>
+               <volume>160</volume>
+               <fpage>133</fpage>
+               <lpage>48</lpage>
+               <pub-id pub-id-type="pmid">12079207</pub-id>
+            </citation>
+         </ref>
+         <ref id="B21">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Thompson</surname>
+                     <given-names>JF</given-names>
+                  </name>
+               </person-group>
+               <article-title>The Sydney Melanoma Unit experience of sentinel lymphadenectomy for melanoma</article-title>
+               <source>Ann Surg Oncol</source>
+               <year>2001</year>
+               <volume>8</volume>
+               <fpage>44S</fpage>
+               <lpage>47S</lpage>
+               <pub-id pub-id-type="pmid">11599898</pub-id>
+            </citation>
+         </ref>
+         <ref id="B22">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Cascinelli</surname>
+                     <given-names>N</given-names>
+                  </name>
+                  <name>
+                     <surname>Belli</surname>
+                     <given-names>F</given-names>
+                  </name>
+                  <name>
+                     <surname>Santinami</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Fait</surname>
+                     <given-names>V</given-names>
+                  </name>
+                  <name>
+                     <surname>Testori</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Ruka</surname>
+                     <given-names>W</given-names>
+                  </name>
+                  <name>
+                     <surname>Cavaliere</surname>
+                     <given-names>R</given-names>
+                  </name>
+                  <name>
+                     <surname>Mozzillo</surname>
+                     <given-names>N</given-names>
+                  </name>
+                  <name>
+                     <surname>Rossi</surname>
+                     <given-names>CR</given-names>
+                  </name>
+                  <name>
+                     <surname>MacKie</surname>
+                     <given-names>RM</given-names>
+                  </name>
+                  <name>
+                     <surname>Nieweg</surname>
+                     <given-names>O</given-names>
+                  </name>
+                  <name>
+                     <surname>Pace</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Kirov</surname>
+                     <given-names>K</given-names>
+                  </name>
+               </person-group>
+               <article-title>Sentinel lymph node biopsy in cutaneous melanoma: the WHO Melanoma Program experience</article-title>
+               <source>Ann Surg Oncol</source>
+               <year>2000</year>
+               <volume>7</volume>
+               <fpage>469</fpage>
+               <lpage>74</lpage>
+               <pub-id pub-id-type="pmid">10894144</pub-id>
+               <pub-id pub-id-type="doi">10.1007/s10434-000-0469-z</pub-id>
+            </citation>
+         </ref>
+         <ref id="B23">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Havenga</surname>
+                     <given-names>K</given-names>
+                  </name>
+                  <name>
+                     <surname>Cobben</surname>
+                     <given-names>DC</given-names>
+                  </name>
+                  <name>
+                     <surname>Oyen</surname>
+                     <given-names>WJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Nienhuijs</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Hoekstra</surname>
+                     <given-names>HJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Ruers</surname>
+                     <given-names>TJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Wobbes</surname>
+                     <given-names>T</given-names>
+                  </name>
+               </person-group>
+               <article-title>Fluorodeoxyglucose-positron emission tomography and sentinel lymph node biopsy in staging primary cutaneous melanoma</article-title>
+               <source>Eur J Surg Oncol</source>
+               <year>2003</year>
+               <volume>29</volume>
+               <fpage>662</fpage>
+               <lpage>4</lpage>
+               <pub-id pub-id-type="pmid">14511614</pub-id>
+               <pub-id pub-id-type="doi">10.1016/S0748-7983(03)00147-1</pub-id>
+            </citation>
+         </ref>
+         <ref id="B24">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Schafer</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Herbst</surname>
+                     <given-names>RA</given-names>
+                  </name>
+                  <name>
+                     <surname>Beiteke</surname>
+                     <given-names>U</given-names>
+                  </name>
+                  <name>
+                     <surname>Lange-Ionescu</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Treckmann</surname>
+                     <given-names>H</given-names>
+                  </name>
+                  <name>
+                     <surname>Lohlein</surname>
+                     <given-names>D</given-names>
+                  </name>
+                  <name>
+                     <surname>Thiemann</surname>
+                     <given-names>G</given-names>
+                  </name>
+                  <name>
+                     <surname>Theophil</surname>
+                     <given-names>B</given-names>
+                  </name>
+                  <name>
+                     <surname>Schwarze</surname>
+                     <given-names>EW</given-names>
+                  </name>
+                  <name>
+                     <surname>Bartels</surname>
+                     <given-names>HJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Frosch</surname>
+                     <given-names>PJ</given-names>
+                  </name>
+               </person-group>
+               <article-title>[Sentinel lymph node excision (SLNE) and positron emission tomography in the staging of stage I-II melanoma patients]</article-title>
+               <source>Hautarzt</source>
+               <year>2003</year>
+               <volume>54</volume>
+               <fpage>440</fpage>
+               <lpage>7</lpage>
+               <comment>German.</comment>
+               <pub-id pub-id-type="pmid">12719864</pub-id>
+            </citation>
+         </ref>
+         <ref id="B25">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Stojadinovic</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Allen</surname>
+                     <given-names>PJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Clary</surname>
+                     <given-names>BM</given-names>
+                  </name>
+                  <name>
+                     <surname>Busam</surname>
+                     <given-names>KJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Coit</surname>
+                     <given-names>DG</given-names>
+                  </name>
+               </person-group>
+               <article-title>Value of frozen-section analysis of sentinel lymph nodes for primary cutaneous malignant melanoma</article-title>
+               <source>Ann Surg</source>
+               <year>2002</year>
+               <volume>235</volume>
+               <fpage>92</fpage>
+               <lpage>8</lpage>
+               <pub-id pub-id-type="pmid">11753047</pub-id>
+               <pub-id pub-id-type="doi">10.1097/00000658-200201000-00012</pub-id>
+            </citation>
+         </ref>
+         <ref id="B26">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Gibbs</surname>
+                     <given-names>JF</given-names>
+                  </name>
+                  <name>
+                     <surname>Huang</surname>
+                     <given-names>PP</given-names>
+                  </name>
+                  <name>
+                     <surname>Zhang</surname>
+                     <given-names>PJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Kraybill</surname>
+                     <given-names>WG</given-names>
+                  </name>
+                  <name>
+                     <surname>Cheney</surname>
+                     <given-names>R</given-names>
+                  </name>
+               </person-group>
+               <article-title>Accuracy of pathologic techniques for the diagnosis of metastatic melanoma in sentinel lymph nodes</article-title>
+               <source>Ann Surg Oncol</source>
+               <year>1999</year>
+               <volume>6</volume>
+               <fpage>699</fpage>
+               <lpage>704</lpage>
+               <pub-id pub-id-type="pmid">10560857</pub-id>
+            </citation>
+         </ref>
+         <ref id="B27">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Clary</surname>
+                     <given-names>BM</given-names>
+                  </name>
+                  <name>
+                     <surname>Lewis</surname>
+                     <given-names>JJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Brady</surname>
+                     <given-names>MS</given-names>
+                  </name>
+                  <name>
+                     <surname>Busam</surname>
+                     <given-names>K</given-names>
+                  </name>
+                  <name>
+                     <surname>Coit</surname>
+                     <given-names>DG</given-names>
+                  </name>
+               </person-group>
+               <article-title>Should frozen section analysis of the sentinel node be performed in patients with melanoma?</article-title>
+               <source>Eur J Nucl Med</source>
+               <year>1999</year>
+               <volume>26</volume>
+               <fpage>S68</fpage>
+            </citation>
+         </ref>
+         <ref id="B28">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Tanis</surname>
+                     <given-names>PJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Boom</surname>
+                     <given-names>RP</given-names>
+                  </name>
+                  <name>
+                     <surname>Koops</surname>
+                     <given-names>HS</given-names>
+                  </name>
+                  <name>
+                     <surname>Faneyte</surname>
+                     <given-names>IF</given-names>
+                  </name>
+                  <name>
+                     <surname>Peterse</surname>
+                     <given-names>JL</given-names>
+                  </name>
+                  <name>
+                     <surname>Nieweg</surname>
+                     <given-names>OE</given-names>
+                  </name>
+                  <name>
+                     <surname>Rutgers</surname>
+                     <given-names>EJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Tiebosch</surname>
+                     <given-names>AT</given-names>
+                  </name>
+                  <name>
+                     <surname>Kroon</surname>
+                     <given-names>BB</given-names>
+                  </name>
+               </person-group>
+               <article-title>Frozen section investigation of the sentinel node in malignant melanoma and breast cancer</article-title>
+               <source>Ann Surg Oncol</source>
+               <year>2001</year>
+               <volume>8</volume>
+               <fpage>222</fpage>
+               <lpage>26</lpage>
+               <pub-id pub-id-type="pmid">11314938</pub-id>
+            </citation>
+         </ref>
+         <ref id="B29">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Creager</surname>
+                     <given-names>AJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Shiver</surname>
+                     <given-names>SA</given-names>
+                  </name>
+                  <name>
+                     <surname>Shen</surname>
+                     <given-names>P</given-names>
+                  </name>
+                  <name>
+                     <surname>Geisinger</surname>
+                     <given-names>KR</given-names>
+                  </name>
+                  <name>
+                     <surname>Levine</surname>
+                     <given-names>EA</given-names>
+                  </name>
+               </person-group>
+               <article-title>Intraoperative evaluation of sentinel lymph nodes for metastatic melanoma by imprint cytology</article-title>
+               <source>Cancer</source>
+               <year>2002</year>
+               <volume>94</volume>
+               <fpage>3016</fpage>
+               <lpage>22</lpage>
+               <pub-id pub-id-type="pmid">12115392</pub-id>
+               <pub-id pub-id-type="doi">10.1002/cncr.10512</pub-id>
+            </citation>
+         </ref>
+         <ref id="B30">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Hocevat</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Bracko</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Pogacnik</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Vidergar-Kralj</surname>
+                     <given-names>B</given-names>
+                  </name>
+                  <name>
+                     <surname>Besic</surname>
+                     <given-names>N</given-names>
+                  </name>
+                  <name>
+                     <surname>Zgajnar</surname>
+                     <given-names>J</given-names>
+                  </name>
+               </person-group>
+               <article-title>Role of imprint cytology in the intraoperative evaluation of sentinel lymph nodes for malignant melanoma</article-title>
+               <source>Eur J Cancer</source>
+               <year>2003</year>
+               <volume>39</volume>
+               <fpage>2173</fpage>
+               <lpage>8</lpage>
+               <pub-id pub-id-type="pmid">14522375</pub-id>
+               <pub-id pub-id-type="doi">10.1016/S0959-8049(03)00453-2</pub-id>
+            </citation>
+         </ref>
+         <ref id="B31">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Eudy</surname>
+                     <given-names>GE</given-names>
+                  </name>
+                  <name>
+                     <surname>Carlson</surname>
+                     <given-names>GW</given-names>
+                  </name>
+                  <name>
+                     <surname>Murray</surname>
+                     <given-names>DR</given-names>
+                  </name>
+                  <name>
+                     <surname>Waldrop</surname>
+                     <given-names>SM</given-names>
+                  </name>
+                  <name>
+                     <surname>Lawson</surname>
+                     <given-names>D</given-names>
+                  </name>
+                  <name>
+                     <surname>Cohen</surname>
+                     <given-names>C</given-names>
+                  </name>
+               </person-group>
+               <article-title>Rapid immunohistochemistry of sentinel lymph nodes for metastatic melanoma</article-title>
+               <source>Hum Pathol</source>
+               <year>2003</year>
+               <volume>34</volume>
+               <fpage>797</fpage>
+               <lpage>802</lpage>
+               <pub-id pub-id-type="pmid">14506642</pub-id>
+               <pub-id pub-id-type="doi">10.1016/S0046-8177(03)00290-9</pub-id>
+            </citation>
+         </ref>
+         <ref id="B32">
+            <citation citation-type="other">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Shidham</surname>
+                     <given-names>VB</given-names>
+                  </name>
+                  <name>
+                     <surname>Qi</surname>
+                     <given-names>D</given-names>
+                  </name>
+                  <name>
+                     <surname>Rao</surname>
+                     <given-names>RN</given-names>
+                  </name>
+                  <name>
+                     <surname>Acker</surname>
+                     <given-names>SM</given-names>
+                  </name>
+                  <name>
+                     <surname>Chang</surname>
+                     <given-names>CC</given-names>
+                  </name>
+                  <name>
+                     <surname>Kampalath</surname>
+                     <given-names>B</given-names>
+                  </name>
+                  <name>
+                     <surname>Dawson</surname>
+                     <given-names>G</given-names>
+                  </name>
+                  <name>
+                     <surname>Machhi</surname>
+                     <given-names>JK</given-names>
+                  </name>
+                  <name>
+                     <surname>Komorowski</surname>
+                     <given-names>RA</given-names>
+                  </name>
+               </person-group>
+               <article-title>Improved Immunohistochemical Evaluation of Micrometastases in Sentinel Lymph Nodes of Cutaneous Melanoma with MCW Melanoma Cocktail- A Mixture of Monoclonal Antibodies to
+                  MART-1, Melan-A, and Tyrosinase</article-title>
+               <source>BMC Cancer</source>
+               <volume>3</volume>
+               <fpage>p1</fpage>
+               <lpage>9</lpage>
+               <ext-link ext-link-type="uri" xlink:href="http://www.biomedcentral.com/qc/1471-2407/3/15"/>
+               <comment>2003 May 7;[PubMed PMID: 12735792]</comment>
+            </citation>
+         </ref>
+         <ref id="B33">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Shidham</surname>
+                     <given-names>VB</given-names>
+                  </name>
+                  <name>
+                     <surname>Komorowski</surname>
+                     <given-names>R</given-names>
+                  </name>
+               </person-group>
+               <article-title>'MCW melanoma cocktail' for evaluation of metastases in sentinel lymph nodes of cutaneous melanoma</article-title>
+               <source>Expert Review of Molecular Diagnostics</source>
+               <year>2005</year>
+               <volume>5</volume>
+               <fpage>281</fpage>
+               <lpage>290</lpage>
+               <pub-id pub-id-type="pmid">15934808</pub-id>
+               <pub-id pub-id-type="doi">10.1586/14737159.5.3.281</pub-id>
+            </citation>
+         </ref>
+         <ref id="B34">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Shidham</surname>
+                     <given-names>V</given-names>
+                  </name>
+                  <name>
+                     <surname>Macias</surname>
+                     <given-names>V</given-names>
+                  </name>
+                  <name>
+                     <surname>Neuberg</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Chavan</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Rao</surname>
+                     <given-names>RN</given-names>
+                  </name>
+                  <name>
+                     <surname>Basir</surname>
+                     <given-names>Z</given-names>
+                  </name>
+                  <name>
+                     <surname>Walker</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Dzwierzynski</surname>
+                     <given-names>WW</given-names>
+                  </name>
+               </person-group>
+               <article-title>Rapid intraoperative immunocytochemical evaluation of cutaneous melanoma sentinel lymph nodes for melanoma metastases with 'MCW Melanoma Cocktail'</article-title>
+               <source>Acta Cytol</source>
+               <year>2003</year>
+               <volume>47</volume>
+               <fpage>938</fpage>
+            </citation>
+         </ref>
+         <ref id="B35">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Shidham</surname>
+                     <given-names>VB</given-names>
+                  </name>
+                  <name>
+                     <surname>Komorowski</surname>
+                     <given-names>R</given-names>
+                  </name>
+                  <name>
+                     <surname>Dawson</surname>
+                     <given-names>G</given-names>
+                  </name>
+                  <name>
+                     <surname>Kaul</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Chang</surname>
+                     <given-names>CC</given-names>
+                  </name>
+                  <name>
+                     <surname>Macias</surname>
+                     <given-names>V</given-names>
+                  </name>
+               </person-group>
+               <article-title>Optimization of immunostaining protocol for rapid intraoperative evaluation of imprint smears of melanoma sentinel lymph nodes with 'MCW melanoma cocktail'</article-title>
+               <source>CytoJournal</source>
+               <year>2004</year>
+               <volume>1</volume>
+               <fpage>2</fpage>
+               <ext-link ext-link-type="uri" xlink:href="http://www.cytojournal.com/content/1/1/2"/>
+               <comment>doi:10.1186/1742-6413-1-2</comment>
+               <pub-id pub-id-type="pmid">15500702</pub-id>
+               <pub-id pub-id-type="doi">10.1186/1742-6413-1-2</pub-id>
+            </citation>
+         </ref>
+         <ref id="B36">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Spanknebel</surname>
+                     <given-names>K</given-names>
+                  </name>
+                  <name>
+                     <surname>Coit</surname>
+                     <given-names>DG</given-names>
+                  </name>
+                  <name>
+                     <surname>Bieligk</surname>
+                     <given-names>SC</given-names>
+                  </name>
+                  <name>
+                     <surname>Gonen</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Rosai</surname>
+                     <given-names>J</given-names>
+                  </name>
+                  <name>
+                     <surname>Klimstra</surname>
+                     <given-names>DS</given-names>
+                  </name>
+               </person-group>
+               <article-title>Characterization of Micrometastatic Disease in Melanoma Sentinel Lymph Nodes by Enhanced Pathology: Recommendations for Standardizing Pathologic Analysis</article-title>
+               <source>Am J Surg Pathol</source>
+               <year>2005</year>
+               <volume>29</volume>
+               <fpage>305</fpage>
+               <lpage>17</lpage>
+               <pub-id pub-id-type="pmid">15725798</pub-id>
+               <pub-id pub-id-type="doi">10.1097/01.pas.0000152134.36030.b7</pub-id>
+            </citation>
+         </ref>
+         <ref id="B37">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Kapteijn</surname>
+                     <given-names>BA</given-names>
+                  </name>
+                  <name>
+                     <surname>Nieweg</surname>
+                     <given-names>OE</given-names>
+                  </name>
+                  <name>
+                     <surname>Liem</surname>
+                     <given-names>I</given-names>
+                  </name>
+                  <name>
+                     <surname>Mooi</surname>
+                     <given-names>WJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Balm</surname>
+                     <given-names>AJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Muller</surname>
+                     <given-names>SH</given-names>
+                  </name>
+                  <name>
+                     <surname>Peterse</surname>
+                     <given-names>JL</given-names>
+                  </name>
+                  <name>
+                     <surname>Valdes Olmos</surname>
+                     <given-names>RA</given-names>
+                  </name>
+                  <name>
+                     <surname>Hoefnagel</surname>
+                     <given-names>CA</given-names>
+                  </name>
+                  <name>
+                     <surname>Kroon</surname>
+                     <given-names>BB</given-names>
+                  </name>
+               </person-group>
+               <article-title>Localizing the sentinel node in cutaneous melanoma: gamma probe detection versus blue dye</article-title>
+               <source>Ann Surg Oncol</source>
+               <year>1997</year>
+               <volume>4</volume>
+               <fpage>156</fpage>
+               <lpage>60</lpage>
+               <pub-id pub-id-type="pmid">9084853</pub-id>
+               <pub-id pub-id-type="doi">10.1007/BF02303799</pub-id>
+            </citation>
+         </ref>
+         <ref id="B38">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Messina</surname>
+                     <given-names>JL</given-names>
+                  </name>
+                  <name>
+                     <surname>Glass</surname>
+                     <given-names>LF</given-names>
+                  </name>
+                  <name>
+                     <surname>Cruse</surname>
+                     <given-names>CW</given-names>
+                  </name>
+                  <name>
+                     <surname>Berman</surname>
+                     <given-names>C</given-names>
+                  </name>
+                  <name>
+                     <surname>Ku</surname>
+                     <given-names>NN</given-names>
+                  </name>
+                  <name>
+                     <surname>Reintgen</surname>
+                     <given-names>DS</given-names>
+                  </name>
+               </person-group>
+               <article-title>Pathologic examination of the sentinel lymph node in malignant melanoma</article-title>
+               <source>Am J Surg Pathol</source>
+               <year>1999</year>
+               <volume>23</volume>
+               <fpage>686</fpage>
+               <lpage>90</lpage>
+               <pub-id pub-id-type="pmid">10366151</pub-id>
+               <pub-id pub-id-type="doi">10.1097/00000478-199906000-00008</pub-id>
+            </citation>
+         </ref>
+         <ref id="B39">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Yan</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Brennick</surname>
+                     <given-names>JB</given-names>
+                  </name>
+               </person-group>
+               <article-title>False-positive rate of the immunoperoxidase stains for MART1/MelanA in lymph nodes</article-title>
+               <source>Am J Surg Pathol</source>
+               <year>2004</year>
+               <volume>28</volume>
+               <fpage>596</fpage>
+               <lpage>600</lpage>
+               <pub-id pub-id-type="pmid">15105646</pub-id>
+            </citation>
+         </ref>
+         <ref id="B40">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Mahmood</surname>
+                     <given-names>MN</given-names>
+                  </name>
+                  <name>
+                     <surname>Lee</surname>
+                     <given-names>MW</given-names>
+                  </name>
+                  <name>
+                     <surname>Linden</surname>
+                     <given-names>MD</given-names>
+                  </name>
+                  <name>
+                     <surname>Nathanson</surname>
+                     <given-names>SD</given-names>
+                  </name>
+                  <name>
+                     <surname>Hornyak</surname>
+                     <given-names>TJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Zarbo</surname>
+                     <given-names>RJ</given-names>
+                  </name>
+               </person-group>
+               <article-title>Diagnostic Value of HMB-45 and Anti-Melan A Staining of Sentinel Lymph Nodes with Isolated Positive Cells</article-title>
+               <source>Mod Pathol</source>
+               <year>2002</year>
+               <volume>15</volume>
+               <fpage>1288</fpage>
+               <lpage>93</lpage>
+               <pub-id pub-id-type="pmid">12481009</pub-id>
+               <pub-id pub-id-type="doi">10.1097/01.MP.0000037313.33138.DF</pub-id>
+            </citation>
+         </ref>
+         <ref id="B41">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Shidham</surname>
+                     <given-names>VB</given-names>
+                  </name>
+                  <name>
+                     <surname>Susnik</surname>
+                     <given-names>B</given-names>
+                  </name>
+                  <name>
+                     <surname>Rao</surname>
+                     <given-names>RN</given-names>
+                  </name>
+                  <name>
+                     <surname>Chivukula</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Kampalath</surname>
+                     <given-names>B</given-names>
+                  </name>
+                  <name>
+                     <surname>Komorowski</surname>
+                     <given-names>R</given-names>
+                  </name>
+               </person-group>
+               <article-title>HMB45 immunoreactive single cells in sentinel lymph nodes negative for melanoma micrometastases are mast cells</article-title>
+               <source>Mod Pathol</source>
+               <year>2004</year>
+               <volume>17</volume>
+               <fpage>1a</fpage>
+               <lpage>388a</lpage>
+               <pub-id pub-id-type="pmid">14702091</pub-id>
+            </citation>
+         </ref>
+         <ref id="B42">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Shidham</surname>
+                     <given-names>VB</given-names>
+                  </name>
+                  <name>
+                     <surname>Qi</surname>
+                     <given-names>DY</given-names>
+                  </name>
+                  <name>
+                     <surname>Acker</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Kampalath</surname>
+                     <given-names>B</given-names>
+                  </name>
+                  <name>
+                     <surname>Chang</surname>
+                     <given-names>CC</given-names>
+                  </name>
+                  <name>
+                     <surname>George</surname>
+                     <given-names>V</given-names>
+                  </name>
+                  <name>
+                     <surname>Komorowski</surname>
+                     <given-names>R</given-names>
+                  </name>
+               </person-group>
+               <article-title>Evaluation of micrometastases in sentinel lymph nodes of cutaneous melanoma: Higher diagnostic accuracy with Melan-A and MART-1 compared to S-100 protein and HMB-45</article-title>
+               <source>Am J Surg Pathol</source>
+               <year>2001</year>
+               <volume>25</volume>
+               <fpage>1039</fpage>
+               <lpage>46</lpage>
+               <pub-id pub-id-type="pmid">11474288</pub-id>
+               <pub-id pub-id-type="doi">10.1097/00000478-200108000-00008</pub-id>
+            </citation>
+         </ref>
+      </ref-list>
+   </back>
+</article>

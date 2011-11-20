@@ -1,0 +1,1460 @@
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Archiving and Interchange DTD v2.1 20050630//EN" "http://dtd.nlm.nih.gov/publishing/2.3/journalpublishing.dtd">
+<article article-type="research-article" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <front>
+      <journal-meta>
+         <journal-id journal-id-type="nlm-ta">Genome Biol</journal-id>
+         <journal-title>Genome Biology</journal-title>
+         <issn pub-type="ppub">1465-6906</issn>
+         <issn pub-type="epub">1465-6914</issn>
+         <publisher>
+            <publisher-name>BioMed Central</publisher-name>
+            <publisher-loc>London</publisher-loc>
+         </publisher>
+      </journal-meta>
+      <article-meta>
+         <article-id pub-id-type="publisher-id">gb-2001-2-9-reviews3011</article-id>
+         <article-id pub-id-type="pmid">11574064</article-id>
+         <article-categories>
+            <subj-group subj-group-type="heading">
+               <subject>Protein Family Review</subject>
+            </subj-group>
+         </article-categories>
+         <title-group>
+            <article-title>The PITP family of phosphatidylinositol transfer proteins</article-title>
+         </title-group>
+         <contrib-group>
+            <contrib contrib-type="author" id="A1">
+               <name>
+                  <surname>Hsuan</surname>
+                  <given-names>Justin</given-names>
+               </name>
+               <xref ref-type="aff" rid="I1">1</xref>
+            </contrib>
+            <contrib contrib-type="author" corresp="yes" id="A2">
+               <name>
+                  <surname>Cockcroft</surname>
+                  <given-names>Shamshad</given-names>
+               </name>
+               <xref ref-type="aff" rid="I2">2</xref>
+               <email>s.cockcroft@ucl.ac.uk</email>
+            </contrib>
+         </contrib-group>
+         <aff id="I1"><label>1</label>Department of Medicine, Royal Free and University College Medical School, Royal Free Campus, University College London, Rowland Hill Street, London NW3 2PF, UK</aff>
+         <aff id="I2"><label>2</label>Department of Physiology, Royal Free and University College Medical School, University College London, University Street, London WC1E 6JJ, UK</aff>
+         <aff>Correspondence: Shamshad Cockcroft. E-mail: s.cockcroft@ucl.ac.uk</aff>
+         <pub-date pub-type="ppub">
+            <year>2001</year>
+         </pub-date>
+         <pub-date pub-type="epub">
+            <day>31</day>
+            <month>08</month>
+            <year>2001</year>
+         </pub-date>
+         <volume>2</volume>
+         <issue>9</issue>
+         <fpage>reviews3011.1</fpage>
+         <lpage>reviews3011.8</lpage>
+         <ext-link ext-link-type="uri" xlink:href="http://genomebiology.com/2001/2/9/reviews/3011"/>
+         <copyright-statement>Copyright &#x000a9; 2001 BioMed Central Ltd</copyright-statement>
+      </article-meta>
+   </front>
+   <body>
+      <sec id="id1">
+         <title>Summary</title>
+         <p>The PITP family is one of the two families of phosphoinositide transfer proteins that can bind and exchange one molecule of either phosphatidylinositol or phosphatidylcholine and
+            facilitate the transfer of these lipids between different membrane compartments; the other is the structurally unrelated Sec14p family. PITPs have recently been shown to be critical
+            regulators of phosphoinositides in several cellular compartments, where they participate in signal transduction and in membrane traffic. PITPs were originally defined as soluble, 35 kDa
+            proteins that contain a single structural domain. More recently, however, the PITP domain has also been found in the larger rdgB proteins. Soluble PITPs are found in many organisms,
+            including mammals, <italic>Caenorhabditis elegans</italic> (worms), <italic>Drosophila melanogaster</italic> (flies), and <italic>Dictyostelium discoideum</italic> (slime molds), but not
+            in yeasts or plants. Dysfunction of PITPs leads to neurodegeneration; this highlights the need to understand the biochemical and physiological functions of these proteins in cells.</p>
+      </sec>
+      <sec id="id2">
+         <title/>
+         <p>Two families of proteins are able specifically to transfer phosphatidylinositol (PI) and phosphatidylcholine (PC) in eukaryotic cells (Figure <xref ref-type="fig" rid="F1">1</xref>),
+            namely the PITP and Sec14p families [<xref ref-type="bibr" rid="B1">1</xref>]. They share no obvious sequence or structural similarity, but ectopically expressed PITPs can rescue
+               <italic>sec14</italic> mutants in yeast. Likewise, in functional studies in mammalian cells, ectopically expressed Sec14p can be used to compensate for the loss of PITPs [<xref
+               ref-type="bibr" rid="B2">2</xref>,<xref ref-type="bibr" rid="B3">3</xref>]. Whereas Sec14p isoforms are ubiquitous in eukaryotes, members of the PITP family appear to be absent from
+            plants and fungi. It is likely that endogenous Sec14p and PITP family members normally have distinct biological roles, and the two families should not be confused. Accordingly, PITPs
+            define a discrete family, which forms the subject of this review.</p>
+      </sec>
+      <sec id="id3">
+         <title>Gene organization and evolutionary history</title>
+         <p>The first mammalian PITP was identified as a 35 kDa protein with 271 amino acids and no sequence similarity to any known protein [<xref ref-type="bibr" rid="B4">4</xref>]. Three
+            subfamilies can now be defined (Figure <xref ref-type="fig" rid="F2">2</xref>) and all isoforms have an amino-terminal PITP-like domain. Non-systematic nomenclature has arisen as a result
+            of the different methods by which each isoform was identified. All three types occur in humans: the first comprises the small PITP&#x003b1; and PITP&#x003b2; proteins, which were
+            identified by virtue of their transfer activity <italic>in vitro</italic>; the second comprises the large rdgB&#x003b1; (also called M-RdgB1, Nir2 and PITPnm) and Nir3 (also called
+            M-RdgB2) proteins; and the third type comprises the rdgB&#x003b2; protein, which is intermediate in size and was identified by homology to rdgB&#x003b1; [<xref ref-type="bibr"
+               rid="B5">5</xref>]. The rdgB acronym is derived from a retinal degeneration mutant phenotype (type B) in <italic>Drosophila</italic>, and the Nir acronym is derived from a reported
+            interaction with the amino-terminal domain of the Pyk2 tyrosine kinase (Pyk2 N-terminal domain-interacting receptor). A third protein, termed Nir1, was also identified, but this lacks a
+            PITP domain [<xref ref-type="bibr" rid="B6">6</xref>]. Mammalian rdgB&#x003b1; is 39% identical in sequence to <italic>Drosophila</italic> rdgB, and mammalian Nir3 is 46% identical to
+               <italic>Drosophila</italic> rdgB and 56% identical to mammalian rdgB&#x003b1; [<xref ref-type="bibr" rid="B7">7</xref>].</p>
+         <p>Intron-exon boundaries are not conserved between different isoforms, and diversity may be enhanced by variation in mRNA splicing [<xref ref-type="bibr" rid="B8">8</xref>]. The recent
+            completion of the human genome has revealed that the human PITP chromosomal loci are located at approximately 11q13 (rdgB&#x003b1;), 12q24 (Nir3), 17q13 (PITP&#x003b1;), 17q23-24
+            (rdgB&#x003b2;) and 22q12 (PITP&#x003b2;).</p>
+         <p>To date, the aforementioned five PITP isoforms have been identified in humans, and one member of each of the three subfamilies can be found in the <italic>Drosophila melanogaster</italic>
+            genome. Three isoforms can be identified in the genome of <italic>C. elegans</italic>, including a PITP&#x003b1; or &#x003b2; and a rdgB&#x003b1; or Nir3 homolog; the open
+            reading frame of the third gene is too poorly defined to classify. Two genes have been identified in <italic>Dictyostelium discoideum</italic>, both of which appear to be PITP&#x003b1;
+            or &#x003b2; homologs [<xref ref-type="bibr" rid="B9">9</xref>]. The existence of multiple isoforms within subfamilies appears to be a late event in evolution as, for example, the rat
+            PITP&#x003b1; and PITP&#x003b2; protein sequences are more similar to each other (77% identity) than to any other PITP. The same is true for murine rdgB&#x003b1; and Nir3 (56%
+            identity) and the <italic>Dictyostelium</italic> PITP1 and PITP2 sequences (52% identity). Consequently, the different functions of mammalian PITP&#x003b1; and PITP&#x003b2; will
+            not necessarily parallel the functions of <italic>Dictyostelium</italic> PITP1 and PITP2; indeed, the subcellular localization of the mammalian and <italic>Dictyostelium</italic> proteins
+            do not fully correspond [<xref ref-type="bibr" rid="B9">9</xref>].</p>
+         <p>The absence of PITPs from plants, fungi and bacteria is consistent with a role for these proteins in a subset of phosphoinositide signaling pathways unique to animals. It is unlikely,
+            however, that PITPs are functionally redundant <italic>in vivo</italic>. For example, reduction of PITP&#x003b1; expression in the <italic>vibrator</italic> mutant mouse leads to
+            neurodegeneration in the presence of normal, ubiquitous PITP&#x003b2; expression [<xref ref-type="bibr" rid="B10">10</xref>]. Furthermore, although the PITP domain of
+               <italic>Drosophila</italic> rdgB&#x003b1; can rescue the <italic>rdgB</italic>-null phenotype, rat PITP&#x003b1; is ineffective [<xref ref-type="bibr" rid="B11">11</xref>].
+            Finally, the as-yet undefined functional properties of at least some PITP isoforms appear to be conserved between species as expression of murine rdgB&#x003b1; fully rescues
+               <italic>rdgB</italic>-null <italic>Drosophila</italic> [<xref ref-type="bibr" rid="B8">8</xref>].</p>
+      </sec>
+      <sec id="id4">
+         <title>Characteristic structural features</title>
+         <p>The amino acid sequence of the PITP domain is highly conserved in all isoforms and no characteristic short sequence motifs have been identified. (The sequence can be found under the Pfam
+            IDs PF02121 or IP_trans [<xref ref-type="bibr" rid="B12">12</xref>], the PRINTS IDs PR00391 or PITransfer [<xref ref-type="bibr" rid="B13">13</xref>] or the INTERPRO ID IPR001666 [<xref
+               ref-type="bibr" rid="B14">14</xref>]). The only solved crystal structure in this family is of PITP&#x003b1; bound to PC [<xref ref-type="bibr" rid="B15">15</xref>]. On the basis of
+            this structure, PITP domains were suggested to comprise three regions (Figure <xref ref-type="fig" rid="F3">3a</xref>), of which the amino-terminal lipid-binding region contains the most
+            highly conserved residues. This region contains an eight-stranded, concave, mostly antiparallel &#x003b2;-sheet and two helices (Figure <xref ref-type="fig" rid="F3">3b</xref>), which
+            encircle the bound lipid and are structurally homologous to the START family of lipid-binding proteins [<xref ref-type="bibr" rid="B16">16</xref>]. As there is no apparent sequence
+            similarity between PITPs and START proteins, it appears that these families may have evolved convergently. The carboxy-terminal helical region of the PITP domain shows greatest sequence
+            variation and may play an important role in membrane binding. Finally, the intervening loop region, which contains the Ser166 phosphorylation site, has been suggested to mediate several
+            reported protein-protein interactions [<xref ref-type="bibr" rid="B15">15</xref>].</p>
+         <p>Assignments to the PITP&#x003b1;/&#x003b2; and rdgB&#x003b2; subfamilies are made according to the similarity of the whole PITP domain rather than any motif. Although human
+            rdgB&#x003b2; has a short carboxy-terminal extension, the <italic>Drosophila</italic> isoform does not. In contrast, the rdgB&#x003b1;/Nir3 subfamily is additionally characterized
+            by the presence of an acidic Ca<sup>2+</sup>-binding domain (Pfam-B_23582 [<xref ref-type="bibr" rid="B12">12</xref>]), six short hydrophobic regions, a putative metal-ion-binding domain
+            (Pfam DDHD [<xref ref-type="bibr" rid="B12">12</xref>]), and a carboxy-terminal Pyk2-binding domain [<xref ref-type="bibr" rid="B6">6</xref>] (Figure <xref ref-type="fig" rid="F2"
+            >2</xref>). The presence of the Pyk2-binding domain in <italic>Drosophila</italic> rdgB has been noted to require a frame-shift alteration of the previously published sequence [<xref
+               ref-type="bibr" rid="B6">6</xref>]. The hydrophobic regions are probably not transmembrane segments as previously proposed [<xref ref-type="bibr" rid="B17">17</xref>], because, although
+            murine rdgB&#x003b1; associates with a particulate brain and retinal fraction on centrifugation, as do other membrane proteins, it can be extracted using buffers containing high salt
+            concentration, high pH or denaturing agents [<xref ref-type="bibr" rid="B7">7</xref>]. Sequence features distinguishing individual isoforms in each subfamily remain unclear at present, and
+            may ultimately be better defined by functional information.</p>
+         <p>Mutation of Thr59, a putative protein kinase C phosphorylation site, in PITP&#x003b1; has been shown to affect PI binding [<xref ref-type="bibr" rid="B18">18</xref>], and this residue
+            is completely conserved in all subfamilies. Modeling the position of PI in the PITP&#x003b1; crystal structure suggests that a hydrogen bond may exist between Thr59 and the inositol
+            residue [<xref ref-type="bibr" rid="B15">15</xref>]. The only established post-translational modification, however, is phosphorylation of Ser166 in PITP&#x003b1; by protein kinase C
+            activity. Ser166 is conserved in nearly all PITPs and its phosphorylation has been suggested to affect subcellular localization [<xref ref-type="bibr" rid="B19">19</xref>].</p>
+      </sec>
+      <sec id="id5">
+         <title>Localization and function</title>
+         <p>Although PITPs are defined by their ability to bind one molecule of either PI or PC, the affinity of PITP&#x003b1; for PI is 16-fold greater than for PC. This reflects the lower levels
+            of PI than PC in cells, and typically 40% of the PITP&#x003b1; and &#x003b2; proteins are liganded with PC compared to 60% with PI. In addition to their lipid-binding properties,
+            PITPs can transfer PI or PC from one membrane to another down a concentration gradient without input of energy (Figure <xref ref-type="fig" rid="F1">1</xref>). Thus, PITPs solubilize
+            lipids from membranes and can facilitate their movement through the aqueous phase.</p>
+         <p>PITP&#x003b1; and PITP&#x003b2; are expressed ubiquitously in all tissues. In brain, PITP&#x003b1; is very abundant and can represent 0.1% of brain cytosolic protein [<xref
+               ref-type="bibr" rid="B20">20</xref>]. During embryonic and early post-natal stages, expression of the genes for both PITP&#x003b1; and PITP&#x003b2; is detected widely
+            throughout the entire developing central nervous system. In the adult brain, PITP&#x003b1; is expressed in almost all neurons, whereas the expression of PITP&#x003b2; is lower than
+            at earlier stages in the entire gray matter regions except for the cerebellar cortex [<xref ref-type="bibr" rid="B21">21</xref>]. The cellular concentration of PITP&#x003b1; in brain
+            is estimated at 5-10 &#x003bc;M. Most tissues contain both isoforms, but in neutrophils PITP&#x003b2; is the major isoform and the cellular concentration of PITP&#x003b2; in
+            these cells is estimated to be between 5 &#x003bc;M and10 &#x003bc;M. Within cells, PITPs are localized in different compartments: PITP&#x003b1; is present in the cytosol and
+            the nucleus, and PITP&#x003b2; is localized in the Golgi and cytosol but not the nucleus [<xref ref-type="bibr" rid="B9">9</xref>,<xref ref-type="bibr" rid="B22">22</xref>].</p>
+         <p>Genetic data indicate that a decrease in PITP&#x003b1; levels leads to neurodegeneration in the mouse [<xref ref-type="bibr" rid="B10">10</xref>]. The <italic>vibrator</italic>
+            mutation appeared spontaneously in three individuals of a litter of nine DBA/2J mice at the Jackson laboratory in 1961. The homozygous <italic>vibrator</italic> mutation causes an
+            early-onset progressive action tremor, degeneration of neurons in the brain stem and spinal cord, and juvenile death. The mutation has been identified as an intracisternal-A-particle
+            retroposon insertion in intron 4 of the PITP&#x003b1; gene, causing a fivefold reduction in RNA and protein levels. The <italic>vibrator</italic> phenotype is suppressed in
+            heterozygous mice and in one intercross. The major suppressor locus, termed <italic>Modifier of vibrator-1</italic>, maps to proximal chromosome 19 but has not yet been identified.</p>
+         <p>The biochemical function of PITP&#x003b1; has been extensively examined. Several laboratories have used permeabilized cell preparations from which the cytosolic proteins have been
+            depleted. Measurements of phospholipase-C-mediated signaling [<xref ref-type="bibr" rid="B23">23</xref>], regulated exocytosis [<xref ref-type="bibr" rid="B24">24</xref>], the formation of
+            secretory granules [<xref ref-type="bibr" rid="B25">25</xref>] and acid secretion from gastric glands [<xref ref-type="bibr" rid="B26">26</xref>] have been examined, and all these
+            responses were found to be dependent on cytosolic proteins. In all cases, PITP&#x003b1; was purified from brain cytosol as the major reconstituting factor [<xref ref-type="bibr"
+               rid="B27">27</xref>]. Several of these functions are summarized in Figure <xref ref-type="fig" rid="F4">4</xref>. Phospholipase C hydrolyses PI bisphosphate to generate the second
+            messengers (PIP<sub>2</sub>) diacylglycerol and inositol trisphosphate. Activation of G-protein-coupled receptors or receptor tyrosine kinases is responsible for increasing phospholipase C
+            activity, and PITP&#x003b1; was identified as an essential component in ensuring substrate supply to phospholipase C [<xref ref-type="bibr" rid="B28">28</xref>,<xref ref-type="bibr"
+               rid="B29">29</xref>]. Analysis of regulated exocytosis was also identified as being dependent on PITP&#x003b1; [<xref ref-type="bibr" rid="B18">18</xref>,<xref ref-type="bibr"
+               rid="B30">30</xref>,<xref ref-type="bibr" rid="B31">31</xref>]. In this case, PITP&#x003b1; functioned together with PI phosphate 5-kinase, indicating that the synthesis of
+               PIP<sub>2</sub> was required for the secretory pathway.</p>
+         <p>Several reports have demonstrated the ability of PITP&#x003b1; to associate with class I and class III PI 3-kinases [<xref ref-type="bibr" rid="B32">32</xref>,<xref ref-type="bibr"
+               rid="B33">33</xref>] and type II PI 4-kinase [<xref ref-type="bibr" rid="B29">29</xref>] and for rdgB&#x003b1; to associate with type III PI 4-kinase [<xref ref-type="bibr"
+               rid="B34">34</xref>]. In addition, rdgB&#x003b1; and Nir3 have been shown to associate with Pyk2, a Ca<sup>2+</sup>-dependent protein tyrosine kinase [<xref ref-type="bibr" rid="B6"
+               >6</xref>]. The physiological importance of these different interactions remains unclear, however.</p>
+         <p>In flies, phototransduction is dependent on a G-protein-coupled phospholipase C signaling pathway and the rdgB protein is essential for phototransduction. The <italic>Drosophila
+            rdgB</italic> gene was discovered in three independent screens for mutants that exhibited either abnormal photoreceptor physiology or retinal degeneration. The <italic>rdgB</italic> mutant
+            has a defective light response and its photoreceptors subsequently degenerate, more so in the light. The <italic>rdgB</italic> gene encodes a 160 kDa protein that is found in the retina,
+            optic lobes, ocelli and in the central brain. In the photoreceptor cell, which consists of an array of densely packed microvilli called the rhabdomere and a non-rhabdomeric cell body, RdgB
+            localizes to the subrhabdomeric cisternae (SRC), which are extensions of the endoplasmic reticulum that act as an intracellular Ca<sup>2+</sup> store and also function to deliver protein
+            components and phospholipids such as rhodopsin and PI to the rhabdomere [<xref ref-type="bibr" rid="B17">17</xref>]. The SRC and the photoreceptor membrane are in close proximity,
+            separated by a gap of only 10 nm, which may be narrow enough for the transfer of PI between the apposing membranes by the cytoplasmic domain of the rdgB protein [<xref ref-type="bibr"
+               rid="B35">35</xref>].</p>
+         <p>The mouse and human <italic>rdgB</italic> homologs are strongly expressed in retina, olfactory bulb and brain and moderately expressed in other tissues, including lung, liver, kidney and
+            spleen [<xref ref-type="bibr" rid="B36">36</xref>,<xref ref-type="bibr" rid="B37">37</xref>]. Mammalian rdgB&#x003b1; can phenotypically rescue <italic>Drosophila rdgB</italic>
+            mutants. Human rdgB&#x003b1; maps to chromosome 11q13.1, a region known to contain several retinopathy loci, including Best disease and Bardet-Biedl syndrome-1 [<xref ref-type="bibr"
+               rid="B8">8</xref>,<xref ref-type="bibr" rid="B37">37</xref>]. Furthermore, in the mouse a dramatic increase in rdgB&#x003b1; expression is seen on the day 17 of gestation, when
+            brain development is at its maximum.</p>
+         <p>Mammalian Nir3 is selectively expressed in neurons, with high levels in the retina and the dentate gyrus of the hippocampus in the mouse. Unlike rdgB&#x003b1;, Nir3 rescues only
+            photoreceptor degeneration without fully restoring the light response, indicating a functional difference between the two RdgB homologs [<xref ref-type="bibr" rid="B7">7</xref>].</p>
+      </sec>
+      <sec id="id6">
+         <title>Frontiers</title>
+         <p>Proteins with a PITP domain are a relatively small family of PI-binding proteins and belong to a larger superfamily of proteins that bind hydrophobic ligands. Despite a wealth of data
+            indicating that PITP proteins play a central role in membrane traffic and signaling, how they execute their function at the molecular level remains to be understood. PITPs appear to
+            coordinate the levels of phosphoinositides in different membrane compartments during periods when high levels of these lipids are needed for both trafficking and signaling purposes, the
+            way the proteins are harnessed in living cells remains to be understood, however.</p>
+         <p>At the molecular level, understanding of the mechanism by which a PITP molecule abstracts a lipid from a bilayer and facilitates exchange awaits a detailed analysis of the physical
+            properties of the protein and its ability to interact with membranes. A critical point is that PITPs need a sufficiently high affinity for membranes to allow them to release and exchange
+            their bound lipid, but this affinity should be sufficiently low that the protein can move rapidly away from the membrane. Whether lipid composition or curvature of membranes [<xref
+               ref-type="bibr" rid="B38">38</xref>] play roles in modulating this affinity of PITPs for membranes <italic>in vivo</italic> needs further analysis. Furthermore, how does this
+            biochemical function relate to the requirement for PITPs in membrane budding and fusion? Regulation of these proteins by phosphorylation may provide another important functional
+            determinant. Whether this modification serves as a way of regulating directional transfer of lipids also remains to be studied.</p>
+         <p>Finally, comprehending the ways in which the regulatory actions of PITPs intertwine with cell signaling and membrane trafficking may provide insights into the neurodegen-eration observed
+            in mouse and fly models that lack PITPs. Here the creation of more refined mouse models with inducible and tissue-specific expression, as well as studies of gene expression during
+            development, will be instrumental in providing insights into the different physiological functions of this versatile protein family.</p>
+      </sec>
+   </body>
+   <back>
+      <ref-list>
+         <ref id="B1">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Wirtz</surname>
+                     <given-names>KW</given-names>
+                  </name>
+               </person-group>
+               <article-title>Phospholipid transfer proteins.</article-title>
+               <source>Annu Rev Biochem</source>
+               <year>1991</year>
+               <volume>60</volume>
+               <fpage>73</fpage>
+               <lpage>99</lpage>
+               <comment>A comprehensive review of different lipid transfer protein families.</comment>
+               <pub-id pub-id-type="pmid">1883207</pub-id>
+            </citation>
+         </ref>
+         <ref id="B2">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Tanaka</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Hosaka</surname>
+                     <given-names>K</given-names>
+                  </name>
+               </person-group>
+               <article-title>Cloning of a cDNA encoding a second phosphatidylinositol transfer protein of rat brain by complementation of the yeast <italic>sec14</italic> mutation.</article-title>
+               <source>J Biochem</source>
+               <year>1994</year>
+               <volume>115</volume>
+               <fpage>981</fpage>
+               <lpage>984</lpage>
+               <comment>First cloning of PITP&#x003b2; from its ability to rescue a temperature-sensitive mutant of the yeast Sec14p PI transfer protein.</comment>
+               <pub-id pub-id-type="pmid">7961615</pub-id>
+            </citation>
+         </ref>
+         <ref id="B3">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Cunningham</surname>
+                     <given-names>E</given-names>
+                  </name>
+                  <name>
+                     <surname>Tan</surname>
+                     <given-names>SK</given-names>
+                  </name>
+                  <name>
+                     <surname>Swigart</surname>
+                     <given-names>P</given-names>
+                  </name>
+                  <name>
+                     <surname>Hsuan</surname>
+                     <given-names>J</given-names>
+                  </name>
+                  <name>
+                     <surname>Bankaitis</surname>
+                     <given-names>V</given-names>
+                  </name>
+                  <name>
+                     <surname>Cockcroft</surname>
+                     <given-names>S</given-names>
+                  </name>
+               </person-group>
+               <article-title>The yeast and mammalian isoforms of phosphatidylinositol transfer protein can all restore phospholipase C-mediated inositol lipid signalling in cytosol-depleted RBL-2H3
+                  and HL60 cells.</article-title>
+               <source>Proc Natl Acad Sci USA</source>
+               <year>1996</year>
+               <volume>93</volume>
+               <fpage>6589</fpage>
+               <lpage>6593</lpage>
+               <comment>The similar ability of recombinant Sec14p, PITPa and PITPb to support PLC signaling is demonstrated here, and challenges the notion that PITPs may be enzyme cofactors.</comment>
+               <pub-id pub-id-type="pmid">8692861</pub-id>
+            </citation>
+         </ref>
+         <ref id="B4">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Dickeson</surname>
+                     <given-names>SK</given-names>
+                  </name>
+                  <name>
+                     <surname>Lim</surname>
+                     <given-names>CN</given-names>
+                  </name>
+                  <name>
+                     <surname>Schuyler</surname>
+                     <given-names>GT</given-names>
+                  </name>
+                  <name>
+                     <surname>Dalton</surname>
+                     <given-names>TP</given-names>
+                  </name>
+                  <name>
+                     <surname>Helmkamp</surname>
+                     <given-names>GJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Yarbrough</surname>
+                     <given-names>LR</given-names>
+                  </name>
+               </person-group>
+               <article-title>Isolation and sequence of cDNA clones encoding rat phosphatidylinositol transfer protein.</article-title>
+               <source>J Biol Chem</source>
+               <year>1989</year>
+               <volume>264</volume>
+               <fpage>16557</fpage>
+               <lpage>16564</lpage>
+               <comment>First cloning of a PITP, demonstrating that it has a completely novel sequence and that it is widely expressed in rat tissues.</comment>
+               <pub-id pub-id-type="pmid">2777797</pub-id>
+            </citation>
+         </ref>
+         <ref id="B5">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Fullwood</surname>
+                     <given-names>Y</given-names>
+                  </name>
+                  <name>
+                     <surname>dos Santos</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Hsuan</surname>
+                     <given-names>JJ</given-names>
+                  </name>
+               </person-group>
+               <article-title>Cloning and characterization of a novel human phosphatidylinositol transfer protein, rdgB&#x003b2;.</article-title>
+               <source>J Biol Chem</source>
+               <year>1999</year>
+               <volume>274</volume>
+               <fpage>31553</fpage>
+               <lpage>31558</lpage>
+               <comment>First cloning of a rdgB&#x003b2; using homology to the <italic>Drosophila</italic> rdgB sequence.</comment>
+               <pub-id pub-id-type="pmid">10531358</pub-id>
+            </citation>
+         </ref>
+         <ref id="B6">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Lev</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Hernandez</surname>
+                     <given-names>J</given-names>
+                  </name>
+                  <name>
+                     <surname>Martinez</surname>
+                     <given-names>R</given-names>
+                  </name>
+                  <name>
+                     <surname>Chen</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Plowman</surname>
+                     <given-names>G</given-names>
+                  </name>
+                  <name>
+                     <surname>Schlessinger</surname>
+                     <given-names>J</given-names>
+                  </name>
+               </person-group>
+               <article-title>Identification of a novel family of targets of PYK2 related to <italic>Drosophila</italic> retinal degeneration B (rdgB) protein.</article-title>
+               <source>Mol Cell Biol</source>
+               <year>1999</year>
+               <volume>19</volume>
+               <fpage>2278</fpage>
+               <lpage>2288</lpage>
+               <comment>A yeast two-hybrid screen using the amino-terminal domain of Pyk2 led to the identification of three Nir Pyk2-binding proteins with different expression patterns. All bind
+                     Ca<sup>2+</sup>, but the significance of the interaction with Pyk2 remains unknown.</comment>
+               <pub-id pub-id-type="pmid">10022914</pub-id>
+            </citation>
+         </ref>
+         <ref id="B7">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Lu</surname>
+                     <given-names>C</given-names>
+                  </name>
+                  <name>
+                     <surname>Vihtelic</surname>
+                     <given-names>TS</given-names>
+                  </name>
+                  <name>
+                     <surname>Hyde</surname>
+                     <given-names>DR</given-names>
+                  </name>
+                  <name>
+                     <surname>Li</surname>
+                     <given-names>T</given-names>
+                  </name>
+               </person-group>
+               <article-title>A neuronal-specific mammalian homolog of the <italic>Drosophila</italic> retinal degeneration B gene with expression restricted to the retina and dentate gyrus.</article-title>
+               <source>J Neurosci</source>
+               <year>1999</year>
+               <volume>19</volume>
+               <fpage>7317</fpage>
+               <lpage>7325</lpage>
+               <comment>Cloning of murine <italic>m-rdgB-2</italic> (<italic>Nir3</italic>), demonstration of neuronal-specific expression, and separation of light-response and degeneration phenotypes
+                  by differential rescue in <italic>Drosophila</italic>.</comment>
+               <pub-id pub-id-type="pmid">10460238</pub-id>
+            </citation>
+         </ref>
+         <ref id="B8">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Chang</surname>
+                     <given-names>JT</given-names>
+                  </name>
+                  <name>
+                     <surname>Milligan</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Li</surname>
+                     <given-names>Y</given-names>
+                  </name>
+                  <name>
+                     <surname>Chew</surname>
+                     <given-names>CE</given-names>
+                  </name>
+                  <name>
+                     <surname>Wiggs</surname>
+                     <given-names>J</given-names>
+                  </name>
+                  <name>
+                     <surname>Copeland</surname>
+                     <given-names>NG</given-names>
+                  </name>
+                  <name>
+                     <surname>Jenkins</surname>
+                     <given-names>NA</given-names>
+                  </name>
+                  <name>
+                     <surname>Campochiaro</surname>
+                     <given-names>PA</given-names>
+                  </name>
+                  <name>
+                     <surname>Hyde</surname>
+                     <given-names>DR</given-names>
+                  </name>
+                  <name>
+                     <surname>Zack</surname>
+                     <given-names>DJ</given-names>
+                  </name>
+               </person-group>
+               <article-title>Mammalian homolog of <italic>Drosophila</italic> retinal degeneration B rescues the mutant fly phenotype.</article-title>
+               <source>J Neurosci</source>
+               <year>1997</year>
+               <volume>17</volume>
+               <fpage>5881</fpage>
+               <lpage>5890</lpage>
+               <comment>Cloning of murine <italic>m-rdgB-1</italic> (<italic>Nir2</italic>), demonstration of neuronal-specific expression, and complete rescue of the <italic>rdgB</italic> phenotype
+                  in <italic>Drosophila</italic>.</comment>
+               <pub-id pub-id-type="pmid">9221785</pub-id>
+            </citation>
+         </ref>
+         <ref id="B9">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Swigart</surname>
+                     <given-names>P</given-names>
+                  </name>
+                  <name>
+                     <surname>Insall</surname>
+                     <given-names>R</given-names>
+                  </name>
+                  <name>
+                     <surname>Wilkins</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Cockcroft</surname>
+                     <given-names>S</given-names>
+                  </name>
+               </person-group>
+               <article-title>Purification and cloning of phosphatidylinositol transfer proteins from <italic>Dictyostelium discoideum</italic> : homologues of both mammalian PITPs and
+                     <italic>Saccharomyces cerevisiae</italic> sec14p are found in the same cell.</article-title>
+               <source>Biochem J</source>
+               <year>2000</year>
+               <volume>347</volume>
+               <fpage>837</fpage>
+               <lpage>843</lpage>
+               <comment>First cloning of PITPs in <italic>D. discoideum</italic>, showing differential expression during development.</comment>
+               <pub-id pub-id-type="pmid">10769190</pub-id>
+               <pub-id pub-id-type="doi">10.1042/0264-6021:3470837</pub-id>
+            </citation>
+         </ref>
+         <ref id="B10">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Hamilton</surname>
+                     <given-names>BA</given-names>
+                  </name>
+                  <name>
+                     <surname>Smith</surname>
+                     <given-names>DJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Mueller</surname>
+                     <given-names>KL</given-names>
+                  </name>
+                  <name>
+                     <surname>Kerrebrock</surname>
+                     <given-names>AW</given-names>
+                  </name>
+                  <name>
+                     <surname>Bronson</surname>
+                     <given-names>RT</given-names>
+                  </name>
+                  <name>
+                     <surname>van Berkel</surname>
+                     <given-names>V</given-names>
+                  </name>
+                  <name>
+                     <surname>Daly</surname>
+                     <given-names>MJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Kruglyak</surname>
+                     <given-names>L</given-names>
+                  </name>
+                  <name>
+                     <surname>Reeve</surname>
+                     <given-names>MP</given-names>
+                  </name>
+                  <name>
+                     <surname>Nemhauser</surname>
+                     <given-names>JL</given-names>
+                  </name>
+                  <etal/>
+               </person-group>
+               <article-title>The <italic>vibrator</italic> mutation causes neurodegeneration via reduced expression of PITP alpha: positional complementation cloning and extragenic suppression.</article-title>
+               <source>Neuron</source>
+               <year>1997</year>
+               <volume>18</volume>
+               <fpage>711</fpage>
+               <lpage>722</lpage>
+               <comment>Identification of the first mammalian PITP mutation as a PITP&#x003b1; hypomorph, and mapping of a suppressor locus, Mvb-1, on chromosome 19. The mechanism causing
+                  brain-stem and spinal-cord neurodegeneration remains unknown, but an unexpected reduction of neurofilament light chain was detected.</comment>
+               <pub-id pub-id-type="pmid">9182797</pub-id>
+            </citation>
+         </ref>
+         <ref id="B11">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Milligan</surname>
+                     <given-names>SC</given-names>
+                  </name>
+                  <name>
+                     <surname>Alb</surname>
+                     <given-names>JG</given-names>
+                     <suffix>Jr</suffix>
+                  </name>
+                  <name>
+                     <surname>Elagina</surname>
+                     <given-names>RB</given-names>
+                  </name>
+                  <name>
+                     <surname>Bankaitis</surname>
+                     <given-names>VA</given-names>
+                  </name>
+                  <name>
+                     <surname>Hyde</surname>
+                     <given-names>DR</given-names>
+                  </name>
+               </person-group>
+               <article-title>The phosphatidylinositol transfer protein domain of <italic>Drosophila</italic> retinal degeneration B protein is essential for photoreceptor cell survival and recovery
+                  from light stimulation.</article-title>
+               <source>J Cell Biol</source>
+               <year>1997</year>
+               <volume>139</volume>
+               <fpage>351</fpage>
+               <lpage>363</lpage>
+               <comment>A role for <italic>Drosophila</italic> rdgB in the termination and recovery stages of phototransduction is deduced. Expression of the PITP domain alone, but not of a
+                  PC-specific mutant or of rat PITP&#x003b1;, rescued the light and degeneration phenotypes.</comment>
+               <pub-id pub-id-type="pmid">9334340</pub-id>
+            </citation>
+         </ref>
+         <ref id="B12">
+            <citation citation-type="other">
+               <article-title>Pfam</article-title>
+               <ext-link ext-link-type="uri" xlink:href="http://www.sanger.ac.uk/Software/Pfam/"/>
+               <comment>A large, searchable collection of multiple sequence alignments and analytical models covering many common protein domains.</comment>
+            </citation>
+         </ref>
+         <ref id="B13">
+            <citation citation-type="other">
+               <article-title>PRINTS</article-title>
+               <ext-link ext-link-type="uri" xlink:href="http://www.bioinf.man.ac.uk/dbbrowser/PRINTS/"/>
+               <comment>A searchable compendium of protein fingerprints or conserved motifs used to characterize a protein family.</comment>
+            </citation>
+         </ref>
+         <ref id="B14">
+            <citation citation-type="other">
+               <article-title>INTERPRO</article-title>
+               <ext-link ext-link-type="uri" xlink:href="http://www.ebi.ac.uk/interpro/"/>
+               <comment>InterPro provides an integrated, searchable view of the commonly used signature databases, including Pfam, PRINTS and others.</comment>
+            </citation>
+         </ref>
+         <ref id="B15">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Yoder</surname>
+                     <given-names>MD</given-names>
+                  </name>
+                  <name>
+                     <surname>Thomas</surname>
+                     <given-names>LM</given-names>
+                  </name>
+                  <name>
+                     <surname>Tremblay</surname>
+                     <given-names>JM</given-names>
+                  </name>
+                  <name>
+                     <surname>Oliver</surname>
+                     <given-names>RL</given-names>
+                  </name>
+                  <name>
+                     <surname>Yarbrough</surname>
+                     <given-names>LR</given-names>
+                  </name>
+                  <name>
+                     <surname>Helmkamp</surname>
+                     <given-names>GM</given-names>
+                     <suffix>Jr</suffix>
+                  </name>
+               </person-group>
+               <article-title>Structure of a multifunctional protein. Mammalian phosphatidylinositol transfer protein complexed with phosphatidylcholine.</article-title>
+               <source>J Biol Chem</source>
+               <year>2001</year>
+               <volume>276</volume>
+               <fpage>9246</fpage>
+               <lpage>9252</lpage>
+               <comment>First three-dimensional definition of PITP structure showing a clear difference from Sec14p. The position of PI remains unknown, but has been modeled.</comment>
+               <pub-id pub-id-type="pmid">11104777</pub-id>
+            </citation>
+         </ref>
+         <ref id="B16">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Ponting</surname>
+                     <given-names>CP</given-names>
+                  </name>
+                  <name>
+                     <surname>Aravind</surname>
+                     <given-names>L</given-names>
+                  </name>
+               </person-group>
+               <article-title>START: a lipid-binding domain in StAR, HD-ZIP and signalling proteins.</article-title>
+               <source>Trends Biochem Sci</source>
+               <year>1999</year>
+               <volume>24</volume>
+               <fpage>130</fpage>
+               <lpage>132</lpage>
+               <comment>Identification of the putative, lipid-binding START domain in apparently unrelated proteins by sensitive sequence comparisons. All proteins containing this domain, including
+                  the structurally related PITPs, are notably absent from yeast.</comment>
+               <pub-id pub-id-type="pmid">10322415</pub-id>
+            </citation>
+         </ref>
+         <ref id="B17">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Vihtelic</surname>
+                     <given-names>TS</given-names>
+                  </name>
+                  <name>
+                     <surname>Goebl</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Milligan</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>O'Tousa</surname>
+                     <given-names>JE</given-names>
+                  </name>
+                  <name>
+                     <surname>Hyde</surname>
+                     <given-names>DR</given-names>
+                  </name>
+               </person-group>
+               <article-title>Localization of <italic>Drosophila retinal degeneration B</italic>, a membrane-associated phosphatidylinositol transfer protein.</article-title>
+               <source>J Cell Biol</source>
+               <year>1993</year>
+               <volume>122</volume>
+               <fpage>1013</fpage>
+               <lpage>1022</lpage>
+               <comment><italic>Drosophila</italic> rdgB is found in the endoplasmic reticulum of specific neurons. The PITP and acidic domains are shown to have PI transfer and
+                  Ca<sup>2+</sup>-binding activities, respectively.</comment>
+               <pub-id pub-id-type="pmid">8354691</pub-id>
+            </citation>
+         </ref>
+         <ref id="B18">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Alb</surname>
+                     <given-names>JJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Gedvilaite</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Cartee</surname>
+                     <given-names>RT</given-names>
+                  </name>
+                  <name>
+                     <surname>Skinner</surname>
+                     <given-names>HB</given-names>
+                  </name>
+                  <name>
+                     <surname>Bankaitis</surname>
+                     <given-names>VA</given-names>
+                  </name>
+               </person-group>
+               <article-title>Mutant rat phosphatidylinositol/phosphatidylcholine transfer proteins specifically defective in phosphatidylinositol transfer: implications for the regulation of
+                  phospholipid transfer activity.</article-title>
+               <source>Proc Natl Acad Sci, USA</source>
+               <year>1995</year>
+               <volume>92</volume>
+               <fpage>8826</fpage>
+               <lpage>8830</lpage>
+               <comment>Random PITP&#x003b1; mutations were screened in a <italic>sec14<sup>ts</sup></italic> yeast background to identify several residues required for PI transfer. A mechanism is
+                  proposed by which PI transfer could be regulated <italic>in vivo</italic> via phosphorylation of PITP&#x003b1; by protein kinase C.</comment>
+               <pub-id pub-id-type="pmid">7568025</pub-id>
+            </citation>
+         </ref>
+         <ref id="B19">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>van Tiel</surname>
+                     <given-names>CM</given-names>
+                  </name>
+                  <name>
+                     <surname>Westerman</surname>
+                     <given-names>J</given-names>
+                  </name>
+                  <name>
+                     <surname>Paasman</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Wirtz</surname>
+                     <given-names>KW</given-names>
+                  </name>
+                  <name>
+                     <surname>Snoek</surname>
+                     <given-names>GT</given-names>
+                  </name>
+               </person-group>
+               <article-title>The protein kinase C-dependent phosphorylation of serine 166 is controlled by the phospholipid species bound to the phosphatidylinositol transfer protein alpha.</article-title>
+               <source>J Biol Chem</source>
+               <year>2000</year>
+               <volume>275</volume>
+               <fpage>21532</fpage>
+               <lpage>21538</lpage>
+               <comment>An agonist-dependent protein kinase C phosphorylation site on PITP&#x003b1; is identified at Ser166. A model of PITP&#x003b1; regulation is proposed based on the
+                  preferential phosphorylation of the PC-bound form.</comment>
+               <pub-id pub-id-type="pmid">10801835</pub-id>
+            </citation>
+         </ref>
+         <ref id="B20">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Venuti</surname>
+                     <given-names>SE</given-names>
+                  </name>
+                  <name>
+                     <surname>Helmkamp</surname>
+                     <given-names>GM</given-names>
+                     <suffix>Jr</suffix>
+                  </name>
+               </person-group>
+               <article-title>Tissue distribution, purification and characterization of rat phosphatidylinositol transfer protein.</article-title>
+               <source>Biochim Biophys Acta</source>
+               <year>1988</year>
+               <volume>946</volume>
+               <fpage>119</fpage>
+               <lpage>128</lpage>
+               <comment>Characterization of physical and lipid transfer properties of PITP&#x003b1;.</comment>
+               <pub-id pub-id-type="pmid">3207726</pub-id>
+            </citation>
+         </ref>
+         <ref id="B21">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Utsunomiya</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Owada</surname>
+                     <given-names>Y</given-names>
+                  </name>
+                  <name>
+                     <surname>Yoshimoto</surname>
+                     <given-names>T</given-names>
+                  </name>
+                  <name>
+                     <surname>Kondo</surname>
+                     <given-names>H</given-names>
+                  </name>
+               </person-group>
+               <article-title>Localization of gene expression for phosphatidylinositol transfer protein in the brain of developing and mature rats.</article-title>
+               <source>Brain Res Mol Brain Res</source>
+               <year>1997</year>
+               <volume>45</volume>
+               <fpage>349</fpage>
+               <lpage>352</lpage>
+               <comment>An <italic>in situ</italic> hybridization study of PITP&#x003b1; and PITP&#x003b2; expression, which suggests a role for PITPs in neuronal development.</comment>
+               <pub-id pub-id-type="pmid">9149113</pub-id>
+            </citation>
+         </ref>
+         <ref id="B22">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>De Vries</surname>
+                     <given-names>KJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Westerman</surname>
+                     <given-names>J</given-names>
+                  </name>
+                  <name>
+                     <surname>Bastiaens</surname>
+                     <given-names>PI</given-names>
+                  </name>
+                  <name>
+                     <surname>Jovin</surname>
+                     <given-names>TM</given-names>
+                  </name>
+                  <name>
+                     <surname>Wirtz</surname>
+                     <given-names>KW</given-names>
+                  </name>
+                  <name>
+                     <surname>Snoek</surname>
+                     <given-names>GT</given-names>
+                  </name>
+               </person-group>
+               <article-title>Fluorescently labeled phosphatidylinositol transfer protein isoforms (alpha and beta), microinjected into fetal bovine heart endothelial cells, are targeted to distinct
+                  intracellular sites.</article-title>
+               <source>Exp Cell Res</source>
+               <year>1996</year>
+               <volume>227</volume>
+               <fpage>33</fpage>
+               <lpage>39</lpage>
+               <comment>Ectopic and endogenous PITP&#x003b1; and PITP&#x003b2; are found predominantly, but not exclusively, in the cytosol and Golgi and the cytosol and nucleus, respectively.</comment>
+               <pub-id pub-id-type="pmid">8806448</pub-id>
+               <pub-id pub-id-type="doi">10.1006/excr.1996.0246</pub-id>
+            </citation>
+         </ref>
+         <ref id="B23">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Thomas</surname>
+                     <given-names>GM</given-names>
+                  </name>
+                  <name>
+                     <surname>Cunningham</surname>
+                     <given-names>E</given-names>
+                  </name>
+                  <name>
+                     <surname>Fensome</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Ball</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Totty</surname>
+                     <given-names>NF</given-names>
+                  </name>
+                  <name>
+                     <surname>Truong</surname>
+                     <given-names>O</given-names>
+                  </name>
+                  <name>
+                     <surname>Hsuan</surname>
+                     <given-names>JJ</given-names>
+                  </name>
+                  <name>
+                     <surname>Cockcroft</surname>
+                     <given-names>S</given-names>
+                  </name>
+               </person-group>
+               <article-title>An essential role for phosphatidylinositol transfer protein in phospholipase C-mediated inositol lipid signaling.</article-title>
+               <source>Cell</source>
+               <year>1993</year>
+               <volume>74</volume>
+               <fpage>919</fpage>
+               <lpage>928</lpage>
+               <comment>First demonstration of an acute requirement for PITP&#x003b1; in phospholipase C-&#x003b2; signaling.</comment>
+               <pub-id pub-id-type="pmid">8374957</pub-id>
+            </citation>
+         </ref>
+         <ref id="B24">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Hay</surname>
+                     <given-names>JC</given-names>
+                  </name>
+                  <name>
+                     <surname>Martin</surname>
+                     <given-names>TF</given-names>
+                  </name>
+               </person-group>
+               <article-title>Phosphatidylinositol transfer protein required for ATP-dependent priming of Ca<sup>2+</sup>-activated secretion.</article-title>
+               <source>Nature</source>
+               <year>1993</year>
+               <volume>366</volume>
+               <fpage>572</fpage>
+               <lpage>575</lpage>
+               <comment>PITP is found to be one of three cytosolic factors required for the ATP-dependent priming of neuroendocrine secretion. A PIP kinase was subsequently found to be another factor
+                  (see [30]), but the third factor remains unknown.</comment>
+               <pub-id pub-id-type="pmid">8255295</pub-id>
+            </citation>
+         </ref>
+         <ref id="B25">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Ohashi</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Jan de Vries</surname>
+                     <given-names>K</given-names>
+                  </name>
+                  <name>
+                     <surname>Frank</surname>
+                     <given-names>R</given-names>
+                  </name>
+                  <name>
+                     <surname>Snoek</surname>
+                     <given-names>G</given-names>
+                  </name>
+                  <name>
+                     <surname>Bankaitis</surname>
+                     <given-names>V</given-names>
+                  </name>
+                  <name>
+                     <surname>Wirtz</surname>
+                     <given-names>K</given-names>
+                  </name>
+                  <name>
+                     <surname>Huttner</surname>
+                     <given-names>WB</given-names>
+                  </name>
+               </person-group>
+               <article-title>A role for phosphatidylinositol transfer protein in secretory vesicle formation.</article-title>
+               <source>Nature</source>
+               <year>1995</year>
+               <volume>377</volume>
+               <fpage>544</fpage>
+               <lpage>547</lpage>
+               <comment>PITP is found to be one of two cytosolic factors required for the ATP-dependent formation of post-Golgi secretory vesicles in a cell-free preparation. The second factor remains
+                  unknown.</comment>
+               <pub-id pub-id-type="pmid">7566155</pub-id>
+            </citation>
+         </ref>
+         <ref id="B26">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Akagi</surname>
+                     <given-names>K</given-names>
+                  </name>
+                  <name>
+                     <surname>Nagao</surname>
+                     <given-names>T</given-names>
+                  </name>
+                  <name>
+                     <surname>Urushidani</surname>
+                     <given-names>T</given-names>
+                  </name>
+               </person-group>
+               <article-title>Reconstitution of acid secretion in digitonin-permeabilized rabbit gastric glands - identification of cytosolic regulatory factors.</article-title>
+               <source>J Biol Chem</source>
+               <year>2001</year>
+               <volume>276</volume>
+               <fpage>28171</fpage>
+               <lpage>28178</lpage>
+               <comment>PITP is found to be one of two cytosolic factors that stimulate gastric secretion from a permeabilised-cell preparation. The second factor remains unknown.</comment>
+               <pub-id pub-id-type="pmid">11384966</pub-id>
+            </citation>
+         </ref>
+         <ref id="B27">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Cockcroft</surname>
+                     <given-names>S</given-names>
+                  </name>
+               </person-group>
+               <article-title>Phosphatidylinositol transfer proteins: a requirement in signal transduction and vesicle traffic.</article-title>
+               <source>BioEssays</source>
+               <year>1998</year>
+               <volume>20</volume>
+               <fpage>423</fpage>
+               <lpage>432</lpage>
+               <comment>A review of PITP, rdgB and Sec14p proteins.</comment>
+               <pub-id pub-id-type="pmid">9670815</pub-id>
+               <pub-id pub-id-type="doi">10.1002/(SICI)1521-1878(199805)20:5&#x0003c;423::AID-BIES9&#x0003e;3.3.CO;2-U</pub-id>
+            </citation>
+         </ref>
+         <ref id="B28">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Cunningham</surname>
+                     <given-names>E</given-names>
+                  </name>
+                  <name>
+                     <surname>Thomas</surname>
+                     <given-names>GM</given-names>
+                  </name>
+                  <name>
+                     <surname>Ball</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Hiles</surname>
+                     <given-names>I</given-names>
+                  </name>
+                  <name>
+                     <surname>Cockcroft</surname>
+                     <given-names>S</given-names>
+                  </name>
+               </person-group>
+               <article-title>Phosphatidylinositol transfer protein dictates the rate of inositol trisphosphate production by promoting the synthesis of PIP<sub>2</sub>.</article-title>
+               <source>Curr Biol</source>
+               <year>1995</year>
+               <volume>5</volume>
+               <fpage>775</fpage>
+               <lpage>783</lpage>
+               <comment>A kinetic study of PITP&#x003b1; in PLC&#x003b2; signaling suggests that PITP&#x003b1; is an enzyme cofactor.</comment>
+               <pub-id pub-id-type="pmid">7583124</pub-id>
+            </citation>
+         </ref>
+         <ref id="B29">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Kauffmann</surname>
+                     <given-names>ZA</given-names>
+                  </name>
+                  <name>
+                     <surname>Thomas</surname>
+                     <given-names>GM</given-names>
+                  </name>
+                  <name>
+                     <surname>Ball</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Prosser</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Cunningham</surname>
+                     <given-names>E</given-names>
+                  </name>
+                  <name>
+                     <surname>Cockcroft</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Hsuan</surname>
+                     <given-names>JJ</given-names>
+                  </name>
+               </person-group>
+               <article-title>Requirement for phosphatidylinositol transfer protein in epidermal growth factor signaling.</article-title>
+               <source>Science</source>
+               <year>1995</year>
+               <volume>268</volume>
+               <fpage>1188</fpage>
+               <lpage>1190</lpage>
+               <comment>PITP is found to be acutely required in phospholipase C-&#x003b3; signaling and to associate with a signaling complex in response to growth factor stimulation.</comment>
+               <pub-id pub-id-type="pmid">7761838</pub-id>
+            </citation>
+         </ref>
+         <ref id="B30">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Hay</surname>
+                     <given-names>JC</given-names>
+                  </name>
+                  <name>
+                     <surname>Fisette</surname>
+                     <given-names>PL</given-names>
+                  </name>
+                  <name>
+                     <surname>Jenkins</surname>
+                     <given-names>GH</given-names>
+                  </name>
+                  <name>
+                     <surname>Fukami</surname>
+                     <given-names>K</given-names>
+                  </name>
+                  <name>
+                     <surname>Takenawa</surname>
+                     <given-names>T</given-names>
+                  </name>
+                  <name>
+                     <surname>Anderson</surname>
+                     <given-names>RA</given-names>
+                  </name>
+                  <name>
+                     <surname>Martin</surname>
+                     <given-names>TF</given-names>
+                  </name>
+               </person-group>
+               <article-title>ATP-dependent inositide phosphorylation required for Ca<sup>2+</sup>-activated secretion.</article-title>
+               <source>Nature</source>
+               <year>1995</year>
+               <volume>374</volume>
+               <fpage>173</fpage>
+               <lpage>177</lpage>
+               <comment>A PIP kinase is found to be one of three cytosolic factors required for the ATP-dependent priming of neuroendocrine secretion. PITP had previously been found to be another
+                  factor (see [24]), but the third factor remains unknown.</comment>
+               <pub-id pub-id-type="pmid">7877690</pub-id>
+            </citation>
+         </ref>
+         <ref id="B31">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Fensome</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Cunningham</surname>
+                     <given-names>E</given-names>
+                  </name>
+                  <name>
+                     <surname>Tan</surname>
+                     <given-names>SK</given-names>
+                  </name>
+                  <name>
+                     <surname>Swigart</surname>
+                     <given-names>P</given-names>
+                  </name>
+                  <name>
+                     <surname>Thomas</surname>
+                     <given-names>G</given-names>
+                  </name>
+                  <name>
+                     <surname>Hsuan</surname>
+                     <given-names>J</given-names>
+                  </name>
+                  <name>
+                     <surname>Cockcroft</surname>
+                     <given-names>S</given-names>
+                  </name>
+               </person-group>
+               <article-title>ARF and PITP restore GTP&#x003b3;S-stimulated protein secretion from cytosol-depleted HL60 cells by promoting PIP<sup>2</sup> synthesis.</article-title>
+               <source>Curr Biol</source>
+               <year>1996</year>
+               <volume>6</volume>
+               <fpage>730</fpage>
+               <lpage>738</lpage>
+               <comment>PIP 5-kinase activity is found to be stimulated by PITP&#x003b1; and the small GTPase ARF1, the latter via stimulation of phospholipase D.</comment>
+               <pub-id pub-id-type="pmid">8793299</pub-id>
+            </citation>
+         </ref>
+         <ref id="B32">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Panaretou</surname>
+                     <given-names>C</given-names>
+                  </name>
+                  <name>
+                     <surname>Domin</surname>
+                     <given-names>J</given-names>
+                  </name>
+                  <name>
+                     <surname>Cockcroft</surname>
+                     <given-names>S</given-names>
+                  </name>
+                  <name>
+                     <surname>Waterfield</surname>
+                     <given-names>MD</given-names>
+                  </name>
+               </person-group>
+               <article-title>Characterization of p150, an adaptor protein for the human phosphatidylinositol (PtdIns) 3-kinase. Substrate presentation by phosphatidylinositol transfer protein to the
+                  p150-PtdIns 3-kinase complex.</article-title>
+               <source>J Biol Chem</source>
+               <year>1997</year>
+               <volume>272</volume>
+               <fpage>2477</fpage>
+               <lpage>2485</lpage>
+               <comment>PITP&#x003b1; is found to associate with and stimulate a PI 3-kinase activity found on an intracellular membrane compartment (see also [33]).</comment>
+               <pub-id pub-id-type="pmid">8999962</pub-id>
+            </citation>
+         </ref>
+         <ref id="B33">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Jones</surname>
+                     <given-names>SM</given-names>
+                  </name>
+                  <name>
+                     <surname>Alb</surname>
+                     <given-names>JG</given-names>
+                     <suffix>Jr</suffix>
+                  </name>
+                  <name>
+                     <surname>Phillips</surname>
+                     <given-names>SE</given-names>
+                  </name>
+                  <name>
+                     <surname>Bankaitis</surname>
+                     <given-names>VA</given-names>
+                  </name>
+                  <name>
+                     <surname>Howell</surname>
+                     <given-names>KE</given-names>
+                  </name>
+               </person-group>
+               <article-title>A phosphatidylinositol 3-kinase and phosphatidylinositol transfer protein act synergistically in formation of constitutive transport vesicles from the trans-Golgi
+                  network.</article-title>
+               <source>J Biol Chem</source>
+               <year>1998</year>
+               <volume>273</volume>
+               <fpage>10349</fpage>
+               <lpage>10354</lpage>
+               <comment>PITP&#x003b1; is found to stimulate a GTP-dependent PI 3-kinase activity found in a <italic>trans</italic>-Golgi network preparation (as the enzyme was PI-specific, it is
+                  likely to be the Vps34p homolog studied in [32]).</comment>
+               <pub-id pub-id-type="pmid">9553090</pub-id>
+            </citation>
+         </ref>
+         <ref id="B34">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Aikawa</surname>
+                     <given-names>Y</given-names>
+                  </name>
+                  <name>
+                     <surname>Kuraoka</surname>
+                     <given-names>A</given-names>
+                  </name>
+                  <name>
+                     <surname>Kondo</surname>
+                     <given-names>H</given-names>
+                  </name>
+                  <name>
+                     <surname>Kawabuchi</surname>
+                     <given-names>M</given-names>
+                  </name>
+                  <name>
+                     <surname>Watanabe</surname>
+                     <given-names>T</given-names>
+                  </name>
+               </person-group>
+               <article-title>Involvement of PITPnm, a mammalian homologue of <italic>Drosophila rdgB</italic>, in phosphoinositide synthesis on Golgi membranes.</article-title>
+               <source>J Biol Chem</source>
+               <year>1999</year>
+               <volume>274</volume>
+               <fpage>20569</fpage>
+               <lpage>20577</lpage>
+               <comment>Ectopic, overexpressed Nir2 (rdgB&#x003b1;) was localized to Golgi membranes in COS-7 cells via the hydrophobic regions and the carboxy-terminal domain. The PITP and acidic
+                  domains appear to mediate a functional interaction with type III PI 4-kinase to promote the synthesis of PI 4-phosphate.</comment>
+               <pub-id pub-id-type="pmid">10400687</pub-id>
+            </citation>
+         </ref>
+         <ref id="B35">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Suzuki</surname>
+                     <given-names>E</given-names>
+                  </name>
+                  <name>
+                     <surname>Hirosawa</surname>
+                     <given-names>K</given-names>
+                  </name>
+               </person-group>
+               <article-title>Immunolocalization of a <italic>Drosophila</italic> phosphatidylinositol transfer protein (rdgB) in normal and <italic>rdgA</italic> mutant photoreceptor cells with
+                  special reference to the subrhabdomeric cisternae.</article-title>
+               <source>J Electron Microsc</source>
+               <year>1994</year>
+               <volume>43</volume>
+               <fpage>183</fpage>
+               <lpage>189</lpage>
+               <comment>Immunoelectron microscopy revealed that <italic>Drosophila</italic> rdgB is localized to the subrhabdomeric cisternae (contiguous with the endoplasmic reticulum) and juxtaposed
+                  regions of the rhabdomeric microvilli (part of the plasma membrane of photoreceptor cells).</comment>
+               <pub-id pub-id-type="pmid">7996077</pub-id>
+            </citation>
+         </ref>
+         <ref id="B36">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Aikawa</surname>
+                     <given-names>Y</given-names>
+                  </name>
+                  <name>
+                     <surname>Hara</surname>
+                     <given-names>H</given-names>
+                  </name>
+                  <name>
+                     <surname>Watanabe</surname>
+                     <given-names>T</given-names>
+                  </name>
+               </person-group>
+               <article-title>Molecular cloning and characterization of mammalian homologues of the <italic>Drosophila</italic> retinal degeneration B gene.</article-title>
+               <source>Biochem Biophys Res Commun</source>
+               <year>1997</year>
+               <volume>236</volume>
+               <fpage>559</fpage>
+               <lpage>564</lpage>
+               <comment>Cloning of human and mouse rdgB&#x003b1;. The murine isoform was mapped close to the <italic>Mvb-1</italic> locus in chromosome 19.</comment>
+               <pub-id pub-id-type="pmid">9245688</pub-id>
+               <pub-id pub-id-type="doi">10.1006/bbrc.1997.7009</pub-id>
+            </citation>
+         </ref>
+         <ref id="B37">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Guo</surname>
+                     <given-names>J</given-names>
+                  </name>
+                  <name>
+                     <surname>Yu</surname>
+                     <given-names>FX</given-names>
+                  </name>
+               </person-group>
+               <article-title>Cloning and characterization of human homologue of <italic>Drosophila</italic> retinal degeneration B: a candidate gene for degenerative retinal diseases.</article-title>
+               <source>Dev Genet</source>
+               <year>1997</year>
+               <volume>20</volume>
+               <fpage>235</fpage>
+               <lpage>245</lpage>
+               <comment>Cloning of human rdgB&#x003b1; and identification of expression exclusively in rat neuronal cells. The human isoform was mapped on chromosome 11q13, close to several
+                  retinopathy loci.</comment>
+               <pub-id pub-id-type="pmid">9216063</pub-id>
+               <pub-id pub-id-type="doi">10.1002/(SICI)1520-6408(1997)20:3&#x0003c;235::AID-DVG6&#x0003e;3.3.CO;2-Z</pub-id>
+            </citation>
+         </ref>
+         <ref id="B38">
+            <citation citation-type="journal">
+               <person-group person-group-type="author">
+                  <name>
+                     <surname>Komatsu</surname>
+                     <given-names>H</given-names>
+                  </name>
+                  <name>
+                     <surname>Bouma</surname>
+                     <given-names>B</given-names>
+                  </name>
+                  <name>
+                     <surname>Wirtz</surname>
+                     <given-names>KW</given-names>
+                  </name>
+                  <name>
+                     <surname>Taraschi</surname>
+                     <given-names>TF</given-names>
+                  </name>
+                  <name>
+                     <surname>Janes</surname>
+                     <given-names>N</given-names>
+                  </name>
+               </person-group>
+               <article-title>Activity of phosphatidylinositol transfer protein is sensitive to ethanol and membrane curvature.</article-title>
+               <source>Biochem J</source>
+               <year>2000</year>
+               <volume>348</volume>
+               <fpage>667</fpage>
+               <lpage>673</lpage>
+               <comment>Low concentrations of ethanol or chloroform and increasing convex curvature were found to enhance PI transfer by PITP&#x003b1; <italic>in vitro</italic>. It is suggested
+                  that PITPs may preferentially deliver PI to cellular membrane domains that are more convex and/or have a low surface density of lipid.</comment>
+               <pub-id pub-id-type="pmid">10840000</pub-id>
+               <pub-id pub-id-type="doi">10.1042/0264-6021:3480667</pub-id>
+            </citation>
+         </ref>
+         <ref id="B39">
+            <citation citation-type="other">
+               <article-title>Protein Data Bank</article-title>
+               <ext-link ext-link-type="uri" xlink:href="http://www.rcsb.org/pdb/"/>
+               <comment>The single worldwide repository for the processing and distribution of three-dimensional biological macromolecular structure data.</comment>
+            </citation>
+         </ref>
+      </ref-list>
+      <sec id="id7" sec-type="display-objects">
+         <title>Figures and Tables</title>
+         <fig id="F1" position="float">
+            <label>Figure 1</label>
+            <caption>
+               <p>PITPs bind to PI and PC and transfer them between membrane compartments (for example, the endoplasmic reticulum and plasma membrane, as shown). PITPs were first purified by virtue of
+                  their ability to transfer PI between two membrane compartments <italic>in vitro.</italic> PITPs are always occupied by a single molecule of either phosphatidylinositol (PI) or
+                  phosphatidylcholine (PC). The affinity for PI is 16-fold higher than for PC, and depending on the relative distribution of PI and PC, PITPs can re-distribute PI at the expense of
+               PC.</p>
+            </caption>
+            <graphic xlink:href="gb-2001-2-9-reviews3011-1"/>
+         </fig>
+         <fig id="F2" position="float">
+            <label>Figure 2</label>
+            <caption>
+               <p>Structural relationships within the PITP family. A ClustalW alignment of human and <italic>Drosophila</italic> (<italic>Dm</italic>) PITP sequences was made using MacVector (version
+                  7.0, Oxford Molecular). A bootstrapped dendrogram (1,000 replications) was constructed by rooting with the <italic>Drosophila</italic> rdgB sequence, using uncorrected,
+                  neighbor-joining parameters and ignoring gap sites. The corresponding domain topologies on the right illustrate the number of amino-acid residues in each protein and the position of
+                  PITP domains (red), Ca<sup>2+</sup>-binding domains (green), short hydrophobic regions (blue) and Pyk2-binding domains (yellow).</p>
+            </caption>
+            <graphic xlink:href="gb-2001-2-9-reviews3011-2"/>
+         </fig>
+         <fig id="F3" position="float">
+            <label>Figure 3</label>
+            <caption>
+               <p>Primary, secondary and tertiary structure of PITP&#x003b1;. The tertiary <bold>(a)</bold> and primary and secondary <bold>(b)</bold> structures of rat PITP&#x003b1;, shown
+                  bound to <italic>sn</italic>-1,2-dioleoyl-PC [12], are graded by color between the amino (blue) and the carboxyl (red) termini (see Protein Data Bank (PDB) ID 1FVZ [39]). In (b), the
+                  seven &#x003b1; helices and the eight &#x003b2; sheets are labeled A-G and 1-8, respectively.</p>
+            </caption>
+            <graphic xlink:href="gb-2001-2-9-reviews3011-3"/>
+         </fig>
+         <fig id="F4" position="float">
+            <label>Figure 4</label>
+            <caption>
+               <p>Functions and location of PITP&#x003b1; and PITP&#x003b2;. PITP&#x003b1; is primarily localized in the cytosol and the nucleus. The major functions of PITP &#x003b1;
+                  to be identified are in phospholipase-C-mediated hydrolysis of phosphatidylinositol bisphosphate (PIP<sub>2</sub>) and in maintaining a pool of PIP<sub>2</sub> for exocytosis.
+                  PITP&#x003b2; is primarily localized in the Golgi and the cytosol, and it is involved in the budding of vesicles by making available a pool of phosphoinositides. Abbreviations:
+                  DG, diacylglycerol; EGF, epidermal growth factor; FMLP, <italic>N</italic>-formyl-methionyl-leucyl-phenylalanine; IP<sub>3</sub>, inositol-1,4,5-trisphosphate; PLC, phospholipase C;
+                  R, receptor for EGF and FMLP; SG, secretory granule.</p>
+            </caption>
+            <graphic xlink:href="gb-2001-2-9-reviews3011-4"/>
+         </fig>
+      </sec>
+   </back>
+</article>

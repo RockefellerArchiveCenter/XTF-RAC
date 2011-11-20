@@ -1,0 +1,158 @@
+/* Rockefeller Archive Center customized css */
+body {
+   font-family: Arial, sans-serif;
+   /* 9/22/11 WS: Changed background color from silver to white for RA a */
+   background-color: #fff;
+   font-size: small;
+   color: #333;
+   /* 9/22/11 WS: Changed for RA, added margin and padding */
+   margin:0;
+   padding:0;
+}
+
+.fixedHeader {
+            position: fixed !important;
+            position: absolute; /* IE6 reads this */
+            height: 100px;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;              
+}
+#RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
+
+.searchNav {background-color: #fff; width:100%; margin-top:-1em;}
+.searchNav .searchLinks {color: #555555; text-align:right; padding-right:.5em;}
+.searchNav .searchLinks a {color: #C45414; text-decoration:none;}/*555555*/
+
+/* Formats search results (number and type) */
+.ra-query {float:none !important; display:inline !important;}
+.subQuery {float:none !important; display:inline !important;}
+.clear {clear:both;}
+.navright .right{text-align:right; float:right; margin-top:-8px; padding-top:0;}
+.right{text-align:right;}
+.left {text-align:left; padding-left:18px;}
+
+/* Formats tabs for finding aids*/
+.tabs{display:block; text-align:left; margin:8px 0 -12px 0; padding:4px;}
+.tabs ul {display:block; list-style: none; padding:0; margin:0;}
+.tabs ul li{display:inline; padding: 10px 20px; font-weight:bold;}
+.tabs ul li.select{background-color:#fff;}
+
+/* Styles for EAD */
+.main {
+    display:block; 
+    float:none; 
+    clear:both; 
+    /*margin-top:-22px;*/
+    margin-top:225px;    
+    margin-left:8px; 
+    margin-right:-8px; 
+    border-left:1px solid #999; 
+    border-right:1px solid #999; 
+    border-bottom:1px solid #999;}
+
+.bbar_custom {margin:-1px; padding:8px; border:none; width:100%}
+.bbar_custom h1.collectionGuides {margin-top:-70px; margin-left:160px; font-size:34px}
+.navright {
+    background-color: #DDDDDD;
+    padding:12px;
+    text-align:right !important; 
+    border:1px solid #999; 
+   /* border-left:1px solid #999; 
+    border-right:1px solid #999;
+    */
+    }
+.navright form {text-align:right !important; padding:8px 8px;}
+
+.eadtitle {text-align:left; font-size:.85em; margin:0; padding-left:18px; /*border: 1px solid #999;*/ float:left;}
+.eadtitle h1 {color:#333; margin:0; padding:0;}
+
+#toc {
+    position: fixed !important;    
+    position: absolute; /* IE6 reads this */
+    height: 100%;
+    top: 250px;
+    left: 0;
+    margin-top:0;
+    padding-top: 0;
+    z-index: 1;
+	display:block;
+	width: 225px;
+	/*position: absolute;*/
+	/*float:left;
+	clear:left;*/
+	padding-left: 12px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+/*	border-right: 1px solid #000; 	*/
+	}
+#toc dl{margin-left:12px;}
+#toc .inventory{margin-left:0;}
+#toc .inventory2{padding-left:12px;}
+#toc div.contents {padding:12px;}
+/* TOC subjects submenu*/
+ul.none {list-style:none;}
+.subjects {margin-left:18px; padding-left:4px;}
+.subjects h4 {margin:0; padding:8px;}
+.subjects ul{margin:0;padding:0;}
+.subjects li{margin-left:8px;padding:0;}
+.more {display:none;}
+/* --- EAD body --- */
+#content-right {
+   /* float: left;*/
+   /* border-left:1px solid #999 !important;*/ 
+    margin-left:250px;
+    margin-top:0;
+    padding-top:34px;
+    padding-left: 10px;
+    margin-right: 10px;
+    text-align: left;
+    min-height:400px;
+}
+
+h2 {margin-top:12px; padding-top:12px;}
+h4{margin-bottom:0; padding-bottom:0;}
+p{margin-top:0;margin-bottom:12px;}
+
+.navright .left {margin-top:-12px;}
+.overview p{margin-top:0; margin-bottom:12px;}
+.seriesTitle {background-color:#ddd; padding:8px 4px; font-size:14px; margin:10px -4px; font-weight:bold;}
+.container {margin-left:24px;}
+.instances {font-weight:bold;text-decoration:underline;}
+
+.containerHeader {font-weight:bold; padding-top:8px;}
+.moreLess a{text-decoration:none !important; font-weight:bold;}
+.containerTypes {margin-top:8px;}
+.inventoryTitle {font-weight:bold; background-color:#000; color:#fff; padding:4px 2px; margin-bottom:8px;}
+table tr td {padding-right:8px;}
+
+/* --- Clevel Margins --- */
+table td.c {
+    padding-left: 1px;
+}
+table td.c01 {
+     padding-left: 8px;
+}
+table td.c02 {
+     padding-left: 26px;
+}
+table td.c03 {
+     padding-left: 60px;
+}
+table td.c04 {
+     padding-left: 90px;
+   /* font-size: 100%;*/
+}
+table td.c05 {
+    padding-left: 120px;
+}
+table td.c06 {
+    padding-left: 150px;
+}
+table td.c07 {
+    padding-left: 180px;
+}
+table td.c08 {
+    padding-left: 210px;
+}
