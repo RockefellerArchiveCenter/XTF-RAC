@@ -181,6 +181,7 @@
             
             <!-- result header -->
             <!-- 9/27/11 WS:  Adjusted results header for a cleaner look-->
+            <h1 class="collectionGuides">Collection Guides</h1>
             <table class="searchNav">
                <tr>
                   <td colspan="2">
@@ -385,7 +386,6 @@
             <xsl:copy-of select="$brand.links"/>
          </head>
          <body>
-            <xsl:copy-of select="$brand.header"/>
             <div class="getAddress">
                <h2>E-mail My Bookbag</h2>
                <form action="{$xtfURL}{$crossqueryPath}" method="get">
@@ -397,6 +397,15 @@
                   <input type="submit" value="SUBMIT"/>
                   <input type="hidden" name="smode" value="emailFolder"/>
                </form>
+               <div class="closeWindow">
+                  <a>
+                     <xsl:attribute name="href">javascript://</xsl:attribute>
+                     <xsl:attribute name="onClick">
+                        <xsl:text>javascript:window.close('popup')</xsl:text>
+                     </xsl:attribute>
+                     X Close this Window
+                  </a>
+               </div>
             </div>
          </body>
       </html>
@@ -483,6 +492,7 @@ Item number <xsl:value-of select="$num"/>:
             <xsl:copy-of select="$brand.header"/>
             
             <!-- result header -->
+            <h1 class="collectionGuides">Collection Guides</h1>
             <div class="resultsHeader">
                <table>
                   <tr>
@@ -979,7 +989,8 @@ Item number <xsl:value-of select="$num"/>:
             <xsl:apply-templates select="meta/title[1]"/>
          </a>
          <xsl:text>. </xsl:text>
-         <xsl:apply-templates select="meta/year[1]"/>
+         <!-- 12/1/11 WS for RAC: changed from meta/year[1] to meta/date[1] -->
+         <xsl:apply-templates select="meta/date[1]"/>
          <xsl:text>. </xsl:text>
       </li>
       
