@@ -121,7 +121,20 @@
                   </xsl:when>
                   <xsl:otherwise>
                      <!-- mask facets -->
-                     <xsl:value-of select="replace(replace(replace(@field,'facet-',''),'subject','subject'),'date','date')"/>
+                     <xsl:choose>
+                        <xsl:when test="contains(@field,'subjectname')">
+                           <xsl:value-of select="replace(replace(replace(@field,'facet-',''),'subjectname','subject name'),'date','date')"/>
+                        </xsl:when>
+                        <xsl:when test="contains(@field,'geogname')">
+                           <xsl:value-of select="replace(replace(replace(@field,'facet-',''),'geogname','geographic name'),'date','date')"/>
+                        </xsl:when>
+                        <xsl:when test="contains(@field,'geogname')">
+                           <xsl:value-of select="replace(replace(replace(@field,'facet-',''),'geogname','geographic name'),'date','date')"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:value-of select="replace(replace(replace(@field,'facet-',''),'subject','subject'),'date','date')"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
                   </xsl:otherwise>
                </xsl:choose>
             </b>
