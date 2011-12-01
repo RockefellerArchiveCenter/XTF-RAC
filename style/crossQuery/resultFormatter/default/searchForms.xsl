@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-   xmlns="http://www.w3.org/1999/xhtml"
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:session="java:org.cdlib.xtf.xslt.Session" 
+   xmlns="http://www.w3.org/1999/xhtml" extension-element-prefixes="session"
    version="2.0">
    
    
@@ -53,12 +53,20 @@
    <xsl:template match="crossQueryResult" mode="form" exclude-result-prefixes="#all">
       <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
          <head>
-            <title>XTF: Search Form</title>
+            <title>RAC: Search Collection Guides</title>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <xsl:copy-of select="$brand.links"/>
          </head>
          <body>
             <xsl:copy-of select="$brand.header"/>
+            <h1 class="collectionGuides">Collection Guides</h1>
+            <div class="bookbag">
+               <xsl:if test="$smode != 'showBag'">
+                  <xsl:variable name="bag" select="session:getData('bag')"/>
+                  <a href="{$xtfURL}{$crossqueryPath}?smode=showBag">Bookbag</a>
+                  (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
+               </xsl:if>
+            </div>
             <div class="searchPage">
                <div class="forms">
                   <table>
@@ -119,11 +127,35 @@
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <table>
             <tr>
-               <td>
+               <td colspan="2">
                   <input type="text" name="keyword" size="40" value="{$keyword}"/>
                   <xsl:text>&#160;</xsl:text>
                   <input type="submit" value="Search"/>
                   <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
+                  <p>
+                     <br/>
+                 <!-- Uncomment and complete code when digital objects are included -->    
+                 <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
+                  </p>
+               </td>
+               <td>
+                  <ul class="nomark">
+                     <!-- make popups, need text -->
+                     <li>About Collection Guides</li>
+                     <li>About Archival Materials</li>
+                     <li>Looking for our old collection guide pages?</li>
+                  </ul>
+               </td>
+            </tr>
+            <tr>
+               <td colspan="3">
+                  <h4>The Rockefeller Archive Center Holdings</h4>
+                  <p>
+                     The Rockefeller Archive Center holdings encompass the records of the Rockefeller family and their wide ranging philanthropic endeavors (including the Rockefeller Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the Center's growing holdings include materials from numerous non-Rockefeller foundations and nonprofit organizations, making it a premier  center for research on philanthropy and civil society. It is also a major repository for the personal papers of leaders of the philanthropic community, nobel Prize laureates, and world-renowned investigators in science and medicine. 
+                  </p>
+                  <p>
+                     <strong>Researchers should note that collection guides may not always identify specific collections or portions of collections for which access or use is restricted. When making an appointment to visit the RAC; an archivist will work with the RAC Head of Reference or Head of Processing to ensure that the requested materials are open and available for research.</strong>                     
+                  </p>
                </td>
             </tr>
             <tr>
