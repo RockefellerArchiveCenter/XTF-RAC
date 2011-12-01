@@ -52,7 +52,7 @@
    <!-- ====================================================================== -->
    
    <xsl:import href="../common/docFormatterCommon.xsl"/>
-   
+<!--   <xsl:import href="at_eadToPDF.xsl"/>-->
    <!-- ====================================================================== -->
    <!-- Output Format                                                          -->
    <!-- ====================================================================== -->
@@ -75,10 +75,10 @@
    <!-- ====================================================================== -->
    <!-- Included Stylesheets                                                   -->
    <!-- ====================================================================== -->
-   
-   <xsl:include href="eadcbs7.xsl"/>
    <xsl:include href="parameter.xsl"/>
    <xsl:include href="search.xsl"/>
+   <xsl:include href="eadcbs7.xsl"/>
+
    
    <!-- ====================================================================== -->
    <!-- Define Keys                                                            -->
@@ -150,15 +150,20 @@
          <xsl:when test="$doc.view = 'content'">
             <xsl:call-template name="body"/>
          </xsl:when>
-         <!-- print view -->
+         <!-- pdf view -->
          <xsl:when test="$doc.view='print'">
             <xsl:call-template name="print"/>
          </xsl:when>
+         <!-- popup for additional formats -->
          <xsl:when test="$doc.view='additionalFormats'">
             <xsl:call-template name="additionalFormats"/>
          </xsl:when>
+         <!-- popup for file level descriptions -->
          <xsl:when test="$doc.view='dscDescription'">
             <xsl:call-template name="dscDescription"/>
+         </xsl:when>
+         <xsl:when test="$doc.view='dscRelatedmaterial'">
+            <xsl:call-template name="dscRelatedmaterial"/>
          </xsl:when>
          <!--XML view for debugging -->
          <xsl:when test="$doc.view='xml'">
@@ -204,7 +209,8 @@
                </div>
                <div class="main">
                   <xsl:call-template name="toc"/>
-                  <xsl:call-template name="body"/>                  
+                  <xsl:call-template name="body"/>    
+                  <br class="clear"/>
                </div>
           </body>
          </html>
@@ -259,12 +265,16 @@
                   <input type="hidden" name="docId" value="{$docId}"/>
                   <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
                   <input type="submit" value="Search this Collection"/>
-               </form>
+               </form>               
+               <!--   <xsl:variable name="bag" select="session:getData('bag')"/>
+                  <a href="/xtf/search?smode=showBag">Bookbag</a>
+                  (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
+                | -->
                <a>
                   <xsl:attribute name="href">javascript://</xsl:attribute>
                   <xsl:attribute name="onclick">
                      <xsl:text>javascript:window.open('</xsl:text><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/><xsl:text>?docId=</xsl:text><xsl:value-of
-                        select="$docId"/><xsl:text>;doc.view=citation</xsl:text><xsl:text>','popup','width=800,height=400,resizable=yes,scrollbars=no')</xsl:text>
+                        select="$docId"/><xsl:text>;doc.view=citation</xsl:text><xsl:text>','popup','width=500,height=200,resizable=yes,scrollbars=no')</xsl:text>
                   </xsl:attribute>
                   <xsl:text>Citation</xsl:text>
                </a>
@@ -382,7 +392,8 @@
    
    <xsl:template name="toc">
       <xsl:call-template name="translate">
-         <xsl:with-param name="resultTree">                  
+         <xsl:with-param name="resultTree"> 
+            <div id="tocWrapper">
                   <div id="toc">
  <!--                    <div class="results">
                         <table height="0">
@@ -562,6 +573,7 @@
                         </xsl:otherwise>
                      </xsl:choose>
                   </div>
+            </div>
          </xsl:with-param>
       </xsl:call-template>
    </xsl:template>
@@ -646,7 +658,7 @@
    <!-- ====================================================================== -->
    <!-- Print Template                                                         -->
    <!-- ====================================================================== -->
-   
+   <!-- RAC uses pdf display, see at_eadToPDF.xsl-->
    <xsl:template name="print">
       <html xml:lang="en" lang="en">
          <head>
@@ -669,5 +681,5 @@
          </body>
       </html>
    </xsl:template>
-   
+
 </xsl:stylesheet>
