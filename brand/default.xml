@@ -86,6 +86,32 @@
          		
          	// -->
             </script>
+      <!-- 11/10/11 WS for RA: added javascript to show/hide layers -->
+      <script type="text/javascript">
+           function showHide(shID) {
+               if (document.getElementById(shID)) {
+                   if (document.getElementById(shID + '-show') .style.display != 'none') {
+                       document.getElementById(shID + '-show') .style.display = 'none';
+                       document.getElementById(shID) .style.display = 'block';
+                       document.getElementById(shID + '-hide') .style.display = 'inline';
+                   }
+                   else {
+                       document.getElementById(shID + '-show') .style.display = 'inline';
+                       document.getElementById(shID + '-hide') .style.display = 'none';
+                       document.getElementById(shID) .style.display = 'none';
+                   }
+               }
+           }
+         // launch new window
+         var newwindow;
+         function openWin(url) {
+             newwindow = window.open(url, 'name', 'height=200,width=500,resizable,scrollbars');
+             if (window.focus) {
+                 newwindow.focus()
+             }
+         }
+
+      </script>
       
    </links>
 
@@ -194,7 +220,7 @@
          // launch new window
          var newwindow;
          function openWin(url) {
-             newwindow = window.open(url, 'name', 'height=200,width=500,resizable,scrollbars');
+             newwindow = window.open(url, 'name', 'height=400,width=500,resizable,scrollbars');
              if (window.focus) {
                  newwindow.focus()
              }
