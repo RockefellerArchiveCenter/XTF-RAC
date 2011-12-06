@@ -51,75 +51,90 @@
    
    <!-- main form page -->
    <xsl:template match="crossQueryResult" mode="form" exclude-result-prefixes="#all">
-      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-         <head>
-            <title>RAC: Search Collection Guides</title>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-            <xsl:copy-of select="$brand.links"/>
-         </head>
-         <body>
-            <xsl:copy-of select="$brand.header"/>
-            <h1 class="collectionGuides">Collection Guides</h1>
-            <div class="bookbag">
-               <xsl:if test="$smode != 'showBag'">
-                  <xsl:variable name="bag" select="session:getData('bag')"/>
-                  <a href="{$xtfURL}{$crossqueryPath}?smode=showBag">Bookbag</a>
-                  (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
-               </xsl:if>
-            </div>
-            <div class="searchPage">
-               <div class="forms">
-                  <table>
-                     <tr>
-                        <td class="{if(matches($smode,'simple')) then 'tab-select' else 'tab'}"><a href="search?smode=simple">Keyword</a></td>
-                        <td class="{if(matches($smode,'advanced')) then 'tab-select' else 'tab'}"><a href="search?smode=advanced">Advanced</a></td>
-                        <!-- 9/21/11 WS for RA: removed Freeform tab
-                           <td class="{if(matches($smode,'freeform')) then 'tab-select' else 'tab'}"><a href="search?smode=freeform">Freeform</a></td>
-                        -->
-                        <td class="{if(matches($smode,'browse')) then 'tab-select' else 'tab'}">
-                           <!--<a href="search?browse-all=yes">
-                              <xsl:text>Browse</xsl:text>
-                           </a>-->
-                           <a href="search?smode=browse">Browse</a>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td colspan="4">
-                           <div class="form">
-                              <xsl:choose>
-                                 <xsl:when test="matches($smode,'simple')">
-                                    <xsl:call-template name="simpleForm"/>
-                                 </xsl:when>
-                                 <xsl:when test="matches($smode,'advanced')">
-                                    <xsl:call-template name="advancedForm"/>
-                                 </xsl:when>
-                                 <xsl:when test="matches($smode,'freeform')">
-                                    <xsl:call-template name="freeformForm"/>
-                                 </xsl:when>
-                                 <xsl:when test="matches($smode,'browse')">
-                                    <table>
-                                       <tr>
-                                          <td>
-                                             <p>Browse all documents by the available facets, or alphanumerically by author or title:</p>
-                                          </td>
-                                       </tr>
-                                       <tr>
-                                          <td>
-                                             <xsl:call-template name="browseLinks"/>
-                                          </td>
-                                       </tr>
-                                    </table>
-                                 </xsl:when>
-                              </xsl:choose>
-                           </div>
-                        </td>
-                     </tr>
-                  </table>
-               </div>
-            </div>
-            <xsl:copy-of select="$brand.footer"/>
-         </body>
-      </html>
+      <xsl:choose>
+         <xsl:when test="$smode='collectionGuides'">
+            <xsl:call-template name="collectionGuides"/>
+         </xsl:when>
+         <xsl:when test="$smode='archivalMat'">
+            <xsl:call-template name="archivalMat"/>
+         </xsl:when>
+         <xsl:otherwise>
+            <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+               <head>
+                  <title>RAC: Search Collection Guides</title>
+                  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                  <xsl:copy-of select="$brand.links"/>
+               </head>
+               <body>
+                  <xsl:copy-of select="$brand.header"/>
+                  <h1 id="collectionGuides">
+                     <a href="/xtf/search">
+                        <span></span>
+                        Collection Guides
+                     </a>
+                  </h1>
+                  <div class="bookbag">
+                     <xsl:if test="$smode != 'showBag'">
+                        <xsl:variable name="bag" select="session:getData('bag')"/>
+                        <a href="{$xtfURL}{$crossqueryPath}?smode=showBag">Bookbag</a>
+                        (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
+                     </xsl:if>
+                  </div>
+                  <div class="searchPage">
+                     <div class="forms">
+                        <table>
+                           <tr>
+                              <td class="{if(matches($smode,'simple')) then 'tab-select' else 'tab'}"><a href="search?smode=simple">Keyword</a></td>
+                              <td class="{if(matches($smode,'advanced')) then 'tab-select' else 'tab'}"><a href="search?smode=advanced">Advanced</a></td>
+                              <!-- 9/21/11 WS for RA: removed Freeform tab
+                                 <td class="{if(matches($smode,'freeform')) then 'tab-select' else 'tab'}"><a href="search?smode=freeform">Freeform</a></td>
+                              -->
+                              <td class="{if(matches($smode,'browse')) then 'tab-select' else 'tab'}">
+                                 <!--<a href="search?browse-all=yes">
+                                    <xsl:text>Browse</xsl:text>
+                                 </a>-->
+                                 <a href="search?smode=browse">Browse</a>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="4">
+                                 <div class="form">
+                                    <xsl:choose>
+                                       <xsl:when test="matches($smode,'simple')">
+                                          <xsl:call-template name="simpleForm"/>
+                                       </xsl:when>
+                                       <xsl:when test="matches($smode,'advanced')">
+                                          <xsl:call-template name="advancedForm"/>
+                                       </xsl:when>
+                                       <xsl:when test="matches($smode,'freeform')">
+                                          <xsl:call-template name="freeformForm"/>
+                                       </xsl:when>
+                                       <xsl:when test="matches($smode,'browse')">
+                                          <table>
+                                             <tr>
+                                                <td>
+                                                   <p>Browse all documents by the available facets, or alphanumerically by author or title:</p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>
+                                                   <xsl:call-template name="browseLinks"/>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </xsl:when>
+                                    </xsl:choose>
+                                 </div>
+                              </td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+                  <xsl:copy-of select="$brand.footer"/>
+               </body>
+            </html>
+         </xsl:otherwise>
+      </xsl:choose>
    </xsl:template>
    
    <!-- simple form -->
@@ -141,21 +156,25 @@
                <td>
                   <ul class="nomark">
                      <!-- make popups, need text -->
-                     <li>About Collection Guides</li>
-                     <li>About Archival Materials</li>
-                     <li>Looking for our old collection guide pages?</li>
+                     <li>
+                           <a href="javascript:openWin('{$xtfURL}{$crossqueryPath}?smode=collectionGuides')">About Collection Guides</a>
+                     </li>
+                     <li>
+                        <a href="javascript:openWin('{$xtfURL}{$crossqueryPath}?smode=archivalMat')">About Archival Materials</a>
+                     </li>
+                     <li>
+                        <a href="http://www.rockarch.org/collections/" target="_blank">Looking for our old collection guide pages?</a>
+                     </li>
                   </ul>
                </td>
             </tr>
             <tr>
                <td colspan="3">
                   <h4>The Rockefeller Archive Center Holdings</h4>
-                  <p>
-                     The Rockefeller Archive Center holdings encompass the records of the Rockefeller family and their wide ranging philanthropic endeavors (including the Rockefeller Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the Center's growing holdings include materials from numerous non-Rockefeller foundations and nonprofit organizations, making it a premier  center for research on philanthropy and civil society. It is also a major repository for the personal papers of leaders of the philanthropic community, nobel Prize laureates, and world-renowned investigators in science and medicine. 
+                  <p>The Rockefeller Archive Center holdings encompass the records of the Rockefeller family and their wide-ranging philanthropic endeavors (including the Rockefeller Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the Center's growing holdings include materials from numerous non-Rockefeller foundations and nonprofit organizations, making it a premier center for research on philanthropy and civil society. It is also a major repository for the personal papers of leaders of the philanthropic community, Nobel Prize laureates, and world-renowned investigators in science and medicine.
                   </p>
-                  <p>
-                     <strong>Researchers should note that collection guides may not always identify specific collections or portions of collections for which access or use is restricted. When making an appointment to visit the RAC; an archivist will work with the RAC Head of Reference or Head of Processing to ensure that the requested materials are open and available for research.</strong>                     
-                  </p>
+                  <p><strong>Researchers should note that collection guides may not identify collections or portions of collections whose access or use is restricted. When a researcher requests an appointment to visit the Center, the Head of Processing or Head of Reference will verify that the desired materials are open and available for research. 
+                  </strong></p>
                </td>
             </tr>
             <tr>
@@ -557,4 +576,63 @@
       </form>
    </xsl:template>
    
+   <!-- collection guides -->
+   <xsl:template name="collectionGuides">
+      <html xml:lang="en" lang="en">
+         <head>
+            <title/>
+            <link rel="stylesheet" type="text/css" href="{$css.path}racustom.css"/>
+         </head>
+         <body>      
+            <div class="dscDescription">
+               <h4>About Collection Guides</h4>
+               <p>Collection guides are documents that describe and map archival material held at a particular institution. Researchers use collection guides to find and identify archival holdings that may be pertinent to their research.</p>
+               <p>Most collection guides include background information on the person or institution responsible for the creation of the records; a description of the contents, strengths, and weaknesses of the collection; as well as information on how the collection is arranged, how it has been managed, and how researchers can access and use it.</p>
+               <p>Collection guides are only pointers to archival material. They describe the collection and its arrangement, but rarely the individual items contained within it. In many cases it is only by examining a file that one can know its exact contents. Most archival material at the RAC is not digitized and must be consulted on site. Researchers are invited to schedule an appointment to examine our holdings.</p>
+               <div class="closeWindow">
+                  <a>
+                     <xsl:attribute name="href">javascript://</xsl:attribute>
+                     <xsl:attribute name="onClick">
+                        <xsl:text>javascript:window.close('popup')</xsl:text>
+                     </xsl:attribute>
+                     X Close this Window
+                  </a>
+               </div>
+            </div>
+         </body>
+      </html>
+   </xsl:template>
+   
+   <!-- archival materials -->
+   <xsl:template name="archivalMat">
+      <html xml:lang="en" lang="en">
+         <head>
+            <title/>
+            <link rel="stylesheet" type="text/css" href="{$css.path}racustom.css"/>
+         </head>
+         <body>      
+            <div class="dscDescription">
+               <h4>About Archival Materials</h4>
+               <p>Archival holdings are generally comprised of original, unpublished material of enduring value created by a person, family, or organization. This material often includes primary source records and firsthand accounts of events and transactions. Archival material may include a variety of media or formats such as correspondence, memos, reports, bound diaries, scrapbooks, maps, blueprints, photographic negatives and prints, films, VHS or audio tapes, or electronic records.</p>
+               <div class="closeWindow">
+                  <a>
+                     <xsl:attribute name="href">javascript://</xsl:attribute>
+                     <xsl:attribute name="onClick">
+                        <xsl:text>javascript:window.close('popup')</xsl:text>
+                     </xsl:attribute>
+                     X Close this Window
+                  </a>
+               </div>
+            </div>
+         </body>
+      </html>
+   </xsl:template>
+   <!-- 
+      <xsl:when test="$doc.view='collectionGuides'">
+      <xsl:call-template name="collectionGuides"/>
+      </xsl:when>
+      <xsl:when test="$doc.view='archivalMat'">
+      <xsl:call-template name="archivalMat"/>
+      </xsl:when>
+   -->
 </xsl:stylesheet>
