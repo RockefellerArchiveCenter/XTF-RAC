@@ -181,7 +181,12 @@
             
             <!-- result header -->
             <!-- 9/27/11 WS:  Adjusted results header for a cleaner look-->
-            <h1 class="collectionGuides">Collection Guides</h1>
+            <h1 id="collectionGuides">
+               <a href="/xtf/search">
+                  <span></span>
+                  Collection Guides
+               </a>
+            </h1>
             <table class="searchNav">
                <tr>
                   <td colspan="2">
@@ -492,7 +497,12 @@ Item number <xsl:value-of select="$num"/>:
             <xsl:copy-of select="$brand.header"/>
             
             <!-- result header -->
-            <h1 class="collectionGuides">Collection Guides</h1>
+            <h1 id="collectionGuides">
+               <a href="/xtf/search">
+                  Collection Guides
+                  <span></span>
+               </a>
+            </h1>
             <div class="resultsHeader">
                <table>
                   <tr>
