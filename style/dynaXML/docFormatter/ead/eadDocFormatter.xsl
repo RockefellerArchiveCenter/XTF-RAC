@@ -52,7 +52,7 @@
    <!-- ====================================================================== -->
    
    <xsl:import href="../common/docFormatterCommon.xsl"/>
-<!--   <xsl:import href="at_eadToPDF.xsl"/>-->
+   <xsl:import href="at_eadToPDF.xsl"/>
    <!-- ====================================================================== -->
    <!-- Output Format                                                          -->
    <!-- ====================================================================== -->
@@ -668,7 +668,7 @@
    <!-- Print Template                                                         -->
    <!-- ====================================================================== -->
    <!-- RAC uses pdf display, see at_eadToPDF.xsl-->
-   <xsl:template name="print">
+   <!--<xsl:template name="print">
       <html xml:lang="en" lang="en">
          <head>
             <title>
@@ -689,6 +689,6 @@
             <hr/>
          </body>
       </html>
-   </xsl:template>
+   </xsl:template>-->
 
 </xsl:stylesheet>
