@@ -236,7 +236,12 @@
          </xsl:choose>
       </xsl:variable>
       <div class="bbar_custom">
-         <h1 class="collectionGuides">Collection Guides</h1>
+         <h1 id="collectionGuides">
+            <a href="/xtf/search">
+               <span></span>
+               Collection Guides
+            </a>
+         </h1>
          <table class="searchNav">
             <tr>
                <td colspan="2">
@@ -475,8 +480,8 @@
                                           table of contents. -->
                                        <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds']">
                                           <div class="more" id="{$submenuID}">
-                                             <xsl:for-each select="c02[@level='subseries'] | c[@level='subgrp' or @level='subseries' or @level='subfonds']">
-                                                <xsl:call-template name="make-toc-link">
+                                             <xsl:for-each select="c02[@level='subseries'] | c[@level='subgrp' or @level='subseries' or @level='subfonds']">                                                
+                                                   <xsl:call-template name="make-toc-link">
                                                    <xsl:with-param name="name">
                                                       <xsl:choose>
                                                          <xsl:when test="did/unittitle/unitdate">
@@ -608,7 +613,7 @@
       </xsl:variable>   
       <xsl:if test="@id = $chunk.id">
          <a name="X"/>
-      </xsl:if>
+      </xsl:if>     
       <table>
       <tr>
          <td width="10px" class="moreLess">
@@ -635,6 +640,10 @@
                   <span class="toc-hi">
                      <xsl:value-of select="$name"/>
                   </span>
+               </xsl:when>
+               <!-- 12/7/11 WS for RA: Changed links for subseries to be anchors rather then links -->
+               <xsl:when test="$indent = 3">
+                  <a href="#{$id}"><xsl:value-of select="$name"/></a>
                </xsl:when>
                <xsl:otherwise>
                   <a>
