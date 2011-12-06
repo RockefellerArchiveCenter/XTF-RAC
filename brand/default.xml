@@ -2705,7 +2705,7 @@
                         <img src="http://www.rockarch.org/images/spacer.gif" width="40" height="80" alt=""/>
                      </td>
                      <td width="120" rowspan="2">
-                        <a href="/search">
+                        <a href="/xtf/search">
                            <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"  alt="The Rockefeller Archive Center" border="0"/>
                         </a>
                      </td>
@@ -5235,7 +5235,7 @@
                         <img src="http://www.rockarch.org/images/spacer.gif" width="40" height="80" alt=""/>
                      </td>
                      <td width="120" rowspan="2">
-                        <a href="/search">
+                        <a href="/xtf/search">
                            <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center" border="0"/>
                         </a>
                      </td>
