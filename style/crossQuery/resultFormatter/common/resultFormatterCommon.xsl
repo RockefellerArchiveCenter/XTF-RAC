@@ -156,6 +156,18 @@
    <xsl:param name="rights-prox"/>
    <xsl:param name="rights-exclude"/>
    <xsl:param name="rights-max"/>
+
+   <xsl:param name="scopecontent"/>
+   <xsl:param name="scopecontent-join"/>
+   <xsl:param name="scopecontent-prox"/>
+   <xsl:param name="scopecontent-exclude"/>
+   <xsl:param name="scopecontent-max"/>
+   
+   <xsl:param name="bioghist"/>
+   <xsl:param name="bioghist-join"/>
+   <xsl:param name="bioghist-prox"/>
+   <xsl:param name="bioghist-exclude"/>
+   <xsl:param name="bioghist-max"/>
    
    <!-- Special XTF Metadata Field based on Date -->
    <xsl:param name="year"/>
