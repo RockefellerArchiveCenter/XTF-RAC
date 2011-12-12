@@ -133,7 +133,6 @@
    <xsl:template match="did" mode="addChunkId">
       <xsl:copy>
          <xsl:copy-of select="@*"/>         
-         
          <xsl:apply-templates select="repository"/>
          <xsl:apply-templates select="origination"/>
          <xsl:apply-templates select="unittitle"/>
@@ -263,6 +262,8 @@
                <xsl:call-template name="get-ead-language"/>
                <xsl:call-template name="get-ead-relation"/>
                <xsl:call-template name="get-ead-coverage"/>
+               <xsl:call-template name="get-ead-scopecontent"/>
+               <xsl:call-template name="get-ead-bioghist"/>
                <xsl:call-template name="get-ead-rights"/>
                
                <!-- special values for OAI -->
@@ -558,7 +559,32 @@
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
-   
+   <!-- scope and content -->
+   <xsl:template name="get-ead-scopecontent">
+      <xsl:choose>
+         <xsl:when test="/ead/archdesc/scopecontent">
+            <xsl:for-each select="/ead/archdesc/scopecontent">
+               <scopecontent xtf:meta="true">
+                  <xsl:value-of select="string(concat(child::*,' '))"/>
+               </scopecontent>               
+            </xsl:for-each>
+         </xsl:when>
+         <xsl:otherwise/>
+      </xsl:choose>
+   </xsl:template>
+   <!-- biographical or historical note -->
+   <xsl:template name="get-ead-bioghist">
+      <xsl:choose>
+         <xsl:when test="/ead/archdesc/bioghist">
+            <xsl:for-each select="/ead/archdesc/bioghist">
+               <bioghist xtf:meta="true">
+                  <xsl:value-of select="string(concat(child::*,' '))"/>
+               </bioghist>               
+            </xsl:for-each>
+         </xsl:when>
+         <xsl:otherwise/>
+      </xsl:choose>
+   </xsl:template>
    <!-- rights -->
    <xsl:template name="get-ead-rights">
       <rights xtf:meta="true">public</rights>
