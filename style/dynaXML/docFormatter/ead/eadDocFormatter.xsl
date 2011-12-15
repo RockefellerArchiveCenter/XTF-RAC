@@ -52,7 +52,7 @@
    <!-- ====================================================================== -->
    
    <xsl:import href="../common/docFormatterCommon.xsl"/>
-   <xsl:import href="at_eadToPDF.xsl"/>
+<!--   <xsl:import href="at_eadToPDF.xsl"/>-->
    <!-- ====================================================================== -->
    <!-- Output Format                                                          -->
    <!-- ====================================================================== -->
@@ -427,7 +427,7 @@
                                     evidenced by the level attribute series)and numbers them
                                     to form a hyperlink to each.   Delete this section if you do not
                                     wish the c01 titles to appear in the table of contents.-->
-                                 <xsl:for-each select="archdesc/dsc/c01[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds']  | archdesc/dsc/c[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds']">
+                                 <xsl:for-each select="archdesc/dsc/c01[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or (@level='otherlevel' and not(child::did/container))]  | archdesc/dsc/c[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or (@level='otherlevel' and not(child::did/container))]">
                                     <div class="series">
                                        <xsl:variable name="submenuID">
                                           <xsl:variable name="seriesID">
@@ -668,7 +668,7 @@
    <!-- Print Template                                                         -->
    <!-- ====================================================================== -->
    <!-- RAC uses pdf display, see at_eadToPDF.xsl-->
-   <!--<xsl:template name="print">
+   <xsl:template name="print">
       <html xml:lang="en" lang="en">
          <head>
             <title>
@@ -689,6 +689,6 @@
             <hr/>
          </body>
       </html>
-   </xsl:template>-->
+   </xsl:template>
 
 </xsl:stylesheet>
