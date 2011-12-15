@@ -7,6 +7,7 @@ body {
    color: #333;
    /* 9/22/11 WS: Changed for RA, added margin and padding */
    margin:0;
+   margin-right:12px;
    padding:0;
 }
 
@@ -28,15 +29,36 @@ div.closeWindow a{color: #C45414;}
             left: 0;
             z-index: 2;              
 }
+.fixedHeader table{
+    margin-right:8px;    
+}
+
 .bookbag {text-align:right; border:none; background-color:white; margin-bottom:-2em;padding:0;margin-right:1em;}
 
 /* Formats header */
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
+/*h1#collectionGuides {background: url("images/collection_guides.gif") no-repeat left top; background-color:#fff;}*/
+
+#collectionGuides {margin-top:-60px; margin-left:150px;}
+#collectionGuides a {
+   position:relative;
+   display:block;
+   width:260px;
+   height:40px; }
+
+#collectionGuides a span {
+   display:block;
+   position:absolute;
+   width:100%;
+   height:100%;
+   background:#ffffff url("images/collection_guides.gif") no-repeat left top;
+   z-index:1; /* Places <span> on top of <a> text */  }
+.fixedHeader .searchNav {width:99%;}
 .searchNav {background-color: #fff; width:100%; margin-top:-1em;}
 .searchNav .searchLinks {color: #555555; text-align:right; padding-right:.5em;}
 .searchNav .searchLinks a {color: #C45414; text-decoration:none;}/*555555*/
-
-.bbar_custom {margin:-1px; padding:1em; border:none; width:100%}
+.fixedHeader .bbar_custom{width:99%;}
+.bbar_custom {padding:1em; border:none; width:100%;}
 h1.collectionGuides {margin-top:-70px; margin-left:160px; font-size:34px;}
 h1.collectionGuides a{text-decoration:none; color:black;}
 .searchPage {margin-top:34px !important;}
@@ -46,9 +68,11 @@ h1.collectionGuides a{text-decoration:none; color:black;}
     text-align:right !important; 
     border:1px solid #999; 
     }
+.fixedHeader .navright {margin-right:12px !important;}   
 .navright form {text-align:right !important; padding:8px 8px;}
 
 /* Formats search results (number and type) */
+table.advancedSearch tr td{vertical-align:text-top;}
 .ra-query {float:none !important; display:inline !important;}
 .subQuery {float:none !important; display:inline !important;}
 .clear {clear:both;}
@@ -69,12 +93,13 @@ h1.collectionGuides a{text-decoration:none; color:black;}
     clear:both; 
     /*margin-top:-22px;*/
     margin-top:225px;    
-    margin-left:12px; 
-    margin-right:-8px; 
+    margin-left:13px; 
+/*    margin-right:12px; */
     border-left:1px solid #999; 
     border-right:1px solid #999; 
-    border-bottom:1px solid #999;}
-
+    border-bottom:1px solid #999;
+    }
+    
 .eadtitle {text-align:left; font-size:.85em; margin:0; padding-left:1em; /*border: 1px solid #999;*/ float:left;}
 .eadtitle h1 {color:#333; margin:0; padding:0;}
 
@@ -86,7 +111,7 @@ h1.collectionGuides a{text-decoration:none; color:black;}
     left: 0;
     bottom:12px;
     margin-left: 0;
-    width:250px;
+    width:235px;
     margin:0;
     padding:0;
     clear:both;
@@ -100,7 +125,7 @@ h1.collectionGuides a{text-decoration:none; color:black;}
 	padding-right: 10px;	
 	padding-bottom: 10px;
 	display:block;
-	width: 200px;	
+	width: 190px;	
     
 	}
 #toc dl{margin-left:1em;}
@@ -120,7 +145,7 @@ ul.none {list-style:none;}
 #content-right {
    /* float: left;*/
    /* border-left:1px solid #999 !important;*/ 
-    margin-left:250px;
+    margin-left:240px;
     margin-top:0;
     padding-top:48px;
     padding-left: 10px;
@@ -137,14 +162,14 @@ ul.none {list-style:none;}
 table.containerList {width:95%;}
 table.containerList tr td{padding-top:2px; padding-bottom:2px;}
 .seriesTitle {background-color:#ddd; padding:8px 4px; font-size:1.25em; margin:10px -4px; font-weight:bold;}
-.container {margin-left:2em;}
+.container {margin-left:2em; text-align:left;}
 .instances {font-weight:bold;text-decoration:underline;}
-.containerHeader {font-weight:bold; padding-top:.5em;}
+.containerHeader {font-weight:bold; padding-top:.5em; text-align:left;}
+.containerHeaderTitle {font-weight:bold; padding-top:.5em; text-align:left;}
 .moreLess a{text-decoration:none !important; font-weight:bold;}
 .containerTypes {margin-top:.5em;}
 .inventoryTitle {font-weight:bold; background-color:#000; color:#fff; padding:4px 2px; margin-bottom:.5em;}
 tr.odd{background-color:#eee !important;}
-
 /* --- Clevel Margins --- */
 table td.c {border-left: none; padding-left:4px;}
 table td.c01 {border-left: none !important; padding-left:4px;}
