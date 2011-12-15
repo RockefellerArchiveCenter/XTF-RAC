@@ -264,6 +264,7 @@
                <xsl:call-template name="get-ead-coverage"/>
                <xsl:call-template name="get-ead-scopecontent"/>
                <xsl:call-template name="get-ead-bioghist"/>
+   
                <xsl:call-template name="get-ead-rights"/>
                
                <!-- special values for OAI -->
@@ -565,20 +566,24 @@
          <xsl:when test="/ead/archdesc/scopecontent">
             <xsl:for-each select="/ead/archdesc/scopecontent">
                <scopecontent xtf:meta="true">
-                  <xsl:value-of select="string(concat(child::*,' '))"/>
+                  <xsl:for-each select="child::*">
+                     <xsl:value-of select="string(.)"/>   
+                  </xsl:for-each>
                </scopecontent>               
             </xsl:for-each>
          </xsl:when>
          <xsl:otherwise/>
       </xsl:choose>
    </xsl:template>
-   <!-- biographical or historical note -->
+   <!-- biographical or historical note--> 
    <xsl:template name="get-ead-bioghist">
       <xsl:choose>
          <xsl:when test="/ead/archdesc/bioghist">
             <xsl:for-each select="/ead/archdesc/bioghist">
                <bioghist xtf:meta="true">
-                  <xsl:value-of select="string(concat(child::*,' '))"/>
+                  <xsl:for-each select="child::*">
+                     <xsl:value-of select="string(.)"/>   
+                  </xsl:for-each>
                </bioghist>               
             </xsl:for-each>
          </xsl:when>
