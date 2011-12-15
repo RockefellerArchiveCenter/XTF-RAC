@@ -655,7 +655,7 @@ Item number <xsl:value-of select="$num"/>:
             <!--<a href="{$xtfURL}{$crossqueryPath}?browse-collection=first;sort=title">Collection</a> |-->
             <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Title</a> |
             <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title">Creator</a> |             
-            <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;sort=title">Subject</a> 
+            <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a> 
          </p>
 <!--            <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes">Facet-->
            <!-- <li><a href="{$xtfURL}{$crossqueryPath}?browse-collection=first;sort=collection">Collection</a></li>
