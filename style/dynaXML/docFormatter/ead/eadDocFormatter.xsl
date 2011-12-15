@@ -515,7 +515,7 @@
                                  <xsl:call-template name="make-toc-link">
                                     <xsl:with-param name="name" select="'Overview'"/>
                                     <xsl:with-param name="id" select="'headerlink'"/>
-                                    <xsl:with-param name="nodes" select="archdesc/did|archdesc/scopecontent"/>
+                                    <xsl:with-param name="nodes" select="archdesc/did/child::*[not(name() = 'origination') and not(name() = 'repository')]|archdesc/scopecontent"/>
                                  </xsl:call-template>
                               </xsl:if>
                               <xsl:if test="archdesc/did/head">
@@ -546,11 +546,13 @@
                                     <xsl:with-param name="nodes" select="archdesc/controlaccess"/>
                                  </xsl:call-template>
                               </xsl:if>
-                              <xsl:if test="archdesc/acqinfo/*   or archdesc/processinfo/*   or archdesc/prefercite/*   or archdesc/custodialhist/*   or archdesc/processinfo/*   or archdesc/appraisal/*   or archdesc/accruals/*   or archdesc/*/acqinfo/*   or archdesc/*/processinfo/*   or archdesc/*/prefercite/*   or archdesc/*/custodialhist/*   or archdesc/*/procinfo/*   or archdesc/*/appraisal/*   or archdesc/*/accruals/*">
+                              <xsl:if test="archdesc/acqinfo/* or  archdesc/processinfo/* or archdesc/prefercite/* or 
+                                 archdesc/custodialhist/* or archdesc/processinfo/* or archdesc/appraisal/* or archdesc/accruals/* or archdesc/*/acqinfo/* or archdesc/*/processinfo/* or archdesc/*/prefercite/* or 
+                                 archdesc/*/custodialhist/* or archdesc/*/procinfo/* or archdesc/*/appraisal/* or archdesc/*/accruals/*">
                                  <xsl:call-template name="make-toc-link">
                                     <xsl:with-param name="name" select="'Administrative Information'"/>
                                     <xsl:with-param name="id" select="'adminlink'"/>
-                                    <xsl:with-param name="nodes" select="archdesc/acqinfo|archdesc/prefercite|archdesc/custodialhist|archdesc/custodialhist|archdesc/processinfo|archdesc/appraisal|archdesc/accruals|archdesc/*/acqinfo|archdesc/*/processinfo|archdesc/*/prefercite|archdesc/*/custodialhist|archdesc/*/procinfo|archdesc/*/appraisal|archdesc/*/accruals/*"/>
+                                    <xsl:with-param name="nodes" select="archdesc/acqinfo|archdesc/processinfo|archdesc/prefercite|archdesc/custodialhist|archdesc/processinfo|archdesc/appraisal|archdesc/accruals|archdesc/*/acqinfo|archdesc/*/processinfo|archdesc/*/prefercite|archdesc/*/custodialhist|archdesc/*/procinfo|archdesc/*/appraisal|archdesc/*/accruals"/>
                                  </xsl:call-template>
                               </xsl:if>
                               <xsl:if test="archdesc/did/physdesc[@label = 'General Physical Description note']">
