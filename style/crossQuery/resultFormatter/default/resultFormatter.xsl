@@ -52,6 +52,7 @@
    <xsl:import href="rss.xsl"/>
    <xsl:include href="searchForms.xsl"/>
    
+   <xsl:param name="browse-collections"/> 
    <!-- ====================================================================== -->
    <!-- Output                                                                 -->
    <!-- ====================================================================== -->
@@ -221,21 +222,46 @@
             <div class="resultsHeader">
               <table>
                   <tr>
-                     <td colspan="3" class="right">
-                        <xsl:if test="$smode != 'showBag'">
-                           <xsl:variable name="bag" select="session:getData('bag')"/>
-                           <a href="{$xtfURL}{$crossqueryPath}?smode=showBag">Bookbag</a>
-                           (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
-                           <xsl:if test="docHit">
-                              <xsl:text>&#160;&#160;</xsl:text>
-                              <xsl:variable name="cleanString" select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
-                              <span style="vertical-align:bottom"><img src="{$icon.path}/i_rss.png" alt="rss icon"/></span>
-                              <xsl:text>&#160;</xsl:text>
-                              <a href="search?{$cleanString};docsPerPage=100;rmode=rss;sort=rss">RSS</a>
-                              <xsl:text>&#160;</xsl:text>
-                           </xsl:if>
-                        </xsl:if>
-                     </td>
+                     <xsl:choose>
+                        <xsl:when test="$browse-all">
+                           <td colspan="2">
+                              <strong>Browse by: </strong>
+                              <xsl:call-template name="browseLinks"/>
+                           </td>
+                           <td class="right" style="vertical-align:top;">
+                              <xsl:if test="$smode != 'showBag'">
+                                 <xsl:variable name="bag" select="session:getData('bag')"/>
+                                 <a href="{$xtfURL}{$crossqueryPath}?smode=showBag">Bookbag</a>
+                                 (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
+                                 <xsl:if test="docHit">
+                                    <xsl:text>&#160;&#160;</xsl:text>
+                                    <xsl:variable name="cleanString" select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
+                                    <span style="vertical-align:bottom"><img src="{$icon.path}/i_rss.png" alt="rss icon"/></span>
+                                    <xsl:text>&#160;</xsl:text>
+                                    <a href="search?{$cleanString};docsPerPage=100;rmode=rss;sort=rss">RSS</a>
+                                    <xsl:text>&#160;</xsl:text>
+                                 </xsl:if>
+                              </xsl:if>
+                           </td>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <td colspan="3" class="right">
+                              <xsl:if test="$smode != 'showBag'">
+                                 <xsl:variable name="bag" select="session:getData('bag')"/>
+                                 <a href="{$xtfURL}{$crossqueryPath}?smode=showBag">Bookbag</a>
+                                 (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
+                                 <xsl:if test="docHit">
+                                    <xsl:text>&#160;&#160;</xsl:text>
+                                    <xsl:variable name="cleanString" select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
+                                    <span style="vertical-align:bottom"><img src="{$icon.path}/i_rss.png" alt="rss icon"/></span>
+                                    <xsl:text>&#160;</xsl:text>
+                                    <a href="search?{$cleanString};docsPerPage=100;rmode=rss;sort=rss">RSS</a>
+                                    <xsl:text>&#160;</xsl:text>
+                                 </xsl:if>
+                              </xsl:if>
+                           </td>
+                        </xsl:otherwise>
+                     </xsl:choose>
                   </tr>
                   <tr>
                      <td colspan="3">
@@ -491,43 +517,59 @@ Item number <xsl:value-of select="$num"/>:
             <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
             <script src="script/yui/connection-min.js" type="text/javascript"/> 
          </head>
-         <body>
-            
+         <body>            
             <!-- header -->
             <xsl:copy-of select="$brand.header"/>
             
             <!-- result header -->
-            <h1 id="collectionGuides">
-               <a href="/xtf/search">
-                  Collection Guides
-                  <span></span>
-               </a>
-            </h1>
-            <div class="resultsHeader">
-               <table>
+               <h1 id="collectionGuides">
+                  <a href="/xtf/search">
+                     <span></span>
+                     Collection Guides
+                  </a>
+               </h1>
+               <table class="searchNav">
                   <tr>
-                     <td colspan="2" class="right">
+                     <td colspan="2">
+                        <div class="searchLinks">
+                           <a href="{$xtfURL}{$crossqueryPath}">
+                              <xsl:text>NEW SEARCH</xsl:text>
+                           </a>
+                           <xsl:if test="$smode = 'showBag'">
+                              <xsl:text>&#160;|&#160;</xsl:text>
+                              <a href="{session:getData('queryURL')}">
+                                 <xsl:text>RETURN TO SEARCH RESULTS</xsl:text>
+                              </a>
+                           </xsl:if>
+                           <xsl:text>&#160;|&#160;</xsl:text>
+                           <!--<a href="search?browse-all=yes">
+                              <xsl:text>BROWSE</xsl:text>
+                              </a>-->
+                           <a href="search?smode=browse">
+                              <xsl:text>BROWSE</xsl:text>
+                           </a>
+                        </div>
+                     </td>
+                  </tr>
+               </table>
+               <div class="resultsHeader">
+                  <table>
+                     <tr>
+                        <td colspan="2">
+                           <strong>Browse by: </strong>
+                           <xsl:call-template name="browseLinks"/>
+                        </td>
+                        <td class="right">
                         <xsl:variable name="bag" select="session:getData('bag')"/>
                         <a href="{$xtfURL}{$crossqueryPath}?smode=showBag">Bookbag</a>
                         (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
-                     </td>
-                  </tr>
-                  <tr>
+                        </td>
+                     </tr>
+                     <tr>
                      <td>
-                        <b>Browse by:&#160;</b>
-                        <xsl:choose>
-                           <xsl:when test="$browse-title">Title</xsl:when>
-                           <xsl:when test="$browse-creator">Author</xsl:when>
-                           <xsl:when test="$browse-subject">Subject - Topical Term</xsl:when>
-                           <xsl:when test="$browse-subjectname">Subject - Personal, Family, or Corporate Name</xsl:when>
-                           <xsl:when test="$browse-geogname">Subject - Geographic Name</xsl:when>
-                           <xsl:otherwise>All Items</xsl:otherwise>
-                        </xsl:choose>
+                        
                      </td>
                      <td class="right">
-                        <a href="{$xtfURL}{$crossqueryPath}">
-                           <xsl:text>New Search</xsl:text>
-                        </a>
                         <xsl:if test="$smode = 'showBag'">
                            <xsl:text>&#160;|&#160;</xsl:text>
                            <a href="{session:getData('queryURL')}">
@@ -537,8 +579,15 @@ Item number <xsl:value-of select="$num"/>:
                      </td>
                   </tr>
                   <tr>
-                     <td>
-                        <b>Results:&#160;</b>
+                     <td colspan="3">
+                         <strong>Browsing:&#160;</strong>
+                        <xsl:choose>
+                           <xsl:when test="$browse-title">Titles</xsl:when>
+                           <xsl:when test="$browse-creator">Creators</xsl:when>
+                           <xsl:when test="$browse-all">Subjects</xsl:when>
+                           <xsl:otherwise>All Items</xsl:otherwise>
+                        </xsl:choose>
+                        <!--<strong>Results:&#160;</strong>
                         <xsl:variable name="items" select="facet/group[docHit]/@totalDocs"/>
                         <xsl:choose>
                            <xsl:when test="$items &gt; 1">
@@ -549,11 +598,7 @@ Item number <xsl:value-of select="$num"/>:
                               <xsl:value-of select="$items"/>
                               <xsl:text> Item</xsl:text>
                            </xsl:otherwise>
-                        </xsl:choose>
-                     </td>
-                     <td class="right">
-                        <xsl:text>Browse by </xsl:text>
-                        <xsl:call-template name="browseLinks"/>
+                        </xsl:choose>-->
                      </td>
                   </tr>
                   <tr>
@@ -606,15 +651,19 @@ Item number <xsl:value-of select="$num"/>:
    </xsl:template>
    
    <xsl:template name="browseLinks">
-         <ul class="nobullet">
-            <li><a href="{$xtfURL}{$crossqueryPath}?browse-all=yes">Facet</a></li>
+         <p>
+            <!--<a href="{$xtfURL}{$crossqueryPath}?browse-collection=first;sort=title">Collection</a> |-->
+            <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Title</a> |
+            <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title">Creator</a> |             
+            <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;sort=title">Subject</a> 
+         </p>
+<!--            <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes">Facet-->
            <!-- <li><a href="{$xtfURL}{$crossqueryPath}?browse-collection=first;sort=collection">Collection</a></li>
             <li><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=creator">Creator</a></li>
             <li>Genre/Form</li>
             <li><a href="{$xtfURL}{$crossqueryPath}?browse-subject=first;sort=creator">Subject - Topical Term</a></li>
             <li><a href="{$xtfURL}{$crossqueryPath}?browse-subjectname=first;sort=creator">Subject - Personal, Family, or Corporate Name</a></li>
             <li><a href="{$xtfURL}{$crossqueryPath}?browse-geogname=first;sort=creator">Subject - Geographic Name</a></li>-->
-         </ul>
       <!-- 9/21/11 WS for RA: Changed browse facet
          <xsl:choose>
          <xsl:when test="$browse-all">
