@@ -43,7 +43,7 @@
          <a name="X"/>
       </xsl:if>
       
-      <xsl:call-template name="prev.hit"/>
+<!--      <xsl:call-template name="prev.hit"/>-->
       
       <xsl:choose>
          <xsl:when test="xtf:term">
@@ -57,11 +57,11 @@
             </span>
          </xsl:otherwise>
       </xsl:choose>
-      
+     <!-- 
       <xsl:if test="not(@more='yes')">
          <xsl:call-template name="next.hit"/>
       </xsl:if>
-      
+      -->
    </xsl:template>
    
    <xsl:template match="xtf:more">
