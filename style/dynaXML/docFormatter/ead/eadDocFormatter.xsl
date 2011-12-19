@@ -645,7 +645,10 @@
                </xsl:when>
                <!-- 12/7/11 WS for RA: Changed links for subseries to be anchors rather then links -->
                <xsl:when test="$indent = 3">
-                  <a href="#{$id}"><xsl:value-of select="$name"/></a>
+                  <a>
+                     <xsl:attribute name="href"><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>&amp;menu=more</xsl:attribute>
+                     <xsl:value-of select="$name"/>
+                  </a>
                </xsl:when>
                <xsl:otherwise>
                   <a>
