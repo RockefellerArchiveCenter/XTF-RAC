@@ -653,7 +653,7 @@ Item number <xsl:value-of select="$num"/>:
    <xsl:template name="browseLinks">
          <p>
             <!--<a href="{$xtfURL}{$crossqueryPath}?browse-collection=first;sort=title">Collection</a> |-->
-            <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Title</a> |
+            <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Collection Title</a> |
             <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title">Creator</a> |             
             <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a> 
          </p>
