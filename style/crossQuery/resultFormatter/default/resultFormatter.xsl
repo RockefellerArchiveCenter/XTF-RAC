@@ -857,7 +857,7 @@ Item number <xsl:value-of select="$num"/>:
                </td>
                <td class="col2">
                   <!-- 9/26/11 WS: changed Published to Date -->
-                  <b>Date:&#160;&#160;</b>
+                  <b>Date(s):&#160;&#160;</b>
                </td>
                <td class="col3">
                   <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
