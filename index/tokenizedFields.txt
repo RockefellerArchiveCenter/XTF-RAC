@@ -12,7 +12,9 @@ coverage
 rights
 set
 year
-source
-description
 subjectname
 geogname
+source
+scopecontent
+bioghist
+description

@@ -20,7 +20,7 @@
             </publicationstmt>
         </filedesc>
         <profiledesc>
-            <creation>This finding aid was produced using the Archivists' Toolkit <date>2011-07-27T10:38-0400</date>
+            <creation>This finding aid was produced using the Archivists' Toolkits  <date>2011-07-27T10:38-0400</date>
             </creation>
             <langusage>English</langusage>
             <descrules>Describing Archives: A Content Standard</descrules>
@@ -187,6 +187,8 @@
                         <unittitle>American Philosophical Society Library: Max Bergmann Papers</unittitle>
                         <container id="cid221" type="Box" label="Mixed materials">1</container>
                         <container parent="cid221" type="Folder">1</container>
+                        <container id="cid223" type="Box" label="Mixed materials">3</container>
+                        <container parent="cid223" type="Folder">3</container>
                         <unitdate>undated</unitdate>
                     </did>
                 </c>

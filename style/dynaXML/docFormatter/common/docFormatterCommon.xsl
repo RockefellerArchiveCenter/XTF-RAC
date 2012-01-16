@@ -173,8 +173,6 @@
                   </title>
                   <link rel="stylesheet" type="text/css" href="{$css.path}bbar.css"/>
                   <link rel="shortcut icon" href="icons/default/favicon.ico" />
-
-
                </head>
                <body>
                   <div class="bbar">
@@ -232,37 +230,30 @@
    <!-- ====================================================================== -->
    
    <xsl:template name="citation">
-      
       <html xml:lang="en" lang="en">
          <head>
-            <title>
-               <xsl:value-of select="$doc.title"/>
-            </title>
-            <link rel="stylesheet" type="text/css" href="{$css.path}bbar.css"/>
-            <link rel="shortcut icon" href="icons/default/favicon.ico" />
-
+            <title/>
+            <link rel="stylesheet" type="text/css" href="{$css.path}racustom.css"/>
          </head>
-         <body>
-            <xsl:copy-of select="$brand.header"/>
-            <div class="container">
-               <h2>Citation</h2>
-               <div class="citation">
+         <body>      
+            <div class="dscDescription">
+               <h4>Citation</h4>
                   <p><xsl:value-of select="/*/*:meta/*:creator[1]"/>. 
                      <xsl:value-of select="/*/*:meta/*:title[1]"/>. 
-                     <xsl:value-of select="/*/*:meta/*:year[1]"/>.<br/>
+                     <xsl:value-of select="/*/*:meta/*:date[1]"/>.<br/>
                      [<xsl:value-of select="concat($xtfURL,$dynaxmlPath,'?docId=',$docId)"/>]</p>
-                  <a>
-                     <xsl:attribute name="href">javascript://</xsl:attribute>
-                     <xsl:attribute name="onClick">
-                        <xsl:text>javascript:window.close('popup')</xsl:text>
-                     </xsl:attribute>
-                     <span class="down1">Close this Window</span>
-                  </a>
-               </div>
+                  <div class="closeWindow">
+                     <a>
+                        <xsl:attribute name="href">javascript://</xsl:attribute>
+                        <xsl:attribute name="onClick">
+                           <xsl:text>javascript:window.close('popup')</xsl:text>
+                        </xsl:attribute>
+                        X Close this Window
+                     </a>
+                  </div>
             </div>
          </body>
       </html>
-     
    </xsl:template>
    
    <!-- ====================================================================== -->

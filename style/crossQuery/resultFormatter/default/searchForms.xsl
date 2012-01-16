@@ -215,7 +215,74 @@
    <!-- advanced form -->
    <xsl:template name="advancedForm" exclude-result-prefixes="#all">
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
-         <table class="top_table">
+         <table class="advancedSearch">
+            <tr>
+               <td style="margin-right:24px; width:250px">
+                  <strong>Search full text of finding aids:</strong>
+               </td>
+               <td colspan="2">
+                  <input type="text" name="text" size="60" value="{$text}"/>
+                  <br/>
+                  <xsl:choose>
+                     <xsl:when test="$text-join = 'or'">
+                        <input type="radio" name="text-join" value=""/>
+                        <xsl:text> all of </xsl:text>
+                        <input type="radio" name="text-join" value="or" checked="checked"/>
+                        <xsl:text> any of </xsl:text>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <input type="radio" name="text-join" value="" checked="checked"/>
+                        <xsl:text> all of </xsl:text>
+                        <input type="radio" name="text-join" value="or"/>
+                        <xsl:text> any of </xsl:text>
+                     </xsl:otherwise>
+                  </xsl:choose>
+                  <xsl:text>these words</xsl:text>
+               </td>
+            </tr>
+            <tr>
+               <td colspan="3"><h3>Search finding aids by</h3></td>
+            </tr>
+            <tr>
+               <td style="padding-left:18px; width:250px">
+                  <strong>Collection Title:</strong>
+               </td>
+               <td><input type="text" name="title" size="60" value="{$title}"/></td>
+            </tr>
+            <tr>
+               <td style="padding-left:18px; width:250px">
+                  <strong>Subject Headings:</strong>
+               </td>
+               <td><input type="text" name="subject" size="60" value="{$subject}"/></td>
+            </tr>
+            <tr>
+               <td style="padding-left:18px; width:250px">
+                  <strong>Date(s):</strong>
+               </td>
+               <td><input type="text" name="year" size="60" value="{$year}"/></td>
+            </tr>
+            <tr>
+               <td style="padding-left:18px; width:250px">
+                  <strong>Scope and Content Note:</strong>
+               </td>
+               <td><input type="text" name="scopecontent" size="60" value="{$scopecontent}"/></td>
+            </tr>
+            <tr>
+               <td style="padding-left:18px; width:250px">
+                  <strong>Biographical or Historical Note:</strong>
+               </td>
+               <td><input type="text" name="bioghist" size="60" value="{$bioghist}"/></td>
+            </tr> 
+            <tr>
+               <td>&#160;</td>
+               <td colspan="2">
+                  <input type="submit" value="Search"/>
+                  <input type="reset" OnClick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
+               </td>
+            </tr>            
+         </table>  
+   <!--      
+          <table class="top_table">
             <tr>
                <td>
                   <table class="left_table">
@@ -480,6 +547,7 @@
                </td>
             </tr>
          </table>
+     -->
       </form>
    </xsl:template>
    

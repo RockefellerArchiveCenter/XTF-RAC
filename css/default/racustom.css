@@ -94,7 +94,7 @@ table.advancedSearch tr td{vertical-align:text-top;}
     /*margin-top:-22px;*/
     margin-top:225px;    
     margin-left:13px; 
-/*    margin-right:12px; */
+    margin-right:-3px; 
     border-left:1px solid #999; 
     border-right:1px solid #999; 
     border-bottom:1px solid #999;

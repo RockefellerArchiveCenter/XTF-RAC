@@ -9,7 +9,6 @@
         <xsl:result-document format="rss-xml">
             <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
                 <channel>
-
                     <!-- RSS 2.0: A URL that points to the documentation for the format used in the RSS file. -->
                     <docs>http://www.rssboard.org/rss-specification</docs>
 
@@ -34,7 +33,7 @@
                     <!-- If you have an HTML website that contains the same information as your RSS file, -->
                     <!-- the title of your channel should be the same as the title of your website. -->
                     <title>
-                        <xsl:text>XTF Search Results (</xsl:text>
+                        <xsl:text>Rockefeller Archive Center updates (</xsl:text>
                         <xsl:value-of select="replace(replace($queryString,';facet-',';'),';entity-ignore=[A-Za-z0-9_\-]*|;docsPerPage=\d*|;rmode=[A-Za-z0-9_\-]*|;sort=[A-Za-z0-9_\-]*|;discipline=\d*','')"/>
                         <xsl:text>)</xsl:text>
                     </title>
@@ -57,7 +56,9 @@
                     <!-- RSS readers the date and time when the last item was published in your feed. -->
                     <!-- In practice, this date should correspond to the date of the newest item in your feed. -->
                     <pubDate>
-                        <xsl:value-of select="xtf:dateTimeRFC822(docHit[1]/meta/dateStamp)"/>
+<!--                        <xsl:value-of select="xtf:dateTimeRFC822(docHit[1]/meta/dateStamp)"/>-->
+                        <!-- 12/1/11 WS for RAC: changed from date in first result to current date -->
+                        <xsl:value-of select="xtf:dateTimeRFC822(string(current-date()))"/>
                     </pubDate>
 
                     <!-- process individual results -->

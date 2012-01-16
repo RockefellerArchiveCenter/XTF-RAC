@@ -36,7 +36,7 @@
         </filedesc>
         <profiledesc>
             <creation>This finding aid was produced using the Archivists' Toolkit
-                <date>2011-10-28T16:22-0400</date>
+                <date>2011-11-10T11:47-0500</date>
             </creation>
             <langusage>Language of Finding Aid</langusage>
             <descrules>Describing Archives: A Content Standard</descrules>
@@ -225,7 +225,7 @@
             <c id="ref61" level="series">
                 <did>
                     <unittitle>Manuscripts</unittitle>
-                    <unitid>1</unitid>
+                    <unitid>Component Unique ID 1</unitid>
                     <langmaterial>
                         <language langcode="bis"/>
                     </langmaterial>
@@ -244,9 +244,8 @@
                     <physloc id="ref85" label="Location note">Location note content</physloc>
                     <materialspec id="ref86" label="Material Specific Details note">Material Specific Details note content</materialspec>
                     <physdesc id="ref89" label="Physical Facet note">
-                        <physfacet>Physical Facet note content test</physfacet>
+                        <physfacet>Physical Facet note content</physfacet>
                     </physdesc>
-                    <physloc>Testing physical location</physloc>
                     <origination label="creator">
                         <persname source="lcnaf" role="Author (aut)">Abrash, Barbara</persname>
                     </origination>
@@ -348,303 +347,102 @@
                     <head>Separated Materials note</head>
                     <p>Separated Materials note content</p>
                 </separatedmaterial>
+                <originalsloc id="ref1596">
+                    <head>Existence and Location of Originals note</head>
+                    <p>Existence... note text</p>
+                </originalsloc>
                 <controlaccess>
                     <persname source="lcnaf">Acheson, Dean, 1893-1971</persname>
                     <subject source="lcsh">Social justice</subject>
                 </controlaccess>
-                <c id="ref300" level="subseries">
+                <c id="ref30" level="file">
                     <did>
-                        <unittitle>Subseries test 1</unittitle>
-                        <unitid>Component Unique ID b</unitid>
+                        <unittitle>Title of Manuscript</unittitle>
+                        <unitid>Component Unique ID a</unitid>
+                        <container id="cid6842001" type="Carton" label="Physical object">1</container>
+                        <container id="cid6849009" type="Box" label="Architectural">1</container>
                     </did>
-                    <c id="ref30" level="file">
-                        <did>
-                            <unittitle>Title of Manuscript</unittitle>
-                            <unitid>Component Unique ID a</unitid>
-                            <langmaterial>
-                                <language langcode="abk"/>
-                            </langmaterial>
-                            <container id="cid6838004" type="Map-case" label="Architectural">1</container>
-                            <container parent="cid6838004" type="Folder">1</container>
-                            <physdesc>
-                                <extent>9.0 cubic ft.</extent>
-                                <extent>Container summary</extent>
-                            </physdesc>
-                            <unitdate normal="2000/2001" type="bulk">Bulk, 2000-2001</unitdate>
-                            <unitdate normal="1999/2002" type="inclusive">date expression</unitdate>
-                            <abstract id="ref31" label="Abstract">Abstract note content</abstract>
-                            <physdesc id="ref39" label="Dimensions note">
-                                <dimensions>Dimensions note content</dimensions>
-                            </physdesc>
-                            <physdesc id="ref43" label="General Physical Description note">General Physical Description note content</physdesc>
-                            <langmaterial id="ref46" label="Language of Materials note">Language of Materials note content</langmaterial>
-                            <physloc id="ref48" label="Location note">Location note content</physloc>
-                            <materialspec id="ref49" label="Material Specific Details note">Material Specific Details note content</materialspec>
-                            <physdesc id="ref52" label="Physical Facet note">
-                                <physfacet>Physical Facet note content</physfacet>
-                            </physdesc>
-                            <origination label="creator">
-                                <persname source="lcnaf" role="Author (aut)">Ajayi,  S. S. </persname>
-                            </origination>
-                            <origination label="creator">
-                                <persname source="lcnaf" role="Contributor (ctb)">Jameson, W. Wilson (William Wilson), 1885-1962</persname>
-                            </origination>
-                        </did>
-                        <accruals id="ref32">
-                            <head>Accruals note</head>
-                            <p>Accruals note content</p>
-                        </accruals>
-                        <appraisal id="ref33">
-                            <head>Appraisal note</head>
-                            <p>Appraisal note content</p>
-                        </appraisal>
-                        <arrangement id="ref34">
-                            <head>Arrangement note</head>
-                            <p>Arrangement note content</p>
-                        </arrangement>
-                        <bioghist id="ref35">
-                            <head>Biographical/Historical note</head>
-                            <p>Biographical/Historical note content</p>
-                        </bioghist>
-                        <accessrestrict id="ref36">
-                            <head>Conditions Governing Access note</head>
-                            <p>Conditions Governing Access note content</p>
-                        </accessrestrict>
-                        <userestrict id="ref37">
-                            <head>Conditions Governing Use note</head>
-                            <p>Conditions Governing Use note content</p>
-                        </userestrict>
-                        <custodhist id="ref38">
-                            <head>Custodial History note</head>
-                            <p>Custodial History note content</p>
-                        </custodhist>
-                        <altformavail id="ref40">
-                            <head>Existence and Location of Copies note</head>
-                            <p>Existence and Location of Copies note content</p>
-                        </altformavail>
-                        <fileplan id="ref41">
-                            <head>File Plan note</head>
-                            <p>File Plan note content</p>
-                        </fileplan>
-                        <odd id="ref42">
-                            <head>General note</head>
-                            <p>General note content</p>
-                        </odd>
-                        <acqinfo id="ref44">
-                            <head>Immediate Source of Acquisition note</head>
-                            <p>Immediate Source of Acquisition note content</p>
-                        </acqinfo>
-                        <index id="ref45">
-                            <p>Index note content</p>
-                            <indexentry>
-                                <function>Item Value 1</function>
-                                <ref>Reference Text</ref>
-                            </indexentry>
-                            <indexentry>
-                                <title>Item Value 2</title>
-                                <ref>Reference Text</ref>
-                            </indexentry>
-                        </index>
-                        <accessrestrict id="ref47">
-                            <head>Legal Status note</head>
-                            <legalstatus>Legal Status note content</legalstatus>
-                        </accessrestrict>
-                        <otherfindaid id="ref50">
-                            <head>Other Finding Aids note</head>
-                            <p>Other Finding Aids note content</p>
-                        </otherfindaid>
-                        <phystech id="ref51">
-                            <head>Physical Characteristics and Technical Requirements note</head>
-                            <p>Physical Characteristics and Technical Requirements note content</p>
-                        </phystech>
-                        <prefercite id="ref53">
-                            <head>Preferred Citation note</head>
-                            <p>[Preferred Citation note] Repository Name, Collection Name, Record Group Name (if applicable), Series Name (if applicable), Box #, Folder #, and specific information identifying the individual item used.</p>
-                            <p>Example: Rockefeller Archive Center, Max Bergmann papers, Laboratory Administration, Selective Service Deferments, Box 8, Folder 58, Deferment Policy, May 12, 1941.</p>
-                        </prefercite>
-                        <processinfo id="ref54">
-                            <head>Processing Information note</head>
-                            <p>Processing Information note content</p>
-                        </processinfo>
-                        <relatedmaterial id="ref57">
-                            <head>Related Archival Materials note</head>
-                            <p>Related Archival Materials note content</p>
-                        </relatedmaterial>
-                        <separatedmaterial id="ref60">
-                            <head>Separated Materials note</head>
-                            <p>Separated Materials note content</p>
-                        </separatedmaterial>
-                        <scopecontent id="ref59">
-                            <head>Scope and Contents note</head>
-                            <p>Scope and Contents note content</p>
-                        </scopecontent>
-                        <bibliography id="ref55">
-                            <head>Publication Note</head>
-                            <p>For a current list of known publications related to the archival collections of the Rockefeller Archive Center, see the Bibliography of Scholarship at the Rockefeller Archive Center http://www.rockarch.org/publications/biblio/scholarship.pdf</p>
-                            <bibref>Item Value 1</bibref>
-                            <bibref>Item Value 2</bibref>
-                        </bibliography>
-                        <controlaccess>
-                            <corpname source="lcnaf" role="Binding designer (bdd)">American Baptist Education Society.</corpname>
-                            <subject source="lcsh">Aedes aegypti</subject>
-                            <subject source="lcsh">Agricultural innovations</subject>
-                        </controlaccess>
-                    </c>
-                    <c id="ref63" level="file">
-                        <did>
-                            <unittitle>Interesting Title of Other Manuscript</unittitle>
-                            <unitid>Component Unique ID b</unitid>
-                            <langmaterial>
-                                <language langcode="arw"/>
-                            </langmaterial>
-                            <container id="cid6842001" type="Carton" label="Physical object">1</container>
-                            <container id="cid6849009" type="Box" label="Architectural">1</container>
-                            <container id="cid6849008" type="Box" label="Sound recording">1</container>
-                            <container id="cid6849006" type="Box" label="Sound recording">1</container>
-                            <container id="cid6849007" type="Box" label="Bound volume">1</container>
-                            <container id="cid6849004" type="Box" label="Cartographic">1</container>
-                            <container id="cid6849005" type="Box" label="Physical object">1</container>
-                            <container id="cid6849002" type="Box" label="Computer disks / tapes">1</container>
-                            <container id="cid6849003" type="Box" label="Moving image">1</container>
-                            <container id="cid6849001" type="Box" label="Mixed materials">1</container>
-                            <physdesc>
-                                <extent>3.0 cubic ft.</extent>
-                                <extent>Container Summary</extent>
-                            </physdesc>
-                            <unitdate normal="1950/1955" type="bulk">Bulk, 1950-1955</unitdate>
-                            <unitdate normal="1900/2000" type="inclusive">1900-2000</unitdate>
-                            <origination label="creator">
-                                <corpname source="lcnaf" role="Author (aut)">Africa Publications Trust.</corpname>
-                            </origination>
-                            <origination label="creator">
-                                <persname source="lcnaf" role="Contributor (ctb)">Perez, Luis, 1904-1962</persname>
-                            </origination>
-                        </did>
-                        <separatedmaterial id="ref64">
-                            <head>Separated Materials note</head>
-                            <p>Separated Materials note content</p>
-                        </separatedmaterial>
-                        <controlaccess>
-                            <persname source="lcnaf">Wall, Joseph Frazier </persname>
-                            <subject source="lcsh">Strawberries</subject>
-                        </controlaccess>
-                    </c>                  
                 </c>
-                <c id="ref400" level="subseries">
+                <c id="ref63" level="file">
                     <did>
-                        <unittitle>Subseries test 2</unittitle>
+                        <unittitle>Interesting Title of Other Manuscript</unittitle>
                         <unitid>Component Unique ID b</unitid>
+                        <langmaterial>
+                            <language langcode="arw"/>
+                        </langmaterial>
+                        <container id="cid6849008" type="Box" label="Sound recording">1</container>
+                        <container id="cid6849006" type="Box" label="Sound recording">1</container>
+                        <container id="cid6849007" type="Box" label="Bound volume">1</container>
+                        <container id="cid6849004" type="Box" label="Cartographic">1</container>
+                        <container id="cid6849005" type="Box" label="Physical object">1</container>
+                        <container id="cid6849002" type="Box" label="Computer disks / tapes">1</container>
+                        <container id="cid6849003" type="Box" label="Moving image">1</container>
+                        <container id="cid6849001" type="Box" label="Mixed materials">1</container>
+                        <physdesc>
+                            <extent>3.0 cubic ft.</extent>
+                            <extent>Container Summary</extent>
+                        </physdesc>
+                        <unitdate normal="1950/1955" type="bulk">Bulk, 1950-1955</unitdate>
+                        <unitdate normal="1900/2000" type="inclusive">1900-2000</unitdate>
+                        <origination label="creator">
+                            <corpname source="lcnaf" role="Author (aut)">Africa Publications Trust.</corpname>
+                        </origination>
+                        <origination label="creator">
+                            <persname source="lcnaf" role="Contributor (ctb)">Perez, Luis, 1904-1962</persname>
+                        </origination>
                     </did>
-                    <c id="ref303" level="file">
-                        <did>
-                            <unittitle>Title of Manuscript</unittitle>
-                            <unitid>Component Unique ID a</unitid>
-                            <langmaterial>
-                                <language langcode="abk"/>
-                            </langmaterial>
-                            <container id="cid68380043" type="Map-case" label="Architectural">1</container>
-                            <container parent="cid68380043" type="Folder">1</container>
-                            <physdesc>
-                                <extent>9.0 cubic ft.</extent>
-                                <extent>Container summary</extent>
-                            </physdesc>
-                            <origination label="creator">
-                                <persname source="lcnaf" role="Author (aut)">Ajayi,  S. S. </persname>
-                            </origination>
-                            <origination label="creator">
-                                <persname source="lcnaf" role="Contributor (ctb)">Jameson, W. Wilson (William Wilson), 1885-1962</persname>
-                            </origination>
-                        </did>
-                    </c>
-                    <c id="ref633" level="file">
-                        <did>
-                            <unittitle>Interesting Title of Other Manuscript</unittitle>
-                            <unitid>Component Unique ID b</unitid>
-                            <langmaterial>
-                                <language langcode="arw"/>
-                            </langmaterial>
-                            <container id="cid68420013" type="Carton" label="Physical object">1</container>
-                            <container id="cid68490093" type="Box" label="Architectural">1</container>
-                            <physdesc>
-                                <extent>3.0 cubic ft.</extent>
-                                <extent>Container Summary</extent>
-                            </physdesc>
-                            <unitdate normal="1950/1955" type="bulk">Bulk, 1950-1955</unitdate>
-                            <unitdate normal="1900/2000" type="inclusive">1900-2000</unitdate>
-                            <origination label="creator">
-                                <corpname source="lcnaf" role="Author (aut)">Africa Publications Trust.</corpname>
-                            </origination>
-                            <origination label="creator">
-                                <persname source="lcnaf" role="Contributor (ctb)">Perez, Luis, 1904-1962</persname>
-                            </origination>
-                        </did>               
-                    </c>                  
-                </c>
-                <c id="ref500" level="subseries">
-                    <did>
-                        <unittitle>Subseries test 2</unittitle>
-                        <unitid>Component Unique ID b</unitid>
-                    </did>
-                    <c id="ref3035" level="file">
-                        <did>
-                            <unittitle>Title of Manuscript</unittitle>
-                            <unitid>Component Unique ID a</unitid>
-                            <langmaterial>
-                                <language langcode="abk"/>
-                            </langmaterial>
-                            <container id="cid683800435" type="Map-case" label="Architectural">1</container>
-                            <container parent="cid683800435" type="Folder">1</container>
-                            <physdesc>
-                                <extent>9.0 cubic ft.</extent>
-                                <extent>Container summary</extent>
-                            </physdesc>
-                            <origination label="creator">
-                                <persname source="lcnaf" role="Author (aut)">Ajayi,  S. S. </persname>
-                            </origination>
-                            <origination label="creator">
-                                <persname source="lcnaf" role="Contributor (ctb)">Jameson, W. Wilson (William Wilson), 1885-1962</persname>
-                            </origination>
-                        </did>
-                    </c>
-                    <c id="ref6335" level="file">
-                        <did>
-                            <unittitle>Interesting Title of Other Manuscript</unittitle>
-                            <unitid>Component Unique ID b</unitid>
-                            <langmaterial>
-                                <language langcode="arw"/>
-                            </langmaterial>
-                            <container id="cid684200135" type="Carton" label="Physical object">1</container>
-                            <container id="cid684900935" type="Box" label="Architectural">1</container>
-                            <physdesc>
-                                <extent>3.0 cubic ft.</extent>
-                                <extent>Container Summary</extent>
-                            </physdesc>
-                            <unitdate normal="1950/1955" type="bulk">Bulk, 1950-1955</unitdate>
-                            <unitdate normal="1900/2000" type="inclusive">1900-2000</unitdate>
-                            <origination label="creator">
-                                <corpname source="lcnaf" role="Author (aut)">Africa Publications Trust.</corpname>
-                            </origination>
-                            <origination label="creator">
-                                <persname source="lcnaf" role="Contributor (ctb)">Perez, Luis, 1904-1962</persname>
-                            </origination>
-                        </did>               
-                    </c>                  
+                    <separatedmaterial id="ref64">
+                        <head>Separated Materials note</head>
+                        <p>Separated Materials note content</p>
+                    </separatedmaterial>
+                    <controlaccess>
+                        <persname source="lcnaf">Wall, Joseph Frazier </persname>
+                        <subject source="lcsh">Strawberries</subject>
+                    </controlaccess>
                 </c>
             </c>
             <c id="ref130" level="series">
                 <did>
                     <unittitle>Yearbooks</unittitle>
-                    <unitid>2</unitid>
+                    <unitid>Component Unique ID 2</unitid>
+                    <unitdate>Date Expression</unitdate>
                 </did>
                 <c id="ref134" level="otherlevel">
                     <did>
                         <unittitle>Mary Smith</unittitle>
                         <unitid>Component Unique ID a</unitid>
+                        <physdesc>
+                            <extent>1.0 cubic ft.</extent>
+                            <extent>Container Summary</extent>
+                        </physdesc>
+                        <unitdate>Date Expression</unitdate>
+                        <origination label="creator">
+                            <corpname source="lcnaf" role="Author (aut)">Africa Publications Trust.</corpname>
+                        </origination>
+                        <origination label="creator">
+                            <persname source="lcnaf" role="Contributor (ctb)">American Council for the Arts in Education</persname>
+                        </origination>
                     </did>
+                    <bioghist id="ref142">
+                        <head>Biographical/Historical note</head>
+                        <p>Biographical/Historical note content</p>
+                    </bioghist>
+                    <scopecontent id="ref143">
+                        <head>Scope and Contents note</head>
+                        <p>Scope and Contents note content</p>
+                    </scopecontent>
+                    <controlaccess>
+                        <persname source="lcnaf">Aldrich, Nelson W. (Nelson Wilmarth), 1841-1915</persname>
+                        <geogname source="lcsh">Africa</geogname>
+                    </controlaccess>
                     <c id="ref135" level="file">
                         <did>
                             <unittitle></unittitle>
                             <unitid>Component Unique ID a.1</unitid>
+                            <physdesc>
+                                <extent>1.0 cubic ft.</extent>
+                                <extent>Container Summary</extent>
+                            </physdesc>
                             <unitdate normal="1954/1954">1954</unitdate>
                         </did>
                     </c>
@@ -652,19 +450,32 @@
                         <did>
                             <unittitle></unittitle>
                             <unitid>Component Unique ID a.2</unitid>
+                            <physdesc>
+                                <extent>1.0 cubic ft.</extent>
+                                <extent>Container Summary</extent>
+                            </physdesc>
                             <unitdate normal="1955/1955">1955</unitdate>
                         </did>
                     </c>
                 </c>
-                <c id="ref137" level="subseries">
+                <c id="ref137" level="otherlevel">
                     <did>
                         <unittitle>John Smith</unittitle>
                         <unitid>Component Unique ID b</unitid>
+                        <physdesc>
+                            <extent>1.0 cubic ft.</extent>
+                            <extent>Container Summary</extent>
+                        </physdesc>
+                        <unitdate>Date Expression</unitdate>
                     </did>
                     <c id="ref138" level="file">
                         <did>
                             <unittitle></unittitle>
                             <unitid>Component Unique ID b.1</unitid>
+                            <physdesc>
+                                <extent>1.0 cubic ft.</extent>
+                                <extent>Container Summary</extent>
+                            </physdesc>
                             <unitdate normal="1955/1955">1955</unitdate>
                         </did>
                     </c>
@@ -672,6 +483,10 @@
                         <did>
                             <unittitle></unittitle>
                             <unitid>Component Unique ID b.2</unitid>
+                            <physdesc>
+                                <extent>1.0 cubic ft.</extent>
+                                <extent>Container Summary</extent>
+                            </physdesc>
                             <unitdate normal="1956/1956">1956</unitdate>
                         </did>
                     </c>
@@ -680,18 +495,174 @@
             <c id="ref132" level="recordgrp">
                 <did>
                     <unittitle>Correspondence</unittitle>
-                    <unitid>3</unitid>
+                    <unitid>Component Unique ID 3</unitid>
+                    <physdesc>
+                        <extent>1.0 cubic ft.</extent>
+                        <extent>Container Summary</extent>
+                    </physdesc>
+                    <unitdate>Date Expression</unitdate>
                 </did>
+                <scopecontent id="ref144">
+                    <head>Scope and Contents note</head>
+                    <p>Scope and Contents note content (at RG level)</p>
+                </scopecontent>
                 <c id="ref133" level="subgrp">
                     <did>
                         <unittitle>Incoming</unittitle>
                         <unitid>Component Unique ID a</unitid>
+                        <physdesc>
+                            <extent>1.0 cubic ft.</extent>
+                            <extent>Container Summary</extent>
+                        </physdesc>
+                        <unitdate>Date Expression</unitdate>
                     </did>
+                    <scopecontent id="ref145">
+                        <head>Scope and Contents note</head>
+                        <p>Scope and Contents note content (at Sub-RG level)</p>
+                    </scopecontent>
                     <c id="ref140" level="file">
                         <did>
                             <unittitle>Letter from Mary Smith</unittitle>
                             <unitid>Component Unique ID a.1</unitid>
+                            <physdesc>
+                                <extent>1.0 cubic ft.</extent>
+                                <extent>Container Summary</extent>
+                            </physdesc>
+                            <unitdate>Date Expression</unitdate>
                         </did>
+                    </c>
+                </c>
+                <c id="ref146" level="subseries">
+                    <did>
+                        <unittitle>Outgoing</unittitle>
+                        <unitid>Component Unique ID b</unitid>
+                        <physdesc>
+                            <extent>1.0 cubic ft.</extent>
+                            <extent>Container Summary</extent>
+                        </physdesc>
+                        <unitdate>Date Expression</unitdate>
+                    </did>
+                    <scopecontent id="ref147">
+                        <head>Scope and Contents note</head>
+                        <p>Scope and Contents note content (Subseries level)</p>
+                    </scopecontent>
+                    <c id="ref149" level="item">
+                        <did>
+                            <unittitle>Photograph</unittitle>
+                            <unitid>Component Unique ID b.1</unitid>
+                            <container id="cid6940001" type="Box" label="Still image">1</container>
+                            <container parent="cid6940001" type="Folder">1</container>
+                            <physdesc>
+                                <extent>1.0 cubic ft.</extent>
+                                <extent>Container Summary</extent>
+                            </physdesc>
+                            <unitdate>Date Expression</unitdate>
+                            <physdesc id="ref157" label="Dimensions note">
+                                <dimensions>Dimensions note text</dimensions>
+                            </physdesc>
+                            <physdesc id="ref162" label="General Physical Description note">Gen Phys Desc note text</physdesc>
+                            <langmaterial id="ref165" label="Language of Materials note">Language Materials note text</langmaterial>
+                            <materialspec id="ref168" label="Material Specific Details note">Material Specific Details note</materialspec>
+                            <physdesc id="ref171" label="Physical Facet note">
+                                <physfacet>Phys Facet note</physfacet>
+                            </physdesc>
+                            <physloc id="ref167" label="Location note">Location note text</physloc>
+                            <origination label="creator">
+                                <corpname rules="dacs" role="Author (aut)">A Book Apart.</corpname>
+                            </origination>
+                            <origination label="creator">
+                                <corpname rules="dacs" role="Contributor (ctb)">A. Niggli.</corpname>
+                            </origination>
+                        </did>
+                        <accruals id="ref150">
+                            <head>Accruals note</head>
+                            <p>Accruals note text</p>
+                        </accruals>
+                        <appraisal id="ref151">
+                            <head>Appraisal note</head>
+                            <p>Appraisal note text</p>
+                        </appraisal>
+                        <arrangement id="ref152">
+                            <head>Arrangement note</head>
+                            <p>Arrangement note text</p>
+                        </arrangement>
+                        <bioghist id="ref153">
+                            <head>Biographical/Historical note</head>
+                            <p>Bio/Hist note text</p>
+                        </bioghist>
+                        <accessrestrict id="ref154">
+                            <head>Conditions Governing Access note</head>
+                            <p>Conditions Governing Access note text</p>
+                        </accessrestrict>
+                        <userestrict id="ref155">
+                            <head>Conditions Governing Use note</head>
+                            <p>Conditions Governing Use note text</p>
+                        </userestrict>
+                        <custodhist id="ref156">
+                            <head>Custodial History note</head>
+                            <p>Custodial History note text</p>
+                        </custodhist>
+                        <altformavail id="ref158">
+                            <head>Existence and Location of Copies note</head>
+                            <p>Existence... note text</p>
+                        </altformavail>
+                        <originalsloc id="ref159">
+                            <head>Existence and Location of Originals note</head>
+                            <p>Existence... note text</p>
+                        </originalsloc>
+                        <fileplan id="ref160">
+                            <head>File Plan note</head>
+                            <p>File Plan note text</p>
+                        </fileplan>
+                        <odd id="ref161">
+                            <head>General note</head>
+                            <p>General note text</p>
+                        </odd>
+                        <acqinfo id="ref163">
+                            <head>Immediate Source of Acquisition note</head>
+                            <p>Imm Source note text</p>
+                        </acqinfo>
+                        <accessrestrict id="ref166">
+                            <head>Legal Status note</head>
+                            <legalstatus>Legal Status note text</legalstatus>
+                        </accessrestrict>
+                        <otherfindaid id="ref169">
+                            <head>Other Finding Aids note</head>
+                            <p>Other Finding Aids note content</p>
+                        </otherfindaid>
+                        <phystech id="ref170">
+                            <head>Physical Characteristics and Technical Requirements note</head>
+                            <p>Phys Char and Tech Req note content</p>
+                        </phystech>
+                        <processinfo id="ref173">
+                            <head>Processing Information note</head>
+                            <p>Processing Info note content</p>
+                        </processinfo>
+                        <prefercite id="ref172">
+                            <head>Preferred Citation note</head>
+                            <p>Repository Name, Collection Name, Record Group Name (if applicable), Series Name (if applicable), Box #, Folder #, and specific information identifying the individual item used.</p>
+                            <p>Example: Rockefeller Archive Center, Max Bergmann papers, Laboratory Administration, Selective Service Deferments, Box 8, Folder 58, Deferment Policy, May 12, 1941.</p>
+                        </prefercite>
+                        <scopecontent id="ref176">
+                            <head>Scope and Contents note</head>
+                            <p>Scope note content</p>
+                        </scopecontent>
+                        <relatedmaterial id="ref175">
+                            <head>Related Archival Materials note</head>
+                            <p>Related Archival Materials note content</p>
+                        </relatedmaterial>
+                        <bibliography id="ref174">
+                            <head>Publication Note</head>
+                            <p>For a current list of known publications related to the archival collections of the Rockefeller Archive Center, see the Bibliography of Scholarship at the Rockefeller Archive Center http://www.rockarch.org/publications/biblio/scholarship.pdf</p>
+                        </bibliography>
+                        <separatedmaterial id="ref177">
+                            <head>Separated Materials note</head>
+                            <p>Separated Materials note content</p>
+                        </separatedmaterial>
+                        <controlaccess>
+                            <persname source="lcnaf">Abrash, Barbara</persname>
+                            <geogname source="lcsh">Africa</geogname>
+                        </controlaccess>
                     </c>
                 </c>
             </c>
