@@ -113,7 +113,7 @@
                                           <table>
                                              <tr>
                                                 <td>
-                                                   <p>Browse all documents by the available facets, or alphanumerically by author or title:</p>
+                                                   <p>Browse all documents by:</p>
                                                 </td>
                                              </tr>
                                              <tr>
