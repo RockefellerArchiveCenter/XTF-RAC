@@ -1001,9 +1001,10 @@
             <xsl:when test="//param[matches(@name,concat('f[0-9]+-',$field))]/@value=$value">
                <td class="col2">
                   <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                  <i>
+                  <!-- 1/17/12 WS -->
+                  <span class="facetMatch">
                      <xsl:value-of select="$value"/>
-                  </i>
+                  </span>
                   <xsl:apply-templates select="." mode="afterGroupValue"/>
                </td>
                <td class="col3">
@@ -1094,9 +1095,10 @@
                <td class="col1">&#8226;</td> <!-- bullet char -->
                <td class="col2">
                   <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                  <i>
+                  <!-- 1/17/12 WS -->
+                  <span class="facetMatch">
                      <xsl:value-of select="@value"/>
-                  </i>
+                  </span>
                   <xsl:apply-templates select="." mode="afterGroupValue"/>
                </td>
                <td class="col3"><a href="{$collapseLink}">[X]</a></td>

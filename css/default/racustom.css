@@ -45,7 +45,6 @@ div.closeWindow a{color: #C45414;}
    display:block;
    width:260px;
    height:40px; }
-
 #collectionGuides a span {
    display:block;
    position:absolute;
@@ -79,7 +78,7 @@ table.advancedSearch tr td{vertical-align:text-top;}
 .navright .right{text-align:right; float:right; margin-top:-8px; padding-top:0;}
 .right{text-align:right;}
 .left {text-align:left; padding-left:18px;}
-
+.facetMatch {font-style:italic; color:#FD8239;}
 /* Formats tabs for finding aids*/
 .tabs{display:block; text-align:left; margin:8px 0 -12px 0; padding:4px;}
 .tabs ul {display:block; list-style: none; padding:0; margin:0;}
