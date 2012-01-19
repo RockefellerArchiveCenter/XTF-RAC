@@ -248,8 +248,8 @@
                   <div class="searchLinks">
                      <xsl:if test="session:getData('queryURL')">
                         <a href="{session:getData('queryURL')}">
-                           <xsl:text>MODIFY SEARCH | </xsl:text>
-                        </a>
+                           <xsl:text>MODIFY SEARCH</xsl:text>
+                        </a> | 
                      </xsl:if>
                      <a href="{$xtfURL}/search">
                         <xsl:text>NEW SEARCH</xsl:text>
@@ -313,6 +313,12 @@
                         <xsl:text>Clear Hits</xsl:text>
                      </a>
                      <xsl:text>]</xsl:text>
+                      &#160;[
+                     <a href="{session:getData('queryURL')}">
+                        Back to Search Results
+                     </a>
+                     ]
+                     
                   </div>
                </xsl:if>
             </div>   
