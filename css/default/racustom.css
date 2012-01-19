@@ -166,7 +166,7 @@ table.containerList tr td{padding-top:2px; padding-bottom:2px;}
 .instances {font-weight:bold;text-decoration:underline;}
 .containerHeader {font-weight:bold; padding-top:.5em; text-align:left;}
 .containerHeaderTitle {font-weight:bold; padding-top:.5em; text-align:left;}
-.moreLess a{text-decoration:none !important; font-weight:bold; color:#FD8239;}
+.moreLess a{text-decoration:none !important; font-weight:bold; color:#FD8239 !important;}
 .containerTypes {margin-top:.5em;}
 .inventoryTitle {font-weight:bold; background-color:#000; color:#fff; padding:4px 2px; margin-bottom:.5em;}
 tr.odd{background-color:#eee !important;}
