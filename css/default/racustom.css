@@ -79,7 +79,6 @@ table.advancedSearch tr td{vertical-align:text-top;}
 .right{text-align:right;}
 .left {text-align:left; padding-left:18px;}
 .facetMatch {font-style:italic; color:#FD8239;}
-.highlight {font-weight: bold; color:#FD8239;}
 
 /* Formats tabs for finding aids*/
 .tabs{display:block; text-align:left; margin:8px 0 -12px 0; padding:4px;}
@@ -167,7 +166,7 @@ table.containerList tr td{padding-top:2px; padding-bottom:2px;}
 .instances {font-weight:bold;text-decoration:underline;}
 .containerHeader {font-weight:bold; padding-top:.5em; text-align:left;}
 .containerHeaderTitle {font-weight:bold; padding-top:.5em; text-align:left;}
-.moreLess a{text-decoration:none !important; font-weight:bold;}
+.moreLess a{text-decoration:none !important; font-weight:bold; color:#FD8239;}
 .containerTypes {margin-top:.5em;}
 .inventoryTitle {font-weight:bold; background-color:#000; color:#fff; padding:4px 2px; margin-bottom:.5em;}
 tr.odd{background-color:#eee !important;}
