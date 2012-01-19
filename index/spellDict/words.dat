@@ -4,8 +4,10 @@ $|2117
 <|3312
 =|2868
 >|3244
-?|177
-??|3
+??|25
+?migr?s|16
+?tre|3
+?|760
 ^|72
 a.i|3
 a.uri|7
@@ -52,7 +54,7 @@ abound|4
 about|255
 above|127
 abraham|14
-abrash|5
+abrash|7
 abroad|33
 absence|70
 absent|31
@@ -63,7 +65,7 @@ absorption|4
 abstainers|10
 abstinence|3
 abstracts|5
-abstract|28
+abstract|30
 abundance|3
 abuses|10
 abuse|8
@@ -88,10 +90,10 @@ accessible|24
 accessing|5
 accession|8
 accessor|20
-access|327
+access|333
+acci?n|36
 accidents|3
 accident|3
-acci?n|36
 acclaimed|4
 accommodated|10
 accommodate|6
@@ -116,7 +118,7 @@ accountant|3
 accounting|29
 accounts|51
 account|98
-accruals|9
+accruals|15
 accumulated|4
 accumulation|5
 accumu|3
@@ -127,7 +129,7 @@ accusation|3
 accused|5
 accuse|4
 achenbach|10
-achieved|26
+achieved|27
 achievements|8
 achievement|21
 achieve|28
@@ -146,7 +148,7 @@ acquainted|3
 acquiescence|3
 acquired|17
 acquire|6
-acquisition|39
+acquisition|44
 acree|8
 acre|33
 across|34
@@ -209,7 +211,7 @@ adler|3
 administered|7
 administer|5
 administrations|3
-administration|595
+administration|598
 administrative|54
 administrators|13
 admini|3
@@ -282,7 +284,7 @@ africanization|8
 africans|57
 african|711
 africare|4
-africa|907
+africa|911
 afrikaans|8
 afrikaan|5
 afrikanerdom|4
@@ -331,10 +333,10 @@ ah|4
 aia|28
 aided|3
 aides|5
-aids|95
+aids|102
 aid|346
 aikens|3
-aimed|16
+aimed|17
 aims|22
 aim|11
 ainsworth|14
@@ -374,7 +376,7 @@ alcoholism|28
 alcohols|3
 alcohol|103
 alden|7
-aldrich|6
+aldrich|7
 alert|3
 alexander|33
 alexandra|4
@@ -478,6 +480,7 @@ alvia|6
 alvin|6
 always|140
 al|100
+am?rica|4
 amakhosi|6
 amandla|3
 amassed|4
@@ -497,7 +500,7 @@ amendment|4
 amenities|3
 americana|3
 americans|28
-american|1397
+american|1398
 americas|9
 america|254
 americus|4
@@ -528,7 +531,6 @@ ams|6
 amused|6
 amy|5
 am|47
-am?rica|4
 analogies|8
 analogy|5
 analog|4
@@ -559,11 +561,11 @@ anders|14
 andes|8
 andexpr|6
 andover|5
+andr?|8
 andraski|6
 andrews.the|3
 andrews|35
 andrew|17
-andr?|8
 anew|4
 angeles|72
 angelo|5
@@ -652,7 +654,7 @@ anyuri|69
 anywhere|17
 any|870
 apartheid|270
-apart|30
+apart|33
 ape|4
 api|11
 apla|4
@@ -686,7 +688,7 @@ applets|8
 applet|5
 apple|6
 applicability|3
-applicable|31
+applicable|37
 applicants|37
 applicant|564
 applications|115
@@ -697,7 +699,7 @@ applying|60
 apply|288
 appointed|24
 appointment|8
-appraisal|12
+appraisal|18
 appreciated|3
 appreciation|5
 approaches|11
@@ -737,9 +739,9 @@ architectual|4
 architectural|19
 architecture|32
 architect|17
-archival|1456
+archival|1465
 archives|71
-archive|83
+archive|95
 archivist|4
 arch|12
 arctander|3
@@ -789,7 +791,7 @@ aroma|7
 around|38
 arranged|99
 arrangements|34
-arrangement|81
+arrangement|87
 arranging|4
 arrests|5
 arrived|4
@@ -809,7 +811,7 @@ artisans|3
 artistic|3
 artists|10
 artist|8
-arts|507
+arts|508
 artwork|14
 art|237
 aryeh|3
@@ -1133,7 +1135,7 @@ baptist|1101
 baptized|3
 barayi|3
 barbados|3
-barbara|91
+barbara|93
 barbarism|5
 barber|12
 barbour|6
@@ -1295,7 +1297,7 @@ bement|3
 bemoans|3
 bender|3
 bend|3
-benedict|6
+benedict|7
 beneficial|12
 beneficiaries|6
 beneficiary|5
@@ -1321,7 +1323,7 @@ bergen|3
 berger|4
 berghe|17
 berglund|9
-bergmann|48
+bergmann|51
 bergtraum|23
 berkeley|74
 berkshire|5
@@ -1371,8 +1373,8 @@ bib.xml|4
 bible|31
 bibliographic|4
 bibliographies|4
-bibliography|93
-biblio|4
+bibliography|97
+biblio|8
 bibref|6
 bib|14
 bicentennial|17
@@ -1412,7 +1414,7 @@ bin|3
 biochemistry|36
 biochemist|4
 bioghist|3
-biographical|46
+biographical|52
 biographies|6
 biography|7
 bioligical|5
@@ -1424,7 +1426,7 @@ biomedical|5
 biophysical|3
 biophysics|7
 biotanical|3
-bio|5
+bio|6
 birds|5
 bird|4
 birmingham|6
@@ -1542,7 +1544,7 @@ bookkeeper.in|3
 bookkeeper|4
 booklet|10
 books|150
-book|115
+book|118
 boolean|200
 booming|6
 boom|8
@@ -1591,7 +1593,7 @@ bounds|6
 bound|93
 bourgeoisie|9
 bourgeois|4
-bourne|4
+bourne|5
 boutourline|69
 bowen|4
 bowers|8
@@ -1602,7 +1604,7 @@ bowles|5
 bowling|14
 bowman|8
 boxes|64
-box|568
+box|574
 boyce|6
 boycotted|3
 boycotts|6
@@ -1617,6 +1619,7 @@ boy|36
 bo|6
 bpc|6
 bp|4
+br?|6
 braamfontein|7
 brace|6
 brackets|54
@@ -1746,7 +1749,6 @@ bryant|7
 bryce|5
 bryn|10
 br|17
-br?|6
 bs|7
 bubbling|3
 buchanan|6
@@ -1777,7 +1779,7 @@ build|21
 builldings|3
 builtin|3
 built|80
-bulk|54
+bulk|57
 bulletins|12
 bulletin|89
 bullets|4
@@ -1854,7 +1856,8 @@ byrne|3
 byron|10
 bytes|7
 byte|26
-b|946
+b|949
+c?vica|4
 cabbage|3
 cabinet|665
 cable|14
@@ -1949,6 +1952,7 @@ canton|6
 cantril|5
 cant|3
 can|708
+cap?|3
 capabilities|8
 capability|5
 capable|4
@@ -1968,7 +1972,6 @@ caption|36
 captive|3
 captured|20
 capture|5
-cap?|3
 caravans|3
 carbohydrates|4
 carcass|4
@@ -2112,7 +2115,7 @@ centennial|12
 centerpieces|5
 centerpiece|3
 centers|50
-center|1368
+center|1379
 centralism|3
 centralized|6
 central|155
@@ -2138,6 +2141,7 @@ ceylon|9
 ce|3
 cf|3
 cgi|4
+ch?teau|5
 chabani|4
 chad|4
 chagas|6
@@ -2173,7 +2177,7 @@ chapin|8
 chapman|4
 chapters|11
 chapter|112
-characteristics|1323
+characteristics|1331
 characteristic|10
 characterized|17
 characterizes|4
@@ -2200,7 +2204,7 @@ charterist|5
 charter|25
 charts|40
 chart|19
-char|72
+char|74
 chase|49
 chatham|7
 chattanooga|7
@@ -2291,7 +2295,7 @@ chromosomes|3
 chronic|9
 chronologically|25
 chronological|9
-chronology|18
+chronology|32
 chubbock|4
 chuian|3
 chum|3
@@ -2299,7 +2303,6 @@ churches|109
 churchill|4
 church|1028
 chwatt|4
-ch?teau|5
 ciba|4
 cicchetti|5
 ciencies|5
@@ -2327,7 +2330,7 @@ circus|7
 cirrhosis|9
 ciskei|6
 cisterns|6
-citation|190
+citation|196
 cited|13
 cite|8
 cities|88
@@ -2512,8 +2515,8 @@ collation|155
 colleagues|5
 collected|18
 collecting|5
-collections|33
-collection|299
+collections|36
+collection|302
 collectively|10
 collective|17
 collectivity|3
@@ -2676,7 +2679,7 @@ complicated|4
 complicity|3
 complies|6
 components|125
-component|110
+component|125
 composed|7
 composers|3
 composing|10
@@ -2749,7 +2752,7 @@ condescending|4
 conditionalsect|4
 conditional|76
 conditioning|4
-conditions|419
+conditions|431
 condition|77
 condolence|3
 condoned|3
@@ -2886,7 +2889,7 @@ contacts|11
 contact|32
 contained|102
 containers|3
-container|15
+container|29
 containing|219
 contains|306
 contain|204
@@ -2896,8 +2899,8 @@ content.para|3
 contentedly|4
 contention|3
 contentspec|4
-contents|6942
-content|625
+contents|6957
+content|693
 contesting|3
 contest|17
 contextitemexpr|5
@@ -2987,7 +2990,7 @@ copeland|3
 copenhagen|3
 cope|4
 copied|83
-copies|264
+copies|267
 coping|6
 coplan|9
 copper|16
@@ -3025,7 +3028,7 @@ corrects|3
 correct|24
 correlate|5
 correlation|3
-correspondence|544
+correspondence|545
 correspondents|15
 correspondent|12
 corresponding|33
@@ -3060,7 +3063,7 @@ couldn|3
 could|270
 councillors|9
 councils|15
-council|953
+council|954
 counseling|18
 counselor|3
 counted|3
@@ -3201,7 +3204,7 @@ cs|5
 cuanavale|7
 cuban|9
 cuba|24
-cubic|72
+cubic|86
 cuernavaca|3
 cue|7
 cuito|6
@@ -3233,7 +3236,7 @@ curran|4
 currency|12
 currently|36
 currents|3
-current|239
+current|242
 curriculum|10
 curry|4
 cursors|6
@@ -3245,7 +3248,7 @@ curve|4
 cushing|6
 cushman|6
 cusick|3
-custodial|8
+custodial|14
 customary|5
 customers|5
 customer|21
@@ -3271,7 +3274,6 @@ cyrus|3
 cytogenetics|7
 czechoslovakia|3
 c|960
-c?vica|4
 d'arte|3
 d.uri|5
 daedalus|4
@@ -3321,7 +3323,7 @@ data|452
 dated|15
 dates|37
 datetime|71
-date|218
+date|232
 dating|8
 daugherty|3
 daughters|13
@@ -3358,7 +3360,7 @@ deals|5
 dealt|5
 deal|17
 deane|6
-dean|34
+dean|36
 dearth|4
 deaths|42
 death|75
@@ -3437,8 +3439,8 @@ defending|8
 defends|4
 defend|3
 defense|240
-deferments|11
-deferment|5
+deferments|14
+deferment|8
 defer|4
 defiantly|6
 deficiencies|4
@@ -3599,10 +3601,10 @@ describes|46
 describe|19
 describing|10
 descriptions|7
-description|44
+description|54
 descriptive|8
 descriptors|3
-desc|4
+desc|5
 desert|18
 deserve|4
 designated|32
@@ -3638,7 +3640,7 @@ destruction|22
 destructive|7
 des|10
 detailed|25
-details|47
+details|50
 detail|12
 detected|45
 detection|10
@@ -3744,7 +3746,7 @@ dilemmas|8
 dilemma|6
 dillion|3
 dillon|9
-dimensions|10
+dimensions|13
 diminished|4
 diminish|3
 dingle|3
@@ -4227,7 +4229,7 @@ eduation|3
 educated|14
 educate|5
 educational|239
-education|827
+education|828
 edu|4
 edwards|16
 edward|74
@@ -4673,10 +4675,10 @@ evaluating|172
 evaluations|8
 evaluation|153
 evandro|3
+evang?lica|5
 evangelical|14
 evangelist|3
 evangelization|5
-evang?lica|5
 evans|12
 evan|7
 evaporated|3
@@ -4688,7 +4690,7 @@ evening|4
 events|40
 eventually|10
 eventual|9
-event|28
+event|40
 even|232
 everett|10
 everyday|3
@@ -4722,7 +4724,7 @@ examining|16
 example.com|5
 example.org|5
 examples|100
-example|752
+example|755
 exams|67
 exam|4
 excavations|9
@@ -4783,7 +4785,7 @@ exiled|4
 exiles|20
 exile|18
 existed|4
-existence|34
+existence|44
 existential|3
 existing|58
 exists|40
@@ -4848,7 +4850,7 @@ exposure|12
 expressed|35
 expressing|6
 expressions|248
-expression|923
+expression|933
 expressways|5
 expressway|50
 express|18
@@ -4897,7 +4899,7 @@ fabric|6
 faced|14
 faces|5
 facets|5
-facet|11
+facet|14
 face|26
 facilitated|6
 facilitates|3
@@ -5051,9 +5053,9 @@ fenn|3
 fenton|6
 ferderickson|3
 ferguson|3
+fern?|3
 fernandez|5
 ferne|5
-fern?|3
 ferocity|3
 ferrell|7
 ferris|6
@@ -5100,7 +5102,7 @@ fiji|4
 filed|8
 filestore|3
 files|244
-file|222
+file|228
 filled|4
 filmakers|4
 filmed|18
@@ -5120,7 +5122,7 @@ finance|545
 financial|245
 financing|4
 findings|20
-finding|27
+finding|34
 findlay|5
 finds|10
 find|56
@@ -5222,7 +5224,7 @@ foes|3
 foisted|3
 folded|3
 folders|91
-folder|398
+folder|404
 fold|6
 foley|8
 folger|3
@@ -5349,6 +5351,7 @@ frameset|7
 frames|14
 framework|15
 frame|21
+fran?|8
 frances|31
 france|27
 franchise|6
@@ -5361,14 +5364,13 @@ franklin|55
 frankl|6
 frank|70
 frantz|3
-fran?|8
 fraser|4
 fraternities.during|3
 fraudulent|3
 fraunces|13
 fray|3
 frazer|3
-frear|4
+frear|5
 frederickson|3
 frederick|60
 frederic|12
@@ -5411,7 +5413,7 @@ frighten|3
 frissell|6
 fritz|9
 froelich|4
-from|1574
+from|1575
 frontiers|6
 frontier|6
 frontline|23
@@ -5427,7 +5429,7 @@ frustration|5
 fruton|5
 fry|3
 fs|4
-ft|74
+ft|88
 fueled|3
 fuel|11
 fuji|3
@@ -5564,7 +5566,7 @@ generality|4
 generalized|13
 generally|44
 generals|5
-general|1885
+general|1894
 generated|43
 generates|28
 generate|39
@@ -5585,7 +5587,7 @@ genre|10
 gentleman|4
 genuinely|5
 genuine|11
-geochronology|3
+geochronology|4
 geographical|16
 geographic|6
 geography|3
@@ -5712,7 +5714,7 @@ got|4
 gould|7
 governance|4
 governed|5
-governing|282
+governing|294
 governments|22
 government|251
 governors|6
@@ -5722,6 +5724,7 @@ gov|3
 gower|3
 go|25
 gp|3
+gr?nb?k|9
 grace|16
 gracie|4
 grading|4
@@ -5837,7 +5840,7 @@ ground|21
 grouped|14
 grouping|154
 groups|235
-group|1266
+group|1269
 grover|4
 groves|3
 grove|7
@@ -5849,7 +5852,6 @@ grow|7
 gruebnther|3
 grundy|3
 gr|5
-gr?nb?k|9
 gt|41
 guadeloupe|3
 guanajuato|3
@@ -5994,7 +5996,7 @@ hardline|4
 hardly|28
 hardship|3
 hardworking|3
-hardy|11
+hardy|12
 hard|16
 harjes|3
 harkness|10
@@ -6073,7 +6075,7 @@ header|5
 heading|6
 headlines|3
 headquarters|20
-head|21899
+head|21911
 healers|3
 healing|3
 healthcare|8
@@ -6226,11 +6228,11 @@ hispanic|7
 historians|5
 historian|7
 historically|9
-historical|137
+historical|144
 historic|50
 histories|3
-history|184
-his|362
+history|190
+his|363
 hitchings|3
 hitherto|6
 hitler|3
@@ -6374,7 +6376,7 @@ hsu|3
 hs|3
 htmldoc|4
 html|311
-http|328
+http|332
 huang|3
 hubbard|4
 hubert|3
@@ -6476,7 +6478,7 @@ identified|71
 identifiers|46
 identifier|72
 identifies|34
-identifying|28
+identifying|31
 identify|36
 identities|12
 identity|57
@@ -6496,7 +6498,7 @@ idref|29
 ids|4
 idt|3
 idvalue|6
-id|190
+id|205
 iec|25
 ietf|35
 ie|22
@@ -6542,7 +6544,7 @@ img|13
 imitations|4
 immature|3
 immediately|29
-immediate|36
+immediate|41
 immense|3
 immigrants|13
 immigrant|3
@@ -6553,7 +6555,7 @@ immoral|3
 immune|9
 immunizations|4
 immunology|3
-impact|38
+impact|39
 impaired|7
 impartial|8
 impeach|3
@@ -6634,7 +6636,7 @@ inclusion|32
 inclusive|26
 incomes|4
 income|37
-incoming|38
+incoming|39
 incompatibilities|17
 incompatibility|4
 incompatible|9
@@ -6669,7 +6671,7 @@ independently|11
 independent|107
 indexed|3
 indexes|5
-index|710
+index|711
 indianapolis|5
 indiana|55
 indians|41
@@ -6694,7 +6696,7 @@ indispensable|3
 individualism|4
 individually|5
 individuals|40
-individual|81
+individual|84
 indoctrination|5
 indole|3
 indonesia|4
@@ -6746,12 +6748,12 @@ influenza|11
 influx|6
 informally|13
 informal|16
-information|2497
+information|2506
 informative|15
 informed|13
 inform|10
 infoset|17
-info|4
+info|6
 infrastructure|10
 infusion|3
 inf|5
@@ -6910,7 +6912,7 @@ interdependence|11
 interdependent|3
 interdisciplinary|17
 interested|15
-interesting|7
+interesting|8
 interests|96
 interest|101
 interfaces|6
@@ -7090,7 +7092,7 @@ italic|6
 italy|27
 items|204
 itemtype|20
-item|370
+item|391
 iteration|3
 ithaca|9
 itself|146
@@ -7203,7 +7205,7 @@ johnstone|4
 johnston|3
 johnstown|4
 johns|103
-john|1079
+john|1081
 joined|22
 joining|7
 jointly|7
@@ -7216,14 +7218,14 @@ jones|50
 jon|8
 jordan|22
 jorge|3
+jos?|5
 josephine|12
-joseph|118
+joseph|120
 jose|5
 joshua|34
 josie|4
 joslin|3
 joslyn|3
-jos?|5
 journalism|3
 journalistic|3
 journalists|6
@@ -7266,7 +7268,7 @@ jun|5
 juristerei|3
 jurists|7
 jury|10
-justice|43
+justice|44
 justifiable|5
 justification|3
 justified|5
@@ -7297,7 +7299,7 @@ kanya|3
 kaplan|10
 karamu|6
 karen.jpg|3
-karen|20
+karen|21
 karl|14
 karolinska|15
 karolynn|4
@@ -7341,7 +7343,7 @@ kenly|3
 kennedy|22
 kennell|11
 kennels|7
-kenneth|32
+kenneth|34
 kenof|3
 kentridge|9
 kentucky|54
@@ -7433,7 +7435,7 @@ knott|3
 knowing|3
 knowledge|31
 knowles|7
-known|166
+known|169
 knows|4
 know|13
 knoxville|3
@@ -7493,10 +7495,10 @@ labb|4
 labeled|22
 labeling|6
 labels|15
-label|37
+label|41
 laboratories|413
 laboratorio|3
-laboratory|328
+laboratory|331
 laborers|18
 laboring|3
 laborors|6
@@ -7555,7 +7557,7 @@ langeron|3
 lange|3
 langi|3
 languages|46
-language|269
+language|272
 lang|79
 lankenau|3
 lanz|3
@@ -7663,7 +7665,7 @@ legalism|3
 legalization|6
 legalized|8
 legally|10
-legal|176
+legal|182
 legend|3
 leggett|4
 legible|4
@@ -7725,13 +7727,13 @@ lethality|3
 letterbooks|3
 letterpress|5
 letters|88
-letter|69
+letter|70
 letting|3
 let|35
 leukemia|7
 leveling|5
 levels|76
-level|220
+level|223
 leventhal|6
 leverage|7
 levering|34
@@ -7832,7 +7834,7 @@ lisco|3
 listed|52
 listing|4
 lists|71
-list|283
+list|302
 lita|6
 literally|9
 literals|12
@@ -7883,7 +7885,7 @@ located|26
 locate|20
 locating|5
 locations|6
-location|90
+location|100
 locey|3
 locke|3
 lockhart|7
@@ -7978,7 +7980,7 @@ lucknow|4
 lucy|23
 luedecke|3
 luigi|4
-luis|5
+luis|6
 lukas|5
 luke|22
 lumber|16
@@ -8004,6 +8006,7 @@ lyon|11
 lysle|3
 lytle|3
 l|603
+m?|3
 mabangalala|3
 mabie|5
 macarthur|7
@@ -8141,8 +8144,8 @@ manufacturer|10
 manufacture|7
 manufacturing|88
 manure|3
-manuscripts|256
-manuscript|35
+manuscripts|257
+manuscript|37
 many|216
 man|47
 maoist|3
@@ -8152,6 +8155,7 @@ mappings|3
 mapping|52
 maps|122
 map|117
+mar?|4
 marathon|3
 marble|7
 marches|3
@@ -8221,9 +8225,8 @@ marxists|3
 marxist|22
 marx|3
 maryland|85
-mary|105
+mary|107
 mar|3
-mar?|4
 masaryk|3
 masayasu|4
 mascola|4
@@ -8253,8 +8256,8 @@ matching|172
 match|355
 material.the|3
 materially|3
-materials|1835
-material|419
+materials|1852
+material|422
 maternal|3
 maternity|6
 mathematical|11
@@ -8291,7 +8294,7 @@ maximal|7
 maximum|40
 maxoccurs|24
 maxwell|6
-max|38
+max|41
 mayas|3
 maya|3
 mayfield|3
@@ -8301,7 +8304,7 @@ mayoralty|3
 mayors|10
 mayor|48
 mays|3
-may|1754
+may|1757
 ma|24
 mbeki|7
 mcallister|12
@@ -8902,8 +8905,7 @@ mythologies|3
 myths|4
 myth|18
 my|37
-m|713
-m?|3
+m|714
 naacp|43
 nachum|3
 nacional|12
@@ -8928,7 +8930,7 @@ namestartchar|5
 names|265
 nametests|7
 nametest|13
-name|1283
+name|1295
 namibian|3
 namibia|29
 naming|3
@@ -9026,7 +9028,7 @@ neighbors|8
 neisweinger|3
 neither|57
 nella|3
-nelson|46
+nelson|50
 nematodes|4
 neocolonial|5
 neofascists|3
@@ -9080,7 +9082,7 @@ newspaper|55
 newstands|3
 news|35
 newton|10
-new|5111
+new|5113
 next|110
 ne|24
 nfc|4
@@ -9105,7 +9107,7 @@ nielsen|3
 nieuwkerk|3
 nigerian|6
 nigeria|174
-niggli|4
+niggli|8
 nightmares|3
 nightmare|3
 nihoii|4
@@ -9211,10 +9213,10 @@ noted|88
 noteimportant|4
 notekenneth|4
 notemax|3
-notes|144
+notes|145
 notethe|5
 noteworthy|6
-note|13397
+note|13562
 nothing|25
 noticed|4
 notices|23
@@ -9503,7 +9505,7 @@ orchard|4
 orchestras|42
 orchestra|48
 ordained|3
-ordered|27
+ordered|29
 ordering|27
 orders|10
 order|437
@@ -9531,7 +9533,7 @@ oriental|14
 orientation|8
 oriented|16
 originally|11
-originals|4
+originals|8
 original|705
 originated|3
 originating|8
@@ -9568,7 +9570,7 @@ oswaldo|4
 os|5
 others|65
 otherwise|226
-other|839
+other|847
 otis|12
 ottawa|11
 ottis|3
@@ -9585,7 +9587,7 @@ outdated|3
 outdoor|3
 outermost|8
 outer|5
-outgoing|40
+outgoing|41
 outgo|3
 outgroup|3
 outlets|5
@@ -9729,7 +9731,7 @@ pannu|3
 panstead|5
 pan|47
 paoli|9
-papers|413
+papers|417
 paper|170
 papuan|3
 papua|4
@@ -9932,6 +9934,7 @@ pen|5
 peoples|35
 people|407
 peptide|4
+per?|6
 perceived|19
 perceives|3
 perceive|4
@@ -9947,7 +9950,7 @@ percy|6
 pereference|5
 peregrine|3
 perennial|4
-perfectability|3
+perfectability|4
 perforations|4
 performances|3
 performance|29
@@ -10008,7 +10011,6 @@ peruvian|5
 peru|14
 pervasive|4
 per|153
-per?|6
 pesquisas|3
 pessimistic|4
 pessimists|4
@@ -10077,7 +10079,7 @@ photographer|4
 photographic|4
 photographs|401
 photography|10
-photograph|135
+photograph|136
 photoraphs|3
 photosynthesis|7
 photos|87
@@ -10086,14 +10088,14 @@ phrases|5
 phrase|13
 phyllis|5
 physically|6
-physical|1361
+physical|1373
 physicians|33
 physician|3
 physics|17
 physiological|3
 physiologist|3
 physiology|32
-phys|5
+phys|9
 phytotoxicity|6
 ph|15
 piano|8
@@ -10163,7 +10165,7 @@ planteles|3
 planting|10
 plants|99
 plant|82
-plan|300
+plan|306
 plaques|4
 plaque|11
 plastics|8
@@ -10231,7 +10233,7 @@ policemen|7
 police|115
 policies|98
 policing|11
-policy|325
+policy|328
 poliklinik|3
 polished|3
 polish|10
@@ -10412,7 +10414,7 @@ preferably|5
 preferences|4
 preference|18
 preferential|6
-preferred|19
+preferred|23
 preferrers|14
 prefer|10
 prefixed|10
@@ -10557,7 +10559,7 @@ proceed|4
 processcontents|8
 processed|107
 processes|21
-processing|1649
+processing|1657
 processors|64
 processor|466
 process|210
@@ -10724,8 +10726,8 @@ ptc|3
 pt|3
 pubidchar|4
 pubidliteral|4
-publications|558
-publication|219
+publications|567
+publication|222
 publicid|3
 publicity|14
 publicized|4
@@ -11037,7 +11039,7 @@ recorded|10
 recordings|4
 recording|12
 records|204
-record|49
+record|52
 recoverable|200
 recovering|3
 recovery|40
@@ -11082,7 +11084,7 @@ reexamination|4
 refereed|4
 referenced|49
 references|203
-reference|451
+reference|455
 referencing|8
 referendum|17
 referent|8
@@ -11163,7 +11165,7 @@ rejection|21
 rejects|4
 reject|14
 rejoined|4
-related|1486
+related|1495
 relates|7
 relate|3
 relating|11
@@ -11268,7 +11270,7 @@ reported|51
 reporting|24
 reports|909
 report|1533
-repository|10
+repository|13
 representable|4
 representations|4
 representation|101
@@ -11298,12 +11300,12 @@ requested|42
 requests|37
 request|65
 required|294
-requirements|1335
+requirements|1343
 requirement|84
 requires|37
 require|30
 requiring|5
-rescanned|3
+rescanned|5
 rescue|16
 researchers|38
 researcher|3
@@ -11313,8 +11315,8 @@ resemble|4
 resented|6
 resentment|12
 resent|3
-reserved|40
 reserved?|3
+reserved|40
 reserves|4
 reserve|71
 reservoirs|4
@@ -11456,7 +11458,7 @@ re|38
 rfcs|4
 rfc|43
 rf|46
-rg|40
+rg|42
 rhetorical|8
 rhetoric|17
 rhine|6
@@ -11505,7 +11507,7 @@ right|195
 rigid|4
 rigo|3
 riia|3
-riley|5
+riley|7
 rimm|5
 rimr|3
 rim|3
@@ -11555,7 +11557,7 @@ rochelle|3
 rochester|109
 rockbridge|3
 rockefellers|6
-rockefeller|1506
+rockefeller|1517
 rockfeller|3
 rockford|6
 rockies|13
@@ -11868,9 +11870,9 @@ schneider|14
 schnitzer|3
 schofield|3
 scholarly|15
-scholarship.pdf|4
+scholarship.pdf|8
 scholarships|13
-scholarship|44
+scholarship|48
 scholars|33
 scholar|3
 schooling|4
@@ -11896,7 +11898,7 @@ sci|6
 sclerosis|4
 scoffield|3
 scofield|9
-scope|7100
+scope|7114
 scores|3
 scorn|3
 scotland|6
@@ -11982,7 +11984,7 @@ seem|22
 seen|21
 seessel|7
 seevers|3
-see|764
+see|767
 segal|11
 segments|13
 segment|6
@@ -11998,7 +12000,7 @@ seldom|7
 selected|113
 selecting|8
 selection|29
-selective|23
+selective|26
 selectors|22
 selector|10
 selects|99
@@ -12041,7 +12043,7 @@ sentence|19
 sentiments|7
 sentiment|8
 sent|24
-separated|395
+separated|403
 separately|7
 separateness|4
 separate|50
@@ -12067,7 +12069,7 @@ serialized|39
 serializer|20
 serialize|6
 serializing|5
-series|498
+series|501
 serif|5
 seriously|10
 serious|17
@@ -12081,7 +12083,7 @@ server|8
 serves|19
 serve|23
 services|263
-service|341
+service|344
 servicing|3
 serving|12
 servol|4
@@ -12407,7 +12409,7 @@ smelter|3
 smithburn|3
 smithman|3
 smithsonian|33
-smith|108
+smith|113
 smoked|3
 smokers|5
 smoking|15
@@ -12431,7 +12433,7 @@ socialists|3
 socialist|47
 socialization|3
 socially|5
-social|469
+social|470
 societal|3
 societies|48
 society|884
@@ -12501,7 +12503,7 @@ soul|5
 sounds|4
 sound|104
 sources|26
-source|222
+source|228
 sour|4
 southard|5
 southbridge|5
@@ -12550,7 +12552,7 @@ specifically|39
 specifications|47
 specification|351
 specificity|3
-specific|87
+specific|93
 specified|283
 specifier|20
 specifies|109
@@ -12712,7 +12714,7 @@ statistics|75
 statues|7
 statue|18
 stature|3
-status|94
+status|100
 staunchly|3
 stayed|5
 stay|6
@@ -12824,7 +12826,7 @@ stratten|3
 stratum|3
 strauss|8
 straus|4
-strayer|3
+strayer|4
 streams|9
 stream|14
 streetscenes|10
@@ -12929,7 +12931,7 @@ subsections|5
 subsection|5
 subsequently|16
 subsequent|33
-subseries|246
+subseries|247
 subservience|3
 subsets|19
 subset|63
@@ -12959,7 +12961,7 @@ subversion|3
 subvert|4
 subways|12
 subway|66
-sub|118
+sub|119
 succeeded|9
 succeeds|5
 succeed|21
@@ -13010,7 +13012,7 @@ sul|9
 summaries|31
 summarized|17
 summarizes|5
-summary|115
+summary|129
 summer|33
 summons|3
 sum|17
@@ -13083,7 +13085,7 @@ survival|16
 survived|3
 survive|12
 survivor|3
-susan|18
+susan|19
 susceptibility|11
 susceptibles|3
 susceptible|17
@@ -13252,7 +13254,7 @@ teams|5
 team|6
 tear|3
 technically|4
-technical|1390
+technical|1398
 technicians|8
 techniques|14
 technique|3
@@ -13263,7 +13265,7 @@ technologies|3
 technology|159
 technol|3
 techno|3
-tecnics|3
+tecnics|5
 ted|6
 teeth|8
 teitelbaum|3
@@ -13345,7 +13347,7 @@ testimonial|6
 testimony|8
 testing|156
 tests|44
-test|167
+test|168
 teuber|4
 tevis|3
 texas|102
@@ -13356,7 +13358,7 @@ texts|3
 texttest|4
 textuality|5
 textual|8
-text|576
+text|600
 te|5
 th.issue|3
 thabo|4
@@ -13403,7 +13405,7 @@ third|96
 thirties|3
 thirty|14
 thoman|6
-thomas|152
+thomas|153
 thompson|61
 thomson|18
 thorell|3
@@ -13487,7 +13489,7 @@ tissues|28
 tissue|20
 tis|4
 titles|18
-title|114
+title|122
 titusville|27
 tive|3
 tj|4
@@ -13738,7 +13740,7 @@ trustees|57
 trustee|25
 trusts|16
 trustworth|3
-trust|369
+trust|371
 truth|14
 trying|7
 try|6
@@ -13771,7 +13773,7 @@ turks|8
 turmoil|9
 turnaround|3
 turned|14
-turner|4
+turner|5
 turning|13
 turnley|3
 turn|55
@@ -13932,7 +13934,7 @@ unions|48
 union|503
 uniquely|5
 uniqueness|4
-unique|55
+unique|70
 unitary|3
 unita|7
 united|437
@@ -14053,13 +14055,13 @@ usable|6
 usaddress|3
 usage|10
 usa|78
-used|841
+used|844
 useful|48
 usepackage|82
 users|38
 user|194
 uses|96
-use|624
+use|630
 using|551
 usually|20
 usual|13
@@ -14107,7 +14109,7 @@ valuecomp|4
 valued|10
 valueexpr|4
 values|551
-value|1862
+value|1880
 valuing|4
 vance|4
 vancouver|5
@@ -14353,7 +14355,7 @@ wallace|38
 waller|7
 wallie|6
 wallis|3
-wall|50
+wall|51
 walsh|12
 walter|20
 walton|3
@@ -14582,7 +14584,7 @@ willing|12
 willis|5
 willow|3
 wills|3
-wilma|3
+wilma|5
 wilmot|6
 wilson|65
 wiltwyck|3
@@ -14606,6 +14608,7 @@ winner|3
 winnie|4
 winning|3
 winnowing|3
+winona|3
 winrock|3
 winship|4
 winslow|3
@@ -14716,7 +14719,7 @@ www.archive.org|3
 www.example.com|5
 www.iana.org|3
 www.ietf.org|27
-www.rockarch.org|7
+www.rockarch.org|11
 www.sgmlsource.com|3
 www.textuality.com|3
 www.unicode.org|5
@@ -14726,7 +14729,7 @@ wynand|3
 wyndol|4
 wynn|6
 wyoming|8
-w|938
+w|943
 xaffff|3
 xa|30
 xb|3
@@ -14782,7 +14785,7 @@ yarrow|4
 yates|4
 yaws|17
 yda|3
-yearbooks|3
+yearbooks|4
 yearmonthdurations|6
 yearmonthduration|58
 years.the|3
@@ -14835,7 +14838,7 @@ zane|4
 zanko|4
 za|10
 ze'ev|4
-zealand|3
+zealand|5
 zed|12
 zegart|7
 zein|3
@@ -14872,8 +14875,3 @@ zurich|8
 zwelithini|5
 zyl|11
 zz|8
-z|42
-?migr?s|16
-?tre|3
-?|583
-??|22

@@ -82,7 +82,16 @@
                 <persname source="lcnaf" role="Author (aut)">Aiken, Susan Hardy, 1943- </persname>
             </origination>
             <origination label="creator">
+                <persname source="lcnaf" role="Author (aut)">Winona Test </persname>
+            </origination>
+            <origination label="creator">
                 <persname source="lcnaf" role="Contributor (ctb)">Benedict, Karen M.</persname>
+            </origination>
+            <origination label="creator">
+                <persname source="lcnaf" role="Contributor (ctb)">Winona test2.</persname>
+            </origination>
+            <origination label="creator">
+                <persname source="lcnaf" role="Source (ctb)">Winona Test3</persname>
             </origination>
         </did>
         <accruals id="ref2">
