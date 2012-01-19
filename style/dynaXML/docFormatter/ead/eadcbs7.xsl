@@ -1385,17 +1385,17 @@
                               <xsl:value-of select="../container[@parent = $id]"/>
                            </td>                                
                            <td class="moreInfo">
-                              <xsl:if test=" ../scopecontent |  ../accruals |  ../appraisal |  ../arrangement | 
-                                 ../bioghist |  ../accessrestrict[not(child::legalstatus)] |   ../userestrict | 
-                                 ../custodhist |  ../altformavail |  ../originalsloc |  ../did/physdesc[@label='Dimensions note'] | 
-                                 ../fileplan |  ../did/physdesc[@label = 'General Physical Description note'] |  ../odd | 
-                                 ../acqinfo |  ../did/langmaterial |  ../accessrestrict[child::legalstatus] |  ../did/materialspec |
-                                 ../otherfindaid |  ../phystech |  ../did/physdesc[@label='Physical Facet note'] |  ../processinfo | 
-                                 ../relatedmaterial | ../separatedmaterial |  ../controlaccess">
+                              <xsl:if test=" ../../scopecontent | ../../accruals | ../../appraisal |  ../../arrangement | 
+                                 ../../bioghist |  ../../accessrestrict[not(child::legalstatus)] | ../../userestrict | 
+                                 ../../custodhist | ../../altformavail | ../../originalsloc | ../../did/physdesc[@label='Dimensions note'] | 
+                                 ../../fileplan | ../../did/physdesc[@label = 'General Physical Description note'] | ../../odd | 
+                                 ../../acqinfo | ../../did/langmaterial | ../../accessrestrict[child::legalstatus] | ../../did/materialspec |
+                                 ../../otherfindaid | ../../phystech | ../../did/physdesc[@label='Physical Facet note'] | ../../processinfo | 
+                                 ../../relatedmaterial | ../../separatedmaterial | ../../controlaccess">
                                  <xsl:call-template name="make-popup-link">
                                     <xsl:with-param name="name" select="'Additional description'"/>
-                                    <xsl:with-param name="id" select="string(@id)"/>
-                                    <xsl:with-param name="nodes" select="scopecontent"/>
+                                    <xsl:with-param name="id" select="string(../../@id)"/>
+                                    <xsl:with-param name="nodes" select="../../scopecontent"/>
                                     <xsl:with-param name="doc.view" select="'dscDescription'"/>
                                  </xsl:call-template>
                               </xsl:if>
@@ -1421,105 +1421,6 @@
                        <xsl:variable name="sibContainer3" select="string(preceding-sibling::*[1]/did/container[3]/@type)"/>
                        <xsl:variable name="sibContainer4" select="string(preceding-sibling::*[1]/did/container[4]/@type)"/>
                        <!-- Tests to see if current container type is different from previous container type, if it is a new row with container type headings is outout -->
-                      <!-- 
-                       <xsl:choose>
-                           <xsl:when test="not(preceding-sibling::*/@level)">
-                               <xsl:choose>
-                                   <xsl:when test="parent::dsc">
-                                      <tr class="containerHeader"> 
-                                          <xsl:choose>
-                                             <xsl:when test="did/container[1]">
-                                                <xsl:for-each select="did/container">    
-                                                   <td class="{$clevelMargin}" >    
-                                                      <div class="containerHeader"><xsl:value-of select="@type"/></div>
-                                                   </td>                                    
-                                                </xsl:for-each>
-                                             </xsl:when>
-                                             <xsl:when test="descendant::*/did[container][1]">
-                                                <td class="{$clevelMargin}" >    
-                                                   <div class="containerHeader">    
-                                                   <xsl:value-of select="descendant::*[did/container][1]/did/container[1]/@type"/>
-                                                   </div>
-                                                </td> 
-                                                <td class="containerHeader">    
-                                                   <xsl:value-of select="descendant::*[did/container][1]/did/container[2]/@type"/>
-                                                </td> 
-                                             </xsl:when>
-                                             <xsl:otherwise>        
-                                                <td class="{$clevelMargin}" >    
-                                                   <div class="containerHeader">    
-                                                   <xsl:value-of select="following-sibling::*[did/container][1]/did/container[1]/@type"/>
-                                                   </div>
-                                                </td> 
-                                                <td class="containerHeader">    
-                                                   <xsl:value-of select="following-sibling::*[did/container][1]/did/container[2]/@type"/>
-                                                </td> 
-                                             </xsl:otherwise>
-                                          </xsl:choose>    
-                                         <td  class="containerHeader" colspan="2">
-                                               <xsl:text>Title</xsl:text>
-                                           </td>
-                                         <td  class="containerHeader">
-                                             <xsl:text>Notes</xsl:text>
-                                          </td>
-                                       </tr>
-                                   </xsl:when>
-                               </xsl:choose>
-                           </xsl:when>
-                           <xsl:when test="not(did/container)"/>
-                           <xsl:otherwise>
-                               <xsl:choose>
-                                   <xsl:when test="$container != $sibContainer">
-                                       <tr class="containerTypes"> 
-                                           <xsl:for-each select="did/container">     
-                                              <td>   
-                                                <xsl:if test="position() = 1">
-                                                   <xsl:attribute name="class"><xsl:value-of select="$clevelMargin"/></xsl:attribute>
-                                                </xsl:if>                                                 
-                                                 <div class="containerHeader">    
-                                                   <xsl:value-of select="@type"/>
-                                                 </div>
-                                               </td>                                                                                                                                                  
-                                           </xsl:for-each>
-                                          <td  class="containerHeader">
-                                             <xsl:attribute name="colspan">
-                                                <xsl:choose>
-                                                   <xsl:when test="count(did[container][1]/container) = 1">4</xsl:when>
-                                                   <xsl:otherwise>3</xsl:otherwise>
-                                                </xsl:choose>
-                                             </xsl:attribute>
-                                             <xsl:text>Title </xsl:text>
-                                          </td>
-                                          <td class="containerHeader">Notes</td>
-                                       </tr>
-                                   </xsl:when>
-                                   <xsl:otherwise/>
-                               </xsl:choose>
-                           </xsl:otherwise>
-                       </xsl:choose>
-                       -->
-                      <!-- 
-                         count(preceding-sibling::*[1]/did/container/@id) = 1
-                         
-                         <xsl:when test="$container != $sibContainer">
-                         <tr class="containerTypes"> 
-                         <td class="containerHeaderTitle">
-                         <xsl:attribute name="colspan">
-                         <xsl:choose>
-                         <xsl:when test="count(ead:did[ead:container][1]/ead:container) = 1">4</xsl:when>
-                         <xsl:otherwise>3</xsl:otherwise>
-                         </xsl:choose>
-                         </xsl:attribute>
-                         <xsl:text>Title </xsl:text>
-                         </td>
-                         <xsl:for-each select="ead:did/ead:container">     
-                         <td class="containerHeader">    
-                         <xsl:value-of select="@type"/>
-                         </td>                                                                                                                                                  
-                         </xsl:for-each>
-                         </tr>
-                         </xsl:when>
-                      -->
                       <xsl:if test="not(preceding-sibling::*) and parent::dsc">
                          <tr>
                             <td colspan="5" class="{$clevelMargin}">
