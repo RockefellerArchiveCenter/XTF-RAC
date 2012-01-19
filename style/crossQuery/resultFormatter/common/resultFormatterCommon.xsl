@@ -841,10 +841,10 @@
       
       <xsl:choose>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(descendant::group[docHit]) > 1]">
-            <span style="color: red"><xsl:value-of select="upper-case($alpha)"/></span>
+             <span style="color: #FD8239"><xsl:value-of select="upper-case($alpha)"/></span>
          </xsl:when>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(docHit) > 0]">
-            <span style="color: red"><xsl:value-of select="upper-case($alpha)"/></span>
+             <span style="color: #FD8239"><xsl:value-of select="upper-case($alpha)"/></span>
          </xsl:when>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link]">
             <a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};sort={$browse-name}"><xsl:value-of select="$alpha"/></a>
