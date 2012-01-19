@@ -246,7 +246,23 @@
             <tr>
                <td colspan="2">
                   <div class="searchLinks">
-                     <xsl:if test="session:getData('queryURL')">
+                     <xsl:if test="$query !=''">
+                        <!-- DOES not work, the urls are exactly the same!
+                           1/19/12 WS: added back to search results link, only if search is NOT internal
+                        <xsl:choose>
+                           <xsl:when test="$brand != ''">
+                              <a href="{session:getData('queryURL')}">
+                                 <xsl:text>SEARCH RESULTS</xsl:text>
+                              </a> | 
+                              <a href="{session:getData('queryURL')}">
+                                 <xsl:text>MODIFY SEARCH</xsl:text>
+                              </a> |                                                            
+                           </xsl:when>
+                           <xsl:otherwise/>                           
+                           </xsl:choose>-->
+                        <a href="{session:getData('queryURL')}">
+                           <xsl:text>SEARCH RESULTS</xsl:text>
+                        </a> | 
                         <a href="{session:getData('queryURL')}">
                            <xsl:text>MODIFY SEARCH</xsl:text>
                         </a> | 
@@ -313,12 +329,17 @@
                         <xsl:text>Clear Hits</xsl:text>
                      </a>
                      <xsl:text>]</xsl:text>
-                      &#160;[
-                     <a href="{session:getData('queryURL')}">
-                        Back to Search Results
-                     </a>
-                     ]
-                     
+                     <!-- 1/19/12 WS: added back to search results link, only if search is NOT internal-->
+                     <xsl:choose>
+                        <xsl:when test="$docId"/>
+                        <xsl:otherwise>
+                           &#160;[
+                           <a href="{session:getData('queryURL')}">
+                              Back to Search Results
+                           </a>
+                           ]
+                        </xsl:otherwise>
+                     </xsl:choose>
                   </div>
                </xsl:if>
             </div>   
