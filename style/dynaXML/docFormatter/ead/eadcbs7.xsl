@@ -3,7 +3,7 @@
    the left side of the screen. It is an update to eadcbs3.xsl designed
    to work with EAD 2002.-->
 
-<xsl:stylesheet version="1.0" 
+<xsl:stylesheet version="2.0"
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:xtf="http://cdlib.org/xtf" xmlns:ns2="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/1999/xhtml"
@@ -507,7 +507,7 @@
             by changing the order of the following statements.-->
          <!-- Commenting out repository,unitid, langmaterial for now -->
 <!--         <xsl:apply-templates select="repository"/>-->
-         <xsl:apply-templates select="origination[starts-with(child::*/@role,'Author')]"/>
+         <xsl:call-template name="creators"/>
          <xsl:apply-templates select="unittitle"/>
          <xsl:apply-templates select="../scopecontent" mode="overview"/>
          <xsl:apply-templates select="unitdate"/>
@@ -521,13 +521,40 @@
       </div>
    </xsl:template>
      
+     <!-- 1/19/12 WS: Special template to handle creator/contributor/source rules for RA -->
+   <xsl:template name="creators">
+      <xsl:if test="origination/child::*[starts-with(@role,'Author')]">
+         <h4>Creator</h4>
+         <p>
+            <xsl:for-each select="origination/child::*[starts-with(@role,'Author')]">
+               <xsl:apply-templates/><br/>
+            </xsl:for-each>
+         </p>
+      </xsl:if>
+      <xsl:if test="origination/child::*[starts-with(@role,'Source')]">
+         <h4>Source</h4>
+         <p>
+            <xsl:for-each select="origination/child::*[starts-with(@role,'Source')]">
+               <xsl:apply-templates/><br/>
+            </xsl:for-each>
+         </p>
+      </xsl:if>
+      <xsl:if test="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')))]">
+         <h4>Contributor(s)</h4>
+         <p>
+            <xsl:for-each select="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')))]">
+               <xsl:apply-templates/><br/>
+            </xsl:for-each>
+         </p>
+      </xsl:if>
+   </xsl:template>
    <!--This template formats the repostory, origination, physdesc, abstract,
       unitid, physloc and materialspec elements of archdesc/did which share a common presentaiton.
       The sequence of their appearance is governed by the previous template.
       archdesc/did/langmaterial
    -->
    
-   <xsl:template match="archdesc/did/repository | archdesc/did/unitid | archdesc/did/origination[starts-with(child::*/@role,'Author')]  
+   <xsl:template match="archdesc/did/repository | archdesc/did/unitid   
       | archdesc/did/unitdate | archdesc/did/physdesc 
       | archdesc/did/abstract | archdesc/did/langmaterial | archdesc/did/materialspec | archdesc/did/container">      
       <!--The template tests to see if there is a label attribute,
@@ -537,7 +564,6 @@
          <h4>
              <xsl:choose>
                 <xsl:when test="self::repository">Repository </xsl:when>
-                <xsl:when test="self::origination[starts-with(child::*/@role,'Author')]">Creator </xsl:when>
                 <xsl:when test="self::physdesc[extent]">Extent </xsl:when>
                 <xsl:when test="self::physloc">Location </xsl:when>
                 <xsl:when test="self::unitid">Resource ID </xsl:when>
@@ -552,14 +578,6 @@
                <xsl:when test="self::physdesc[extent]">
                   <xsl:value-of select="extent[1]"/>
                   <xsl:if test="extent[position() &gt; 1]">, <xsl:value-of select="extent[position() &gt; 1]"/> </xsl:if>
-               </xsl:when>
-               <xsl:when test="self::origination">
-                  <xsl:choose>
-                     <xsl:when test="starts-with(child::*/@role,'Author')">
-                        <xsl:apply-templates/>
-                     </xsl:when>
-                     <xsl:otherwise/>
-                  </xsl:choose>
                </xsl:when>
                <xsl:otherwise>
                   <xsl:apply-templates/>               
