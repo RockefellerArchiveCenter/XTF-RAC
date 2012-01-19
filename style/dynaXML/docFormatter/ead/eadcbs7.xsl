@@ -3,7 +3,7 @@
    the left side of the screen. It is an update to eadcbs3.xsl designed
    to work with EAD 2002.-->
 
-<xsl:stylesheet version="2.0"
+<xsl:stylesheet version="1.0"
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:xtf="http://cdlib.org/xtf" xmlns:ns2="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/1999/xhtml"
@@ -1395,7 +1395,7 @@
                                  <xsl:call-template name="make-popup-link">
                                     <xsl:with-param name="name" select="'Additional description'"/>
                                     <xsl:with-param name="id" select="string(@id)"/>
-                                    <xsl:with-param name="nodes" select="../scopecontent"/>
+                                    <xsl:with-param name="nodes" select="scopecontent"/>
                                     <xsl:with-param name="doc.view" select="'dscDescription'"/>
                                  </xsl:call-template>
                               </xsl:if>
