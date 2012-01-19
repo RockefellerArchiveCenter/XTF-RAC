@@ -653,9 +653,32 @@ Item number <xsl:value-of select="$num"/>:
    <xsl:template name="browseLinks">
          <p>
             <!--<a href="{$xtfURL}{$crossqueryPath}?browse-collection=first;sort=title">Collection</a> |-->
-            <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Collection Title</a> |
-            <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title">Creator</a> |             
-            <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a> 
+            <xsl:choose>
+               <xsl:when test="$browse-title">
+                  <span style="font-weight:bold; color:#666;">Collection Title</span>
+               </xsl:when>
+               <xsl:otherwise>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Collection Title</a>
+               </xsl:otherwise>
+            </xsl:choose>
+             | 
+            <xsl:choose>
+               <xsl:when test="$browse-creator">
+                  <span style="font-weight:bold; color:#666;">Creator</span>  
+               </xsl:when>
+               <xsl:otherwise>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title">Creator</a>
+               </xsl:otherwise>
+            </xsl:choose>
+             | 
+            <xsl:choose>
+               <xsl:when test="$browse-all">
+                  <span style="font-weight:bold; color:#666;">Subject</span>
+               </xsl:when>
+               <xsl:otherwise>
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a>
+               </xsl:otherwise>
+            </xsl:choose>
          </p>
 <!--            <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes">Facet-->
            <!-- <li><a href="{$xtfURL}{$crossqueryPath}?browse-collection=first;sort=collection">Collection</a></li>
