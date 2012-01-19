@@ -79,7 +79,11 @@ table.advancedSearch tr td{vertical-align:text-top;}
 .right{text-align:right;}
 .left {text-align:left; padding-left:18px;}
 .facetMatch {font-style:italic; color:#FD8239;}
-
+.facetGroup .col3 {font-weight:bold; color:#FD8239;}
+a.hit {
+   color: #FD8239 !important;
+   font-weight: bold;
+}
 /* Formats tabs for finding aids*/
 .tabs{display:block; text-align:left; margin:8px 0 -12px 0; padding:4px;}
 .tabs ul {display:block; list-style: none; padding:0; margin:0;}
