@@ -192,7 +192,6 @@
                <tr>
                   <td colspan="2">
                      <div class="searchLinks">
-                        <xsl:value-of select="$modify"/><br/>
                         <xsl:if test="$smode != 'showBag'">
                            <a href="{$xtfURL}{$crossqueryPath}?{$modifyString}">
                               <xsl:text>MODIFY SEARCH</xsl:text>
