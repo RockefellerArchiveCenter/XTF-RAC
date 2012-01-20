@@ -313,6 +313,9 @@
       
       <xsl:choose>
          <!-- Pattern:  NAME, NAME -->
+         <xsl:when test="ends-with($first-creator,'.')">
+            <xsl:value-of select="replace($first-creator, '(.+?), .+', '$1')"/>
+         </xsl:when>
          <xsl:when test="matches($first-creator, ', ')">
             <xsl:value-of select="replace($first-creator, '(.+?), .+', '$1')"/>
          </xsl:when>
