@@ -1299,6 +1299,7 @@
                   <xsl:when test="count(child::*/container/@id) &gt; 1">
                      <xsl:variable name="container" select="string(did/container[1]/@type)"/>
                      <xsl:variable name="sibContainer" select="string(preceding-sibling::*[1]/did/container[1]/@type)"/>
+                     <!--
                      <xsl:if test="preceding-sibling::*[1]/@level='file' or preceding-sibling::*[1]/@level='item' or (preceding-sibling::*[1]/@level='otherlevel'and child::did/container)">
                         <xsl:if test="(preceding-sibling::*[1]/child::*/@level='file' or preceding-sibling::*[1]/child::*/@level='item') or count(preceding-sibling::*[1]/did/container/@id) = 1">
                               <tr class="containerTypes"> 
@@ -1318,6 +1319,7 @@
                               </tr>
                         </xsl:if>
                      </xsl:if>
+                     -->
                      <xsl:for-each select="child::*/container[@id]">                
                         <!-- ADDED 3/14/10: Sorts containers alpha numerically -->
 <!--                        <xsl:sort select="."/>-->
