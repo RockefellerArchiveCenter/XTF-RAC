@@ -263,9 +263,6 @@
                         <a href="{session:getData('queryURL')}">
                            <xsl:text>SEARCH RESULTS</xsl:text>
                         </a> | 
-                        <a href="{session:getData('queryURL')}">
-                           <xsl:text>MODIFY SEARCH</xsl:text>
-                        </a> | 
                      </xsl:if>
                      <a href="{$xtfURL}/search">
                         <xsl:text>NEW SEARCH</xsl:text>

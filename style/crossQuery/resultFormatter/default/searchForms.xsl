@@ -277,6 +277,7 @@
                <td>&#160;</td>
                <td colspan="2">
                   <input type="submit" value="Search"/>
+                  <input type="hidden" name="smode" value="advanced" id="start"/>
                   <input type="reset" OnClick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
                </td>
             </tr>            
