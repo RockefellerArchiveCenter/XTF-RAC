@@ -923,7 +923,8 @@ Item number <xsl:value-of select="$num"/>:
                   </td>
                </tr>
             </xsl:if>
-            <xsl:if test="snippet">
+            <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
+            <xsl:if test="descendant-or-self::snippet">
                <tr>
                   <td class="col1">
                      <xsl:text>&#160;</xsl:text>
@@ -935,11 +936,10 @@ Item number <xsl:value-of select="$num"/>:
                      <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>&#160;&#160;&#160;&#160;
                   </td>
                   <td class="col3" colspan="2">
-                     <xsl:apply-templates select="snippet" mode="text"/>
+                     <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
                   </td>
                </tr>
             </xsl:if>
-            
             <!-- "more like this" -->
             <tr>
                <td class="col1">
