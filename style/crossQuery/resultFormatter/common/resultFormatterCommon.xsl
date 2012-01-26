@@ -634,9 +634,24 @@
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
+      <!-- 1/26/12 WS: passes advanced search fields and terms to dynaXML-->
+      <xsl:variable name="advancedSearch">
+         <xsl:for-each select="//parameters/param">
+            <xsl:variable name="field" select="@name"/>
+            <xsl:variable name="terms" select="editURL:escapeRegex(editURL:protectValue(@value))"/>
+            <xsl:if test="$field != ''">
+               <xsl:choose>
+                  <xsl:when test="$field = 'smode'"/>
+                  <xsl:otherwise>
+                     <xsl:value-of select="concat(';',$field,'=',$terms)"/>      
+                  </xsl:otherwise>
+               </xsl:choose>
+            </xsl:if>            
+         </xsl:for-each>
+      </xsl:variable>
 
       <!-- Must protect value of $docId in the URL, in case it contains special chars. -->
-      <xsl:value-of select="concat($dynaxmlPath, '?docId=', editURL:protectValue($docId), ';query=', replace($query, ';', '%26'))"/>
+      <xsl:value-of select="concat($dynaxmlPath, '?docId=', editURL:protectValue($docId), ';query=', replace($query, ';', '%26'),$advancedSearch)"/>
       <!-- -join & -prox are mutually exclusive -->
       <xsl:choose>
          <xsl:when test="$text-prox">
