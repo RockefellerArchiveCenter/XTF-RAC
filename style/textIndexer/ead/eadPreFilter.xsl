@@ -202,7 +202,6 @@
       </xsl:copy>
    </xsl:template>
    
-   
    <!-- sectionType Indexing and Element Boosting -->
    <xsl:template match="unittitle[parent::did]">
       <xsl:copy>
@@ -229,6 +228,33 @@
       </xsl:copy>
    </xsl:template>
    
+  <!-- 1/26/12 WS: added bioghist and scopecontent templates for advanced search --> 
+   <xsl:template match="archdesc/bioghist" mode="addChunkId">
+      <xsl:copy>
+         <xsl:copy-of select="@*"/>
+         <xsl:attribute name="xtf:wordBoost" select="90.0"/>
+         <xsl:attribute name="xtf:sectionType" select="'bioghist'"/>
+         <xsl:apply-templates/>
+      </xsl:copy>
+   </xsl:template>
+   
+   <xsl:template match="archdesc/scopecontent" mode="addChunkId">
+      <xsl:copy>
+         <xsl:copy-of select="@*"/>
+         <xsl:attribute name="xtf:wordBoost" select="90.0"/>
+         <xsl:attribute name="xtf:sectionType" select="'scopecontent'"/>
+         <xsl:apply-templates/>
+      </xsl:copy>
+   </xsl:template>
+   
+   <xsl:template match="controlaccess" mode="addChunkId">
+      <xsl:copy>
+         <xsl:copy-of select="@*"/>
+         <xsl:attribute name="xtf:wordBoost" select="80.0"/>
+         <xsl:attribute name="xtf:sectionType" select="'controlaccess'"/>
+         <xsl:apply-templates/>
+      </xsl:copy>
+   </xsl:template>
    <!-- ====================================================================== -->
    <!-- Metadata Indexing                                                      -->
    <!-- ====================================================================== -->
@@ -262,9 +288,10 @@
                <xsl:call-template name="get-ead-language"/>
                <xsl:call-template name="get-ead-relation"/>
                <xsl:call-template name="get-ead-coverage"/>
+<!--  
                <xsl:call-template name="get-ead-scopecontent"/>
                <xsl:call-template name="get-ead-bioghist"/>
-   
+   -->
                <xsl:call-template name="get-ead-rights"/>
                
                <!-- special values for OAI -->
@@ -284,6 +311,20 @@
    <!-- title --> 
    <xsl:template name="get-ead-title">
       <xsl:choose>
+         <xsl:when test="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']">
+            <xsl:variable name="titleproper" select="string(/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing'])"/>
+            <xsl:variable name="subtitle" select="string(/ead/eadheader/filedesc/titlestmt/subtitle)"/>
+            <title xtf:meta="true">
+               <xsl:value-of select="$titleproper"/>
+               <xsl:if test="$subtitle">
+                  <!-- Put a colon between main and subtitle, if none present already -->
+                  <xsl:if test="not(matches($titleproper, ':\s*$') or matches($subtitle, '^\s*:'))">
+                     <xsl:text>: </xsl:text>
+                  </xsl:if>  
+                  <xsl:value-of select="$subtitle"/>
+               </xsl:if>
+            </title>
+         </xsl:when>
          <xsl:when test="/ead/archdesc/did/unittitle">
             <title xtf:meta="true">
                <xsl:value-of select="/ead/archdesc/did/unittitle"/>
@@ -560,36 +601,7 @@
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
-   <!-- scope and content -->
-   <xsl:template name="get-ead-scopecontent">
-      <xsl:choose>
-         <xsl:when test="/ead/archdesc/scopecontent">
-            <xsl:for-each select="/ead/archdesc/scopecontent">
-               <scopecontent xtf:meta="true">
-                  <xsl:for-each select="child::*">
-                     <xsl:value-of select="string(.)"/>   
-                  </xsl:for-each>
-               </scopecontent>               
-            </xsl:for-each>
-         </xsl:when>
-         <xsl:otherwise/>
-      </xsl:choose>
-   </xsl:template>
-   <!-- biographical or historical note--> 
-   <xsl:template name="get-ead-bioghist">
-      <xsl:choose>
-         <xsl:when test="/ead/archdesc/bioghist">
-            <xsl:for-each select="/ead/archdesc/bioghist">
-               <bioghist xtf:meta="true">
-                  <xsl:for-each select="child::*">
-                     <xsl:value-of select="string(.)"/>   
-                  </xsl:for-each>
-               </bioghist>               
-            </xsl:for-each>
-         </xsl:when>
-         <xsl:otherwise/>
-      </xsl:choose>
-   </xsl:template>
+
    <!-- rights -->
    <xsl:template name="get-ead-rights">
       <rights xtf:meta="true">public</rights>
