@@ -102,9 +102,6 @@
       <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/mapping.js"></script>
       <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/rollOver.js"></script>
       <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/popUp.js"></script>
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-      <script type="text/javascript" src="/xtf/script/rac/jquery.scrollTo-min.js"></script>
-      <script type="text/javascript" src="/xtf/script/rac/jquery.localscroll-min.js"></script>
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/rac.js"></script>   
       
       <script type="text/javascript" language="JavaScript">

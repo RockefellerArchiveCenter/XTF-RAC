@@ -32,7 +32,9 @@ div.closeWindow a{color: #C45414;}
 .fixedHeader table{
     margin-right:8px;    
 }
-
+.fixedHeader .navright {margin-right:12px !important;} 
+.fixedHeader .searchNav {width:99%;}
+.fixedHeader .bbar_custom{width:99%;} 
 .bookbag {text-align:right; border:none; background-color:white; margin-bottom:-2em;padding:0;margin-right:1em;}
 
 /* Formats header */
@@ -52,12 +54,12 @@ div.closeWindow a{color: #C45414;}
    height:100%;
    background:#ffffff url("images/collection_guides.gif") no-repeat left top;
    z-index:1; /* Places <span> on top of <a> text */  }
-.fixedHeader .searchNav {width:99%;}
-.searchNav {background-color: #fff; width:100%; margin-top:-1em;}
+
+.searchNav {background-color: #fff; width:100%; margin-top:-1.5em;}
 .searchNav .searchLinks {color: #555555; text-align:right; padding-right:.5em;}
 .searchNav .searchLinks a {color: #C45414; text-decoration:none;}/*555555*/
-.fixedHeader .bbar_custom{width:99%;}
-.bbar_custom {padding:1em; border:none; width:100%;}
+
+.bbar_custom {padding:1em; border:none;}
 h1.collectionGuides {margin-top:-70px; margin-left:160px; font-size:34px;}
 h1.collectionGuides a{text-decoration:none; color:black;}
 .searchPage {margin-top:34px !important;}
@@ -66,16 +68,17 @@ h1.collectionGuides a{text-decoration:none; color:black;}
     padding:12px;
     text-align:right !important; 
     border:1px solid #999; 
-    }
-.fixedHeader .navright {margin-right:12px !important;}   
+    }  
 .navright form {text-align:right !important; padding:8px 8px;}
+.eadtitle {text-align:left; font-size:.80em; margin:0; padding-left:.5em; /*border: 1px solid #999;*/}
+.eadtitle h1 {color:#333; margin:0; padding:0;}
 
 /* Formats search results (number and type) */
 table.advancedSearch tr td{vertical-align:text-top;}
 .ra-query {float:none !important; display:inline !important;}
 .subQuery {float:none !important; display:inline !important;}
 .clear {clear:both;}
-.navright .right{text-align:right; float:right; margin-top:-8px; padding-top:0;}
+/*.navright .right{text-align:right; float:right; margin-top:-8px; padding-top:0;}*/
 .right{text-align:right;}
 .left {text-align:left; padding-left:18px;}
 .facetMatch {font-style:italic; color:#FD8239;}
@@ -92,34 +95,37 @@ a.hit {
    color: #FD8239 !important;
    font-weight: bold;
 }
+
 /* Formats tabs for finding aids*/
-.tabs{display:block; text-align:left; margin:8px 0 -12px 0; padding:4px;}
-.tabs ul {display:block; list-style: none; padding:0; margin:0;}
-.tabs ul li{display:inline; padding: 10px 20px; font-weight:bold;}
-.tabs ul li.select{background-color:#fff;}
+ul.tabs {display:block; list-style: none; padding:0; margin-bottom:6px;}
+ul.tabs li{display:inline; padding:10px;/*padding: 10px 20px;*/ margin:0; font-weight:bold;}
+ul.tabs li.select{
+    background-color:#fff; 
+    border-top:1px solid #999;
+    border-right:1px solid #999;
+    border-left:1px solid #999;
+    }
 
 /* Styles for EAD */
 .main {
     display:block; 
     float:none; 
     clear:both; 
-    /*margin-top:-22px;*/
     margin-top:225px;    
     margin-left:13px; 
     margin-right:-3px; 
+    /*
     border-left:1px solid #999; 
     border-right:1px solid #999; 
     border-bottom:1px solid #999;
+    */
     }
     
-.eadtitle {text-align:left; font-size:.85em; margin:0; padding-left:1em; /*border: 1px solid #999;*/ float:left;}
-.eadtitle h1 {color:#333; margin:0; padding:0;}
-
 /* TOC for finding aids pages */
 #tocWrapper { /* required to avoid jumping */
     position: fixed !important;
     position: absolute;
-    top: 250px;
+    top: 260px;
     left: 0;
     bottom:12px;
     margin-left: 0;

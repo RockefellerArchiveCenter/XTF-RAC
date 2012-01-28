@@ -74,7 +74,10 @@
          </xsl:when>
          <xsl:when test="$chunk.id = 'contentsLink'">
                <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
-         </xsl:when>           
+         </xsl:when>
+         <xsl:when test="$chunk.id = 'bioghist'">
+               <xsl:apply-templates select="/ead/archdesc/bioghist"/>
+         </xsl:when>              
          <xsl:when test="$chunk.id != 0">
             <xsl:apply-templates select="key('chunk-id', $chunk.id)"/>
          </xsl:when>

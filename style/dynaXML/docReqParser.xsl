@@ -74,6 +74,7 @@
         abbreviated form where it's part of the main URL instead. -->
    <xsl:param name="docId" select="replace($http.URL, $ercPat, '$2')"/>
    <xsl:param name="query" select="'0'"/>
+   <xsl:param name="bioghist" select="'0'"/>
    <xsl:param name="query-join" select="'0'"/>
    <xsl:param name="query-exclude" select="'0'"/>
    <xsl:param name="sectionType" select="'0'"/>
@@ -209,8 +210,6 @@
             <xsl:apply-templates select="$query"/>
          </query>
       </xsl:if>
-      
-      
       <!-- ==================================================================
          Finally, one or more "auth" sections must be included. These sections 
          will be processed in the order produced until one of them matches.  If 
