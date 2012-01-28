@@ -451,7 +451,7 @@
          xsl:extension-element-prefixes="mail" 
          smtpHost="mail.rockarch.org" 
          useSSL="no" 
-         from="admin@yourserver.org"
+         from="archive@rockarch.org"
          to="{$email}" 
          subject="XTF: My Bookbag">
 Your XTF Bookbag:
