@@ -1,24 +1,22 @@
 //Custom Javascript for Rockefeller Archives Center
 
-//Get parameter for expandable menu
-function getUrlVars()
-{
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
+function getParameterByName(name) {
+ 
+    name = String(name).replace(/[.*+?|()[\]{}\\]/g, '\\$&');
+ 
+    var match = RegExp('[?&]' + name + '=([^&]*)')
+                    .exec(window.location.search);
+ 
+    return match ?
+        decodeURIComponent(match[1].replace(/\+/g, ' '))
+        : null;
+ 
 }
 
+
 //Show hide layers
-function showHide(shID) {           
-           var second = getUrlVars()["menu"];
-           
-           if (document.getElementById(shID)) {
+           function showHide(shID) {
+               if (document.getElementById(shID)) {
                    if (document.getElementById(shID + '-show') .style.display != 'none') {
                        document.getElementById(shID + '-show') .style.display = 'none';
                        document.getElementById(shID) .style.display = 'block';
@@ -40,3 +38,4 @@ function showHide(shID) {
                  newwindow.focus()
              }
          }
+         
