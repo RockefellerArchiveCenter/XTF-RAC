@@ -454,8 +454,8 @@
          from="archive@rockarch.org"
          to="{$email}" 
          subject="XTF: My Bookbag">
-Your XTF Bookbag:
-<xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>
+            Your XTF Bookbag:
+            <xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>            
       </mail:send>
       
       <html xml:lang="en" lang="en">
@@ -494,7 +494,9 @@ Your XTF Bookbag:
             </xsl:choose>
          </xsl:variable>
 Item number <xsl:value-of select="$num"/>: 
-<xsl:value-of select="meta/creator"/>. <xsl:value-of select="meta/title"/>. <xsl:value-of select="meta/year"/>. 
+         <xsl:value-of select="meta/creator"/>. <xsl:value-of select="meta/title"/>.
+         <!-- 1/27/12 WS: changed meta/year to meta/date -->         
+         <xsl:value-of select="meta/date"/>. 
 [<xsl:value-of select="$url"/>]
          
       </xsl:for-each>
