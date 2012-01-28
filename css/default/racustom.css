@@ -125,7 +125,7 @@ ul.tabs li.select{
 #tocWrapper { /* required to avoid jumping */
     position: fixed !important;
     position: absolute;
-    top: 260px;
+    top: 270px;
     left: 0;
     bottom:12px;
     margin-left: 0;
@@ -137,7 +137,7 @@ ul.tabs li.select{
          }
          
 #toc {
-    margin-top:0; 
+    margin-top:-8px; 
     padding-top: 0;
     padding-left: 12px;	
 	padding-right: 10px;	

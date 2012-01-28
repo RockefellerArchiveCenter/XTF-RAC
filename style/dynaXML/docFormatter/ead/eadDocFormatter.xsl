@@ -266,13 +266,14 @@
             </tr>
          </table>
          <table style="width:99%; margin:0;padding:0;height:100px;" class="navright">
+            <tr><td></td><td style="width:275;"></td><td style="width:275;"></td><td style="width:275;"></td></tr>
                <tr>
-                  <td>
+                  <td colspan="3">
                      <div class="eadtitle">
                         <h1><xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/></h1>
                      </div>
                   </td>
-                  <td style="width:275px">
+                  <td style="width:300px">
                      <!-- <a href="javascript://" onclick="javascript:window.open('/xtf/search?smode=getLang','popup','width=500,height=200,resizable=no,scrollbars=no')">Choose Language</a>-->
                      <form action="{$xtfURL}{$dynaxmlPath}" method="get" style="margin-top:0px;padding-top:0;">
                         <input name="query" type="text" size="15"/> 
@@ -297,10 +298,10 @@
                   </td>
                </tr>
                <tr>
-                  <td colspan="2" style="vertical-align:bottom;text-align:left;">
+                  <td style="vertical-align:bottom;text-align:left;">                    
                      <xsl:call-template name="tabs"/>  
-                   <!-- 
-                    &#160;
+                  </td>
+                  <td colspan="3" style="vertical-align:bottom;text-align:right; padding-bottom:4px;">
                      <xsl:if test="($query != '0') and ($query != '')">
                            <strong>
                               <span class="hit-count">
@@ -332,7 +333,6 @@
                               </xsl:otherwise>
                            </xsl:choose>                    
                      </xsl:if>
-                  -->
                   </td>
                </tr>
             </table>
