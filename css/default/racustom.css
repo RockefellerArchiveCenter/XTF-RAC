@@ -96,6 +96,11 @@ a.hit {
    font-weight: bold;
 }
 
+.hit{
+   background-color:inherit !important;
+   color: #FD8239 !important;
+   font-weight: bold;
+}
 /* Formats tabs for finding aids*/
 ul.tabs {display:block; list-style: none; padding:0; margin-bottom:6px;}
 ul.tabs li{display:inline; padding:10px;/*padding: 10px 20px;*/ margin:0; font-weight:bold;}
@@ -177,7 +182,7 @@ ul.none {list-style:none;}
 #content-right table tr td {padding-right:1em;}
 
 /* Container list styles*/
-table.containerList {width:95%;}
+table.containerList {width:99%;}
 table.containerList tr td{padding-top:2px; padding-bottom:2px;}
 .seriesTitle {background-color:#ddd; padding:8px 4px; font-size:1.25em; margin:10px -4px; font-weight:bold;}
 .container {margin-left:2em; text-align:left;}

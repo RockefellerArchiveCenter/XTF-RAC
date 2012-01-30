@@ -1102,9 +1102,9 @@
           <tr>
              <td/>
              <td style="width: 15%;"/>
-             <td style="width: 10%;"/>
-             <td style="width: 10%"/>
-             <td style="width:17%"/>
+             <td style="width: 12%;"/>
+             <td style="width: 12%"/>
+             <td style="width: 18%"/>
           </tr>
        </table>
     </xsl:template>
@@ -1147,9 +1147,9 @@
           <tr>
              <td/>
              <td style="width: 15%;"/>
-             <td style="width: 10%;"/>
-             <td style="width: 10%"/>
-             <td style="width:17%"/>
+             <td style="width: 12%;"/>
+             <td style="width: 12%"/>
+             <td style="width: 18%"/>
           </tr>
        </table>
     </xsl:template>
@@ -1348,6 +1348,9 @@
                               <xsl:value-of select="../container[@parent = $id]"/>
                            </td>                                
                            <td class="moreInfo">
+                              <xsl:variable name="didHitCount">
+                                 <xsl:value-of select="count(../../descendant-or-self::xtf:hit)"/>
+                              </xsl:variable>
                               <xsl:if test=" ../../scopecontent | ../../accruals | ../../appraisal |  ../../arrangement | 
                                  ../../bioghist |  ../../accessrestrict[not(child::legalstatus)] | ../../userestrict | 
                                  ../../custodhist | ../../altformavail | ../../originalsloc | ../../did/physdesc[@label='Dimensions note'] | 
@@ -1361,6 +1364,9 @@
                                     <xsl:with-param name="nodes" select="../../scopecontent"/>
                                     <xsl:with-param name="doc.view" select="'dscDescription'"/>
                                  </xsl:call-template>
+                                 <xsl:if test="$didHitCount &gt; 0">
+                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                                 </xsl:if>
                               </xsl:if>
                            </td>                         
                         </tr>
@@ -1410,6 +1416,9 @@
                             <xsl:value-of select="did/container[2]"/>
                          </td>                                
                           <td class="moreInfo">
+                             <xsl:variable name="didHitCount">
+                                <xsl:value-of select="count(descendant-or-self::xtf:hit)"/>
+                             </xsl:variable>
                              <xsl:if test=" child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
                                 child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
                                 child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
@@ -1423,6 +1432,9 @@
                                    <xsl:with-param name="nodes" select="scopecontent"/>
                                    <xsl:with-param name="doc.view" select="'dscDescription'"/>
                                 </xsl:call-template>
+                                <xsl:if test="$didHitCount &gt; 0">
+                                   <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                                </xsl:if>
                              </xsl:if>
                           </td>
                        </tr>  
@@ -1577,7 +1589,8 @@
       <xsl:param name="id"/>
       <xsl:param name="nodes"/>
       <xsl:param name="doc.view"/>
-      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/>&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>
+      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of 
+         select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>
       <a>
          <xsl:attribute name="href">
             <xsl:text>javascript:openWin('</xsl:text><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/><xsl:text>')</xsl:text>

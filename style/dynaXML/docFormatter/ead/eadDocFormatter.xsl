@@ -376,7 +376,30 @@
                      <xsl:with-param name="name" select="'Collection Description'"/>
                      <xsl:with-param name="id" select="'headerlink'"/>
                      <xsl:with-param name="doc.view" select="'collection'"/>
-                     <xsl:with-param name="nodes" select="archdesc/did|archdesc/scopecontent"/>
+                     <xsl:with-param name="nodes" select="archdesc/did|                        
+                        archdesc/accruals|
+                        archdesc/appraisal|
+                        archdesc/arrangement|
+                        archdesc/bioghist|
+                        archdesc/accessrestrict|
+                        archdesc/userestrict|
+                        archdesc/custodhist|
+                        archdesc/altformavail|
+                        archdesc/originalsloc|
+                        archdesc/fileplan|
+                        archdesc/odd|
+                        archdesc/acqinfo|
+                        archdesc/index|
+                        archdesc/accessrestrict|
+                        archdesc/otherfindaid|
+                        archdesc/phystech|
+                        archdesc/processinfo|
+                        archdesc/bibliography|
+                        archdesc/relatedmaterial|
+                        archdesc/separatedmaterial|
+                        archdesc/scopecontent|
+                        archdesc/prefercite|
+                        archdesc/controlaccess"/>
                   </xsl:call-template>
                
 <!--               <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}&amp;doc.view=collection">Collection Description</a>      -->
@@ -389,7 +412,7 @@
                   <xsl:with-param name="name" select="'Contents List'"/>
                   <xsl:with-param name="id" select="'contentsLink'"/>
                   <xsl:with-param name="doc.view" select="'contents'"/>
-                  <xsl:with-param name="nodes" select="archdesc/did/dcs"/>
+                  <xsl:with-param name="nodes" select="archdesc/dsc/child::*"/>
                </xsl:call-template>
 <!--               <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}&amp;doc.view=contents">Contents List</a>-->
             </li>
@@ -416,7 +439,10 @@
                <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
             </xsl:attribute>
             <xsl:value-of select="$name"/>
-         </a>      
+         </a>   
+         <xsl:if test="$hit.count != 0">
+            <span class="hit"> (<xsl:value-of select="$hit.count"/>)</span>
+         </xsl:if>      
    </xsl:template>
    
    <!-- ====================================================================== -->
