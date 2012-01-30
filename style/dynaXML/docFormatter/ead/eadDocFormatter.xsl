@@ -270,7 +270,18 @@
                <tr>
                   <td colspan="3">
                      <div class="eadtitle">
-                        <h1><xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/></h1>
+                        <h1>
+                           <xsl:choose>
+                              <xsl:when test="eadheader/filedesc/titlestmt/titleproper[@type='filing']">
+                                 <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper[not(@type='filing')]"/>      
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
+                              </xsl:otherwise>
+                           </xsl:choose>
+                           
+                           
+                        </h1>
                      </div>
                   </td>
                   <td style="width:300px">
