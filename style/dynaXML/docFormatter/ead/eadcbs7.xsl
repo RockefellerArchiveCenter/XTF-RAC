@@ -1313,6 +1313,7 @@
                                             <div class="containerHeader">&#160;</div>
                                          </td> 
                                          <td><div class="containerHeader">Notes</div></td>
+                                         <td><div class="containerHeader">Bookbag</div></td>
                                       </tr>                                       
                           </xsl:when>                        
                            <xsl:otherwise/>
@@ -1372,7 +1373,7 @@
                               </xsl:if>
                            </td>   
                            <!--2/11/12 WS:  add to bookbag function -->
-                           <td>
+                           <td style="text-align:center;">
                               <span class="addToBag">
                               <xsl:variable name="identifier" select="concat($rootID,'|',$levelID)"/>
                               <xsl:variable name="indexId" select="$identifier"/>
@@ -1432,6 +1433,7 @@
                                <div class="containerHeader">&#160;</div>
                             </td> 
                             <td><div class="containerHeader">Notes</div></td>
+                            <td><div class="containerHeader">Bookbag</div></td>
                          </tr> 
                       </xsl:if>
                       <tr class="{$colorClass}">
@@ -1476,7 +1478,7 @@
                              </xsl:if>
                           </td>
                          <!--2/11/12 WS:  add to bookbag function -->
-                         <td>
+                         <td style="text-align:center;">
                             <span class="addToBag">
                             <xsl:variable name="identifier" select="concat($rootID,'|',@id)"/>
                             <xsl:variable name="indexId" select="$identifier"/>
@@ -1547,8 +1549,8 @@
                     <xsl:apply-templates select="unittitle"/>
                    <xsl:if test="unitdate[not(@type)] or unitdate[@type != 'bulk']">, <xsl:apply-templates select="unitdate[not(@type)] | unitdate[@type != 'bulk']"/></xsl:if>
                 <!--2/11/12 WS:  add to bookbag function -->
-                   &#160;&#160;
-                   <span class="addToBag">
+                   &#160;&#160;&#160;&#160;
+                   <span class="addToBag" style="font-size:.8em!important;">
                    <xsl:variable name="identifier" select="concat($rootID,'|',../@id)"/>
                    <xsl:variable name="indexId" select="$identifier"/>
                    <xsl:choose>
@@ -1571,7 +1573,7 @@
                                     };
                                  </script>
                          <span id="add_{../@id}">
-                            <a href="javascript:add_{../@id}()">Add</a>
+                            <a href="javascript:add_{../@id}()">Add to Bookbag</a>
                          </span>
                       </xsl:otherwise>
                    </xsl:choose>
