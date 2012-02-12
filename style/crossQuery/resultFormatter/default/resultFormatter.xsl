@@ -811,6 +811,7 @@ Item number <xsl:value-of select="$num"/>:
                </td>
                <td class="col4">
                   <!-- Add/remove logic for the session bag (only if session tracking enabled) -->
+                  <span class="addToBag">
                   <xsl:if test="session:isEnabled()">
                      <xsl:choose>
                         <xsl:when test="$smode = 'showBag'">
@@ -865,6 +866,7 @@ Item number <xsl:value-of select="$num"/>:
                         </xsl:otherwise>
                      </xsl:choose>
                   </xsl:if>
+               </span>
                </td>
             </tr>            
             <tr>
