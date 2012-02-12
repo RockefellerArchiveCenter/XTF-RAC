@@ -14,12 +14,31 @@
    
    <xsl:import href="../common/docFormatterCommon.xsl"/>
    <xsl:import href="../../../xtfCommon/xtfCommon.xsl"/>
+   
    <!-- Creates a variable equal to the value of the number in eadid which serves as the base
       for file names for the various components of the frameset.-->
    <xsl:variable name="file">
       <xsl:value-of select="ead/eadheader/eadid"/>
    </xsl:variable>
-   
+   <xsl:variable name="rootID">
+      <xsl:choose>
+         <xsl:when test="/ead/archdesc/did/unitid">
+            <identifier xtf:meta="true" xtf:tokenize="no">
+               <xsl:value-of select="string(/ead/archdesc/did/unitid[1])"/>
+            </identifier>
+         </xsl:when>
+         <xsl:when test="/ead/eadheader/eadid" xtf:tokenize="no">
+            <identifier xtf:meta="true" xtf:tokenize="no">
+               <xsl:value-of select="string(substring-before(/ead/eadheader/eadid[1],'.xml'))"/>
+            </identifier>
+         </xsl:when>
+         <xsl:otherwise>
+            <identifier xtf:meta="true" xtf:tokenize="no">
+               <xsl:value-of select="'unknown'"/>
+            </identifier>
+         </xsl:otherwise>
+      </xsl:choose>
+   </xsl:variable>
    <!--This template creates HTML meta tags that are inserted into the HTML ouput
       for use by web search engines indexing this file.   The content of each
       resulting META tag uses Dublin Core semantics and is drawn from the text of
@@ -1105,6 +1124,7 @@
              <td style="width: 12%;"/>
              <td style="width: 12%"/>
              <td style="width: 18%"/>
+             <td style="width: 8%"/>
           </tr>
        </table>
     </xsl:template>
@@ -1150,6 +1170,7 @@
              <td style="width: 12%;"/>
              <td style="width: 12%"/>
              <td style="width: 18%"/>
+             <td style="width: 8%"/>
           </tr>
        </table>
     </xsl:template>
@@ -1221,14 +1242,14 @@
                    <xsl:when test="@level='subcollection' or @level='subgrp' or @level='series' 
                        or @level='subseries' or @level='collection'or @level='fonds' or 
                        @level='recordgrp' or @level='subfonds' or @level='class' or (@level='otherlevel' and not(child::did/container))">
-                      <tr>
-                           <xsl:attribute name="class">
+                      <tr>                           
+                         <xsl:attribute name="class">
                                <xsl:choose>
                                    <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
                                    <xsl:otherwise>dscSeries</xsl:otherwise>
                                </xsl:choose>    
-                           </xsl:attribute>
-                         <td colspan="5" class="{$clevelMargin}">
+                         </xsl:attribute>
+                         <td colspan="6" class="{$clevelMargin}">
                              <xsl:call-template name="anchor"/>
                              <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
                              <xsl:apply-templates select="did/unittitle" mode="dsc"/>
@@ -1274,7 +1295,7 @@
                            <xsl:when test="child::*[@level][1]/@level='subcollection' or child::*[@level][1]/@level='subgrp' or child::*[@level][1]/@level='subseries' or child::*[@level][1]/@level='subfonds'"/>                        
                            <xsl:when test="child::*[@level][1]/@level='file' or child::*[@level][1]/@level='item' or (child::*[@level][1]/@level='otherlevel'and child::*[@level][1]/child::did/container)">
                                       <tr>
-                                         <td colspan="5" class="{$clevelChildMargin}">
+                                         <td colspan="6" class="{$clevelChildMargin}">
                                             <div class="inventoryTitle">Inventory</div>
                                          </td>
                                       </tr>    
@@ -1300,29 +1321,7 @@
                   <!--Items/Files with multiple formats linked using parent and id attributes -->
                   <!-- Have to put in rules to deal with multiple instances AND nested files -->
                   <xsl:when test="count(child::*/container/@id) &gt; 1">
-                     <xsl:variable name="container" select="string(did/container[1]/@type)"/>
-                     <xsl:variable name="sibContainer" select="string(preceding-sibling::*[1]/did/container[1]/@type)"/>
-                     <!--
-                     <xsl:if test="preceding-sibling::*[1]/@level='file' or preceding-sibling::*[1]/@level='item' or (preceding-sibling::*[1]/@level='otherlevel'and child::did/container)">
-                        <xsl:if test="(preceding-sibling::*[1]/child::*/@level='file' or preceding-sibling::*[1]/child::*/@level='item') or count(preceding-sibling::*[1]/did/container/@id) = 1">
-                              <tr class="containerTypes"> 
-                                 <td class="{$clevelMargin}">
-                                    <div class="containerHeaderTitle"><xsl:text>Title</xsl:text></div>
-                                 </td>
-                                 <td>
-                                    <div class="containerHeader">Format</div>  
-                                 </td>
-                                 <td>
-                                    <div class="containerHeader">Containers</div>  
-                                 </td>
-                                 <td>
-                                    <div class="containerHeader">&#160;</div>
-                                 </td> 
-                                 <td><div class="containerHeader">Notes</div></td>
-                              </tr>
-                        </xsl:if>
-                     </xsl:if>
-                     -->
+                     <xsl:variable name="levelID" select="@id"></xsl:variable>
                      <xsl:for-each select="child::*/container[@id]">                
                         <!-- ADDED 3/14/10: Sorts containers alpha numerically -->
 <!--                        <xsl:sort select="."/>-->
@@ -1331,6 +1330,9 @@
                         
                         <!-- Item lists are printed here -->
                         <tr class="{$colorClass}"> 
+                              <xsl:if test="parent::did/parent::*/@id">
+                                 <xsl:attribute name="id"><xsl:value-of select="parent::did/parent::*/@id"/></xsl:attribute>
+                              </xsl:if>
                            <td class="{$clevelMargin}">
                               <xsl:if test="position()=1">
                                  <xsl:apply-templates select="parent::did" mode="dsc"/>
@@ -1368,6 +1370,35 @@
                                     <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                  </xsl:if>
                               </xsl:if>
+                           </td>   
+                           <!--2/11/12 WS:  add to bookbag function -->
+                           <td>
+                              <xsl:variable name="identifier" select="concat($rootID,'|',$levelID)"/>
+                              <xsl:variable name="indexId" select="$identifier"/>
+                              <xsl:choose>
+                                 <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                                    <span>Added</span>
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <script type="text/javascript">
+                                    add_<xsl:value-of select="@id"/> = function() {
+                                       var span = YAHOO.util.Dom.get('add_<xsl:value-of select="@id"/>');
+                                       span.innerHTML = "Adding...";
+                                       YAHOO.util.Connect.asyncRequest('GET', 
+                                          '<xsl:value-of select="concat($xtfURL, 'search?smode=addToBag;identifier=', $identifier)"/>',
+                                          {  success: function(o) { 
+                                                span.innerHTML = o.responseText;
+                                                ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                             },
+                                             failure: function(o) { span.innerHTML = 'Failed to add!'; }
+                                          }, null);
+                                    };
+                                 </script>
+                                    <span id="add_{@id}">
+                                       <a href="javascript:add_{@id}()">Add</a>
+                                    </span>
+                                 </xsl:otherwise>
+                              </xsl:choose>
                            </td>                         
                         </tr>
                      </xsl:for-each> 
@@ -1379,7 +1410,7 @@
                        <!-- Tests to see if current container type is different from previous container type, if it is a new row with container type headings is outout -->
                       <xsl:if test="not(preceding-sibling::*) and parent::dsc">
                          <tr>
-                            <td colspan="5" class="{$clevelMargin}">
+                            <td colspan="6" class="{$clevelMargin}">
                                <div class="inventoryTitle">Inventory</div>
                             </td>
                          </tr>  
@@ -1399,7 +1430,10 @@
                             <td><div class="containerHeader">Notes</div></td>
                          </tr> 
                       </xsl:if>
-                      <tr class="{$colorClass}"> 
+                      <tr class="{$colorClass}">
+                         <xsl:if test="@id">
+                            <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
+                         </xsl:if>           
                           <td class="{$clevelMargin}">
                              <xsl:apply-templates select="did" mode="dsc"/>  
                           </td>
@@ -1408,7 +1442,7 @@
                          </td>
                            <!--7/16/11 WS: Adjusted Containers -->    
                          <td class="container">
-                            <xsl:value-of select="did/container[1]/@type"/>&#160;
+                            <xsl:value-of select="descendant-or-self::*/@type"/>&#160;
                             <xsl:value-of select="did/container[1]"/>
                          </td>
                          <td class="container">
@@ -1437,11 +1471,40 @@
                                 </xsl:if>
                              </xsl:if>
                           </td>
-                       </tr>  
+                         <!--2/11/12 WS:  add to bookbag function -->
+                         <td>
+                            <xsl:variable name="identifier" select="concat($rootID,'|',@id)"/>
+                            <xsl:variable name="indexId" select="$identifier"/>
+                            <xsl:choose>
+                               <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                                  <span>Added</span>
+                               </xsl:when>
+                               <xsl:otherwise>
+                                  <script type="text/javascript">
+                                    add_<xsl:value-of select="@id"/> = function() {
+                                       var span = YAHOO.util.Dom.get('add_<xsl:value-of select="@id"/>');
+                                       span.innerHTML = "Adding...";
+                                       YAHOO.util.Connect.asyncRequest('GET', 
+                                          '<xsl:value-of select="concat($xtfURL, 'search?smode=addToBag;identifier=', $identifier)"/>',
+                                          {  success: function(o) { 
+                                                span.innerHTML = o.responseText;
+                                                ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                             },
+                                             failure: function(o) { span.innerHTML = 'Failed to add!'; }
+                                          }, null);
+                                    };
+                                 </script>
+                                  <span id="add_{@id}">
+                                     <a href="javascript:add_{@id}()">Add</a>
+                                  </span>
+                               </xsl:otherwise>
+                            </xsl:choose>
+                         </td> 
+                      </tr>  
                    </xsl:when>
                    <xsl:otherwise>
                        <tr> 
-                           <td class="{$clevelMargin}" colspan="5">
+                           <td class="{$clevelMargin}" colspan="6">
                                <xsl:apply-templates select="did" mode="dsc"/>
                                <xsl:apply-templates select="*[not(self::did) and 
                                    not(self::c) and not(self::c02) and not(self::c03) and
@@ -1475,6 +1538,36 @@
                     </xsl:if>
                     <xsl:apply-templates select="unittitle"/>
                    <xsl:if test="unitdate[not(@type)] or unitdate[@type != 'bulk']">, <xsl:apply-templates select="unitdate[not(@type)] | unitdate[@type != 'bulk']"/></xsl:if>
+                <!--2/11/12 WS:  add to bookbag function -->
+                   &#160;&#160;
+                   <span class="addToBag" style="font-weight:normal !important;">
+                   <xsl:variable name="identifier" select="concat($rootID,'|',../@id)"/>
+                   <xsl:variable name="indexId" select="$identifier"/>
+                   <xsl:choose>
+                      <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                         <span>Added</span>
+                      </xsl:when>
+                      <xsl:otherwise>
+                         <script type="text/javascript">
+                                    add_<xsl:value-of select="../@id"/> = function() {
+                                       var span = YAHOO.util.Dom.get('add_<xsl:value-of select="../@id"/>');
+                                       span.innerHTML = "Adding...";
+                                       YAHOO.util.Connect.asyncRequest('GET', 
+                                          '<xsl:value-of select="concat($xtfURL, 'search?smode=addToBag;identifier=', $identifier)"/>',
+                                          {  success: function(o) { 
+                                                span.innerHTML = o.responseText;
+                                                ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                             },
+                                             failure: function(o) { span.innerHTML = 'Failed to add!'; }
+                                          }, null);
+                                    };
+                                 </script>
+                         <span id="add_{../@id}">
+                            <a href="javascript:add_{../@id}()">Add</a>
+                         </span>
+                      </xsl:otherwise>
+                   </xsl:choose>
+                   </span>
                 </div>
             </xsl:when>
             <!--Otherwise render the text in its normal font.-->
@@ -1549,6 +1642,7 @@
          </body>
       </html>
    </xsl:template>
+   <xsl:template match="xtf:meta"/>
    <xsl:template match="*" mode="moreInfo">
       <div>
          <xsl:apply-templates select="did" mode="dsc"/>

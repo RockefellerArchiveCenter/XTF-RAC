@@ -45,6 +45,8 @@
    <!-- ====================================================================== -->
    
    <xsl:import href="../../../xtfCommon/xtfCommon.xsl"/>
+   <!-- 2/6/12 WS: Added for bookbag functionality -->
+   <xsl:import href="../../../crossQuery/queryParser/common/queryParserCommon.xsl"/>
    
    <!-- ====================================================================== -->
    <!-- Global Keys                                                            -->
@@ -63,6 +65,8 @@
    <xsl:param name="root.path"/>
    <xsl:param name="xtfURL" select="$root.path"/>
    <xsl:param name="dynaxmlPath" select="if (matches($servlet.path, 'org.cdlib.xtf.crossQuery.CrossQuery')) then 'org.cdlib.xtf.dynaXML.DynaXML' else 'view'"/>
+   <xsl:param name="serverURL" select="replace($xtfURL, '(http://.+)[:/].+', '$1/')"/>
+   <xsl:param name="crossqueryPath" select="if (matches($servlet.path, 'org.cdlib.xtf.dynaXML.DynaXML')) then 'org.cdlib.xtf.crossQuery.CrossQuery' else 'search'"/>
    
    <xsl:param name="docId"/>
    <xsl:param name="docPath" select="replace($docId, '[^/]+\.xml$', '')"/>
@@ -238,10 +242,20 @@
          <body>      
             <div class="dscDescription">
                <h4>Citation</h4>
-                  <p><xsl:value-of select="/*/*:meta/*:creator[1]"/>. 
+               <!-- 1/11/12 WS: changed for RA -->
+               <p>
+                  Rockefeller Archive Center. <xsl:value-of select="/*/*:meta/*:title[1]"/>.
+                  <xsl:value-of select="/*/*:meta/*:date[1]"/>.<br/>
+                  [<xsl:value-of select="concat($xtfURL,$dynaxmlPath,'?docId=',$docId)"/>]
+               </p>
+               
+               <!--   <p><xsl:value-of select="/*/*:meta/*:creator[1]"/>. 
                      <xsl:value-of select="/*/*:meta/*:title[1]"/>. 
                      <xsl:value-of select="/*/*:meta/*:date[1]"/>.<br/>
                      [<xsl:value-of select="concat($xtfURL,$dynaxmlPath,'?docId=',$docId)"/>]</p>
+                     
+               -->
+               
                   <div class="closeWindow">
                      <a>
                         <xsl:attribute name="href">javascript://</xsl:attribute>

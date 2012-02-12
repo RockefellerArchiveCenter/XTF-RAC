@@ -52,6 +52,7 @@
    <!-- ====================================================================== -->
    
    <xsl:import href="../common/docFormatterCommon.xsl"/>
+   
 <!--   <xsl:import href="at_eadToPDF.xsl"/>-->
    <!-- ====================================================================== -->
    <!-- Output Format                                                          -->
@@ -195,7 +196,41 @@
          <html xml:lang="en" lang="en">
             <head>
                <link rel="stylesheet" type="text/css" href="{$css.path}ead.css"/>
+               <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
+               <script src="script/yui/connection-min.js" type="text/javascript"/> 
+               <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
                <xsl:copy-of select="$brand.links"/>
+               <!-- 2/12/12 WS: Added jquery to scroll to anchors, use offset value to make sure anchor is not hidden under header -->
+               <script type="text/javascript">
+                  <![CDATA[
+                  $(function(){
+                  
+                      $('a[href*=#]').click(function() {
+                  
+                      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+                          && location.hostname == this.hostname) {
+                  
+                              var $target = $(this.hash);
+                  
+                              $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+                  
+                              if ($target.length) {
+                  
+                                  var targetOffset = $target.offset().top - 300;
+                  
+                                  $('html,body').animate({scrollTop: targetOffset}, 10);
+                  
+                                  return false;
+                  
+                              }
+                  
+                          }
+                  
+                      });
+                  
+                  });
+                  ]]>
+                  </script>
                <title>
                   <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
                   <xsl:text>  </xsl:text>
@@ -250,9 +285,11 @@
                         <a href="{session:getData('queryURL')}">
                            <xsl:text>SEARCH RESULTS</xsl:text>
                         </a> | 
+                        <!--
                         <a href="{session:getData('queryURL')}">
                            <xsl:text>MODIFY SEARCH</xsl:text>
-                        </a> | 
+                        </a> |
+                        -->                        
                      </xsl:if>
                      <a href="{$xtfURL}/search">
                         <xsl:text>NEW SEARCH</xsl:text>
@@ -292,10 +329,10 @@
                         <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
                         <input type="submit" value="Search this Collection"/>
                      </form>               
-                     <!--   <xsl:variable name="bag" select="session:getData('bag')"/>
-                        <a href="/xtf/search?smode=showBag">Bookbag</a>
-                        (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
-                        | -->
+                      <xsl:variable name="bag" select="session:getData('bag')"/>
+                     <a href="/xtf/search?smode=showBag">Bookbag</a>
+<!--                        (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)-->
+                        | 
                      <a>
                         <xsl:attribute name="href">javascript://</xsl:attribute>
                         <xsl:attribute name="onclick">
@@ -398,8 +435,7 @@
                         archdesc/relatedmaterial|
                         archdesc/separatedmaterial|
                         archdesc/scopecontent|
-                        archdesc/prefercite|
-                        archdesc/controlaccess"/>
+                        archdesc/prefercite"/>
                   </xsl:call-template>
                
 <!--               <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}&amp;doc.view=collection">Collection Description</a>      -->
@@ -563,17 +599,26 @@
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Overview'"/>
                                  <xsl:with-param name="id" select="'headerlink'"/>
-                                 <xsl:with-param name="nodes" select="archdesc/did/child::*[not(name() = 'origination') and not(name() = 'repository')]|archdesc/scopecontent"/>
+                                 <xsl:with-param name="nodes" select="archdesc/did|archdesc/scopecontent"/>
                               </xsl:call-template>
                            </xsl:if>
                            <xsl:if test="archdesc/did/head">
                               <xsl:apply-templates select="archdesc/did/head" mode="tocLink"/>
                            </xsl:if>
-                           <xsl:if test="archdesc/userestrict/head   or archdesc/accessrestrict/head   or archdesc/*/userestrict/head   or archdesc/*/accessrestrict/head">
+                           <xsl:if test="archdesc/accessrestrict or archdesc/userestrict or 
+                              archdesc/phystech or archdesc/otherfindaid or  archdesc/relatedmaterial or 
+                              archdesc/altformavail or archdesc/originalsloc or archdesc/bibliography">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Access and Use'"/>
                                  <xsl:with-param name="id" select="'restrictlink'"/>
-                                 <xsl:with-param name="nodes" select="archdesc/relatedmaterial|archdesc/separatedmaterial|archdesc/accessrestrict|archdesc/userestrict|archdesc/phystech|archdesc/prefercite|archdesc/otherfindaid|archdesc/originalsloc|archdesc/altformavail"/>
+                                 <xsl:with-param name="nodes" select="archdesc/accessrestrict|
+                                    archdesc/userestrict|
+                                    archdesc/phystech|
+                                    archdesc/otherfindaid|
+                                    archdesc/relatedmaterial|
+                                    archdesc/altformavail|
+                                    archdesc/originalsloc|
+                                    archdesc/bibliography"/>
                               </xsl:call-template>                        
                            </xsl:if>
                            <xsl:if test="archdesc/arrangement/head">
@@ -587,6 +632,7 @@
                            <xsl:if test="archdesc/bioghist/head">                        
                               <xsl:apply-templates select="archdesc/bioghist/head" mode="tocLink"/>
                            </xsl:if> 
+                           <!--
                            <xsl:if test="archdesc/controlaccess/head">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Controlled Access Headings'"/>
@@ -594,13 +640,24 @@
                                  <xsl:with-param name="nodes" select="archdesc/controlaccess"/>
                               </xsl:call-template>
                            </xsl:if>
-                           <xsl:if test="archdesc/acqinfo/* or  archdesc/processinfo/* or archdesc/prefercite/* or 
-                              archdesc/custodialhist/* or archdesc/processinfo/* or archdesc/appraisal/* or archdesc/accruals/* or archdesc/*/acqinfo/* or archdesc/*/processinfo/* or archdesc/*/prefercite/* or 
-                              archdesc/*/custodialhist/* or archdesc/*/procinfo/* or archdesc/*/appraisal/* or archdesc/*/accruals/*">
+                           -->
+                           <xsl:if test="archdesc/revisiondesc or archdesc/acqinfo or
+                              archdesc/fileplan or archdesc/custodialhist or archdesc/accruals or
+                              archdesc/processinfo or archdesc/appraisal or
+                              archdesc/separatedmaterial or archdesc/altformavail or archdesc/accruals">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Administrative Information'"/>
                                  <xsl:with-param name="id" select="'adminlink'"/>
-                                 <xsl:with-param name="nodes" select="archdesc/acqinfo|archdesc/processinfo|archdesc/prefercite|archdesc/custodialhist|archdesc/processinfo|archdesc/appraisal|archdesc/accruals|archdesc/*/acqinfo|archdesc/*/processinfo|archdesc/*/prefercite|archdesc/*/custodialhist|archdesc/*/procinfo|archdesc/*/appraisal|archdesc/*/accruals"/>
+                                 <xsl:with-param name="nodes" select="archdesc/revisiondesc|
+                                    archdesc/acqinfo|
+                                    archdesc/fileplan|
+                                    archdesc/custodialhist|
+                                    archdesc/accruals|
+                                    archdesc/processinfo|
+                                    archdesc/appraisal|
+                                    archdesc/separatedmaterial|
+                                    archdesc/altformavail|
+                                    archdesc/accruals"/>
                               </xsl:call-template>
                            </xsl:if>
                            <xsl:if test="archdesc/did/physdesc[@label = 'General Physical Description note']">

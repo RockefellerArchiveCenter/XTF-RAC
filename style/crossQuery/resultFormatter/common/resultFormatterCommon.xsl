@@ -51,6 +51,8 @@
    <!-- ====================================================================== -->
    <!-- Parameters                                                             -->
    <!-- ====================================================================== -->
+   <!-- 2/6/12 WS: Added for using sub-documents -->
+<!--   <xsl:param name="chunk.id"/>  -->
    
    <!-- Keyword Search (text and metadata) -->
    <xsl:param name="keyword"/>
@@ -610,7 +612,8 @@
    <!-- ====================================================================== -->
    
    <xsl:template name="dynaxml.url">
-      
+      <!-- 2/6/12 WS: added for handling sub-documents -->
+      <xsl:param name="chunk.id"/>
       <xsl:param name="path"/>
       
       <xsl:variable name="docId">
@@ -636,7 +639,24 @@
       </xsl:variable>
 
       <!-- Must protect value of $docId in the URL, in case it contains special chars. -->
-      <xsl:value-of select="concat($dynaxmlPath, '?docId=', editURL:protectValue($docId), ';query=', replace($query, ';', '%26'))"/>
+      <!-- NOTE: Attempting to use hashtag when result is file 
+         http://localhost:8080/xtf////view?docId=ead/FA246/FA246.xml;chunk.id=contentsLink;
+         brand=default;query=rockefeller&doc.view=contents#ref3485
+         hastag jumps to right place, but is hidden by the header, need to work on css. sniff
+      -->
+<!--      <xsl:value-of select="concat($dynaxmlPath, '?docId=', editURL:protectValue($docId), ';query=', replace($query, ';', '%26'))"/>-->
+      
+      <xsl:choose>
+         <xsl:when test="$chunk.id != ''">      
+            <xsl:value-of select="concat($dynaxmlPath, '?docId=', editURL:protectValue($docId), ';query=', replace($query, ';', '%26'),';chunk.id=', $chunk.id)"/>      
+         </xsl:when>
+         <xsl:otherwise>
+            <xsl:value-of select="concat($dynaxmlPath, '?docId=', editURL:protectValue($docId), ';query=', replace($query, ';', '%26'))"/>            
+         </xsl:otherwise>
+      </xsl:choose>
+
+      
+
       <!-- -join & -prox are mutually exclusive -->
       <xsl:choose>
          <xsl:when test="$text-prox">

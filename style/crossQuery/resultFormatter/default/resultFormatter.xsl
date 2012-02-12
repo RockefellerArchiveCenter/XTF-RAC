@@ -53,6 +53,7 @@
    <xsl:include href="searchForms.xsl"/>
    
    <xsl:param name="browse-collections"/> 
+
    <!-- ====================================================================== -->
    <!-- Output                                                                 -->
    <!-- ====================================================================== -->
@@ -72,7 +73,7 @@
    <xsl:param name="icon.path" select="concat($xtfURL, 'icons/default/')"/>
    <xsl:param name="docHits" select="/crossQueryResult/docHit"/>
    <xsl:param name="email"/>
-   
+  
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
@@ -724,13 +725,31 @@ Item number <xsl:value-of select="$num"/>:
    <!-- ====================================================================== -->
    
    <xsl:template match="docHit" exclude-result-prefixes="#all">
-      
+      <xsl:variable name="chunk.id" select="@subDocument"/>         
+      <xsl:variable name="level" select="meta/level"/>
       <xsl:variable name="path" select="@path"/>
-      
       <xsl:variable name="identifier" select="meta/identifier[1]"/>
       <xsl:variable name="quotedID" select="concat('&quot;', $identifier, '&quot;')"/>
       <xsl:variable name="indexId" select="replace($identifier, '.*/', '')"/>
-      
+      <!-- 1/12/12 WS: Added docPath variable to enable scrolling to sub-document hits -->
+      <xsl:variable name="docPath">
+         <xsl:variable name="uri">
+            <xsl:call-template name="dynaxml.url">
+               <xsl:with-param name="path" select="$path"/>
+            </xsl:call-template>
+         </xsl:variable>
+         <xsl:choose>
+            <xsl:when test="$chunk.id != ''">
+               <xsl:value-of select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+<!-- Link used to get sub-document out of context               
+   <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
+-->
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="$uri"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
       <!-- scrolling anchor -->
       <xsl:variable name="anchor">
          <xsl:choose>
@@ -766,22 +785,18 @@ Item number <xsl:value-of select="$num"/>:
                <td class="col3">
                   <a>
                      <xsl:attribute name="href">
-                        <xsl:choose>
-                           <xsl:when test="matches(meta/display, 'dynaxml')">
-                              <xsl:call-template name="dynaxml.url">
-                                 <xsl:with-param name="path" select="$path"/>
-                              </xsl:call-template>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <xsl:call-template name="rawDisplay.url">
-                                 <xsl:with-param name="path" select="$path"/>
-                              </xsl:call-template>
-                           </xsl:otherwise>
-                        </xsl:choose>
+                        <xsl:value-of select="$docPath"/>
                      </xsl:attribute>
                      <xsl:choose>
                         <xsl:when test="meta/title">
-                           <xsl:apply-templates select="meta/title[1]"/>
+                           <xsl:choose>
+                              <xsl:when test="count(meta/title) &gt; 1">
+                                 <xsl:apply-templates select="meta/title[2]"/>      
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <xsl:apply-templates select="meta/title[1]"/>
+                              </xsl:otherwise>
+                           </xsl:choose>
                         </xsl:when>
                         <xsl:otherwise>none</xsl:otherwise>
                      </xsl:choose>
@@ -966,8 +981,7 @@ Item number <xsl:value-of select="$num"/>:
                      <a href="javascript:getMoreLike_{@rank}()">Find</a>
                   </span>
                </td>
-            </tr>
-            
+            </tr> 
          </table>
       </div>
       
