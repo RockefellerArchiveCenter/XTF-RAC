@@ -473,9 +473,14 @@
       <xsl:choose>
          <xsl:when test="@level">
             <xsl:choose>
-               <xsl:when test="did/origination[starts-with(@label, 'creator')]">
+               <xsl:when test="did/origination/child::*[1][starts-with(@role, 'Author')]">
                   <creator xtf:meta="true">
-                     <xsl:value-of select="normalize-space(string(did/origination[@label, 'creator'][1]))"/>
+                     <xsl:value-of select="normalize-space(string(did/origination/child::*[1][starts-with(@role, 'Author')][1]))"/>
+                  </creator>
+               </xsl:when>
+               <xsl:when test="did/origination/child::*[1][starts-with(@role, 'Contributor')]">
+                  <creator xtf:meta="true">
+                     <xsl:value-of select="normalize-space(string(did/origination/child::*[1][@role, 'Contributor'][1]))"/>
                   </creator>
                </xsl:when>
                <xsl:otherwise>
@@ -485,22 +490,24 @@
                </xsl:otherwise>
             </xsl:choose>
          </xsl:when>
-         <xsl:when test="/ead/archdesc/did/origination[starts-with(@label, 'creator')]">
-            <creator xtf:meta="true">
-               <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination[@label, 'creator'][1]))"/>
-            </creator>
-         </xsl:when>
-         <!-- 9/26/11 WS: Commented out name from eadheader
-            <xsl:when test="/ead/eadheader/filedesc/titlestmt/author">
-            <creator xtf:meta="true">
-               <xsl:value-of select="string(/ead/eadheader/filedesc/titlestmt/author[1])"/>
-            </creator>
-         </xsl:when>
-         -->
          <xsl:otherwise>
-            <creator xtf:meta="true">
-               <xsl:value-of select="'unknown'"/>
-            </creator>
+            <xsl:choose>
+               <xsl:when test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'Author')]">
+                  <creator xtf:meta="true">
+                     <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'Author')][1]))"/>
+                  </creator>
+               </xsl:when>
+               <xsl:when test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'Contributor')]">
+                  <creator xtf:meta="true">
+                     <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination/child::*[1][@role, 'Contributor'][1]))"/>
+                  </creator>
+               </xsl:when>
+               <xsl:otherwise>
+                  <creator xtf:meta="true">
+                     <xsl:value-of select="'unknown'"/>
+                  </creator>
+               </xsl:otherwise>
+            </xsl:choose>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
