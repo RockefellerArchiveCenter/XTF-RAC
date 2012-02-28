@@ -805,7 +805,7 @@
    <xsl:template match="langmaterial">
       <h4>Language</h4>
       <xsl:if test="language[@langcode]">
-         <p><xsl:value-of select="@langcode"/></p>
+         <p><xsl:value-of select="language/@langcode"/></p>
       </xsl:if>
       <xsl:apply-templates/>
    </xsl:template>
