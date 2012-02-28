@@ -609,6 +609,15 @@ Item number <xsl:value-of select="$num"/>:
                         <xsl:call-template name="alphaList">
                            <xsl:with-param name="alphaList" select="$alphaList"/>
                         </xsl:call-template>
+                        <xsl:choose>
+                           <xsl:when test="$browse-title">
+                             &#160;| <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;sort=title">BROWSE ALL</a>
+                           </xsl:when>
+                           <xsl:when test="$browse-creator">
+                              &#160;| <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;sort=creator">BROWSE ALL</a>
+                           </xsl:when>
+                        </xsl:choose>
+
                      </td>
                   </tr>
                   
@@ -657,6 +666,9 @@ Item number <xsl:value-of select="$num"/>:
          <p>
             <!--<a href="{$xtfURL}{$crossqueryPath}?browse-collection=first;sort=title">Collection</a> |-->
             <xsl:choose>
+               <xsl:when test="$sort='title'">
+                  <span style="font-weight:bold; color:#666;">Collection Title</span>
+               </xsl:when>
                <xsl:when test="$browse-title">
                   <span style="font-weight:bold; color:#666;">Collection Title</span>
                </xsl:when>
@@ -666,6 +678,9 @@ Item number <xsl:value-of select="$num"/>:
             </xsl:choose>
              | 
             <xsl:choose>
+               <xsl:when test="$sort='creator'">
+                  <span style="font-weight:bold; color:#666;">Creator</span>  
+               </xsl:when>
                <xsl:when test="$browse-creator">
                   <span style="font-weight:bold; color:#666;">Creator</span>  
                </xsl:when>
@@ -676,7 +691,17 @@ Item number <xsl:value-of select="$num"/>:
              | 
             <xsl:choose>
                <xsl:when test="$browse-all">
-                  <span style="font-weight:bold; color:#666;">Subject</span>
+                  <xsl:choose>
+                     <xsl:when test="$sort='creator'">
+                        <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a>
+                     </xsl:when>
+                     <xsl:when test="$sort='title'">
+                        <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a>  
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <span style="font-weight:bold; color:#666;">Subject</span>                        
+                     </xsl:otherwise>
+                  </xsl:choose>
                </xsl:when>
                <xsl:otherwise>
                   <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a>
