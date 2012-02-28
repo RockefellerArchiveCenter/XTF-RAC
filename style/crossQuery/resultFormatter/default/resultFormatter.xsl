@@ -664,86 +664,38 @@ Item number <xsl:value-of select="$num"/>:
    
    <xsl:template name="browseLinks">
          <p>
-            <!--<a href="{$xtfURL}{$crossqueryPath}?browse-collection=first;sort=title">Collection</a> |-->
             <xsl:choose>
-               <xsl:when test="$sort='title'">
-                  <span style="font-weight:bold; color:#666;">Collection Title</span>
-               </xsl:when>
                <xsl:when test="$browse-title">
                   <span style="font-weight:bold; color:#666;">Collection Title</span>
+                  | 
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title">Creator</a>
+                  | 
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Browse All</a>  
+               </xsl:when>
+               <xsl:when test="$browse-creator">
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Collection Title</a>
+                  | 
+                  <span style="font-weight:bold; color:#666;">Creator</span>
+                  | 
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a>  
+               </xsl:when>
+               <xsl:when test="$browse-all">
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Collection Title</a>
+                  | 
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title">Creator</a>
+                  | 
+                  <span style="font-weight:bold; color:#666;">Browse All</span>
                </xsl:when>
                <xsl:otherwise>
                   <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Collection Title</a>
-               </xsl:otherwise>
-            </xsl:choose>
-             | 
-            <xsl:choose>
-               <xsl:when test="$sort='creator'">
-                  <span style="font-weight:bold; color:#666;">Creator</span>  
-               </xsl:when>
-               <xsl:when test="$browse-creator">
-                  <span style="font-weight:bold; color:#666;">Creator</span>  
-               </xsl:when>
-               <xsl:otherwise>
+                  | 
                   <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title">Creator</a>
+                  | 
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Browse All</a>                    
                </xsl:otherwise>
-            </xsl:choose>
-             | 
-            <xsl:choose>
-               <xsl:when test="$browse-all">
-                  <xsl:choose>
-                     <xsl:when test="$sort='creator'">
-                        <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a>
-                     </xsl:when>
-                     <xsl:when test="$sort='title'">
-                        <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a>  
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <span style="font-weight:bold; color:#666;">Subject</span>                        
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </xsl:when>
-               <xsl:otherwise>
-                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a>
-               </xsl:otherwise>
-            </xsl:choose>
-         </p>
-<!--            <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes">Facet-->
-           <!-- <li><a href="{$xtfURL}{$crossqueryPath}?browse-collection=first;sort=collection">Collection</a></li>
-            <li><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=creator">Creator</a></li>
-            <li>Genre/Form</li>
-            <li><a href="{$xtfURL}{$crossqueryPath}?browse-subject=first;sort=creator">Subject - Topical Term</a></li>
-            <li><a href="{$xtfURL}{$crossqueryPath}?browse-subjectname=first;sort=creator">Subject - Personal, Family, or Corporate Name</a></li>
-            <li><a href="{$xtfURL}{$crossqueryPath}?browse-geogname=first;sort=creator">Subject - Geographic Name</a></li>-->
-      <!-- 9/21/11 WS for RA: Changed browse facet
-         <xsl:choose>
-         <xsl:when test="$browse-all">
-            <xsl:text>Facet | </xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Title</a>
-            <xsl:text> | </xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=creator">Author</a>
-         </xsl:when>
-         <xsl:when test="$browse-title">
-            <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes">Facet</a>
-            <xsl:text> | Title | </xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=creator">Author</a>
-         </xsl:when>
-         <xsl:when test="$browse-creator">
-            <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes">Facet</a>
-            <xsl:text> | </xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Title</a>
-            <xsl:text>  | Author</xsl:text>
-         </xsl:when>
-         <xsl:otherwise>
-            <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes">Facet</a>
-            <xsl:text> | </xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Title</a>
-            <xsl:text> | </xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=creator">Author</a>
-         </xsl:otherwise>
-      </xsl:choose>
-      -->
-   </xsl:template>
+            </xsl:choose>  
+             </p>
+ </xsl:template>
    
    <!-- ====================================================================== -->
    <!-- Document Hit Template                                                  -->
