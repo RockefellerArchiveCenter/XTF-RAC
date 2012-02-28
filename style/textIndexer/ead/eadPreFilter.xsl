@@ -219,7 +219,7 @@
       <xsl:copy>
          <xsl:copy-of select="@*"/>
          <xsl:attribute name="xtf:sectionType" select="concat('head ', @type)"/>
-         <xsl:attribute name="xtf:wordBoost" select="100.0"/>
+         <xsl:attribute name="xtf:wordBoost" select="95.0"/>
          <xsl:apply-templates/>
       </xsl:copy>
    </xsl:template>
@@ -235,6 +235,7 @@
    <xsl:template match="titleproper[parent::titlestmt]">
       <xsl:copy>
          <xsl:copy-of select="@*"/>
+         <xsl:attribute name="xtf:sectionType" select="'titleproper'"/>
          <xsl:attribute name="xtf:wordBoost" select="100.0"/>
          <xsl:apply-templates/>
       </xsl:copy>
