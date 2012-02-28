@@ -475,12 +475,12 @@
             <xsl:choose>
                <xsl:when test="did/origination/child::*[1][starts-with(@role, 'Author')]">
                   <creator xtf:meta="true">
-                     <xsl:value-of select="normalize-space(string(did/origination/child::*[1][starts-with(@role, 'Author')][1]))"/>
+                     <xsl:value-of select="normalize-space(string(did/origination[child::*[starts-with(@role, 'Author')]][1]/child::*))"/>
                   </creator>
                </xsl:when>
                <xsl:when test="did/origination/child::*[1][starts-with(@role, 'Contributor')]">
                   <creator xtf:meta="true">
-                     <xsl:value-of select="normalize-space(string(did/origination/child::*[1][@role, 'Contributor'][1]))"/>
+                     <xsl:value-of select="normalize-space(string(did/origination[child::*[starts-with(@role, 'Contributor')]][1]/child::*))"/>
                   </creator>
                </xsl:when>
                <xsl:otherwise>
@@ -494,12 +494,12 @@
             <xsl:choose>
                <xsl:when test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'Author')]">
                   <creator xtf:meta="true">
-                     <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'Author')][1]))"/>
+                     <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination[child::*[starts-with(@role, 'Author')]][1]/child::*))"/>
                   </creator>
                </xsl:when>
                <xsl:when test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'Contributor')]">
                   <creator xtf:meta="true">
-                     <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination/child::*[1][@role, 'Contributor'][1]))"/>
+                     <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination[child::*[starts-with(@role, 'Contributor')]][1]/child::*))"/>
                   </creator>
                </xsl:when>
                <xsl:otherwise>
