@@ -342,7 +342,9 @@
                         <xsl:text>Citation</xsl:text>
                      </a>
                      <xsl:text> | </xsl:text>
-                     <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>
+                     <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
+                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf">Print View</a>
+<!--                     <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>-->
                   </td>
                </tr>
                <tr>
