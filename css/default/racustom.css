@@ -3,7 +3,7 @@ body {
    font-family: Arial, sans-serif;
    /* 9/22/11 WS: Changed background color from silver to white for RA a */
    background-color: #fff;
-   font-size: small;
+   font-size: .85em;
    color: #333;
    /* 9/22/11 WS: Changed for RA, added margin and padding */
    margin:0;
