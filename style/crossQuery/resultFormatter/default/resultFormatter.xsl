@@ -775,6 +775,16 @@ Item number <xsl:value-of select="$num"/>:
                               </xsl:otherwise>
                            </xsl:choose>
                         </xsl:when>
+                        <xsl:when test="meta/subtitle">
+                           <xsl:choose>
+                              <xsl:when test="count(meta/subtitle) &gt; 1">
+                                 <xsl:apply-templates select="meta/subtitle[2]"/>      
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <xsl:apply-templates select="meta/subtitle[1]"/>
+                              </xsl:otherwise>
+                           </xsl:choose>
+                        </xsl:when>
                         <xsl:otherwise>none</xsl:otherwise>
                      </xsl:choose>
                   </a>
