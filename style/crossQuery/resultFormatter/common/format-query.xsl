@@ -140,7 +140,15 @@
             </b>
             <xsl:text>&#160;</xsl:text>
             <!-- query removal widget -->
-            <a href="{$xtfURL}{$crossqueryPath}?{editURL:clean($finalString)}">[X]</a>
+            <!-- 3/6/12 WS: Added choose statement to return users to browse all option if last term is removed-->
+            <xsl:choose>
+               <xsl:when test="following-sibling::*">
+                  <a href="{$xtfURL}{$crossqueryPath}?{editURL:clean($finalString)}">[X]</a>                  
+               </xsl:when>
+               <xsl:otherwise>
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes?{editURL:clean($finalString)}">[X]</a>
+               </xsl:otherwise>
+            </xsl:choose>
             <br/>
          </xsl:when>
          
