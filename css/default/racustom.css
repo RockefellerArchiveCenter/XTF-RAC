@@ -105,7 +105,8 @@ a.hit {
    color: #FD8239 !important;
    font-weight: bold;
 }
-
+.docHit {width:95%;}
+.docHit table{width:auto;}
 
 /* Formats tabs for finding aids*/
 ul.tabs {display:block; list-style: none; padding:0; margin-bottom:6px;}

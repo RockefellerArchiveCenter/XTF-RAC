@@ -12,7 +12,9 @@ coverage
 rights
 set
 year
+titleproper
 subjectname
 geogname
 source
+subtitle
 description

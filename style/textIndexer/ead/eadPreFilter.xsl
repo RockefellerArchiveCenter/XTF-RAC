@@ -392,20 +392,30 @@
             <xsl:variable name="collTitle" select="string(/ead/eadheader/filedesc/titlestmt/titleproper[1])"/>
             <xsl:choose>
                <xsl:when test="did/unittitle">
-                  <title xtf:meta="true">
+                  <subtitle xtf:meta="true">
                      <xsl:value-of select="concat($collTitle,'. ',$seriesTitle)"/>
-                  </title>
+                  </subtitle>
                </xsl:when>
                <xsl:otherwise>
-                  <title xtf:meta="true">
+                  <subtitle xtf:meta="true">
                      <xsl:value-of select="'unknown'"/>
-                  </title>
+                  </subtitle>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:when>
          <xsl:when test="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']">
             <xsl:variable name="titleproper" select="string(/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing'])"/>
             <xsl:variable name="subtitle" select="string(/ead/eadheader/filedesc/titlestmt/subtitle)"/>
+            <titleproper xtf:meta="true">
+               <xsl:value-of select="$titleproper"/>
+               <xsl:if test="$subtitle">
+                  <!-- Put a colon between main and subtitle, if none present already -->
+                  <xsl:if test="not(matches($titleproper, ':\s*$') or matches($subtitle, '^\s*:'))">
+                     <xsl:text>: </xsl:text>
+                  </xsl:if>  
+                  <xsl:value-of select="$subtitle"/>
+               </xsl:if>
+            </titleproper>
             <title xtf:meta="true">
                <xsl:value-of select="$titleproper"/>
                <xsl:if test="$subtitle">
@@ -432,6 +442,16 @@
          <xsl:when test="/ead/eadheader/filedesc/titlestmt/titleproper">
             <xsl:variable name="titleproper" select="string(/ead/eadheader/filedesc/titlestmt/titleproper)"/>
             <xsl:variable name="subtitle" select="string(/ead/eadheader/filedesc/titlestmt/subtitle)"/>
+            <titleproper xtf:meta="true">
+               <xsl:value-of select="$titleproper"/>
+               <xsl:if test="$subtitle">
+                  <!-- Put a colon between main and subtitle, if none present already -->
+                  <xsl:if test="not(matches($titleproper, ':\s*$') or matches($subtitle, '^\s*:'))">
+                     <xsl:text>: </xsl:text>
+                  </xsl:if>  
+                  <xsl:value-of select="$subtitle"/>
+               </xsl:if>
+            </titleproper>
             <title xtf:meta="true">
                <xsl:value-of select="$titleproper"/>
                <xsl:if test="$subtitle">
@@ -451,6 +471,16 @@
          <xsl:when test="/ead/eadheader/filedesc/titlestmt/titleproper">
             <xsl:variable name="titleproper" select="string(/ead/eadheader/filedesc/titlestmt/titleproper)"/>
             <xsl:variable name="subtitle" select="string(/ead/eadheader/filedesc/titlestmt/subtitle)"/>
+            <titleproper xtf:meta="true">
+               <xsl:value-of select="$titleproper"/>
+               <xsl:if test="$subtitle">
+                  <!-- Put a colon between main and subtitle, if none present already -->
+                  <xsl:if test="not(matches($titleproper, ':\s*$') or matches($subtitle, '^\s*:'))">
+                     <xsl:text>: </xsl:text>
+                  </xsl:if>  
+                  <xsl:value-of select="$subtitle"/>
+               </xsl:if>
+            </titleproper>
             <title xtf:meta="true">
                <xsl:value-of select="$titleproper"/>
                <xsl:if test="$subtitle">
