@@ -210,6 +210,7 @@
       <xsl:copy>
          <xsl:copy-of select="@*"/>
          <xsl:attribute name="xtf:index" select="'no'"/>
+         <xsl:apply-templates select="titleproper"/>
          <xsl:apply-templates mode="addChunkId"/>
       </xsl:copy>
    </xsl:template>
