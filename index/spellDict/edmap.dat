@@ -129,7 +129,7 @@ aaem|abatement|1cademia|7c|8s|6y|1mazement
 aaen|awakening|3reness
 aaeu|amateur
 aaf |haaff
-aaff|haaff|0paraffin
+aaff|haaff|0mahaffy|0paraffin
 aag |acag
 aage|damage|6d|0manage|6d|6ment|6r|7ial|7s|0ravaged
 aagi|managing
@@ -155,6 +155,7 @@ aait|awaited
 aaka|alaska|0katakana
 aake|awakening
 aakh|amakhosi
+aaki|takaki
 aakn|awakening
 aako|amakhosi
 aaku|gagaku|0kamakura
@@ -236,7 +237,6 @@ aati|adapting|1quatic|1siatic|0taxation|0vacation|8s
 aatj|plaatje
 aatm|abatement|1natomical|6y|0baartman
 aato|anatomical|6y|2yatomictype
-aats|takatsu
 aatt|anyattribute
 aatu|amateur
 aaty|datatype|8s
@@ -297,15 +297,16 @@ abcf|abcdefghijklmnopqrstuvwxyz
 abcn|absconding
 abco|absconding|0babcock
 abct|abducted
+abd |abide
 abda|abdicating|2undantly|0lambda
 abdc|abdicating|3ucted
-abde|abcdefghijklmnopqrstuvwxyz
+abde|abcdefghijklmnopqrstuvwxyz|2ide
 abdf|abcdefghijklmnopqrstuvwxyz
 abdi|abdicating
 abdo|abandon|7ed|7ment
 abdt|abducted
 abdu|abducted
-abe |able|2ove|2use|1dobe|1lbee|3ie|0cable|0fabre|0label|0mabel|3ie|0rabe|0table
+abe |abide|2le|2ove|2use|1dobe|1lbee|3ie|0cable|0fabre|0label|0mabel|3ie|0rabe|0table
 abea|aberrations|1lbemarle
 abeb|abiteboul
 abec|absence|0labrecque
@@ -324,27 +325,28 @@ abh |sabah
 abha|abraham
 abho|abhorrence
 abhr|abhorrence
-abi |albie|0habib|4t|0labib|0mabie|0sabin
+abi |abide|1lbie|0habib|4t|0labib|0mabie|0sabin
 abia|abdicating|1mbivalence|9t|1rabia|0fabian|0gambiae|0habitation|0zambia|6n
 abib|abiteboul|0habib|0labib
 abic|abdicating|1rabic|0fabric
-abie|abiteboul|1lbie|0babies|0cabinet|0gabriel|0mabie
+abid|abide
+abie|abide|3teboul|1lbie|0babies|0cabinet|0gabriel|0mabie
 abig|aborigine|9s|8ies|1mbiguities|8y|6ous
-abii|abilities|6y
-abil|abilities|6y|0inability|0liabilities|8y|0stability
+abii|ability
+abil|ability|0inability|0liabilities|8y|0stability
 abin|abstinence|0cabinet|0fabian|0sabin|0tabbing
 abir|arbitrary|7tion
 abis|abolish|7ed|7ing|0babies|0habits
-abit|abilities|6y|3teboul|2olition|1lbeit|1rbitrary|7tion|0habit|5ation|5s|0rabbits
+abit|ability|3teboul|2olition|1lbeit|1rbitrary|7tion|0habit|5ation|5s|0rabbits
 abiu|ambiguities|8y|6ous
 abiv|ambivalence|9t
 abki|kabuki
 abl |able|0cable|0label|0mabel|0table
 abla|tablas
 able|able|0cable|0enable|6d|6s|0labeled|0marble|0stable|6s|0table|5s|5t|0unable|1sable|0viable
-abli|abilities|6y|2olish|7ed|7ing|5tion|0enabling|0gambling|0labeling
+abli|ability|2olish|7ed|7ing|5tion|0enabling|0gambling|0labeling
 abls|abolish|7ed|7ing|0labels|0tablas|4es
-ablt|abilities|6y|2olition|0tablet
+ablt|ability|2olition|0tablet
 ablu|absolute|8ly
 abm |abram|1lbum
 abma|albemarle
@@ -366,7 +368,7 @@ aboc|babcock
 abod|abound|2road|0peabody
 aboe|above|0laborer|7s|0rabone
 abog|aborigine|9s|8ies
-aboi|abolish|7ed|7ing|5tion|3rigine|9s|8ies
+aboi|abolish|7ed|7ing|5tion|3rigine|9s|8ies|1rbovirus
 abol|abolish|7ed|7ing|5tion|2solute|8ly
 abom|abnormality|8ly
 abon|abound|2sconding|0carbon|0rabone
@@ -376,7 +378,7 @@ abor|abhorrence|2normality|8ly|2origine|9s|8ies|4t|2sorbed|5ption|1rbor|5text|0e
 abos|abolish|7ed|7ing
 abot|abbot|5t|2olition|3rt|3ut|1rbortext|0sabotage
 abou|abound|4t|2solute|8ly|0barbour|0labour
-abov|above
+abov|above|1rbovirus
 abr |abort|2ram|1rbor|0fabre|0labor
 abra|aberrations|2raham|4m|3oad|2stract|0galbraith|0laboratories|:o|9y
 abrb|absorbed
@@ -436,6 +438,7 @@ abuy|asbury
 abv |above
 abva|ambivalence|9t
 abve|above
+abvi|arbovirus
 aby |baby
 ac  |abc|1c|2ag|2id|2me|2re|2t|3s|1nc|1rch|3o|1sch|0back|0each|0face|3t|1rac|0lace|3k|0mac|3y|0pac|3e|3t|0rac|3e|0sacc|3p|2dc
 aca |acag|0banca|0lacea
@@ -676,7 +679,7 @@ addo|addison|0paddock
 addr|address|7ed|7ing|0headdress|0ladder|0myaddress|0usaddress
 adds|addison|3ress|7ed|7ing|3s
 addt|addict|4tion|8al|:ly|8s|6veexpr
-ade |added|2ee|2ler|2obe|1ided|1ndes|1rden|1side|0dade|0made|0quade|0raden|0trade|0wade
+ade |abide|1dded|2ee|2ler|2obe|1ided|1ndes|1rden|1side|0dade|0made|0quade|0raden|0trade|0wade
 adea|adequate|8ly|1ndean
 adeb|adelbert
 aded|added|1ided|0handed|1eaded|0loaded
@@ -1195,6 +1198,7 @@ ahaa|maharaj|0saharan
 ahab|alphabet|8ic|:al|<ly|1shtabula
 ahad|ahead|0pahad
 ahae|archaeological|:y|0raphael
+ahaf|mahaffy
 aham|graham|0lapham
 ahan|alphanumeric|1shland
 ahar|maharaj|0saharan|0zakhari
@@ -1220,6 +1224,7 @@ ahet|athletic|8s|0wahpeton
 ahev|achieve|7d|7ment|;s|6ing|1sheville
 ahew|mathews
 ahex|pathexpr
+ahff|mahaffy
 ahi |ahi|0bahia
 ahia|bahia
 ahie|achieve|7d|7ment|;s|6ing|0cashier|0rachie
@@ -1261,7 +1266,7 @@ ahpt|wahpeton
 ahra|cahora|0maharaj|0saharan
 ahre|adhere|6nce|7ts
 ahrm|mathrm
-ahro|anthropoid|8logize|;y|0lathrop
+ahro|anthropoid|8logize|;y|1rthropod|0lathrop
 ahrr|abhorrence
 ahrs|mathrsfs
 ahry|kathryn
@@ -1272,7 +1277,7 @@ aht |yacht
 ahta|ashtabula
 ahtb|ashtabula
 ahum|nachum
-ahur|arthur|6.klatsky@kp.org
+ahur|arthur
 ahus|aarhus
 ahvi|asheville|0nashville
 ahwa|rahway
@@ -1304,15 +1309,15 @@ aico|agricola|1nticolonial|6mmunism
 aics|antics|0basics|0farics
 aict|addict
 aicu|agricultural|:e|7utre|1rticulated|9ing
-aid |acid|4i|1id|3ed|3s|2med|2red|1rid|1side|1void|0baird|0david|0laid|3rd|0paid|0rapid|0said|0valid
+aid |abide|1cid|4i|1id|3ed|3s|2med|2red|1rid|1side|1void|0baird|0david|0laid|3rd|0paid|0rapid|0said|0valid
 aida|validate|8d|7ing|8on
 aidd|aided
-aide|aided|1side|1voided|0braide|0maiden
+aide|abide|1ided|1side|1voided|0braide|0maiden
 aidi|acidi|1voiding|0validity
 aidl|rapidly|0validly
 aidn|maiden
 aids|aids|1voids|0davidson|0rapids
-aie |aided|2ley|2med|2red|4s|1lbie|2ice|3en|3ke|3ve|1mine|1nnie|1rise|1side|0faire|0haile|3ne|0mabie|2ine|3ze|2nie|0naive|0paine|0raise|0waite
+aie |abide|1ided|2ley|2med|2red|4s|1lbie|2ice|3en|3ke|3ve|1mine|1nnie|1rise|1side|0faire|0haile|3ne|0mabie|2ine|3ze|2nie|0naive|0paine|0raise|0waite
 aiea|alienated|7ion
 aieb|abiteboul
 aied|aided|2med|2red|1llied|0failed|0gained|0mailed|0raised|0varied
@@ -1340,7 +1345,7 @@ aihm|arithmetic
 aii |acidi|1scii|0haiti
 aiin|baiting|0failing|7s|0gaining|0mailing|7s|0raisin|6g|0sailing|0waiting
 aiis|arioiskandar|0maikish
-aiit|abilities|6y
+aiit|ability
 aik |alike
 aika|afrikaan|8s|6ner|9dom|9s
 aike|aikens|1like
@@ -1352,12 +1357,12 @@ ail |ailey|1pril|0daily|0email|0fail|4s|0haile|0mail|0nails|0rail|0sail|1nail|0t
 aila|airplane|8s|1vailability|7le|0mainland|0railway|7s|0thailand
 aild|failed|0mailed
 aile|ailey|0bailey|0failed|0haile|0mailed
-aili|abilities|6y|1ffiliated|8ion|1uxiliaries|8y|0facilitate|:d|:s|7ies|7y|2iling|7s|2miliar|6es|0mailing|7s|0sailing|0trailing
+aili|ability|1ffiliated|8ion|1uxiliaries|8y|0facilitate|:d|:s|7ies|7y|2iling|7s|2miliar|6es|0mailing|7s|0sailing|0trailing
 ailn|failing|7s|0mailing|7s|0sailing
 ailo|railroad|8s|0sailors|0tailor|6ed
 ailr|failure|7s|0railroad|8s|0sailors|0tailor|6ed
 ails|fails|0nails|0wails
-ailt|abilities|6y|0hamilton
+ailt|ability|0hamilton
 ailu|failure|7s
 ailw|railway|7s
 aily|ailey|0bailey|0daily|0easily|0fairly|2mily|0mainly
@@ -1385,7 +1390,7 @@ ainm|alignment|9s
 ainn|gaining
 aino|aminoacetophenone|0farinology|0natinoal|0patino|0rainbow|0vacinogenico
 ainr|bainbridge|0mainframes
-ains|against|1ikens|1sians|1tkins|0drains|0gains|1rains|0mainstream|0painesville|1lains|0trains
+ains|against|1ikens|1sians|1tkinson|0drains|0gains|1rains|0mainstream|0painesville|1lains|0trains
 aint|macintosh|2instream|4tain|8ed|8ing|8s|5enance|2sinter|0paint|5er|7s|5ing|8s|0quaint|0tainted
 ainu|ainu|1kinkugbe
 ainy|mainly
@@ -1495,11 +1500,12 @@ ak  |ak|2a|2e|2in|1sk|3s|0back|2ku|2nk|0dark|0lack|2ke|0make|2rk|2sk|0oak|0park|
 aka |aka|0dakar|0lanka|0osaka|0saka
 akaa|ankara
 akag|package
-akai|askaris|0nankai
+akai|askaris|0nankai|0takaki
+akak|takaki
 akan|arkansas|0balkans|0oakland
 akar|ankara|1skaris|0dakar|0packard|0zakhari
-akas|arkansas|0takatsu
-akat|alkhatib|0takatsu
+akas|arkansas
+akat|alkhatib
 akay|rakway
 akd |asked|0naked
 akdr|backdrop
@@ -1528,12 +1534,12 @@ aki |akin|0dakin
 akie|jackie|2kkie
 akig|asking|0making|0taking
 akik|akinkugbe
-akin|akin|4kugbe|1nykindtest|1sking|1tkins|0backing|2nking|2skin|0calkins|0dakin|0lacking|2mkin|0making|2nkind|2rking|2sking|0nanking|0parking|0taking|0walking|2tkins
-akis|atkins|0maikish|0pakistan
+akin|akin|4kugbe|1nykindtest|1sking|1tkinson|0backing|2nking|2skin|0calkins|0dakin|0lacking|2mkin|0making|2nkind|2rking|2sking|0nanking|0parking|0taking|0walking|2tkins
+akis|atkinson|0maikish|0pakistan
 akit|pakistan
 akiu|akinkugbe
 akke|jakkie
-akki|jakkie
+akki|jakkie|0takaki
 akku|akinkugbe
 akla|auckland|0oakland
 akle|oakley
@@ -1547,7 +1553,7 @@ akng|asking|0making|0taking
 akni|macknight
 aknk|akinkugbe
 akno|acknowledge|;d|;ment|?s|:ments
-akns|aikens|1rkansas|1tkins
+akns|aikens|1rkansas|1tkinson
 aknu|akinkugbe
 aknw|acknowledge|;d|;ment|?s|:ments
 ako |akron|0lakso
@@ -1573,7 +1579,6 @@ akso|akeson|0jackson|7ville|0lakso
 akst|pakistan
 akta|dakota
 akto|makoto|0yankton
-akts|takatsu
 aku |baku
 akup|markup|6decl
 akus|backus
@@ -1653,7 +1658,7 @@ ales|aleksandr|3xis|2lies|1pples|0galveston|0males|0naples|0palestine|8ian|0rawl
 alet|albeit|4rt|6son|2lentown|1pplet|6s|1thletic|8s|0ballet|0carleton|0palestine|8ian|0tablet|2lent|0valentine
 alev|alleviate
 alex|alex|4ander|7ra|4is
-aley|ailey|1lley|0bailey|0carley|0hadley|2gley|2nley|0oakley|0salley|0valley
+aley|ailey|1lley|0bailey|0carley|0easley|0hadley|2gley|2nley|0oakley|0salley|0valley
 alf |half
 alfa|halifax
 alfd|alford|3red
@@ -1697,7 +1702,7 @@ alin|alien|5ated|7ion|3gn|5ed|5ment|9s|2liance|8s|2uminum|2vin|1nglin|1rlington|
 alio|california|0sealions
 alir|almira|0palmira
 alis|abolish|7ed|7ing|1lexis|2ias|5es|5ing|2lies|4ster|1ttlist|7decl|0calista|2mlis|0jalisco|0malaise|0realistic|9ally|0salisbury|0wallis
-alit|abilities|6y|2olition|1lbeit|2lister|1political|0calista|1oalition|0egalitarian|0qualities|6y|0realities|6y
+alit|ability|2olition|1lbeit|2lister|1political|0calista|1oalition|0egalitarian|0qualities|6y|0realities|6y
 aliv|alive
 aliz|realization|6e|7s|6ing
 alk |alike|0talk|4s|0walk
@@ -2128,7 +2133,7 @@ andw|andrew|6s|0handwritten
 andx|andexpr
 andy|handy|0vanduyne
 andz|andrzej
-ane |agnew|1lone|1mine|1ndes|2ger|3le|2ne|4x|3ie|0bayne|0cane|4s|1rane|0dance|1eane|0haine|2yne|0jane|4t|0kane|0lane|3ge|0maine|2nie|0paine|2nel|2yne|1lane|0range|0sante|1hane|0vance|0zane
+ane |agnew|1lone|1mine|1ndes|2ger|3le|2ne|4x|3ie|0bayne|0cane|4s|1rane|0dance|1eane|0haine|0jane|4t|0kane|0lane|3ge|0maine|2nie|0paine|2nel|2yne|1lane|0range|0sante|1hane|0vance|0zane
 anea|andean|2emia|2thea
 anec|mantecon
 aned|banned|0earned|0gained|2nged|0handed|0ranged|3ked|0wanted|2rned
@@ -2141,7 +2146,7 @@ anem|anemia|2thems|0hahneman
 anen|ancient|2dean|0hansen
 anep|andexpr
 aner|anders|6kleuriges|6on|2ger|2swer|0banker|6s|3ner|0cancer|0dancers|3ger|6ous|0garner|0janeiro|0lander|3geron|0manner|0ranger|0sanderland|6s|0tanner|0vander|6bilt|6grift|0wagner|2nderers|2rner
-anes|amnesty|1ncestor|8s|2ders|6kleuriges|6on|4s|0barnes|0canes|3oes|0fahnestock|0painesville|2nels|1lanes|0ranges|0zanesville
+anes|amnesty|1ncestor|8s|2ders|6kleuriges|6on|4s|0barnes|0canes|3oes|0fahnestock|0haynes|0painesville|2nels|1lanes|0ranges|0zanesville
 anet|amnesty|1ncestor|8s|2xieties|6y|0barnett|0janet|0lancet|0magnet
 aneu|maneuvering
 anev|maneuvering|0zanesville
@@ -2502,6 +2507,7 @@ aous|arious|2ouses|0varous
 aout|about|1mount|6ed|6s|0layout
 aov |above
 aove|above|0hanover
+aovi|arbovirus
 aow |allow
 aowa|allowance
 aowe|allowed
@@ -2713,13 +2719,14 @@ arbc|arabic
 arbd|barbados
 arbe|barber|0marble
 arbg|garbage
-arbi|arabia|5c|2bitrary|7tion
+arbi|arabia|5c|2bitrary|7tion|3ovirus
 arbl|marble
 arbn|carbon
-arbo|arbor|5text|2chbold|0barbour|0carbon|0harbor|6s|0marlboro|0yearbook
+arbo|arbor|5text|4virus|2chbold|0barbour|0carbon|0harbor|6s|0marlboro|0yearbook
 arbr|arbitrary|7tion|3or|5text|0barbara|6ism|4er|0harbor|6s
 arbt|arbitrary|7tion|3ortext
 arbu|barbour
+arbv|arbovirus
 arc |arch|3o|0march|4y
 arca|africa|6n|7ism|9t|:s|8zation|7s|1rcade|3haeological|:y
 arcb|archbold
@@ -2799,12 +2806,12 @@ arhb|archbold
 arhe|archaeological|:y|4eology|5s|0earthenware|0marshes
 arhi|architect|9s|9ual|:ral|;e|5val|6e|7s
 arhm|arithmetic
-arho|archbold|4eology|0bartholdi|0warehouse
+arho|archbold|4eology|2thropod|0bartholdi|0warehouse
 arhq|earthquake
-arhr|arthur|6.klatsky@kp.org
+arhr|arthropod|4ur
 arhs|aarhus|1rches
 arht|architect|9s|9ual|:ral|;e
-arhu|aarhus|1rthur|6.klatsky@kp.org
+arhu|aarhus|1rthur
 arhv|archival|6e|7s
 ari |a.uri|1ndré|1pril|1rid|3se|3ty|0maria|4o|3é|0paris|0tarai
 aria|adrian|1erial|6s|1frica|6n|7ism|9t|:s|8zation|7s|4kaan|8s|6ner|9dom|9s|1rabia|2mitage|2tifacts|0cardiac|3riage|8s|0maria|4tal|3riage|0parliament|:ary|3tial|7ity|7ly|2triarchy|0variability|6le|8s|5nce|6t|5tion
@@ -2895,7 +2902,7 @@ arod|abroad|1rnold|2ound|0harold
 aroe|arouses
 arog|arrogance
 aroh|parochial
-aroi|arioiskandar|1trocities|0carolina|7e|0karolinska
+aroi|arbovirus|2ioiskandar|1trocities|0carolina|7e|0karolinska
 arol|arnold|1strologer|0carolina|7e|3roll|0harold|0karolinska|0payroll|7s
 arom|aroma
 aron|aaron|1dirondack|:s|1gronomia|8co|7y|1kron|1rizona|2ound|1stronomy|0barton|0carbon|3son|0harmondsworth|6y|0jargon|0karon|0larson|0marion|0pardoning|3sons|2tronage|0sharon
@@ -2905,7 +2912,7 @@ aror|arbor|5text|2twork|1urora|0harbor|6s|0parlor|0warlords
 aros|across|1rioiskandar|4us|2ouses|0carlos|0larosa|0marcos|0varous
 arot|arbortext|0faurot|0marmot
 arou|arious|2ound|4ses|0barbour|0various|3ous|0yarmouth
-arov|approval|6ed
+arov|approval|6ed|1rbovirus
 arow|barlow|3rows|0darrow|0narrow|6ly|6s
 arox|approximately
 arp |sharp
@@ -2930,7 +2937,7 @@ arri|arrived|2terial|6oscler|0barriers|0carriage|8s|5e|6d|6r|6s|4ying|0garrison|
 arrl|barrel|6l|6s|0carroll
 arrm|harraman
 arrn|arranged|7ment|;s|6ing|0harrington|0parran|0warren
-arro|arrogance|0barrows|0carroll|0darrow|0narrow|6ly|6s|0warrior|7s
+arro|arrogance|2thropod|0barrows|0carroll|0darrow|0narrow|6ly|6s|0warrior|7s
 arrr|farrar|0harrar
 arrs|arrests|0garrison|0harris|6burg|6on
 arrt|arbortext|2rests|0barrett|0garretson|6t|0narrative|9s|0tarrytown
@@ -2957,17 +2964,17 @@ arta|armitage|2tifacts|0caretaker|3ta|4hage|0hartman|0marital|3tha|0partial|7ity
 artc|arctic|2ticle|7s|5ulated|9ing|0participant|;s|9te|;d|:ing|;on|6le|8s|6ular|:ities|:ly
 arte|arterial|6oscler|5y|1verted|0barter|0cartel|5r|1harter|7ist|:s|0d'arte|0earthenware|0hartley|0marsten|0parties|4ner|7s|8hip|;s|0quarter|7ly|7t|0sartell|1tarted
 artf|artifacts|5icial|0hartford
-arth|apartheid|1rithmetic|2thur|6.klatsky@kp.org|0bartholdi|0carthage|0dearth|0earthenware|5quake|0marathon|3tha|1carthur
+arth|apartheid|1rithmetic|2thropod|4ur|0bartholdi|0carthage|0dearth|0earthenware|5quake|0marathon|3tha|1carthur
 arti|arctic|2terial|6oscler|3icle|7s|5ulated|9ing|4facts|5icial|4st|6ic|6s|0dartington|0hartwig|0maritime|3tin|6ez|6son|0partial|7ity|7ly|5cipant|;s|9te|;d|:ing|;on|6le|8s|6ular|:ities|:ly|5es|5san|8s|5tion|0starting
 artl|article|7s|0cartel|0hartley|1eartland|0partly|0sartell
 artm|arithmetic|0baartman|0dartmouth|0hartman
 artn|barton|0dartington|0martin|6ez|6son|0partner|7s|8hip|;s
-arto|aristocracy|2twork|0barstow|3tholdi|4on|0carto|0dartmouth|0hartford|0khartoum|0marston|0quarto|0wharton
+arto|aristocracy|2thropod|3work|0barstow|3tholdi|4on|0carto|0dartmouth|0hartford|0khartoum|0marston|0quarto|0wharton
 artq|earthquake
-artr|arbitrary|7tion|2mstrong|2terial|6oscler|5y|3hur|6.klatsky@kp.org|3work|0barter|0carter
+artr|arbitrary|7tion|2mstrong|2terial|6oscler|5y|3hropod|4ur|3work|0barter|0carter
 arts|artist|6ic|6s|3s|0carts|1harts|0evarts|0marets|0partisan|8s|4s|0starts
 artt|artist|6ic|6s|0partition
-artu|arthur|6.klatsky@kp.org|3iculated|9ing
+artu|arthur|3iculated|9ing
 artw|artwork|0hartwig
 arty|arity|2tery|0partly|4y|0rarity
 aru |argue|4s
@@ -2979,11 +2986,11 @@ aruh|baruch
 arum|argument|8ation|8s
 arun|around
 arup|markup|6decl
-arur|arthur|6.klatsky@kp.org
+arur|arthur
 arus|aarhus|1rgues|4s|2ious|2ouses|0marcus|0varous
 arva|caravans|0harvard|0larvae
 arve|arrived|0carver|0harvest|7ing|5y|0larvae
-arvi|marvin
+arvi|arbovirus|0marvin
 arvn|marvin
 arvr|carver|0harvard
 arvs|harvest|7ing
@@ -3061,7 +3068,7 @@ aset|absent|1scertain|9ment|2pect|6s|2sert|6ed|6ion|9s|6s|4t|5s|1ttset|0basket|6
 aseu|pasteur
 asev|asheville
 asex|castexpr
-asey|anstey|0caskey|2usey|0massey
+asey|anstey|0caskey|2usey|0easley|0massey
 asfi|asfuriych|0mansfield
 asfn|amsfonts
 asfo|amsfonts
@@ -3115,13 +3122,13 @@ askt|basket|6ry
 asky|caskey
 asl |a.xsl|1xsl|0basel
 asla|ashland
-asle|castle
+asle|castle|0easley
 asli|baseline|0gasoline
 asll|aspell|0lasalle
 aslm|asylum
 asln|ashland
 aslu|absolute|8ly|1sylum
-asly|easily|0vastly
+asly|easily|3ley|0vastly
 asm |sasm
 asma|amsmath|0eastman
 asmb|assembled|7y
@@ -3146,7 +3153,7 @@ asoc|assoc|5iate|9d|9s|8ing|9on|;s|9vity
 asoi|associate|9d|9s|8ing|9on|;s|9vity|2tonishing|0gasoline|0masonic
 asok|ashok
 asol|absolute|8ly|1strologer|0gasoline|0mascola
-asom|hashomer
+asom|hashomer|2ysom
 ason|absconding|1keson|1msfonts|1stonishing|3ronomy|0carson|0dawson|0hanson|0larson|2wson|0manson|2son|5ic|0parsons|2xson|0raison|2wson|1eason|6able|:ness|9y|6ing|6s|0samson|1eason|6al|0watson
 asop|absorption|1strophysics
 asor|absorbed|5ption|1shworth|0pastor|6s
@@ -3314,13 +3321,13 @@ athi|altheim|1nything|1theist|0bathing|0matching|3hit|4linotext
 athl|athletic|8s|0catholic|8s|0mathlinotext|4ml|0pathology
 athm|anthems|1rithmetic|0lathem|0mathematical|4ml|4rm|0watchman
 athn|anthony|1thens|1uthentic|0bathing
-atho|although|1nthony|4ropoid|8logize|;y|1uthor|6ing|7tarian|=ism|9tive|8ies|8y|7zed|6s|0bartholdi|0cathode|5lic|8s|0lathrop|0pathogen|5logy
+atho|although|1nthony|4ropoid|8logize|;y|1rthropod|1uthor|6ing|7tarian|=ism|9tive|8ies|8y|7zed|6s|0bartholdi|0cathode|5lic|8s|0lathrop|0pathogen|5logy
 athp|catchpole|0pathpattern
 athq|earthquake
-athr|anthropoid|8logize|;y|1rthur|6.klatsky@kp.org|1uthor|6ing|7tarian|=ism|9tive|8ies|8y|7zed|6s|0father|0gathering|0katherine|4ryn|0lathrop|0mather|4rm|5sfs|0rather
+athr|anthropoid|8logize|;y|1rthropod|4ur|1uthor|6ing|7tarian|=ism|9tive|8ies|8y|7zed|6s|0father|0gathering|0katherine|4ryn|0lathrop|0mather|4rm|5sfs|0rather
 aths|atheist|4ns|0deaths|0mathrsfs|4scr|0paths
 atht|athletic|8s|0mathit
-athu|although|1rthur|6.klatsky@kp.org
+athu|although|1rthur
 athw|hathaway|0mathews
 athx|pathexpr
 athy|kathryn
@@ -3335,11 +3342,11 @@ atih|antithrombotic
 atii|activism|7t|8s|6ties|7y|1rtificial
 atil|article|7s|0vantile
 atim|baltimore|0daytimeduration|0fatima
-atin|abstinence|1cting|4on|6s|1tkins|1ustin|0baiting|2thing|1oating|0casting|0dartington|2ting|0eastin|2ting|0gation|0halting|2stings|0lasting|2tin|3rine|7s|0martin|6ez|6son|0natinoal|4on|6al|8isation|:m|:t|;ic|;s|9ty|9zation|6s|6wide|0pacting|2tience|6t|7s|4no|1lating|0ratings|4onal|8e|8ities|:y|9zations|:ed|0seating|1kating|0waiting|2tkins
+atin|abstinence|1cting|4on|6s|1tkinson|1ustin|0baiting|2thing|1oating|0casting|0dartington|2ting|0eastin|2ting|0gation|0halting|2stings|0lasting|2tin|3rine|7s|0martin|6ez|6son|0natinoal|4on|6al|8isation|:m|:t|;ic|;s|9ty|9zation|6s|6wide|0pacting|2tience|6t|7s|4no|1lating|0ratings|4onal|8e|8ities|:y|9zations|:ed|0seating|1kating|0waiting|2tkins
 atio|action|6s|1nticolonial|6mmunism|4och|5xidant|;s|0caption|2ution|6us|8ly|0faction|7alism|7s|0gation|0natinoal|4on|6al|8isation|:m|:t|;ic|;s|9ty|9zation|6s|6wide|0patino|3riotic|7s|0rational|8e|8ities|:y|9zations|:ed|5s|0station|7ery|7s
 atiq|antiques|6it|8ies
 atir|antiracists|4trust
-atis|antics|4sanctions|1rtist|6ic|6s|1theist|2kins|2tlist|7decl|0baptist|7s|0mattison|0partisan|8s|2ttison|0ratios|0satisfaction|6ied|8s|6y|1tatistical|9s
+atis|antics|4sanctions|1rtist|6ic|6s|1theist|2kinson|2tlist|7decl|0baptist|7s|0mattison|0partisan|8s|2ttison|0ratios|0satisfaction|6ied|8s|6y|1tatistical|9s
 atit|antithrombotic|5rust|1rtist|6ic|6s|1ttitude|8s|0mathit|0partition
 atiu|antigua|4ques|6it|8ies|1rticulated|9ing|1ttitude|8s
 ativ|active|6ly|5ism|7t|8s|6ties|7y|0captive|0native|6s
@@ -3348,9 +3355,9 @@ atiz|atomization|6e|7d|7s|6ing|0baptized|0hatsize
 atje|bantjes|2tjer
 atjr|batjer
 atka|katakana
-atki|atkins|0watkins
-atkn|atkins|0watkins
-atks|atkins
+atki|atkinson|0watkins
+atkn|atkinson|0watkins
+atks|atkinson
 atl |aptly|1tlas|0fatal|0natal
 atla|atlanta|6ic|4s
 atle|athletic|8s|0battle|6field|6s|0castle|2ttle|0hartley|0seatle
@@ -3379,7 +3386,7 @@ atng|acting|0dating|0eating|0ratings
 atni|astonishing
 atnl|tatnall
 atno|autonomous|7y|0natinoal|0patino
-atns|athens|2kins
+atns|athens|2kinson
 atnt|atlanta|6ic|2tention|0latent|0patent|6ee|6s
 atnu|attenuation
 ato |actor|1lton|1uto|0carto|0eaton|0kato|0santo
@@ -3417,7 +3424,7 @@ atri|arterial|6oscler|1trocities|2tribnameorwildcard|6utable|8e|9d|:eclaration|9
 atrl|astrologer
 atrm|mathrm
 atrn|afternoon|1lternate|9s|8ing|9on|9ve|;ly|;s|1stronomy|1ttorney|8s|0latrine|7s|0maternal|6ity|0paternalism|:tic|3ronage
-atro|anthropoid|8logize|;y|1strologer|5nomy|5physics|1trocities|0castro|6s|0gastrointestinal|0lathrop|0mataro|0patriotic|7s|4onage
+atro|anthropoid|8logize|;y|1rthropod|1strologer|5nomy|5physics|1trocities|0castro|6s|0gastrointestinal|0lathrop|0mataro|0patriotic|7s|4onage
 atrp|astrophysics
 atrs|actors|0mathrsfs|0waters|6hed|6on
 atrw|afterwards|0waterways
@@ -3465,7 +3472,7 @@ atui|maturity
 atul|actual|6ly
 atum|autumn|0tatum
 atun|autumn
-atur|arthur|6.klatsky@kp.org|0capture|7d|0feature|7d|7s|0mature|5ity|0natural|7ization|7ly|5e|0saturday|1tature
+atur|arthur|0capture|7d|0feature|7d|7s|0mature|5ity|0natural|7ization|7ly|5e|0saturday|1tature
 atus|bantustan|9s|0status
 atut|astute|6ly
 atva|attvalue
@@ -3866,13 +3873,13 @@ aybl|payable
 aybu|mayibuye
 ayc |sayce
 ayce|sayce
-aye |aryeh|1yer|4s|2res|0bayne|0hayen|4s|3ne|0payne|0sayce
+aye |aryeh|1yer|4s|2res|0bayne|0hayen|4s|0payne|0sayce
 ayed|played|0stayed
 ayeh|aryeh
 ayel|khayelitsha
 ayen|caymen|0hayen|0payment|7s
 ayer|ayer|4s|0lawyer|6s|2yers|0player|6s|1rayer|0sawyer|0thayer
-ayes|ayers|2res|0hayes|0layers|0sayles
+ayes|ayers|2res|0hayes|3nes|0layers|0sayles
 ayfe|mayfield
 ayfi|mayfield
 ayh |aryeh
@@ -3902,16 +3909,18 @@ aymn|caymen|0layman|0payment|7s|0raymond
 aymo|raymond
 aymp|asymptomatic
 aymt|asymptomatic
-ayn |bayne|0hayen|3ne|0payne
+ayn |bayne|0hayen|0payne
 ayna|cayanan|0maynard
-ayne|anyone|0bayne|0hayne|0payne
+ayne|anyone|0bayne|0haynes|0payne
 ayng|paying|0saying
 aynn|bayonne
 aynr|maynard
+ayns|haynes
 ayo |mayor
 ayoa|mayoral
 ayoe|anyone
 ayol|payroll|7s
+ayom|haysom
 ayon|anyone|0bayonne|0dayton|0payton|0raymond
 ayoo|haywood
 ayor|baylor|0mayor|5al|5s|0taylor
@@ -3932,7 +3941,8 @@ ayrs|ayers|2res|0layers|0mayors
 ays |ayers|2res|0days|0grays|0hayes|3s|0lays|0mays|0plays|0rays|0says|0ways
 aysh|hayashi
 aysi|anysimpletype
-aysm|anysimpletype
+aysm|anysimpletype|0haysom
+ayso|haysom
 aysy|wasysym
 ayth|anything
 ayti|anything|0daytimeduration
@@ -3998,7 +4008,7 @@ aztt|gazette
 azul|kwazulu
 azza|lazzarin
 azzr|lazzarin
-b   |ab|2c|1wb|0b|1a|2d|2g|2n|2r|2y|1c|2e|2m|1ed|2e|2n|1f|1i|2b|2d|2g|2n|2t|1j|1lc|1mj|1o|2s|2x|2y|1p|2c|1r|2ã|1t|1ud|2s|2y|0ccb|0db|1ob|0eb|2v|0feb|0geb|0ibm|0jb|1ob|0kb|2d|1gb|0lab|1b|0pub|0rob|0sub|0tab|0wbz|1eb|0xb|0â|1ˆ|0ς
+b   |ab|2c|1wb|0b|1a|2d|2g|2n|2r|2y|1c|2e|2m|1ed|2n|1f|1i|2b|2d|2g|2n|2t|1j|1lc|1mj|1o|2s|2x|2y|1p|2c|1r|2ã|1t|1ud|2s|2y|0ccb|0db|1ob|0eb|2v|0feb|0geb|0ibm|0jb|1ob|0kb|2d|1gb|0lab|1b|0pub|0rob|0sub|0tab|0wbz|1eb|0xb|0â|1ˆ|0ς
 b.i |b.uri
 b.r |b.uri
 b.ri|b.uri
@@ -4400,7 +4410,7 @@ bdca|abdicating
 bdct|abducted
 bdde|buddenhagen
 bddn|buddenhagen
-bde |beede|1odes|1udge
+bde |abide|0beede|1odes|1udge
 bdef|abcdefghijklmnopqrstuvwxyz
 bdei|bodelian|3leian
 bdel|bodelian
@@ -4443,7 +4453,7 @@ bduc|abducted
 bdut|abducted
 bdwi|baldwin
 bdy |body|1undy|0tbody
-be  |able|0base|1ce|1ear|3t|2d|3s|2e|3f|3n|3r|2ll|3o|3t|2n|2rm|3t|2st|2th|1ike|1lue|1oer|2re|1uel|1yte|0rabe|0tube
+be  |able|0base|1ce|1ear|3t|2d|3s|2ef|3n|3r|2ll|3o|3t|2n|2rm|3t|2st|2th|1ike|1lue|1oer|2re|1uel|1yte|0rabe|0tube
 bea |beach|3ll|3ns|3r|3t|2gan|2rea|1read|4k
 beaa|breakaway
 beac|beach|4on
@@ -4485,7 +4495,7 @@ bedi|benedict|1leeding|1reeding
 bedo|bedford|3room
 bedr|bedford|3room|2nder
 beds|beardsley|2ds
-bee |albee|0bee|3de|3f|3n|3r|2lem|3le|2rea|3ne|2set|2yer|1oere|1reen
+bee |albee|0beede|3f|3n|3r|2lem|3le|2rea|3ne|2set|2yer|1oere|1reen
 beea|beekman|2leaguered|2rea|5n|2verage|8s
 beec|beecher
 beed|beede|2nedict|1leeding|1reeders|5ing
@@ -4494,20 +4504,22 @@ beef|beef|2lief|6s|2neficial|9ries|:y|6t|7ed|7s
 beeg|beleaguered|2sieged
 beeh|beecher
 beei|benedict|4ficial|9ries|:y|6t|7ed|7s|1leeding|1reeding|4zie
-beek|beekman
-beel|beetle|2nwell|2rkeley|2thel|2verly
+beek|beekman|3uwkes
+beel|beetle|2fell|2nwell|2rkeley|2thel|2verly
 beem|beekman|2lem|2ssemer
 been|been|2ment|2rean|3gen|1reen|3zenoff
 beeo|benevolent
 beer|bearers|3ver|2cker|2er|2nder|2rger|3ners|2tter|2verage|8s|5ly|3ier|2yer|1rewer
 bees|begges|2hest|2thesda|1oerestaat
 beet|beckett|2etle|2hest|2ment|2nnett|2set
+beeu|beeuwkes
 beev|believe|7d|7s|6ing|3levue|2nevolent
+beew|beeuwkes
 beez|breezie
 bef |beef|1rief
-befe|before|1riefer
+befe|befell|3ore|1riefer
 befi|beneficial|9ries|:y|6t|7ed|7s
-befl|briefly
+befl|befell|1riefly
 befo|bedford|2fore
 befr|bedford|2fore
 beg |began|3in|3un|2ing
@@ -4573,7 +4585,7 @@ belf|behalf|2lief|6s
 belg|beleaguered|3gians|5um|3ong|6ing|6s
 belh|beulah
 beli|baseline|1elgians|5um|3ief|6s|5ve|7d|7s|6ing|4ze|2rlin|1odelian|0labeling|0oberlin
-bell|beall|2ll|4amy|4cost|4e|5vue|1uell|0rebellion
+bell|beall|2fell|2ll|4amy|4cost|4e|5vue|1uell|0rebellion
 belm|belem|3lamy|3mont
 beln|belmont|3ong|6ing|6s|2rlin
 belo|bellcost|3mont|3o|4ng|6ing|6s|4w|1igelow
@@ -4629,7 +4641,7 @@ bepr|blueprints
 bequ|obsequies
 ber |baker|2uer|1ear|2er|2rea|3m|3ne|3ry|3t|2yer|1oer|4e|4s|2wer|2yer|1yers|0ebert|0fiber|0sober|0weber
 bera|aberrations|0berea|5n|3gmann|3man|3nard|2trayal|6ed|2verage|8s|1iernacki|0liberal|7ism|8zation|9e|7ly|7s|6ted|7ion
-berc|tuberculin|8osis
+berc|tubercle|6ulin|8osis
 berd|beardsley|2rmuda
 bere|bearers|2fore|2rea|5n|3gen|5r|4he|3keley|4ley|3ne|5rs|3ries|1oere|5staat
 berf|elberfield
@@ -4678,10 +4690,12 @@ beua|beulah
 beud|bermuda
 beuh|beulah
 beui|beautification|7ul
+beuk|beeuwkes
 beul|beulah
 beun|begun
 beus|because
 beut|beautification|7ul|5y|2irut
+beuw|beeuwkes
 beuy|beauty
 beva|beverage|8s|1revand
 beve|beaver|2have|6s|2verage|8s|5ly|3ier
@@ -4695,6 +4709,7 @@ bew |below
 bewd|bewilderment
 bewe|benwell|2tween|1rewer
 bewi|bewilderment
+bewk|beeuwkes
 bewl|benwell|2wilderment
 bewr|brewer
 bews|brewster
@@ -4713,12 +4728,14 @@ bezi|breezie
 bezn|brezenoff
 bf  |beef|1f|0ebnf|0âˆ
 bfal|buffalo
+bfel|befell
 bffa|buffalo
 bffi|buffington
 bffl|buffalo
 bffn|buffington
 bffs|bluffs
 bfin|buffington
+bfll|befell
 bfod|buford
 bfoe|before
 bfor|bedford|2fore|1uford
@@ -4863,10 +4880,10 @@ bico|bickford
 bics|basics
 bict|bicentennial
 bicy|bicycle
-bid |baird|1id|3i|2nd|4s|2rd|4s|1lind|1uild|0ibid
+bid |abide|0baird|1id|3i|2nd|4s|2rd|4s|1lind|1uild|0ibid
 bida|bridgam
 bidc|pubidchar
-bide|bidirectional|2rdseye|1linded|1raide|2idge|6port|6s|1uilders
+bide|abide|0bidirectional|2rdseye|1linded|1raide|2idge|6port|6s|1uilders
 bidg|bridgam|5e|6port|6s|5man
 bidi|bidi|4rectional|2nding|7s|1uildiings|6ng|8s
 bidl|blindly|0pubidliteral
@@ -4874,7 +4891,7 @@ bidm|bridgman
 bidn|binding|7s
 bidr|bidirectional
 bids|binds|2rds|5eye|1uilds
-bie |albie|0bible|2ke|2nge|1oice|1rice|3ef|4n|3ne|0kobie|0mabie
+bie |abide|1lbie|0bible|2ke|2nge|1oice|1rice|3ef|4n|3ne|0kobie|0mabie
 biea|biernacki
 bieb|abiteboul
 bied|biased|2lled|2omed
@@ -4927,7 +4944,7 @@ biin|baiting|1ilain|2nding|7s|2rmingham|2tting
 biio|biblio|6graphic|;y|2llion
 biir|bidirectional|0obihiro
 biis|british
-biit|abilities|6y
+biit|ability
 bik |bike|3o
 bike|bickel|2ke
 bikf|bickford
@@ -4940,13 +4957,13 @@ bild|bewilderment|1illed|1uild|5ers|5iings|6ng|8s|5s|4ldings
 bile|bailey|1ible|2lateral|3led|2xley|1oiler|6plate|1roiler|1uilders|0mobile
 bilg|bioligical|4ogia|7cal|8o|6y
 bilh|bilharziasis
-bili|abilities|6y|0biblio|6graphic|;y|2lain|3lion|2oligical|1uildiings|6ng|8s|4tin|0mobilise|6ty|6zation|7e|8d|7ing
+bili|ability|0biblio|6graphic|;y|2lain|3lion|2oligical|1uildiings|6ng|8s|4tin|0mobilise|6ty|6zation|7e|8d|7ing
 bill|bill|4ed|4ion|4s|1uilldings
 biln|bilain
 bilo|biblio|6graphic|;y|2gelow|3low|2llion|2ologia|7cal|8o|6y
 bilr|bilharziasis|1oiler|6plate
 bils|bills|1uilds
-bilt|abilities|6y|0bilateral|1uilt|5in
+bilt|ability|0bilateral|1uilt|5in
 bilw|biglow
 bily|bailey|1ixley
 bimd|biomed
@@ -5160,7 +5177,7 @@ blin|berlin|1ilain|1lind|5ed|5ly|4king|1oling|2wling|1urlingham|7ton|0dublin|0si
 blio|biblio|6graphic|;y|2llion
 blir|blair|5e
 blis|abolish|7ed|7ing|0published|8r|9s|8s|7ing
-blit|abilities|6y|2olition|0obliterate
+blit|ability|2olition|0obliterate
 bliu|belgium
 bliv|believe|7d|7s|6ing|1olivia
 bliz|belize
@@ -5355,7 +5372,7 @@ bnno|benno
 bnnr|banner
 bnnt|bennett
 bnny|benny
-bno |benno
+bno |benno|1orno
 bnom|abnormality|8ly
 bnon|benton
 bnor|abnormality|8ly
@@ -5512,7 +5529,7 @@ bome|become|6s|1iomed
 bomi|becoming|1loomington|1ohemian|2mbing|2oming
 bomn|bombing|2oming|2wman
 bomy|bombay
-bon |bacon|1lown|1olan|2nd|4s|3es|3us|2one|2rn|3on|2und|2wen|1ronx|3wn|1yron
+bon |bacon|1lown|1olan|2nd|4s|3es|3us|2one|2rn|4o|3on|2und|2wen|1ronx|3wn|1yron
 bona|boundaries
 bond|abound|0beyond|1londe|1ond|4ing|4s|2und|5aries|5ed|5s
 bone|bacone|1londe|1oldness|2nes|3heur|2one|2unded|3rne|0rabone
@@ -5520,13 +5537,13 @@ bong|belong|6ing|6s|1oling|2ring
 bonh|bonheur
 boni|bonding|2tanical|1rowning
 bonn|bayonne|1onding
-bono|boynton|1ronson
+bono|borno|2ynton|1ronson
 bons|bonds|3es|3us|2unds|1ronson
 bont|bimonthly|1oynton
 bonu|bonheur|3us
 bonx|bronx
 bony|botany
-boo |blood|4m|1ook|4s|3m|3ne|3st|3th|2ron|1room|0taboo
+boo |blood|4m|1ook|4s|3m|3ne|3st|3th|2rno|3on|1room|0taboo
 boo.|book.css
 booa|bogota|2olean
 booc|book.css
@@ -5549,7 +5566,7 @@ boph|biophysics|1ophutatswana|6hatswana
 bopt|boipatong|2phutatswana|6hatswana
 bopu|bophutatswana|6hatswana
 bopy|biophysics
-bor |abort|1rbor|0board|2er|4e|4s|2re|3is|3n|3on|2wer|2yer|0labor
+bor |abort|1rbor|0board|2er|4e|4s|2re|3is|3n|4o|3on|2wer|2yer|0labor
 bora|biographical|9es|1oraine|3laug|0laboratories|:o|9y
 borb|absorbed|0borbri
 bord|board|5ing|5room|5s|2gardus|2rder|6ing|6s|1uford|0subordinate|;s
@@ -5558,8 +5575,8 @@ borg|aborigine|9s|8ies|0boring|3ough|2urgeois|9ie|5uiba
 bori|aborigine|9s|8ies|0boarding|2raine|3bri|3ing|4s
 borl|borlaug
 borm|abnormality|8ly
-born|boraine|3ing|3n|3on|2urne|0osborn|6e
-boro|boron|4ugh|3row|6ed|0gaborone|0laborors
+born|boraine|3ing|3n|4o|3on|2urne|0osborn|6e
+boro|borno|3on|4ugh|3row|6ed|0gaborone|0laborors
 borp|absorption
 borr|abhorrence|0boardroom|2rbri|3der|6ing|6s|3row|6ed
 bors|boards|2erestaat|4s|2ris|2wers
@@ -5609,7 +5626,7 @@ bout|about|0bophutatswana|6hatswana|2ught
 bouu|bourguiba
 bov |above
 bove|above
-bovi|bolivia
+bovi|arbovirus|0bolivia
 bow |below|1low|4n|1owen|4r|1rown|0elbow
 bowa|botswana|2wman|1rowkaw
 bowe|blower|1oswell|2wen|4r|5s|5y|3les|1rowser|7s
@@ -5805,7 +5822,7 @@ brmn|berman|1irmingham
 brmp|brumpt
 brmt|brumpt
 brmu|bermuda
-brn |barn|1erne|1orn|3on|1rain|2een|2ian|3en|3ne|4g|2onx|3wn|2yn|1urns|1yrne|3on
+brn |barn|1erne|1orn|4o|3on|1rain|2een|2ian|3en|3ne|4g|2onx|3wn|2yn|1urns|1yrne|3on
 brna|barnabas|5rd|1ernard|1iernacki|1rainard|1urnham
 brnb|barnabas
 brnc|branch|6es|2inch
@@ -5815,13 +5832,13 @@ brng|boring|1ring|5ing|1uring
 brnh|branch|6es|2ennhoud|2inch|1urnham
 brni|bringing|2owning
 brnn|brennhoud
-brno|bronson
+brno|borno|1ronson
 brnr|barnard|1ernard|4ers|1rundred|1urner|6s
 brns|barnes|1ronson|1urns
 brnt|barnett|1runett|2yant
 brnx|bronx
 brny|barney
-bro |boron|1road|3ke|3nx|3om|3wn|1yron
+bro |borno|3on|1road|3ke|3nx|3om|3wn|1yron
 broa|abroad|0broad|5casting|5ened|7ing|6r|5ly|5us|5way|3kaw|3wkaw
 broc|braodcasting|2oadcasting|3chure|8s|4kport|3uch
 brod|abroad|0braodcasting|2oad|5casting|5ened|7ing|6r|5ly|5us|5way|3der|3ederbond
@@ -6253,6 +6270,7 @@ buto|bruton|1ulton|2rton|2tton|6s
 butr|butler|3terworth|4rick
 butt|butt|4erworth|4on|6s|4rick|0rebuttal
 buty|beauty
+buwk|beeuwkes
 buy |bundy|2ry|2sy|2y|3s
 buyg|buying
 buyi|buying
@@ -7023,6 +7041,7 @@ ceon|ceylon
 ceor|censorship|1remorne
 ceos|cellos
 cepe|cheaper
+ceph|encephalitis
 cepo|codepoint
 cept|accept|6able|7nce|:s|6ed|6ing|6s|0except|6ion|9al|9s|0inception|0reception|6or|8s
 cer |cedar|1lear|3rk|1oeur|2ker|2mer|2ver
@@ -7645,7 +7664,7 @@ clar|calvary|1lair|3ra|4emont|5nce|6don|4ification|=s|5on|5ty|4k|5e|3ssroom|9s|2
 clas|caldas|1laims|3sh|5ed|6s|4s|5es|5ical|7s|6fication|>s|8ed|7ying|5room|9s|3use|6s|2eansing
 clat|clanton|3rity|3yton|2imate|6ology|1olgate|3lateral|6ing|7on|9s
 clau|claude|4se|6s|0mclaurin
-clav|cleavage|8s|0enclaves|0mcclave
+clav|cleavage|8s|0mcclave
 clay|clay|4ton|1oplay
 clb |caleb|1lub|4s|1olby
 clbi|climbing
@@ -9129,7 +9148,7 @@ culy|curly
 cum |crum|1uomo
 cuma|cumulative|2shman
 cumb|columbia|8n|6us|1umberland|0incumbents
-cume|cumberland|0document|8ary|9tion|8class|8ed|8s|8test|0ecumenical
+cume|cumberland|0document|8ary|9tion|8class|8ed|8ing|8s|8test|0ecumenical
 cumi|culminated|8ing|2mmings
 cuml|cumulative
 cumm|cummings
@@ -9360,7 +9379,7 @@ czeh|czechoslovakia
 czeo|czechoslovakia
 czet|corzette
 czho|czechoslovakia
-d   |ad|2d|1id|0bad|1ed|1id|1ud|0cd|0d|1a|2m|2n|2s|2y|1b|1c|2p|1d|2t|1e|2c|2l|2m|2n|2r|2s|2t|2y|1h|1i|2a|2d|2e|2r|2s|2v|1l|1m|2a|2i|1na|1o|2b|2c|2g|2m|2n|2t|2w|1r|2y|1t|2d|1u|2e|1wo|1y|0ed|2s|2u|1nd|0gd|2p|2r|1md|0had|0icd|1d|2a|2s|2t|0jdk|2r|0kbd|0led|1td|0md|1ed|1id|1od|1ud|0nd|1fd|0odd|1ld|1od|0pad|1df|2t|1hd|0red|1id|0td|2n|1ed|1od|0udf|1nd|1pd|0xd|2m|0zed|0≤
+d   |ad|2d|1id|0bad|1ed|1id|1ud|0cd|0d|1a|2m|2n|2s|2y|1b|1c|2p|1d|2t|1e|2c|2l|2m|2n|2r|2s|2t|2y|1h|1i|2a|2d|2e|2r|2s|2v|1l|1m|2a|2i|1na|1o|2b|2c|2g|2m|2n|2t|2w|1r|2y|1t|2d|1u|2e|1wo|1y|0ed|2s|2u|1nd|0gd|2p|2r|1md|0had|0icd|1d|2a|2s|2t|1hd|0jdk|2r|0kbd|0led|1td|0md|1ed|1id|1od|1ud|0nd|1fd|0odd|1ld|1od|0pad|1df|2t|1hd|0red|1id|0td|2n|1ed|1od|0udf|1nd|1pd|0xd|2m|0zed|0≤
 d'ae|d'arte
 d'am|d'arms
 d'ar|d'arms|4te
@@ -9675,7 +9694,7 @@ dclr|declaration|;s|6e|7d|7fontfamily|;shape|7s|8ymbolfont|Aalphabet|6ing
 dcls|declsep
 dcma|decimal|7literal
 dcmb|december
-dcme|document|8ary|9tion|8class|8ed|8s|8test
+dcme|document|8ary|9tion|8class|8ed|8ing|8s|8test
 dcmp|decomposition|=s
 dcoa|decorating|8on|:s|7or
 dcod|decoded
@@ -9706,8 +9725,8 @@ dctp|doctype|7decl
 dctr|doctor|6s|4rine|8s
 dctt|dictate|7d|6ors|9hip|<s
 dcty|doctype|7decl
-dcue|document|8ary|9tion|8class|8ed|8s|8test
-dcum|document|8ary|9tion|8class|8ed|8s|8test
+dcue|document|8ary|9tion|8class|8ed|8ing|8s|8test
+dcum|document|8ary|9tion|8class|8ed|8ing|8s|8test
 dcus|discuss|7ed|7ing|8on|:s
 dcxs|doc.xsl
 dcy |decay
@@ -10066,6 +10085,7 @@ dexr|dexter
 dext|dexter
 dey |decay|2lay|2ny|2y
 deye|delayed
+deyo|hideyo
 deyp|idkeypattern
 dez |dietz|0ndez
 df  |deaf|1iff|1uff|0pdf|0sadf|0udf
@@ -10531,7 +10551,7 @@ dlhi|delhi|1olphins
 dli |dehli|2lhi
 dlia|delicate
 dlib|deliberately
-dlic|delicate|1uplicate|9d|9s
+dlic|delicate|1uplicate|9d|9s|8ion
 dlie|deliberately|4ver|7ables|7ed|7y
 dlii|delimited|8r|9s|7ing
 dlim|delimited|8r|9s|7ing
@@ -10776,17 +10796,17 @@ dobt|doubt|5ful|5s
 doc |doc|3k|4s
 doc.|doc.xsl
 doca|advocacy|6te|8d|8s|0doencas|2rcas
-doce|docherty|3ket|6s|3ument|8ary|9tion|8class|8ed|8s|8test
+doce|docherty|3ket|6s|3ument|8ary|9tion|8class|8ed|8ing|8s|8test
 doch|docherty
 doci|desocialized|1octrine|8s
 dock|dock|4et|6s|4s
-docm|document|8ary|9tion|8class|8ed|8s|8test
+docm|document|8ary|9tion|8class|8ed|8ing|8s|8test
 doco|doctor|6s
 docp|doctype|7decl
 docr|democracies|8y|7tic|:ally|9zation|:e|8s|1ocherty|3tor|6s|4rine|8s|0endocrinology
 docs|doc.xsl|3ks|2rcas
 doct|docket|6s|3tor|6s|4rine|8s|4ype|7decl|0indoctrination
-docu|document|8ary|9tion|8class|8ed|8s|8test
+docu|document|8ary|9tion|8class|8ed|8ing|8s|8test
 docx|doc.xsl
 docy|doctype|7decl
 dod |dodd|3ge|2wd
@@ -10852,7 +10872,7 @@ dolu|devolution
 dom |dom
 doma|dogmatic|2main|3inance|7t|6te|8d|8s|7ion|2rmancy|6t
 domd|doomsday
-dome|document|8ary|9tion|8class|8ed|8s|8test|2mestic
+dome|document|8ary|9tion|8class|8ed|8ing|8s|8test|2mestic
 domg|domingo
 domi|denominations|1omain|3inance|7t|6te|8d|8s|7ion|5go|5i|6ca|8n|2rmitories
 domn|domain|3inance|7t|6te|8d|8s|7ion|5go|5i|6ca|8n|2rmancy|6t
@@ -10935,12 +10955,12 @@ doty|doctype|7decl
 dou |doubt|3g
 doua|douglas|7s
 doub|double|6d|6literal|4t|5ful|5s|0undoubtedly
-doue|document|8ary|9tion|8class|8ed|8s|8test|2uble|6d|6literal
+doue|document|8ary|9tion|8class|8ed|8ing|8s|8test|2uble|6d|6literal
 douf|doubtful
 doug|doug|4las|7s|1rought
 douh|drought
 doul|double|6d|6literal|3glas|7s
-doum|document|8ary|9tion|8class|8ed|8s|8test
+doum|document|8ary|9tion|8class|8ed|8ing|8s|8test
 doun|denounced|7ing
 dous|doubts
 dout|doubt|5ful|5s
@@ -10987,14 +11007,14 @@ dph |depth
 dphi|dolphins
 dpho|medphone
 dphs|depths
-dpic|depicted|6ing|1uplicate|9d|9s
+dpic|depicted|6ing|1uplicate|9d|9s|8ion
 dpin|dipping
 dpis|despises
 dpit|depicted|6ing|2spite
 dpiv|deprivation|6e|7d
 dpla|displaced|6y|7ed|7s
-dplc|duplicate|9d|9s
-dpli|depoliticize|<d|1uplicate|9d|9s
+dplc|duplicate|9d|9s|8ion
+dpli|depoliticize|<d|1uplicate|9d|9s|8ion
 dplm|diplomacy|7tic|8s
 dplo|deplored|7s|6ing|5yment|1iplomacy|7tic|8s
 dplr|deplored|7s|6ing
@@ -11466,7 +11486,7 @@ duha|dunham
 duhm|dunham
 duht|daughter|8s
 dui |d.uri
-duic|duplicate|9d|9s
+duic|duplicate|9d|9s|8ion
 duie|duties
 duig|during
 duin|dublin|2rgin|3ing|3ling
@@ -11480,12 +11500,12 @@ duki|dunkirk
 dukr|dunkirk
 dul |adult|0dull|2val
 dula|douglas|7s|1unlap|0modularization
-dulc|duplicate|9d|9s
+dulc|duplicate|9d|9s|8ion
 duld|dulled
 dule|double|6d|6literal|1udley|2lled|0module|6s
 dulg|divulging
 dulh|duluth
-duli|dublin|2plicate|9d|9s|2rling
+duli|dublin|2plicate|9d|9s|8ion|2rling
 dull|dull|4ed
 duln|dublin|2rling
 dulp|dunlap
@@ -11496,7 +11516,7 @@ duly|dudley
 dum |drum|4s|1ump
 duma|dehumanized
 dumd|dumond
-dume|document|8ary|9tion|8class|8ed|8s|8test
+dume|document|8ary|9tion|8class|8ed|8ing|8s|8test
 dumm|drummond
 dumn|dumond
 dumo|drummond|1umond
@@ -11521,9 +11541,9 @@ duod|dumond
 duon|dumond|2tton
 duou|dubious
 dup |dump
-dupc|duplicate|9d|9s
-dupi|duplicate|9d|9s
-dupl|duplicate|9d|9s
+dupc|duplicate|9d|9s|8ion
+dupi|duplicate|9d|9s|8ion
+dupl|duplicate|9d|9s|8ion
 dur |d.uri|1urck
 dura|duration|3ban
 durb|durban
@@ -11740,7 +11760,7 @@ dzen|dozen|5s
 dzes|dozens
 dzn |dozen
 dzns|dozens
-e   |age|1ke|1me|1ve|0bce|1ed|2e|2n|0ce|2o|1ue|0de|2c|2l|2m|2n|2r|2s|2t|2y|1ie|1ue|0e|1a|2r|1b|2v|1d|2s|2u|1e|1f|1g|1j|1l|2k|2y|1m|2p|1n|2d|1pg|1q|1r|2a|2r|1s|2g|1t|2c|1uc|1ve|1x|2p|1ye|0fe|2b|2w|0ge|2b|2n|2t|0he|2r|2x|0ice|1e|2c|1re|0je|1oe|0ken|2y|0le|2a|2d|2e|2o|2t|1ie|0me|2d|2n|2r|2t|1me|0ne|2c|2t|2w|1ye|0one|1re|0pe|2n|2r|2s|2w|1re|0re|2c|2d|2f|2g|2s|2v|2y|1oe|1ye|0se|2a|2e|2q|2t|2x|1he|1ie|1ue|0te|2d|2l|2n|0use|0ve|0we|2b|2t|0xe|0yes|2t|1oe|0zed|2n
+e   |age|1ke|1me|1ve|0bce|1ed|2n|0ce|2o|1ue|0de|2c|2l|2m|2n|2r|2s|2t|2y|1ie|1ue|0e|1a|2r|1b|2v|1d|2s|2u|1e|1f|1g|1j|1l|2k|2y|1m|2p|1n|2d|1pg|1q|1r|2a|2r|1s|2g|1t|2c|1uc|1ve|1x|2p|1ye|0fe|2b|2w|0ge|2b|2n|2t|0he|2r|2x|0ice|1e|2c|1re|0je|1oe|0ken|2y|0le|2a|2d|2e|2o|2t|1ie|0me|2d|2n|2r|2t|1me|0ne|2c|2t|2w|1ye|0one|1re|0pe|2n|2r|2s|2w|1re|0re|2c|2d|2f|2g|2s|2v|2y|1oe|1ye|0se|2a|2e|2q|2t|2x|1he|1ie|1ue|0te|2d|2l|2n|0use|0ve|0we|2b|2t|0xe|0yes|2t|1oe|0zed|2n
 e'e |we're
 e'r |we're
 e're|we're
@@ -11793,6 +11813,7 @@ eaem|peacemaker
 eaen|leavenworth|0reagent|0seamen|0weakened
 eaer|bearers|3ver|0dealer|6s|0eager|2sier|3tern|1xacerbate|:s|0header|6s|3lers|0leader|6s|7hip|:s|0meager|0reader|6s|0weaker|3ver|0yeager
 eaes|eames|0leaves|0nearest
+eaey|easley
 eaf |deaf|0leaf
 eafe|leaflets
 eaff|reaffirming
@@ -11837,7 +11858,7 @@ eaks|breaks|0speaks
 eal |beall|0deal|4s|4t|0eagle|2rl|4e|4y|1mail|1qual|1ucal|0ideal|0legal|0metal|0pearl|0real|4m|0seal
 eala|escalated|7ing|7ors|1valuate|8d|8s|7ing|8on|:s|0zealand
 eald|gerald|0herald
-eale|dealer|6s|0eagle|2rle|4ier|6st|1nable|6d|6s|1qualed|0female|6s|0healers|0leaflets|0seatle|0teagle
+eale|dealer|6s|0eagle|2rle|4ier|6st|2sley|1nable|6d|6s|1qualed|0female|6s|0healers|0leaflets|0seatle|0teagle
 ealf|behalf|0sealife
 ealg|realignment
 ealh|health|6care|6y|0wealth|6y
@@ -11850,7 +11871,7 @@ ealr|dealer|6s|0healers
 eals|deals|0equals|0ideals|0medals|2tals|0realistic|9ally|4ms
 ealt|dealt|0egalitarian|0health|6care|6y|0realities|6y|4ty|0wealth|6y
 ealu|evaluate|8d|8s|7ing|8on|:s
-ealy|deadly|0early|2sily|0nearly|0really|4ty
+ealy|deadly|0early|2sily|3ley|0nearly|0really|4ty
 ealz|realization|6e|7s|6ing
 eam |dream|0eames|1xam|4s|0realm|0steam|0team|4s
 eama|eastman|0seaman
@@ -11913,13 +11934,13 @@ ears|beardsley|0ears|1varts|0fears|0hearst|0nearest|0pears|0sears|0years
 eart|dearth|2part|6ment|:s|6ure|0earthenware|5quake|1varts|0hearst|4t|5land
 eary|early|0nearly
 eas |areas|0beans|0cease|0deals|0eames|2rs|2se|3t|3y|1ras|1vans|1xams|0fears|0ideas|0leads|3se|4t|0means|0pears|0reads|0sears|3ts|0teams|2xas|1reas|0years|3st
-easa|eastman|0peasant|7ry|7s|0seascapes
+easa|eastman|0peasant|7ry|7s|1leasant|0seascapes
 easb|feasibility|6le
 easc|emasculated|0seascapes
 easd|ceased
-ease|cease|5d|0ease|3ier|3tern|1lapsed|0lease|0please|6d|0reassert
+ease|cease|5d|0ease|3ier|3ley|3tern|1lapsed|0lease|0please|0reassert
 easi|easier|4ly|3tin|0feasibility|6le|0leasing|0reassigned
-easl|easily
+easl|easily|3ley
 easm|eastman
 easn|eastin|0leasing|0peasant|7ry|7s|0reason|6able|:ness|9y|6ing|6s|0season|6al
 easo|gleason|0reason|6able|:ness|9y|6ing|6s|0season|6al
@@ -11927,7 +11948,7 @@ easr|easier|3tern|0measure|7d|7s|6ing
 eass|reassert|5igned|5urance|0selassia
 east|devastating|0east|4ern|4in|4man|1vanston|0hearst|0least|0sebastian|0yeast
 easu|emasculated|0measure|7d|7s|6ing|0reassurance|0treasure|8r|7y
-easy|easily|3y
+easy|easily|3ley|3y
 eat |beat|0dealt|3th|0east|2ton|1nact|0great|0heart|3t|0least|0meant|3t|0neat|0react|0seats|0treat|0wheat|0yeast
 eata|eastman|1rrata
 eatd|seated
@@ -12071,7 +12092,7 @@ ecar|declaration|;s|6e|7d|7fontfamily|;shape|7s|8ymbolfont|Aalphabet|6ing
 ecas|because|0deceased
 ecat|educate|7d|6ion|9al
 ecau|because|0precautions
-ecav|enclaves|1xcavation|:s
+ecav|excavation|:s
 ecay|decay
 ecc |necc
 ecct|eclecticism
@@ -12085,12 +12106,13 @@ ecec|eclecticism
 eced|exceed|6ed|6ing|0mercedes|0precede|7d|7nce|8t|7s|6ing|0secede
 ecee|exceed|6ed|6ing|0secede
 ecef|peaceful
+eceh|encephalitis
 ecei|perceive|8d|8s|7ing|0receipt|7s|5ve|7d|7s|6ing
 ecel|echelons|1scuela|1xcellent|5sior
 ecem|december|3rementing|0peacemaker
 ecen|descendant|:s|7ing|6t|0ecumenical|0percent|7age|:s|0recent|6ly
 eceo|echelons
-ecep|except|6ion|9al|9s|0perception|:s|8ve|:ly|0receipt|7s|4ption|6or|8s
+ecep|encephalitis|1xcept|6ion|9al|9s|0perception|:s|8ve|:ly|0receipt|7s|4ption|6or|8s
 ecer|becker|0decker|0exacerbate|:s|0mercer
 eces|deceased|0excelsior|4ssive|0necessarily|8y|6ity|0recession|0secession|9ist
 ecet|beckett|0eclecticism|1xcept|6ion|9al|9s|0recent|6ly|4ption|6or|8s|0secret|6ariat|8y
@@ -12131,7 +12153,7 @@ eckr|becker|0decker
 ecks|checks
 eckt|beckett
 ecl |eucal
-ecla|declaration|;s|6e|7d|7fontfamily|;shape|7s|8ymbolfont|Aalphabet|6ing|0enclaves|1scalated|7ing|7ors|3ola|0necklaced|0reclaim|7ing
+ecla|declaration|;s|6e|7d|7fontfamily|;shape|7s|8ymbolfont|Aalphabet|6ing|0escalated|7ing|7ors|3ola|0necklaced|0reclaim|7ing
 eclc|eclecticism
 ecld|euclid|1xclude|7d|6ing
 ecle|declsep|0eclecticism|0reckless
@@ -12145,7 +12167,6 @@ eclr|declaration|;s|6e|7d|7fontfamily|;shape|7s|8ymbolfont|Aalphabet|6ing
 ecls|declsep|0eclipsed|1nclosed|6ing|1xcelsior|3lusion|9ary|9s|7ve|9ly|8ity
 eclt|eclecticism
 eclu|exclude|7d|6ing|5sion|9ary|9s|7ve|9ly|8ity|0preclude|8s
-eclv|enclaves
 ecm |ercim|1xcom
 ecma|beckman|0decimal|7literal
 ecmb|december
@@ -12180,6 +12201,7 @@ ecos|enclosed|6ing|0necrosis|0reconsider|6tructing|<on
 ecou|encounter|9ed|9ing|9s|5rage|9d|9ment|9s|8ing
 ecov|recover|7able|7ing|7y
 ecpe|escape|6apos|6d|6quot|6s
+ecph|encephalitis
 ecpi|escaping|0recapitulation|3ipient|9s
 ecpr|reciprocated
 ecps|eclipsed
@@ -12376,7 +12398,7 @@ edwm|endowment
 edwn|edwin
 edwr|edward|6s
 edy |ready
-ee  |adee|0bee|3f|3n|3r|0deed|3p|3r|0ease|1dge|1e|1lse|1rie|1ve|3n|3r|1ye|3s|0feed|3l|3s|3t|1ree|0geer|2ne|0here|2ye|0keen|3p|0lee|0meet|2re|0need|0peer|0reed|3l|0see|3d|3k|3m|3n|3s|0tree|0weed|3k|2re
+ee  |adee|0beef|3n|3r|0deed|3p|3r|0ease|1dge|1e|1lse|1rie|1ve|3n|3r|1ye|3s|0feed|3l|3s|3t|1ree|0geer|2ne|0here|2ye|0keen|3p|0lee|0meet|2re|0need|0peer|0reed|3l|0see|3d|3k|3m|3n|3s|0tree|0weed|3k|2re
 eea |berea
 eeag|beleaguered
 eeal|eyeballs|0genealogical|0repeal|6ing|2veal|6ed|6s
@@ -12425,7 +12447,7 @@ eefi|beneficial|9ries|:y|6t|7ed|7s|0redefined|7ing
 eega|delegates|0relegated|2negades
 eege|emerge|6d|6nce|8y|0heeger
 eegi|delegitimize|0emerging
-eegr|heeger|0peregrine|0telegram|8s|7ph|9er|9ic|9y
+eegr|heeger|0peregrinations|0telegram|8s|7ph|9er|9ic|9y
 eegy|energy
 eeh |teeth
 eeha|elephantiasis|8s
@@ -12451,7 +12473,7 @@ eela|edelman|0revelations
 eeld|zerelda
 eele|beetle|0eveleth|0keeler|0needless|0seedless|1teele|0wheeler
 eeli|emeline|0feeling|7s|0leveling|0wheeling
-eell|eells|1stella|1xcellent|0jewell|0medellin|0newell|0rebellion|0sewell
+eell|befell|0eells|1stella|1xcellent|0jewell|0medellin|0newell|0rebellion|0sewell
 eelm|edelman
 eeln|emeline|0feeling|7s
 eelo|develop|7ed|8rs|7ing|7ment|;s|0echelons|1nvelope|8s
@@ -12468,7 +12490,7 @@ eemi|endemic|2emies|0seemingly
 eeml|exemplified
 eemn|element|7ary|7decl|;aration|7name|;orwildcard|7s|7test|0seemingly
 eemo|ceremonies|7y|0hegemonic|7y|0redemocratization
-eemp|exemplified|5t|6ed|6ion|0preempted|7s
+eemp|exemplified|5t|6ed|6ion|0peremptorily|1reempted|7s
 eems|deems|0seems
 eemt|exempt|6ed|6ion
 eemy|enemy|0jeremy
@@ -12481,7 +12503,7 @@ eene|degenerates|0eugene|0greene|0keene
 eeng|revenge|0seeing
 eenh|ehrenhalt|0greenhall|6ouse|:s
 eeni|evening
-eenn|evening|0perennial
+eenn|evening
 eenp|greenpeace
 eens|defense|0etzensperger|1vents|1xpense|7s|6ive|2tensibility|8le|7on|9s|7ve|0greenstead|0queens|6land
 eent|bement|0cement|6ed|0detention|0essential|9ly|1vent|5s|5ual|8ly|1xtent|0recent|6ly|2gents|2sent|6ed|6ment|2tention|0seventies
@@ -12492,7 +12514,7 @@ eeor|meteorite
 eep |deep|0keep|4s|0sheep|1weep
 eepa|elephantiasis|8s
 eepe|deepening|5r
-eeph|elephantiasis|8s|0telephone
+eeph|elephantiasis|8s|1ncephalitis|0telephone
 eepi|keeping|0sleeping
 eepl|deeply|0exemplified
 eepn|deepening|0keeping
@@ -12525,7 +12547,7 @@ eesa|reestablish
 eesc|telescope|9s
 eeso|emerson
 eess|excessive|0necessarily|8y|6ity|0recession|0secession|9ist
-eest|behest|0celestia|0eberstadt|1dmeston|1rnest|0pedestrian|:s|0reestablish
+eest|behest|0celestia|0eberstadt|1dmeston|1rnest|0pedestrian|:s|2restroika|0reestablish
 eet |beset|0ebert|1vent|0feet|0meet|4s|0sheet|1weet|0teeth
 eeta|reestablish|0vegetables|6tion|8ve
 eete|beetle|0cemetery|0elected|1xerted|3ter
@@ -12539,7 +12561,9 @@ eets|events|1xerts|0meets|0sheets|0tenets
 eett|jewett|0resettlement
 eetu|eventual|8ly
 eeuc|reeducation
+eeuk|beeuwkes
 eeut|execute|7d|7s|6ing|7on|7ve|9s
+eeuw|beeuwkes
 eeva|elevate|7d|6ors|0geneva|0relevance|7t
 eeve|eleven|1stevez|0redevelop|9ment|2eves|0sleeve
 eevi|television
@@ -12550,6 +12574,7 @@ eevt|elevate|7d|6ors
 eewa|leeward|0renewal
 eewe|renewed
 eewh|elsewhere
+eewk|beeuwkes
 eewr|leeward
 eex |regex
 eexa|reexamination
@@ -12577,9 +12602,10 @@ efci|deficiencies|9y|6t|0efficiency|8t
 efct|defect|6s|0effect|6ive|9ly|6s
 efe |defer|0refer
 efea|defeat|6ed
-efec|defect|6s|4nce|3lect|0effect|6ive|9ly|6s|0perfectability|0reflect|7ed|7ion|7s
+efec|defect|6s|4nce|3lect|0effect|6ive|9ly|6s|0perfectly|0reflect|7ed|7ion|7s
 efed|defend|6ers|6ing|6s
 efee|refereed|6nce|9d|9s|8ing|7dum|7t
+efel|befell
 efem|deferment|9s
 efen|defence|5d|6ers|6ing|6s|5se
 efer|defer|5ment|9s|0jefferson|6y|0prefer|6ably|6ence|:s|8tial|6red|8rs|0refer|5eed|6nce|9d|9s|8ing|7dum|7t|5red|6ing|5s
@@ -12605,6 +12631,7 @@ efis|leftists
 efix|prefix|6ed|7s
 eflc|deflect|0reflect|7ed|7ion|7s
 efle|deflect|0leaflets|0reflect|7ed|7ion|7s|5x
+efll|befell
 eflx|reflex
 efmo|leftmost
 efnc|defence
@@ -12615,7 +12642,7 @@ efns|defense
 efoc|enforce|7d|7ment
 efoe|before
 efom|deformities|0reform|6atting|6ed|7rs|6ism|8t|6s|6ulation
-efor|bedford|2fore|0deformities|0effort|6lessly|6s|1nforce|7d|7ment|0perforator|6m|7ance|7ed|7ing|7s|0reform|6atting|6ed|7rs|6ism|8t|6s|6ulation
+efor|bedford|2fore|0deformities|0effort|6lessly|6s|1nforce|7d|7ment|0perform|7ance|;s|7ed|7ing|7s|0reform|6atting|6ed|7rs|6ism|8t|6s|6ulation|0telford
 efot|effort|6lessly|6s
 efr |defer|0refer
 efra|enfranchised|;ment|0geffray
@@ -13102,7 +13129,6 @@ elap|elapsed
 elar|declaration|;s|6e|7d|7fontfamily|;shape|7s|8ymbolfont|Aalphabet|6ing|0elaborate|9s|8ion|2khart|1nlargement|0welfare
 elas|elapsed|0release|7d|7s|0selassia
 elat|belatedly|0elevate|7d|6ors|1mulate|0related|6s|5ing|6on|8s|9hip|<s|6ve|8ly|8pathexpr|<pattern|8s
-elav|enclaves
 elaw|delaware
 elax|relax
 elay|delay|5ed
@@ -13158,12 +13184,13 @@ elet|celestia|0deletion|0eclecticism|1lected|5ion|8s|5oral|8te|5ric|8al|:ly|8ity
 elev|believe|7d|7s|6ing|3levue|0elevate|7d|6ors|4en|0relevance|7t|0television
 elew|elsewhere
 elex|reflex
-eley|wesley|6an
+eley|easley|0wesley|6an
 elf |self
 elfa|welfare
 elfe|relife
 elff|jellffe
-elfr|welfare
+elfo|telford
+elfr|telford|0welfare
 elfs|delftshaven
 elft|delftshaven
 elfu|helpful
@@ -13254,7 +13281,7 @@ eloi|deloittee|0exploit|7able|8tion|7ed|7ing
 elom|seldom|0welcome|7d|6ing
 elon|belmont|3ong|6ing|6s|0ceylon|0delong|0eldon|2ton|0melton|0nelson
 eloo|ellwood
-elor|deplored|7s|6ing|0elaborate|9s|8ion|2more|1xploration|6e|7d|0vellore
+elor|deplored|7s|6ing|0elaborate|9s|8ion|2more|1xploration|6e|7d|0telford|0vellore
 elos|cellos|0enclosed|6ing|1xplosions|7ve|9s
 elot|deloittee|0eliot|2liot|2ocution
 elou|elocution|0melbourne|0sellout
@@ -13528,29 +13555,28 @@ enar|beinart|2rnard|0denmark|0engarde|2largement|0leonard|7stown|0scenario|8s
 enas|arenas
 enat|denationalized|0emanates|1nact|5ed|0prenatal|0senate|5or|0tenant
 enau|renaud
-enav|enclaves|2deavor|8s
+enav|endeavor|8s
 enba|elenbaas
 enbe|enable|6d|6s|0weinberg
 enbi|enabling
 enbl|enable|6d|6s|5ing
 enbu|edinburgh
 enc |enact|0fence|2rnã|0hence|0lence
-enca|doencas|0encampment|3laves|3name
+enca|doencas|0encampment|3name
 encd|encoded|5ing|8decl|8s
-ence|enacted|2coded|2tice|0fence|0hence|0lence|0spencer
-ench|enrich|0french|0muench|0trenches
+ence|enacted|2cephalitis|3oded|2tice|0fence|0hence|0lence|0spencer
+ench|encephalitis|2rich|0french|0muench|0trenches
 enci|agencies|0ciencies|0emancipatory|1ncoding|8decl|8s|0genocidal|0nencki|0penicillin
 enck|henick|0nencki
-encl|enclaves|4osed|6ing
+encl|enclosed|6ing
 encm|encampment|3name|3ompasses
 encn|encname|3ounter|9ed|9ing|9s
 enco|enclosed|6ing|3oded|5ing|8decl|8s|4mpasses|4unter|9ed|9ing|9s|5rage|9d|9ment|9s|8ing
-encp|encampment|3ompasses
+encp|encampment|3ephalitis|3ompasses
 encr|encourage|9d|9ment|9s|8ing|2docrinology
 encs|enclosed|6ing
 enct|enact|5ed
 encu|encounter|9ed|9ing|9s|5rage|9d|9ment|9s|8ing
-encv|enclaves
 ency|agency|0ciency
 end |cdend|0end|3ed|3s|0fend|0send|4s|1pend|0tend|1rend|0venda
 enda|agenda|0edendale|1ndangered|3eavor|8s|3ian|0kendall|0lendvayova|0sendai|0venda
@@ -13578,12 +13604,13 @@ ened|benedict|0denied|0earned|1nded|2gender|8ed|0kennedy|0mended|0opened|0rented
 enee|enemies|2tered|0renewed|0tenements
 enef|beneficial|9ries|:y|6t|7ed|7s
 eneg|energy|0renegades
+eneh|encephalitis
 enei|benedict|4ficial|9ries|:y|6t|7ed|7s|0endemic|2emies|2tering|0generic|7ally|4tic|7s|0heneine|0venezia
 enel|benwell|0envelope|8s|0gendel|3ealogical|0kennels|0mendelsohn|0wendell
 enem|endemic|2emies|4y|2semble|0tenements
 enen|centenario|6nial|0eminent|1ngender|8ed|2trench|8ed|0heneine|0sentence|0tendencies|7y
 eneo|benevolent|0envelope|8s|0generous
-enep|enterprise|:s|3repreneurs
+enep|encephalitis|2terprise|:s|3repreneurs
 ener|bender|2rners|0center|6ed|6piece|6s|0denver|0energy|2ter|5ed|5ing|5prise|:s|5taining|9ment|2umerated|:type|8ion|;s|0gender|3eral|7comp|7ity|8zed|7ly|7s|6te|8d|8s|7ing|8on|:al|5ic|7ally|5ous|0penetration|0render|6ed|6ing|9s|0scenery|0venter
 enes|denies|0ernest|0jenness|0scenes|1enses|0tenets|3nessee
 enet|bennett|0entertaining|9ment|1rnest|0genetic|7s|0kenneth|0penetration|0tenets
@@ -13651,7 +13678,7 @@ enke|penokee
 enki|jenkins|0nencki
 enkn|jenkins
 enl |engl
-enla|enclaves|2gland|2largement
+enla|england|2largement
 enle|bentley|0enable|6d|6s|0gentlemen
 enlg|enlargement|3ightenment|2ologist
 enlh|enlightenment
@@ -13661,7 +13688,6 @@ enln|england
 enlo|enclosed|6ing|2ologist|2velope|8s
 enlr|enlargement
 enls|enclosed|6ing|2glish
-enlv|enclaves
 enly|openly
 enm |enemy
 enma|denmark
@@ -13708,6 +13734,7 @@ enow|endowed|5ment
 enox|lenox
 enoy|enjoy|5ed|0genotype|8s
 enpa|jeanpa@microsoft.com
+enph|encephalitis
 enpi|endpoints
 enpo|endpoints
 enr |enter|3ry|0genre|0henry
@@ -14149,31 +14176,31 @@ erdu|overdue
 ere |berea|3ne|1oere|0debre|0earle|1rie|0genre|0here|0mere|3ge|3le|0serve|0terre|0verge|0we're|2re|1here
 erea|berea|5n|0decreased|7ing|0recreation|:al|2treat|0whereas|0yergeau
 ereb|ehrenberg|0thereby|0whereby
-erec|deprecated|0perfectability|3secution
+erec|deprecated|0perfectly|3secution
 ered|earned|0feared|0geared|0mercedes|3edith|3ged|0served|0zerelda
 eree|degree|2referenced|:ing|0pereference
 eref|dereferenced|:ing|0keyref|0pereference|0therefore|6rom
-ereg|peregrine|0segregation
+ereg|peregrinations|0segregation
 ereh|ehrenhalt
 erei|meredith|0perceive|8d|8s|7ing|0verein
 erel|berkeley|0ferrell|0merely|0serbelloni|0zerelda
-erem|ceremonies|7y|0decrementing|0extreme|7ly|7s|6ist|9s|0jeremy|0overemphasizes
-eren|berean|3gen|0ehrenberg|5halt|1ntrench|8ed|0herrenvolk|0percent|7age|:s|3ennial|0sergent|0terpene|3rence|0verein
+erem|ceremonies|7y|0decrementing|0extreme|7ly|7s|6ist|9s|0jeremy|0overemphasizes|0peremptorily
+eren|berean|3gen|0ehrenberg|5halt|1ntrench|8ed|0herrenvolk|0percent|7age|:s|0sergent|0terpene|3rence|0verein
 ereo|ceremonies|7y|0hereros|0stereotypes
-erep|entrepreneurs|0perception|:s|8ve|:ly
-erer|bearers|2rger|3ners|0cerberi|0herbert|3eros|3ter|0mercer|3ger|6s|0peregrine|0server
-eres|boerestaat|0depression|0ernest|1xpress|7ed|7ing|8on|:s|7way|:s|0heroes|0nearest|0overestimates|0peires|0refresher|7ing|2present|9able|:tion|>s|<ve|>s|9ed|9ing|9s|6sed|7ion|8ve|0series|3ves|0zeroes
-eret|ernest|1verett|0perpetrating|9ors|6ual|8ting|0regret|6s|2oretting|0secret|6ariat|8y
+erep|entrepreneurs|0perception|:s|8ve|:ly|3emptorily
+erer|bearers|2rger|3ners|0cerberi|0herbert|3eros|3ter|0mercer|3ger|6s|0peregrinations|0server
+eres|boerestaat|0depression|0ernest|1xpress|7ed|7ing|8on|:s|7way|:s|0heroes|0nearest|0overestimates|0peires|2restroika|0refresher|7ing|2present|9able|:tion|>s|<ve|>s|9ed|9ing|9s|6sed|7ion|8ve|0series|3ves|0zeroes
+eret|ernest|1verett|0perestroika|3petrating|9ors|6ual|8ting|0regret|6s|2oretting|0secret|6ariat|8y
 erev|perseverance
 erew|hebrew|0wherewithal
 erey|jeremy|3sey|0merely
 erf |serif
-erfc|perfectability
-erfe|dereferenced|:ing|0pereference|3fectability
+erfc|perfectly
+erfe|dereferenced|:ing|0pereference|3fectly
 erfi|verified
 erfl|overflow
-erfo|perforator|6m|7ance|7ed|7ing|7s
-erfr|perforator|6m|7ance|7ed|7ing|7s
+erfo|perform|7ance|;s|7ed|7ing|7s
+erfr|perform|7ance|;s|7ed|7ing|7s
 erfy|verify|6ing
 erg |merge|0verge
 erga|bergmann|0reorganization|9e|0yergeau
@@ -14184,7 +14211,7 @@ ergi|emerging|0georgia|7n
 ergl|berglund
 ergm|bergmann
 ergn|bergen|0sergent
-ergr|berger|4traum|0merger|6s|0peregrine
+ergr|berger|4traum|0merger|6s|0peregrinations
 ergs|fergusen
 ergt|bergtraum
 ergu|berglund|0fergusen
@@ -14242,6 +14269,7 @@ ermi|ceramica|0germain|0permissible|5t|6s|6ted|0terminal|8s|7te|9d|8ing|6ology|5
 erml|vermilye
 ermn|berman|0german|6y|0herman|6n|4on|0permanent|9e|9ly|0terminal|8s|7te|9d|8ing|6ology|0vermont
 ermo|ceremonies|7y|0enormous|0hermon|0vermont|0yearmonthduration|As
+ermp|peremptorily
 erms|permissible|0terms
 ermt|dermatology|0permit|6s|6ted|0termite
 ermu|bermuda
@@ -14256,7 +14284,7 @@ erng|leranger
 ernh|ehrenhalt
 erni|earning|7s|0learning|0wernimont
 ernm|wernimont
-ernn|earning|7s|0hernandez|0perennial|0vernon
+ernn|earning|7s|0hernandez|0vernon
 erno|vernon
 ernr|bernard|4ers
 erns|ernest|0guernsey
@@ -14274,7 +14302,7 @@ erom|jerome
 eron|hermon|0person|6al|8ities|:y|9zing|8ly|6nel|6s|0vermont|3non
 eroo|bedroom|0erosion|1urocommunism|0seroconversion
 erop|europe|6an|8s|1xpropriation|0metropole|8itan|0neurophysiology
-eror|error|5s|0fervor|0perforator|6m|7ance|7ed|7ing|7s|0terror|6ism|8ts|7zes|6s
+eror|error|5s|0fervor|0perform|7ance|;s|7ed|7ing|7s|0terror|6ism|8ts|7zes|6s
 eros|derose|0erosion|2rors|0heroes|0kerosene|0leprosarium|6y|0necrosis|0zeroes
 erou|nervous|0serious|7ly
 erov|retrovirol
@@ -14311,7 +14339,7 @@ ersn|person|6al|8ities|:y|9zing|8ly|6nel|6s|0yersinia
 erso|emerson|1rosion|0person|6al|8ities|:y|9zing|8ly|6nel|6s|1herson|0version|7ed|7info|7num|7s
 ersp|overspending|0perspective|;s
 erss|persist|7ed|8nt|0versus
-erst|duerst|0eberstadt|1rnest|0gerstmann|0hearst|2rbst|0overstepped|0teristic
+erst|duerst|0eberstadt|1rnest|0gerstmann|0hearst|2rbst|0overstepped|0perestroika|0teristic
 ersu|persuade|8d|6sion|8vely|0versus
 ersv|perseverance
 ersy|jersey
@@ -14365,7 +14393,7 @@ eryw|everywhere
 erz |ertz|0terzo
 erze|overzealous
 erzo|terzo
-es  |ages|1mes|1xes|0beds|2st|0deis|2s|3c|3k|1ies|1oes|1ues|0ears|2se|3t|3y|1ds|1ggs|1lse|1mps|1nds|2os|1ras|1s|2g|1wis|1yes|0fees|1oes|0gest|1oes|0hess|1ues|0ives|0jets|2ws|0keys|0legs|2ss|1ies|0mens|0ness|3t|2ts|2ws|1ies|0oles|1nes|1res|0pes|1res|0refs|2s|3t|0sees|2ts|1ues|0test|1ies|1res|1ues|0uses|0west|0yes
+es  |ages|1mes|1xes|0beds|2st|0deis|2s|3c|3k|1ies|1oes|1ues|0ears|2se|3t|3y|1ds|1ggs|1lse|1mps|1nds|2os|1ras|1s|2g|1wis|1yes|0fees|1oes|0gest|1oes|0hess|1ues|0ives|0jets|2ws|0keys|0legs|2ss|1ies|0mens|0ness|3t|2ts|2ws|1ies|0oles|1nes|1res|0pes|1res|0refs|2s|3t|0sees|2ts|1ues|0test|1ies|1res|0uses|0west|0yes
 esa |versa
 esaa|escalated|7ing|7ors
 esab|destabilization|:e|;rs|:ing|0establish|9ed|:s|9ing|9ment
@@ -14400,6 +14428,7 @@ escp|escape|6apos|6d|6quot|6s|5ing
 escr|describe|8d|8s|7ing|6ption|;s|9ve|8ors|0prescribe|9d|7ption|:ve
 escu|emasculated|1scuela|0rescue
 escw|eschew
+esda|tuesday
 esde|estudes|0residence|7tial|8s
 esdi|residing
 esdo|estados
@@ -14421,7 +14450,7 @@ eses|senses
 eset|beset|0desert|0essential|9ly|0resent|6ed|6ment|4ttlement
 esev|deserve|0estevez|0perseverance|0reserve|7d|8â|6oir|9s
 esew|elsewhere|1schew
-esey|jersey|0wesley|6an
+esey|easley|0jersey|0wesley|6an
 esfi|westfield
 esg |esg
 esgm|websgml
@@ -14455,13 +14484,13 @@ esiz|mestizo
 esk |desk|4s
 esks|desks
 esla|escalated|7ing|7ors|3ola
-esle|chesley|0leslie|0newsletter|:s|0wesley|6an
+esle|chesley|0easley|0leslie|0newsletter|:s|0wesley|6an
 esli|leslie|0riesling
 esll|edsall|1stella
 eslt|result|6ed|6ing|6s
 eslu|resolution|:s
 eslv|resolve|7d|7r|6ing
-esly|easily|0wesley|6an
+esly|easily|3ley|0wesley|6an
 esma|eastman|1stimate|8d|8s|0westman
 esmb|ensemble|0resemble|8s
 esme|resume|6s|0tersmette
@@ -14887,6 +14916,7 @@ euv |equiv
 euva|equivalent|:ly
 euve|peruvemba
 euvi|peruvian
+euwk|beeuwkes
 eux |deux
 ev  |ebv|1nvy|1van|2e|3n|3r|2il|0levi|0rev
 eva |evan|4s
@@ -15677,7 +15707,7 @@ fel |feel|2ld|3ix|3l|3t|1ield|1uel
 feld|feld|1ield|5er|5ing|5s|6et|5work
 fele|female|6s|1ielder
 feli|feeling|7s|2lix|1ielding|1relimo
-fell|fell|4ows|7hip|:s
+fell|befell|0fell|4ows|7hip|:s
 felm|frelimo
 feln|feeling|7s
 felo|fellows|7hip|:s|0lifelong
@@ -18591,7 +18621,7 @@ gzmn|guzman
 gzp'|gzip'ed
 gzpe|gzip'ed
 gztt|gazette
-h   |ah|2i|2o|0ch|2i|0dh|0h|1'n|1a|2d|2l|2s|2t|2y|1e|2r|2x|1h|1im|2s|2t|2v|1np|1o|2c|2n|2t|2w|1r|1u|2m|2t|1w|0jhk|0mh|0nhl|1ih|0ph|2d|0rh|0she|2y|0th|0vhs|0who|2y|0≈
+h   |ah|2i|2o|0ch|2i|0dh|0h|1'n|1a|2d|2l|2s|2t|2y|1e|2r|2x|1h|1im|2s|2t|2v|1np|1o|2c|2n|2t|2w|1r|1u|2m|2t|1w|0ihd|0jhk|0mh|0nhl|1ih|0ph|2d|0rh|0she|2y|0th|0vhs|0who|2y|0≈
 h'  |h'n
 h'n |h'n
 h.is|th.issue
@@ -18654,7 +18684,7 @@ hads|hands|5hake|2rdest|4ship|0rhoads
 hadu|handful|1eadquarters|<.jpg
 hadw|chadwell|0handwritten|2rdworking|0shadow|6ed|6s
 hady|hadley|2ndy|2rdly|4y
-hae |chase|0hague|2ile|3ne|2le|2ve|4n|4s|2yen|4s|3ne|0phase|0shane|3pe|3re
+hae |chase|0hague|2ile|3ne|2le|2ve|4n|4s|2yen|4s|0phase|0shane|3pe|3re
 haed|handed|2rmed|2tred|6s|1eaded|0phased|0shaped|3red
 haeh|hazelhuhn|0shareholders|9ing
 hael|chapel|0hansell|2zelhuhn|0khayelitsha
@@ -18662,14 +18692,14 @@ haem|habermas|2hneman|2rlem|2temongers
 haen|hacienda|2mlen|2nsen|2ppen|6ed|6s|2rden|2ven|2yen
 haeo|hatemongers
 haer|habermas|2mmered|3per|6ed|2rper|6s|1eader|6s|3lers|0shaker|0thayer
-haes|hardest|3vest|7ing|2ves|2wkes|2yes|0phases|0shakespeare|3res
+haes|hardest|3vest|7ing|2ves|2wkes|2yes|3nes|0phases|0shakespeare|3res
 haet|hackett
 haev|whatever
 haey|hadley|2gley|2nley|2rvey|0shapey
 haf |chaff|0haaff|2lf|2nf|0wharf
 hafa|halifax
 hafe|schafer
-haff|chaff|0haaff|2ffkine|0schaffer|1haffner
+haff|chaff|0haaff|2ffkine|0mahaffy|0schaffer|1haffner
 hafi|haffkine
 hafk|haffkine
 hafn|shaffner
@@ -18752,12 +18782,12 @@ hamr|hamburg|3mered|3per|6ed
 hams|hampshire
 hamt|hamilton|3pton
 hamu|hamburg|2rmful
-han |chain|3ng|0ghana|0hagan|2hn|2ine|2nd|4s|4y|3f|3i|3na|2ven|2yen|3ne|1ogan|1uang|2man|0johan|0shane|4g|3un|0than|4k
+han |chain|3ng|0ghana|0hagan|2hn|2ine|2nd|4s|4y|3f|3i|3na|2ven|2yen|1ogan|1uang|2man|0johan|0shane|4g|3un|0than|4k
 hana|ghana|0hanazono|3na|2vana
 hanb|handbook
 hanc|chance|6s|0enhance|7d|7s|6ing|0handicrafts
 hand|chandler|0hand|4book|4ed|4ful|4icrafts|4le|6d|5ing|4picked|4s|5hake|4written|4y|1yland
-hane|chance|6s|4ge|6d|6s|4nel|7ing|0hahneman|2ine|2nded|4le|6d|3ley|3over|3sell|5n|2rkness|2untes|2yne|1umane|0shane|3wnee
+hane|chance|6s|4ge|6d|6s|4nel|7ing|0hahneman|2ine|2nded|4le|6d|3ley|3over|3sell|5n|2rkness|2untes|2ynes|1umane|0shane|3wnee
 hanf|handful|3f|4ord
 hang|chang|5e|6d|6s|5ing|0having|1uang|0shang|5hai
 hanh|handshake|0shanghai
@@ -18769,7 +18799,7 @@ hann|channel|7ing|0hanlon|3na|3sen|4on|2vanna|0johann|6esburg|0shannon
 hano|ethanol|0hanazono|3dbook|3ford|3lon|3over|3son|0shannon
 hanp|handpicked
 hanr|handwritten|3ford
-hans|hands|5hake|3sell|5n|4on|2unts|1umans|0thanks
+hans|hands|5hake|3sell|5n|4on|2unts|2ynes|1umans|0thanks
 hant|chanute|0hauntes|5s|0shantung
 hanu|chanute|0handful|0shantung
 hanv|hanover
@@ -18781,7 +18811,7 @@ haoc|hallock
 haod|harold
 haoe|hanover
 haol|harold
-haom|hashomer
+haom|hashomer|2ysom
 haon|hammond|2nlon|3son|2rmondsworth|6y|0sharon
 haoo|harwood|2ywood
 haor|haldore|2nford|2rbor|6s
@@ -18834,9 +18864,9 @@ hase|charset|3se|0hansell|5n|0phase|5d|5s|2rase|6s
 hash|hampshire|2ndshake|2rdship|3sh|2shomer|2yashi|0thrashing
 hasi|hastings|2tsize
 hasl|hansell|2ssall
-hasm|hashomer
+hasm|hashomer|2ysom
 hasn|hansen|4on|2stings
-haso|hanson|2shomer
+haso|hanson|2shomer|2ysom
 hass|harassment|2ssall|0phases
 hast|hastings|1earst
 hasz|hatsize
@@ -18887,15 +18917,16 @@ hawn|shawnee
 hawo|hardworking|3wood|2ywood
 hawr|handwritten
 haws|hawkes
-hay |handy|2rdy|3ry|2y|3en|4s|3ne|3s|1eavy
+hay |handy|2rdy|3ry|2y|3en|4s|3s|1eavy
 haya|hayashi
-haye|hayen|4s|3ne|0khayelitsha|0thayer
+haye|hayen|4s|3nes|0khayelitsha|0thayer
 hayh|hayashi
 hayl|khayelitsha
-hayn|hayen|3ne
-hayo|haywood
+haym|haysom
+hayn|hayen|3nes
+hayo|haysom|3wood
 hayr|thayer
-hays|hayashi|3es|3s
+hays|hayashi|3es|3nes|3s|4om
 hayu|hwaiyuen
 hayw|haywood
 haza|hazards
@@ -18965,7 +18996,7 @@ hcox|hickox
 hcs |hicks
 hcsc|hochschule
 hcua|chicua
-hd  |had|2nd|2rd|1ead|2ld|1old|1urd|1yde|0phd|0shed
+hd  |had|2nd|2rd|1ead|2ld|1old|1urd|1yde|0ihd|0phd|0shed
 hdbo|handbook
 hdde|hidden
 hddi|shedding
@@ -18977,9 +19008,10 @@ hdeb|hedenberg
 hded|handed|1eaded|2eded
 hdel|heidelberg
 hden|harden|1edenberg|1idden|1olden
+hdeo|hideyo
 hder|header|6s|1older|1yderabad
 hdes|hardest|1odges|2rdes|0rhodes|6ia
-hdey|hadley
+hdey|hadley|1ideyo
 hdfu|handful
 hdge|hodges
 hdgs|hodges
@@ -19013,6 +19045,7 @@ hdwe|chadwell
 hdwo|hardworking
 hdwr|handwritten
 hdy |handy|2rdy
+hdyo|hideyo
 he  |choe|0hale|2ve|1e|2ad|3r|3t|2ck|2ld|3p|2r|3e|2ss|2x|2ye|1ole|2me|2pe|2se|2we|1ref|1ues|1yde|0she|3d|2oe|0them|3o|0when
 hea |ahead|0head|3r|4d|4t|3t|3vy|0wheat
 head|ahead|0head|4dress|4ed|5r|6s|4ing|4quarters|<.jpg|3rd|2rald|2xadecimal|0thread
@@ -19273,6 +19306,7 @@ hexn|hexbinary
 hey |heavy|2nry|2ye
 heye|cheyenne|0heye
 heyn|cheyenne
+heyo|hideyo
 hf  |half|2nf|1oof|1ref
 hff |chaff|0haaff
 hffa|hoffman|1uffman
@@ -19387,15 +19421,16 @@ hid |child|0hired|0third
 hida|hinsdale|1oliday
 hidb|childbearing
 hidd|hidden
-hide|heidelberg|1idden
+hide|heidelberg|1idden|3eyo
 hidg|hiding
 hidh|childhood
 hidi|hiding
 hidl|heidelberg|0thirdly
 hidn|hidden|3ing
-hido|hindson
+hido|hideyo|2ndson
 hidr|children
 hids|childs|0hindson|0thirds
+hidy|hideyo
 hie |chief|3le|0haile|3ne|1inge|2red|0while|3te
 hiea|hierarchic|:al|8y
 hiec|heinecke
@@ -19405,11 +19440,12 @@ hieh|whitehall|6ead
 hiel|heidelberg|1imself|2rzel|0shield|6ed
 hiem|hinerman
 hien|hacienda|1idden|1ygiene|0whiten
+hieo|hideyo
 hier|heiser|1ierarchic|:al|8y|2gher|2nerman|3terland|2therto|3ler|0shigeru|3vers
 hies|chiefs|3nese|0highest|0whites|6pace
 hiev|achieve|7d|7ment|;s|6ing
 hiew|schiewe
-hiey|hickey
+hiey|hickey|2deyo
 hif |chief|0shift
 hifa|halifax
 hife|shifted
@@ -19566,6 +19602,7 @@ hivi|thriving
 hivr|shivers
 hiwa|highway|7s
 hiye|hillyer
+hiyo|hideyo
 hiyu|hwaiyuen
 hize|hirzel
 hizl|hirzel
@@ -19634,7 +19671,7 @@ hlic|helicopter
 hlid|holiday
 hlif|halifax
 hlig|hulings|3ligan
-hlin|halting|1elminth|3ping|3singfers|6ki|1olding|3lins|1ulings
+hlin|halting|1elminth|3ping|3singfers|6ki|1olding|3lingsworth|1ulings
 hlio|helicopter|4port
 hlip|heliport|0philip|6pe|7ine|:s|6s
 hlis|hollister
@@ -19645,9 +19682,9 @@ hllc|hallock
 hlld|hillsdale
 hlle|challenge|9d|9s|8ing|0hillyer
 hllg|hulligan
-hlli|hilliard|1ollins|5ster|1ulligan|0phillips|2yllis
+hlli|hilliard|1ollingsworth|5ster|1ulligan|0phillips|2yllis
 hllm|hillam
-hlln|holland|7er|4ins
+hlln|holland|7er|4ingsworth
 hllo|hallock|1ello|5.dtd|1ollow|6ay|0shallow
 hlls|halls|1ills|5dale|1ollister|0shells
 hllw|hallway|7s|1ollow|6ay
@@ -19812,7 +19849,7 @@ hnds|hands|5hake|1indson
 hndu|handful|1onduras
 hndw|handwritten
 hndy|handy
-hne |haine|2yne|1ence|1inge|1orne|0shane
+hne |haine|1ence|1inge|1orne|0shane
 hne.|phone.com
 hnec|heinecke|1onecker
 hned|handed
@@ -19823,7 +19860,7 @@ hnel|hansell
 hnem|hahneman|1inerman
 hnen|hansen|1eneine
 hner|hinerman|3terland|1unger|3ter
-hnes|chinese|0fahnestock
+hnes|chinese|0fahnestock|0haynes
 hnev|whenever
 hney|cheney|0hanley
 hnf |hanf
@@ -19992,7 +20029,7 @@ hoid|holiday
 hoie|choice|6s
 hoig|hoping
 hoil|hostile|6ity
-hoin|holding|3lins|2ping|3kins|2using|0showing|7s
+hoin|holding|3lingsworth|2ping|3kins|2using|0showing|7s
 hoio|horizon|7tal
 hoir|choir
 hois|hollister
@@ -20013,11 +20050,11 @@ holc|holocaust
 hold|harold|1old|4en|5r|4ing|4s|3iday|0should|0uphold
 hole|cholera|5sterol|0holden|5r|3e|4s|3mes|2meless|2peless|8ness|0whole|5sale
 holh|hoselhuhn
-holi|holding|3iday|3lins|5ster|3omisa
+holi|holding|3iday|3lingsworth|5ster|3omisa
 holk|holyoke
-holl|holland|7er|4ins|5ster|4ow|6ay|4y|0wholly
+holl|holland|7er|4ingsworth|5ster|4ow|6ay|4y|0wholly
 holm|holmes|3omisa
-holn|holden|4ing|3land|7er|4ins
+holn|holden|4ing|3land|7er|4ingsworth
 holo|hollow|6ay|3ocaust|4misa|3yoke|0theologians|8cal|7y
 holr|cholera|0holder
 hols|cholesterol|0holds|3es|3lister|3mes|2tels|0wholesale
@@ -20453,7 +20490,7 @@ hsiz|hatsize
 hsle|chesley
 hslh|hoselhuhn
 hsol|histology
-hsom|hashomer
+hsom|hashomer|2ysom
 hson|hanson|1udson|0ohlson
 hsor|historian|9s|7c|8al|:ly|7es|6y
 hspa|hspace
@@ -20774,14 +20811,14 @@ hydf|hydrofoil
 hydi|hydrick
 hydo|hydrocarbon|5foil
 hydr|dihydronaphtalene|0hyderabad|3rick|4ocarbon|5foil
-hye |hayen|4s|3ne|1eye|1yde|2kes|2mer|0whyte
+hye |hayen|4s|1eye|1yde|2kes|2mer|0whyte
 hyea|hyderabad
 hyec|hypercube
 hyee|hygene
 hyel|hyperlink|9s|0khayelitsha
 hyen|cheyenne|0hayen|1ygene|3iene|2phen|6s
 hyer|hyderabad|2mer|2percube|5link|9s|5tension|7xt|0thayer
-hyes|hayes|1ykes
+hyes|hayes|3nes|1ykes
 hyet|hypertension|7xt
 hyge|hygene|3iene
 hygi|hygiene
@@ -20804,13 +20841,15 @@ hyln|hyland
 hym |hymer
 hyme|hymer
 hymr|hymer
-hyn |hayen|3ne
+hyn |hayen
 hynd|hyland
-hyne|hayne|1ygene
+hyne|haynes|1ygene
+hyns|haynes
 hyoc|hydrocarbon
 hyof|hydrofoil
 hyoh|hypothesis|9ze|7tical
 hyok|holyoke
+hyom|haysom
 hyoo|haywood
 hyot|hypothesis|9ze|7tical|0phytotoxicity
 hypc|hypercube
@@ -20834,7 +20873,8 @@ hys |hayes|3s|1ykes|0phys
 hysc|physical|8ly|6ian|9s|6s
 hysh|hayashi
 hysi|physical|8ly|6ian|9s|6s|5ological|:st|9y
-hyso|physiological|:st|9y
+hysm|haysom
+hyso|haysom|0physiological|:st|9y
 hyst|chrystie
 hyt |hoyt|0whyte
 hyte|whyte
@@ -20848,7 +20888,7 @@ hzeh|hazelhuhn
 hzel|hazelhuhn|1irzel
 hzlh|hazelhuhn
 hzrd|hazards
-i   |ahi|1ia|2d|2m|2r|1pi|0bi|2b|2d|2g|2n|2t|0cgi|1hi|1i|0di|2a|2d|2e|2r|2s|2v|1mi|0fci|1ig|2t|0him|2s|2t|2v|0i|1an|1bm|1cd|2e|2u|1d|2a|2s|2t|1e|2c|1fp|1i|2i|1ll|1m|2f|2g|2m|1nc|2f|2k|2n|2t|1on|1q|1ra|2e|2i|2s|1so|1ts|1v|1x|0jim|2s|0kim|2n|2t|0li|2e|2p|2u|0mi|2d|2n|2t|0nih|2l|2s|0oil|2s|0pi|2g|2k|2n|2s|2t|0ri|2d|2m|2o|0sci|1ie|2s|2t|2x|1ui|0tim|2n|2p|2s|1ri|0uri|0vi|2a|2i|2s|0win|0xi|2i|1si|0zip
+i   |ahi|1ia|2d|2m|2r|1pi|0bi|2b|2d|2g|2n|2t|0cgi|1hi|1i|0di|2a|2d|2e|2r|2s|2v|1mi|0fci|1ig|2t|0him|2s|2t|2v|0i|1an|1bm|1cd|2e|2u|1d|2a|2s|2t|1e|2c|1fp|1hd|1i|2i|1ll|1m|2f|2g|2m|1nc|2f|2k|2n|2t|1on|1q|1ra|2e|2i|2s|1so|1ts|1v|1x|0jim|2s|0kim|2n|2t|0li|2e|2p|2u|0mi|2d|2n|2t|0nih|2l|2s|0oil|2s|0pi|2g|2k|2n|2s|2t|0ri|2d|2m|2o|0sci|1ie|2s|2t|2x|1ui|0tim|2n|2p|2s|1ri|0uri|0vi|2a|2i|2s|0win|0xi|2i|1si|0zip
 i.co|div.constraint
 i.ex|div.exampleheader|;inner|;outer|;wrapper
 i.is|div.issue
@@ -20927,7 +20967,7 @@ iana|guiana|0iana|0tirana
 ianb|istanbul
 ianc|finance|7d|7s|6ial|7ng|0infancy
 iand|incandescent|2land|1sland|6s
-iani|insanity
+iane|insane
 iano|diagnosed|8s|7is|7tic|0milano|0piano
 ians|asians|0winans
 iant|giant|0infant|6ry|6s
@@ -21065,7 +21105,7 @@ icde|incidence|7ts
 ice |alice|0boice|1rice|0ice|0juice|0mice|0piece|1rice|0rice|0since|0twice|0vice|1oice
 icea|iceland|1ncrease|8d|8s|7ing|:ly
 iced|voiced
-icel|bickel|0iceland|0micellaneous|3hels|2scellaneous|0nickel|0pickels
+icel|bickel|0iceland|0micellaneous|3hels|2scellanea|:ous|0nickel|0pickels
 icem|incremental
 icen|bicentennial|0iceland|1ncentive|9s|0license|6ing|0vincent
 iceo|cicero
@@ -21163,7 +21203,7 @@ icrb|microbiology
 icrd|ricardo
 icre|discredit|9ed|9ing|6pancies|6tion|0increase|8d|8s|7ing|:ly|5mental
 icrf|microfilm
-icri|discriminated|;ion
+icri|discriminated|;ion|0inscription
 icrm|incremental
 icrn|micronutrient
 icro|cicero|0micro|5biology|5film|5nutrient|5photograph|?s|?y|5scope|:s|9ical|:sts|9y|6oft|6pectograph|:roscope|6ystems
@@ -21191,7 +21231,7 @@ icur|incurables|5sion|0picture|7s
 icus|discuss|7ed|7ing|8on|:s|0inclusion|9s|7ve|3ursion
 icyc|bicycle
 icyl|bicycle
-id  |acid|1id|3s|1rid|0bid|3i|2nd|2rd|0did|3n|2ed|0find|0grid|0ibid|1cd|1d|2a|2ea|2iv|2rc|2s|2t|1ssd|0kind|0laid|0mid|2ld|2nd|0paid|0reid|1id|0said|1ide|1uid|0tide|2ed|0wide|2ld|2nd
+id  |acid|1id|3s|1rid|0bid|3i|2nd|2rd|0did|3n|2ed|0find|0grid|0ibid|1cd|1d|2a|2ea|2iv|2rc|2s|2t|1hd|1ssd|0kind|0laid|0mid|2ld|2nd|0paid|0reid|1id|0said|1ide|1uid|0tide|2ed|0wide|2ld|2nd
 ida |ida|3ho|3sa|2ea|4l|4s|1ndia|1soda
 idaa|idasa
 idad|ciudad|0piedad
@@ -21215,7 +21255,7 @@ iddi|fiddis
 iddl|middle|6brook|6ton
 iddn|hidden|0ridden
 idds|fiddis
-ide |aided|1side|0guide|0idea|4l|4s|2ref|1ndex|0pride|0side|4d|4s|1lide|0tide|0video|0wide|4r
+ide |abide|1ided|1side|0guide|0idea|4l|4s|2ref|1ndex|0pride|0side|4d|4s|1lide|0tide|0video|0wide|4r
 idea|idea|4l|5ly|5s|4s|0sidewalk|0tidewater
 ideb|guidebook|9s
 ided|aided|0gilded|1uided|0indeed|0minded|0sided
@@ -21225,7 +21265,7 @@ idei|identical|6fication|8ed|9r|:s|9s|7y|8ing|6ties|7y|2lewild|0sidelined|0widen
 idel|guidelines|0heidelberg|0ideal|5ly|5s|3ological|;ly|7ues|7y|0sidelined|0widely
 idem|epidemic|8s|7ol|9ogical|;y|0indemnification|7ty
 iden|evidence|8d|6t|0hidden|0identical|6fication|8ed|9r|:s|9s|7y|8ing|6ties|7y|2leness|1ndemnification|7ty|4nt|6ation|6ured|0maiden|0ridden|0tilden|0unidentifiable|:ed|0weidenreich|1idening
-ideo|ideological|;ly|7ues|7y|0video
+ideo|hideyo|0ideological|;ly|7ues|7y|0video
 idep|idkeypattern|1ndependence|:t|;ly|0widespread
 ideq|inadequate
 ider|kindergarten|0leider|1inderman|0niederhauser|0pinderhughes|0snider|0wider|2lderness
@@ -21233,7 +21273,7 @@ ides|guides|0ideals|4s|2refs|1ndies|0midwest|0sides|1lides|0widespread
 idet|identical|6fication|8ed|9r|:s|9s|7y|8ing|6ties|7y|1ndent|6ation|6ured
 idew|idlewild|0sidewalk|0tidewater
 idex|index|5ed|6s
-idey|idkeypattern|0kidney|0sidney|0widely
+idey|hideyo|0idkeypattern|0kidney|0sidney|0widely
 idf |idref
 idff|indifference
 idfs|idrefs
@@ -21334,12 +21374,13 @@ idws|midwest|0widows
 idwv|midwives
 idx |index
 idxe|indexed|6s
+idyo|hideyo
 idyp|idkeypattern
 ie  |bike|0cite|0die|3d|3s|3t|2re|0erie|0fife|2le|2ne|2re|2ve|0give|0ice|1dea|1e|2c|2tf|1re|1tem|1ves|0kite|0lie|3n|3s|3u|2fe|2ke|2me|2ne|2ve|0mice|2ke|2le|2me|2ne|0nies|2ne|0pier|2ne|2pe|0rice|2pe|2se|0side|2e|2te|2ve|2ze|0tide|2ed|3s|2me|2re|2ve|0vice|2ew|2ne|0wide|2fe|2ne|2re|2se
 iea |idea|4l|4s
 ieab|sizeable
 ieac|impeach
-iead|insead|0piedad
+iead|piedad
 ieag|pipeage
 ieal|ideal|5ly|5s|0piexalta
 iean|iceland|1reland
@@ -21351,7 +21392,7 @@ iebn|liebenberg
 iec |iec|0piece
 iece|piece|3rce
 ieci|ciencies
-iect|direct|6ed|6ion|9s|6ly|6or|8s|0infect|6ed|6ion|9s|8us|:ness|7vity|2jection|9s|2sect|6s
+iect|direct|6ed|6ion|9s|6ly|6or|8s|0infect|6ed|6ion|9s|8us|:ness|7vity|2jection|9s|2sect|6ary|6s
 iecu|insecurity
 iecy|ciency
 ied |aided|2med|2red|0cited|0died|1ried|0field|2led|2red|2xed|0hired|0liked|2ved|0mixed|0piled|0sided|0tied|1ried|0yield
@@ -21484,6 +21525,7 @@ iexp|ifexpr
 iexr|ifexpr
 iey |ailey
 ieya|vineyard|8s
+ieyo|hideyo
 ieyp|idkeypattern
 iez |dietz
 iezo|timezone
@@ -21680,7 +21722,7 @@ igur|figure|6s
 igus|disgust
 igwa|highway|7s
 igwo|ringworm
-ih  |dish|0fish|0high|0inch|0nih|0rich|0wish
+ih  |dish|0fish|0high|0ihd|1nch|0nih|0rich|0wish
 ihaa|ithaca
 ihab|inhabitants
 ihac|ithaca
@@ -21691,6 +21733,7 @@ ihan|mishandling
 ihar|bilharziasis|0richard|7s|8on
 ihbi|inhabitants|3ibited|7s
 ihca|ithaca
+ihd |ihd
 ihdr|dihydronaphtalene|0withdrawal|:s|8n|6ew
 ihed|wished
 ihei|inherit|7ance|7ed|7s
@@ -21737,7 +21780,7 @@ ihua|chihuahua
 ihwa|highway|7s
 ihyd|dihydronaphtalene
 ihyr|dihydronaphtalene
-ii  |bidi|0fiji|0ibid|1cip|1div|1i|2i|3i|1nit|1ri|3s|2ri|0mini|0riia|0vii|3i|0xii|3i
+ii  |bidi|0fiji|0ibid|1cip|1div|1i|2i|1nit|1ri|3s|2ri|0mini|0riia|0vii|3i|0xii|3i
 iia |india|2iap|2ria|0riia
 iian|figians|0indian|6a|7polis|6s|0lilian
 iiap|iniap
@@ -21763,9 +21806,8 @@ iigi|indiginous
 iign|insignificance|<t
 iigr|immigrant|9s|7tion
 iih |irish
-iii |iii|3i|0viii|0xiii
+iii |iii|0viii|0xiii
 iiia|initial|7ized|9ing|7ly|6te|8d|7ing|8ve|:s|7ors
-iiii|iiii
 iika|ishikawa
 iil |civil
 iila|similar|7ities|7ly|0vigilance|7te|9s
@@ -21948,7 +21990,7 @@ ilin|bilain|0failing|7s|1illing|3ming|0illinois|1nclined|2line|0killing|7s|0lili
 ilio|biblio|6graphic|;y|2llion|0giliomee|0illinois|0million|7s
 ilip|philip|6pe|7ine|:s|6s
 ilis|wilkison
-ilit|abilities|6y|0illiterate|0militancy|7t|8s|6rily|8sts|8zation|7y|5ia|0utilities|6y|0willits
+ilit|ability|0illiterate|0militancy|7t|8s|6rily|8sts|8zation|7y|5ia|0utilities|6y|0willits
 iliz|utilization|6ed
 ilk |milk|0silk
 ilki|milking|0wilkinson|5son
@@ -22192,15 +22234,15 @@ in  |ainu|1kin|1min|0bin|3d|0clin|1oin|0didn|0find|3e|0gain|0hint|0ian|3a|1man|1
 ina |china|0final|0iana|1ndia|2iap|2man|2ria|2tra|0minas|3na|0sinai|0uinta
 inab|inability|2habitants|2stability|2trablack|0sinsabaugh
 inac|finance|7d|7s|6ial|7ng|0inaccurate|2fancy|4rction|2tact
-inad|inadequate|2candescent|2land|2sead
-inae|inadequate|2mates|2nately|2take
+inad|inadequate|2candescent|2land
+inae|inadequate|2mates|2nately|2sane|2take
 inag|inaugural|8tion|2tragroup|0linkage
 inah|ingraham|2katha
-inai|inability|2grained|2habitants|2sanity|2valid|7ate|7s|4riably|4sion|0sinai
+inai|inability|2grained|2habitants|2valid|7ate|7s|4riably|4sion|0sinai
 inak|intake
 inal|final|5ly|0inability|3pplicable|2stallation|7ed|2valid|7ate|7s|0signal|6ed|6ing|6s|1pinal|0urinals
 inam|inasmuch|2flamed|6matory|2gham|0minamoto
-inan|finance|7d|7s|6ial|7ng|3land|0incandescent|2dian|6a|7polis|6s|2fancy|5t|6ry|6s|2land|2man|2sanity|3tance|8ofexpr|8s|6t|7iable|9te|2transigence|;t|0winans
+inan|finance|7d|7s|6ial|7ng|3land|0incandescent|2dian|6a|7polis|6s|2fancy|5t|6ry|6s|2land|2man|2sane|3tance|8ofexpr|8s|6t|7iable|9te|2transigence|;t|0winans
 inao|minamoto
 inap|inapplicable|5ropriate|2iap|0singapore
 inaq|inadequate
@@ -22222,15 +22264,15 @@ incc|inaccurate|2conclusive|3ulcated|0minoccurs
 incd|incandescent|3idence|7ts|3lude|7d|7s|6ing
 ince|incentive|9s|4ption|3hes|3idence|7ts|4nerators|4te|3ome|6s|3rease|8d|8s|7ing|:ly|5mental|2duced|0prince|6ss|6ton|0since|0vincent
 inch|brinch|0inch|4es
-inci|ciencies|2ncinnati|1oincide|0incidence|7ts|4nerators|4pient|4te|3lined|3oming|2ducing|0principal|9ly|7le|9s
+inci|ciencies|2ncinnati|1oincide|0incidence|7ts|4nerators|4pient|4te|3lined|3oming|2ducing|2scription|0principal|9ly|7le|9s
 incl|inclined|4ude|7d|7s|6ing|5sion|9s|7ve|3ulcated|2oculation|;s|0lincoln|7town|0sinclair|0xinclude
 incm|income|6s|5ing|5patibilities|>y|:le|6etence|6lete|3remental|3umbents
 incn|cincinnati|0incandescent|3entive|9s|3inerators|3lined|3onclusive|5sistencies|;t|0rinconda|0vincent
 inco|income|6s|5ing|5patibilities|>y|:le|6etence|6lete|4nclusive|5sistencies|;t|4rporate|;d|:ion|5rect|9ly|0lincoln|7town|0rinconda
 incp|inception|3ipient|3ompatibilities|>y|:le|6etence|6lete|4rporate|;d|:ion
-incr|incorporate|;d|:ion|5rect|9ly|3rease|8d|8s|7ing|:ly|5mental|3urables|5sion
+incr|incorporate|;d|:ion|5rect|9ly|3rease|8d|8s|7ing|:ly|5mental|3urables|5sion|2scription
 incs|inches|3lusion|9s|7ve|3onsistencies|;t|3ursion
-inct|incentive|9s|4ption|3ite|2doctrination|2fect|6ed|6ion|9s|8us|:ness|7vity|2jection|9s|2sect|6s|2tact
+inct|incentive|9s|4ption|3ite|2doctrination|2fect|6ed|6ion|9s|8us|:ness|7vity|2jection|9s|2sect|6ary|6s|2tact
 incu|inaccurate|2clude|7d|7s|6ing|5sion|9s|7ve|3ulcated|4mbents|4rables|5sion|2noculation|2oculation|;s|2security|0xinclude
 incy|ciency
 ind |bind|4s|1lind|0find|4s|0index|3ia|4c|0kind|4s|0mind|4s|0wind
@@ -22257,9 +22299,9 @@ indv|individual|:ism|:ly|:s
 indw|window|6s
 indx|index|5ed|6s
 ine |amine|0binge|1rine|0fine|0haine|1inge|0index|2fer|2ner|4s|2ter|0kline|0ligne|2ne|4s|0maine|1ilne|2ne|4s|0nine|0paine|1ine|0since|1tine|1wine|0urine|0vine|4s|0wine|4s
-inea|guinea|0increase|8d|8s|7ing|:ly|2equalities|9y|3rnational|2sead|3tead|2teraction|;s|6merican|0linear|0mineral|3neapolis|0vigneaud|2neyard|8s
-inec|heinecke|0infect|6ed|6ion|9s|8us|:ness|7vity|2jection|9s|2sect|6s|5urity|3pection|:s|7ors|2terchange|6ommunal|7urse
-ined|gained|0indeed|2gredients|2sead|2tended|4rdependence|=t|6isciplinary|0joined|0linked|0minded|0rinsed|0signed
+inea|guinea|0increase|8d|8s|7ing|:ly|2equalities|9y|3rnational|2stead|2teraction|;s|6merican|0linear|0mineral|3neapolis|0vigneaud|2neyard|8s
+inec|heinecke|0infect|6ed|6ion|9s|8us|:ness|7vity|2jection|9s|2sect|6ary|6s|5urity|3pection|:s|7ors|2terchange|6ommunal|7urse
+ined|gained|0indeed|2gredients|2tended|4rdependence|=t|6isciplinary|0joined|0linked|0minded|0rinsed|0signed
 inee|indeed|4pendence|:t|;ly|4xed|6s|2effective|2ference|2teger|7literal|7s|4rest|8ed|8ing|8s|0linseed|0nineteenth|0pioneer
 inef|ineffective|2terface|9s|6ere|9nce
 ineg|integer|7literal|7s|5ral|7te|9d|8ion|6ity|4rgovernmental|6roup
@@ -22272,7 +22314,7 @@ inep|inception|2dependence|:t|;ly|2temperate|4rpersonal|6ret|9ation|>s|9ed|9ing|
 ineq|inadequate|2equalities|9y
 iner|dinner|6s|0finger|0hinerman|3terland|0inernational|2fer|5ence|5ior|8ization|5red|2gersoll|2herit|7ance|7ed|7s|2ner|5most|2sert|6ed|6ing|2tegral|7te|9d|8ion|6ity|4r|5action|;s|6merican|5change|6ommunal|7urse|5dependence|=t|6isciplinary|5est|8ed|8ing|8s|5face|9s|6ere|9nce|5governmental|6roup|5im|6or|8s|5library|6ock|5mediate|6ingled|5n|6acional|7l|8ized|8ly|7tional|=ism|?t|>zation|?ed|=ly|6et|6ode|6s|7hip|5operability|;le|:te|5personal|6ret|9ation|>s|9ed|9ing|:ve|5racial|6upted|5sect|9exceptexpr|6persal|:ed|6tate|5val|8s|6ention|<s|6iew|9ed|9s|2verse|7ly|1tinerary|0kindergarten|0linderman|3ear|0mineral|5s|5va|0pinderhughes|3ero|0singers|0winery|3gers|3ner|6s|3ter
 ines|chinese|0illness|1nches|2dies|2fested|2gersoll|2nes|2sensitive|2tense|7ly|6ity|4rsect|9exceptexpr|6persal|:ed|6tate|2verse|7ly|4st|6ed|6igates|:ing|;on|=s|:ors|6ment|:s|6or|8s|0lines|0miners|4s|3nesota|1oines|0painesville|0tionesta|0vines|0wines|2tness|7ed
-inet|incentive|9s|4ption|2dent|6ation|6ured|2evitable|9y|2fect|6ed|6ion|9s|8us|:ness|7vity|4sted|2jection|9s|2sect|6s|4rt|6ed|6ing|2tent|6ion|9ed|9s|2vent|6ed|6ion|9s|6or|8y|4st|6ed|6igates|:ing|;on|=s|:ors|6ment|:s|6or|8s|0nineteenth|5ies
+inet|incentive|9s|4ption|2dent|6ation|6ured|2evitable|9y|2fect|6ed|6ion|9s|8us|:ness|7vity|4sted|2jection|9s|2sect|6ary|6s|4rt|6ed|6ing|2tent|6ion|9ed|9s|2vent|6ed|6ion|9s|6or|8y|4st|6ed|6igates|:ing|;on|=s|:ors|6ment|:s|6or|8s|0nineteenth|5ies
 ineu|inequalities|9y|2security
 inev|inevitable|9y|2terval|8s|6ention|<s|6iew|9ed|9s|0minerva
 inex|index|5ed|6s|2flexible
@@ -22389,9 +22431,9 @@ inna|inernational|2nately|3ovative|0minna|4eapolis|0vienna|0winona
 innb|innsbruk
 innc|finance|7d|7s|6ial|7ng|0inconclusive|2fancy|2noculation
 innd|einunddreiãÿigste|0incandescent|2land|2tended
-inne|dinner|6s|0finney|0grinnell|0incinerators|2donesia|2line|2nately|3er|5most|4s|0kinney|0minneapolis|5sota|4ie|0phinney|1inney|0skinner|0winner|6s|4ie
+inne|dinner|6s|0finney|0grinnell|0incinerators|2donesia|2line|2nately|3er|5most|4s|2sane|0kinney|0minneapolis|5sota|4ie|0phinney|1inney|0skinner|0winner|6s|4ie
 inng|dining|0mining|0vining
-inni|infinite|7y|2nis|2sanity|0minnie|0winnie|5ng|5peg
+inni|infinite|7y|2nis|0minnie|0winnie|5ng|5peg
 innm|innermost
 innn|winning
 inno|innoculation|4vative
@@ -22445,7 +22487,7 @@ inre|ignore|6d|6s|7ectcontents|1ncrease|8d|8s|7ing|:ly|5mental|2direct|8ly|2fere
 inrf|interface|9s|6ere|9nce
 inrg|inorganic|2surgents|2tergovernmental|6roup|3ragroup|4igue|7ing
 inrh|ingraham
-inri|heinrich|0ignoring|1nferior|8ization|2grained|4id|2herit|7ance|7ed|7s|2ria|2terim|6or|8s|3rigue|7ing|5nsic|9ally|2variably|0minorities|7y
+inri|heinrich|0ignoring|1nferior|8ization|2grained|4id|2herit|7ance|7ed|7s|2ria|2scription|2terim|6or|8s|3rigue|7ing|5nsic|9ally|2variably|0minorities|7y
 inrl|interlibrary|6ock
 inrm|hinerman|0incremental|2firmary|3orm|6al|8ly|7tion|9ve|6ed|2nermost|2termediate|6ingled
 inrn|inernational|2tern|6acional|7l|8ized|8ly|7tional|=ism|?t|>zation|?ed|=ly|6et|6ode|6s|7hip|3ransigence|;t|4insic|9ally
@@ -22458,23 +22500,23 @@ inru|instructed|8ion|;s|8or|6ment|:s|2truders
 inrv|interval|8s|6ention|<s|6iew|9ed|9s|0minerva
 inry|binary|0injury|0winery
 ins |binds|0finds|0gains|0hints|0innes|3is|2st|0kinds|3gs|0lines|3ks|2ons|0minas|3ds|3es|3us|0ruins|0signs|2nks|0tions|0vines|0wines|3gs
-insa|hinsdale|0insanity|3ead|3ofar|3tability|5llation|7ed|5nce|8ofexpr|8s|6t|7iable|9te|4ead|3ulated|4rance|0lindsay|0sinsabaugh
+insa|hinsdale|0insane|3ofar|3tability|5llation|7ed|5nce|8ofexpr|8s|6t|7iable|9te|4ead|3ulated|4rance|0lindsay|0sinsabaugh
 insb|innsbruk|2stability|0kingsburg|0sinsabaugh
-insc|indiscriminate|2sect|6s|5urity|3pection|:s|7ors
-insd|hinsdale|0insead|3ide|6r|7s|0rinsed
-inse|infoset|2sead|4ct|6s|5urity|4nsitive|4rt|6ed|6ing|3ide|6r|7s|3pection|:s|7ors|3tead|0kinsey|0linseed|0rinsed
+insc|indiscriminate|2scription|3ect|6ary|6s|5urity|3pection|:s|7ors
+insd|hinsdale|0inside|6r|7s|0rinsed
+inse|infoset|2sane|3ect|6ary|6s|5urity|4nsitive|4rt|6ed|6ing|3ide|6r|7s|3pection|:s|7ors|3tead|0kinsey|0linseed|0rinsed
 insf|insofar|3ufficient
 insg|insight|7ful|7s|5nificance|<t|3tigating|8or|3urgents
 insh|einsohn|0insight|7ful|7s|0kinship
-insi|infusion|2sanity|3ide|6r|7s|4ght|7ful|7s|5nificance|<t|4st|6ed|7nce|6ing|6s|4titute|5ute|3pirational|6e|7d|3tigating|8or|5tuo|7t|8e|9s|9t|8ion|;al|=ized|;s|8o|5uto|2vasion|3isibility|0kinship
+insi|infusion|2scription|3ide|6r|7s|4ght|7ful|7s|5nificance|<t|4st|6ed|7nce|6ing|6s|4titute|5ute|3pirational|6e|7d|3tigating|8or|5tuo|7t|8e|9s|9t|8ion|;al|=ized|;s|8o|5uto|2vasion|3isibility|0kinship
 insl|installation|7ed|3ulated|0kingsley|0lindsley|0winslow
 insm|dinsmore|0inasmuch
-insn|insanity|3ensitive|3ignificance|<t|3tance|8ofexpr|8s|6t|7iable|9te
+insn|insane|3ensitive|3ignificance|<t|3tance|8ofexpr|8s|6t|7iable|9te
 inso|dinsmore|0einsohn|0hindson|0insofar|0winslow
 insp|indispensable|2spection|:s|7ors|4irational|6e|7d
-insr|innsbruk|2sert|6ed|6ing|3pirational|6e|7d|3tructed|8ion|;s|8or|6ment|:s|3urance|5gents|5rection|<ism|>ts
+insr|innsbruk|2scription|3ert|6ed|6ing|3pirational|6e|7d|3tructed|8ion|;s|8or|6ment|:s|3urance|5gents|5rection|<ism|>ts
 inss|insensitive|3ist|6ed|7nce|6ing|6s
-inst|industrial|:ist|;zed|8es|7y|2fested|2justices|2sect|6s|4rt|6ed|6ing|3ist|6ed|7nce|6ing|6s|4titute|5ute|3t|4ability|5llation|7ed|5nce|8ofexpr|8s|6t|7iable|9te|4ead|4igating|8or|5tuo|7t|8e|9s|9t|8ion|;al|=ized|;s|8o|5uto|4ructed|8ion|;s|8or|6ment|:s|2vest|6ed|6igates|:ing|;on|=s|:ors|6ment|:s|6or|8s|0kingston|0mainstream|1inister|8s|6ry|0reinstated
+inst|industrial|:ist|;zed|8es|7y|2fested|2justices|2sect|6ary|6s|4rt|6ed|6ing|3ist|6ed|7nce|6ing|6s|4titute|5ute|3t|4ability|5llation|7ed|5nce|8ofexpr|8s|6t|7iable|9te|4ead|4igating|8or|5tuo|7t|8e|9s|9t|8ion|;al|=ized|;s|8o|5uto|4ructed|8ion|;s|8or|6ment|:s|2vest|6ed|6igates|:ing|;on|=s|:ors|6ment|:s|6or|8s|0kingston|0mainstream|1inister|8s|6ry|0reinstated
 insu|inasmuch|2security|3itute|3tiuto|4ructed|8ion|;s|8or|6ment|:s|3ufficient|4lated|4rance|5gents|5rection|<ism|>ts
 insy|kinsey
 int |cient|0giant|0hint|4s|0init|2put|2st|2t|3er|3ra|0joint|0ninth|0paint|1oint|1rint|0uinta
@@ -22895,14 +22937,14 @@ isa |idasa|1saac|2oda|0pisa|0vista
 isaa|isaac
 isab|disabilities|5le|7d|7s|6ing|4mbiguates|0instability|1sabel|6la|2tanbul|0sinsabaugh
 isac|isaac
-isad|disadvantages|0insead|1sland|6s
-isae|isabel|6la|2rael|6i
+isad|disadvantages|0island|6s
+isae|insane|1sabel|6la|2rael|6i
 isag|disagreed|8ment
-isai|disabilities|0insanity|1slamic|2mail
+isai|disabilities|0islamic|2mail
 isak|mistakes
 isal|disable|7d|7s|6ing|3mal|0fiscal|0installation|7ed|1sabel|6la|2mail|2rael|6i|0visual|6ly
 isam|disambiguates|4rm|0islamic
-isan|disbanded|3mantled|8ing|3tance|8s|0insanity|3tance|8ofexpr|8s|6t|7iable|9te|1sland|6s|2tanbul|0mishandling
+isan|disbanded|3mantled|8ing|3tance|8s|0insane|3tance|8ofexpr|8s|6t|7iable|9te|1sland|6s|2tanbul|0mishandling
 isap|disappearance|6ointed|:ing
 isar|disagreed|8ment|4rm|3carded|7ing|7s|3parities|8y
 isas|disaster|8s|6rous|3ease|7d|7s
@@ -22919,16 +22961,16 @@ isbr|disbursement|<s|0innsbruk|0weisbrod
 isbu|disbursement|<s
 isc |isaac|0misc
 isca|discarded|7ing|7s|4harged|0fiscal
-isce|discredit|9ed|9ing|6pancies|6tion|0fischer|0miscellaneous
+isce|discredit|9ed|9ing|6pancies|6tion|0fischer|0miscellanea|:ous
 isch|discharged|0fischer|0hirschmann|0mischievous
-isci|disciplinary|9e|:d|9ing|4riminated|;ion|0mischievous
-iscl|disclose|7ing|7ure|:s|0fiscal|0miscellaneous
+isci|disciplinary|9e|:d|9ing|4riminated|;ion|0inscription|0mischievous
+iscl|disclose|7ing|7ure|:s|0fiscal|0miscellanea|:ous
 iscn|wisconsin
 isco|disclose|7ing|7ure|:s|4ount|8ed|6rse|5vered|8y|0episcopal|0wisconsin
 iscp|disciplinary|9e|:d|9ing
-iscr|discarded|7ing|7s|4redit|9ed|9ing|6pancies|6tion|5iminated|;ion
+iscr|discarded|7ing|7s|4redit|9ed|9ing|6pancies|6tion|5iminated|;ion|0inscription
 iscs|discuss|7ed|7ing|8on|:s
-isct|insect|6s
+isct|insect|6ary|6s
 iscu|discount|8ed|6rse|4uss|7ed|7ing|8on|:s|0insecurity
 iscv|discovered|8y
 isd |isoda|2sd
@@ -22938,19 +22980,19 @@ isdm|wisdom
 isdo|wisdom
 isdv|disadvantages
 ise |arise|0issue|0raise|1ise|0wise
-isea|disease|7d|7s|0insead|3tead|0misleading
-isec|dissection|0insect|6s|5urity|3pection|:s|7ors
-ised|biased|0insead|1ssued|0listed|0misled|3sed|0raised|1insed|0wished
+isea|disease|7d|7s|0instead|0misleading
+isec|dissection|0insect|6ary|6s|5urity|3pection|:s|7ors
+ised|biased|0issued|0listed|0misled|3sed|0raised|1insed|0wished
 isee|linseed
 isef|disenfranchised|0itself
 isei|ciskei
-isel|bissell|0dispelled|0himself|0isabel|6la|2rael|6i|1tself|0miscellaneous|0wisely
+isel|bissell|0dispelled|0himself|0isabel|6la|2rael|6i|1tself|0miscellanea|:ous|0wisely
 isem|disempowered|3seminate
 isen|disenfranchised|3pensaries|9y|8tion|7e|3sent|7ers|0insensitive|0listening
 isep|disempowered|0misrepresented
 iser|cisterns|0fisher|6ies|6y|0heiser|0insert|6ed|6ing|0kaiser|0misery|3perceptions|0sister|6s
 ises|arises|0crises|0disease|7d|7s|0insensitive|1ssues|0misses|0raises|0wishes
-iset|dissette|0insect|6s|4rt|6ed|6ing
+iset|dissette|0insect|6ary|6s|4rt|6ed|6ing
 iseu|insecurity
 isey|kinsey|0misery|0wisely
 isfa|insofar
@@ -23024,10 +23066,9 @@ ismu|inasmuch
 isn |isbn
 isnb|istanbul
 isnd|isindex|2land|6s|0misunderstood
-isne|isindex
+isne|insane|1sindex
 isnf|disenfranchised|3information
 isng|rising
-isni|insanity
 isns|insensitive
 isnt|disintegrate|;ing|<on|0misinterpreted
 isnv|disinvestment
@@ -23063,7 +23104,7 @@ isra|distractions|0insurance|1srael|6i
 isrd|disorder
 isre|discredit|9ed|9ing|6pancies|6tion|0israel|6i|0misrepresented|3treatment
 isrg|insurgents
-isri|discriminated|;ion|3tributed|9ion|<s|6ct|8ing|8s
+isri|discriminated|;ion|3tributed|9ion|<s|6ct|8ing|8s|0inscription
 isrl|israel|6i
 isrm|disarm
 isro|disproportional|6ves
@@ -24241,7 +24282,7 @@ kair|kaffir|2iser
 kais|kaiser
 kait|kanitane
 kaka|katakana
-kaki|kabuki
+kaki|kabuki|0takaki
 kaku|kamakura
 kal |karl|0tikal
 kala|kalamazoo|2plan|1halsa
@@ -24307,7 +24348,7 @@ katl|skatole
 katn|katzenstain|0skating
 kato|kato|1hartoum|0skatole
 katr|katherine|4ryn
-kats|kasetsart|1latsky|0takatsu
+kats|kasetsart|1latsky
 katy|kathryn
 katz|katzenstain|1raetzer|3ntz
 kau |kaur
@@ -24623,7 +24664,7 @@ kinl|kingsley|0mckinley
 kinn|kinney|0skinner
 kino|kingdom
 kinr|kindergarten
-kins|atkins|0kinds|3gs|5burg|5ley|5ton|3sey|4hip|0mckinsey
+kins|atkinson|0kinds|3gs|5burg|5ley|5ton|3sey|4hip|0mckinsey
 kint|kindtest|3gston
 kinu|akinkugbe
 kiny|kidney|2nney|3sey
@@ -25461,9 +25502,9 @@ laru|landrum
 larv|algarve|0larvae
 lary|salary
 las |alias|1tlas|0clash|4s|0flags|3ws|0glass|0labs|2cks|2kes|3so|2mps|2nds|2s|3t|2ws|2ys|1eads|3se|4t|1oads|3ns|0plans|3ys|0silas|1lash|0vilas
-lasa|alaska|0larosa|2salle
+lasa|alaska|0larosa|2salle|0pleasant
 lasc|landscape|9s
-lase|aliases|0clashed|6s|4ses|3use|6s|0elapsed|0glasses|0lasker|1ease|0please|6d
+lase|aliases|0clashed|6s|4ses|3use|6s|0elapsed|0glasses|0lasker|1ease|0please
 lash|clash|5ed|6s|0slash
 lasi|aliasing|0classical|7s|6fication|>s|8ed|7ying|0lakeside|2nsingville|2sting|2wsuit|1easing
 lask|alaska|0klatsky|0lasker
@@ -25737,10 +25778,10 @@ ldwi|baldwin
 ldy |lady
 le  |able|1lex|0blue|0cole|0else|0file|0glen|0hale|1ole|0lace|2ke|2ne|2te|1e|2a|3d|3f|3r|2d|2e|2ft|2gs|2o|3n|2ss|2t|2vi|1ie|3n|3s|3u|2fe|2ke|2me|2ne|2ve|1one|2se|2ve|1uke|0male|1ile|1ule|0oles|0pale|1lea|1ole|0role|1ule|0sale|1led|1ole|0vale|0yale
 lea |clean|4r|0lacea|1ea|3ch|3d|4s|3f|3pe|3r|4n|3se|4t|3ve|2gal|0olean|0plea|4d
-leaa|cleavage|8s
+leaa|cleavage|8s|0pleasant
 leac|leach|2gacies|5y
 lead|already|0lead|4er|6s|7hip|:s|4ing|4s|2land|0plead
-leae|cleared|6r|0leader|6s|7hip|:s|3flets|3gue|3pe|3rned|3se|3ther|7bee|3ve|5nworth|5s|2banese|0please|6d
+leae|cleared|6r|0leader|6s|7hip|:s|3flets|3gue|3pe|3rned|3se|3ther|7bee|3ve|5nworth|5s|2banese|0please
 leaf|leaf|4lets
 leag|beleaguered|0league|2ranger
 leah|leach|3ther|7bee
@@ -25750,7 +25791,7 @@ lean|alexander|7ra|0clean|5ing|5sing|0leading|3nings|3rn|5ed|5ing|3sing|3venwort
 leao|gleason|0lebanon
 leap|leape
 lear|clear|5ed|6r|5ing|5ly|0leader|6s|7hip|:s|3r|4n|5ed|5ing|2eward|2onard|7stown|1inear
-leas|cleansing|0gleason|0leads|3se|4ing|4t|3ves|0please|6d|0release|7d|7s|0unleashed
+leas|cleansing|0gleason|0leads|3se|4ing|4t|3ves|0pleasant|5e|0release|7d|7s|0unleashed
 leat|elevate|7d|6ors|0least|3ther|7bee
 leau|league
 leav|cleavage|8s|0leave|5nworth|5s|4ing
@@ -25930,9 +25971,9 @@ lers|flyers|0layers|1eprosarium|6y|1osers|0rulers
 lert|albert|6son|0liberty
 lery|clergy|0leroy
 les |bless|2ues|0files|1lies|0giles|0holes|0lakes|1eads|3se|4t|2eds|2gs|2ss|2wis|1ies|2nes|2ves|1oses|0males|1iles|0niles|0oles|0roles|1ules|0sales|0tales|0wales
-lesa|aleksandr
+lesa|aleksandr|0pleasant
 lesc|telescope|9s
-lese|lease|2slie|3sen|5r|3ter|0please|6d
+lese|lease|2slie|3sen|5r|3ter|0please
 lesh|lesotho
 lesi|lakeside|1easing|2sions|3lie
 lesl|legislation|9ve|2slie
@@ -26016,7 +26057,7 @@ lflo|lifelong
 lfmo|leftmost
 lfod|alford
 lfon|sulfone
-lfor|alford|0tilford
+lfor|alford|0telford|1ilford
 lfou|balfour
 lfox|sulfoxide
 lfrd|alford|3red
@@ -26471,7 +26512,7 @@ llie|allied|5s|0cilliers|0ellice|0illiterate|0leslie|1illie|0mollie|0nellie|0ral
 llig|hulligan|0mulligan
 llik|milliken
 llim|silliman
-llin|alliance|8s|0calling|1ollins|6wood|0falling|1illing|0hollins|0illinois|0kellinger|1illing|7s|0lilian|0pollination|0rolling|0selling|0telling|0wellington|1illing|7ham|7ness
+llin|alliance|8s|0calling|1ollins|6wood|0falling|1illing|0hollingsworth|0illinois|0kellinger|1illing|7s|0lilian|0pollination|0rolling|0selling|0telling|0wellington|1illing|7ham|7ness
 llio|billion|0elliot|4son|0illinois|0million|7s
 llis|allies|4ster|0collision|0ellis|5on|0hollister|0wallis
 llit|allister|0elliot|0illiterate|0willits
@@ -27501,6 +27542,7 @@ maaa|maharaj|2laua|4ya|2sayasu
 maac|massachusetts|6re|8s
 maad|mayaud
 maae|macrae|2dame|2nage|6d|6ment|6r|7ial|7s
+maaf|mahaffy
 maag|manage|6d|6ment|6r|7ial|7s|5ing|5ua
 maah|marathon
 maai|magazine|8s|2laise|4ria|4wi|2naging
@@ -27572,6 +27614,7 @@ maew|mathews
 maey|mackey|2ssey
 mafa|manufacture|;d|;r|<s|:ing
 mafe|mayfield|1cafee
+maff|mahaffy
 mafi|mansfield|2yfield
 mafo|manifold
 mafr|mainframes
@@ -27590,9 +27633,10 @@ magu|magnus|2nagua|0yamaguchi
 magw|magwaza
 magz|magazine|8s|3waza
 mah |march|3sh|2tch|3h|0omaha
-maha|maharaj|2nhattan|2rshall|8town|3tha|0omaha
+maha|mahaffy|4raj|2nhattan|2rshall|8town|3tha|0omaha
 mahc|mathscr
 mahe|machel|2hoken|2mphela|2nchester|2rshes|2tched|6s|3hematical|5r|5ws|3thew|7s
+mahf|mahaffy
 mahi|machinations|6e|7ry|7s|2tching|3hit|4linotext
 mahk|mahoken
 mahl|machel|2thlinotext|4ml
@@ -27943,7 +27987,7 @@ mcee|mcafee|2gee|2kee|2queen
 mceg|mcgregor|2kergan
 mceh|mcelhinney|2gechin
 mcei|mcelhinney
-mcel|machel|3lellan|1cclellan|2elhinney|2kelvey|5way|2pheleny|1icellaneous|3hels|2scellaneous
+mcel|machel|3lellan|1cclellan|2elhinney|2kelvey|5way|2pheleny|1icellaneous|3hels|2scellanea|:ous
 mcem|mcdermott
 mcen|mcewan|2kendrick|2lean
 mceo|mcleod
@@ -28454,6 +28498,7 @@ mha |mosha|0omaha
 mhaa|maharaj
 mhad|mchardy
 mhae|michael
+mhaf|mahaffy
 mham|mohammad
 mhan|mechanical|8s|7sm|9s|1ishandling
 mhar|maharaj|1chardy|1eharry
@@ -28464,6 +28509,7 @@ mhem|mathematical
 mhen|muhlens
 mher|mather|1other|6s
 mhew|mathews
+mhff|mahaffy
 mhic|mythical
 mhie|muthien
 mhig|michigan
@@ -28514,13 +28560,13 @@ mic |magic|1ice|3ro|2sc|1usic
 mica|medical|2xican|1ichael|1usical
 micb|microbiology
 micc|minoccurs
-mice|mice|4llaneous|3hael|4els|3key|2scellaneous|2tchell|8s
+mice|mice|4llaneous|3hael|4els|3key|2scellanea|:ous|2tchell|8s
 micf|microfilm
 micg|michigan
 mich|michael|4els|4igan|2schievous|2tchell|8s|1unich
 mici|medicinal|7e|1ichigan|2schievous|1unicipal|2sicians
 mick|mickey
-micl|micellaneous|3hels|2racle|2scellaneous
+micl|micellaneous|3hels|2racle|2scellanea|:ous
 micn|micronutrient
 mico|mexico|1icro|5biology|5film|5nutrient|5photograph|?s|?y|5scope|:s|9ical|:sts|9y|6oft|6pectograph|:roscope|6ystems|0semicolon
 micp|microphotograph|?s|?y
@@ -28545,7 +28591,7 @@ midw|midtown|3west|4ife|7ry|5ves
 mie |amine|0mabie|2ine|3ze|2nie|1ice|2ke|2le|4s|3le|3ne|2me|2ne|4s|2xed
 miea|mieldazis|2neral|3neapolis|2sleading
 mied|mailed|1ieldazis|2nded|2sled|3sed|2xed
-miel|micellaneous|3hels|2eldazis|2scellaneous
+miel|micellaneous|3hels|2eldazis|2scellanea|:ous
 mien|eminent|0maiden|1illennium
 miep|misrepresented
 mier|miller|2neral|5s|5va|2sery|3perceptions|1osier
@@ -28670,14 +28716,14 @@ mirv|minerva
 miry|misery
 mis |mairs|1eigs|1idst|2les|3ls|2nas|3ds|3es|3us|2sc|3s|0omis|3ts
 misa|mishandling|3leading|3takes
-misc|misc|4ellaneous|4hievous
+misc|misc|4ellanea|:ous|4hievous
 misd|misled|3sed|3understood
-mise|demise|0miscellaneous|3ery|3leading|5d|3perceptions|3represented|3sed|5s|3treatment
+mise|demise|0miscellanea|:ous|3ery|3leading|5d|3perceptions|3represented|3sed|5s|3treatment
 misf|misfile
 mish|mischievous|3handling
 misi|mischievous|3file|3interpreted|3sinoary|5on|7aries|9y|7s|5roli|5ssippi
 misk|mistakes
-misl|miscellaneous|3file|3leading|5d
+misl|miscellanea|:ous|3file|3leading|5d
 misn|mishandling|3interpreted|3sinoary|3understood
 miso|madison|1ission|7aries|9y|7s|4ouri|1orison
 misp|misperceptions|3represented
@@ -29669,10 +29715,10 @@ msbs|amsbsy
 msby|amsbsy
 msc |misc|1usic
 msca|musical
-msce|miscellaneous|1uscle
+msce|miscellanea|:ous|1uscle
 msch|mischievous|0xmlschema
 msci|mischievous|1usicians|1yscript.pl
-mscl|mascola|4ulinity|1iscellaneous|1uscle
+mscl|mascola|4ulinity|1iscellanea|:ous|1uscle
 msco|mascola|1oscow
 mscr|myscript.pl
 mscu|emasculated|0masculinity
@@ -29682,7 +29728,7 @@ msea|misleading
 msed|amused|0misled|3sed
 msee|museeum
 msei|marseilles
-msel|himself|0miscellaneous
+msel|himself|0miscellanea|:ous
 msem|museum|6s
 msen|messenger
 msep|misrepresented
@@ -30334,10 +30380,10 @@ nan |inman|0nan|0unban
 nana|nanchang|3galembe|3kai
 nanc|enhance|7d|7s|6ing|0finance|7d|7s|6ial|7ng|0infancy|0nanchang|1uanced|0tenance
 nand|incandescent|2land|0wynand
-nane|nadine|1uanced
+nane|insane|0nadine|1uanced
 nang|endangered|0naming|2ngalembe|0penang|0venango
 nanh|nanchang
-nani|insanity|0nankai|4ing|0unanimously
+nani|nankai|4ing|0unanimously
 nank|nankai|4ing
 nanl|nangalembe
 nanm|unanimously
@@ -30478,7 +30524,6 @@ ncap|encampment
 ncar|nicaragua|1oncardiovascular
 ncas|lancaster
 ncat|concat|6enate|;d|:ing|;on
-ncav|enclaves
 ncc |necc
 nccu|inaccurate
 ncde|encoded|0incidence|7ts
@@ -30486,11 +30531,12 @@ ncdi|encoding|8decl|8s
 nce |bunce|0dance|0fence|0hence|0lence|0once|0since|0vance
 ncea|increase|8d|8s|7ing|:ly|0unclear
 nced|concede|7d
+nceh|encephalitis
 ncei|conceivably|7ed
 ncel|cancelled|0nickel
 ncem|incremental
 ncen|ancient|0concentrated|:ion|=s|0incentive|9s|0oncken|0vincent
-ncep|concepcion|6t|7s|7ualization|:ly|0inception
+ncep|concepcion|6t|7s|7ualization|:ly|0encephalitis|0inception
 ncer|cancer|1oncern|7ed|7ing|7s|6t|7s|0dancers|0uncertain|9ty
 nces|ancestor|8s|0concessions|0inches|0necessarily|8y|6ity
 ncet|ancestor|8s|0incentive|9s|4ption|0lancet|0uncertain|9ty
@@ -30521,7 +30567,7 @@ ncke|knickerbocker|0nickel|0oncken
 ncki|nencki
 nckl|necklaced|1ickel
 nckn|oncken|0unacknowledged
-ncla|enclaves|0monclair|0necklaced|0sinclair|0unclear
+ncla|monclair|0necklaced|0sinclair|0unclear
 nclc|inculcated
 ncld|include|7d|7s|6ing
 ncle|nucleus|0unclear
@@ -30531,7 +30577,6 @@ ncln|inclined
 nclo|enclosed|6ing|0nicolosi
 ncls|enclosed|6ing|0inclusion|9s|7ve
 nclu|conclude|8d|8s|6sion|:s|0include|7d|7s|6ing|5sion|9s|7ve|0nucleus|0xinclude
-nclv|enclaves
 ncmb|incumbents
 ncme|income|6s|0ncname
 ncmi|incoming
@@ -30559,11 +30604,12 @@ ncos|enclosed|6ing|0inconsistencies|;t|0necrosis|0unconstitutional|7rained
 ncou|encounter|9ed|9ing|9s|5rage|9d|9ment|9s|8ing|0vancouver
 ncov|unconventional
 ncp |naacp
+ncph|encephalitis
 ncpi|incipient
 ncpt|inception
 ncra|increase|8d|8s|7ing|:ly|3urables|0nicaragua
 ncre|concrete|8ly|0increase|8d|8s|7ing|:ly|5mental
-ncri|uncritically
+ncri|inscription|0uncritically
 ncrm|incremental
 ncro|necrosis
 ncrp|incorporate|;d|:ion
@@ -30733,7 +30779,7 @@ ndze|andrzej
 ne  |anne|0cane|1net|0done|0fine|0gene|1one|0jane|1une|0kane|1new|0lane|1ine|1one|0mine|0name|1dez|1e|2ar|3t|2c|3c|2ed|2ss|3t|2t|3s|2w|3s|2xt|1ies|2ne|1ode|2ne|2te|1ye|0once|2e|3s|0pine|1yne|0sone|0tune|0vine|0wine|0zane|1one
 nea |near|3t
 neaa|nevada
-nead|insead|0nevada
+nead|nevada
 neae|nearest
 neai|negative|8ly|8s
 neak|newark
@@ -30765,7 +30811,7 @@ necm|newcomers
 neco|necrosis|2ocolonial|2wcomers|1odecomp|0unesco|2recognized
 necr|necrosis
 necs|necessarily|8y|6ity|3rosis
-nect|infect|6ed|6ion|9s|8us|:ness|7vity|2jection|9s|2sect|6s
+nect|infect|6ed|6ion|9s|8us|:ness|7vity|2jection|9s|2sect|6ary|6s
 necu|insecurity
 ned |ended|0naked|2med|1eed|4s|1oted|0owned
 neda|nevada
@@ -30869,7 +30915,7 @@ neot|negotiate|9d|8ing|9on|;s|8or
 neou|nervous
 nepa|newspaper|9s
 nepe|independence|:t|;ly|0nephew|0unexpected|:ly
-neph|nephew
+neph|encephalitis|0nephew
 nepl|unemployed|8ment
 nepo|neoprotectionism
 nepr|neoprotectionism
@@ -31421,7 +31467,6 @@ nlar|enlargement
 nlas|unleashed
 nlat|inflated|0unilateral
 nlau|onslaught
-nlav|enclaves
 nlck|unlock
 nle |angle|0nagle|1iles|1oble|2lte
 nlea|unclear|2leashed
@@ -32085,29 +32130,30 @@ nrze|andrzej
 ns  |bans|0cans|0ends|2os|0fans|0guns|0inst|0mens|0nbsp|1ess|3t|2ts|2ws|1ies|2s|3t|1ots|1s|2ms|0ones|0runs|0sans|1ons
 nsa |nusas
 nsab|instability|0sinsabaugh
-nsad|insead|0noshade
-nsae|unsafe
+nsad|noshade
+nsae|insane|0unsafe
 nsaf|unsafe
-nsai|insanity|0kansai
+nsai|kansai
 nsal|installation|7ed|0nostalgia|1yasaland
-nsan|insanity|3tance|8ofexpr|8s|6t|7iable|9te
+nsan|insane|3tance|8ofexpr|8s|6t|7iable|9te
 nsas|kansas|0nusas|0unseasonably
 nsau|nassau|0onslaught
 nsbo|newsboys
 nsbr|innsbruk
 nsca|netscape|0unescaped
 nscc|unsuccessful|<ly
-nsci|conscience|6ous|9ness
+nsci|conscience|6ous|9ness|0inscription
 nsco|unesco
-nsct|insect|6s
+nscr|inscription
+nsct|insect|6ary|6s
 nscu|insecurity
 nsda|hinsdale|0lonsdale
 nsde|inside|6r|7s
 nse |nurse|0sense
-nsea|insead|3tead|0unseasonably
+nsea|instead|0unseasonably
 nseb|ensemble
-nsec|consecutive|0insect|6s|5urity|3pection|:s|7ors|0unspecified
-nsed|insead|0nested|0rinsed
+nsec|consecutive|0insect|6ary|6s|5urity|3pection|:s|7ors|0unspecified
+nsed|nested|0rinsed
 nsee|linseed
 nsel|hansell|0oneself
 nsem|ensemble
@@ -32115,7 +32161,7 @@ nsen|consensus|0hansen|0insensitive
 nseq|consequence|;s|9tly
 nser|answer|0conservancy|8tion|:ve|<s|9ory|0insert|6ed|6ing|0nurseries|6y
 nses|insensitive|0nurses|0senses|0unseasonably
-nset|insect|6s|4rt|6ed|6ing|0sunset
+nset|insect|6ary|6s|4rt|6ed|6ing|0sunset
 nseu|insecurity
 nsey|anstey|0kinsey
 nsfa|insofar
@@ -32154,7 +32200,7 @@ nsmb|ensemble
 nsmo|dinsmore|0nonsmokers
 nsms|nsms
 nsmu|inasmuch
-nsni|insanity
+nsne|insane
 nsns|insensitive
 nsoa|insofar
 nsof|insofar
@@ -32173,7 +32219,7 @@ nspr|inspirational|6e|7d
 nsra|insurance
 nsre|ensure|6s
 nsrg|insurgents
-nsri|enshrines|3uring
+nsri|enshrines|3uring|0inscription
 nsrr|insurrection|<ism|>ts
 nsrt|insert|6ed|6ing|0unsorted
 nsru|instructed|8ion|;s|8or|6ment|:s
@@ -33026,7 +33072,7 @@ ocls|locals
 oclt|occult
 oclu|conclude|8d|8s|6sion|:s
 ocly|jocelyn
-ocme|document|8ary|9tion|8class|8ed|8s|8test
+ocme|document|8ary|9tion|8class|8ed|8ing|8s|8test
 ocmm|cocommitteeacted
 ocmo|locomotives
 ocn |ocean
@@ -33070,10 +33116,10 @@ octt|octet|5s|1lcott
 octy|doctype|7decl
 ocu |focus|0occur
 ocua|occupancy|6tion|0torcuato
-ocue|document|8ary|9tion|8class|8ed|8s|8test|0focused|6s
+ocue|document|8ary|9tion|8class|8ed|8ing|8s|8test|0focused|6s
 ocui|focusing|0occupied
 ocul|inoculation|;s|0occult
-ocum|document|8ary|9tion|8class|8ed|8s|8test|0slocum
+ocum|document|8ary|9tion|8class|8ed|8ing|8s|8test|0slocum
 ocup|occupancy|6tion|5ied|5y
 ocur|obscure|7d|1ccur|5red|7nce|:indicator|:s|6ing|5s
 ocus|focus|5ed|6s|5ing|0occurs
@@ -33834,7 +33880,7 @@ olig|bioligical|1oling|0foliage|0obligations|5ed|1ligarchic|8y
 olih|oliphant|0polish
 olii|bolivia|0oliveira|0policies|6ng|4kinik|4tical|9ly|7ians|8zation|9ed|7s|0solicited|7ing|7or|7s
 olik|polikinik
-olin|boling|2wling|0colin|3lins|6wood|2oling|0dolfins|2wling|0holding|3lins|0molina|5os|0outline|7d|7s|0pollination|0rolling
+olin|boling|2wling|0colin|3lins|6wood|2oling|0dolfins|2wling|0holding|3lingsworth|0molina|5os|0outline|7d|7s|0pollination|0rolling
 olio|molinos|0polio
 olip|oliphant
 olir|foliar|0oligarchic|8y|3ver
@@ -33855,9 +33901,9 @@ ollc|collected|7ing|8on|:s|8ve|:ly|9ity
 olld|colluded
 olle|colleagues|5cted|7ing|8on|:s|8ve|:ly|9ity|5ge|7s|6iate|0folleto|6t|0koelle|0moeller|2llie|0olleman|0stollem|0trolled|6y|0vollmer|0woolley
 ollg|college|7s|6iate
-olli|collins|6wood|5sion|0hollins|5ster|0mollie|0pollination|0rolling
+olli|collins|6wood|5sion|0hollingsworth|5ster|0mollie|0pollination|0rolling
 ollm|collamer|0olleman|0vollmer
-olln|collins|6wood|0holland|7er|4ins|0pollination|0rolling
+olln|collins|6wood|0holland|7er|4ingsworth|0pollination|0rolling
 ollo|follow|6ed|7rs|6ing|6s|0hollow|6ay|0molloy
 ollp|collapse|7ing
 ollr|dollar|6s|0pollard
@@ -34263,7 +34309,7 @@ onno|connolly|5r
 onnr|conner|4or
 onnt|conant
 onnv|connivance
-ono |congo|0donor|0honor|0onto
+ono |borno|0congo|0donor|0honor|0onto
 onoa|konopak|0sonora
 onob|nonmobile
 onoc|convocation|0monochromator
@@ -34570,7 +34616,7 @@ opit|colpitts|0hopital|2spital|8ity|8s
 opki|hopkins
 opkn|hopkins
 opla|complained|8t|9s|2play|0popular|7ity|6tion|:s
-ople|complement|:ing|6te|8d|8ly|8ness|7ion|6x|7content|7ity|7type|2uple|6d|0hopeless|8ness|0people|6s
+ople|complement|:ing|6te|8d|8ly|8ness|7ion|6x|7content|7ity|7type|2uple|6d|0hopeless|8ness|0people|6s|0topple
 opli|compliant|6cated|7ity|6es|0populist
 oplj|skoplje
 oply|coplay|0openly
@@ -34595,8 +34641,9 @@ opor|corporate|8ion|;s|9sm|6tation|0opportunistically|;s|9ties|:y|0proportion|:a
 opos|composed|7rs|6ing|7te|8ion|0oppose|6d|5ing|6te|7ion|:al|1utpost|0proposal|8s|6ed|7s|6itions
 opot|opoteca|2portunistically|;s|9ties|:y
 opou|compound|8ed|8s
-oppe|copper|0dropped|0hopper|0opponent|8s|4se|6d|3ressed|7ion|8ve|7ors|0propped
+oppe|copper|0dropped|0hopper|0opponent|8s|4se|6d|3ressed|7ion|8ve|7ors|0propped|0topple
 oppi|opposing|6te|7ion|:al|0shopping
+oppl|topple
 oppn|opponent|8s
 oppo|opponent|8s|4rtunistically|;s|9ties|:y|4se|6d|5ing|6te|7ion|:al
 oppr|copper|0hopper|0opportunistically|;s|9ties|:y|3ressed|7ion|8ve|7ors
@@ -34808,7 +34855,7 @@ ormr|former|6ly
 orms|forms|0norms
 ormt|dormitories|0format|6ion|9s|6s|6ted|7ing|0normative|9ly
 ormu|doremus|7justin|0formula|7ted|8ing|9on
-orn |born|3on|0corn|0horn|4e|0organ|2kin|2nek|0scorn|0torn
+orn |born|4o|3on|0corn|0horn|4e|0organ|2kin|2nek|0scorn|0torn
 orna|coronary|0journal|7ism|9t|:ic|:s|7s|0ordinal|6ry
 ornb|hornby|0thornburgh
 ornd|ormond
@@ -34819,11 +34866,12 @@ orni|corning|0fortnightly|0morningside|0organic|6sation|<s|7ms|6zation|<al|<s|7e
 ornk|ornek
 ornl|cornelia|6l
 ornn|corning|0morningside
+orno|borno
 ornr|corner|6s
 orns|organs
 ornt|corinto|0oriental|7tion|6ed|0toronto
 orny|hornby
-oro |boron|0porto
+oro |borno|3on|0porto
 oroa|coronary
 orob|cordoba
 orod|ormond|2thodox|8y
@@ -35381,7 +35429,7 @@ oulw|couldwell
 ouly|hourly|0loudly
 oum |bokum|0forum
 oumb|columbia|8n|6us
-oume|document|8ary|9tion|8class|8ed|8s|8test|0monument|8s|0volume|6s
+oume|document|8ary|9tion|8class|8ed|8ing|8s|8test|0monument|8s|0volume|6s
 oumi|voluminous
 oumn|column|6s
 oun |bound|0count|0found|0mount|0pound|0round|0sound|0young
@@ -35959,9 +36007,9 @@ pars|pairs|2pers|2rapsychology|4site|8s|3is|3ks|3se|5d|5r|6s|4ing|4ons|3tisan|8s
 part|apart|5heid|0depart|6ment|:s|6ure|0impartial|0parent|6heses|9is|:zed|=expr|7ood|6less|6s|3t|4ial|7ity|7ly|5cipant|;s|9te|;d|:ing|;on|6le|8s|6ular|:ities|:ly|5es|5san|8s|5tion|4ly|4ner|7s|8hip|;s|4s|4y
 pary|paralysis|6zed|3tly|4y
 pas |packs|2ds|2ges|2irs|2ris|3ks|3se|3ts|2ss|3t|2ths|2use|1ears|1hase|1lans|3ys
-pasa|pasadena|3sage|1easant|7ry|7s
+pasa|pasadena|3sage|1easant|7ry|7s|1leasant
 pasd|parsed|2sadena|3sed|1hased
-pase|pageset|2nstead|2rse|5d|5r|6s|2sadena|3sed|5s|3teur|2use|1hase|5d|5s|2rase|6s|1lease|6d|1raise|6d
+pase|pageset|2nstead|2rse|5d|5r|6s|2sadena|3sed|5s|3teur|2use|1hase|5d|5s|2rase|6s|1lease|1raise|6d
 pasg|passage
 pasi|parasite|8s|3sing|2ssing|5on|5ve
 pasn|parsing|4ons|2ssing|2xson|1easant|7ry|7s
@@ -36160,11 +36208,11 @@ pduc|produce|7d|7r|8s|7s|6ing|6t|7ion|:s|8vity|7s
 pdue|prudue|1urdue
 pe  |cape|1ope|0hope|0open|0pace|2ge|2le|2ve|1e|2ck|2er|2ll|2n|3n|3t|2r|3u|2s|2ti|2w|1ier|2ne|2pe|1lea|1oem|3t|2le|2pe|2se|1re|3s|1ure|1yne|0ripe|0spec|0tape|1ype
 pea |opera|0peace|3rl|4s|2nna|1lea|4d|0speak
-peaa|peasant|7ry|7s
+peaa|peasant|7ry|7s|1leasant
 peab|peabody
 peac|impeach|0peace|5ful|5maker|4ock|3rce|1reachers|3face
 pead|peabody|1iedad|1lead|0spread|6ing
-peae|peace|5ful|5maker|3rce|4ne|1lease|6d|0speaker|7s
+peae|peace|5ful|5maker|3rce|4ne|1lease|0speaker|7s
 peaf|peaceful
 peag|penang|1ipeage
 peah|preachers
@@ -36176,7 +36224,7 @@ pean|operand|7s|0pearne|3sant|7ry|7s|2nang|2rmanent|9e|9ly
 peao|peabody|3cock
 peap|perhaps
 pear|appear|6ance|6ed|6ing|6s|0pearce|4l|4ne|4s|1reparation|;s|8ory|6e|7d|6ing
-peas|appeasement|0pears|3sant|7ry|7s|2rvasive|1lease|6d|0speaks
+peas|appeasement|0pears|3sant|7ry|7s|2rvasive|1leasant|5e|0speaks
 peat|operate|7s|6ing|7on|9s|7ves|6or|8s|0pediatrics|1remature|3natal|0repeat|6ed|8ly|6ing
 peau|precautions
 peav|upheaval
@@ -36222,29 +36270,29 @@ pedr|pedersen|3rick
 peds|mopeds|0pedersen|4strian|:s|1redisposing|:tion
 pedt|pedestrian|:s|3iatrics|1redetermined
 pee |peace|2er|4s|2lee|2ter|1iece|1reez|0speed
-peec|pedecl|2rfectability|3secution|1redecessor|0speech|6es
+peec|pedecl|2rfectly|3secution|1redecessor|0speech|6es
 peed|opened|0pelted|1recede|7d|7nce|8t|7s|6ing|3medical|0speed|5ing
 peee|pelee|2reference
 peef|peaceful|2reference|1redefined
-peeg|peregrine
+peeg|peregrinations
 peeh|speech|6es
 peei|perceive|8d|8s|7ing|0speeding
 peel|pedecl
-peem|peacemaker|1reempted|7s
-peen|percent|7age|:s|3ennial|1repended|7ing|3sence|6t|7ation|<al|<s|7ed|7ly|7s|3tenses|3vent|7ed|7ing|8on|8ve|0spleen
-peep|perception|:s|8ve|:ly|1reempted|7s
-peer|pedersen|2er|4s|2mberton|2netration|2regrine|2ter|5s|6on|1ieter|6maritzburg|1refer|6ably|6ence|:s|8tial|6red|8rs|3servation|7e|8d|7ing
-pees|pedersen|4strian|:s|2ers|2ires|2ters|6on|1retested
-peet|pedestrian|:s|2netration|2rpetrating|9ors|6ual|8ting|1redetermined
+peem|peacemaker|2remptorily|1reempted|7s
+peen|percent|7age|:s|1repended|7ing|3sence|6t|7ation|<al|<s|7ed|7ly|7s|3tenses|3vent|7ed|7ing|8on|8ve|0spleen
+peep|perception|:s|8ve|:ly|3emptorily|1reempted|7s
+peer|pedersen|2er|4s|2mberton|2netration|2regrinations|2ter|5s|6on|1ieter|6maritzburg|1refer|6ably|6ence|:s|8tial|6red|8rs|3servation|7e|8d|7ing
+pees|pedersen|4strian|:s|2ers|2ires|2restroika|2ters|6on|1retested
+peet|pedestrian|:s|2netration|2restroika|3petrating|9ors|6ual|8ting|1redetermined
 peev|perseverance
 peez|preez
 pefa|preface
-pefc|perfectability|1reface
-pefe|pereference|3fectability|1refer|6ably|6ence|:s|8tial|6red|8rs
+pefc|perfectly|1reface
+pefe|pereference|3fectly|1refer|6ably|6ence|:s|8tial|6red|8rs
 peff|pfeiffer
 pefi|prefix|6ed|7s
-pefo|perforator|6m|7ance|7ed|7ing|7s
-pefr|perforator|6m|7ance|7ed|7ing|7s|1refer|6ably|6ence|:s|8tial|6red|8rs
+pefo|perform|7ance|;s|7ed|7ing|7s
+pefr|perform|7ance|;s|7ed|7ing|7s|1refer|6ably|6ence|:s|8tial|6red|8rs
 pefx|prefix|6ed|7s
 peg |peggy
 pega|pregnancy
@@ -36252,7 +36300,7 @@ pege|pledge|6s|1raeger
 pegg|peggy
 pegi|penguin
 pegn|pregnancy
-pegr|peregrine
+pegr|peregrinations
 pegu|penguin
 pegy|peggy
 peh |puech
@@ -36312,7 +36360,7 @@ peme|pemberton|1remedical|4ier
 pemi|permissible|5t|6s|6ted|1remier
 pemn|permanent|9e|9ly
 pemo|pneumonia
-pemp|preempted|7s
+pemp|peremptorily|1reempted|7s
 pemr|pemberton
 pems|permissible
 pemt|permit|6s|6ted|1remature
@@ -36327,7 +36375,7 @@ peni|opening|0pending|3guin|3icillin|3sion|7s|1ieniazek|1rentice|6ss|0spending
 penk|penokee
 penl|openly|0phenolic
 penm|phenomenon
-penn|opening|0penang|3ding|3n|4a|4ock|4sylvania|:nia|2rennial
+penn|opening|0penang|3ding|3n|4a|4ock|4sylvania|:nia
 peno|pennock|3okee|3sion|7s|1henolic|5menon|5type
 penr|penetration
 pens|expense|7s|6ive|0pennsylvania|:nia|3sion|7s
@@ -36344,7 +36392,7 @@ peol|people|6s|2rold|2tioles|3roleum|1henolic
 peom|phenomenon|1redominantly|9te
 peon|person|6al|8ities|:y|9zing|8ly|6nel|6s|1recondition|<s|3ponderant|<ly
 peop|people|6s
-peor|perforator|6m|7ance|7ed|7ing|7s|1retoria
+peor|perform|7ance|;s|7ed|7ing|7s|1retoria
 peot|phenotype
 pepa|prepaid|5ration|;s|8ory|6e|7d|6ing
 pepd|peptide
@@ -36362,31 +36410,31 @@ pequ|pesquisas
 per |kuper|0opera|0paper|1earl|4s|2er|4s|2r|3il|3ry|3u|2ter|1ier|4s|1ower|0soper|0taper|0upper|0viper
 pera|imperative|0opera|5nd|7s|5te|7s|6ing|7on|9s|7ves|6or|8s|0perhaps|3ialism|3manent|9e|9ly|3sian|4uade|8d|6sion|8vely|3taining|3vasive|2trakis
 perb|powerbrokers|0sperberg
-perc|hypercube|0pearce|2drick|2rceive|8d|8s|7ing|5nt|7age|:s|5ption|:s|8ve|:ly|4ival|3fectability|3secution|1ierce|0uppercase
+perc|hypercube|0pearce|2drick|2rceive|8d|8s|7ing|5nt|7age|:s|5ption|:s|8ve|:ly|4ival|3fectly|3secution|1ierce|0uppercase
 perd|period|6ically|:s|6s|3old
-pere|pearce|4ne|2ires|2rceive|8d|8s|7ing|5nt|7age|:s|5ption|:s|8ve|:ly|3eference|4grine|4nnial|3fectability|3petrating|9ors|6ual|8ting|3secution|5verance|4pective|;s|3uvemba|1ierce|4re|0sperberg|2here
-perf|pereference|3fectability|4orator|6m|7ance|7ed|7ing|7s|1owerful|0superficial|6luous
-perg|peregrine
+pere|pearce|4ne|2ires|2rceive|8d|8s|7ing|5nt|7age|:s|5ption|:s|8ve|:ly|3eference|4grinations|4mptorily|4stroika|3fectly|3petrating|9ors|6ual|8ting|3secution|5verance|4pective|;s|3uvemba|1ierce|4re|0sperberg|2here
+perf|pereference|3fectly|4orm|7ance|;s|7ed|7ing|7s|1owerful|0superficial|6luous
+perg|peregrinations
 perh|perhaps|3ipheral|8y
 peri|experience|:d|:s|6ment|:al|:s|0imperial|8ism|:t|0pedrick|2rceive|8d|8s|7ing|4ival|3ialism|4l|4od|6ically|:s|6s|4pheral|8y|3kins|3missible|5t|6s|6ted|3sian|5st|7ed|8nt|3taining|4inent|3uvian|2tritz|0superintendant|;ent|>s|6or|8ity
 perk|perkins|2trakis
 perl|hyperlink|9s|0pearl|2rialism|4l|3old|2troleum|1owerless|9ness
-perm|palermo|1ermanent|9e|9ly|4issible|5t|6s|6ted|0supermarkets
-pern|operand|7s|0paternalism|:tic|1earne|2rcent|7age|:s|3ennial|3kins|3manent|9e|9ly|3son|6al|8ities|:y|9zing|8ly|6nel|6s|3tinent
-pero|emperor|0perforator|6m|7ance|7ed|7ing|7s|3iod|6ically|:s|6s|3old|3son|6al|8ities|:y|9zing|8ly|6nel|6s|2troleum|1herson|1inero|1omeroy|1uerto
-perp|perception|:s|8ve|:ly|3haps|3ipheral|8y|3petrating|9ors|6ual|8ting|3spective|;s|0superpowers
-perr|peregrine|3forator|6m|7ance|7ed|7ing|7s|3ry|1ierre
-pers|ampersand|9s|0epperson|0papers|1ears|2dersen|2ers|2ires|2rmissible|3secution|5verance|4ian|5st|7ed|8nt|4on|6al|8ities|:y|9zing|8ly|6nel|6s|4pective|;s|4uade|8d|6sion|8vely|3vasive|2ters|6on|1herson|1iers|1owers|0superscript|6ede|9s|6tition
-pert|expert|6ise|6s|0hypertension|7xt|0operate|7s|6ing|7on|9s|7ves|6or|8s|0permit|6s|6ted|3petrating|9ors|6ual|8ting|3taining|4inent|2tritz|1overty|1uerto|0repertoire|7ry|1upert
+perm|palermo|1eremptorily|3manent|9e|9ly|4issible|5t|6s|6ted|0supermarkets
+pern|operand|7s|0paternalism|:tic|1earne|2rcent|7age|:s|3kins|3manent|9e|9ly|3son|6al|8ities|:y|9zing|8ly|6nel|6s|3tinent
+pero|emperor|0perform|7ance|;s|7ed|7ing|7s|3iod|6ically|:s|6s|3old|3son|6al|8ities|:y|9zing|8ly|6nel|6s|2troleum|1herson|1inero|1omeroy|1uerto
+perp|perception|:s|8ve|:ly|3emptorily|3haps|3ipheral|8y|3petrating|9ors|6ual|8ting|3spective|;s|0superpowers
+perr|peregrinations|3form|7ance|;s|7ed|7ing|7s|3ry|1ierre
+pers|ampersand|9s|0epperson|0papers|1ears|2dersen|2ers|2ires|2restroika|3missible|3secution|5verance|4ian|5st|7ed|8nt|4on|6al|8ities|:y|9zing|8ly|6nel|6s|4pective|;s|4uade|8d|6sion|8vely|3vasive|2ters|6on|1herson|1iers|1owers|0superscript|6ede|9s|6tition
+pert|expert|6ise|6s|0hypertension|7xt|0operate|7s|6ing|7on|9s|7ves|6or|8s|0perestroika|3mit|6s|6ted|3petrating|9ors|6ual|8ting|3taining|4inent|2tritz|1overty|1uerto|0repertoire|7ry|1upert
 peru|persuade|8d|6sion|8vely|3u|4vemba|5ian
 perv|percival|3severance|3uvemba|5ian|3vasive|0supervised|8ion|8or
 pery|perry|1oetry
 pes |hopes|0pages|1ears|2ers|2s|3ts|1iers|1oses|1res|4s|0rapes|1opes|0specs|2ies|0types
-pesa|peasant|7ry|7s|2rsian|4uade|8d|6sion|8vely
+pesa|peasant|7ry|7s|2rsian|4uade|8d|6sion|8vely|1leasant
 pesb|presbyterian
 pesc|persecution|2sticides|1rescribe|9d|7ption|:ve
 pesd|presided|7ncy|8t|9ial|9s
-pese|pageset|1ersecution|5verance|4pective|;s|1lease|6d|1resence|6t|7ation|<al|<s|7ed|7ly|7s|5rvation|7e|8d|7ing|4sed|0typesetting
+pese|pageset|1ersecution|5verance|4pective|;s|1lease|1resence|6t|7ation|<al|<s|7ed|7ly|7s|5rvation|7e|8d|7ing|4sed|0typesetting
 pesi|pension|7s|2rsian|5st|7ed|8nt|2squisas|3simistic|9s|3ticides|5sides|1resided|7ncy|8t|9ial|9s|4sing|4tige
 pesm|pessimistic|9s|1resumably
 pesn|peasant|7ry|7s|2rson|6al|8ities|:y|9zing|8ly|6nel|6s|1resence|6t|7ation|<al|<s|7ed|7ly|7s
@@ -36395,7 +36443,7 @@ pesp|perspective|;s|1resupposes
 pesq|pesquisas
 pesr|prescribe|9d|7ption|:ve|4ervation|7e|8d|7ing
 pess|persist|7ed|8nt|2ssimistic|9s|3tisides|4s|1ress|5ed|5ing|5ure|8s
-pest|palestine|8ian|1edestrian|:s|2sticides|5sides|4s|1itest|1restige|5on|2iest|0tapestry
+pest|palestine|8ian|1edestrian|:s|2restroika|2sticides|5sides|4s|1itest|1restige|5on|2iest|0tapestry
 pesu|persuade|8d|6sion|8vely|2squisas|1ressure|8s|4umably|5pposes
 pesv|perseverance
 pesw|typeswitch
@@ -36445,7 +36493,7 @@ pf  |pdf|1f|1rof
 pfa |sepfa
 pfac|preface
 pfal|pitfalls
-pfec|perfectability
+pfec|perfectly
 pfef|pfeiffer
 pfei|pfeiffer
 pfer|prefer|6ably|6ence|:s|8tial|6red|8rs
@@ -36455,7 +36503,7 @@ pfif|pfeiffer
 pfil|profile|7s
 pfit|profit|6s
 pfix|prefix|6ed|7s
-pfor|perforator|6m|7ance|7ed|7ing|7s
+pfor|perform|7ance|;s|7ed|7ing|7s
 pfur|porfurio
 pg  |epg|0page|1g|1ig|3s|2ng
 pgad|upgrade|6ing
@@ -36814,10 +36862,10 @@ pks |packs|2rks
 pkst|pakistan
 pl  |apla|2pl|0mpla|0pale|3m|2ul|1ell|1lan|3y|2ea|2o|3t|3y|2us|1ole|2ol|1ull|3p
 pla |apla|0mpla|0paula|1lace|3in|3n|4e|4s|4t|3ta|4t|3y|4s|3za|2ea|4d|1olar
-plaa|plaatje|3ntation|3ta|3za
+plaa|plaatje|3ntation|3ta|3za|2easant
 plac|implacable|0palace|1lace|5d|5rs|5s|4ing|0replace|7d|7ment|6ing
 plad|philadelphia|1laced|3yed|2ead|1oland
-plae|palace|1lace|5d|5rs|5s|3gue|3ne|5s|4ned|6rs|4teles|3que|6s|3tes|3yed|5r|6s|2ease|6d
+plae|palace|1lace|5d|5rs|5s|3gue|3ne|5s|4ned|6rs|4teles|3que|6s|3tes|3yed|5r|6s|2ease
 plaf|platform|8s
 plag|plague
 plai|explain|7ed|7s|0placing|3in|5ly|5s|3nning|4ting|3ting|3ying
@@ -36828,7 +36876,7 @@ plan|explanation|;s|0kaplan|0philanthropic|<st|;y|1lacing|3in|5ly|5s|3n|4e|5s|4n
 plao|platform|8s
 plaq|plaque|6s
 plar|placers|3yer|6s|4wrights|1olar|3lard
-plas|places|3ins|3nes|4s|4ts|3tes|3ys|2ease|6d
+plas|places|3ins|3nes|4s|4ts|3tes|3ys|2easant|5e
 plat|plaatje|3nt|5ation|5eles|5ing|5s|3ta|4es|4form|8s|4ing|4t|2ications
 plau|applauded|6se|0plague|3que|6s
 plaw|playwrights|1ulawy
@@ -36850,9 +36898,9 @@ plde|pledge|6s
 pldg|pledge|6s
 pldi|spalding
 ple |ample|0maple|0pale|1elee|1iled|1lace|3ne|2ea|4d|1ole|2ole|0tuple
-plea|plea|4d|4se|6d
+plea|plea|4d|4sant|5e
 pled|pelted|1iled|1laced|3yed|2ead|3dge|6s
-plee|pelee|1lease|6d|3dge|6s|0spleen
+plee|pelee|1lease|3dge|6s|0spleen
 pleg|pledge|6s
 pleh|plethora
 plem|implement|9ation|>s|9ed|:r|;s|9or|;s|9s|0palermo|1hloem
@@ -36860,7 +36908,7 @@ plen|spleen
 pleo|plethora
 plep|epilepsy
 pler|palermo|3mer|1lacers|3yer|6s
-ples|apples|0naples|0palestine|8ian|1laces|3nes|3tes|2ease|6d|0tuples
+ples|apples|0naples|0palestine|8ian|1laces|3nes|3tes|2easant|5e|0tuples
 plet|applet|6s|0palestine|8ian|1lethora|1roletarian|:t
 plfo|platform|8s
 plge|plague|2edge|6s|2unge
@@ -36872,7 +36920,7 @@ plhm|pelham
 plho|plethora
 pli |paoli|1lain|1olio|0split
 plia|parliament|:ary|1lications
-plic|applicability|8le|7nt|9s|7tion|;s|0duplicate|9d|9s|0explicit|8ly|0implicated|8ion|;s|6it|8ly|0plications|1olice|6men|5ies|6ng|5y|1ublic|6ation|;s|6ity|7zed|6ly|0replicates
+plic|applicability|8le|7nt|9s|7tion|;s|0duplicate|9d|9s|8ion|0explicit|8ly|0implicated|8ion|;s|6it|8ly|0plications|1olice|6men|5ies|6ng|5y|1ublic|6ation|;s|6ity|7zed|6ly|0replicates
 plie|applied|6s|0implied|6s|0police|6men
 plif|amplifiers
 plih|polish
@@ -36945,8 +36993,9 @@ plri|pilgrim
 plrl|plural|6ism|8t
 plrm|palermo
 pls |plans|3ys|2ots|2us|1olls|2ols
+plsa|pleasant
 plsb|pillsbury
-plse|please|6d
+plse|please
 plsh|polish
 plst|palestine|8ian|1ollsters
 plt |pilot|1lant|3ta|4t|2ot|4s|0split
@@ -37419,7 +37468,7 @@ ppki|pumpkin
 ppl |appl|4y|0epply
 ppla|applauded|6se|0popular|7ity|6tion|:s
 pplc|applicability|8le|7nt|9s|7tion|;s
-pple|apples|5t|6s|4ied|6s|0people|6s|0supplement|:al|;ry|:ed|:s
+pple|apples|5t|6s|4ied|6s|0people|6s|0supplement|:al|;ry|:ed|:s|0topple
 ppli|applicability|8le|7nt|9s|7tion|;s|5ed|6s|4ying|0pipeline|8s|1opulist|0supplied|7s
 ppls|apples|0pupils
 pplt|applet|6s
@@ -37530,22 +37579,22 @@ prdu|produce|7d|7r|8s|7s|6ing|6t|7ion|:s|8vity|7s|2udue|1urdue
 pre |parke|3se|1re|3ez|3s|4s|3to|2ice|3de|3me|3ze|2obe|3ne|3ve|1ure|0spare
 prea|pareja|1reachers|3cautions|3face|3gnancy|3mature|3natal|3paid|5ration|;s|8ory|6e|7d|6ing|3vail|7ed|7ing|5lence|:s|8t|0spread|6ing
 preb|preble|3sbyterian
-prec|appreciated|9ion|0deprecated|0perfectability|3secution|1reachers|3cautions|4ede|7d|7nce|8t|7s|6ing|4inct|5ous|5pitation|5se|7ly|6ion|4lude|8s|4ondition|<s|3decessor|4icament|;s|7te|9list|9s|6t|7able|7ed|7ion|:s|7s|3face|3occupied|3scribe|9d|7ption|:ve|2oject|7ions|7or|7s|3secutions|3tect|7ed|7ing|8on|8ve|7s|0unprecedented
+prec|appreciated|9ion|0deprecated|0perfectly|3secution|1reachers|3cautions|4ede|7d|7nce|8t|7s|6ing|4inct|5ous|5pitation|5se|7ly|6ion|4lude|8s|4ondition|<s|3decessor|4icament|;s|7te|9list|9s|6t|7able|7ed|7ion|:s|7s|3face|3occupied|3scribe|9d|7ption|:ve|2oject|7ions|7or|7s|3secutions|3tect|7ed|7ing|8on|8ve|7s|0unprecedented
 pred|parsed|1recede|7d|7nce|8t|7s|6ing|3decessor|5fined|5termined|4icament|;s|7te|9list|9s|6t|7able|7ed|7ion|:s|7s|5sposing|:tion|4ominantly|9te|3judices|3medical|3sided|7ncy|8t|9ial|9s|2ocedure|9s|3ved|0spread|6ing|0unpredictable
 pree|pereference|1raeger|3teep|2eble|3cede|7d|7nce|8t|7s|6ing|3decessor|5fined|5termined|3empted|7s|4z|3fer|6ably|6ence|:s|8tial|6red|8rs|3medical|4ier|3pended|7ing|3sence|6t|7ation|<al|<s|7ed|7ly|7s|5rvation|7e|8d|7ing|4sed|3tenses|5sted|3vent|7ed|7ing|8on|8ve|2oceed|7ings|7s
 pref|pereference|1redefined|3face|4er|6ably|6ence|:s|8tial|6red|8rs|4ix|6ed|7s|0unprefixed
-preg|peregrine|1raeger|2egnancy
+preg|peregrinations|1raeger|2egnancy
 preh|preachers
 prei|perceive|8d|8s|7ing|1recinct|5ous|5pitation|5se|7ly|6ion|3dicament|;s|7te|9list|9s|6t|7able|7ed|7ion|:s|7s|5sposing|:tion|3fix|6ed|7s|3liminary|3mier|3ntice|6ss|3paid|3sided|7ncy|8t|9ial|9s|4sing|4tige|3vail|7ed|7ing|4ious|8ly|2otein|7s
 prej|pareja|1rejudices
 prel|parcel|3mely|1reble|3clude|8s|3liminary|3valence|:s|8t|2opel|1urely
-prem|predominantly|9te|3empted|7s|3liminary|3mature|4edical|4ier|3sumably|0supreme
-pren|parent|6heses|9is|:zed|=expr|7ood|6less|6s|1ercent|7age|:s|3ennial|1ortend|1recinct|4ondition|<s|3gnancy|3natal|4tice|6ss|3pended|7ing|4onderant|<ly|3sence|6t|7ation|<al|<s|7ed|7ly|7s|3tenses|3vent|7ed|7ing|8on|8ve
+prem|peremptorily|1redominantly|9te|3empted|7s|3liminary|3mature|4edical|4ier|3sumably|0supreme
+pren|parent|6heses|9is|:zed|=expr|7ood|6less|6s|1ercent|7age|:s|1ortend|1recinct|4ondition|<s|3gnancy|3natal|4tice|6ss|3pended|7ing|4onderant|<ly|3sence|6t|7ation|<al|<s|7ed|7ly|7s|3tenses|3vent|7ed|7ing|8on|8ve
 preo|precious|4ondition|<s|3dominantly|9te|3occupied|3ponderant|<ly|3ston|3to|5ria|3vious|8ly|2zeworski
-prep|perception|:s|8ve|:ly|1recipitation|3empted|7s|3paid|5ration|;s|8ory|6e|7d|6ing|4ended|7ing|4onderant|<ly|3supposes
-prer|parker|6sburg|3ser|6s|1eregrine|1oorer|2rter|1rayer|2efer|6ably|6ence|:s|8tial|6red|8rs|3paration|;s|8ory|6e|7d|6ing|3scribe|9d|7ption|:ve|4ervation|7e|8d|7ing|3toria|2imera|2oper|6ly|6ties|7y
-pres|depression|0express|7ed|7ing|8on|:s|7way|:s|0impressed|7ion|0oppressed|7ion|8ve|7ors|0peires|1oorest|1radesh|2ecise|7ly|6ion|3disposing|:tion|3s|4byterian|4cribe|9d|7ption|:ve|4ence|6t|7ation|<al|<s|7ed|7ly|7s|5rvation|7e|8d|7ing|4ided|7ncy|8t|9ial|9s|4s|5ed|5ing|5ure|8s|4tige|5on|4umably|5pposes|3tested|2ices|3est|2ocess|7contents|7ed|8s|7ing|7or|9s|3fessing|8onal|<ly|<s|7or|9s|3test|7ant|:s|7s|3ves|2unes|0represent|9able|:tion|>s|<ve|>s|9ed|9ing|9s|6sed|7ion|8ve
-pret|parent|6heses|9is|:zed|=expr|7ood|6less|6s|1erpetrating|9ors|6ual|8ting|1redetermined|3mature|3natal|4tice|6ss|3stige|5on|3tenses|5sted|4o|5ria|2iest|2oletarian|:t
+prep|perception|:s|8ve|:ly|3emptorily|1recipitation|3empted|7s|3paid|5ration|;s|8ory|6e|7d|6ing|4ended|7ing|4onderant|<ly|3supposes
+prer|parker|6sburg|3ser|6s|1eregrinations|1oorer|2rter|1rayer|2efer|6ably|6ence|:s|8tial|6red|8rs|3paration|;s|8ory|6e|7d|6ing|3scribe|9d|7ption|:ve|4ervation|7e|8d|7ing|3toria|2imera|2oper|6ly|6ties|7y
+pres|depression|0express|7ed|7ing|8on|:s|7way|:s|0impressed|7ion|0oppressed|7ion|8ve|7ors|0peires|2restroika|1oorest|1radesh|2ecise|7ly|6ion|3disposing|:tion|3s|4byterian|4cribe|9d|7ption|:ve|4ence|6t|7ation|<al|<s|7ed|7ly|7s|5rvation|7e|8d|7ing|4ided|7ncy|8t|9ial|9s|4s|5ed|5ing|5ure|8s|4tige|5on|4umably|5pposes|3tested|2ices|3est|2ocess|7contents|7ed|8s|7ing|7or|9s|3fessing|8onal|<ly|<s|7or|9s|3test|7ant|:s|7s|3ves|2unes|0represent|9able|:tion|>s|<ve|>s|9ed|9ing|9s|6sed|7ion|8ve
+pret|parent|6heses|9is|:zed|=expr|7ood|6less|6s|1erestroika|3petrating|9ors|6ual|8ting|1redetermined|3mature|3natal|4tice|6ss|3stige|5on|3tenses|5sted|4o|5ria|2iest|2oletarian|:t
 preu|precautions|4lude|8s|3judices|3ssure|8s|4umably|5pposes
 prev|perseverance|1revail|7ed|7ing|5lence|:s|8t|4ent|7ed|7ing|8on|8ve|4ious|8ly
 prew|przeworski
@@ -37554,13 +37603,13 @@ prey|presbyterian|1urely|3veyors
 prez|preez
 prf |prof|3of
 prfa|preface
-prfc|perfectability|1reface
-prfe|pereference|3fectability|1refer|6ably|6ence|:s|8tial|6red|8rs|2ofessing|8onal|<ly|<s|7or|9s
+prfc|perfectly|1reface
+prfe|pereference|3fectly|1refer|6ably|6ence|:s|8tial|6red|8rs|2ofessing|8onal|<ly|<s|7or|9s
 prff|paraffin
 prfi|prefix|6ed|7s|2ofile|7s|5t|6s
 prfl|profile|7s
-prfo|perforator|6m|7ance|7ed|7ing|7s|1ortfolio
-prfr|perforator|6m|7ance|7ed|7ing|7s|1orfurio|1refer|6ably|6ence|:s|8tial|6red|8rs
+prfo|perform|7ance|;s|7ed|7ing|7s|1ortfolio
+prfr|perform|7ance|;s|7ed|7ing|7s|1orfurio|1refer|6ably|6ence|:s|8tial|6red|8rs
 prfs|professing|8onal|<ly|<s|7or|9s
 prft|profit|6s
 prfu|porfurio
@@ -37569,7 +37618,7 @@ prga|pragmatic|9ally|8sts|2egnancy|2ogram|7me|9s|8ing|7s
 prge|praeger|2ogress|8ed|8ion|9ve|;ly
 prgm|pragmatic|9ally|8sts
 prgn|pregnancy
-prgr|paragraph|9s|1eregrine|1rogram|7me|9s|8ing|7s|5ess|8ed|8ion|9ve|;ly
+prgr|paragraph|9s|1eregrinations|1rogram|7me|9s|8ing|7s|5ess|8ed|8ion|9ve|;ly
 prgu|sprague
 prh |porch
 prha|perhaps|1urchase|8d|8s|7ing
@@ -37632,7 +37681,7 @@ prmi|permissible|5t|6s|6ted|1remier|2imitive|2ominent|5se|7d|7s|6ing
 prml|parmalee|4ely
 prmn|permanent|9e|9ly|1rominent
 prmo|paramount|1rimordial|2omote|7d|7r|6ing|7on|9s
-prmp|preempted|7s
+prmp|peremptorily|1reempted|7s
 prmr|primarily|6y|7expr|4era|4ordial
 prms|permissible|1romise|7d|7s|6ing
 prmt|permit|6s|6ted|1remature|2imitive|2omote|7d|7r|6ing|7on|9s
@@ -37645,7 +37694,7 @@ prng|spring|6er|6field|6s
 prni|prentice|6ss|2incipal|9ly|7le|9s|4ting|2uning
 prnk|sprinkle
 prnl|prindle
-prnn|perennial|1runing
+prnn|pruning
 prno|pronouncements
 prns|prints|2unes
 prnt|parent|6heses|9is|:zed|=expr|7ood|6less|6s|1renatal|4tice|6ss|2int|5ed|6rs|5ing|5s
@@ -37667,7 +37716,7 @@ prom|predominantly|9te|2ominent|5se|7d|7s|6ing|4ote|7d|7r|6ing|7on|9s
 pron|pardoning|3sons|2tronage|1erson|6al|8ities|:y|9zing|8ly|6nel|6s|1recondition|<s|3ponderant|<ly|2ison|6ers|6s|2olong|3minent|3ne|4ouncements|3ponent|9s|3vince|8s|7ial|6g
 proo|proctor|3log|5ng|3mote|7d|7r|6ing|7on|9s|3nouncements|3of|3ponent|9s|5rtion|:al|:s|5sal|8s|6ed|7s|6itions|3tocol|8s|5type|3vocation|5ke|7d
 prop|appropriate|;ly|:ing|0expropriation|0propaganda|9istic|7ted|4el|5r|6ly|6ties|7y|4hets|4onent|9s|5rtion|:al|:s|5sal|8s|6ed|7s|6itions|4ped|3spect|8ive|8or|8s|8us|6rous
-pror|parlor|1erforator|6m|7ance|7ed|7ing|7s|1retoria|2imordial|3or|5ities|7y|2ogram|7me|9s|8ing|7s|5ess|8ed|8ion|9ve|;ly|3per|6ly|6ties|7y|4ortion|:al|:s|3tracted|2yor|0uproar
+pror|parlor|1erform|7ance|;s|7ed|7ing|7s|1retoria|2imordial|3or|5ities|7y|2ogram|7me|9s|8ing|7s|5ess|8ed|8ion|9ve|;ly|3per|6ly|6ties|7y|4ortion|:al|:s|3tracted|2yor|0uproar
 pros|leprosarium|6y|0process|7contents|7ed|8s|7ing|7or|9s|3fessing|8onal|<ly|<s|7or|9s|3mise|7d|7s|6ing|3posal|8s|6ed|7s|6itions|3secutions|4pect|8ive|8or|8s|8us|6rous|3test|7ant|:s|7s|3ves|4ision|9s|1urpose|7s
 prot|proctor|3fit|6s|3letarian|:t|3mote|7d|7r|6ing|7on|9s|3tagonists|4ect|7ed|7ing|8on|8ve|7s|5in|7s|5st|7ant|:s|7s|4ocol|8s|5type|4racted
 prou|produce|7d|7r|8s|7s|6ing|6t|7ion|:s|8vity|7s|3nouncements|3ud|5ly
@@ -37705,7 +37754,7 @@ prso|parsons|1erson|6al|8ities|:y|9zing|8ly|6nel|6s|1herson|1reston|2ison|6ers|6
 prsp|perspective|;s|1resupposes|2ospect|8ive|8or|8s|8us|6rous
 prsr|parser|6s|1rescribe|9d|7ption|:ve|4ervation|7e|8d|7ing
 prss|persist|7ed|8nt|1ress|5ed|5ing|5ure|8s|2ussia
-prst|prestige|5on|2iest|1urist
+prst|perestroika|1restige|5on|2iest|1urist
 prsu|persuade|8d|6sion|8vely|1ressure|8s|4umably|5pposes|1ursue|6d|5it
 prsv|perseverance
 prsy|presbyterian
@@ -38880,11 +38929,13 @@ rbni|urbanization|7ed
 rbns|robinson
 rbo |arbor
 rboe|rabone
+rboi|arbovirus
 rbon|carbon|0rabone|1ibbon
 rbor|arbor|5text|0harbor|6s|0triborough
 rbos|robots
 rbot|arbortext|0robots
 rbou|barbour
+rbov|arbovirus
 rbr |arbor
 rbrc|rubric
 rbri|borbri|0rubric
@@ -38901,6 +38952,7 @@ rbuf|rebuffed
 rbun|tribune
 rbus|robustness
 rbut|rebuttal|1obustness
+rbvi|arbovirus
 rby |rugby
 rc  |arch|3o|0brã|0eric|0frac|0hsrc|0idrc|0ndrc|0proc|0rac|3e|1ec|1fc|3s|1ica|3e|3h|3o|1ock|0src
 rca |circa|0rica
@@ -39234,7 +39286,7 @@ regl|regular|7ly|6tes|7ions
 regm|regime|6nt|6s
 regn|oregon|0pregnancy|0reagent|2cognition|7ze|9d|9s|8ing|2gain|3ents|3ion|6al|8ization|6s|2ign|5ed|2sign|6ation|;s
 rego|gregorian|6y|0oregon|0region|6al|8ization|6s
-regr|gregorian|6y|0peregrine|0regard|6ed|6ing|6less|3ret|6s
+regr|gregorian|6y|0peregrinations|0regard|6ed|6ing|6less|3ret|6s
 regs|regis|5ter|8ed|8s|6ration
 regt|regents|3ister|8ed|8s|6ration|3ret|6s
 regu|irregular|0regular|7ly|6tes|7ions
@@ -39321,7 +39373,7 @@ reml|kremlin
 remm|cremome|0recommendation|>s|9ed|9s|2member
 remn|redmond|2main|6ed|6ing|6s|3ind|6er|0tremont
 remo|ceremonies|7y|1remome|5rne|0foremost|0redemocratization|3mond|2mobilization|4test|4val|7s|5e|6d|5ing|2namo|0tremont
-remp|preempted|7s
+remp|peremptorily|1reempted|7s
 remr|cremorne|0remarkable|9y|6s
 rems|realms
 remt|premature|0remittance|3otest
@@ -39342,7 +39394,7 @@ reni|armenian|0grenier|0prentice|6ss|0refining|2naming|2union|2zoning
 renk|drensky
 renl|rentals|2ynolds
 renm|renamed|5ing|5o
-renn|brennhoud|0perennial|0reconnaissance|2nounce
+renn|brennhoud|0reconnaissance|2nounce
 reno|fresno|0reinforce|9d|9ment|2namo|3fro|3ounce|2union|2ynolds|0trenton
 renp|greenpeace
 renq|relinquish
@@ -39425,7 +39477,7 @@ reso|fresno|0preston|0reason|6able|:ness|9y|6ing|6s|2socialization|4lution|:s|5v
 resp|irrespective|0presupposes|0respect|7ability|9le|7ed|7ive|:ly|5ratory|4iratory|4ond|7ed|8nts|7s|6se|8s|7ibilities|=y|9le
 resr|prescribe|9d|7ption|:ve|4ervation|7e|8d|7ing|0research|8ers|9s|4rve|7d|8â|6oir|9s|3ort|6ed|4urce|8s|3peratory|4iratory|3toration|6e|7d|4rained|8t|5ict|8ed|:char|8ion|;s|5ucture|:ing|3urgence|5rection|5veys
 ress|dress|5ed|0press|5ed|5ing|5ure|8s|0reassert|5igned|5urance|2cession|2sist|6ance|6ed|3ts|0stress|6ed|7s
-rest|arrests|0brewster|0ernest|0forest|6all|6ry|0prestige|5on|2iest|0redistribute|;ion|2establish|2gister|8ed|8s|6ration|2instated|2sent|6ed|6ment|4ttlement|3ist|6ance|6ed|3ort|6ed|3t|4ates|5urant|:s|4itution|4oration|6e|7d|4rained|8t|5ict|8ed|:char|8ion|;s|5ucture|:ing|4s|3ult|6ed|6ing|6s|0unrest
+rest|arrests|0brewster|0ernest|0forest|6all|6ry|0perestroika|1restige|5on|2iest|0redistribute|;ion|2establish|2gister|8ed|8s|6ration|2instated|2sent|6ed|6ment|4ttlement|3ist|6ance|6ed|3ort|6ed|3t|4ates|5urant|:s|4itution|4oration|6e|7d|4rained|8t|5ict|8ed|:char|8ion|;s|5ucture|:ing|4s|3ult|6ed|6ing|6s|0unrest
 resu|pressure|8s|4umably|5pposes|0reassurance|2scue|3idual|3olution|:s|4urce|8s|3taurant|:s|4ructure|:ing|3ult|6ed|6ing|6s|4me|6s|4rgence|5rection|5veys|0treasure|8r|7y
 resv|reserve|7d|8â|6oir|9s|3olve|7d|7r|6ing|3urveys
 resy|presbyterian
@@ -39514,7 +39566,7 @@ rfar|warfare
 rfc |rfc|3s
 rfcs|rfcs
 rfe |refer
-rfec|perfectability|0reflect|7ed|7ion|7s
+rfec|perfectly|0reflect|7ed|7ion|7s
 rfee|refereed|6nce|9d|9s|8ing|7dum|7t
 rfei|forfeit
 rfer|prefer|6ably|6ence|:s|8tial|6red|8rs|0refer|5eed|6nce|9d|9s|8ing|7dum|7t|5red|6ing|5s
@@ -39535,7 +39587,7 @@ rfne|refined|6ries|7s|7y
 rfni|refining
 rfol|norfolk
 rfom|reform|6atting|6ed|7rs|6ism|8t|6s|6ulation
-rfor|perforator|6m|7ance|7ed|7ing|7s|0reform|6atting|6ed|7rs|6ism|8t|6s|6ulation
+rfor|perform|7ance|;s|7ed|7ing|7s|0reform|6atting|6ed|7rs|6ism|8t|6s|6ulation
 rfr |refer
 rfrb|refurbishing
 rfre|refereed|6nce|9d|9s|8ing|7dum|7t|3resher|7ing
@@ -39701,6 +39753,7 @@ rhoe|rhoades|3de|5s|6ia
 rhol|orthological
 rhor|rhetoric|8al
 rhos|rhoads|3des|6ia
+rhro|arthropod
 rht |right
 rhta|rightarrow
 rhti|rightist
@@ -39709,7 +39762,7 @@ rhtn|rightness
 rhto|rhetoric|8al
 rhtr|rhetoric|8al
 rhts|rights
-rhur|arthur|6.klatsky@kp.org
+rhur|arthur
 rhus|aarhus
 rhwa|rahway
 rhwy|rahway
@@ -40279,6 +40332,7 @@ rnne|grinnell
 rnnh|brennhoud
 rnni|running
 rnnn|running
+rno |borno
 rnoc|rhinoceros|9us
 rnod|arnold
 rnol|arnold|0randolph|1eynolds
@@ -40589,7 +40643,7 @@ rova|removal|7s
 rovc|provocation
 rovd|proved|4ide|7d|7nce|8t|7s|6ing
 rove|grove|5r|5s|0prove|5d|5s|0recover|7able|7ing|7y|2move|6d|0strove
-rovi|oroville|0provide|7d|7nce|8t|7s|6ing|5nce|8s|7ial|6g|5sion|9s|0removing
+rovi|arbovirus|0oroville|0provide|7d|7nce|8t|7s|6ing|5nce|8s|7ial|6g|5sion|9s|0removing
 rovk|provoke|7d
 rovl|oroville
 rovn|province|8s|7ial|6g
@@ -40961,10 +41015,10 @@ rthf|northfield
 rthi|ritchie
 rthl|orthological|0ruthlessness
 rthm|arithmetic|0rothamsted
-rtho|bartholdi|0orthodox|8y|5logical
+rtho|arthropod|0bartholdi|0orthodox|8y|5logical
 rthq|earthquake
-rthr|arthur|6.klatsky@kp.org|0birthrate|9s|1rethren|0northrop|6up|0rather
-rthu|arthur|6.klatsky@kp.org
+rthr|arthropod|4ur|0birthrate|9s|1rethren|0northrop|6up|0rather
+rthu|arthur
 rthw|northwest|9ern
 rthy|worthy
 rtia|artifacts|0partial|7ity|7ly
@@ -41004,7 +41058,7 @@ rtra|portrait|8s|6yed|1rotracted|0restrained|8t|2trained|4eat
 rtre|retired|6ment|3reat|4ieve|8d
 rtri|arterial|6oscler|0portrits|0restrict|8ed|:char|8ion|;s|2tiring|3rained|4ieve|8d
 rtrn|return|6ed|6ing|6s
-rtro|retrovirol
+rtro|arthropod|0retrovirol
 rtru|gertrude|0restructure|:ing
 rtrv|retrovirol
 rtry|artery
@@ -41023,7 +41077,7 @@ rtue|virtue
 rtug|portugal|6uese
 rtul|ritual|6s
 rtun|fortune|0return|6ed|6ing|6s
-rtur|arthur|6.klatsky@kp.org|0return|6ed|6ing|6s|0torture
+rtur|arthur|0return|6ed|6ing|6s|0torture
 rtwi|hartwig
 rtwo|artwork
 rtwr|artwork
@@ -41572,11 +41626,11 @@ sana|saginaw|2ngamon|3itaiton|6rium|7y|6tion|3lam|3ta|4iago|2ranac|1candal|1tagn
 sanb|istanbul|0sanborn|4rook
 sanc|sanctioning|8s|1tance|3unchly
 sand|island|6s|0sand|4erland|6s|4ler|4s|4usky|1candal|5inavia|1tand|5alone|6rd|8ization|:e|8s|5ing|5s|6till
-sane|sanderland|6s|4ler|3te|1canner|1hane|3wnee|1pan.error|3wned|1tance|4ley
+sane|insane|0sanderland|6s|4ler|3te|1canner|1hane|3wnee|1pan.error|3wned|1tance|4ley
 sanf|stanford
 sang|sangamon|2ving|6s|2ying|1hang|5hai|1trange|7rs
 sanh|shanghai|1tanhope
-sani|insanity|0salinification|2nctioning|8s|3itaiton|6rium|7y|6tion|3tiago|2xonica|1candinavia|1panish|1tanding
+sani|salinification|2nctioning|8s|3itaiton|6rium|7y|6tion|3tiago|2xonica|1candinavia|1panish|1tanding
 sanl|sandler|3lam|1canlon|1tanley
 sanm|sangamon|3lam
 sann|savannah|1canner|1hannon
@@ -41857,7 +41911,7 @@ sced|ascending|0sacred|1chedule|8s|4ide|1ecede
 scee|scaefer|2ene|5ry|5s|2heme|6s|3neebeli|2reened|1ecede|1ucceed|7ed|7s
 scef|scaefer
 scei|scheide|3weiger
-scel|escuela|0miscellaneous|0schellekens
+scel|escuela|0miscellanea|:ous|0schellekens
 scem|schema|6attributetest|6elementtest|6less|7ocation|6s|5e|6s|3lemmer
 scen|ascending|0descendant|:s|7ing|6t|0obscene|0scenario|8s|4e|5ry|5s|4tury|2henck|2ience|7s|5tific|7st|9s|2reened|3rening|1tucents
 scep|susceptibility|9le|;s
@@ -41976,7 +42030,7 @@ scrc|scarce|6ly|2ratch
 scrd|sacred
 scre|discredit|9ed|9ing|6pancies|6tion|0sacred|1carce|6ly|4es|4let|2ores|2reened|3rening|1ecret|6ariat|8y|3ure|6d
 scrf|sacrifice|9d|9s
-scri|describe|8d|8s|7ing|6ption|;s|9ve|8ors|1iscriminated|;ion|0myscript.pl|0sacrifice|9d|9s|1chrire|2ripps|5t|6ing|6s|1ecuring|6ties|7y
+scri|describe|8d|8s|7ing|6ption|;s|9ve|8ors|1iscriminated|;ion|0inscription|0myscript.pl|0sacrifice|9d|9s|1chrire|2ripps|5t|6ing|6s|1ecuring|6ties|7y
 scrl|scarlet
 scrm|scrymser
 scrn|scorn|2ranton|3eened|3rening
@@ -42080,7 +42134,7 @@ sea |sea|3l|3rs|3ts|2pfa|1peak|1team
 seaa|seaman|3scapes|2parate|8d|8ly|8ness|7ing|8on|8sts|7or|9s
 seab|seabright|2chaba|1izeable|1teamboat
 seac|search|6ing|3scapes|0usepackage
-sead|insead|0seated|2ward|1pread|6ing|1teadily
+sead|seated|2ward|1pread|6ing|1teadily
 seae|seamen|3ted|4le|2nate|2wage|1peaker|7s|1teamers
 seaf|sealife
 seag|sewage
@@ -42120,7 +42174,7 @@ secn|second|6ary|6ly|6s
 seco|second|6ary|6ly|6s|3tion|7s|4or|6s|3urocrats|2micolon|2roconversion
 secr|secret|6ariat|8y|3tor|6s|3ure|6d|5ing|6ties|7y|5ocrats|1pectra|6ographic|7photometer|7scopic|6um
 secs|secession|9ist|1pecs
-sect|aspect|6s|0cdsect|0insect|6s|0secret|6ariat|8y|3tion|7s|4or|6s|2lect|6ed|6ing|7on|7ve|6or|8s|6s|1pectacular|6tors|5ra|6ographic|7photometer|7scopic|6um
+sect|aspect|6s|0cdsect|0insect|6ary|6s|0secret|6ariat|8y|3tion|7s|4or|6s|2lect|6ed|6ing|7on|7ve|6or|8s|6s|1pectacular|6tors|5ra|6ographic|7photometer|7scopic|6um
 secu|insecurity|0secure|6d|5ing|6ties|7y|5ocrats|1peculated|8ion
 sed |asked|0based|0pseud|0saved|1eed|4s|2nd|4s|1hed|1ided|1ked|1led|1peed|3nd|0used
 seda|sendai|1tedman|0waseda
@@ -43085,7 +43139,7 @@ sler|osler|0silver|6stein|1lavery
 sles|sales|5man|2yles|1laves|2ides|1tiles|2yles|6heet|:s|1ylvester
 slet|select|6ed|6ing|7on|7ve|6or|8s|6s|1ilent|6ly
 slev|sleeve
-sley|salley|1olely|0wesley|6an
+sley|easley|0salley|1olely|0wesley|6an
 slf |self
 slfn|sulfone
 slfo|sulfone|5xide
@@ -45112,15 +45166,15 @@ t.ss|th.issue
 ta  |alta|1nta|1ta|0data|0etna|2ta|0futa|0juta|0meta|1ta|0ota|0stag|3r|3y|0tab|3s|2g|3e|3s|2ke|2lk|3l|2ms|2nk|2o|2pe|2r|2sk|2x|3i|1eam|3r|1hai|3n|1rap|0utah
 taa |tarai
 taac|tarascan
-taai|tarai|2xation
-taak|tamarkin
+taai|takaki|2rai|2xation
+taak|takaki|2markin
 taal|statale|0tatnall
 taam|tantamount
 taan|taiwan|2nganyika|3zania|2ppan
 taap|tallapoosa
 taar|tamarkin
-taas|tablas|2katsu|2rascan
-taat|takatsu|2xation
+taas|tablas|2rascan
+taat|taxation
 tab |tab|3le|3oo|3s|2mbo|1habo
 taba|database|0tablas
 tabb|tabbing
@@ -45207,16 +45261,16 @@ taiw|stairway|8s|0taiwan
 tajc|trajectories
 taje|trajectories
 tak |stack|3ke|3rk|0take|4n|4s|2lk|4s|2nk|4s|2sk|4s|1hank|1rack
-taka|katakana|0takatsu
+taka|katakana|0takaki
 takd|talked
 take|intake|0stake|5ly|3rkest|0take|4n|4over|4s|2lked|0uptake
 takg|taking
-taki|stacking|0taking|1racking
+taki|stacking|0takaki|3ing|1racking
+takk|takaki
 takl|stakely
 takn|taken|3ing
 tako|takeover
-taks|stalks|0takatsu|3es|2lks|2nks|2sks|1hanks
-takt|takatsu
+taks|stalks|0takes|2lks|2nks|2sks|1hanks
 takv|takeover
 tal |fatal|0italy|0metal|0natal|0table|2les|3k|4s|3l|1ikal|1otal|1rail|2ial|0vital
 tala|italia|6n|7o|0stalwarts|0tablas|2llapoosa|1hailand
@@ -45335,7 +45389,7 @@ tatm|statement|9s|0tantamount|2tum|1reatment|9s
 tatn|staten|0tatnall
 tato|potato|6es|0stanton|3tion|7ery|7s|0tautological|1omatos|1ractor|7s|3itor
 tatr|stature|0theatre
-tats|starts|3tes|4istical|9s|4us|0takatsu|2stes|1raits|2eats
+tats|starts|3tes|4istical|9s|4us|0tastes|1raits|2eats
 tatt|stratten|6on
 tatu|statuary|5e|6s|5re|5s|0tatum
 taty|datatype|8s
@@ -45391,9 +45445,9 @@ tbd |tbody
 tbdy|tbody
 tbe |table|1ibet|1ube|4s
 tbea|tibetan
-tbec|tribeca|1uberculin|8osis
+tbec|tribeca|1ubercle|6ulin|8osis
 tben|tabernacle
-tber|rotberg|0tabernacle|1imber|6land|:s|1uberculin|8osis
+tber|rotberg|0tabernacle|1imber|6land|:s|1ubercle|6ulin|8osis
 tbes|tables|1ribes|1ubes
 tbet|tablet|1ibet|5an
 tbgo|tobago
@@ -45412,7 +45466,7 @@ tbod|tbody
 tboo|taboo
 tbor|triborough
 tboy|tbody
-tbrc|tuberculin|8osis
+tbrc|tubercle|6ulin|8osis
 tbrn|tabernacle
 tbs |tabs|1ombs|1ubes
 tbt |tibet
@@ -45497,7 +45551,7 @@ tds |dtds
 tdwa|tidewater
 tdy |study|0tbody|1oday
 tdyi|studying
-te  |byte|0cite|0date|0fate|0gate|0item|0kate|1ite|0late|0mute|0note|0rate|0site|1tem|3p|0tage|2ke|2pe|1e|2am|3r|2d|2l|3l|2n|3d|3t|2rm|2st|2xt|1hem|3o|1ide|2ed|3s|2me|2re|2ve|1ree|3s|2ue|1ube|2es|2ne|1ype|0vote|0être
+te  |byte|0cite|0date|0fate|0gate|0item|0kate|1ite|0late|0mute|0note|0rate|0site|1tem|3p|0tage|2ke|2pe|1e|2am|3r|2d|2l|3l|2n|3d|3t|2rm|2st|2xt|1hem|3o|1ide|2ed|3s|2me|2re|2ve|1ree|3s|2ue|1ube|2ne|1ype|0vote|0être
 tea |steam|0teach|3m|4s|3r|2lla|2xas|1read|4s|4t
 teab|steamboat
 teac|teach|5er|7s|5ing|2nance
@@ -45529,7 +45583,7 @@ tecn|technical|9ly|7ians|6que|9s|5ocratic|6l|7ogia|:cal|;o|9y|3nics
 teco|technocratic|6l|7ogia|:cal|;o|9y|2lecommunications
 tect|detect|6ed|6ion|7ve|6s
 ted |acted|0cited|0dated|0fated|0muted|0noted|0opted|0ted|2nd|1ied|1read|3nd|2ied|1yped|0voted
-teda|stedman
+teda|stedman|0tuesday
 tede|tendencies|7y|2rmdef|2xtdecl
 tedi|steadily
 tedm|stedman
@@ -45558,6 +45612,8 @@ teex|stepexpr
 tef |theft
 tefa|stefano
 tefn|stefano
+tefo|telford
+tefr|telford
 tefs|thefts
 teft|theft|5s
 teg |telgu
@@ -45586,15 +45642,15 @@ tela|tella|2mplate|8s|1utelage
 telb|thelberg
 telc|telecommunications|4scope|9s
 tele|steele|3llenbosch|0teagle|2lecommunications|4gram|8s|7ph|9er|9ic|9y|4phone|4scope|9s|4vision|2mple|1helberg|1welve
-telf|itself
+telf|itself|0telford
 telg|telegram|8s|7ph|9er|9ic|9y|3gu
 telh|telephone
 teli|sterling|0television|3ling
 tell|estella|0intellectual|<s|6igence|:tsia|0satellite|1tellenbosch|0tell|4a|4ing
 teln|telling
-telo|telecommunications|1heologians|8cal|7y|1upelo
+telo|telecommunications|3ford|1heologians|8cal|7y|1upelo
 telp|telephone
-telr|telegram|8s|7ph|9er|9ic|9y
+telr|telegram|8s|7ph|9er|9ic|9y|3ford
 tels|gitelson|0hotels|0telescope|9s
 telu|telgu
 telv|television|1welve
@@ -45637,7 +45693,7 @@ teoi|theorie|6sts
 teol|theologians|8cal|7y
 teon|tremont
 teoo|theodore|4logians|8cal|7y
-teor|meteorite|0temporarily|8y|2rror|6ism|8ts|7zes|6s|1heorell|6tical|5ie|6sts|5y|1revor
+teor|meteorite|0telford|2mporarily|8y|2rror|6ism|8ts|7zes|6s|1heorell|6tical|5ie|6sts|5y|1revor
 teov|takeover
 teoy|theory
 tep |step|4s|0tempt
@@ -45654,7 +45710,7 @@ tepx|stepexpr
 ter |after|0deter|0enter|0inter|0later|0meter|0other|1uter|0peter|0taper|1ear|2rm|4s|3re|4y|3zo|1iger|1ower|1yler|0water
 tera|interaction|;s|6merican|1teration|0literal|7ly|7s|6ry|6ture|0therapy|4man|1olerance|7t|6te|8d|0utterances|0veteran|7s
 terb|thereby|0waterbury
-terc|interchange|6ommunal|7urse|0tuberculin|8osis
+terc|interchange|6ommunal|7urse|0tubercle|6ulin|8osis
 terd|interdependence|=t|6isciplinary|0termdef
 tere|altered|0entered|0interest|8ed|8ing|8s|0stereotypes|0termdef|3pene|3re|5nce|3smette|1heorell|6tical|3reby|5fore|6rom|1liere
 terf|interface|9s|6ere|9nce|0therefore|6rom|0waterfall|6ront
@@ -45673,10 +45729,10 @@ terv|interval|8s|6ention|<s|6iew|9ed|9s
 terw|afterwards|0otherwise|0waterways
 tery|artery|0terry|1heory
 terz|terzo
-tes |bates|1ytes|0dates|0gates|0items|0mutes|0notes|0rates|0sites|1tems|3ps|0takes|2les|2xes|1eams|2nts|2rms|2st|4s|2xas|1ies|2mes|1reas|3es|3s|1ubes|2es|1ypes
-tesa|testament
+tes |bates|1ytes|0dates|0gates|0items|0mutes|0notes|0rates|0sites|1tems|3ps|0takes|2les|2xes|1eams|2nts|2rms|2st|4s|2xas|1ies|2mes|1reas|3es|3s|1ubes|1ypes
+tesa|testament|1uesday
 tesc|telescope|9s
-tesd|tested
+tesd|tested|1uesday
 tese|tersmette|2sted|1hemselves|1ygesen|2pesetting
 tesh|thresher
 tesi|tensions|2stimonial|8y|5ng|1hesis
@@ -45737,7 +45793,7 @@ tffn|tiffin
 tffo|stafford
 tfin|tiffin
 tfle|stifle
-tfor|tilford
+tfor|telford|1ilford
 tfre|gutfreund
 tfs |tufts
 tft |theft|1ufts
@@ -45909,7 +45965,7 @@ thri|theorie|6sts|2irties|2rives|5ing
 thrl|otherlevel|0thirdly|2orell|2rall
 thrm|mathrm|0therman|2romb
 thrn|thornburgh
-thro|anthropoid|8logize|;y|0lathrop|0thorough|8fare|8ly|2romb|4ugh|7out
+thro|anthropoid|8logize|;y|1rthropod|0lathrop|0thorough|8fare|8ly|2romb|4ugh|7out
 thrp|therapy
 thrs|mathrsfs|0others|0theirs|2irds|2rashing|3esher|2ursday
 thrt|thirties|5y|2reat|6en|8ed|8s|6s
@@ -45940,7 +45996,7 @@ thud|thursday
 thue|thurber
 thug|though|6t|7ful|2rough|7out
 thuh|though|6t|7ful
-thur|arthur|6.klatsky@kp.org|0thurber|4sday|1olhurst
+thur|arthur|0thurber|4sday|1olhurst
 thus|enthusiastically|0thousand|8s|2ursday|3s|1yphus
 thve|thrives
 thvi|thriving
@@ -46086,7 +46142,7 @@ tini|thinking|1raining|2inidad|5ty
 tink|think|5ing
 tino|natinoal|0patino
 tinr|itinerary
-tins|atkins|0things|1ionesta|4s|1rains
+tins|atkinson|0things|1ionesta|4s|1rains
 tint|tainted|1rinity
 tiny|mutiny|0tiny
 tio |tion|4s|1ulio
@@ -46167,9 +46223,9 @@ tjec|trajectories
 tjer|batjer
 tk  |take|2lk|2nk|2sk|1ook|1uck
 tka |tikal
+tkai|takaki
+tkak|takaki
 tkal|tikal
-tkas|takatsu
-tkat|takatsu
 tke |stake|0take|4n|4s|1oken
 tked|talked
 tkeg|tuskegee
@@ -46183,19 +46239,19 @@ tkev|takeover
 tkey|turkey
 tkga|tokugawa
 tkig|taking
-tkin|atkins|0taking|0watkins
-tkis|atkins
+tkin|atkinson|0taking|0watkins
+tkis|atkinson
+tkki|takaki
 tkl |tikal
 tkle|tickler
 tkn |taken|1oken
 tkng|taking
 tkni|tokenization|7e|8d
 tkno|notknown
-tkns|atkins|0tokens
+tkns|atkinson|0tokens
 tko |tokyo
 tkov|takeover
 tks |takes|2lks|2nks|2sks|1icks|1urks
-tkts|takatsu
 tku |turku
 tkua|tokugawa
 tkug|tokugawa
@@ -46234,8 +46290,8 @@ tler|butler|0cutler|0hitler|0telegram|8s|7ph|9er|9ic|9y|1liere|1olerance|7t|6te|
 tles|stiles|2yles|6heet|:s|0tables|2les|1elescope|9s|1itles|1uples
 tlet|athletic|8s|0outlets|0tablet|2lent|1oilets
 tlev|television
-tlfo|tilford
-tlfr|tilford
+tlfo|telford|1ilford
+tlfr|telford|1ilford
 tlg |telgu
 tlgr|telegram|8s|7ph|9er|9ic|9y
 tlgu|telgu
@@ -46268,7 +46324,7 @@ tlne|tulane
 tlnt|atlanta|6ic|0talent
 tlo |tulio
 tloo|outlook
-tlor|tailor|6ed|2ylor|1ilford
+tlor|tailor|6ed|2ylor|1elford|1ilford
 tlot|talcott
 tlph|telephone
 tlpo|stolport
@@ -46545,7 +46601,7 @@ tol |stol|0told|3ls|2ol|4s|2tal
 tola|tolerance|7t|6te|8d|3man|3uca
 tolc|toluca
 told|told|3edo|2taldigits
-tole|intolerance|0stollem|0toilets|2ledo|4rance|7t|6te|8d|1rolled|6y
+tole|intolerance|0stollem|0toilets|2ledo|4rance|7t|6te|8d|2pple|1rolled|6y
 tolh|tolhurst
 toli|totalitarian
 toll|stollem|0tolls|2tally|1rolled|6y
@@ -46595,9 +46651,11 @@ toou|thorough|8fare|8ly|1ohoku
 top |stop|0top|3ic
 topa|topical|0utopian
 topc|topic|5al|5s|1ropical
-tope|troupe
+tope|topple|1roupe
 topi|topic|5al|5s|1ropical|0utopian
+topl|topple
 topo|stolport
+topp|topple
 tops|thompson|1opics|1roops
 tor |actor|0motor|0store|4m|4y|0torn|3re|2ur|4s|2wer
 tora|litoral|0storage|0tolerance|7t|6te|8d|2rcuato
@@ -46710,7 +46768,7 @@ tpin|ftp.informatik.uni|0typing
 tpis|topics
 tpl |tuple
 tpla|template|8s
-tple|staples|0temple|1riple|6x|1uple|5s
+tple|staples|0temple|1opple|1riple|6x|1uple|5s
 tplo|tupelo
 tpls|tuples
 tpna|typename
@@ -46720,7 +46778,8 @@ tpor|temporarily|8y
 tpos|outpost
 tppa|tappan
 tppd|tipped
-tppe|tipped|1rapped
+tppe|tipped|1opple|1rapped
+tppl|topple
 tppn|tappan
 tpr |taper
 tps |steps|0tips|1raps|2ips|1ypes
@@ -46994,9 +47053,10 @@ tryn|trying
 tryt|tarrytown
 trz |terzo
 trzo|terzo
-ts  |acts|1rts|0cuts|0dtds|0huts|0its|0jets|0lots|0mats|0nets|1ots|0otis|0pits|1ots|0rats|0sets|0tabs|2gs|2ms|2sk|1est|1hus|1ies|2ps|2s|1oys|1res|1s|1ues|0wits
+ts  |acts|1rts|0cuts|0dtds|0huts|0its|0jets|0lots|0mats|0nets|1ots|0otis|0pits|1ots|0rats|0sets|0tabs|2gs|2ms|2sk|1est|1hus|1ies|2ps|2s|1oys|1res|1s|0wits
 tsam|testament
 tsca|netscape
+tsda|tuesday
 tse |those
 tsed|tasted|1ested
 tsef|itself
@@ -47144,7 +47204,7 @@ ttva|attvalue
 ttvl|attvalue
 ttwa|ottawa
 tty |petty|0witty
-tu  |thru|2us|1lu|1our|1rue|1ube|2ck|2es|2m|2ne|2rf|3n|0wctu
+tu  |thru|2us|1lu|1our|1rue|1ube|2ck|2m|2ne|2rf|3n|0wctu
 tuae|tulane
 tual|actual|6ly|0mutual|6ly|0ritual|6s
 tuan|truman|1ulane
@@ -47152,11 +47212,11 @@ tuar|stuart|0turnaround
 tuat|situation|9s|1tuart
 tub |tube|4s
 tubb|stubborn
-tubc|tuberculin|8osis
-tube|steubenville|0thurber|1ube|4rculin|8osis|4s
+tubc|tubercle|6ulin|8osis
+tube|steubenville|0thurber|1ube|4rcle|6ulin|8osis|4s
 tubl|stumble|0troubled|7s
 tubo|stubborn
-tubr|tuberculin|8osis
+tubr|tubercle|6ulin|8osis
 tubs|tubes
 tuc |truck|1ucci|3k
 tuca|toluca
@@ -47170,23 +47230,23 @@ tucs|trucks
 tuct|structural|8e|9d|9s
 tucy|toucey
 tud |study
-tuda|trudeau
+tuda|trudeau|1uesday
 tude|estudes|0student|7s|4ied|6s|4ley|0trudeau
 tudi|studied|6s|5o|4ying
 tudl|studley
 tudn|student|7s
 tudo|studio
 tudy|study|5ing
-tue |true|1ube|4s|2es|2ne|2ple
-tuea|touzeau|1rudeau|1utelage
-tuec|tuberculin|8osis
-tued|turned
+tue |true|1ube|4s|2ne|2ple
+tuea|touzeau|1rudeau|1uesday|2telage
+tuec|tubercle|6ulin|8osis
+tued|tuesday|2rned
 tueg|tuskegee
 tuel|tunnel|2pelo|2telage
 tuen|stucents|3dent|7s
 tueo|tupelo
-tuer|tuberculin|8osis|2rner
-tues|tubes|2es|2ples
+tuer|tubercle|6ulin|8osis|2rner
+tues|tubes|2esday|2ples
 tuey|toucey|1urkey
 tuf |tufts|2rf
 tufs|tufts
@@ -47252,7 +47312,7 @@ tups|tuples
 tur |tour|4s|1urf|3ks|4u|3n
 tura|natural|7ization|7ly|0turnaround|3rialba
 turb|thurber
-turc|sturchio|0tuberculin|8osis
+turc|sturchio|0tubercle|6ulin|8osis
 turd|saturday|0thursday|1urned
 ture|future|6s|0mature|0nature|0sturges|0thurber|1ourtellot|1urkey|3ned|5r|4ley
 turf|turf
@@ -47269,9 +47329,9 @@ turs|thursday|1ourism|6t|4s|1urks
 turt|stuart|0tourtellot
 turu|turku
 tury|turkey
-tus |thus|1ours|1rusk|4t|1ubes|2es|2fts|2rks|2son
-tusa|thousand|8s
-tusd|thursday
+tus |thus|1ours|1rusk|4t|1ubes|2fts|2rks|2son
+tusa|thousand|8s|1uesday
+tusd|thursday|1uesday
 tuse|struse|0trusted|6e|7s|1uskegee
 tusg|tuskegee
 tusk|trusk|1uskegee
@@ -47569,13 +47629,13 @@ ubdl|pubidliteral
 ubdv|subdivisions
 ube |tube|4s
 ubea|unbreakable
-ubec|quebec|0subject|7ed|7ive|7s|3section|:s|0tuberculin|8osis
+ubec|quebec|0subject|7ed|7ive|7s|3section|:s|0tubercle|6ulin|8osis
 ubee|subelement
 ubel|subelement
 uben|reuben
 ubep|subexpressions
 ubeq|subsequent|:ly
-uber|cumberland|0hubert|0lumber|0number|6ed|6ing|6s|0rubber|0subseries|6vience|3version|6t|0tuberculin|8osis
+uber|cumberland|0hubert|0lumber|0number|6ed|6ing|6s|0rubber|0subseries|6vience|3version|6t|0tubercle|6ulin|8osis
 ubes|rubies|0tubes
 ubet|hubert|0subset|6s
 ubex|subexpressions
@@ -47629,7 +47689,7 @@ ubpp|subpopulations
 ubqi|ubiquitous
 ubqu|ubiquitous
 ubra|subramanian|3tract|8ion|0unbreakable
-ubrc|lubricating|0rubric|0tuberculin|8osis
+ubrc|lubricating|0rubric|0tubercle|6ulin|8osis
 ubrd|subordinate|;s
 ubre|subtree|0unbreakable
 ubri|fulbright|0lubricating|0rubric
@@ -47842,7 +47902,7 @@ uduo|audubon
 udwa|sundwall
 udy |bundy|0study
 udyi|studying
-ue  |blue|1uel|0cue|2re|0due|3s|2ke|0fuel|0hues|0june|0luke|0mule|2te|0pure|0rule|0sue|3s|2re|0true|1ube|2es|2ne|0ueda|1se|3d|3r|3s
+ue  |blue|1uel|0cue|2re|0due|3s|2ke|0fuel|0hues|0june|0luke|0mule|2te|0pure|0rule|0sue|3s|2re|0true|1ube|2ne|0ueda|1se|3d|3r|3s
 uea |ueda
 ueac|usepackage
 ueal|unrealistic
@@ -47860,7 +47920,7 @@ uech|muench|0puech|0utrecht
 uecl|undeclarations|8e|9d
 ueco|unesco|2recognized
 ued |muted|0ruled|0ueda|1rged|1sed
-ueda|ueda
+ueda|tuesday|0ueda
 uee |queen
 ueec|quebec
 ueen|queen|5s|6land
@@ -47906,7 +47966,7 @@ ueqa|unequal
 uequ|unequal
 uer |bauer|0kuper|0outer|0query|0under|1pper|1ser|4s
 uera|cuernavaca|0funeral|0numerals|0utterances
-uerc|tuberculin|8osis|0underclass|6ut|1ppercase
+uerc|tubercle|6ulin|8osis|0underclass|6ut|1ppercase
 uerd|underdeveloped|<ment
 uere|queried|6s|0underestimated|<ing
 uerf|superficial|6luous
@@ -47924,10 +47984,11 @@ uerv|supervised|8ion|8or
 uerw|underway|6ood
 uery|query|0xquery
 uerz|wuertz
-ues |blues|1uses|0dues|0hues|0mutes|0nunes|0quest|0rules|0sues|0tubes|2es|0urges|1sers|3s
+ues |blues|1uses|0dues|0hues|0mutes|0nunes|0quest|0rules|0sues|0tubes|0urges|1sers|3s
 ues&|guest&name
-uesa|unescaped
+uesa|tuesday|0unescaped
 uesc|unescaped|5o
+uesd|tuesday
 uesi|question|8able|8naire|8s|0uestionably
 ueso|uestionably|1nesco|2resolved
 uess|unless
@@ -48309,7 +48370,7 @@ ulgs|gulags
 ulhu|sulphur
 uli |julia|4e|0multi|0tulio
 ulia|culiacan|0giuliani|0julia|5n|0ultimate|8ly
-ulic|culiacan|0duplicate|9d|9s|0multicultural|0public|6ation|;s|6ity|7zed|6ly|0ulrich
+ulic|culiacan|0duplicate|9d|9s|8ion|0multicultural|0public|6ation|;s|6ity|7zed|6ly|0ulrich
 ulid|euclid
 ulie|julie|0unlike|6ly
 ulif|multifaceted|0qualified|6y|7ing
@@ -48897,17 +48958,17 @@ uphv|upheaval
 uphw|upshaw
 uphy|murphy
 upia|utopian
-upic|auspices|0duplicate|9d|9s|0subpicture|2spicion|8us
+upic|auspices|0duplicate|9d|9s|8ion|0subpicture|2spicion|8us
 upil|pupils
 upis|pupils
 upke|uptake
 upki|pumpkin
 upl |tuple
 upla|unpalatable|1psala
-uplc|duplicate|9d|9s
+uplc|duplicate|9d|9s|8ion
 upld|uphold
 uple|couple|6d|0supplement|:al|;ry|:ed|:s|0tuple|5s
-upli|duplicate|9d|9s|0supplied|7s
+upli|duplicate|9d|9s|8ion|0supplied|7s
 uplo|tupelo
 upls|pupils|0tuples
 uplu|surplus
@@ -49190,7 +49251,7 @@ urvy|purveyors|0survey|6ing|6s
 urw |jurow
 ury |bury|0curly|3ry|0fury|0jury|0murry|0query|0unary
 urye|unaryexpr
-us  |buds|2s|3h|3s|3y|2ys|0cuts|0dues|0guns|0haus|1ues|2ts|0just|0luis|0must|0plus|1ush|0runs|2sh|3k|0sues|0thus|1ues|0uas|1cs|1ps|1ris|2ls|1s|2a|2e|3d|3r|3s|1ys
+us  |buds|2s|3h|3s|3y|2ys|0cuts|0dues|0guns|0haus|1ues|2ts|0just|0luis|0must|0plus|1ush|0runs|2sh|3k|0sues|0thus|0uas|1cs|1ps|1ris|2ls|1s|2a|2e|3d|3r|3s|1ys
 usa |nusas|0usa|3ge|2ual|1wusa
 usaa|upsala
 usab|usable
@@ -49222,6 +49283,7 @@ usco|unesco
 uscp|susceptibility|9le|;s
 uscr|subscribers|7ption|<s
 usd |used
+usda|tuesday
 usdd|usaddress
 usdr|usaddress
 use |abuse|0buses|0cause|0house|1ulse|0mouse|0nurse|0pause|0rouse|0usage|2e|3d|3r|4s|3s
@@ -52841,8 +52903,9 @@ ynd |syndr
 yndc|syndicate
 yndi|syndicate
 yndr|syndr
-yne |bayne|1yrne|0duyne|0hayne|0payne|1yne
+yne |bayne|1yrne|0duyne|0payne|1yne
 yner|yonkers
+ynes|haynes
 yney|sydney
 yng |dying|0lying|0tyng|0young
 ynge|younger
@@ -53056,6 +53119,7 @@ ysn |tyson
 ysnc|eysenck
 yso |tyson
 ysoe|mysore
+ysom|haysom
 yson|tyson
 ysor|mysore
 ysre|mysore
@@ -53448,7 +53512,7 @@ zz  |zz
 zzar|lazzarin
 zzie|lizzie
 edMap index
-53449
+53513
 "   |13
 $   |11
 &   |7
@@ -53580,7 +53644,7 @@ aaem|43
 aaen|23
 aaeu|13
 aaf |11
-aaff|21
+aaff|30
 aag |10
 aage|52
 aagi|14
@@ -53606,6 +53670,7 @@ aait|13
 aaka|22
 aake|15
 aakh|14
+aaki|12
 aakn|15
 aako|14
 aaku|22
@@ -53687,7 +53752,6 @@ aati|53
 aatj|13
 aatm|39
 aato|32
-aats|13
 aatt|18
 aatu|13
 aaty|17
@@ -53748,15 +53812,16 @@ abcf|32
 abcn|16
 abco|25
 abct|14
+abd |11
 abda|34
 abdc|23
-abde|32
+abde|37
 abdf|32
 abdi|16
 abdo|23
 abdt|14
 abdu|14
-abe |81
+abe |86
 abea|27
 abeb|15
 abec|24
@@ -53775,27 +53840,28 @@ abh |11
 abha|13
 abho|16
 abhr|16
-abi |42
+abi |48
 abia|78
 abib|29
 abic|31
-abie|54
+abid|11
+abie|58
 abig|43
-abii|18
-abil|56
+abii|13
+abil|51
 abin|49
 abir|21
 abis|38
-abit|84
+abit|79
 abiu|25
 abiv|20
 abki|12
 abl |38
 abla|12
 able|95
-abli|70
+abli|65
 abls|42
-ablt|35
+ablt|30
 ablu|18
 abm |17
 abma|15
@@ -53817,7 +53883,7 @@ aboc|13
 abod|27
 aboe|31
 abog|23
-aboi|44
+aboi|54
 abol|40
 abom|21
 abon|38
@@ -53827,7 +53893,7 @@ abor|165
 abos|22
 abot|51
 abou|44
-abov|11
+abov|21
 abr |36
 abra|71
 abrb|14
@@ -53887,6 +53953,7 @@ abuy|12
 abv |11
 abva|20
 abve|11
+abvi|15
 aby |10
 ac  |126
 aca |24
@@ -54127,7 +54194,7 @@ addo|22
 addr|63
 adds|31
 addt|37
-ade |88
+ade |94
 adea|25
 adeb|14
 aded|40
@@ -54646,6 +54713,7 @@ ahaa|22
 ahab|36
 ahad|18
 ahae|32
+ahaf|13
 aham|20
 ahan|26
 ahar|31
@@ -54671,6 +54739,7 @@ ahet|27
 ahev|40
 ahew|13
 ahex|14
+ahff|13
 ahi |16
 ahia|11
 ahie|47
@@ -54712,7 +54781,7 @@ ahpt|14
 ahra|30
 ahre|21
 ahrm|12
-ahro|36
+ahro|46
 ahrr|16
 ahrs|14
 ahry|13
@@ -54723,7 +54792,7 @@ aht |11
 ahta|15
 ahtb|15
 ahum|12
-ahur|29
+ahur|12
 ahus|12
 ahvi|26
 ahwa|12
@@ -54755,15 +54824,15 @@ aico|36
 aics|28
 aict|12
 aicu|44
-aid |101
+aid |107
 aida|26
 aidd|11
-aide|41
+aide|47
 aidi|30
 aidl|22
 aidn|12
 aids|35
-aie |143
+aie |149
 aiea|20
 aieb|15
 aied|68
@@ -54791,7 +54860,7 @@ aihm|16
 aii |24
 aiin|75
 aiis|27
-aiit|18
+aiit|13
 aik |11
 aika|30
 aike|18
@@ -54803,12 +54872,12 @@ ail |98
 aila|66
 aild|20
 aile|42
-aili|128
+aili|123
 ailn|37
 ailo|38
 ailr|50
 ails|25
-ailt|28
+ailt|23
 ailu|16
 ailw|16
 aily|56
@@ -54836,7 +54905,7 @@ ainm|18
 ainn|13
 aino|76
 ainr|28
-ains|96
+ains|98
 aint|98
 ainu|20
 ainy|12
@@ -54946,11 +55015,12 @@ ak  |125
 aka |36
 akaa|12
 akag|13
-akai|21
+akai|29
+akak|12
 akan|32
 akar|45
-akas|23
-akat|23
+akas|14
+akat|14
 akay|12
 akd |18
 akdr|14
@@ -54979,12 +55049,12 @@ aki |17
 akie|18
 akig|28
 akik|15
-akin|167
-akis|31
+akin|169
+akis|33
 akit|14
 akiu|15
 akke|12
-akki|12
+akki|20
 akku|15
 akla|23
 akle|12
@@ -54998,7 +55068,7 @@ akng|28
 akni|15
 aknk|15
 akno|36
-akns|28
+akns|30
 aknu|15
 aknw|36
 ako |18
@@ -55024,7 +55094,6 @@ akso|35
 akst|14
 akta|12
 akto|21
-akts|13
 aku |10
 akup|18
 akus|12
@@ -55104,7 +55173,7 @@ ales|134
 alet|111
 alev|15
 alex|25
-aley|77
+aley|85
 alf |10
 alfa|13
 alfd|17
@@ -55148,7 +55217,7 @@ alin|233
 alio|26
 alir|21
 alis|138
-alit|113
+alit|108
 aliv|11
 aliz|28
 alk |26
@@ -55579,7 +55648,7 @@ andw|28
 andx|13
 andy|21
 andz|13
-ane |189
+ane |184
 anea|24
 anec|14
 aned|69
@@ -55592,7 +55661,7 @@ anem|29
 anen|27
 anep|13
 aner|196
-anes|127
+anes|135
 anet|69
 aneu|17
 anev|29
@@ -55953,6 +56022,7 @@ aous|27
 aout|33
 aov |11
 aove|20
+aovi|15
 aow |11
 aowa|15
 aowe|13
@@ -56164,13 +56234,14 @@ arbc|12
 arbd|14
 arbe|20
 arbg|13
-arbi|30
+arbi|38
 arbl|12
 arbn|12
-arbo|73
+arbo|80
 arbr|60
 arbt|29
 arbu|13
+arbv|15
 arc |23
 arca|60
 arcb|14
@@ -56250,12 +56321,12 @@ arhb|14
 arhe|56
 arhi|42
 arhm|16
-arho|44
+arho|53
 arhq|16
-arhr|29
+arhr|19
 arhs|19
 arht|31
-arhu|36
+arhu|19
 arhv|20
 ari |65
 aria|214
@@ -56346,7 +56417,7 @@ arod|33
 aroe|13
 arog|15
 aroh|15
-aroi|54
+aroi|63
 arol|74
 arom|11
 aron|176
@@ -56356,7 +56427,7 @@ aror|60
 aros|68
 arot|31
 arou|56
-arov|18
+arov|28
 arow|41
 arox|19
 arp |11
@@ -56381,7 +56452,7 @@ arri|146
 arrl|27
 arrm|14
 arrn|56
-arro|68
+arro|77
 arrr|20
 arrs|41
 arrt|70
@@ -56408,17 +56479,17 @@ arta|85
 artc|91
 arte|165
 artf|32
-arth|122
+arth|112
 arti|217
 artl|60
 artm|46
 artn|61
-arto|109
+arto|117
 artq|16
-artr|93
+artr|83
 arts|76
 artt|30
-artu|44
+artu|27
 artw|22
 arty|36
 aru |14
@@ -56430,11 +56501,11 @@ aruh|12
 arum|24
 arun|12
 arup|18
-arur|29
+arur|12
 arus|51
 arva|31
 arve|46
-arvi|12
+arvi|23
 arvn|12
 arvr|21
 arvs|18
@@ -56512,7 +56583,7 @@ aset|103
 aseu|13
 asev|15
 asex|14
-asey|34
+asey|42
 asfi|26
 asfn|14
 asfo|14
@@ -56566,13 +56637,13 @@ askt|16
 asky|12
 asl |23
 asla|13
-asle|12
+asle|20
 asli|24
 asll|21
 aslm|12
 asln|13
 aslu|25
-asly|20
+asly|25
 asm |10
 asma|22
 asmb|18
@@ -56597,7 +56668,7 @@ asoc|41
 asoi|69
 asok|11
 asol|48
-asom|14
+asom|20
 ason|193
 asop|29
 asor|41
@@ -56765,13 +56836,13 @@ athi|64
 athl|59
 athm|64
 athn|39
-atho|141
+atho|151
 athp|28
 athq|16
-athr|167
+athr|157
 aths|47
 atht|25
-athu|38
+athu|21
 athw|23
 athx|14
 athy|13
@@ -56786,11 +56857,11 @@ atih|20
 atii|40
 atil|25
 atim|40
-atin|344
+atin|346
 atio|240
 atiq|23
 atir|24
-atis|155
+atis|157
 atit|71
 atiu|57
 ativ|56
@@ -56799,9 +56870,9 @@ atiz|50
 atje|19
 atjr|12
 atka|14
-atki|21
-atkn|21
-atks|12
+atki|23
+atkn|23
+atks|14
 atl |31
 atla|20
 atle|66
@@ -56830,7 +56901,7 @@ atng|37
 atni|17
 atnl|13
 atno|37
-atns|18
+atns|20
 atnt|49
 atnu|17
 ato |49
@@ -56868,7 +56939,7 @@ atri|183
 atrl|16
 atrm|12
 atrn|123
-atro|131
+atro|141
 atrp|18
 atrs|39
 atrw|27
@@ -56916,7 +56987,7 @@ atui|14
 atul|16
 atum|19
 atun|12
-atur|112
+atur|95
 atus|26
 atut|16
 atva|14
@@ -57317,13 +57388,13 @@ aybl|13
 aybu|14
 ayc |11
 ayce|11
-aye |59
+aye |55
 ayed|20
 ayeh|11
 ayel|17
 ayen|31
 ayer|64
-ayes|39
+ayes|44
 ayfe|14
 ayfi|14
 ayh |11
@@ -57353,16 +57424,18 @@ aymn|41
 aymo|13
 aymp|18
 aymt|18
-ayn |29
+ayn |25
 ayna|22
-ayne|33
+ayne|34
 ayng|20
 aynn|13
 aynr|13
+ayns|12
 ayo |11
 ayoa|13
 ayoe|12
 ayol|16
+ayom|12
 ayon|46
 ayoo|13
 ayor|34
@@ -57383,7 +57456,8 @@ ayrs|32
 ays |76
 aysh|13
 aysi|19
-aysm|19
+aysm|27
+ayso|12
 aysy|13
 ayth|14
 ayti|31
@@ -57449,7 +57523,7 @@ aztt|13
 azul|13
 azza|14
 azzr|14
-b   |232
+b   |229
 b.i |11
 b.r |11
 b.ri|11
@@ -57851,7 +57925,7 @@ bdca|16
 bdct|14
 bdde|17
 bddn|17
-bde |23
+bde |30
 bdef|32
 bdei|21
 bdel|14
@@ -57894,7 +57968,7 @@ bduc|14
 bdut|14
 bdwi|13
 bdy |23
-be  |115
+be  |113
 bea |44
 beaa|15
 beac|15
@@ -57936,7 +58010,7 @@ bedi|32
 bedo|19
 bedr|25
 beds|19
-bee |69
+bee |67
 beea|43
 beec|13
 beed|42
@@ -57945,20 +58019,22 @@ beef|48
 beeg|25
 beeh|13
 beei|64
-beek|13
-beel|40
+beek|20
+beel|46
 beem|26
 been|41
 beeo|16
 beer|84
 bees|37
 beet|43
+beeu|14
 beev|41
+beew|14
 beez|13
 bef |16
-befe|20
+befe|25
 befi|35
-befl|13
+befl|20
 befo|19
 befr|19
 beg |24
@@ -58024,7 +58100,7 @@ belf|21
 belg|41
 belh|12
 beli|88
-bell|51
+bell|57
 belm|23
 beln|32
 belo|46
@@ -58080,7 +58156,7 @@ bepr|16
 bequ|15
 ber |104
 bera|120
-berc|22
+berc|26
 berd|22
 bere|78
 berf|16
@@ -58129,10 +58205,12 @@ beua|12
 beud|13
 beuh|12
 beui|24
+beuk|14
 beul|12
 beun|11
 beus|13
 beut|33
+beuw|14
 beuy|12
 beva|25
 beve|41
@@ -58146,6 +58224,7 @@ bew |11
 bewd|18
 bewe|27
 bewi|18
+bewk|14
 bewl|25
 bewr|12
 bews|14
@@ -58164,12 +58243,14 @@ bezi|13
 bezn|15
 bf  |25
 bfal|13
+bfel|12
 bffa|13
 bffi|16
 bffl|13
 bffn|16
 bffs|12
 bfin|16
+bfll|12
 bfod|12
 bfoe|12
 bfor|26
@@ -58314,10 +58395,10 @@ bico|14
 bics|12
 bict|18
 bicy|13
-bid |50
+bid |57
 bida|13
 bidc|15
-bide|66
+bide|73
 bidg|30
 bidi|49
 bidl|27
@@ -58325,7 +58406,7 @@ bidm|14
 bidn|16
 bidr|19
 bids|28
-bie |64
+bie |70
 biea|15
 bieb|15
 bied|24
@@ -58378,7 +58459,7 @@ biin|47
 biio|31
 biir|28
 biis|13
-biit|18
+biit|13
 bik |13
 bike|16
 bikf|14
@@ -58391,13 +58472,13 @@ bild|61
 bile|77
 bilg|33
 bilh|18
-bili|116
+bili|111
 bill|33
 biln|12
 bilo|62
 bilr|32
 bils|18
-bilt|39
+bilt|34
 bilw|12
 bily|19
 bimd|12
@@ -58611,7 +58692,7 @@ blin|89
 blio|31
 blir|14
 blis|47
-blit|39
+blit|34
 bliu|13
 bliv|32
 bliz|12
@@ -58806,7 +58887,7 @@ bnno|11
 bnnr|12
 bnnt|13
 bnny|11
-bno |11
+bno |17
 bnom|21
 bnon|12
 bnor|21
@@ -58963,7 +59044,7 @@ bome|22
 bomi|49
 bomn|26
 bomy|12
-bon |77
+bon |80
 bona|16
 bond|59
 bone|64
@@ -58971,13 +59052,13 @@ bong|33
 bonh|13
 boni|31
 bonn|21
-bono|21
+bono|26
 bons|33
 bont|23
 bonu|17
 bonx|11
 bony|12
-boo |55
+boo |59
 boo.|14
 booa|19
 booc|14
@@ -59000,7 +59081,7 @@ boph|40
 bopt|38
 bopu|29
 bopy|16
-bor |66
+bor |69
 bora|56
 borb|22
 bord|70
@@ -59009,8 +59090,8 @@ borg|56
 bori|53
 borl|13
 borm|21
-born|42
-boro|45
+born|45
+boro|49
 borp|16
 borr|55
 bors|36
@@ -59060,7 +59141,7 @@ bout|42
 bouu|15
 bov |11
 bove|11
-bovi|13
+bovi|24
 bow |41
 bowa|28
 bowe|50
@@ -59256,7 +59337,7 @@ brmn|23
 brmp|12
 brmt|12
 brmu|13
-brn |81
+brn |84
 brna|53
 brnb|14
 brnc|22
@@ -59266,13 +59347,13 @@ brng|30
 brnh|39
 brni|22
 brnn|15
-brno|13
+brno|19
 brnr|45
 brns|26
 brnt|27
 brnx|11
 brny|12
-bro |39
+bro |43
 broa|66
 broc|52
 brod|82
@@ -59704,6 +59785,7 @@ buto|34
 butr|28
 butt|42
 buty|12
+buwk|14
 buy |25
 buyg|12
 buyi|12
@@ -60474,6 +60556,7 @@ ceon|12
 ceor|25
 ceos|12
 cepe|13
+ceph|18
 cepo|15
 cept|87
 cer |42
@@ -61096,7 +61179,7 @@ clar|188
 clas|95
 clat|68
 clau|29
-clav|36
+clav|26
 clay|22
 clb |25
 clbi|14
@@ -62580,7 +62663,7 @@ culy|11
 cum |16
 cuma|23
 cumb|44
-cume|69
+cume|74
 cumi|29
 cuml|16
 cumm|14
@@ -62811,7 +62894,7 @@ czeh|20
 czeo|20
 czet|14
 czho|20
-d   |368
+d   |372
 d'ae|12
 d'am|12
 d'ar|16
@@ -63126,7 +63209,7 @@ dclr|74
 dcls|13
 dcma|22
 dcmb|14
-dcme|45
+dcme|50
 dcmp|22
 dcoa|27
 dcod|13
@@ -63157,8 +63240,8 @@ dctp|19
 dctr|24
 dctt|29
 dcty|19
-dcue|45
-dcum|45
+dcue|50
+dcum|50
 dcus|29
 dcxs|13
 dcy |11
@@ -63517,6 +63600,7 @@ dexr|12
 dext|12
 dey |23
 deye|13
+deyo|12
 deyp|18
 dez |17
 df  |36
@@ -63982,7 +64066,7 @@ dlhi|20
 dli |16
 dlia|14
 dlib|18
-dlic|30
+dlic|35
 dlie|37
 dlii|26
 dlim|26
@@ -64227,17 +64311,17 @@ dobt|19
 doc |15
 doc.|13
 doca|39
-doce|60
+doce|65
 doch|14
 doci|30
 dock|20
-docm|45
+docm|50
 doco|15
 docp|19
 docr|86
 docs|23
 doct|59
-docu|45
+docu|50
 docx|13
 docy|19
 dod |18
@@ -64303,7 +64387,7 @@ dolu|16
 dom |9
 doma|57
 domd|14
-dome|53
+dome|58
 domg|13
 domi|77
 domn|63
@@ -64386,12 +64470,12 @@ doty|19
 dou |14
 doua|16
 doub|48
-doue|63
+doue|68
 douf|14
 doug|26
 douh|13
 doul|33
-doum|45
+doum|50
 doun|20
 dous|12
 dout|19
@@ -64438,14 +64522,14 @@ dph |11
 dphi|14
 dpho|14
 dphs|12
-dpic|35
+dpic|40
 dpin|13
 dpis|14
 dpit|26
 dpiv|23
 dpla|25
-dplc|21
-dpli|37
+dplc|26
+dpli|42
 dplm|23
 dplo|47
 dplr|22
@@ -64917,7 +65001,7 @@ duha|12
 duhm|12
 duht|17
 dui |11
-duic|21
+duic|26
 duie|12
 duig|12
 duin|29
@@ -64931,12 +65015,12 @@ duki|13
 dukr|13
 dul |22
 dula|39
-dulc|21
+dulc|26
 duld|12
 dule|48
 dulg|15
 dulh|12
-duli|34
+duli|39
 dull|14
 duln|19
 dulp|12
@@ -64947,7 +65031,7 @@ duly|12
 dum |18
 duma|17
 dumd|12
-dume|45
+dume|50
 dumm|14
 dumn|12
 dumo|21
@@ -64972,9 +65056,9 @@ duod|12
 duon|18
 duou|13
 dup |10
-dupc|21
-dupi|21
-dupl|21
+dupc|26
+dupi|26
+dupl|26
 dur |17
 dura|19
 durb|12
@@ -65191,7 +65275,7 @@ dzen|14
 dzes|12
 dzn |11
 dzns|12
-e   |459
+e   |456
 e'e |11
 e'r |11
 e're|11
@@ -65244,6 +65328,7 @@ eaem|16
 eaen|44
 eaer|138
 eaes|28
+eaey|12
 eaf |16
 eafe|14
 eaff|17
@@ -65288,7 +65373,7 @@ eaks|20
 eal |101
 eala|61
 eald|20
-eale|103
+eale|109
 ealf|21
 ealg|17
 ealh|32
@@ -65301,7 +65386,7 @@ ealr|24
 eals|62
 ealt|70
 ealu|32
-ealy|45
+ealy|50
 ealz|28
 eam |49
 eama|21
@@ -65364,13 +65449,13 @@ ears|73
 eart|76
 eary|19
 eas |159
-easa|40
+easa|49
 easb|21
 easc|28
 easd|12
-ease|67
+ease|69
 easi|59
-easl|12
+easl|17
 easm|13
 easn|80
 easo|56
@@ -65378,7 +65463,7 @@ easr|38
 eass|39
 east|79
 easu|66
-easy|15
+easy|20
 eat |113
 eata|20
 eatd|12
@@ -65522,7 +65607,7 @@ ecar|74
 ecas|23
 ecat|25
 ecau|26
-ecav|28
+ecav|19
 ecay|11
 ecc |10
 ecct|17
@@ -65536,12 +65621,13 @@ ecec|17
 eced|67
 ecee|29
 ecef|14
+eceh|18
 ecei|52
 ecel|38
 ecem|37
 ecen|68
 eceo|14
-ecep|73
+ecep|86
 ecer|43
 eces|80
 ecet|89
@@ -65582,7 +65668,7 @@ eckr|20
 ecks|12
 eckt|13
 ecl |11
-ecla|134
+ecla|125
 eclc|17
 ecld|28
 ecle|36
@@ -65596,7 +65682,6 @@ eclr|74
 ecls|76
 eclt|17
 eclu|61
-eclv|14
 ecm |17
 ecma|31
 ecmb|14
@@ -65631,6 +65716,7 @@ ecos|55
 ecou|50
 ecov|27
 ecpe|30
+ecph|18
 ecpi|41
 ecpr|18
 ecps|14
@@ -65827,7 +65913,7 @@ edwm|15
 edwn|11
 edwr|15
 edy |11
-ee  |201
+ee  |199
 eea |11
 eeag|17
 eeal|54
@@ -65876,7 +65962,7 @@ eefi|51
 eega|35
 eege|31
 eegi|28
-eegr|51
+eegr|56
 eegy|12
 eeh |11
 eeha|22
@@ -65902,7 +65988,7 @@ eela|26
 eeld|13
 eele|65
 eeli|45
-eell|74
+eell|82
 eelm|13
 eeln|25
 eelo|57
@@ -65919,7 +66005,7 @@ eemi|31
 eeml|17
 eemn|71
 eemo|52
-eemp|43
+eemp|56
 eems|18
 eemt|21
 eemy|19
@@ -65932,7 +66018,7 @@ eene|40
 eeng|21
 eenh|35
 eeni|13
-eenn|24
+eenn|13
 eenp|16
 eens|104
 eent|130
@@ -65943,7 +66029,7 @@ eeor|15
 eep |32
 eepa|22
 eepe|18
-eeph|33
+eeph|46
 eepi|23
 eepl|25
 eepn|24
@@ -65976,7 +66062,7 @@ eesa|17
 eesc|18
 eeso|13
 eess|63
-eest|77
+eest|88
 eet |59
 eeta|39
 eete|44
@@ -65990,7 +66076,9 @@ eets|42
 eett|26
 eetu|18
 eeuc|17
+eeuk|14
 eeut|35
+eeuw|14
 eeva|43
 eeve|51
 eevi|16
@@ -66001,6 +66089,7 @@ eevt|21
 eewa|22
 eewe|13
 eewh|15
+eewk|14
 eewr|13
 eex |11
 eexa|19
@@ -66028,9 +66117,10 @@ efci|39
 efct|35
 efe |18
 efea|16
-efec|83
+efec|78
 efed|25
 efee|38
+efel|12
 efem|18
 efen|33
 efer|121
@@ -66056,6 +66146,7 @@ efis|14
 efix|19
 eflc|34
 efle|47
+efll|12
 eflx|12
 efmo|14
 efnc|13
@@ -66066,7 +66157,7 @@ efns|13
 efoc|22
 efoe|12
 efom|61
-efor|145
+efor|151
 efot|23
 efr |18
 efra|33
@@ -66553,7 +66644,6 @@ elap|13
 elar|121
 elas|38
 elat|102
-elav|14
 elaw|14
 elax|11
 elay|15
@@ -66609,12 +66699,13 @@ elet|164
 elev|78
 elew|15
 elex|12
-eley|16
+eley|24
 elf |10
 elfa|13
 elfe|12
 elff|13
-elfr|13
+elfo|13
+elfr|22
 elfs|17
 elft|17
 elfu|13
@@ -66705,7 +66796,7 @@ eloi|45
 elom|29
 elon|70
 eloo|13
-elor|74
+elor|83
 elos|45
 elot|37
 elou|35
@@ -66979,29 +67070,28 @@ enar|78
 enas|12
 enat|70
 enau|12
-enav|25
+enav|17
 enba|14
 enbe|28
 enbi|14
 enbl|23
 enbu|15
 enc |38
-enca|38
+enca|31
 encd|27
-ence|56
-ench|38
+ence|67
+ench|50
 enci|87
 enck|20
-encl|25
+encl|19
 encm|32
 encn|33
 enco|90
-encp|26
+encp|37
 encr|45
 encs|19
 enct|15
 encu|50
-encv|14
 ency|20
 end |63
 enda|84
@@ -67029,12 +67119,13 @@ ened|81
 enee|40
 enef|35
 eneg|23
+eneh|18
 enei|106
 enel|75
 enem|42
 enen|90
 eneo|39
-enep|31
+enep|43
 ener|245
 enes|60
 enet|82
@@ -67102,7 +67193,7 @@ enke|13
 enki|21
 enkn|13
 enl |10
-enla|32
+enla|24
 enle|38
 enlg|38
 enlh|19
@@ -67112,7 +67203,6 @@ enln|13
 enlo|39
 enlr|17
 enls|26
-enlv|14
 enly|12
 enm |11
 enma|13
@@ -67159,6 +67249,7 @@ enow|19
 enox|11
 enoy|28
 enpa|26
+enph|18
 enpi|15
 enpo|15
 enr |29
@@ -67600,31 +67691,31 @@ erdu|13
 ere |105
 erea|71
 ereb|33
-erec|42
+erec|37
 ered|67
 eree|42
 eref|60
-ereg|28
+ereg|33
 ereh|15
 erei|43
 erel|52
-erem|81
-eren|117
+erem|95
+eren|109
 ereo|41
-erep|42
-erer|89
-eres|202
-eret|89
+erep|53
+erer|94
+eres|213
+eret|99
 erev|18
 erew|25
 erey|25
 erf |11
-erfc|20
-erfe|49
+erfc|15
+erfe|44
 erfi|14
 erfl|14
-erfo|37
-erfr|37
+erfo|34
+erfr|34
 erfy|17
 erg |18
 erga|42
@@ -67635,7 +67726,7 @@ ergi|26
 ergl|14
 ergm|14
 ergn|21
-ergr|41
+ergr|46
 ergs|14
 ergt|15
 ergu|24
@@ -67693,6 +67784,7 @@ ermi|93
 erml|14
 ermn|97
 ermo|68
+ermp|18
 erms|24
 ermt|42
 ermu|13
@@ -67707,7 +67799,7 @@ erng|14
 ernh|15
 erni|37
 ernm|15
-ernn|46
+ernn|35
 erno|12
 ernr|18
 erns|22
@@ -67725,7 +67817,7 @@ erom|12
 eron|66
 eroo|52
 erop|67
-eror|80
+eror|77
 eros|79
 erou|26
 erov|16
@@ -67762,7 +67854,7 @@ ersn|54
 erso|96
 ersp|34
 erss|29
-erst|78
+erst|91
 ersu|37
 ersv|18
 ersy|12
@@ -67816,7 +67908,7 @@ eryw|16
 erz |17
 erze|17
 erzo|11
-es  |314
+es  |309
 esa |11
 esaa|25
 esab|62
@@ -67851,6 +67943,7 @@ escp|35
 escr|69
 escu|33
 escw|12
+esda|13
 esde|33
 esdi|14
 esdo|13
@@ -67872,7 +67965,7 @@ eses|12
 eset|62
 esev|60
 esew|22
-esey|24
+esey|32
 esfi|15
 esg |9
 esgm|13
@@ -67906,13 +67999,13 @@ esiz|13
 esk |13
 esks|11
 esla|30
-esle|48
+esle|56
 esli|22
 esll|20
 eslt|24
 eslu|19
 eslv|24
-esly|24
+esly|29
 esma|37
 esmb|27
 esme|26
@@ -68338,6 +68431,7 @@ euv |11
 euva|20
 euve|15
 euvi|14
+euwk|14
 eux |10
 ev  |43
 eva |13
@@ -69128,7 +69222,7 @@ fel |35
 feld|38
 fele|23
 feli|38
-fell|23
+fell|31
 felm|13
 feln|16
 felo|31
@@ -72042,7 +72136,7 @@ gzmn|12
 gzp'|13
 gzpe|13
 gztt|13
-h   |168
+h   |173
 h'  |9
 h'n |9
 h.is|14
@@ -72105,7 +72199,7 @@ hads|38
 hadu|32
 hadw|53
 hady|26
-hae |75
+hae |71
 haed|55
 haeh|34
 hael|43
@@ -72113,14 +72207,14 @@ haem|39
 haen|55
 haeo|17
 haer|72
-haes|66
+haes|71
 haet|13
 haev|14
 haey|38
 haf |33
 hafa|13
 hafe|13
-haff|45
+haff|54
 hafi|14
 hafk|14
 hafn|14
@@ -72203,12 +72297,12 @@ hamr|29
 hams|15
 hamt|20
 hamu|20
-han |119
+han |115
 hana|31
 hanb|14
 hanc|48
 hand|92
-hane|123
+hane|124
 hanf|21
 hang|51
 hanh|25
@@ -72220,7 +72314,7 @@ hann|71
 hano|61
 hanp|16
 hanr|23
-hans|51
+hans|57
 hant|35
 hanu|32
 hanv|13
@@ -72232,7 +72326,7 @@ haoc|13
 haod|12
 haoe|13
 haol|12
-haom|14
+haom|20
 haon|48
 haoo|20
 haor|29
@@ -72285,9 +72379,9 @@ hase|51
 hash|62
 hasi|21
 hasl|20
-hasm|14
+hasm|20
 hasn|24
-haso|20
+haso|26
 hass|31
 hast|21
 hasz|13
@@ -72338,15 +72432,16 @@ hawn|13
 hawo|30
 hawr|17
 haws|12
-hay |43
+hay |39
 haya|13
-haye|39
+haye|40
 hayh|13
 hayl|17
-hayn|15
-hayo|13
+haym|12
+hayn|16
+hayo|18
 hayr|12
-hays|20
+hays|29
 hayu|14
 hayw|13
 haza|13
@@ -72416,7 +72511,7 @@ hcox|12
 hcs |11
 hcsc|16
 hcua|12
-hd  |52
+hd  |57
 hdbo|14
 hdde|12
 hddi|14
@@ -72428,9 +72523,10 @@ hdeb|15
 hded|25
 hdel|16
 hden|36
+hdeo|12
 hder|32
 hdes|38
-hdey|12
+hdey|19
 hdfu|13
 hdge|12
 hdgs|12
@@ -72464,6 +72560,7 @@ hdwe|14
 hdwo|17
 hdwr|17
 hdy |16
+hdyo|12
 he  |124
 hea |40
 head|84
@@ -72724,6 +72821,7 @@ hexn|15
 hey |20
 heye|20
 heyn|14
+heyo|12
 hf  |24
 hff |18
 hffa|21
@@ -72838,15 +72936,16 @@ hid |25
 hida|22
 hidb|18
 hidd|12
-hide|23
+hide|28
 hidg|12
 hidh|15
 hidi|12
 hidl|25
 hidn|17
-hido|13
+hido|19
 hidr|14
 hids|29
+hidy|12
 hie |48
 hiea|23
 hiec|14
@@ -72856,11 +72955,12 @@ hieh|20
 hiel|42
 hiem|14
 hien|37
+hieo|12
 hier|81
 hies|41
 hiev|30
 hiew|13
-hiey|12
+hiey|18
 hif |18
 hifa|13
 hife|13
@@ -73017,6 +73117,7 @@ hivi|14
 hivr|13
 hiwa|16
 hiye|13
+hiyo|12
 hiyu|14
 hize|12
 hizl|12
@@ -73085,7 +73186,7 @@ hlic|16
 hlid|13
 hlif|13
 hlig|20
-hlin|64
+hlin|70
 hlio|22
 hlip|37
 hlis|15
@@ -73096,9 +73197,9 @@ hllc|13
 hlld|15
 hlle|35
 hllg|14
-hlli|54
+hlli|60
 hllm|12
-hlln|22
+hlln|28
 hllo|45
 hlls|41
 hllw|27
@@ -73263,7 +73364,7 @@ hnds|25
 hndu|22
 hndw|17
 hndy|11
-hne |41
+hne |36
 hne.|15
 hnec|23
 hned|12
@@ -73274,7 +73375,7 @@ hnel|13
 hnem|23
 hnen|20
 hner|35
-hnes|25
+hnes|33
 hnev|14
 hney|20
 hnf |10
@@ -73443,7 +73544,7 @@ hoid|13
 hoie|15
 hoig|12
 hoil|18
-hoin|50
+hoin|56
 hoio|18
 hoir|11
 hois|15
@@ -73464,11 +73565,11 @@ holc|15
 hold|54
 hole|78
 holh|15
-holi|38
+holi|44
 holk|13
-holl|47
+holl|53
 holm|19
-holn|32
+holn|38
 holo|57
 holr|21
 hols|58
@@ -73904,7 +74005,7 @@ hsiz|13
 hsle|13
 hslh|15
 hsol|15
-hsom|14
+hsom|20
 hson|27
 hsor|36
 hspa|12
@@ -74225,14 +74326,14 @@ hydf|15
 hydi|13
 hydo|23
 hydr|55
-hye |45
+hye |41
 hyea|15
 hyec|15
 hyee|12
 hyel|31
 hyen|43
 hyer|59
-hyes|17
+hyes|22
 hyet|22
 hyge|18
 hygi|13
@@ -74255,13 +74356,15 @@ hyln|12
 hym |11
 hyme|11
 hymr|11
-hyn |15
+hyn |11
 hynd|12
-hyne|18
+hyne|19
+hyns|12
 hyoc|17
 hyof|15
 hyoh|27
 hyok|13
+hyom|12
 hyoo|13
 hyot|42
 hypc|15
@@ -74285,7 +74388,8 @@ hys |26
 hysc|29
 hysh|13
 hysi|46
-hyso|26
+hysm|12
+hyso|34
 hyst|14
 hyt |17
 hyte|11
@@ -74299,7 +74403,7 @@ hzeh|15
 hzel|22
 hzlh|15
 hzrd|13
-i   |399
+i   |403
 i.co|20
 i.ex|46
 i.is|15
@@ -74378,7 +74482,7 @@ iana|26
 ianb|14
 ianc|37
 iand|34
-iani|14
+iane|12
 iano|42
 ians|20
 iant|26
@@ -74516,7 +74620,7 @@ icde|19
 ice |87
 icea|37
 iced|12
-icel|71
+icel|74
 icem|17
 icen|63
 iceo|12
@@ -74614,7 +74718,7 @@ icrb|18
 icrd|13
 icre|72
 icrf|15
-icri|24
+icri|37
 icrm|17
 icrn|19
 icro|120
@@ -74642,7 +74746,7 @@ icur|34
 icus|55
 icyc|13
 icyl|13
-id  |182
+id  |186
 ida |39
 idaa|11
 idad|20
@@ -74666,7 +74770,7 @@ iddi|12
 iddl|24
 iddn|20
 idds|12
-ide |94
+ide |100
 idea|44
 ideb|18
 ided|49
@@ -74676,7 +74780,7 @@ idei|84
 idel|83
 idem|53
 iden|190
-ideo|36
+ideo|44
 idep|50
 ideq|16
 ider|89
@@ -74684,7 +74788,7 @@ ides|71
 idet|75
 idew|35
 idex|18
-idey|42
+idey|50
 idf |11
 idff|18
 idfs|12
@@ -74785,12 +74889,13 @@ idws|21
 idwv|14
 idx |11
 idxe|16
+idyo|12
 idyp|18
 ie  |284
 iea |16
 ieab|14
 ieac|13
-iead|20
+iead|12
 ieag|13
 ieal|28
 iean|21
@@ -74802,7 +74907,7 @@ iebn|16
 iec |16
 iece|16
 ieci|14
-iect|92
+iect|97
 iecu|16
 iecy|12
 ied |121
@@ -74935,6 +75040,7 @@ iexp|12
 iexr|12
 iey |11
 ieya|17
+ieyo|12
 ieyp|18
 iez |11
 iezo|14
@@ -75131,7 +75237,7 @@ igur|15
 igus|13
 igwa|16
 igwo|14
-ih  |45
+ih  |49
 ihaa|12
 ihab|17
 ihac|12
@@ -75142,6 +75248,7 @@ ihan|17
 ihar|34
 ihbi|28
 ihca|12
+ihd |9
 ihdr|45
 ihed|12
 ihei|26
@@ -75188,7 +75295,7 @@ ihua|15
 ihwa|16
 ihyd|23
 ihyr|23
-ii  |85
+ii  |82
 iia |27
 iian|42
 iiap|11
@@ -75214,9 +75321,8 @@ iigi|16
 iign|23
 iigr|24
 iih |11
-iii |24
+iii |21
 iiia|52
-iiii|10
 iika|14
 iil |11
 iila|42
@@ -75399,7 +75505,7 @@ ilin|151
 ilio|63
 ilip|27
 ilis|14
-ilit|96
+ilit|91
 iliz|21
 ilk |16
 ilki|29
@@ -75643,15 +75749,15 @@ in  |276
 ina |75
 inab|59
 inac|61
-inad|40
-inae|37
+inad|34
+inae|43
 inag|40
 inah|21
-inai|79
+inai|71
 inak|12
 inal|104
 inam|46
-inan|159
+inan|157
 inao|14
 inap|44
 inaq|16
@@ -75673,15 +75779,15 @@ incc|48
 incd|47
 ince|134
 inch|22
-inci|113
+inci|124
 incl|101
 incm|74
 incn|104
 inco|132
 incp|77
-incr|80
+incr|91
 incs|52
-inct|105
+inct|110
 incu|124
 incy|12
 ind |66
@@ -75708,9 +75814,9 @@ indv|28
 indw|15
 indx|18
 ine |171
-inea|146
-inec|121
-ined|114
+inea|141
+inec|126
+ined|108
 inee|124
 inef|39
 ineg|68
@@ -75723,7 +75829,7 @@ inep|84
 ineq|31
 iner|675
 ines|262
-inet|240
+inet|245
 ineu|31
 inev|62
 inex|28
@@ -75840,9 +75946,9 @@ inna|67
 innb|14
 innc|61
 innd|53
-inne|154
+inne|160
 inng|28
-inni|55
+inni|47
 innm|15
 innn|13
 inno|26
@@ -75896,7 +76002,7 @@ inre|122
 inrf|28
 inrg|68
 inrh|14
-inri|143
+inri|154
 inrl|23
 inrm|92
 inrn|123
@@ -75909,23 +76015,23 @@ inru|46
 inrv|49
 inry|28
 ins |137
-insa|129
+insa|122
 insb|48
-insc|53
-insd|41
-inse|114
+insc|68
+insd|36
+inse|120
 insf|24
 insg|58
 insh|39
-insi|197
+insi|200
 insl|59
 insm|24
-insn|72
+insn|70
 inso|50
 insp|54
-insr|110
+insr|120
 inss|39
-inst|354
+inst|359
 insu|117
 insy|12
 int |93
@@ -76346,14 +76452,14 @@ isa |35
 isaa|11
 isab|88
 isac|11
-isad|37
-isae|25
+isad|30
+isae|32
 isag|21
-isai|42
+isai|33
 isak|14
 isal|93
 isam|32
-isan|112
+isan|110
 isap|32
 isar|54
 isas|35
@@ -76370,16 +76476,16 @@ isbr|41
 isbu|21
 isc |17
 isca|39
-isce|63
+isce|66
 isch|50
-isci|58
-iscl|50
+isci|71
+iscl|53
 iscn|15
 isco|74
 iscp|29
-iscr|69
+iscr|82
 iscs|29
-isct|15
+isct|20
 iscu|56
 iscv|19
 isd |15
@@ -76389,19 +76495,19 @@ isdm|12
 isdo|12
 isdv|19
 ise |36
-isea|45
-isec|51
-ised|71
+isea|40
+isec|56
+ised|64
 isee|13
 isef|29
 isei|12
-isel|84
+isel|87
 isem|28
 isen|79
 isep|34
 iser|95
 ises|79
-iset|38
+iset|43
 iseu|16
 isey|28
 isfa|13
@@ -76475,10 +76581,9 @@ ismu|14
 isn |10
 isnb|14
 isnd|37
-isne|13
+isne|20
 isnf|34
 isng|12
-isni|14
 isns|17
 isnt|43
 isnv|19
@@ -76514,7 +76619,7 @@ isra|39
 isrd|14
 isre|77
 isrg|16
-isri|54
+isri|67
 isrl|15
 isrm|12
 isro|26
@@ -77692,7 +77797,7 @@ kair|18
 kais|12
 kait|14
 kaka|14
-kaki|12
+kaki|20
 kaku|14
 kal |17
 kala|28
@@ -77758,7 +77863,7 @@ katl|13
 katn|26
 kato|28
 katr|20
-kats|32
+kats|23
 katy|13
 katz|31
 kau |10
@@ -78074,7 +78179,7 @@ kinl|24
 kinn|21
 kino|13
 kinr|18
-kins|59
+kins|61
 kint|21
 kinu|15
 kiny|23
@@ -78912,9 +79017,9 @@ laru|13
 larv|21
 lary|12
 las |143
-lasa|27
+lasa|37
 lasc|18
-lase|81
+lase|78
 lash|25
 lasi|95
 lask|29
@@ -79188,10 +79293,10 @@ ldwi|13
 ldy |10
 le  |248
 lea |80
-leaa|17
+leaa|27
 leac|22
 lead|55
-leae|106
+leae|103
 leaf|16
 leag|33
 leah|22
@@ -79201,7 +79306,7 @@ lean|136
 leao|22
 leap|11
 lear|89
-leas|85
+leas|87
 leat|39
 leau|12
 leav|40
@@ -79381,9 +79486,9 @@ lers|50
 lert|26
 lery|19
 les |162
-lesa|15
+lesa|25
 lesc|18
-lese|41
+lese|38
 lesh|13
 lesi|34
 lesl|27
@@ -79467,7 +79572,7 @@ lflo|14
 lfmo|14
 lfod|12
 lfon|13
-lfor|21
+lfor|29
 lfou|13
 lfox|15
 lfrd|17
@@ -79922,7 +80027,7 @@ llie|103
 llig|24
 llik|14
 llim|14
-llin|177
+llin|183
 llio|48
 llis|59
 llit|43
@@ -80952,6 +81057,7 @@ maaa|31
 maac|26
 maad|12
 maae|44
+maaf|13
 maag|41
 maah|14
 maai|41
@@ -81023,6 +81129,7 @@ maew|13
 maey|18
 mafa|31
 mafe|21
+maff|13
 mafi|23
 mafo|14
 mafr|16
@@ -81041,9 +81148,10 @@ magu|30
 magw|13
 magz|23
 mah |30
-maha|48
+maha|53
 mahc|13
 mahe|81
+mahf|13
 mahi|51
 mahk|13
 mahl|28
@@ -81394,7 +81502,7 @@ mcee|29
 mceg|22
 mceh|24
 mcei|16
-mcel|94
+mcel|97
 mcem|15
 mcen|28
 mceo|12
@@ -81905,6 +82013,7 @@ mha |18
 mhaa|13
 mhad|13
 mhae|13
+mhaf|13
 mham|14
 mhan|38
 mhar|29
@@ -81915,6 +82024,7 @@ mhem|18
 mhen|13
 mher|22
 mhew|13
+mhff|13
 mhic|14
 mhie|13
 mhig|14
@@ -81965,13 +82075,13 @@ mic |30
 mica|36
 micb|18
 micc|15
-mice|60
+mice|63
 micf|15
 micg|14
 mich|53
 mici|57
 mick|12
-micl|44
+micl|47
 micn|19
 mico|130
 micp|27
@@ -81996,7 +82106,7 @@ midw|33
 mie |72
 miea|42
 mied|44
-miel|46
+miel|49
 mien|32
 miep|20
 mier|52
@@ -82121,14 +82231,14 @@ mirv|13
 miry|12
 mis |66
 misa|33
-misc|30
+misc|33
 misd|29
-mise|89
+mise|92
 misf|13
 mish|27
 misi|76
 misk|14
-misl|37
+misl|40
 misn|51
 miso|48
 misp|33
@@ -83120,10 +83230,10 @@ msbs|12
 msby|12
 msc |16
 msca|13
-msce|26
+msce|29
 msch|28
 msci|39
-mscl|43
+mscl|46
 msco|20
 mscr|17
 mscu|30
@@ -83133,7 +83243,7 @@ msea|16
 msed|25
 msee|13
 msei|16
-msel|28
+msel|31
 msem|15
 msen|15
 msep|20
@@ -83785,10 +83895,10 @@ nan |23
 nana|28
 nanc|84
 nand|32
-nane|20
+nane|28
 nang|51
 nanh|14
-nani|40
+nani|30
 nank|17
 nanl|16
 nanm|17
@@ -83929,7 +84039,6 @@ ncap|16
 ncar|33
 ncas|15
 ncat|31
-ncav|14
 ncc |10
 nccu|16
 ncde|28
@@ -83937,11 +84046,12 @@ ncdi|23
 nce |59
 ncea|38
 nced|16
+nceh|18
 ncei|21
 ncel|23
 ncem|17
 ncen|66
-ncep|49
+ncep|63
 ncer|62
 nces|59
 ncet|61
@@ -83972,7 +84082,7 @@ ncke|35
 ncki|12
 nckl|22
 nckn|28
-ncla|54
+ncla|44
 nclc|16
 ncld|24
 ncle|22
@@ -83982,7 +84092,6 @@ ncln|14
 nclo|29
 ncls|37
 nclu|81
-nclv|14
 ncmb|16
 ncme|23
 ncmi|14
@@ -84010,11 +84119,12 @@ ncos|75
 ncou|61
 ncov|20
 ncp |11
+ncph|18
 ncpi|15
 ncpt|15
 ncra|49
 ncre|51
-ncri|18
+ncri|31
 ncrm|17
 ncro|14
 ncrp|25
@@ -84184,7 +84294,7 @@ ndze|13
 ne  |226
 nea |13
 neaa|12
-nead|20
+nead|12
 neae|13
 neai|21
 neak|12
@@ -84216,7 +84326,7 @@ necm|15
 neco|63
 necr|14
 necs|32
-nect|61
+nect|66
 necu|16
 ned |44
 neda|12
@@ -84320,7 +84430,7 @@ neot|34
 neou|13
 nepa|18
 nepe|49
-neph|12
+neph|26
 nepl|22
 nepo|22
 nepr|22
@@ -84872,7 +84982,6 @@ nlar|17
 nlas|15
 nlat|26
 nlau|15
-nlav|14
 nlck|12
 nle |35
 nlea|22
@@ -85536,29 +85645,30 @@ nrze|13
 ns  |118
 nsa |11
 nsab|29
-nsad|21
-nsae|12
+nsad|13
+nsae|20
 nsaf|12
-nsai|22
+nsai|12
 nsal|43
-nsan|46
+nsan|44
 nsas|33
 nsau|23
 nsbo|14
 nsbr|14
 nsca|25
 nscc|22
-nsci|27
+nsci|40
 nsco|12
-nsct|15
+nscr|17
+nsct|20
 nscu|16
 nsda|24
 nsde|18
 nse |18
-nsea|32
+nsea|27
 nseb|14
-nsec|65
-nsed|28
+nsec|70
+nsed|20
 nsee|13
 nsel|22
 nsem|14
@@ -85566,7 +85676,7 @@ nsen|36
 nseq|25
 nser|74
 nses|47
-nset|36
+nset|41
 nseu|16
 nsey|20
 nsfa|13
@@ -85605,7 +85715,7 @@ nsmb|14
 nsmo|26
 nsms|10
 nsmu|14
-nsni|14
+nsne|12
 nsns|17
 nsoa|13
 nsof|13
@@ -85624,7 +85734,7 @@ nspr|25
 nsra|15
 nsre|15
 nsrg|16
-nsri|22
+nsri|35
 nsrr|27
 nsrt|31
 nsru|37
@@ -86477,7 +86587,7 @@ ocls|12
 oclt|12
 oclu|29
 ocly|13
-ocme|45
+ocme|50
 ocmm|22
 ocmo|17
 ocn |11
@@ -86521,10 +86631,10 @@ octt|21
 octy|19
 ocu |18
 ocua|31
-ocue|57
+ocue|62
 ocui|24
 ocul|28
-ocum|53
+ocum|58
 ocup|29
 ocur|54
 ocus|31
@@ -87285,7 +87395,7 @@ olig|63
 olih|22
 olii|99
 olik|15
-olin|125
+olin|131
 olio|20
 olip|14
 olir|32
@@ -87306,9 +87416,9 @@ ollc|40
 olld|14
 olle|143
 ollg|22
-olli|70
+olli|76
 ollm|32
-olln|59
+olln|65
 ollo|48
 ollp|19
 ollr|24
@@ -87714,7 +87824,7 @@ onno|17
 onnr|16
 onnt|12
 onnv|16
-ono |31
+ono |38
 onoa|21
 onob|15
 onoc|32
@@ -88021,7 +88131,7 @@ opit|39
 opki|13
 opkn|13
 opla|51
-ople|102
+ople|110
 opli|41
 oplj|13
 oply|20
@@ -88046,8 +88156,9 @@ opor|85
 opos|97
 opot|42
 opou|21
-oppe|80
+oppe|88
 oppi|37
+oppl|12
 oppn|17
 oppo|69
 oppr|73
@@ -88259,7 +88370,7 @@ ormr|16
 orms|18
 ormt|61
 ormu|44
-orn |59
+orn |62
 orna|54
 ornb|24
 ornd|12
@@ -88270,11 +88381,12 @@ orni|88
 ornk|11
 ornl|17
 ornn|26
+orno|11
 ornr|15
 orns|12
 ornt|42
 orny|12
-oro |18
+oro |22
 oroa|14
 orob|13
 orod|23
@@ -88832,7 +88944,7 @@ oulw|15
 ouly|20
 oum |18
 oumb|21
-oume|69
+oume|74
 oumi|16
 oumn|15
 oun |60
@@ -89410,9 +89522,9 @@ pars|108
 part|206
 pary|28
 pas |81
-pasa|35
+pasa|44
 pasd|32
-pase|103
+pase|100
 pasg|13
 pasi|38
 pasn|46
@@ -89611,11 +89723,11 @@ pduc|50
 pdue|19
 pe  |163
 pea |45
-peaa|20
+peaa|29
 peab|13
 peac|58
 pead|39
-peae|54
+peae|51
 peaf|14
 peag|20
 peah|15
@@ -89627,7 +89739,7 @@ pean|59
 peao|19
 peap|13
 pear|79
-peas|64
+peas|66
 peat|90
 peau|17
 peav|14
@@ -89673,29 +89785,29 @@ pedr|20
 peds|52
 pedt|42
 pee |47
-peec|60
+peec|55
 peed|68
 peee|22
 peef|36
-peeg|15
+peeg|20
 peeh|16
 peei|35
 peel|12
-peem|29
-peen|118
-peep|40
-peer|140
-pees|56
-peet|72
+peem|41
+peen|110
+peep|51
+peer|145
+pees|67
+peet|82
 peev|18
 peez|11
 pefa|13
-pefc|28
-pefe|67
+pefc|23
+pefe|62
 peff|14
 pefi|19
-pefo|37
-pefr|74
+pefo|34
+pefr|71
 pefx|19
 peg |11
 pega|15
@@ -89703,7 +89815,7 @@ pege|23
 pegg|11
 pegi|13
 pegn|15
-pegr|15
+pegr|20
 pegu|13
 pegy|11
 peh |11
@@ -89763,7 +89875,7 @@ peme|31
 pemi|36
 pemn|22
 pemo|15
-pemp|18
+pemp|31
 pemr|15
 pems|17
 pemt|30
@@ -89778,7 +89890,7 @@ peni|79
 penk|13
 penl|22
 penm|16
-penn|62
+penn|53
 peno|50
 penr|17
 pens|49
@@ -89795,7 +89907,7 @@ peol|46
 peom|34
 peon|75
 peop|15
-peor|46
+peor|43
 peot|15
 pepa|40
 pepd|13
@@ -89813,31 +89925,31 @@ pequ|15
 per |102
 pera|145
 perb|28
-perc|126
+perc|121
 perd|31
-pere|201
-perf|88
-perg|15
+pere|213
+perf|80
+perg|20
 perh|25
 peri|235
 perk|21
 perl|67
-perm|64
-pern|130
-pero|146
-perp|98
-perr|56
-pers|245
-pert|178
+perm|75
+pern|122
+pero|143
+perp|109
+perr|58
+pers|255
+pert|188
 peru|44
 perv|67
 pery|18
 pes |88
-pesa|48
+pesa|57
 pesb|18
 pesc|51
 pesd|30
-pese|131
+pese|128
 pesi|110
 pesm|31
 pesn|95
@@ -89846,7 +89958,7 @@ pesp|32
 pesq|15
 pesr|50
 pess|70
-pest|90
+pest|101
 pesu|66
 pesv|18
 pesw|16
@@ -89896,7 +90008,7 @@ pf  |17
 pfa |11
 pfac|13
 pfal|14
-pfec|20
+pfec|15
 pfef|14
 pfei|14
 pfer|42
@@ -89906,7 +90018,7 @@ pfif|14
 pfil|16
 pfit|15
 pfix|19
-pfor|37
+pfor|34
 pfur|14
 pg  |29
 pgad|18
@@ -90265,10 +90377,10 @@ pks |16
 pkst|14
 pl  |80
 pla |75
-plaa|30
+plaa|38
 plac|68
 plad|42
-plae|89
+plae|86
 plaf|17
 plag|12
 plai|65
@@ -90279,7 +90391,7 @@ plan|138
 plao|17
 plaq|15
 plar|42
-plas|47
+plas|49
 plat|73
 plau|35
 plaw|24
@@ -90301,9 +90413,9 @@ plde|15
 pldg|15
 pldi|14
 ple |70
-plea|20
+plea|22
 pled|43
-plee|37
+plee|34
 pleg|15
 pleh|14
 plem|61
@@ -90311,7 +90423,7 @@ plen|12
 pleo|14
 plep|14
 pler|34
-ples|70
+ples|72
 plet|55
 plfo|17
 plge|27
@@ -90323,7 +90435,7 @@ plhm|12
 plho|14
 pli |30
 plia|32
-plic|177
+plic|182
 plie|41
 plif|16
 plih|12
@@ -90396,8 +90508,9 @@ plri|13
 plrl|20
 plrm|13
 pls |35
+plsa|14
 plsb|15
-plse|15
+plse|12
 plsh|12
 plst|30
 plt |38
@@ -90870,7 +90983,7 @@ ppki|13
 ppl |20
 ppla|42
 pplc|39
-pple|64
+pple|72
 ppli|87
 ppls|20
 pplt|15
@@ -90981,22 +91094,22 @@ prdu|63
 pre |75
 prea|135
 preb|23
-prec|329
+prec|324
 pred|231
 pree|278
 pref|91
-preg|32
+preg|37
 preh|15
 prei|242
 prej|23
 prel|73
-prem|83
-pren|220
+prem|96
+pren|212
 preo|104
-prep|121
-prer|198
-pres|474
-pret|169
+prep|132
+prer|203
+pres|485
+pret|179
 preu|61
 prev|80
 prew|16
@@ -91005,13 +91118,13 @@ prey|33
 prez|11
 prf |14
 prfa|13
-prfc|28
-prfe|97
+prfc|23
+prfe|92
 prff|14
 prfi|35
 prfl|16
-prfo|47
-prfr|83
+prfo|44
+prfr|80
 prfs|36
 prft|15
 prfu|14
@@ -91020,7 +91133,7 @@ prga|57
 prge|38
 prgm|26
 prgn|15
-prgr|73
+prgr|78
 prgu|13
 prh |11
 prha|33
@@ -91083,7 +91196,7 @@ prmi|69
 prml|19
 prmn|32
 prmo|51
-prmp|18
+prmp|31
 prmr|37
 prms|36
 prmt|64
@@ -91096,7 +91209,7 @@ prng|26
 prni|51
 prnk|14
 prnl|13
-prnn|23
+prnn|13
 prno|20
 prns|18
 prnt|88
@@ -91118,7 +91231,7 @@ prom|70
 pron|174
 proo|144
 prop|172
-pror|176
+pror|173
 pros|211
 prot|139
 prou|71
@@ -91156,7 +91269,7 @@ prso|82
 prsp|62
 prsr|60
 prss|51
-prst|31
+prst|43
 prsu|71
 prsv|18
 prsy|18
@@ -92331,11 +92444,13 @@ rbni|22
 rbns|14
 rbo |11
 rboe|12
+rboi|15
 rbon|27
 rbor|40
 rbos|12
 rbot|23
 rbou|13
+rbov|15
 rbr |11
 rbrc|12
 rbri|20
@@ -92352,6 +92467,7 @@ rbuf|14
 rbun|13
 rbus|16
 rbut|25
+rbvi|15
 rby |11
 rc  |98
 rca |17
@@ -92685,7 +92801,7 @@ regl|28
 regm|19
 regn|116
 rego|50
-regr|60
+regr|65
 regs|31
 regt|43
 regu|39
@@ -92772,7 +92888,7 @@ reml|13
 remm|47
 remn|49
 remo|121
-remp|18
+remp|31
 remr|32
 rems|12
 remt|34
@@ -92793,7 +92909,7 @@ reni|70
 renk|13
 renl|21
 renm|21
-renn|50
+renn|39
 reno|74
 renp|16
 renq|16
@@ -92876,7 +92992,7 @@ reso|181
 resp|125
 resr|212
 ress|108
-rest|299
+rest|311
 resu|169
 resv|53
 resy|18
@@ -92965,7 +93081,7 @@ rfar|13
 rfc |12
 rfcs|10
 rfe |11
-rfec|41
+rfec|36
 rfee|38
 rfei|13
 rfer|91
@@ -92986,7 +93102,7 @@ rfne|25
 rfni|14
 rfol|13
 rfom|48
-rfor|81
+rfor|78
 rfr |11
 rfrb|18
 rfre|51
@@ -93152,6 +93268,7 @@ rhoe|24
 rhol|18
 rhor|18
 rhos|21
+rhro|15
 rht |11
 rhta|16
 rhti|14
@@ -93160,7 +93277,7 @@ rhtn|15
 rhto|18
 rhtr|18
 rhts|12
-rhur|29
+rhur|12
 rhus|12
 rhwa|12
 rhwy|12
@@ -93730,6 +93847,7 @@ rnne|14
 rnnh|15
 rnni|13
 rnnn|13
+rno |11
 rnoc|20
 rnod|12
 rnol|31
@@ -94040,7 +94158,7 @@ rova|16
 rovc|17
 rovd|36
 rove|70
-rovi|77
+rovi|88
 rovk|16
 rovl|14
 rovn|25
@@ -94412,10 +94530,10 @@ rthf|16
 rthi|13
 rthl|32
 rthm|28
-rtho|37
+rtho|48
 rthq|16
-rthr|74
-rthu|29
+rthr|64
+rthu|12
 rthw|20
 rthy|12
 rtia|33
@@ -94455,7 +94573,7 @@ rtra|62
 rtre|34
 rtri|85
 rtrn|24
-rtro|16
+rtro|27
 rtru|32
 rtrv|16
 rtry|12
@@ -94474,7 +94592,7 @@ rtue|12
 rtug|20
 rtul|15
 rtun|33
-rtur|58
+rtur|41
 rtwi|13
 rtwo|13
 rtwr|13
@@ -95023,11 +95141,11 @@ sana|114
 sanb|29
 sanc|35
 sand|108
-sane|77
+sane|85
 sanf|14
 sang|52
 sanh|23
-sani|112
+sani|102
 sanl|34
 sanm|19
 sann|30
@@ -95308,7 +95426,7 @@ sced|47
 scee|73
 scef|13
 scei|21
-scel|41
+scel|44
 scem|72
 scen|132
 scep|27
@@ -95427,7 +95545,7 @@ scrc|23
 scrd|12
 scre|114
 scrf|21
-scri|137
+scri|150
 scrl|13
 scrm|14
 scrn|34
@@ -95531,7 +95649,7 @@ sea |37
 seaa|62
 seab|41
 seac|37
-sead|47
+sead|39
 seae|53
 seaf|13
 seag|12
@@ -95571,7 +95689,7 @@ secn|24
 seco|73
 secr|102
 secs|26
-sect|157
+sect|162
 secu|65
 sed |84
 seda|28
@@ -96536,7 +96654,7 @@ sler|34
 sles|67
 slet|50
 slev|12
-sley|31
+sley|39
 slf |10
 slfn|13
 slfo|19
@@ -98563,15 +98681,15 @@ t.ss|14
 ta  |157
 taa |11
 taac|14
-taai|19
-taak|14
+taai|25
+taak|20
 taal|22
 taam|16
 taan|35
 taap|16
 taar|14
-taas|27
-taat|21
+taas|20
+taat|14
 tab |31
 taba|22
 tabb|13
@@ -98658,16 +98776,16 @@ taiw|25
 tajc|18
 taje|18
 tak |64
-taka|23
+taka|22
 takd|12
 take|62
 takg|12
-taki|31
+taki|36
+takk|12
 takl|13
 takn|16
 tako|14
-taks|47
-takt|13
+taks|41
 takv|14
 tal |83
 tala|56
@@ -98786,7 +98904,7 @@ tatm|48
 tatn|21
 tato|78
 tatr|22
-tats|61
+tats|54
 tatt|18
 tatu|34
 taty|17
@@ -98842,9 +98960,9 @@ tbd |11
 tbdy|11
 tbe |25
 tbea|13
-tbec|30
+tbec|34
 tben|16
-tber|58
+tber|62
 tbes|25
 tbet|22
 tbgo|12
@@ -98863,7 +98981,7 @@ tbod|11
 tboo|11
 tbor|16
 tboy|11
-tbrc|22
+tbrc|26
 tbrn|16
 tbs |22
 tbt |11
@@ -98948,7 +99066,7 @@ tds |10
 tdwa|15
 tdy |24
 tdyi|14
-te  |218
+te  |214
 tea |49
 teab|15
 teac|30
@@ -98980,7 +99098,7 @@ tecn|68
 teco|56
 tect|28
 ted |95
-teda|13
+teda|22
 tede|34
 tedi|14
 tedm|13
@@ -99009,6 +99127,8 @@ teex|14
 tef |11
 tefa|13
 tefn|13
+tefo|13
+tefr|13
 tefs|12
 teft|14
 teg |11
@@ -99037,15 +99157,15 @@ tela|31
 telb|14
 telc|34
 tele|120
-telf|12
+telf|21
 telg|36
 telh|15
 teli|32
 tell|82
 teln|13
-telo|51
+telo|57
 telp|15
-telr|32
+telr|38
 tels|36
 telu|11
 telv|23
@@ -99088,7 +99208,7 @@ teoi|18
 teol|25
 teon|13
 teoo|31
-teor|89
+teor|96
 teov|14
 teoy|12
 tep |20
@@ -99105,7 +99225,7 @@ tepx|14
 ter |121
 tera|123
 terb|24
-terc|50
+terc|54
 terd|46
 tere|129
 terf|61
@@ -99124,10 +99244,10 @@ terv|40
 terw|38
 tery|26
 terz|11
-tes |160
-tesa|15
+tes |156
+tesa|23
 tesc|18
-tesd|12
+tesd|20
 tese|51
 tesh|14
 tesi|39
@@ -99188,7 +99308,7 @@ tffn|12
 tffo|14
 tfin|12
 tfle|12
-tfor|13
+tfor|21
 tfre|15
 tfs |11
 tft |17
@@ -99360,7 +99480,7 @@ thri|38
 thrl|38
 thrm|27
 thrn|16
-thro|72
+thro|82
 thrp|13
 thrs|60
 thrt|37
@@ -99391,7 +99511,7 @@ thud|14
 thue|13
 thug|32
 thuh|20
-thur|53
+thur|36
 thus|53
 thve|13
 thvi|14
@@ -99537,7 +99657,7 @@ tini|35
 tink|16
 tino|22
 tinr|15
-tins|39
+tins|41
 tint|21
 tiny|18
 tio |19
@@ -99618,9 +99738,9 @@ tjec|18
 tjer|12
 tk  |32
 tka |11
+tkai|12
+tkak|12
 tkal|11
-tkas|13
-tkat|13
 tke |29
 tked|12
 tkeg|14
@@ -99634,19 +99754,19 @@ tkev|14
 tkey|12
 tkga|14
 tkig|12
-tkin|29
-tkis|12
+tkin|31
+tkis|14
+tkki|12
 tkl |11
 tkle|13
 tkn |17
 tkng|12
 tkni|24
 tkno|14
-tkns|20
+tkns|22
 tko |11
 tkov|14
 tks |38
-tkts|13
 tku |11
 tkua|14
 tkug|14
@@ -99685,8 +99805,8 @@ tler|89
 tles|67
 tlet|48
 tlev|16
-tlfo|13
-tlfr|13
+tlfo|21
+tlfr|21
 tlg |11
 tlgr|32
 tlgu|11
@@ -99719,7 +99839,7 @@ tlne|12
 tlnt|25
 tlo |11
 tloo|13
-tlor|30
+tlor|38
 tlot|13
 tlph|15
 tlpo|14
@@ -99996,7 +100116,7 @@ tol |32
 tola|35
 tolc|12
 told|26
-tole|69
+tole|75
 tolh|14
 toli|18
 toll|38
@@ -100046,9 +100166,11 @@ toou|31
 top |19
 topa|22
 topc|27
-tope|12
+tope|19
 topi|36
+topl|12
 topo|14
+topp|12
 tops|28
 tor |53
 tora|51
@@ -100161,7 +100283,7 @@ tpin|32
 tpis|12
 tpl |11
 tpla|17
-tple|40
+tple|47
 tplo|12
 tpls|12
 tpna|14
@@ -100171,7 +100293,8 @@ tpor|20
 tpos|13
 tppa|12
 tppd|12
-tppe|20
+tppe|27
+tppl|12
 tppn|12
 tpr |11
 tps |34
@@ -100445,9 +100568,10 @@ tryn|12
 tryt|15
 trz |11
 trzo|11
-ts  |160
+ts  |155
 tsam|15
 tsca|14
+tsda|13
 tse |11
 tsed|19
 tsef|12
@@ -100595,7 +100719,7 @@ ttva|14
 ttvl|14
 ttwa|12
 tty |18
-tu  |61
+tu  |57
 tuae|12
 tual|39
 tuan|19
@@ -100603,11 +100727,11 @@ tuar|24
 tuat|25
 tub |13
 tubb|14
-tubc|22
-tube|49
+tubc|26
+tube|53
 tubl|26
 tubo|14
-tubr|22
+tubr|26
 tubs|11
 tuc |20
 tuca|12
@@ -100621,23 +100745,23 @@ tucs|12
 tuct|25
 tucy|12
 tud |11
-tuda|13
+tuda|21
 tude|47
 tudi|25
 tudl|13
 tudn|16
 tudo|12
 tudy|16
-tue |31
-tuea|30
-tuec|22
-tued|12
+tue |27
+tuea|37
+tuec|26
+tued|19
 tueg|14
 tuel|26
 tuen|23
 tueo|12
-tuer|28
-tues|21
+tuer|32
+tues|24
 tuey|19
 tuf |15
 tufs|11
@@ -100703,7 +100827,7 @@ tups|12
 tur |28
 tura|46
 turb|13
-turc|32
+turc|36
 turd|31
 ture|80
 turf|10
@@ -100720,9 +100844,9 @@ turs|34
 turt|24
 turu|11
 tury|12
-tus |50
-tusa|17
-tusd|14
+tus |46
+tusa|25
+tusd|22
 tuse|36
 tusg|14
 tusk|20
@@ -101020,13 +101144,13 @@ ubdl|18
 ubdv|18
 ube |13
 ubea|17
-ubec|63
+ubec|67
 ubee|16
 ubel|16
 uben|12
 ubep|20
 ubeq|20
-uber|109
+uber|113
 ubes|19
 ubet|23
 ubex|20
@@ -101080,7 +101204,7 @@ ubpp|20
 ubqi|16
 ubqu|16
 ubra|42
-ubrc|43
+ubrc|47
 ubrd|20
 ubre|26
 ubri|36
@@ -101293,7 +101417,7 @@ uduo|13
 udwa|14
 udy |18
 udyi|14
-ue  |132
+ue  |128
 uea |10
 ueac|16
 ueal|17
@@ -101311,7 +101435,7 @@ uech|28
 uecl|26
 ueco|24
 ued |35
-ueda|10
+ueda|19
 uee |11
 ueec|12
 ueen|20
@@ -101357,7 +101481,7 @@ ueqa|13
 uequ|13
 uer |53
 uera|47
-uerc|48
+uerc|52
 uerd|26
 uere|37
 uerf|24
@@ -101375,10 +101499,11 @@ uerv|25
 uerw|19
 uery|19
 uerz|12
-ues |90
+ues |86
 ues&|16
-uesa|15
+uesa|24
 uesc|18
+uesd|13
 uesi|43
 ueso|34
 uess|12
@@ -101760,7 +101885,7 @@ ulgs|12
 ulhu|13
 uli |28
 ulia|48
-ulic|86
+ulic|91
 ulid|12
 ulie|23
 ulif|37
@@ -102348,17 +102473,17 @@ uphv|14
 uphw|12
 uphy|12
 upia|13
-upic|56
+upic|61
 upil|12
 upis|12
 upke|12
 upki|13
 upl |11
 upla|24
-uplc|21
+uplc|26
 upld|12
 uple|52
-upli|34
+upli|39
 uplo|12
 upls|20
 uplu|13
@@ -102641,7 +102766,7 @@ urvy|31
 urw |11
 ury |54
 urye|15
-us  |162
+us  |157
 usa |31
 usaa|12
 usab|12
@@ -102673,6 +102798,7 @@ usco|12
 uscp|27
 uscr|27
 usd |10
+usda|13
 usdd|15
 usdr|15
 use |88
@@ -106292,8 +106418,9 @@ ynd |11
 yndc|15
 yndi|15
 yndr|11
-yne |43
+yne |36
 yner|13
+ynes|12
 yney|12
 yng |31
 ynge|13
@@ -106507,6 +106634,7 @@ ysn |11
 ysnc|13
 yso |11
 ysoe|12
+ysom|12
 yson|11
 ysor|12
 ysre|12
@@ -106898,4 +107026,4 @@ zyme|15
 zz  |8
 zzar|14
 zzie|12
-             1508068
+             1510106
