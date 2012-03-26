@@ -174,16 +174,30 @@ ul.none {list-style:none;}
 .more {display:none;}
 
 /* --- EAD body --- */
+#content-wrapper { /* required to avoid jumping */
+    position: fixed !important;
+    position: absolute;
+    top: 260px;
+    left: 240px;
+    bottom:12px;
+/*    margin-left:240px;*/
+    min-height:400px;
+    margin:0;
+    padding:0;
+    clear:both;
+    overflow:auto;
+}
+         
 #content-right {
     display:block;
-    margin-left:240px;
+    /*margin-left:240px;*/
     margin-top:0;
-    padding-top:48px;
+/*    padding-top:48px;*/
     padding-left: 10px;
     margin-right: 10px;
     text-align: left;
-    min-height:400px;
-    position:relative;
+/*    min-height:400px;*/
+/*    position:relative;*/
 }
 .navright .left {margin-top:-12px;}
 .overview p{margin-top:0; margin-bottom:12px;}

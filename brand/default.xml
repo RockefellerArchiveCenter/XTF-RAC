@@ -103,7 +103,7 @@
       <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/rollOver.js"></script>
       <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/popUp.js"></script>
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/rac.js"></script>   
-      
+
       <script type="text/javascript" language="JavaScript">
          	<!--
          		if (isNS4) {
@@ -176,16 +176,6 @@
          		
          	// -->
          	</script>
-      <!-- javascript that will initiate jQuery and the LocalScroll plugin -->
-      <script type="text/javascript">
-         <!--// When the document is loaded...
-          $(document).ready(function()
-          {
-              // Scroll the whole document
-              $(...).scrollTo();
-          });
-      -->
-      </script>
    </dynaxml.links>
 
    <header>

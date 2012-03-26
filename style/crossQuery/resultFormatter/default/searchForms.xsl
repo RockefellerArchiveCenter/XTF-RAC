@@ -144,6 +144,7 @@
                   <input type="text" name="keyword" size="40" value="{$keyword}"/>
                   <xsl:text>&#160;</xsl:text>
                   <input type="submit" value="Search"/>
+<!--                  <input type="hidden" value="series" name="level"/>-->
                   <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
                   <p>
                      <br/>

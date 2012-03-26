@@ -169,7 +169,6 @@
    <xsl:template name="ead-copy">
       <xsl:param name="node"/>
       <xsl:param name="chunk.id"/>
-
       <xsl:copy>
          <xsl:copy-of select="@*"/>
          <xsl:choose>
@@ -205,12 +204,39 @@
    <!-- EAD Indexing                                                           -->
    <!-- ====================================================================== -->
    
-   <!-- Ignored Elements -->
    <xsl:template match="eadheader" mode="addChunkId">
       <xsl:copy>
          <xsl:copy-of select="@*"/>
+         <xsl:apply-templates select="*" mode="addChunkId"/>
+      </xsl:copy>
+   </xsl:template>
+   
+   <!-- Ignored Elements -->
+   <xsl:template match="eadid" mode="addChunkId">
+      <xsl:copy>
+         <xsl:copy-of select="@*"/>
          <xsl:attribute name="xtf:index" select="'no'"/>
-         <xsl:apply-templates select="titleproper"/>
+         <xsl:apply-templates mode="addChunkId"/>
+      </xsl:copy>
+   </xsl:template>
+   <xsl:template match="publicationstmt" mode="addChunkId">
+      <xsl:copy>
+         <xsl:copy-of select="@*"/>
+         <xsl:attribute name="xtf:index" select="'no'"/>
+         <xsl:apply-templates mode="addChunkId"/>
+      </xsl:copy>
+   </xsl:template>
+   <xsl:template match="profiledesc" mode="addChunkId">
+      <xsl:copy>
+         <xsl:copy-of select="@*"/>
+         <xsl:attribute name="xtf:index" select="'no'"/>
+         <xsl:apply-templates mode="addChunkId"/>
+      </xsl:copy>
+   </xsl:template>
+   <xsl:template match="revisiondesc" mode="addChunkId">
+      <xsl:copy>
+         <xsl:copy-of select="@*"/>
+         <xsl:attribute name="xtf:index" select="'no'"/>
          <xsl:apply-templates mode="addChunkId"/>
       </xsl:copy>
    </xsl:template>
@@ -319,6 +345,7 @@
                <xsl:copy-of select="$dcMeta"/>
             </xsl:when>
             <xsl:otherwise>
+               <xsl:call-template name="get-ead-grpID"/>
                <xsl:call-template name="get-ead-level"/>
                <xsl:call-template name="get-ead-title"/>
                <xsl:call-template name="get-ead-creator"/>
@@ -356,13 +383,24 @@
       </xsl:call-template>    
    </xsl:template>
    
+   <!-- Group ID -->
+   <xsl:template name="get-ead-grpID">
+      <grpID xtf:meta="true" xtf:tokenize="no">
+         <xsl:value-of select="/ead/eadheader/eadid"></xsl:value-of>
+      </grpID>
+   </xsl:template>   
    <!-- level -->
    <xsl:template name="get-ead-level">
-      <xsl:if test="@level">
-         <level xtf:meta="true" xtf:tokenize="no">
-            <xsl:value-of select="@level"/>
-         </level>         
-      </xsl:if>
+      <xsl:choose>
+         <xsl:when test="@level">
+            <level xtf:meta="true" xtf:tokenize="no">
+               <xsl:value-of select="@level"/>
+            </level>
+         </xsl:when>
+         <xsl:otherwise>
+            <level xtf:meta="true" xtf:tokenize="no">collection</level>
+         </xsl:otherwise>
+      </xsl:choose>
    </xsl:template>
    
    <!-- title --> 
@@ -392,14 +430,14 @@
             <xsl:variable name="collTitle" select="string(/ead/eadheader/filedesc/titlestmt/titleproper[1])"/>
             <xsl:choose>
                <xsl:when test="did/unittitle">
-                  <subtitle xtf:meta="true">
+                  <title xtf:meta="true">
                      <xsl:value-of select="concat($collTitle,'. ',$seriesTitle)"/>
-                  </subtitle>
+                  </title>
                </xsl:when>
                <xsl:otherwise>
-                  <subtitle xtf:meta="true">
+                  <title xtf:meta="true">
                      <xsl:value-of select="'unknown'"/>
-                  </subtitle>
+                  </title>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:when>
@@ -524,10 +562,12 @@
          </xsl:when>
          <xsl:otherwise>
             <xsl:choose>
-               <xsl:when test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'Author')]">
-                  <creator xtf:meta="true">
-                     <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination[child::*[starts-with(@role, 'Author')]][1]/child::*))"/>
-                  </creator>
+               <xsl:when test="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+                     <creator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </creator>
+                  </xsl:for-each>
                </xsl:when>
                <xsl:when test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'Contributor')]">
                   <creator xtf:meta="true">

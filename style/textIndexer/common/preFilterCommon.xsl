@@ -117,8 +117,9 @@
          <xsl:apply-templates select="$meta/*:date" mode="year"/>
          
          <!-- Create sort fields -->
-         <xsl:apply-templates select="$meta/*:title[1]" mode="sort"/>    
-         <xsl:apply-templates select="$meta/*:creator[1]" mode="sort"/>
+         <xsl:apply-templates select="$meta/*:title[1]" mode="sort"/>
+         <!-- Removed the [1] to select all creators for sorting -->         
+         <xsl:apply-templates select="$meta/*:creator" mode="sort"/>
          <xsl:apply-templates select="$meta/*:date[1]" mode="sort"/>
          
          <!-- Create facets -->
@@ -128,10 +129,12 @@
          <xsl:apply-templates select="$meta/*:geogname" mode="facet"/>
          
          
-         <xsl:apply-templates select="$meta/*:title[1]" mode="browse"/>    
-         <xsl:apply-templates select="$meta/*:creator[1]" mode="browse"/>
+         <xsl:apply-templates select="$meta/*:title[1]" mode="browse"/>
+         <!-- Removed the [1] to select all creators for browsing -->         
+         <xsl:apply-templates select="$meta/*:creator" mode="browse"/>
+         
          <!-- 9/26/11 WS: added subject browse -->
-         <xsl:apply-templates select="$meta/*:subject[1]" mode="browse"/>
+         <xsl:apply-templates select="$meta/*:subject" mode="browse"/>
          
       </xtf:meta>
    </xsl:template>
