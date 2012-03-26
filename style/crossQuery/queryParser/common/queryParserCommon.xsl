@@ -341,6 +341,14 @@
       <xsl:value-of select="session:setData('bag', $newBag)"/>
    </xsl:template>
    
+   <!-- 3/26/12 WS: Added template to clear all items from bookbag -->
+   <xsl:template name="removeAllFromBag"> 
+      <xsl:variable name="newBag"> 
+         <bag>
+         </bag>
+      </xsl:variable> 
+      <xsl:value-of select="session:setData('bag', $newBag)"/> 
+   </xsl:template> 
    <!-- ====================================================================== -->
    <!-- "Show Bag" template                                                    -->
    <!--                                                                        -->

@@ -166,6 +166,10 @@
             <xsl:when test="$smode = 'removeFromBag'">
                <xsl:call-template name="removeFromBag"/>
             </xsl:when>
+            <!-- 3/26/12 WS: Added template to clear all items from bookbag -->
+            <xsl:when test="$smode = 'removeAllFromBag'">
+               <xsl:call-template name="removeAllFromBag"/>
+            </xsl:when>
             <xsl:when test="matches($smode,'showBag|emailFolder')">
                <xsl:call-template name="showBag"/>
             </xsl:when>

@@ -294,18 +294,45 @@
                         <xsl:variable name="items" select="@totalDocs"/>
                         <xsl:choose>
                            <xsl:when test="$items = 1">
-                              <span id="itemCount">1</span>
-                              <xsl:text> Item</xsl:text><xsl:value-of select="if($smode='showBag') then ':' else ' for '"/>
-                              <div class="ra-query"><xsl:call-template name="format-query"/></div>
+                              <span id="bookbagCount">
+                                 <span id="itemCount">1</span>
+                                 <xsl:text> Item</xsl:text><xsl:value-of select="if($smode='showBag') then ':' else ' for '"/>
+                                 <div class="ra-query"><xsl:call-template name="format-query"/></div>
+                              </span>
                            </xsl:when>
                            <xsl:otherwise>
-                              <span id="itemCount">
-                                 <xsl:value-of select="$items"/>
+                              <span id="bookbagCount">
+                                 <span id="itemCount">
+                                    <xsl:value-of select="$items"/>
+                                 </span>
+                                 <xsl:text> Items</xsl:text><xsl:value-of select="if($smode='showBag') then ':' else ' for '"/>
+                                 <div class="ra-query"><xsl:call-template name="format-query"/></div>
                               </span>
-                              <xsl:text> Items</xsl:text><xsl:value-of select="if($smode='showBag') then ':' else ' for '"/>
-                              <div class="ra-query"><xsl:call-template name="format-query"/></div>
                            </xsl:otherwise>
                         </xsl:choose>
+                        <!-- 3/26/12 WS: Added template to clear all items from bookbag -->
+                        <xsl:if test="$smode='showBag'">
+                        <script type="text/javascript">
+                              removeAll = function() {
+                                 var span = YAHOO.util.Dom.get('removeAll');
+                                 var bbCount = YAHOO.util.Dom.get('bookbagCount');
+                                 span.innerHTML = "Deleting...";
+                                 YAHOO.util.Connect.asyncRequest('GET', 
+                                    '<xsl:value-of select="concat($xtfURL, $crossqueryPath, '?smode=removeAllFromBag')"/>',
+                                    {  success: function(o) { 
+                                          var main = YAHOO.util.Dom.get('docHits');
+                                          main.parentNode.removeChild(main);
+                                          bbCount.innerHTML="0";
+                                          span.innerHTML = "Your Bookbag is empty";
+                                       },
+                                       failure: function(o) { span.innerHTML = 'Failed to delete!'; }
+                                    }, null);
+                              };
+                           </script>
+                        <p id="removeAll" style="margin-top:4px;">
+                           <a href="javascript:removeAll()">Clear All</a><br/>
+                        </p>
+                        </xsl:if>
                      </td>
                      <td>
                         <form method="get" action="{$xtfURL}{$crossqueryPath}">
@@ -355,7 +382,9 @@
                               </td>
                            </xsl:if>
                            <td class="docHit">
-                              <xsl:apply-templates select="docHit"/>
+                              <div id="docHits">
+                                 <xsl:apply-templates select="docHit"/>
+                              </div>
                            </td>
                         </tr>
                         <xsl:if test="@totalDocs > $docsPerPage">
@@ -369,7 +398,7 @@
                   </div>
                </xsl:when>
                <xsl:otherwise>
-                  <div class="results">
+                  <div class="results" id="docHits">
                      <table>
                         <tr>
                            <td>
@@ -479,8 +508,29 @@
       <xsl:variable name="id" select="@id"/>
       <xsl:for-each select="$docHits[string(meta/identifier[1]) = $id][1]">
          <xsl:variable name="path" select="@path"/>
+         <xsl:variable name="chunk.id" select="@subDocument"/>     
+         <!-- 1/12/12 WS: Added docPath variable to enable scrolling to sub-document hits -->
+         <xsl:variable name="docPath">
+            <xsl:variable name="uri">
+               <xsl:call-template name="dynaxml.url">
+                  <xsl:with-param name="path" select="$path"/>
+               </xsl:call-template>
+            </xsl:variable>
+            <xsl:choose>
+               <xsl:when test="$chunk.id != ''">
+                  <xsl:value-of select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+                  <!-- Link used to get sub-document out of context               
+                     <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
+                  -->
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:value-of select="$uri"/>
+               </xsl:otherwise>
+            </xsl:choose>
+         </xsl:variable>
+         <!-- Need to add choose statement to get correct url when subdocument -->
          <xsl:variable name="url">
-            <xsl:value-of select="$xtfURL"/>
+            <xsl:value-of select="$docPath"/>
             <xsl:choose>
                <xsl:when test="matches(meta/display, 'dynaxml')">
                   <xsl:call-template name="dynaxml.url">
@@ -495,7 +545,7 @@
             </xsl:choose>
          </xsl:variable>
 Item number <xsl:value-of select="$num"/>: 
-         <xsl:value-of select="meta/creator"/>. <xsl:value-of select="meta/title"/>.
+         <xsl:value-of select="meta/creator"/>. <xsl:value-of select="meta/title"/>. <xsl:value-of select="meta/subtitle"/>.
          <!-- 1/27/12 WS: changed meta/year to meta/date -->         
          <xsl:value-of select="meta/date"/>. 
 [<xsl:value-of select="$url"/>]
