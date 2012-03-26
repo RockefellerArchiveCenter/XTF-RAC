@@ -308,7 +308,7 @@ ah|4
 aia|6
 aided|3
 aids|92
-aid|309
+aid|318
 aikens|3
 ailey|3
 aimed|11
@@ -694,8 +694,9 @@ architectural|20
 architecture|14
 architect|19
 archival|1438
+archive@rockarch.org|6
 archives|59
-archive|35
+archive|41
 arch|14
 arco|3
 arctic|3
@@ -825,7 +826,7 @@ associates|97
 associate|18
 associating|5
 associations|9
-association|2973
+association|2975
 associativity|3
 assoc|3
 assumed|29
@@ -940,7 +941,7 @@ authorities|6
 authority|171
 authorized|5
 authors|47
-author|62
+author|63
 autocracy|5
 autocratic|3
 autodetection|4
@@ -960,7 +961,7 @@ au|4
 availability|15
 available|348
 avant|4
-avenue|210
+avenue|216
 average|19
 averted|3
 avery|28
@@ -1125,8 +1126,8 @@ bates|10
 bathing|8
 bath|6
 batjer|4
-battering|3
-battery|217
+battered|3
+battery|218
 battlefield|4
 battles|6
 battle|15
@@ -1248,7 +1249,7 @@ bergen|5
 berger|4
 berghe|17
 berglund|9
-bergmann|271
+bergmann|272
 bergtraum|40
 berkeley|19
 berkley|4
@@ -1269,7 +1270,8 @@ bessemer|4
 bessie|10
 bestow|3
 best|58
-bethel|28
+bethany|3
+bethel|26
 bethesda|5
 beth|4
 betrayal|3
@@ -1995,7 +1997,7 @@ centennial|16
 centered|3
 centerpiece|3
 centers|8
-center|420
+center|426
 centralism|3
 centralized|6
 central|161
@@ -3166,7 +3168,7 @@ data|435
 dated|13
 dates|33
 datetime|71
-date|210
+date|211
 dating|3
 daughters|16
 daughter|14
@@ -3181,7 +3183,7 @@ davy|3
 dawson|7
 days|53
 daytimeduration|75
-dayton|3
+dayton|9
 day|222
 da|8
 db|5
@@ -3849,7 +3851,7 @@ downey|5
 downfall|5
 download|5
 downs|11
-downtown|2647
+downtown|2649
 downwardly|3
 down|28
 dow|3
@@ -3967,7 +3969,7 @@ dynamics|15
 dynamic|456
 dynasty|3
 dy|3
-d|3631
+d|3632
 each|631
 eager|6
 eagle|5
@@ -4030,7 +4032,7 @@ edited|19
 edith|11
 editing|3
 editions|3
-edition|42
+edition|43
 editorials|3
 editorial|17
 editors|29
@@ -4862,7 +4864,8 @@ filed|4
 filestore|3
 files|90
 file|28464
-filled|5
+filing|3
+filled|3
 filling|3
 filming|5
 films|12
@@ -4879,7 +4882,7 @@ finance|144
 financial|243
 financing|6
 findings|9
-finding|22
+finding|31
 findlay|7
 finds|10
 find|49
@@ -5073,7 +5076,7 @@ foster|52
 fostoria|6
 fought|12
 foundations|10
-foundation|5067
+foundation|5068
 founded|6
 founder|3
 founding|7
@@ -5104,7 +5107,7 @@ frances|13
 france|28
 franchise|6
 francisco|27
-francis|17
+francis|18
 frankel|4
 frankfurt|4
 franklin|48
@@ -5581,7 +5584,7 @@ guidebook|4
 guided|3
 guidelines|16
 guides|6
-guide|9447
+guide|9452
 guiding|3
 guild|11
 guiled|4
@@ -5943,7 +5946,7 @@ holland|4
 hollingsworth|5
 hollister|6
 holloway|3
-hollow|3
+hollow|9
 holly|3
 holmes|4
 holocaust|6
@@ -6054,11 +6057,12 @@ hubbard|6
 hubert|3
 huck|3
 hudson|71
-hues|4
-huffman|4
+hud|3
+hue|3
+huffman|3
 huggins|3
 hughes|7
-hugh|108
+hugh|110
 hugo|11
 hukill|4
 hulings|5
@@ -6330,7 +6334,7 @@ inculcated|3
 incumbents|5
 incurables|8
 incursion|3
-inc|2801
+inc|2803
 indeed|45
 indemnification|3
 indemnity|7
@@ -6787,7 +6791,7 @@ jane|5
 janina|3
 janney|12
 jansson|3
-january|224
+january|225
 jan|19
 japanese|28
 japan|92
@@ -6855,7 +6859,7 @@ johnson|56
 johnstone|4
 johnstown|6
 johns|72
-john|3164
+john|3165
 joined|13
 joining|7
 jointly|5
@@ -7534,7 +7538,7 @@ lovanium|8
 love|6
 lowell|8
 lowercase|4
-lower|3148
+lower|3150
 lowest|12
 low|37
 loyalists|3
@@ -7679,7 +7683,7 @@ mandatory|34
 mandela|98
 maneuvering|3
 manganyi|5
-manhattan|3233
+manhattan|3235
 manie|4
 manifold|5
 manipulated|8
@@ -7735,8 +7739,8 @@ marines|3
 marine|50
 marion|7
 mario|3
-maristany|4
-marital|7
+marisol|3
+marital|9
 maritime|12
 marked|22
 markers|3
@@ -7836,7 +7840,7 @@ maximal|7
 maximum|36
 maxoccurs|24
 maxton|3
-max|262
+max|263
 mayaud|4
 mayfield|4
 mayibuye|4
@@ -8564,7 +8568,7 @@ newspaper|64
 newstands|3
 news|20
 newton|13
-new|13934
+new|13940
 next|99
 ne|24
 nfc|4
@@ -8686,7 +8690,7 @@ notation|126
 noted|83
 notes|117
 noteworthy|4
-note|12763
+note|12765
 nothing|25
 noticed|4
 notices|23
@@ -9181,7 +9185,7 @@ panel|16
 panstead|6
 pan|25
 paoli|9
-papers|2532
+papers|2536
 paper|43
 papp|4
 papua|9
@@ -9504,7 +9508,7 @@ photocopies|5
 photoetching|3
 photographer|3
 photographic|4
-photographs|4836
+photographs|4837
 photography|4
 photograph|103
 photoraphs|4
@@ -9855,7 +9859,7 @@ prepaid|5
 preparations|4
 preparation|18
 preparatory|4
-prepared|105
+prepared|109
 prepare|7
 preparing|7
 prepended|7
@@ -10909,7 +10913,7 @@ robberies|3
 robbins|7
 robertson|7
 roberts|15
-robert|113
+robert|114
 robinson|21
 robin|7
 robots|3
@@ -10919,7 +10923,7 @@ rochelle|4
 rochester|48
 rockbridge|3
 rockefellers|3
-rockefeller|8296
+rockefeller|8304
 rockfeller|3
 rockford|8
 rocky|4
@@ -11384,7 +11388,7 @@ serialized|39
 serializer|20
 serialize|6
 serializing|5
-series|7317
+series|7318
 serif|5
 seriously|10
 serious|17
@@ -11670,7 +11674,8 @@ slaves|3
 slavic|12
 sled|4
 sleeping|6
-sleeve|4
+sleepy|7
+sleeve|3
 slides|7
 slide|13
 slightly|10
@@ -11695,7 +11700,7 @@ small|79
 smart|8
 smelter|3
 smillie|3
-smith|224
+smith|226
 smoked|3
 smokers|5
 smoking|15
@@ -11883,7 +11888,7 @@ spoke|5
 sponsored|36
 sponsorship|10
 sponsors|10
-sponsor|8
+sponsor|9
 sporting|4
 sports|14
 sport|4
@@ -11977,7 +11982,7 @@ star|12
 statale|5
 stated|21
 statements|22
-statement|41
+statement|42
 staten|11
 states|2573
 state|2910
@@ -12216,8 +12221,8 @@ substitutiongroup|44
 substitution|35
 substrings|25
 substring|84
-subtlety|3
-subtraction|6
+subtitle|3
+subtraction|7
 subtract|11
 subtree|15
 subtypes|3
@@ -12730,8 +12735,9 @@ tissues|25
 tissue|22
 tis|4
 titled|4
+titleproper|9
 titles|10
-title|125
+title|127
 titusville|27
 tive|3
 tj|4
@@ -13991,7 +13997,7 @@ yoe|4
 yokichi|4
 yonkers|3
 yorkville|3
-york|10706
+york|10712
 younger|5
 youngsters|3
 young|210

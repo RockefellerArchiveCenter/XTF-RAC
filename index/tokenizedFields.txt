@@ -16,5 +16,4 @@ titleproper
 subjectname
 geogname
 source
-subtitle
 description
