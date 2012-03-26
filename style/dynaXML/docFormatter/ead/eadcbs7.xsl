@@ -64,6 +64,7 @@
       <xsl:variable name="file">
          <xsl:value-of select="/ead/eadheader/eadid"/>
       </xsl:variable> 
+      <div id="content-wrapper">
       <div id="content-right">
          <xsl:choose>
          <xsl:when test="$chunk.id = 'headerlink'">
@@ -106,6 +107,7 @@
          </xsl:otherwise>
       </xsl:choose>
          <br class="clear"/>
+      </div>
       </div>
    </xsl:template>		
    <!-- Creates anchors within the document -->

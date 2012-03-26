@@ -201,36 +201,7 @@
                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
                <xsl:copy-of select="$brand.links"/>
                <!-- 2/12/12 WS: Added jquery to scroll to anchors, use offset value to make sure anchor is not hidden under header -->
-               <script type="text/javascript">
-                  <![CDATA[
-                  $(function(){
-                  
-                      $('a[href*=#]').click(function() {
-                  
-                      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-                          && location.hostname == this.hostname) {
-                  
-                              var $target = $(this.hash);
-                  
-                              $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
-                  
-                              if ($target.length) {
-                  
-                                  var targetOffset = $target.offset().top - 300;
-                  
-                                  $('html,body').animate({scrollTop: targetOffset}, 10);
-                  
-                                  return false;
-                  
-                              }
-                  
-                          }
-                  
-                      });
-                  
-                  });
-                  ]]>
-                  </script>
+              
                <title>
                   <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
                   <xsl:text>  </xsl:text>
@@ -316,8 +287,6 @@
                                  <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
                               </xsl:otherwise>
                            </xsl:choose>
-                           
-                           
                         </h1>
                      </div>
                   </td>
@@ -333,6 +302,9 @@
                      <a href="/xtf/search?smode=showBag">Bookbag</a>
 <!--                        (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)-->
                         | 
+                     
+                     <!-- Commented out citation until digital objects are added-->
+                     <!--
                      <a>
                         <xsl:attribute name="href">javascript://</xsl:attribute>
                         <xsl:attribute name="onclick">
@@ -342,6 +314,7 @@
                         <xsl:text>Citation</xsl:text>
                      </a>
                      <xsl:text> | </xsl:text>
+                     -->
                      <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
                      <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf">Print View</a>
 <!--                     <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>-->
@@ -454,12 +427,13 @@
                </xsl:call-template>
 <!--               <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}&amp;doc.view=contents">Contents List</a>-->
             </li>
-            <li>
+           <!-- <li>
                <xsl:if test="$doc.view='digital'">
                   <xsl:attribute name="class">select</xsl:attribute>
                </xsl:if>
                Digitized Materials
             </li>
+            -->
          </ul>
       
    </xsl:template>
