@@ -1663,6 +1663,7 @@
    <xsl:template match="*" mode="moreInfo">
       <div>
          <xsl:apply-templates select="did" mode="dsc"/>
+         <xsl:apply-templates select="did/physdesc"/>
          <xsl:apply-templates select="*[not(name() = 'did')]"/>
       </div>
    </xsl:template>
