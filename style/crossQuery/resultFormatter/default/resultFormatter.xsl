@@ -375,7 +375,7 @@
                            <xsl:if test="not($smode='showBag')">
                               <td class="facet">
                                  <!-- 3/26/12 WS: Added some if statements to only show facets if facet data is available -->
-                                 <xsl:if test="facet[@field]/child::*">
+                                 <xsl:if test="facet[@field='facet-subject']/child::* or facet[@field='facet-subjectname']/child::* or facet[@field='facet-geogname']/child::*">
                                  <h3>Refine Search</h3>
                                     <xsl:if test="facet[@field='facet-subject']/child::*">  
                                        <xsl:apply-templates select="facet[@field='facet-subject']"/>
@@ -1065,6 +1065,14 @@ Item number <xsl:value-of select="$num"/>:
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
+      <xsl:variable name="collPath">
+         <xsl:variable name="uri">
+            <xsl:call-template name="dynaxml.url">
+               <xsl:with-param name="path" select="$path"/>
+            </xsl:call-template>
+         </xsl:variable>
+         <xsl:value-of select="$uri"/>
+      </xsl:variable>
       <!-- scrolling anchor -->
       <xsl:variable name="anchor">
          <xsl:choose>
@@ -1089,6 +1097,7 @@ Item number <xsl:value-of select="$num"/>:
                               <b><xsl:value-of select="@rank"/></b>
                            </xsl:when>
                            <xsl:otherwise>
+                              <b><xsl:value-of select="@rank"/></b>
                               <xsl:text>&#160;</xsl:text>
                            </xsl:otherwise>
                         </xsl:choose>
@@ -1269,6 +1278,7 @@ Item number <xsl:value-of select="$num"/>:
                               <b><xsl:value-of select="@rank"/></b>
                            </xsl:when>
                            <xsl:otherwise>
+                              <b><xsl:value-of select="@rank"/></b>
                               <xsl:text>&#160;</xsl:text>
                            </xsl:otherwise>
                         </xsl:choose>
@@ -1282,7 +1292,7 @@ Item number <xsl:value-of select="$num"/>:
                      <td class="col3">
                         <a>
                            <xsl:attribute name="href">
-                              <xsl:value-of select="$docPath"/>
+                              <xsl:value-of select="$collPath"/>
                            </xsl:attribute>
                            <xsl:choose>
                               <xsl:when test="meta/collectionTitle">

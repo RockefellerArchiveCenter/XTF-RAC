@@ -632,6 +632,11 @@
    <xsl:template name="get-ead-subject">
       <xsl:choose>
          <xsl:when test="@level">
+            <xsl:for-each-group select="/ead/archdesc//controlaccess/subject" group-by="string()">
+               <subject xtf:meta="true">
+                  <xsl:value-of select="."/>
+               </subject>
+            </xsl:for-each-group>
             <xsl:for-each-group select="controlaccess/subject" group-by="string()">
                <subject xtf:meta="true">
                   <xsl:value-of select="."/>
@@ -661,6 +666,11 @@
       <xsl:choose>
          <xsl:when test="@level">
             <xsl:if test="controlaccess">
+               <xsl:for-each-group select="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/corpname | /ead/archdesc//controlaccess/famname" group-by="string()">
+                  <subjectname xtf:meta="true">
+                     <xsl:value-of select="."/>
+                  </subjectname>
+               </xsl:for-each-group>
                <xsl:for-each-group select="controlaccess/persname | controlaccess/corpname | controlaccess/famname" group-by="string()">
                   <subjectname xtf:meta="true">
                      <xsl:value-of select="."/>
@@ -690,6 +700,11 @@
    <xsl:template name="get-ead-geogname">
       <xsl:choose>
          <xsl:when test="@level">
+            <xsl:for-each-group select="/ead/archdesc//controlaccess/geogname" group-by="string()">
+               <geogname xtf:meta="true">
+                  <xsl:value-of select="."/>
+               </geogname>
+            </xsl:for-each-group>
             <xsl:for-each-group select="controlaccess/geogname" group-by="string()">
                <geogname xtf:meta="true">
                   <xsl:value-of select="."/>
