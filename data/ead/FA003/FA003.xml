@@ -4,7 +4,8 @@
         <eadid countrycode="US" mainagencycode="US-NNttR">FA003.xml</eadid>
         <filedesc>
             <titlestmt>
-                <titleproper>A Guide to the Rockefeller Foundation photographs <num>FA003</num>
+                <titleproper>A Guide to the Rockefeller Foundation photographs
+                    <num>FA003</num>
                 </titleproper>
                 <author>Finding aid prepared by Bethany Francis</author>
             </titlestmt>
@@ -21,7 +22,7 @@
         </filedesc>
         <profiledesc>
             <creation>This finding aid was produced using the Archivists' Toolkit
-                <date>2011-07-27T10:42-0400</date>
+                <date>2012-01-31T09:58-0500</date>
             </creation>
         </profiledesc>
     </eadheader>
@@ -40,9 +41,11 @@
                 <extent>Actual extent is unknown.</extent>
             </physdesc>
             <unitdate normal="1905/1980" type="inclusive">circa 1905-1980</unitdate>
+            <origination label="creator">
+                <corpname source="lcnaf" role="Author (aut)">Rockefeller Foundation.</corpname>
+            </origination>
         </did>
         <controlaccess>
-            <corpname source="lcnaf">Rockefeller Foundation.</corpname>
             <genreform source="local">Photographs</genreform>
         </controlaccess>
         <dsc>
@@ -37861,11 +37864,6 @@
                             <head>File Plan note</head>
                             <p>Rockefeller Foundation Photo # 21414c</p>
                         </fileplan>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Dr. Therman working in dark room" ns2:href="ark:74557/500000">
-                            <daodesc>
-                                <p>Dr. Therman working in dark room, 1930 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25495" level="item">
                         <did>
@@ -37886,11 +37884,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "Used in RF Annual 1937 p 156" "The work shop. Mechanic and Assistant." "Ragnar Granit, Finland, Neurophysiology"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Mechanics in work shop" ns2:href="ark:74557/500001">
-                            <daodesc>
-                                <p>Mechanics in work shop, 1930 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25500" level="item">
                         <did>
@@ -37911,11 +37904,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "New technical assistant (since beginning of 1937) in his room. Hi is a new official in the laboratory and has training of Technical School for Electro technicians" "Ragnar Granit, Finland Neurophysiology"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Technical assistant in his room" ns2:href="ark:74557/500002">
-                            <daodesc>
-                                <p>Technical assistant in his room, 1938 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25505" level="item">
                         <did>
@@ -37936,11 +37924,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: “Dr. Wrede working in the upper dark room. In this room only the amplifier is shielded. It is seen in its box to the left in photograph. Camera to the right. Opposite camera, in the picture just to left of it, end of microscope of string galbanometer. Not possible in this room to use instrument of faster period" "Institute of Physiology, University of Helsinki, Finland. Dark room equipped with apparatus for research in visual phipiology" "Used in PR 1937 p. 24"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Dr. Wrede working in dark room" ns2:href="ark:74557/200003">
-                            <daodesc>
-                                <p>Dr. Wrede working in dark room, 1937 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25510" level="item">
                         <did>
@@ -37957,11 +37940,6 @@
                             <head>File Plan note</head>
                             <p>Rockefeller Foundation Photo # 21414e</p>
                         </fileplan>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists working in dark room" ns2:href="ark:74557/500004">
-                            <daodesc>
-                                <p>Scientists working in dark room, 1938 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25514" level="item">
                         <did>
@@ -37982,11 +37960,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image " Electronically shielded dark room in cellar, with cathode ray oscillographs for simultaneous recording from retina and nerve. Assistant Dr. Therman at the camera in the adjoining room. No electrical lines or contacts in the room from the mains to to exclude disturbances" "Ragnar Granit, Finland, Neurophysiology"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Electrically shielded dark room" ns2:href="ark:74557/500005">
-                            <daodesc>
-                                <p>Electrically shielded dark room, 1938 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                 </c>
                 <c id="ref7336" level="file">
@@ -38470,15 +38443,6 @@
                             <head>Scope and Contents note</head>
                             <p>Label on image: "Karolinska Institutet - Inst. for Cell Research - NS 1949" Caption on image: "Laboratory for specialized microscopical procedures. Might also be christened 'Diligence' if anyone believes in it."</p>
                         </scopecontent>
-                        <fileplan audience="internal" id="ref25819">
-                            <head>File Plan note</head>
-                            <p>Rockefeller Foundation Photo # 22471b</p>
-                        </fileplan>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists at microscopes in laboratory for specialized microscopical procedures" ns2:href="ark:74557/500006">
-                            <daodesc>
-                                <p>Scientists at microscopes in laboratory for specialized microscopical procedures, 1949 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25820" level="item">
                         <did>
@@ -38499,11 +38463,6 @@
                             <head>Scope and Contents note</head>
                             <p>Label on image: "Karolinska Institutet - Inst. for Cell Research - NS 1949" Caption on image: "Workshop"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Men at machines in workshop" ns2:href="ark:74557/500007">
-                            <daodesc>
-                                <p>Men at machines in workshop, 1949 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25825" level="item">
                         <did>
@@ -38524,11 +38483,6 @@
                             <head>Scope and Contents note</head>
                             <p>Label on image: "Karolinska Institutet - Inst. for Cell Research - NS 1949" Caption on image: "Universal microspectograph Prof. Carperra"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Universal Microspectograph" ns2:href="ark:74557/500008">
-                            <daodesc>
-                                <p>Universal Microspectograph, 1949 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25830" level="item">
                         <did>
@@ -38549,11 +38503,6 @@
                             <head>Scope and Contents note</head>
                             <p>Label on image: "Karolinska Institutet - Inst. for Cell Research - NS 1949" Caption on image: "Spectrographic laboratories"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists in spectrographic laboratory" ns2:href="ark:74557/500009">
-                            <daodesc>
-                                <p>Scientists in spectrographic laboratory, 1949 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25835" level="item">
                         <did>
@@ -38574,11 +38523,6 @@
                             <head>Scope and Contents note</head>
                             <p>Label on image: "Karolinska Institutet - Inst. for Cell Research - NS 1949" Caption on image: "X-ray micropsectrography Ass. prof. Engshoen"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientist using x-ray microspectroscope" ns2:href="ark:74557/500010">
-                            <daodesc>
-                                <p>Scientist using x-ray microspectroscope, 1949 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25840" level="item">
                         <did>
@@ -38599,11 +38543,6 @@
                             <head>Scope and Contents note</head>
                             <p>Label on image: "Karolinska Institutet - Inst. for Cell Research - NS 1949" Caption on image: "Part of main distributuion switchboard"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientist using switchboard" ns2:href="ark:74557/500011">
-                            <daodesc>
-                                <p>Scientist using switchboard, 1949 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25845" level="item">
                         <did>
@@ -38624,11 +38563,6 @@
                             <head>Scope and Contents note</head>
                             <p>Label on image: "Karolinska Institutet - Inst. for Cell Research - NS 1949" Caption on image: "Universal Microspectrograph, Left Prof. Carpassor, Right Research Assistant Aquilonies" "L-7019 37-12" "used RF ___ 1949 p 205" "37/8"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists using universal microspectograph " ns2:href="ark:74557/500012">
-                            <daodesc>
-                                <p>Scientists using universal microspectograph , 1949 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25850" level="item">
                         <did>
@@ -38653,11 +38587,6 @@
                             <head>Existence and Location of Copies note</head>
                             <p>A duplicate copy of this photograph exists in the same folder.</p>
                         </altformavail>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists working in spectrographic laboratory " ns2:href="ark:74557/500013">
-                            <daodesc>
-                                <p>Scientists working in spectrographic laboratory , 1949 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25856" level="item">
                         <did>
@@ -38682,11 +38611,6 @@
                             <head>Existence and Location of Copies note</head>
                             <p>A duplicate copy of this photograph exists in the same folder.</p>
                         </altformavail>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Professor Hugo Theorell examining apparatus" ns2:href="ark:74557/500014">
-                            <daodesc>
-                                <p>Professor Hugo Theorell examining apparatus, 1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25862" level="item">
                         <did>
@@ -38707,11 +38631,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "From left to right - Hugo Thorell, Ake Akeson, Karl Gustav Paul, Anders Ehrenberg" "Apparatus for measuring magnetic susceptibility"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists using apparatus " ns2:href="ark:74557/500015">
-                            <daodesc>
-                                <p>Scientists using apparatus , 1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25867" level="item">
                         <did>
@@ -38732,11 +38651,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "From left to right: Ake Akeson, Anders Ehrenberg, Stephen Kuby, Hugo Theorell and Karl Gustav Paul" "An apparatus for simultaneous determination of the light absorption and oxidation reduction potentials"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists examining apparatus " ns2:href="ark:74557/500016">
-                            <daodesc>
-                                <p>Scientists examining apparatus , 1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25872" level="item">
                         <did>
@@ -38757,11 +38671,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption in image: " Part of the staff in the big preparation laboratory "</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Staff in preparation laboratory  " ns2:href="ark:74557/500017">
-                            <daodesc>
-                                <p>Staff in preparation laboratory  , 1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25877" level="item">
                         <did>
@@ -38782,11 +38691,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: " From left to right: Stephen Kuby, Anders Ehrenberg, Hugo Theorell, Karl Gustav Paul" "Same apparatus as on picture I"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists next to apparatus" ns2:href="ark:74557/500018">
-                            <daodesc>
-                                <p>Scientists next to apparatus, 1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25882" level="item">
                         <did>
@@ -38807,11 +38711,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "Director's study" "removed from picture drawer"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Director's study" ns2:href="ark:74557/500019">
-                            <daodesc>
-                                <p>Director's study, 1950-1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25887" level="item">
                         <did>
@@ -38832,11 +38731,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "Assistant's room: inside cage chamber for work on mammals" "removed from picture drawer"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Assistant's room" ns2:href="ark:74557/500020">
-                            <daodesc>
-                                <p>Assistant's room, 1950-1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25892" level="item">
                         <did>
@@ -38857,11 +38751,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "Assistant's laboratory outside the cage of [illegible] cathode ray oscillograph [illegible] and [illegible] for [illegible] cathode ray and last stage of amplification" "taken from pictures drawer"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Assistant's laboratory" ns2:href="ark:74557/500021">
-                            <daodesc>
-                                <p>Assistant's laboratory, 1950-1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25897" level="item">
                         <did>
@@ -38882,11 +38771,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "Part of Director's Laboratory: loud speaker, double-ray cathode ray oscillograph, camera" "removed from picture drawer"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Part of the Director's laboratory" ns2:href="ark:74557/500022">
-                            <daodesc>
-                                <p>Part of the Director's laboratory, 1950-1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25902" level="item">
                         <did>
@@ -38907,11 +38791,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: " Director's Laboratory: [illegible], Wright colorimeter, binocular preparation microscope, switch-board for high capacity [illegible] cells, amplifiers etc. [illegible] him of a metal net." "removed from picture drawer"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Director's Laboratory" ns2:href="ark:74557/500023">
-                            <daodesc>
-                                <p>Director's Laboratory, 1950-1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25907" level="item">
                         <did>
@@ -38932,11 +38811,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "The technical dept. is led by engineer Mr. H. Wagner who with 2 specially trained electro technicians is engaged in an extensive program of building electrical apparatus for the lab. Wagner (at right) &amp; the 2 electro technicians, Mr. Persson (left) and Mr. Karlsson (center), are shown." "used - RF Annual 1949, page 154" "Ragnar Granit"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Electrotechnicians building apparatus" ns2:href="ark:74557/500024">
-                            <daodesc>
-                                <p>Electrotechnicians building apparatus, 1949 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref28965" level="item">
                         <did>
@@ -38947,11 +38821,10 @@
                             <head>File Plan note</head>
                             <p>Rockefeller Foundation Photo # 22501a-e</p>
                         </fileplan>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Report depicting people working in the Nobel Institute for Neurophysiology in Stockholm" ns2:href="ark:74557/500031">
-                            <daodesc>
-                                <p>Report depicting people working in the Nobel Institute for Neurophysiology in Stockholm, 1948 to 1949 </p>
-                            </daodesc>
-                        </dao>
+                        <scopecontent id="ref28972">
+                            <head>Scope and Contents note</head>
+                            <p>From the Rockefeller Foundation's Photograph Accession Log, Binder #6, Accession Number 22501: "Title: Pictures of people working in the Nobel Inst. for Neuro-physiology at Stockholm. Source - L. 11.23.49 Granit to Wassp"</p>
+                        </scopecontent>
                     </c>
                 </c>
                 <c id="ref7439" level="file">
@@ -39026,11 +38899,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "Fig. 1" "Professor Hugo Theorell, Mr. Ake Akeson, Nobel Medical Institute, Caroline Institute, Stockholm, Sweden"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists working with apparatus" ns2:href="ark:74557/500025">
-                            <daodesc>
-                                <p>Scientists working with apparatus, 1960 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25951" level="item">
                         <did>
@@ -39051,11 +38919,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "Constructing an apparatus for the automatic analysis of amino acids" "Fig. 2" "Professor Hugo Theorell, Mr. Ake Akeson, Nobel Medical Institute, Caroline Institute (crossed out) Karolinska Institute, Stockholm, Sweden" "Used AR/PR, 1960"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists constructing apparatus" ns2:href="ark:74557/500026">
-                            <daodesc>
-                                <p>Scientists constructing apparatus, 1960 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25956" level="item">
                         <did>
@@ -39076,11 +38939,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "optical ultramicrospetrograph, Dr. Gunnar Svensson, Miss Ulla Sundwall"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists using optical ultramicrospectrograph" ns2:href="ark:74557/500027">
-                            <daodesc>
-                                <p>Scientists using optical ultramicrospectrograph, 1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25961" level="item">
                         <did>
@@ -39101,11 +38959,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "optical ultramicrospetrograph, Dr. Gunnar Svensson, Miss Ulla Sundwall"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists using optical ultramicrospectrograph" ns2:href="ark:74557/500028">
-                            <daodesc>
-                                <p>Scientists using optical ultramicrospectrograph, 1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25966" level="item">
                         <did>
@@ -39126,11 +38979,6 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "optical ultramicrospecrtograph"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Optical ultramicrospectrograph" ns2:href="ark:74557/500029">
-                            <daodesc>
-                                <p>Optical ultramicrospectrograph, 1955 </p>
-                            </daodesc>
-                        </dao>
                     </c>
                     <c id="ref25971" level="item">
                         <did>
@@ -39151,11 +38999,20 @@
                             <head>Scope and Contents note</head>
                             <p>Caption on image: "used in RF AR 1954" "optical ultramicrospetrograph, Dr. Gunnar Svensson, Miss Ulla Sundwall"</p>
                         </scopecontent>
-                        <dao ns2:actuate="onRequest" ns2:show="new" ns2:title="Scientists examing optical ultramicrospectrograph" ns2:href="ark:74557/500030">
-                            <daodesc>
-                                <p>Scientists examing optical ultramicrospectrograph, 1955 </p>
-                            </daodesc>
-                        </dao>
+                    </c>
+                    <c id="ref28973" level="item">
+                        <did>
+                            <unittitle>Quantative Cytochemical Methods for a Study of Cell Metabolism - Illustrations for manuscript by Torbjorn Caspersson</unittitle>
+                            <unitdate normal="1954/1954">December 1954</unitdate>
+                        </did>
+                        <fileplan id="ref28974">
+                            <head>File Plan note</head>
+                            <p>Rockefeller Foundation Photo # 22849a-j</p>
+                        </fileplan>
+                        <scopecontent id="ref28975">
+                            <head>Scope and Contents note</head>
+                            <p>From the Rockefeller Foundation's Photograph Accession Log, Binder #6, Accession Number 22849: "Title: Photos received with list of publication from the inst. covering period of RF grant #49030."</p>
+                        </scopecontent>
                     </c>
                 </c>
                 <c id="ref7451" level="file">

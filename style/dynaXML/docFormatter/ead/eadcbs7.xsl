@@ -1342,10 +1342,13 @@
                               </xsl:if>
                            </td>
                            <td class="container">
-                              <xsl:value-of select="@label"/>
+                              <xsl:if test="@label != 'Mixed materials'">
+                                 <xsl:value-of select="@label"/>
+                              </xsl:if>
                            </td>
-                           <td class="container">
-                              <xsl:value-of select="@type"/>&#160;
+                           <td class="container">   
+                              <xsl:value-of select="@type"/>
+                                 &#160;
                               <xsl:apply-templates select="."/>
                            </td>
                            <td class="container">
@@ -1446,11 +1449,13 @@
                              <xsl:apply-templates select="did" mode="dsc"/>  
                           </td>
                          <td class="container">
-                            <xsl:value-of select="did/container/@label"/>
+                            <xsl:if test="did/container/@label != 'Mixed materials'">
+                               <xsl:value-of select="did/container/@label"/>                               
+                            </xsl:if>
                          </td>
                            <!--7/16/11 WS: Adjusted Containers -->    
                          <td class="container">
-                            <xsl:value-of select="descendant-or-self::*/@type"/>&#160;
+                            <xsl:value-of select="did/container/@type"/>&#160;
                             <xsl:value-of select="did/container[1]"/>
                          </td>
                          <td class="container">

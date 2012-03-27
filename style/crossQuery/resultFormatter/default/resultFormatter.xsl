@@ -374,16 +374,31 @@
                         <tr>
                            <xsl:if test="not($smode='showBag')">
                               <td class="facet">
+                                 <!-- 3/26/12 WS: Added some if statements to only show facets if facet data is available -->
+                                 <xsl:if test="facet[@field]/child::*">
                                  <h3>Refine Search</h3>
-                                 <xsl:apply-templates select="facet[@field='facet-subject']"/>
-                                 <xsl:apply-templates select="facet[@field='facet-subjectname']"/>
-                                 <xsl:apply-templates select="facet[@field='facet-geogname']"/>
-                                <!-- <xsl:apply-templates select="facet[@field='facet-date']"/>-->
+                                    <xsl:if test="facet[@field='facet-subject']/child::*">  
+                                       <xsl:apply-templates select="facet[@field='facet-subject']"/>
+                                    </xsl:if>
+                                    <xsl:if test="facet[@field='facet-subjectname']/child::*">
+                                       <xsl:apply-templates select="facet[@field='facet-subjectname']"/>                                    
+                                    </xsl:if>
+                                    <xsl:if test="facet[@field='facet-geogname']/child::*">
+                                       <xsl:apply-templates select="facet[@field='facet-geogname']"/>                                    
+                                    </xsl:if>
+                                <!-- <xsl:apply-templates select="facet[@field='facet-date']"/>-->   
+                                 </xsl:if>
                               </td>
                            </xsl:if>
                            <td class="docHit">
                               <div id="docHits">
-                                 <xsl:apply-templates select="docHit"/>
+<!--                                 <xsl:apply-templates select="facet[@field='facet-collection']"/>-->
+                               
+                                 <xsl:for-each-group select="docHit" group-by="@path">
+                                    <xsl:call-template name="docHitColl"/>
+                                </xsl:for-each-group>
+                               
+<!--                                 <xsl:apply-templates select="docHit"/> -->
                               </div>
                            </td>
                         </tr>
@@ -788,7 +803,6 @@ Item number <xsl:value-of select="$num"/>:
             </xsl:when>
          </xsl:choose>
       </xsl:variable>
-      
       <div id="main_{@rank}" class="docHit">    
          <table>
             <!-- 9/26/11 WS: Moved title above Author -->
@@ -1023,9 +1037,520 @@ Item number <xsl:value-of select="$num"/>:
             </tr> 
          </table>
       </div>
-      
    </xsl:template>
    
+   <xsl:template name="docHitColl" exclude-result-prefixes="#all">
+      <xsl:variable name="chunk.id" select="@subDocument"/>         
+      <xsl:variable name="level" select="meta/level"/>
+      <xsl:variable name="path" select="@path"/>
+      <xsl:variable name="identifier" select="meta/identifier[1]"/>
+      <xsl:variable name="quotedID" select="concat('&quot;', $identifier, '&quot;')"/>
+      <xsl:variable name="indexId" select="replace($identifier, '.*/', '')"/>
+      <!-- 1/12/12 WS: Added docPath variable to enable scrolling to sub-document hits -->
+      <xsl:variable name="docPath">
+         <xsl:variable name="uri">
+            <xsl:call-template name="dynaxml.url">
+               <xsl:with-param name="path" select="$path"/>
+            </xsl:call-template>
+         </xsl:variable>
+         <xsl:choose>
+            <xsl:when test="$chunk.id != ''">
+               <xsl:value-of select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+               <!-- Link used to get sub-document out of context               
+                  <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
+               -->
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="$uri"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <!-- scrolling anchor -->
+      <xsl:variable name="anchor">
+         <xsl:choose>
+            <xsl:when test="$sort = 'creator'">
+               <xsl:value-of select="substring(string(meta/creator[1]), 1, 1)"/>
+            </xsl:when>
+            <xsl:when test="$sort = 'title'">
+               <xsl:value-of select="substring(string(meta/title[1]), 1, 1)"/>
+            </xsl:when>
+         </xsl:choose>
+      </xsl:variable>
+
+      <div id="main_{@rank}" class="docHit">    
+         <table>
+            <!-- Deals with collections vrs. series/files -->
+            <xsl:choose>
+               <xsl:when test="meta/level = 'collection'">
+                  <tr>
+                     <td class="col1">
+                        <xsl:choose>
+                           <xsl:when test="$sort = ''">
+                              <b><xsl:value-of select="@rank"/></b>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <xsl:text>&#160;</xsl:text>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </td>
+                     <td class="col2">
+                        <xsl:if test="$sort = 'title'">
+                           <a name="{$anchor}"/>
+                        </xsl:if>
+                        <b>Title:&#160;&#160;</b>
+                     </td>
+                     <td class="col3">
+                        <a>
+                           <xsl:attribute name="href">
+                              <xsl:value-of select="$docPath"/>
+                           </xsl:attribute>
+                           <xsl:choose>
+                              <xsl:when test="meta/title">
+                                 <xsl:choose>
+                                    <xsl:when test="count(meta/title) &gt; 1">
+                                       <xsl:apply-templates select="meta/title[2]"/>      
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                       <xsl:apply-templates select="meta/title[1]"/>
+                                    </xsl:otherwise>
+                                 </xsl:choose>
+                              </xsl:when>
+                              <xsl:when test="meta/subtitle">
+                                 <xsl:choose>
+                                    <xsl:when test="count(meta/subtitle) &gt; 1">
+                                       <xsl:apply-templates select="meta/subtitle[2]"/>      
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                       <xsl:apply-templates select="meta/subtitle[1]"/>
+                                    </xsl:otherwise>
+                                 </xsl:choose>
+                              </xsl:when>
+                              <xsl:otherwise>none</xsl:otherwise>
+                           </xsl:choose>
+                        </a>
+                        <xsl:text>&#160;</xsl:text>
+                        <xsl:variable name="type" select="meta/type"/>
+                        <!--
+                           <span class="typeIcon">
+                           <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
+                           </span>
+                        -->
+                     </td>
+                     <td class="col4">
+                        <!-- Add/remove logic for the session bag (only if session tracking enabled) -->
+                        <span class="addToBag">
+                           <xsl:if test="session:isEnabled()">
+                              <xsl:choose>
+                                 <xsl:when test="$smode = 'showBag'">
+                                    <script type="text/javascript">
+                              remove_<xsl:value-of select="@rank"/> = function() {
+                                 var span = YAHOO.util.Dom.get('remove_<xsl:value-of select="@rank"/>');
+                                 span.innerHTML = "Deleting...";
+                                 YAHOO.util.Connect.asyncRequest('GET', 
+                                    '<xsl:value-of select="concat($xtfURL, $crossqueryPath, '?smode=removeFromBag;identifier=', $identifier)"/>',
+                                    {  success: function(o) { 
+                                          var main = YAHOO.util.Dom.get('main_<xsl:value-of select="@rank"/>');
+                                          main.parentNode.removeChild(main);
+                                          --(YAHOO.util.Dom.get('itemCount').innerHTML);
+                                       },
+                                       failure: function(o) { span.innerHTML = 'Failed to delete!'; }
+                                    }, null);
+                              };
+                           </script>
+                                    <span id="remove_{@rank}">
+                                       <a href="javascript:remove_{@rank}()">Delete</a>
+                                    </span>
+                                 </xsl:when>
+                                 <xsl:when test="session:noCookie()">
+                                    <span><a href="javascript:alert('To use the bag, you must enable cookies in your web browser.')">Requires cookie*</a></span>                                 
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <xsl:choose>
+                                       <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                                          <span>Added</span>
+                                       </xsl:when>
+                                       <xsl:otherwise>
+                                          <script type="text/javascript">
+                                    add_<xsl:value-of select="@rank"/> = function() {
+                                       var span = YAHOO.util.Dom.get('add_<xsl:value-of select="@rank"/>');
+                                       span.innerHTML = "Adding...";
+                                       YAHOO.util.Connect.asyncRequest('GET', 
+                                          '<xsl:value-of select="concat($xtfURL, $crossqueryPath, '?smode=addToBag;identifier=', $identifier)"/>',
+                                          {  success: function(o) { 
+                                                span.innerHTML = o.responseText;
+                                                ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                             },
+                                             failure: function(o) { span.innerHTML = 'Failed to add!'; }
+                                          }, null);
+                                    };
+                                 </script>
+                                          <span id="add_{@rank}">
+                                             <a href="javascript:add_{@rank}()">Add</a>
+                                          </span>
+                                       </xsl:otherwise>
+                                    </xsl:choose>
+                                    <xsl:value-of select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString))"/>
+                                 </xsl:otherwise>
+                              </xsl:choose>
+                           </xsl:if>
+                        </span>
+                     </td>
+                  </tr> 
+                  <tr>
+                     <td class="col1">
+                        <xsl:text>&#160;</xsl:text>
+                     </td>
+                     <td class="col2">
+                        <xsl:if test="$sort = 'creator'">
+                           <a name="{$anchor}"/>
+                        </xsl:if>
+                        <!-- 9/26/11 WS: changed author to creator-->
+                        <b>Creator:&#160;&#160;</b>
+                     </td>
+                     <td class="col3">
+                        <xsl:choose>
+                           <xsl:when test="meta/creator">
+                              <xsl:apply-templates select="meta/creator[1]"/>
+                           </xsl:when>
+                           <xsl:otherwise>none</xsl:otherwise>
+                        </xsl:choose>
+                     </td>
+                     <td class="col4">
+                        <xsl:text>&#160;</xsl:text> 
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="col1">
+                        <xsl:text>&#160;</xsl:text>
+                     </td>
+                     <td class="col2">
+                        <!-- 9/26/11 WS: changed Published to Date -->
+                        <b>Date(s):&#160;&#160;</b>
+                     </td>
+                     <td class="col3">
+                        <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+                        <xsl:choose>
+                           <xsl:when test="meta/date">
+                              <xsl:apply-templates select="meta/date"/>      
+                           </xsl:when>
+                           <xsl:otherwise>
+                              unknown
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </td>
+                     <td class="col4">
+                        <xsl:text>&#160;</xsl:text>
+                     </td>
+                  </tr>
+                  <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
+                  <xsl:if test="descendant-or-self::snippet">
+                     <tr>
+                        <td class="col1">
+                           <xsl:text>&#160;</xsl:text>
+                        </td>
+                        <td class="col2">
+                           <b>Matches:&#160;&#160;</b>
+                           <br/>
+                           <xsl:value-of select="@totalHits"/> 
+                           <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>&#160;&#160;&#160;&#160;
+                        </td>
+                        <td class="col3" colspan="2">
+                           <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
+                        </td>
+                     </tr>
+                  </xsl:if>
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:variable name="collectionId" select="substring-before(meta/identifier[1],'|')"/>
+                  <tr>
+                     <td class="col1">
+                        <xsl:choose>
+                           <xsl:when test="$sort = ''">
+                              <b><xsl:value-of select="@rank"/></b>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <xsl:text>&#160;</xsl:text>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </td>
+                     <td class="col2">
+                        <xsl:if test="$sort = 'title'">
+                           <a name="{$anchor}"/>
+                        </xsl:if>
+                        <b>Title:&#160;&#160;</b>
+                     </td>
+                     <td class="col3">
+                        <a>
+                           <xsl:attribute name="href">
+                              <xsl:value-of select="$docPath"/>
+                           </xsl:attribute>
+                           <xsl:choose>
+                              <xsl:when test="meta/collectionTitle">
+                                 <xsl:apply-templates select="meta/collectionTitle"/>
+                              </xsl:when>
+                              <xsl:when test="meta/subtitle">
+                                 <xsl:apply-templates select="meta/subtitle"/>
+                              </xsl:when>
+                              <xsl:otherwise>none</xsl:otherwise>
+                           </xsl:choose>
+                        </a>
+                        <xsl:text>&#160;</xsl:text>
+                        <xsl:variable name="type" select="meta/type"/>
+                        <!--
+                           <span class="typeIcon">
+                           <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
+                           </span>
+                        -->
+                     </td>
+                     <td class="col4">
+                        <!-- Removed add to bag, when on a file, because it was buggy -->
+                    </td>
+                  </tr> 
+                  <tr>
+                     <td class="col1">
+                        <xsl:text>&#160;</xsl:text>
+                     </td>
+                     <td class="col2">
+                        <xsl:if test="$sort = 'creator'">
+                           <a name="{$anchor}"/>
+                        </xsl:if>
+                        <!-- 9/26/11 WS: changed author to creator-->
+                        <b>Creator:&#160;&#160;</b>
+                     </td>
+                     <td class="col3">
+                        <xsl:choose>
+                           <xsl:when test="meta/collectionCreator">
+                              <xsl:apply-templates select="meta/collectionCreator[1]"/>
+                           </xsl:when>
+                           <xsl:otherwise>none</xsl:otherwise>
+                        </xsl:choose>
+                     </td>
+                     <td class="col4">
+                        <xsl:text>&#160;</xsl:text> 
+                     </td>
+                  </tr>              
+               </xsl:otherwise>
+            </xsl:choose>
+            <xsl:if test="meta/subject">
+               <tr>
+                  <td class="col1">
+                     <xsl:text>&#160;</xsl:text>
+                  </td>
+                  <td class="col2">
+                     <b>Subjects:&#160;&#160;</b>
+                  </td>
+                  <td class="col3">
+                     <xsl:apply-templates select="meta/subject"/>
+                  </td>
+                  <td class="col4">
+                     <xsl:text>&#160;</xsl:text>
+                  </td>
+               </tr>
+            </xsl:if>
+            <xsl:for-each select="current-group()[meta/level != 'collection']">
+<!--            <xsl:for-each select="current-group()[position() &lt; 5][meta/level != 'collection']">-->
+               <tr>
+                  <td></td>
+                  <td></td>
+                  <td colspan="3">
+                  <xsl:call-template name="subDocument"/>
+                  </td>
+               </tr>
+            </xsl:for-each>
+            <!-- "more like this" -->
+            <tr>
+               <td class="col1">
+                  <xsl:text>&#160;</xsl:text>
+               </td>
+               <td class="col2">
+                  <b>Similar&#160;Items:&#160;&#160;</b>
+               </td>
+               <td class="col3" colspan="2">
+                  <script type="text/javascript">
+                     getMoreLike_<xsl:value-of select="@rank"/> = function() {
+                        var span = YAHOO.util.Dom.get('moreLike_<xsl:value-of select="@rank"/>');
+                        span.innerHTML = "Fetching...";
+                        YAHOO.util.Connect.asyncRequest('GET', 
+                           '<xsl:value-of select="concat('search?smode=moreLike;docsPerPage=5;identifier=', $identifier)"/>',
+                           { success: function(o) { span.innerHTML = o.responseText; },
+                             failure: function(o) { span.innerHTML = "Failed!" } 
+                           }, null);
+                     };
+                  </script>
+                  <span id="moreLike_{@rank}">
+                     <a href="javascript:getMoreLike_{@rank}()">Find</a>
+                  </span>
+               </td>
+            </tr> 
+         </table>
+      </div>
+      
+         <!-- 
+        <xsl:for-each select="current-group()[position() &lt; 5]">
+        <div>
+        <xsl:apply-templates select="docHit" mode="subDoc"/>
+        </div>
+        </xsl:for-each>
+        
+     --> 
+   </xsl:template>
+   
+   <xsl:template name="subDocument">
+      <xsl:variable name="chunk.id" select="@subDocument"/>         
+      <xsl:variable name="level" select="meta/level"/>
+      <xsl:variable name="path" select="@path"/>
+      <xsl:variable name="identifier" select="meta/identifier[1]"/>
+      <xsl:variable name="quotedID" select="concat('&quot;', $identifier, '&quot;')"/>
+      <xsl:variable name="indexId" select="replace($identifier, '.*/', '')"/>
+      <!-- 1/12/12 WS: Added docPath variable to enable scrolling to sub-document hits -->
+      <xsl:variable name="docPath">
+         <xsl:variable name="uri">
+            <xsl:call-template name="dynaxml.url">
+               <xsl:with-param name="path" select="$path"/>
+            </xsl:call-template>
+         </xsl:variable>
+         <xsl:choose>
+            <xsl:when test="$chunk.id != ''">
+               <xsl:value-of select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+               <!-- Link used to get sub-document out of context               
+                  <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
+               -->
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="$uri"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <!-- scrolling anchor -->
+      <xsl:variable name="anchor">
+         <xsl:choose>
+            <xsl:when test="$sort = 'creator'">
+               <xsl:value-of select="substring(string(meta/creator[1]), 1, 1)"/>
+            </xsl:when>
+            <xsl:when test="$sort = 'title'">
+               <xsl:value-of select="substring(string(meta/title[1]), 1, 1)"/>
+            </xsl:when>
+         </xsl:choose>
+      </xsl:variable>
+      <table style="width:100%;">
+         <tr>
+            <td class="col1">
+               <xsl:text>&#160;</xsl:text>
+            </td>
+            <td class="col3" colspan="2">
+               <a>
+                  <xsl:attribute name="href">
+                     <xsl:value-of select="$docPath"/>
+                  </xsl:attribute>
+                  <xsl:choose>
+                     <xsl:when test="meta/title">
+                        <xsl:choose>
+                           <xsl:when test="count(meta/title) &gt; 1">
+                              <xsl:apply-templates select="meta/title[2]"/>      
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <xsl:apply-templates select="meta/title[1]"/>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </xsl:when>
+                     <xsl:when test="meta/subtitle">
+                        <xsl:choose>
+                           <xsl:when test="count(meta/subtitle) &gt; 1">
+                              <xsl:apply-templates select="meta/subtitle[2]"/>      
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <xsl:apply-templates select="meta/subtitle[1]"/>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </xsl:when>
+                     <xsl:otherwise>none</xsl:otherwise>
+                  </xsl:choose>
+               </a>
+               <xsl:text>&#160;</xsl:text>
+               <xsl:variable name="type" select="meta/type"/>
+               <!--
+                  <span class="typeIcon">
+                  <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
+                  </span>
+               -->
+            </td>
+            <td class="col4">
+               <!-- Add/remove logic for the session bag (only if session tracking enabled) -->
+               <span class="addToBag">
+                  <xsl:if test="session:isEnabled()">
+                     <xsl:choose>
+                        <xsl:when test="$smode = 'showBag'">
+                           <script type="text/javascript">
+                              remove_<xsl:value-of select="@rank"/> = function() {
+                                 var span = YAHOO.util.Dom.get('remove_<xsl:value-of select="@rank"/>');
+                                 span.innerHTML = "Deleting...";
+                                 YAHOO.util.Connect.asyncRequest('GET', 
+                                    '<xsl:value-of select="concat($xtfURL, $crossqueryPath, '?smode=removeFromBag;identifier=', $identifier)"/>',
+                                    {  success: function(o) { 
+                                          var main = YAHOO.util.Dom.get('main_<xsl:value-of select="@rank"/>');
+                                          main.parentNode.removeChild(main);
+                                          --(YAHOO.util.Dom.get('itemCount').innerHTML);
+                                       },
+                                       failure: function(o) { span.innerHTML = 'Failed to delete!'; }
+                                    }, null);
+                              };
+                           </script>
+                           <span id="remove_{@rank}">
+                              <a href="javascript:remove_{@rank}()">Delete</a>
+                           </span>
+                        </xsl:when>
+                        <xsl:when test="session:noCookie()">
+                           <span><a href="javascript:alert('To use the bag, you must enable cookies in your web browser.')">Requires cookie*</a></span>                                 
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:choose>
+                              <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                                 <span>Added</span>
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <script type="text/javascript">
+                                    add_<xsl:value-of select="@rank"/> = function() {
+                                       var span = YAHOO.util.Dom.get('add_<xsl:value-of select="@rank"/>');
+                                       span.innerHTML = "Adding...";
+                                       YAHOO.util.Connect.asyncRequest('GET', 
+                                          '<xsl:value-of select="concat($xtfURL, $crossqueryPath, '?smode=addToBag;identifier=', $identifier)"/>',
+                                          {  success: function(o) { 
+                                                span.innerHTML = o.responseText;
+                                                ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                             },
+                                             failure: function(o) { span.innerHTML = 'Failed to add!'; }
+                                          }, null);
+                                    };
+                                 </script>
+                                 <span id="add_{@rank}">
+                                    <a href="javascript:add_{@rank}()">Add</a>
+                                 </span>
+                              </xsl:otherwise>
+                           </xsl:choose>
+                           <xsl:value-of select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString))"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </xsl:if>
+               </span>
+            </td>
+         </tr> 
+         <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
+         <xsl:if test="descendant-or-self::snippet">
+            <tr style="font-size:.95em;">
+               <td class="col1">
+                  <xsl:text>&#160;</xsl:text>
+               </td>
+               <td class="col3" colspan="3">
+                  <b>Matches:&#160;&#160;</b>
+                  (<xsl:value-of select="@totalHits"/>
+                  <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>)&#160;&#160;&#160;&#160;
+                  <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
+               </td>
+            </tr>
+         </xsl:if>         
+      </table>
+   </xsl:template>
+
    <!-- ====================================================================== -->
    <!-- Snippet Template (for snippets in the full text)                       -->
    <!-- ====================================================================== -->

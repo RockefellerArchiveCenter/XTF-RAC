@@ -100,7 +100,10 @@
                   </xsl:when>     
                   <xsl:when test="$sort='rss'">
                      <xsl:value-of select="'-sort-date,sort-title'"/>
-                  </xsl:when>         
+                  </xsl:when>  
+                  <xsl:when test="$sort='collection'">
+                     <xsl:value-of select="'collection,sort-title'"/>
+                  </xsl:when>                     
                </xsl:choose>
             </xsl:attribute>
          </xsl:if>
@@ -137,6 +140,13 @@
          <!-- hierarchical date facet, shows most recent years first -->
          <xsl:call-template name="facet">
             <xsl:with-param name="field" select="'facet-date'"/>
+            <xsl:with-param name="topGroups" select="'*'"/>
+            <xsl:with-param name="sort" select="'reverseValue'"/>
+         </xsl:call-template>
+         
+         <!-- 3/26/12 WS: Testing collection facet -->
+         <xsl:call-template name="facet">
+            <xsl:with-param name="field" select="'facet-collection'"/>
             <xsl:with-param name="topGroups" select="'*'"/>
             <xsl:with-param name="sort" select="'reverseValue'"/>
          </xsl:call-template>

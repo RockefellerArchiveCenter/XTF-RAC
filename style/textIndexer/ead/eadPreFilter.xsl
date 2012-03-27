@@ -268,6 +268,23 @@
       </xsl:copy>
    </xsl:template>
    
+   <xsl:template match="archdesc/did/origination[starts-with(@role, 'Author')]">
+      <xsl:copy>
+         <xsl:copy-of select="@*"/>
+         <xsl:attribute name="xtf:sectionType" select="'creator'"/>
+         <xsl:attribute name="xtf:wordBoost" select="100.0"/>
+         <xsl:apply-templates/>
+      </xsl:copy>
+   </xsl:template>
+   <xsl:template match="archdesc/did/origination[starts-with(@role, 'Contributor')]">
+      <xsl:copy>
+         <xsl:copy-of select="@*"/>
+         <xsl:attribute name="xtf:sectionType" select="'creator'"/>
+         <xsl:attribute name="xtf:wordBoost" select="100.0"/>
+         <xsl:apply-templates/>
+      </xsl:copy>
+   </xsl:template>
+   
   <!-- 1/26/12 WS: added bioghist and scopecontent templates for advanced search --> 
    <xsl:template match="archdesc/bioghist" mode="addChunkId">
       <xsl:copy>
@@ -345,7 +362,8 @@
                <xsl:copy-of select="$dcMeta"/>
             </xsl:when>
             <xsl:otherwise>
-               <xsl:call-template name="get-ead-grpID"/>
+               <xsl:call-template name="get-ead-collection"/>
+               <xsl:call-template name="get-ead-identifier"/>
                <xsl:call-template name="get-ead-level"/>
                <xsl:call-template name="get-ead-title"/>
                <xsl:call-template name="get-ead-creator"/>
@@ -358,7 +376,6 @@
                <xsl:call-template name="get-ead-date"/>
                <xsl:call-template name="get-ead-type"/>
                <xsl:call-template name="get-ead-format"/>
-               <xsl:call-template name="get-ead-identifier"/>
                <xsl:call-template name="get-ead-source"/>
                <xsl:call-template name="get-ead-language"/>
                <xsl:call-template name="get-ead-relation"/>
@@ -383,12 +400,41 @@
       </xsl:call-template>    
    </xsl:template>
    
-   <!-- Group ID -->
-   <xsl:template name="get-ead-grpID">
-      <grpID xtf:meta="true" xtf:tokenize="no">
-         <xsl:value-of select="/ead/eadheader/eadid"></xsl:value-of>
-      </grpID>
+   <!-- Collection ID and facet -->
+   <xsl:template name="get-ead-collection">
+      <xsl:variable name="parentID">
+         <xsl:choose>
+            <xsl:when test="/ead/archdesc/did/unitid">
+               <collection xtf:meta="true" xtf:tokenize="no">
+                  <xsl:value-of select="string(/ead/archdesc/did/unitid[1])"/>
+               </collection>
+            </xsl:when>
+            <xsl:when test="/ead/eadheader/eadid" xtf:tokenize="no">
+               <collection xtf:meta="true" xtf:tokenize="no">
+                  <xsl:value-of select="string(substring-before(/ead/eadheader/eadid[1],'.xml'))"/>
+               </collection>
+            </xsl:when>
+            <xsl:otherwise>
+               <collection xtf:meta="true" xtf:tokenize="no">
+                  <xsl:value-of select="'unknown'"/>
+               </collection>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:choose>
+         <xsl:when test="@level">
+            <collection xtf:meta="true" xtf:tokenize="no">
+               <xsl:value-of select="concat($parentID,'::',@id)"/>
+            </collection>
+         </xsl:when>
+         <xsl:otherwise>
+            <collection xtf:meta="true" xtf:tokenize="no">
+               <xsl:value-of select="$parentID"/>
+            </collection>
+         </xsl:otherwise>
+      </xsl:choose>
    </xsl:template>   
+   
    <!-- level -->
    <xsl:template name="get-ead-level">
       <xsl:choose>
@@ -409,64 +455,74 @@
          <xsl:when test="@level">
             <xsl:variable name="seriesTitle">
                <xsl:choose>
-                  <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">File: <xsl:value-of select="did/unittitle"/></xsl:when>
+                  <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">
+                     File: 
+                     <xsl:choose>
+                        <xsl:when test="string-length(did/unittitle) &gt; 1">
+                           <xsl:value-of select="did/unittitle"/>       
+                        </xsl:when>
+                        <xsl:when test="string-length(did/unitdate) &gt; 1"></xsl:when>
+                        <xsl:otherwise>Unknown</xsl:otherwise>
+                     </xsl:choose>
+                  </xsl:when>
                   <xsl:otherwise>
                      <xsl:choose>
-                        <xsl:when test="@level='series'">Series <xsl:value-of select="unitid"/>: </xsl:when>
-                        <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="unitid"/>: </xsl:when>
-                        <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="unitid"/>: </xsl:when>
-                        <xsl:when test="@level='collection'">Collection <xsl:value-of select="unitid"/>: </xsl:when>
-                        <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="unitid"/>: </xsl:when>
-                        <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="unitid"/>: </xsl:when>
-                        <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="unitid"/>: </xsl:when>
-                        <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="unitid"/>: </xsl:when>
-                        <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="unitid"/>: </xsl:when>
+                        <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
+                        <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
+                        <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
+                        <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
+                        <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"/>: </xsl:when>
+                        <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
+                        <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
+                        <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
+                        <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
                         <xsl:otherwise/>
                      </xsl:choose>
-                     <xsl:value-of select="did/unittitle"/>
+                     <xsl:choose>
+                        <xsl:when test="string-length(did/unittitle) &gt; 1">
+                           <xsl:value-of select="did/unittitle"/>       
+                        </xsl:when>
+                        <xsl:when test="string-length(did/unitdate) &gt; 1">
+                           <xsl:value-of select="did/unitdate"/> 
+                        </xsl:when>
+                        <xsl:otherwise>Unknown</xsl:otherwise>
+                     </xsl:choose>
                   </xsl:otherwise>
                </xsl:choose>         
             </xsl:variable>
-            <xsl:variable name="collTitle" select="string(/ead/eadheader/filedesc/titlestmt/titleproper[1])"/>
+            <xsl:variable name="collTitle">
+               <xsl:choose>
+                  <xsl:when test="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']">
+                     <xsl:value-of select="string(/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing'])"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="string(/ead/eadheader/filedesc/titlestmt/titleproper)"/>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </xsl:variable> 
             <xsl:choose>
                <xsl:when test="did/unittitle">
-                  <title xtf:meta="true">
-                     <xsl:value-of select="concat($collTitle,'. ',$seriesTitle)"/>
-                  </title>
+                  <collectionTitle xtf:meta="true">
+                     <xsl:value-of select="$collTitle"/>
+                  </collectionTitle>
+                  <subtitle xtf:meta="true">
+                     <xsl:value-of select="$seriesTitle"/>
+                  </subtitle>
                </xsl:when>
                <xsl:otherwise>
-                  <title xtf:meta="true">
+                  <collectionTitle xtf:meta="true">
+                     <xsl:value-of select="$collTitle"/>
+                  </collectionTitle>
+                  <subtitle xtf:meta="true">
                      <xsl:value-of select="'unknown'"/>
-                  </title>
+                  </subtitle>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:when>
          <xsl:when test="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']">
             <xsl:variable name="titleproper" select="string(/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing'])"/>
             <xsl:variable name="subtitle" select="string(/ead/eadheader/filedesc/titlestmt/subtitle)"/>
-            <titleproper xtf:meta="true">
-               <xsl:value-of select="$titleproper"/>
-               <xsl:if test="$subtitle">
-                  <!-- Put a colon between main and subtitle, if none present already -->
-                  <xsl:if test="not(matches($titleproper, ':\s*$') or matches($subtitle, '^\s*:'))">
-                     <xsl:text>: </xsl:text>
-                  </xsl:if>  
-                  <xsl:value-of select="$subtitle"/>
-               </xsl:if>
-            </titleproper>
             <title xtf:meta="true">
-               <xsl:value-of select="$titleproper"/>
-               <xsl:if test="$subtitle">
-                  <!-- Put a colon between main and subtitle, if none present already -->
-                  <xsl:if test="not(matches($titleproper, ':\s*$') or matches($subtitle, '^\s*:'))">
-                     <xsl:text>: </xsl:text>
-                  </xsl:if>  
-                  <xsl:value-of select="$subtitle"/>
-               </xsl:if>
-            </title>
-            <title xtf:meta="true">
-               <xsl:variable name="titleproper" select="string(/ead/eadheader/filedesc/titlestmt/titleproper[not(@type ='filing')])"/>
-               <xsl:variable name="subtitle" select="string(/ead/eadheader/filedesc/titlestmt/subtitle)"/>
                <xsl:value-of select="$titleproper"/>
                <xsl:if test="$subtitle">
                   <!-- Put a colon between main and subtitle, if none present already -->
@@ -480,16 +536,6 @@
          <xsl:when test="/ead/eadheader/filedesc/titlestmt/titleproper">
             <xsl:variable name="titleproper" select="string(/ead/eadheader/filedesc/titlestmt/titleproper)"/>
             <xsl:variable name="subtitle" select="string(/ead/eadheader/filedesc/titlestmt/subtitle)"/>
-            <titleproper xtf:meta="true">
-               <xsl:value-of select="$titleproper"/>
-               <xsl:if test="$subtitle">
-                  <!-- Put a colon between main and subtitle, if none present already -->
-                  <xsl:if test="not(matches($titleproper, ':\s*$') or matches($subtitle, '^\s*:'))">
-                     <xsl:text>: </xsl:text>
-                  </xsl:if>  
-                  <xsl:value-of select="$subtitle"/>
-               </xsl:if>
-            </titleproper>
             <title xtf:meta="true">
                <xsl:value-of select="$titleproper"/>
                <xsl:if test="$subtitle">
@@ -509,16 +555,6 @@
          <xsl:when test="/ead/eadheader/filedesc/titlestmt/titleproper">
             <xsl:variable name="titleproper" select="string(/ead/eadheader/filedesc/titlestmt/titleproper)"/>
             <xsl:variable name="subtitle" select="string(/ead/eadheader/filedesc/titlestmt/subtitle)"/>
-            <titleproper xtf:meta="true">
-               <xsl:value-of select="$titleproper"/>
-               <xsl:if test="$subtitle">
-                  <!-- Put a colon between main and subtitle, if none present already -->
-                  <xsl:if test="not(matches($titleproper, ':\s*$') or matches($subtitle, '^\s*:'))">
-                     <xsl:text>: </xsl:text>
-                  </xsl:if>  
-                  <xsl:value-of select="$subtitle"/>
-               </xsl:if>
-            </titleproper>
             <title xtf:meta="true">
                <xsl:value-of select="$titleproper"/>
                <xsl:if test="$subtitle">
@@ -543,20 +579,27 @@
       <xsl:choose>
          <xsl:when test="@level">
             <xsl:choose>
-               <xsl:when test="did/origination/child::*[1][starts-with(@role, 'Author')]">
-                  <creator xtf:meta="true">
-                     <xsl:value-of select="normalize-space(string(did/origination[child::*[starts-with(@role, 'Author')]][1]/child::*))"/>
-                  </creator>
-               </xsl:when>
-               <xsl:when test="did/origination/child::*[1][starts-with(@role, 'Contributor')]">
-                  <creator xtf:meta="true">
-                     <xsl:value-of select="normalize-space(string(did/origination[child::*[starts-with(@role, 'Contributor')]][1]/child::*))"/>
-                  </creator>
+               <xsl:when test="did/origination">
+                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+                     <collectionCreator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </collectionCreator>
+                  </xsl:for-each>
+                  <xsl:for-each select="did/origination">
+                     <subcreator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(string(child::*))"/>
+                     </subcreator>
+                  </xsl:for-each>
                </xsl:when>
                <xsl:otherwise>
-                  <creator xtf:meta="true">
+                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+                     <collectionCreator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </collectionCreator>
+                  </xsl:for-each>
+                  <subcreator xtf:meta="true">
                      <xsl:value-of select="'unknown'"/>
-                  </creator>
+                  </subcreator>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:when>
@@ -753,7 +796,7 @@
       <!-- 9/27/11 WS: Changed date to grab from archdesc/did/unitdate/@type="inclusive" -->
       <xsl:choose>
          <xsl:when test="@level">
-            <xsl:choose>
+         <!--   <xsl:choose>
                <xsl:when test="did/unitdate[@type='inclusive']">
                   <date xtf:meta="true">
                      <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
@@ -761,6 +804,7 @@
                </xsl:when>
                <xsl:otherwise/>
             </xsl:choose>
+            -->
          </xsl:when>
          <xsl:when test="/ead/archdesc/did/unitdate[@type='inclusive']">
             <date xtf:meta="true">

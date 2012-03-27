@@ -117,9 +117,8 @@
          <xsl:apply-templates select="$meta/*:date" mode="year"/>
          
          <!-- Create sort fields -->
-         <xsl:apply-templates select="$meta/*:title[1]" mode="sort"/>
-         <!-- Removed the [1] to select all creators for sorting -->         
-         <xsl:apply-templates select="$meta/*:creator" mode="sort"/>
+         <xsl:apply-templates select="$meta/*:title[1]" mode="sort"/>         
+         <xsl:apply-templates select="$meta/*:creator[1]" mode="sort"/>
          <xsl:apply-templates select="$meta/*:date[1]" mode="sort"/>
          
          <!-- Create facets -->
@@ -127,6 +126,7 @@
          <xsl:apply-templates select="$meta/*:subject" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subjectname" mode="facet"/>
          <xsl:apply-templates select="$meta/*:geogname" mode="facet"/>
+         <xsl:apply-templates select="$meta/*:collection" mode="facet"/>
          
          
          <xsl:apply-templates select="$meta/*:title[1]" mode="browse"/>
@@ -200,6 +200,7 @@
    </xsl:template>
    
    <!-- 9/27/11 WS: Added additional facets -->
+   
    <!-- Generate facet-subjectname -->
    <xsl:template match="*:subjectname" mode="facet">
       <facet-subjectname>
@@ -208,6 +209,7 @@
          <xsl:value-of select="normalize-unicode(string(.))"/>
       </facet-subjectname>
    </xsl:template>
+   
    <!-- Generate facet-geogname -->
    <xsl:template match="*:geogname" mode="facet">
       <facet-geogname>
@@ -215,6 +217,15 @@
          <xsl:attribute name="xtf:facet" select="'yes'"/>
          <xsl:value-of select="normalize-unicode(string(.))"/>
       </facet-geogname>
+   </xsl:template>
+   
+   <!-- 3/26/12 WS: Added facet for collection faceting -->
+   <xsl:template match="*:collection" mode="facet">
+      <facet-collection>
+         <xsl:attribute name="xtf:meta" select="'true'"/>
+         <xsl:attribute name="xtf:facet" select="'yes'"/>
+         <xsl:value-of select="normalize-unicode(string(.))"/>
+      </facet-collection>
    </xsl:template>
    
    <!-- Generate browse-title -->

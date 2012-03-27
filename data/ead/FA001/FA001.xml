@@ -4,9 +4,11 @@
         <eadid countrycode="US" mainagencycode="US-NNttR">FA001.xml</eadid>
         <filedesc>
             <titlestmt>
-                <titleproper>Guide to the Max Bergmann papers <num>FA001</num>
+                <titleproper>Guide to the Max Bergmann papers
+                    <num>FA001</num>
                 </titleproper>
-                <author>Finding aid prepared by Marisa Hudspeth</author>
+                <titleproper type="filing">Bergmann (Max) papers</titleproper>
+                <author>Finding aid prepared by Marisa Hudspeth, Amy Fitch</author>
             </titlestmt>
             <publicationstmt>
                 <publisher>Rockefeller Archive Center</publisher>
@@ -20,7 +22,8 @@
             </publicationstmt>
         </filedesc>
         <profiledesc>
-            <creation>This finding aid was produced using the Archivists' Toolkits  <date>2011-07-27T10:38-0400</date>
+            <creation>This finding aid was produced using the Archivists' Toolkit
+                <date>2012-01-31T09:55-0500</date>
             </creation>
             <langusage>English</langusage>
             <descrules>Describing Archives: A Content Standard</descrules>
@@ -37,51 +40,47 @@
                 <language langcode="eng"/>
             </langmaterial>
             <physdesc>
-                <extent>5.8 cubic ft.</extent>
-                <extent>15 boxes</extent>
+                <extent>6.0 cubic ft.</extent>
+                <extent>16 boxes</extent>
             </physdesc>
             <unitdate normal="1941/1945" type="bulk">Bulk, 1941-1945</unitdate>
             <unitdate normal="1886/1961" type="inclusive">1886-1961 (bulk 1941-1945)</unitdate>
-            <origination label="author">
-                <persname source="lcnaf" role="author">Bergmann, M. (Max), 1886-1944</persname>
+            <origination label="creator">
+                <persname source="lcnaf" role="Author (aut)">Bergmann, M. (Max), 1886-1944</persname>
             </origination>
             <origination label="creator">
-                <corpname source="lcnaf">Rockefeller Institute for Medical Research.</corpname>
+                <corpname source="lcnaf" role="Contributor (ctb)">Rockefeller Institute for Medical Research.</corpname>
             </origination>
-            <physdesc id="ref14" label="General Physical Description note">General Physical Description note content</physdesc>
-            <physdesc id="ref23" label="Physical Facet note">
-                <physfacet>Physical Facet note content</physfacet>
-            </physdesc>            
         </did>
         <arrangement id="ref3">
-            <head>System of Arrangement:</head>
-            <p>Arranged in 4 series: 1. Personal; 2. Laboratory Administration; 3. Research; and 4. Publications</p>
+            <head>Arrangement note</head>
+            <p>The collection is arranged in five series: 1) Personal, 2) Laboratory Administration, 3) Research, 4) Publications, and 5) Declassified Reports. See the individual series descriptions for more details on the contents of each series.</p>
+            <p></p>
         </arrangement>
         <accessrestrict id="ref4">
-            <head>Conditions Governing Access:</head>
-            <p>The collection was reviewed by Archivist Francis Butkus of the National Archives in 1985. The majority of the collection was then declassified. The remaining classified documents have been separated into Box 15. Access to classified materials requires that a written request by the researcher be submitted to the National Archives for approval. Max Bergmann's physical examination records are also closed in accordance with HIPAA regulations.</p>
+            <head>Conditions Governing Access note</head>
+            <p>The collection was reviewed by archivist Francis Butkus of the National Archives in 1985. The majority of the collection was then declassified. During archival processing, the remaining classified documents were separated into Box 15 and have since been declassified as of December 28, 2011. Use the stamped declassified copies in Box 15 for access to these materials. Max Bergmann's physical examination records are closed in accordance with HIPAA regulations.</p>
         </accessrestrict>
         <acqinfo id="ref5">
-            <head>Immediate Source of Acquisition:</head>
+            <head>Immediate Source of Acquisition note</head>
             <p>Received from the Rockefeller University in 1981.</p>
         </acqinfo>
         <userestrict id="ref6">
-            <head>Conditions Governing Reproduction and Use:</head>
+            <head>Conditions Governing Use note</head>
             <p>Copyright restrictions may apply. All requests for reproduction and use of material require additional forms to be submitted for approval by the Rockefeller Archive Center.</p>
         </userestrict>
         <appraisal id="ref7">
-            <head>Appraisal, Destruction, and Scheduling Information:</head>
+            <head>Appraisal note</head>
             <p>Duplicate reports and circulars were discarded. Also, in cases where preservation photocopies were necessary due to the poor condition of the original document, the original document was discarded.</p>
         </appraisal>
         <relatedmaterial id="ref8">
-            <head>Related Archival Materials:</head>
+            <head>Related Archival Materials note</head>
             <p>The American Philosophical Society (APS) Library has additional papers of Max Bergmann. A copy of the collection description and inventory for the records housed at the APS Library can be found in Series 1, Folder 1. An abstract of the collection is also available on the APS Library website at: 
                 <extref ns2:href="http://www.amphilsoc.org/library/mole/b.htm#Bergmann">http://www.amphilsoc.org/library/mole/b.htm#Bergmann</extref>.</p>
         </relatedmaterial>
         <bioghist id="ref10">
             <head>Biographical/Historical note</head>
-            <p>Max Bergmann was a German biochemist. He was born in Furth, Bavaria on February 12, 1886. After receiving his Ph.D. from the University of Berlin in 1911, he worked closely as an assistant to Hermann Emil Fischer from 1911 to 1919. Together, they laid the foundation for scientific knowledge of proteins, carbohydrates, and tannins. Following the suicide of Fischer, Bergmann accepted a position as Vice–Director and Head of the Department of Organic Chemistry at the Kaiser Wilhelm Institute for Fiber Chemistry in Berlin. In 1921, he moved on to serve as Director of the Kaiser Wilhelm Institute for Leather Research until 1933. When the conditions in Germany grew too hostile, he immigrated to the United States and became an Associate Member of the Rockefeller Institute for Medical Research where he continued as a pioneer of applied sciences focused on proteins and protein–splitting enzymes, as well as the chemistry of carbohydrates and fats. In 1937, he became a full member of the Institute. He died at Mount Sinai Hospital in New York on November 7, 1944. At the time of his death, he was working under contract with the U.S. Office of Scientific Research and Development to benefit the national defense during World War II. This research focused on the synthetic, analytical, and inorganic problems in chemical warfare and B–4 toxicity, especially mustard gases.</p>
-            <p>testing testing</p>
+            <p>Max Bergmann was a German biochemist. He was born in Furth, Bavaria on February 12, 1886. After receiving his Ph.D. from the University of Berlin in 1911, he worked closely as an assistant to Hermann Emil Fischer from 1911 to 1919. Together, they laid the foundation for scientific knowledge of proteins, carbohydrates, and tannins. Following the suicide of Fischer, Bergmann accepted a position as Vice–Director and Head of the Department of Organic Chemistry at the Kaiser Wilhelm Institute for Fiber Chemistry in Berlin. In 1921, he moved on to serve as Director of the Kaiser Wilhelm Institute for Leather Research until 1933. When the conditions in Germany grew too hostile, he emigrated to the United States and became an Associate Member of the Rockefeller Institute for Medical Research where he continued as a pioneer of applied sciences focused on proteins and protein–splitting enzymes, as well as the chemistry of carbohydrates and fats. In 1937, he became a full member of the Institute. He died at Mount Sinai Hospital in New York on November 7, 1944. At the time of his death, he was working under contract with the U.S. Office of Scientific Research and Development to benefit the national defense during World War II. This research focused on the synthetic, analytical, and inorganic problems in chemical warfare and B–4 toxicity, especially mustard gases.</p>
             <chronlist>
                 <head>Chronology</head>
                 <chronitem>
@@ -139,14 +138,9 @@
             </chronlist>
         </bioghist>
         <scopecontent id="ref12">
-            <head>Scope and Content Note</head>
-            <p>This collection primarily documents the laboratory research and administration of biochemist Dr. Max Bergmann during his tenure at the Rockefeller Institute for Medical Research, now the Rockefeller University, from 1934 until his death in 1944. The records are particularly focused on the research he conducted in the 1940's on problems of interest to the U.S. Armed Forces, namely the synthetic, analytical, and inorganic problems in chemical warfare and B–4 toxicity, especially mustard gases. Records consist mostly of laboratory research notes, notes on related scientific literature, research progress reports, correspondence with colleagues and administrative officials, administrative circulars and memoranda, reprints of Bergmann publications, and receipts of classified reports and scientific samples. Research topics of interest include World War II chemical warfare research, Selective Service deferments for scientists, policies and procedures of the Office of Scientific Research and Development and the National Defense Research Committee, and the “brain drain” or significant emigration of scientists and technologists to the United States from Europe as a result of hostile conditions prior to World War II. The collection also contains a minimal amount of biographical material, including Bergmann's personal correspondence, documents relating to Bergmann's funeral, and photographs.</p>
-            <p>The collection is arranged in four series: 1. Personal, 2. Laboratory Administration, 3. Research, and 4. Publications. See the individual series descriptions for more details on the contents of each series.</p>
+            <head>Scope and Contents note</head>
+            <p>This collection primarily documents the laboratory research and administration of biochemist Dr. Max Bergmann during his tenure at the Rockefeller Institute for Medical Research, now the Rockefeller University, from 1934 until his death in 1944. The records are particularly focused on the research he conducted in the 1940s on problems of interest to the U.S. Armed Forces, namely the synthetic, analytical, and inorganic problems in chemical warfare and B–4 toxicity, especially mustard gases. Records consist mostly of laboratory research notes, notes on related scientific literature, research progress reports, correspondence with colleagues and administrative officials, administrative circulars and memoranda, reprints of Bergmann publications, and receipts of classified reports and scientific samples. Research topics of interest include World War II chemical warfare research, Selective Service deferments for scientists, policies and procedures of the Office of Scientific Research and Development and the National Defense Research Committee, and the “brain drain” or significant emigration of scientists and technologists to the United States from Europe as a result of hostile conditions prior to World War II. The collection also contains a minimal amount of biographical material, including Bergmann's personal correspondence, documents relating to Bergmann's funeral, and photographs.</p>
         </scopecontent>
-        <fileplan audience="internal" id="ref250">
-            <head>File Plan note</head>
-            <p>I.450.B454</p>
-        </fileplan>
         <prefercite id="ref252">
             <head>Preferred Citation note</head>
             <p>Repository Name, Collection Name, Record Group Name (if applicable), Series Name (if applicable), Box #, Folder #, and specific information identifying the individual item used.</p>
@@ -187,8 +181,6 @@
                         <unittitle>American Philosophical Society Library: Max Bergmann Papers</unittitle>
                         <container id="cid221" type="Box" label="Mixed materials">1</container>
                         <container parent="cid221" type="Folder">1</container>
-                        <container id="cid223" type="Box" label="Mixed materials">3</container>
-                        <container parent="cid223" type="Folder">3</container>
                         <unitdate>undated</unitdate>
                     </did>
                 </c>
@@ -258,9 +250,9 @@
                         <unitdate normal="1924/1934" type="inclusive">1924?, 1934?</unitdate>
                     </did>
                 </c>
-                <c id="ref233" level="subseries">
+                <c id="ref23" level="file">
                     <did>
-                        <unittitle>TEST subseries</unittitle>
+                        <unittitle>Scientific Periodicals and Books from the Library of Dr. Max Bergmann</unittitle>
                         <container id="cid213" type="Box" label="Mixed materials">1</container>
                         <container parent="cid213" type="Folder">10</container>
                         <unitdate normal="1944/1944">1944</unitdate>
@@ -279,11 +271,12 @@
                 </did>
                 <arrangement id="ref149">
                     <head>Arrangement:</head>
-                    <p>This series has been retained in its original order and the original file folder labels were used. Bergmann arranged his folders alphabetically by subject. Within the folders, he roughly arranged his records either in reverse chronological order or by subject depending on the type of document. For instance, the correspondence files tend to be in reverse chronological order; whereas, more general files are in alphabetical order by subject, which is usually typed on the right side of the document. His arrangement within folders; however, is not always consistent. The Office Memorandum folders, for instance combine order by memorandum number within a rough overall alphabetical order. Bergmann also maintained a system of extensive cross–references within these files.</p>
+                    <p>This series has been retained in its original order and the original file folder labels were used. Bergmann arranged his folders alphabetically by subject. Within the folders, he roughly arranged his records either in reverse chronological order or by subject depending on the type of document. For instance, the correspondence files tend to be in reverse chronological order, whereas more general files are in alphabetical order by subject, which is usually typed on the right side of the document. His arrangement within folders, however, is not always consistent. The Office Memorandum folders, for instance, combine order by memorandum number within a rough overall alphabetical order. Bergmann also maintained a system of extensive cross–references within these files.</p>
                 </arrangement>
                 <scopecontent id="ref150">
                     <head>Summary:</head>
                     <p>This series documents Max Bergmann's administration of his laboratory at Rockefeller University while it was under contract with the U.S. Office of Scientific Research and Development to conduct research of benefit to the national defense during World War II. This research focused on the synthetic, analytical, and inorganic problems in chemical warfare and B–4 toxicity, especially mustard gases. This series consists primarily of correspondence, receipts, and forms tracking the routine exchange and use of scientific reports. Correspondence with other scientists also documents the exchange of samples, as well as directions for specific tests, preparations of samples, and brief discussions of reactions and test results. Also included is a significant amount of correspondence and forms related to the Espionage Act Oaths of Secrecy and Selective Service deferments for the scientists working in Bergmann's laboratory. The Literature files consist of reports and reprints from other scientists, along with Bergmann's handwritten notes about what he read. Also included in this series is an incomplete set of Administrative Circulars and Office Memorandum documenting the policies and procedures of the Office of Scientific Research and Development and the National Defense Research Committee. The majority of memos are located in Box 5, but some are filed alphabetically by subject throughout the series.</p>
+                    <p>Eight folders in this series have a correlating folder with the same title in series 5: Declassified Reports, the contents of which were declassified by the U.S. Army after this collection was archivally processed. Researchers may wish to review both the folder in this series as well as the one with the same title found in series 5 for a full view of material on a given subject.</p>
                 </scopecontent>
                 <c id="ref28" level="file">
                     <did>
@@ -615,11 +608,9 @@
                 </c>
                 <c id="ref69" level="file">
                     <did>
-                        <unittitle>Literature II: A.G.Ogston and R. A. Peters</unittitle>
+                        <unittitle>Literature II: A. G. Ogston and R. A. Peters</unittitle>
                         <container id="cid171" type="Box" label="Mixed materials">3</container>
                         <container parent="cid171" type="Folder">14</container>
-                        <container id="cid5872" type="Box" label="Mixed materials">15</container>
-                        <container parent="cid5872" type="Folder">1</container>
                         <unitdate normal="1940/1943" type="inclusive">1940–1943</unitdate>
                     </did>
                 </c>
@@ -628,8 +619,6 @@
                         <unittitle>Literature III: E thru L</unittitle>
                         <container id="cid170" type="Box" label="Mixed materials">3</container>
                         <container parent="cid170" type="Folder">15</container>
-                        <container id="cid5871" type="Box" label="Mixed materials">15</container>
-                        <container parent="cid5871" type="Folder">2</container>
                         <unitdate normal="1942/1944" type="inclusive">1942–1944</unitdate>
                     </did>
                 </c>
@@ -638,8 +627,6 @@
                         <unittitle>Literature IV: Miscellaneous</unittitle>
                         <container id="cid169" type="Box" label="Mixed materials">3</container>
                         <container parent="cid169" type="Folder">16</container>
-                        <container id="cid5870" type="Box" label="Mixed materials">15</container>
-                        <container parent="cid5870" type="Folder">3</container>
                         <unitdate normal="1942/1943" type="inclusive">1942–1943</unitdate>
                     </did>
                 </c>
@@ -648,8 +635,6 @@
                         <unittitle>Literature V: A thru D</unittitle>
                         <container id="cid168" type="Box" label="Mixed materials">3</container>
                         <container parent="cid168" type="Folder">17</container>
-                        <container id="cid5869" type="Box" label="Mixed materials">15</container>
-                        <container parent="cid5869" type="Folder">4</container>
                         <unitdate normal="1942/1944" type="inclusive">1942–1944</unitdate>
                     </did>
                 </c>
@@ -658,8 +643,6 @@
                         <unittitle>Literature VI: M thru P</unittitle>
                         <container id="cid167" type="Box" label="Mixed materials">3</container>
                         <container parent="cid167" type="Folder">18</container>
-                        <container id="cid5868" type="Box" label="Mixed materials">15</container>
-                        <container parent="cid5868" type="Folder">5</container>
                         <unitdate normal="1942/1944" type="inclusive">1942–1944</unitdate>
                     </did>
                 </c>
@@ -706,8 +689,6 @@
                 <c id="ref79" level="file">
                     <did>
                         <unittitle>Literature XII: Porton Reports</unittitle>
-                        <container id="cid5867" type="Box" label="Mixed materials">15</container>
-                        <container parent="cid5867" type="Folder">6</container>
                         <container id="cid161" type="Box" label="Mixed materials">4</container>
                         <container parent="cid161" type="Folder">4</container>
                         <unitdate normal="1942/1944" type="inclusive">1942–1944</unitdate>
@@ -716,8 +697,6 @@
                 <c id="ref80" level="file">
                     <did>
                         <unittitle>Literature XIII: Q thru Z</unittitle>
-                        <container id="cid5866" type="Box" label="Mixed materials">15</container>
-                        <container parent="cid5866" type="Folder">7</container>
                         <container id="cid160" type="Box" label="Mixed materials">4</container>
                         <container parent="cid160" type="Folder">5</container>
                         <unitdate normal="1941/1944" type="inclusive">1941–1944</unitdate>
@@ -736,8 +715,6 @@
                         <unittitle>M</unittitle>
                         <container id="cid158" type="Box" label="Mixed materials">4</container>
                         <container parent="cid158" type="Folder">7</container>
-                        <container id="cid5865" type="Box" label="Mixed materials">15</container>
-                        <container parent="cid5865" type="Folder">8</container>
                         <unitdate normal="1941/1944" type="inclusive">1941–1944</unitdate>
                     </did>
                 </c>
@@ -1285,12 +1262,11 @@
                 <scopecontent id="ref211">
                     <head>Summary:</head>
                     <p>This series documents the research Max Bergmann and his scientific staff conducted under contract with the U.S. Office of Scientific Research and Development to benefit the national defense during World War II. This research focused on the synthetic, analytical, and inorganic problems in chemical warfare and B–4 toxicity, especially mustard gases. Records consist primarily of informal and formal progress reports, as well as the laboratory and literature notes of two of Bergmann's key scientific staff members, William H. Stein and Stanford Moore.</p>
+                    <p>Eight folders in this series have a correlating folder with the same title in series 5: Declassified Reports, the contents of which were declassified by the U.S. Army after this collection was archivally processed. Researchers may wish to review both the folder in this series as well as the one with the same title found in series 5 for a full view of material on a given subject.</p>
                 </scopecontent>
                 <c id="ref153" level="file">
                     <did>
                         <unittitle>British Reports</unittitle>
-                        <container id="cid5861" type="Box" label="Mixed materials">15</container>
-                        <container parent="cid5861" type="Folder">9</container>
                         <container id="cid91" type="Box" label="Mixed materials">10</container>
                         <container parent="cid91" type="Folder">1</container>
                         <unitdate normal="1941/1942" type="inclusive">undated, 1941–1942</unitdate>
@@ -1677,8 +1653,6 @@
                     <c id="ref200" level="file">
                         <did>
                             <unittitle>Literature Notes – H (Chemical)</unittitle>
-                            <container id="cid5879" type="Box" label="Mixed materials">15</container>
-                            <container parent="cid5879" type="Folder">10</container>
                             <container id="cid45" type="Box" label="Mixed materials">12</container>
                             <container parent="cid45" type="Folder">2</container>
                             <unitdate normal="1940/1945" type="inclusive">1940–1945</unitdate>
@@ -1687,8 +1661,6 @@
                     <c id="ref201" level="file">
                         <did>
                             <unittitle>Literature Notes – H (Physiological)</unittitle>
-                            <container id="cid5878" type="Box" label="Mixed materials">15</container>
-                            <container parent="cid5878" type="Folder">11</container>
                             <container id="cid44" type="Box" label="Mixed materials">12</container>
                             <container parent="cid44" type="Folder">3</container>
                             <unitdate normal="1942/1944" type="inclusive">1942–1944</unitdate>
@@ -1697,8 +1669,6 @@
                     <c id="ref202" level="file">
                         <did>
                             <unittitle>Literature Notes – H and Divinyl Sulfone</unittitle>
-                            <container id="cid5877" type="Box" label="Mixed materials">15</container>
-                            <container parent="cid5877" type="Folder">12</container>
                             <container id="cid43" type="Box" label="Mixed materials">12</container>
                             <container parent="cid43" type="Folder">4</container>
                             <unitdate normal="1941/1944" type="inclusive">1941–1944</unitdate>
@@ -1707,8 +1677,6 @@
                     <c id="ref203" level="file">
                         <did>
                             <unittitle>Literature Notes – MFA</unittitle>
-                            <container id="cid5876" type="Box" label="Mixed materials">15</container>
-                            <container parent="cid5876" type="Folder">13</container>
                             <container id="cid42" type="Box" label="Mixed materials">12</container>
                             <container parent="cid42" type="Folder">5</container>
                             <unitdate normal="1942/1944" type="inclusive">undated, 1942–1944</unitdate>
@@ -1717,8 +1685,6 @@
                     <c id="ref204" level="file">
                         <did>
                             <unittitle>Literature Notes – N–Mustards</unittitle>
-                            <container id="cid5875" type="Box" label="Mixed materials">15</container>
-                            <container parent="cid5875" type="Folder">14</container>
                             <container id="cid41" type="Box" label="Mixed materials">12</container>
                             <container parent="cid41" type="Folder">6</container>
                             <unitdate normal="1942/1944" type="inclusive">1942–1944</unitdate>
@@ -1727,8 +1693,6 @@
                     <c id="ref205" level="file">
                         <did>
                             <unittitle>Literature Notes – Other Agents</unittitle>
-                            <container id="cid5874" type="Box" label="Mixed materials">15</container>
-                            <container parent="cid5874" type="Folder">15</container>
                             <container id="cid40" type="Box" label="Mixed materials">12</container>
                             <container parent="cid40" type="Folder">7</container>
                             <unitdate normal="1942/1944" type="inclusive">undated, 1942–1944</unitdate>
@@ -1745,8 +1709,6 @@
                     <c id="ref207" level="file">
                         <did>
                             <unittitle>Literature Notes – W Agent</unittitle>
-                            <container id="cid5873" type="Box" label="Mixed materials">15</container>
-                            <container parent="cid5873" type="Folder">16</container>
                             <container id="cid38" type="Box" label="Mixed materials">12</container>
                             <container parent="cid38" type="Folder">9</container>
                             <unitdate normal="1943/1943">undated, 1943</unitdate>
@@ -2055,6 +2017,156 @@
                             <unitdate normal="1926/1946" type="inclusive">1926–1946</unitdate>
                         </did>
                     </c>
+                </c>
+            </c>
+            <c id="ref257" level="series">
+                <did>
+                    <unittitle>Declassifed Reports</unittitle>
+                    <unitid>5</unitid>
+                    <physdesc>
+                        <extent>0.4 cubic ft.</extent>
+                    </physdesc>
+                    <unitdate normal="1940/1945" type="inclusive">1940-1945</unitdate>
+                </did>
+                <accessrestrict id="ref259">
+                    <head>Access:</head>
+                    <p>Researchers are required to use the stamped declassified photocopies in Box 15. The originals are in Box 16 and are closed.</p>
+                </accessrestrict>
+                <scopecontent id="ref326">
+                    <head>Summary:</head>
+                    <p>This series contain documents that were declassified by the U.S. Army after this collection was archivally processed. The contents of each folder in series 5 originated from a correlating folder of the same name in either series 2 or series 3. Researchers may wish to review both the folder in this series as well as the one with the same title found in a previous series for a full view of material on a given subject.</p>
+                </scopecontent>
+                <arrangement id="ref325">
+                    <head>Arrangement note:</head>
+                    <p>The folders in series 5 are in the same order as the correlating folders in series 2 and 3.</p>
+                </arrangement>
+                <c id="ref258" level="file">
+                    <did>
+                        <unittitle>Literature II: A. G. Ogston and R. A. Peters</unittitle>
+                        <container id="cid7115001" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7115001" type="Folder">1</container>
+                        <unitdate normal="1940/1943" type="inclusive">1940-1943</unitdate>
+                    </did>
+                </c>
+                <c id="ref265" level="file">
+                    <did>
+                        <unittitle>Literature III: E thru L</unittitle>
+                        <container id="cid7115004" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7115004" type="Folder">2</container>
+                        <unitdate normal="1942/1944" type="inclusive">1942-1944</unitdate>
+                    </did>
+                </c>
+                <c id="ref266" level="file">
+                    <did>
+                        <unittitle>Literature IV: Miscellaneous</unittitle>
+                        <container id="cid7115005" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7115005" type="Folder">3</container>
+                        <unitdate normal="1942/1943" type="inclusive">1942-1943</unitdate>
+                    </did>
+                </c>
+                <c id="ref268" level="file">
+                    <did>
+                        <unittitle>Literature V: A thru D</unittitle>
+                        <container id="cid7115007" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7115007" type="Folder">4</container>
+                        <unitdate normal="1942/1944" type="inclusive">1942-1944</unitdate>
+                    </did>
+                </c>
+                <c id="ref270" level="file">
+                    <did>
+                        <unittitle>Literature VI: M thru P</unittitle>
+                        <container id="cid7115009" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7115009" type="Folder">5</container>
+                        <unitdate normal="1942/1944" type="inclusive">1942-1944</unitdate>
+                    </did>
+                </c>
+                <c id="ref273" level="file">
+                    <did>
+                        <unittitle>Literature XII: Porton Reports</unittitle>
+                        <container id="cid7115011" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7115011" type="Folder">6</container>
+                        <unitdate normal="1942/1944" type="inclusive">1942-1944</unitdate>
+                    </did>
+                </c>
+                <c id="ref275" level="file">
+                    <did>
+                        <unittitle>Literature XIII: Q thru Z</unittitle>
+                        <container id="cid7119001" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7119001" type="Folder">7</container>
+                        <unitdate normal="1941/1944" type="inclusive">1941-1944</unitdate>
+                    </did>
+                </c>
+                <c id="ref277" level="file">
+                    <did>
+                        <unittitle>M</unittitle>
+                        <container id="cid7119003" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7119003" type="Folder">8</container>
+                        <unitdate normal="1941/1944" type="inclusive">1941–1944</unitdate>
+                    </did>
+                </c>
+                <c id="ref279" level="file">
+                    <did>
+                        <unittitle>Research: British Notes</unittitle>
+                        <container id="cid7119005" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7119005" type="Folder">9</container>
+                        <unitdate normal="1941/1942" type="inclusive">undated, 1941–1942</unitdate>
+                    </did>
+                </c>
+                <c id="ref281" level="file">
+                    <did>
+                        <unittitle>Literature Notes – H (Chemical)</unittitle>
+                        <container id="cid7119007" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7119007" type="Folder">10</container>
+                        <unitdate normal="1940/1945" type="inclusive">1940-1945</unitdate>
+                    </did>
+                </c>
+                <c id="ref283" level="file">
+                    <did>
+                        <unittitle>Literature Notes – H (Physiological)</unittitle>
+                        <container id="cid7119009" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7119009" type="Folder">11</container>
+                        <unitdate normal="1942/1944" type="inclusive">1942-1944</unitdate>
+                    </did>
+                </c>
+                <c id="ref285" level="file">
+                    <did>
+                        <unittitle>Literature Notes – H and Divinyl Sulfone</unittitle>
+                        <container id="cid7119011" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7119011" type="Folder">12</container>
+                        <unitdate normal="1941/1944" type="inclusive">1941-1944</unitdate>
+                    </did>
+                </c>
+                <c id="ref287" level="file">
+                    <did>
+                        <unittitle>Literature Notes – MFA</unittitle>
+                        <container id="cid7119013" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7119013" type="Folder">13</container>
+                        <unitdate normal="1942/1944" type="inclusive">undated, 1942-1944</unitdate>
+                    </did>
+                </c>
+                <c id="ref289" level="file">
+                    <did>
+                        <unittitle>Literature Notes – N–Mustards</unittitle>
+                        <container id="cid7119015" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7119015" type="Folder">14</container>
+                        <unitdate normal="1942/1944" type="inclusive">1942-1944</unitdate>
+                    </did>
+                </c>
+                <c id="ref291" level="item">
+                    <did>
+                        <unittitle>Literature Notes – Other Agents</unittitle>
+                        <container id="cid7119017" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7119017" type="Folder">15</container>
+                        <unitdate normal="1942/1944" type="inclusive">undated, 1942-1944</unitdate>
+                    </did>
+                </c>
+                <c id="ref293" level="file">
+                    <did>
+                        <unittitle>Literature Notes – W Agent</unittitle>
+                        <container id="cid7119019" type="Box" label="Mixed materials">15</container>
+                        <container parent="cid7119019" type="Folder">16</container>
+                        <unitdate normal="1943/1943">undated, 1943</unitdate>
+                    </did>
                 </c>
             </c>
         </dsc>
