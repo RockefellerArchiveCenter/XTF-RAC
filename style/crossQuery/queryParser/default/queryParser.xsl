@@ -102,7 +102,7 @@
                      <xsl:value-of select="'-sort-date,sort-title'"/>
                   </xsl:when>  
                   <xsl:when test="$sort='collection'">
-                     <xsl:value-of select="'collection,sort-title'"/>
+                     <xsl:value-of select="'collection,sort-title,sort-creator,sort-publisher,sort-year'"/>
                   </xsl:when>                     
                </xsl:choose>
             </xsl:attribute>
