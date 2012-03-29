@@ -225,6 +225,7 @@
                   &#160;<select name="sectionType">
                      <option value="">all</option>
                      <option value="titleproper">Collection Title</option>
+                     <option value="creator">Creator</option>
                      <option value="bioghist">Biographical or Historical Note</option>
                      <option value="scopecontent">Scope and Content Note</option>
                      <option value="controlaccess">Subject Headings</option>

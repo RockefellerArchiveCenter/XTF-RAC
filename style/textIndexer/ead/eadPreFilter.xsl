@@ -133,29 +133,8 @@
    <!-- Rearranged to match html output -->
    <xsl:template match="did" mode="addChunkId">
       <xsl:copy>
-         <xsl:copy-of select="@*"/>     
-         <xsl:choose>
-            <xsl:when test="parent::archdesc">
-               <!--         <xsl:apply-templates select="repository"/>-->
-               <xsl:apply-templates select="origination"/>
-               <xsl:apply-templates select="unittitle"/>
-               <xsl:apply-templates select="cont"></xsl:apply-templates>
-               <!--         <xsl:apply-templates select="../scopecontent"/>-->
-               <xsl:apply-templates select="unitdate"/>
-               <xsl:apply-templates select="physdesc[@extent]"/>
-               <xsl:apply-templates select="abstract"/>
-               <!--
-                  <xsl:apply-templates select="unitid"/>
-                  <xsl:apply-templates select="physloc"/>
-                  <xsl:apply-templates select="langmaterial"/>
-               -->
-               <xsl:apply-templates select="materialspec"/>
-               <xsl:apply-templates select="note"/>
-            </xsl:when>
-            <xsl:otherwise>
-               <xsl:apply-templates/>
-            </xsl:otherwise>
-         </xsl:choose>
+         <xsl:copy-of select="@*"/>    
+         <xsl:apply-templates/>         
       </xsl:copy>
    </xsl:template>
    
@@ -268,19 +247,11 @@
       </xsl:copy>
    </xsl:template>
    
-   <xsl:template match="archdesc/did/origination[starts-with(@role, 'Author')]">
+   <xsl:template match="origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'Author')] | origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'Contributor')]">
       <xsl:copy>
          <xsl:copy-of select="@*"/>
          <xsl:attribute name="xtf:sectionType" select="'creator'"/>
-         <xsl:attribute name="xtf:wordBoost" select="100.0"/>
-         <xsl:apply-templates/>
-      </xsl:copy>
-   </xsl:template>
-   <xsl:template match="archdesc/did/origination[starts-with(@role, 'Contributor')]">
-      <xsl:copy>
-         <xsl:copy-of select="@*"/>
-         <xsl:attribute name="xtf:sectionType" select="'creator'"/>
-         <xsl:attribute name="xtf:wordBoost" select="100.0"/>
+         <xsl:attribute name="xtf:wordBoost" select="95.0"/>
          <xsl:apply-templates/>
       </xsl:copy>
    </xsl:template>
