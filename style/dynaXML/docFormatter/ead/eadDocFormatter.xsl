@@ -374,12 +374,8 @@
                   <xsl:when test="$doc.view = 'collection'">
                      <xsl:attribute name="class">select</xsl:attribute>
                   </xsl:when>
-                  <xsl:when test="$doc.view = 'contents'">
-                     <xsl:attribute name="class"/>
-                  </xsl:when>
-                  <xsl:when test="$doc.view = 'digital'">
-                     <xsl:attribute name="class"/>
-                  </xsl:when>
+                  <xsl:when test="$doc.view = 'contents'"/>
+                  <xsl:when test="$doc.view = 'digital'"/>
                   <xsl:otherwise>
                      <xsl:attribute name="class">select</xsl:attribute>                     
                   </xsl:otherwise>
@@ -421,9 +417,9 @@
                </xsl:if>
                <xsl:call-template name="make-tab-link">
                   <xsl:with-param name="name" select="'Contents List'"/>
-                  <xsl:with-param name="id" select="'contentsLink'"/>
+                  <xsl:with-param name="id" select="archdesc/dsc/child::*[1]/@id"/>
                   <xsl:with-param name="doc.view" select="'contents'"/>
-                  <xsl:with-param name="nodes" select="archdesc/dsc/child::*"/>
+                  <xsl:with-param name="nodes" select="archdesc/dsc/child::*[1]"/>
                </xsl:call-template>
 <!--               <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}&amp;doc.view=contents">Contents List</a>-->
             </li>
