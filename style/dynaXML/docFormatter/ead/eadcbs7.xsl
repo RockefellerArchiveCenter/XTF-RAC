@@ -1600,7 +1600,7 @@
             </xsl:when>
             <!--This code process the elements when unitdate is not a child of untititle-->
             <xsl:otherwise>
-               <xsl:apply-templates select="unittitle"/><xsl:if test="unitdate and unittitle and string-length(unittitle) &gt; 1">, </xsl:if>
+               <xsl:apply-templates select="unittitle"/><xsl:if test="unitdate"><xsl:if test="string-length(unittitle) &gt; 0">, </xsl:if> </xsl:if>
                 <xsl:for-each select="unitdate[not(self::unitdate[@type='bulk'])]">
                     <xsl:apply-templates/>
                     <xsl:text>&#160;</xsl:text>
