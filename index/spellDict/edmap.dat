@@ -5646,7 +5646,7 @@ cath|catch|5ing|3hcart|4edral|5rine|4ode|5lic|8s|0mcarthur
 cati|cantril|2ptain|4ion|2sting|2tching|2ustic|1itation|1reation|6ve|0location|8s|0vacation|8s|1ocational
 catl|castle|2talog|7ers|5yst|3holic|8s|3tell|4le|0ocatal
 catn|canton|2sting
-cato|canton|2petown|3tion|2rto|2stro|2talog|7ers|3egory|3hode|5lic|8s|1lanton|3yton
+cato|canton|2petown|3tion|2rto|2stro|2talog|7ers|3egory|3hode|5lic|8s|1lanton|3yton|1reator
 catr|cantril|2rter|2stro|2therine
 cats|cadets|2rts|1harts|1oates|1rafts|6men
 catt|cattell|4le|1hattanooga
@@ -5834,7 +5834,7 @@ cdif|cardiff
 cdim|cedimom
 cdin|coddington
 cdio|cardiology|1edimom
-cdit|condition|9al|9s|1redit|6ors|6s
+cdit|condition|9al|9s|1redit|6s
 cdmo|cedimom
 cdna|mcdonald
 cdoa|mcdonald
@@ -5861,11 +5861,11 @@ ceai|ceramics|3tain|1leaning|4ring|1reation|6ve|0oceanic
 ceal|cental
 ceam|ceramics
 cean|cleaning|0iceland|0mcewan|2lean|0ocean|5ic|5ographic|;y
-ceao|oceanographic|;y
+ceao|creator|0oceanographic|;y
 ceap|chesapeake
 cear|caesar|1eara|2dar|1hevarri|1lear|5ed|5ing
 ceas|cherasky
-ceat|created|5ion|6ve
+ceat|created|5ion|6ve|5or
 ceay|celaya
 ceb |caleb
 cebo|codebook
@@ -5881,11 +5881,11 @@ ceco|czechoslovakia
 cecs|checks
 ced |acted|0cedar|1oded|1reed|0paced
 ceda|cedar
-cedi|cedimom|1redit|6ors|6s
+cedi|cedimom|1redit|6s
 cedm|cedimom
 cedo|cedimom
 cedr|cedar
-cedt|credit|6ors|6s
+cedt|credit|6s
 cee |ceter|1reed|4k|4l|3te|0mcgee|2kee
 ceeb|celebration|;s|1hesebrough
 ceed|creed
@@ -5918,7 +5918,7 @@ cein|celine
 ceio|cedimom
 ceip|receipt|7s
 ceis|chemist|7ry
-ceit|credit|6ors|6s
+ceit|credit|6s
 ceiv|receive|7d|6ing
 cek |check|1lerk|1reek
 ceks|checks
@@ -6004,7 +6004,7 @@ cetf|certificate|;s|7es
 ceti|certain|4ificate|;s|7es|1reation|6ve
 cetl|cental
 cetn|centenario|6nial
-ceto|capetown|1entro
+ceto|capetown|1entro|1reator
 cetr|center|6s|4ral|5e|5o|4ury|2ter
 cets|cadets
 cetu|century
@@ -7349,11 +7349,11 @@ crai|ceramics|3tain|1ranfill|2eation|6ve|1urtains
 cral|choral
 cram|ceramics|1ramer
 cran|crandall|4e|4fill|1urran|0scranton
-crao|cracow|3wford
+crao|cracow|3wford|2eator
 crap|scrapbook|9s
 crar|cramer
 cras|cherasky|1rafts|6men|3sh
-crat|crafts|6men|2eated|5ion|6ve|0scranton
+crat|crafts|6men|2eated|5ion|6ve|5or|0scranton
 crav|caravans
 craw|cracow|3wford
 craz|cortazar
@@ -7380,27 +7380,27 @@ crda|cordial|1randall
 crdb|cordoba
 crde|crowder|2ude
 crdf|cardiff
-crdi|cardiff|5ology|1oordinated|9ing|9ors|2rdial|1redit|6ors|6s
+crdi|cardiff|5ology|1oordinated|9ing|9ors|2rdial|1redit|6s
 crdo|cardiology|1ordoba|5va
 crds|cards|1rowds
-crdt|credit|6ors|6s
+crdt|credit|6s
 crdv|cordova
 cre |acres|0care|4y|3se|1lare|1ore|1rane|2eed|4k|4l|3te|2ime|2ude|1ure
-crea|created|5ion|6ve|1urenavaca|0increased|7ing|0recreation
+crea|created|5ion|6ve|5or|1urenavaca|0increased|7ing|0recreation
 crec|correctional|:s
-cred|credit|6ors|6s|3ed|0sacred
+cred|credit|6s|3ed|0sacred
 cree|career|6s|1reated|3ed|4k|4l|3te|0screening
 cref|careful
 creg|carnegie|0mcgregor
-crei|creation|6ve|3dit|6ors|6s|0schreier
+crei|creation|6ve|3dit|6s|0schreier
 crek|creek
 crel|cornelia|7s|6l|3relating|1reel|2owell|2uelty
 crem|ceremonies|7y|1laremont|1remome|5rne
 cren|carpenter|1larence|1urenavaca|3rent|0screening|3rening
-creo|ceremonies|7y|1remome|5rne
+creo|ceremonies|7y|1reator|3mome|5rne
 crer|career|6s|3mer|3ter|3ver|1orner|1ramer|2emorne
 cres|accresciemento|2res|2tress|0correspondence|<t|=s
-cret|carleton|1orbett|3zette|1reated|5ion|6ve|3dit|6ors|6s|3te|2uelty|0secret|6ariat|8y
+cret|carleton|1orbett|3zette|1reated|5ion|6ve|5or|3dit|6s|3te|2uelty|0secret|6ariat|8y
 creu|careful
 crey|carey|3ley
 crfi|cranfill
@@ -7427,7 +7427,7 @@ crin|caring|3mine|1orinto|3ning|1yrin|0scrivner
 crio|cardiology|1larion|1urious
 crip|crippled|7s|0scriptural
 cris|christ|6ened|6i|7an|9s|7na|6mas|6opher|6y|1ribs|3sis|1urtis|6s|0scrimshaw
-crit|charitable|6ies|6y|2rist|6ened|6i|7an|9s|7na|6mas|6opher|6y|1orinto|1redit|6ors|6s|2itical|6ism|6s|4z|1uritiba|0scriptural
+crit|charitable|6ies|6y|2rist|6ened|6i|7an|9s|7na|6mas|6opher|6y|1orinto|1redit|6s|2itical|6ism|6s|4z|1uritiba|0scriptural
 criu|curious
 criv|carnival|0scrivner
 criz|critz
@@ -7525,7 +7525,7 @@ crtf|certificate|;s|7es
 crth|mcarthur
 crti|certain|4ificate|;s|7es|1reation|6ve|2itical|6ism|6s|1uritiba|3tains|4is|6s
 crtn|courtney|1roton
-crto|carto|1roton
+crto|carto|1reator|2oton
 crtr|carter
 crts|carts|1harts|1ourts|1rafts|6men|1urtis|6s
 crty|courtyard
@@ -9939,7 +9939,7 @@ eati|beatrice|3utiful|0creation|6ve|0eastside|2ting|1duation|0heating|0negative|
 eatl|seatle|4tle
 eatm|eastman|0treatment|9s
 eatn|eating|3on|0heating|0seating
-eato|eaton|0nematodes|0senator|0wheaton
+eato|creator|0eaton|0nematodes|0senator|0wheaton
 eatq|earthquake
 eatr|beatrice|0eastern|0feature|0theatre
 eats|eastside
@@ -10226,7 +10226,7 @@ edin|edinburgh|3son|2win|1ndrin|0feeding|0leading|2nding|0medina|0reading|7s|2dd
 edio|cedimom|0edison|3tor|6ial|0giedion
 edir|editor|6ial
 edis|edison|0redistribution|0swedish
-edit|credit|6ors|6s|0edith|4or|6ial|0pediatric|9s|0redistribution
+edit|credit|6s|0edith|4or|6ial|0pediatric|9s|0redistribution
 ediu|edinburgh
 edja|soedjarwo
 edko|ledkovsky
@@ -31754,7 +31754,7 @@ rath|marathon|0prather
 rati|creation|6ve|0drafting|1uration|0gratified|5tude|0practice|8s|7ing|0rational|1eactions|2lating|6on|8s|6ve|8s|0traction
 ratm|grantmakers|0trautman|6en|2eatment|9s
 ratn|rational
-rato|brayton|0orator|0rational|3zow|0saratoga|0tractor|7s
+rato|brayton|0creator|0orator|0rational|3zow|0saratoga|0tractor|7s
 ratr|fraternally|0orator
 rats|crafts|6men|0drafts|0grants|0rates
 ratt|gratitude|0pratt|0stratton
@@ -32008,7 +32008,7 @@ rdif|cardiff
 rdin|harding|7e|0reading|7s|2dding|0trading
 rdio|cardiology|0radio
 rdis|redistribution
-rdit|credit|6ors|6s|0radiation|1edistribution
+rdit|credit|6s|0radiation|1edistribution
 rdk |radke
 rdke|radke
 rdle|bradley|0redlener
@@ -32053,11 +32053,11 @@ reak|break|0remarkable
 real|real|4istic|5zation|4ty|2tailing|2veal
 ream|stream|6s|0treatment|9s
 rean|berean|1revand|0ireland|0korean|0orleans|0reading|7s|3son|6s|2main|6ed|6s|2tained|6s|0treanor
-reao|reason|6s|0treanor
+reao|creator|0reason|6s|0treanor
 reap|reappeared
 rear|frear|0preparation|6ed|6ing|0reader|6s|2gard|6ing|2hearsal|2markable|2pair|2search|8ers|9s|2tardation|6ed|2ward
 reas|areas|3nas|0realistic|3son|6s|4sessment|2lease|7s|0treas|5urer|7y
-reat|created|5ion|6ve|0great|5er|0premature|3natal|0reactions|3lty|2bates|2lated|5ing|6on|8s|6ve|8s|2peating|0threatened|1reatment|9s
+reat|created|5ion|6ve|5or|0great|5er|0premature|3natal|0reactions|3lty|2bates|2lated|5ing|6on|8s|6ve|8s|2peating|0threatened|1reatment|9s
 reau|bureau|0roseau|0treasurer|7y
 reaw|treadway
 reay|realty
@@ -32094,14 +32094,14 @@ red |armed|0bread|0creed|0fred|3ud|0read|2d|2ed|2id|0wrede
 redc|reduce|5tion
 redd|redden|4ing
 rede|breeders|0frederic|8k|2iedenwald|0reader|6s|2dden|3eemer|3lener|3uce|2gdev|2indeer|2sidence|7t|8ial|0wrede
-redi|breeding|0credit|6ors|6s|0meredith|0reading|7s|2dding|3istribution|2medial|6es
+redi|breeding|0credit|6s|0meredith|0reading|7s|2dding|3istribution|2medial|6es
 redl|redlener
 redm|freedman|6en|2iedman|0redeemer
 redn|reading|7s|2dden|4ing|3lener
 redo|freedom|0laredo
 redr|frederic|8k|0reader|6s
 reds|redistribution|0trends
-redt|credit|6ors|6s|0redistribution|3uction
+redt|credit|6s|0redistribution|3uction
 redu|reduce|5tion
 redv|regdev
 redw|treadway
@@ -32182,7 +32182,7 @@ reio|region|6al|6s|2inforcement|2union
 reip|receipt|7s|3ipient
 reir|repair|2quired|7ments|2spiratory|2tired|6ment|5ing|1ibeiro
 reis|precise|0realistic|2distribution|2gister|6ration|2sistance|2vised
-reit|credit|6ors|6s|0prewitt|0redistribution|2gister|6ration|2sistance
+reit|credit|6s|0prewitt|0redistribution|2gister|6ration|2sistance
 reiv|receive|7d|6ing
 reiw|review
 reiz|realization
@@ -32322,7 +32322,7 @@ reti|creation|6ve|0greeting|8s|0prentice|6ss|0reactions|2lating|6on|8s|6ve|8s|2s
 retl|retailing
 retm|treatment|9s
 retn|retained|6s|3inal|3urn|6ed
-reto|preto|5ria|0restoration|;s|0trenton
+reto|creator|0preto|5ria|0restoration|;s|0trenton
 retr|brethren|0pretoria|0restoration|;s|4ricted|8ions|2tardation|6ed|3ired|6ment|5ing|3reat|3urn|6ed
 rets|marets
 retu|return|6ed
@@ -48789,7 +48789,7 @@ cath|59
 cati|106
 catl|57
 catn|19
-cato|84
+cato|92
 catr|34
 cats|43
 catt|29
@@ -48977,7 +48977,7 @@ cdif|13
 cdim|13
 cdin|16
 cdio|24
-cdit|37
+cdit|32
 cdmo|13
 cdna|14
 cdoa|14
@@ -49004,11 +49004,11 @@ ceai|57
 ceal|12
 ceam|14
 cean|61
-ceao|22
+ceao|31
 ceap|16
 cear|47
 ceas|14
-ceat|22
+ceat|26
 ceay|12
 ceb |11
 cebo|14
@@ -49024,11 +49024,11 @@ ceco|20
 cecs|12
 ced |37
 ceda|11
-cedi|28
+cedi|23
 cedm|13
 cedo|13
 cedr|11
-cedt|20
+cedt|15
 cee |39
 ceeb|32
 ceed|11
@@ -49061,7 +49061,7 @@ cein|12
 ceio|13
 ceip|16
 ceis|17
-ceit|20
+ceit|15
 ceiv|21
 cek |23
 ceks|12
@@ -49147,7 +49147,7 @@ cetf|24
 ceti|42
 cetl|12
 cetn|22
-ceto|21
+ceto|29
 cetr|36
 cets|12
 cetu|13
@@ -50492,11 +50492,11 @@ crai|50
 cral|12
 cram|21
 cran|40
-crao|19
+crao|26
 crap|18
 crar|12
 cras|30
-crat|43
+crat|47
 crav|14
 craw|19
 craz|14
@@ -50523,27 +50523,27 @@ crda|22
 crdb|13
 crde|18
 crdf|13
-crdi|64
+crdi|59
 crdo|28
 crds|18
-crdt|20
+crdt|15
 crdv|13
 cre |71
-crea|61
+crea|65
 crec|21
-cred|32
+cred|27
 cree|48
 cref|13
 creg|24
-crei|41
+crei|36
 crek|11
 crel|50
 crem|42
 cren|60
-creo|32
+creo|38
 crer|52
 cres|54
-cret|88
+cret|87
 creu|13
 crey|16
 crfi|14
@@ -50570,7 +50570,7 @@ crin|48
 crio|32
 crip|29
 cris|79
-crit|128
+crit|123
 criu|13
 criv|24
 criz|11
@@ -50668,7 +50668,7 @@ crtf|24
 crth|14
 crti|81
 crtn|21
-crto|18
+crto|25
 crtr|12
 crts|47
 crty|15
@@ -53082,7 +53082,7 @@ eati|125
 eatl|17
 eatm|27
 eatn|34
-eato|40
+eato|49
 eatq|16
 eatr|41
 eats|14
@@ -53369,7 +53369,7 @@ edin|102
 edio|40
 edir|17
 edis|37
-edit|66
+edit|61
 ediu|15
 edja|15
 edko|15
@@ -74897,7 +74897,7 @@ rath|23
 rati|124
 ratm|43
 ratn|14
-rato|58
+rato|67
 ratr|25
 rats|40
 ratt|32
@@ -75151,7 +75151,7 @@ rdif|13
 rdin|44
 rdio|23
 rdis|20
-rdit|46
+rdit|41
 rdk |11
 rdke|11
 rdle|23
@@ -75196,11 +75196,11 @@ reak|23
 real|44
 ream|29
 rean|99
-reao|24
+reao|33
 reap|16
 rear|117
 reas|71
-reat|134
+reat|138
 reau|34
 reaw|14
 reay|12
@@ -75237,14 +75237,14 @@ red |59
 redc|18
 redd|17
 rede|112
-redi|84
+redi|79
 redl|14
 redm|36
 redn|34
 redo|21
 redr|28
 reds|28
-redt|44
+redt|39
 redu|18
 redv|12
 redw|14
@@ -75325,7 +75325,7 @@ reio|39
 reip|24
 reir|64
 reis|71
-reit|71
+reit|66
 reiv|21
 reiw|12
 reiz|17
@@ -75465,7 +75465,7 @@ reti|133
 retl|15
 retm|18
 retn|32
-reto|41
+reto|50
 retr|101
 rets|12
 retu|16
@@ -86282,4 +86282,4 @@ zvn |11
 zvo |11
 zvon|11
 zyme|15
-             1013114
+             1013140

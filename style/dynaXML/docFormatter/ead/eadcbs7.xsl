@@ -572,14 +572,14 @@
          </p>
       </xsl:if>
    </xsl:template>
-   <!--This template formats the repostory, origination, physdesc, abstract,
+   <!--This template formats the repostory, origination, abstract,
       unitid, physloc and materialspec elements of archdesc/did which share a common presentaiton.
       The sequence of their appearance is governed by the previous template.
       archdesc/did/langmaterial
    -->
    
    <xsl:template match="archdesc/did/repository | archdesc/did/unitid   
-      | archdesc/did/unitdate | archdesc/did/physdesc 
+      | archdesc/did/unitdate 
       | archdesc/did/abstract | archdesc/did/langmaterial | archdesc/did/materialspec | archdesc/did/container">      
       <!--The template tests to see if there is a label attribute,
          inserting the contents if there is or adding display textif there isn't.
@@ -588,7 +588,6 @@
          <h4>
              <xsl:choose>
                 <xsl:when test="self::repository">Repository </xsl:when>
-                <xsl:when test="self::physdesc[extent]">Extent </xsl:when>
                 <xsl:when test="self::physloc">Location </xsl:when>
                 <xsl:when test="self::unitid">Resource ID </xsl:when>
                 <xsl:when test="self::abstract">Abstract </xsl:when>
@@ -598,15 +597,7 @@
              </xsl:choose>
          </h4>
          <p>      
-            <xsl:choose>
-               <xsl:when test="self::physdesc[extent]">
-                  <xsl:value-of select="extent[1]"/>
-                  <xsl:if test="extent[position() &gt; 1]">, <xsl:value-of select="extent[position() &gt; 1]"/> </xsl:if>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:apply-templates/>               
-               </xsl:otherwise>
-            </xsl:choose>
+            <xsl:apply-templates/>               
          </p>        
    </xsl:template>
    
@@ -793,17 +784,19 @@
             <h4>Dimensions</h4>   
             <xsl:apply-templates select="*[not(head)]"/>
          </xsl:when>
+         <xsl:when test="extent">
+            <h4>Extent</h4>
+            <p>
+               <xsl:value-of select="extent[1]"/>
+               <xsl:if test="extent[position() &gt; 1]">, <xsl:value-of select="extent[position() &gt; 1]"/> </xsl:if>
+            </p>            
+         </xsl:when>
          <xsl:otherwise>
             <xsl:apply-templates/>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
-   
-   <xsl:template match="archdesc/did/physdesc[@label = 'General Physical Description note']">
-      <h2>Physical Description of Material </h2>   
-      <xsl:apply-templates/> 
-   </xsl:template>
-   
+
    <xsl:template match="langmaterial">
       <h4>Language</h4>
       <xsl:if test="language[@langcode]">
