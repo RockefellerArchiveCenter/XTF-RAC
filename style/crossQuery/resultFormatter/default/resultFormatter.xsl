@@ -533,7 +533,7 @@
             </xsl:variable>
             <xsl:choose>
                <xsl:when test="$chunk.id != ''">
-                  <xsl:value-of select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+                  <xsl:value-of select="concat($xtfURL,$uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
                   <!-- Link used to get sub-document out of context               
                      <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
                   -->
@@ -546,7 +546,7 @@
          <!-- Need to add choose statement to get correct url when subdocument -->
          <xsl:variable name="url">
             <xsl:value-of select="$docPath"/>
-            <xsl:choose>
+            <!--<xsl:choose>
                <xsl:when test="matches(meta/display, 'dynaxml')">
                   <xsl:call-template name="dynaxml.url">
                      <xsl:with-param name="path" select="$path"/>
@@ -557,13 +557,13 @@
                      <xsl:with-param name="path" select="$path"/>
                   </xsl:call-template>
                </xsl:otherwise>
-            </xsl:choose>
+               </xsl:choose>-->
          </xsl:variable>
-Item number <xsl:value-of select="$num"/>: 
-         <xsl:value-of select="meta/creator"/>. <xsl:value-of select="meta/title"/>. <xsl:value-of select="meta/subtitle"/>.
+            Item number <xsl:value-of select="$num"/>: 
+         <xsl:value-of select="meta/creator"/>. <xsl:value-of select="meta/title"/>. <xsl:if test="meta/collectionTitle"><xsl:value-of select="meta/collectionTitle"/>.</xsl:if> <xsl:value-of select="meta/subtitle"/>.
          <!-- 1/27/12 WS: changed meta/year to meta/date -->         
          <xsl:value-of select="meta/date"/>. 
-[<xsl:value-of select="$url"/>]
+         [<xsl:value-of select="$url"/>]
          
       </xsl:for-each>
    </xsl:template>
