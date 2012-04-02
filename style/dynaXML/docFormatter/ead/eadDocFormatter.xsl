@@ -421,6 +421,7 @@
                   <xsl:with-param name="doc.view" select="'contents'"/>
                   <xsl:with-param name="nodes" select="archdesc/dsc/child::*[1]"/>
                </xsl:call-template>
+               
 <!--               <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}&amp;doc.view=contents">Contents List</a>-->
             </li>
            <!-- <li>
@@ -440,7 +441,16 @@
       <xsl:param name="doc.view"/>
       <xsl:param name="nodes"/>
       <xsl:param name="indent" select="1"/>
-      <xsl:variable name="hit.count" select="sum($nodes/@xtf:hitCount)"/>
+      <xsl:variable name="hit.count">
+         <xsl:choose>
+            <xsl:when test="$nodes/child::*[@level]">
+               <xsl:value-of select="sum(/ead/archdesc/dsc/child::*/@xtf:hitCount)"/>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="sum($nodes/@xtf:hitCount)"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>   
          <a>
             <xsl:attribute name="href">
@@ -448,7 +458,7 @@
             </xsl:attribute>
             <xsl:value-of select="$name"/>
          </a>   
-         <xsl:if test="$hit.count != 0">
+      <xsl:if test="$hit.count != 0">
             <span class="hit"> (<xsl:value-of select="$hit.count"/>)</span>
          </xsl:if>      
    </xsl:template>
@@ -589,7 +599,6 @@
                                     archdesc/otherfindaid|
                                     archdesc/relatedmaterial|
                                     archdesc/altformavail|
-                                    archdesc/originalsloc|
                                     archdesc/bibliography"/>
                               </xsl:call-template>                        
                            </xsl:if>
@@ -645,10 +654,28 @@
                               <hr/>
                               <h4>Subjects</h4>
                               <ul class="none">
-                                 <xsl:for-each select="archdesc/controlaccess">
-                                    <xsl:for-each select="subject |corpname | famname | persname | genreform | title | geogname | occupation">
-                                       <li><xsl:apply-templates/></li>
-                                    </xsl:for-each>   
+                                 <xsl:for-each select="archdesc//controlaccess">
+                                    <xsl:for-each select="subject | genreform | title | occupation">
+                                       <li>
+                                          <a href="{$xtfURL}/search?browse-all=yes;f1-subject={.}">
+                                             <xsl:apply-templates/>
+                                          </a>
+                                       </li>
+                                    </xsl:for-each>
+                                    <xsl:for-each select="corpname | famname | persname">
+                                       <li>
+                                          <a href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}">
+                                             <xsl:apply-templates/>
+                                          </a>
+                                       </li>
+                                    </xsl:for-each> 
+                                    <xsl:for-each select="geogname ">
+                                       <li>
+                                          <a href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}">
+                                             <xsl:apply-templates/>
+                                          </a>
+                                       </li>
+                                    </xsl:for-each>                                             
                                  </xsl:for-each>
                               </ul>
                            </xsl:if>
@@ -762,7 +789,7 @@
                   </xsl:otherwise>
                </xsl:choose>
                <span class="hit-count">
-                  <xsl:if test="$hit.count &gt; 0">
+                  <xsl:if test="$hit.count">
                      (<xsl:value-of select="$hit.count"/>)
                   </xsl:if>  
                </span>
