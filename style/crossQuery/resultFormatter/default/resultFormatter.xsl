@@ -673,13 +673,14 @@
                      <td colspan="2" class="center">
                         <xsl:call-template name="alphaList">
                            <xsl:with-param name="alphaList" select="$alphaList"/>
+<!--                           <xsl:with-param name="level" select="'collection'"/>-->
                         </xsl:call-template>
                         <xsl:choose>
                            <xsl:when test="$browse-title">
-                             &#160;| <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;sort=title">BROWSE ALL</a>
+                              &#160;| <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;level=collection;sort=title">BROWSE ALL</a>
                            </xsl:when>
                            <xsl:when test="$browse-creator">
-                              &#160;| <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;sort=creator">BROWSE ALL</a>
+                              &#160;| <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;level=collection;sort=creator">BROWSE ALL</a>
                            </xsl:when>
                         </xsl:choose>
 
@@ -733,30 +734,30 @@
                <xsl:when test="$browse-title">
                   <span style="font-weight:bold; color:#666;">Collection Title</span>
                   | 
-                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title">Creator</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;level=collection;sort=title">Creator</a>
                   | 
-                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Browse All</a>  
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection">Browse All</a>  
                </xsl:when>
                <xsl:when test="$browse-creator">
-                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Collection Title</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;level=collection;sort=title">Collection Title</a>
                   | 
                   <span style="font-weight:bold; color:#666;">Creator</span>
                   | 
-                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Subject</a>  
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection">Subject</a>  
                </xsl:when>
                <xsl:when test="$browse-all">
-                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Collection Title</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;level=collection;sort=title">Collection Title</a>
                   | 
-                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title">Creator</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;level=collection;sort=title">Creator</a>
                   | 
                   <span style="font-weight:bold; color:#666;">Browse All</span>
                </xsl:when>
                <xsl:otherwise>
-                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title">Collection Title</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;level=collection;sort=title">Collection Title</a>
                   | 
-                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title">Creator</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;level=collection;sort=title">Creator</a>
                   | 
-                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes">Browse All</a>                    
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection">Browse All</a>                    
                </xsl:otherwise>
             </xsl:choose>  
              </p>
@@ -1420,6 +1421,10 @@
             </xsl:call-template>
          </xsl:variable>
          <xsl:choose>
+            <xsl:when test="meta/seriesID">
+               <xsl:variable name="seriesID" select="meta/seriesID"/>
+               <xsl:value-of select="concat($uri,';chunk.id=',$seriesID,';doc.view=contents','#',$chunk.id)"/>
+            </xsl:when>
             <xsl:when test="$chunk.id != ''">
                <xsl:value-of select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
                <!-- Link used to get sub-document out of context               
