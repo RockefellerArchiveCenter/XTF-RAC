@@ -336,6 +336,14 @@
                      </td>
                      <td>
                         <form method="get" action="{$xtfURL}{$crossqueryPath}">
+                           <input type="text" name="keyword" size="40" value="{$keyword}"/>
+                           <xsl:text>&#160;</xsl:text>
+                           <input type="submit" value="Search"/>
+                           <input type="hidden" value="collection" name="sort"/>
+                           <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
+                        </form>
+                        &#160;&#160;
+                        <form method="get" action="{$xtfURL}{$crossqueryPath}">
                            <b>Sorted by:&#160;</b>
                            <xsl:call-template name="sort.options"/>
                            <xsl:call-template name="hidden.query">
