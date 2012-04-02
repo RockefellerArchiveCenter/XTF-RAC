@@ -542,6 +542,7 @@
 <!--         <xsl:apply-templates select="langmaterial"/>-->
          <xsl:apply-templates select="materialspec"/>
          <xsl:apply-templates select="note"/>
+         <xsl:call-template name="contributors"/>
          <!-- Added link to Contents list -->
          <xsl:call-template name="make-tab-link">
             <xsl:with-param name="name" select="'Go to Contents List'"/>
@@ -562,6 +563,10 @@
             </xsl:for-each>
          </p>
       </xsl:if>
+</xsl:template>
+  
+   <!-- 1/19/12 WS: Special template to handle creator/contributor/source rules for RA -->
+   <xsl:template name="contributors">
       <xsl:if test="origination/child::*[starts-with(@role,'Source')]">
          <h4>Source</h4>
          <p>
@@ -1120,6 +1125,8 @@
             </xsl:for-each>
         </xsl:for-each>
           <tr>
+             <td style="width: 1%;"/>
+             <td style="width: 1%;"/>
              <td/>
              <td style="width: 15%;"/>
              <td style="width: 12%;"/>
@@ -1166,6 +1173,8 @@
             </xsl:for-each>
         </xsl:for-each>
           <tr>
+             <td style="width: 1%;"/>
+             <td style="width: 1%;"/>
              <td/>
              <td style="width: 15%;"/>
              <td style="width: 12%;"/>
@@ -1250,7 +1259,7 @@
                                    <xsl:otherwise>dscSeries</xsl:otherwise>
                                </xsl:choose>    
                          </xsl:attribute>
-                         <td colspan="6" class="{$clevelMargin}">
+                         <td colspan="8" class="{$clevelMargin}">
                              <xsl:call-template name="anchor"/>
                              <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
                              <xsl:apply-templates select="did/unittitle" mode="dsc"/>
@@ -1296,12 +1305,13 @@
                            <xsl:when test="child::*[@level][1]/@level='subcollection' or child::*[@level][1]/@level='subgrp' or child::*[@level][1]/@level='subseries' or child::*[@level][1]/@level='subfonds'"/>                        
                            <xsl:when test="child::*[@level][1]/@level='file' or child::*[@level][1]/@level='item' or (child::*[@level][1]/@level='otherlevel'and child::*[@level][1]/child::did/container)">
                                       <tr>
-                                         <td colspan="6" class="{$clevelChildMargin}">
+                                         <td colspan="8" class="{$clevelChildMargin}">
                                             <div class="inventoryTitle">Inventory</div>
                                          </td>
                                       </tr>    
                                       <tr class="containerTypes"> 
-                                         <td class="{$clevelChildMargin}">
+                                         <td class="{$clevelChildMargin}">&#160;</td>
+                                         <td>
                                             <div class="containerHeaderTitle"><xsl:text>Title</xsl:text></div>
                                          </td>
                                          <td>
@@ -1331,11 +1341,13 @@
                         <xsl:variable name="containerSib" select="count(../container[@parent = $id] | ../container[@id = $id])"/>
                         
                         <!-- Item lists are printed here -->
-                        <tr class="{$colorClass}"> 
+                        <tr class="file"> 
                               <xsl:if test="parent::did/parent::*/@id">
                                  <xsl:attribute name="id"><xsl:value-of select="parent::did/parent::*/@id"/></xsl:attribute>
                               </xsl:if>
-                           <td class="{$clevelMargin}">
+                           <td class="{$clevelMargin}">&#160;</td>
+                           <td class="borderDisplay"><div>&#160;</div></td>
+                           <td class="did">
                               <xsl:if test="position()=1">
                                  <xsl:apply-templates select="parent::did" mode="dsc"/>
                               </xsl:if>
@@ -1446,12 +1458,14 @@
                             <td><div class="containerHeader">Bookbag</div></td>
                          </tr> 
                       </xsl:if>
-                      <tr class="{$colorClass}">
+                      <tr class="file">
                          <xsl:if test="@id">
                             <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
                          </xsl:if>           
-                          <td class="{$clevelMargin}">
-                             <xsl:apply-templates select="did" mode="dsc"/>  
+                          <td class="{$clevelMargin}">&#160;</td>
+                         <td class="borderDisplay"><div>&#160;</div></td>
+                         <td class="did">
+                               <xsl:apply-templates select="did" mode="dsc"/>  
                           </td>
                          <td class="container">
                             <xsl:if test="did/container/@label != 'Mixed materials'">
