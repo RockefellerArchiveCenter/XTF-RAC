@@ -84,24 +84,28 @@ table.advancedSearch tr td{vertical-align:text-top;}
 .facetMatch {font-style:italic; color:#FD8239;}
 .facetGroup .col3 {font-weight:bold; color:#FD8239;}
 a.hit {
+   background-color:#ffffcc !important;
    color: #FD8239 !important;
    font-weight: bold;
 }
 .toc-hi{
+   background-color:#ffffcc !important;
    color: #FD8239 !important;
    font-weight: bold;
 }
 .hit-count{
+   background-color:#ffffcc !important;
    color: #FD8239 !important;
    font-weight: bold;
 }
 .subhit{
+   background-color:#ffffcc !important;
    color: #FD8239 !important;
    font-weight: bold;
 }
 
 .hit{
-   background-color:inherit !important;
+   background-color:#ffffcc !important;
    color: #FD8239 !important;
    font-weight: bold;
 }
