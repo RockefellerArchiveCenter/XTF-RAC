@@ -542,6 +542,13 @@
 <!--         <xsl:apply-templates select="langmaterial"/>-->
          <xsl:apply-templates select="materialspec"/>
          <xsl:apply-templates select="note"/>
+         <!-- Added link to Contents list -->
+         <xsl:call-template name="make-tab-link">
+            <xsl:with-param name="name" select="'Go to Contents List'"/>
+            <xsl:with-param name="id" select="/ead/archdesc/dsc/child::*[1]/@id"/>
+            <xsl:with-param name="doc.view" select="'contents'"/>
+            <xsl:with-param name="nodes" select="archdesc/dsc/child::*[1]"/>
+         </xsl:call-template>
       </div>
    </xsl:template>
      
