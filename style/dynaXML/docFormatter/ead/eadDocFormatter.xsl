@@ -281,7 +281,7 @@
                         <h1>
                            <xsl:choose>
                               <xsl:when test="eadheader/filedesc/titlestmt/titleproper[@type='filing']">
-                                 <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper[not(@type='filing')]"/>      
+                                 <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper[not(@type='filing')]"/>
                               </xsl:when>
                               <xsl:otherwise>
                                  <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
@@ -361,7 +361,7 @@
             </table>
       </div>
    </xsl:template>
-   
+   <xsl:template match="titleproper/num"><br/><xsl:value-of select="."/></xsl:template>
    <!-- ====================================================================== -->
    <!-- Tabs Templates                                                          -->
    <!-- ====================================================================== -->
@@ -417,9 +417,27 @@
                </xsl:if>
                <xsl:call-template name="make-tab-link">
                   <xsl:with-param name="name" select="'Contents List'"/>
-                  <xsl:with-param name="id" select="archdesc/dsc/child::*[1]/@id"/>
+                  <xsl:with-param name="id">
+                     <xsl:choose>
+                        <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file']">
+                           <xsl:value-of select="'contentsLink'"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:value-of select="archdesc/dsc/child::*[1]/@id"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </xsl:with-param> 
                   <xsl:with-param name="doc.view" select="'contents'"/>
-                  <xsl:with-param name="nodes" select="archdesc/dsc/child::*[1]"/>
+                  <xsl:with-param name="nodes">
+                     <xsl:choose>
+                        <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file']">
+                           <xsl:value-of select="/ead/archdesc/dsc/child::*"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:value-of select="/ead/archdesc/dsc/child::*[1]"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </xsl:with-param>
                </xsl:call-template>
                
 <!--               <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}&amp;doc.view=contents">Contents List</a>-->

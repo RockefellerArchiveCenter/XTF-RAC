@@ -1125,8 +1125,6 @@
             </xsl:for-each>
         </xsl:for-each>
           <tr>
-             <td style="width: 1%;"/>
-             <td style="width: 1%;"/>
              <td/>
              <td style="width: 15%;"/>
              <td style="width: 12%;"/>
@@ -1173,8 +1171,6 @@
             </xsl:for-each>
         </xsl:for-each>
           <tr>
-             <td style="width: 1%;"/>
-             <td style="width: 1%;"/>
              <td/>
              <td style="width: 15%;"/>
              <td style="width: 12%;"/>
@@ -1259,7 +1255,7 @@
                                    <xsl:otherwise>dscSeries</xsl:otherwise>
                                </xsl:choose>    
                          </xsl:attribute>
-                         <td colspan="8" class="{$clevelMargin}">
+                         <td colspan="6" class="{$clevelMargin}">
                              <xsl:call-template name="anchor"/>
                              <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
                              <xsl:apply-templates select="did/unittitle" mode="dsc"/>
@@ -1305,12 +1301,11 @@
                            <xsl:when test="child::*[@level][1]/@level='subcollection' or child::*[@level][1]/@level='subgrp' or child::*[@level][1]/@level='subseries' or child::*[@level][1]/@level='subfonds'"/>                        
                            <xsl:when test="child::*[@level][1]/@level='file' or child::*[@level][1]/@level='item' or (child::*[@level][1]/@level='otherlevel'and child::*[@level][1]/child::did/container)">
                                       <tr>
-                                         <td colspan="8" class="{$clevelChildMargin}">
+                                         <td colspan="6" class="{$clevelChildMargin}">
                                             <div class="inventoryTitle">Inventory</div>
                                          </td>
                                       </tr>    
                                       <tr class="containerTypes"> 
-                                         <td class="{$clevelChildMargin}">&#160;</td>
                                          <td>
                                             <div class="containerHeaderTitle"><xsl:text>Title</xsl:text></div>
                                          </td>
@@ -1334,6 +1329,7 @@
                   <!-- Have to put in rules to deal with multiple instances AND nested files -->
                   <xsl:when test="count(child::*/container/@id) &gt; 1">
                      <xsl:variable name="levelID" select="@id"></xsl:variable>
+                     <xsl:variable name="rowspan" select="count(child::*/container[@id])"/>
                      <xsl:for-each select="child::*/container[@id]">                
                         <!-- ADDED 3/14/10: Sorts containers alpha numerically -->
 <!--                        <xsl:sort select="."/>-->
@@ -1345,13 +1341,13 @@
                               <xsl:if test="parent::did/parent::*/@id">
                                  <xsl:attribute name="id"><xsl:value-of select="parent::did/parent::*/@id"/></xsl:attribute>
                               </xsl:if>
-                           <td class="{$clevelMargin}">&#160;</td>
-                           <td class="borderDisplay"><div>&#160;</div></td>
-                           <td class="did">
-                              <xsl:if test="position()=1">
-                                 <xsl:apply-templates select="parent::did" mode="dsc"/>
-                              </xsl:if>
-                           </td>
+                           <xsl:if test="position()=1">
+                              <td class="{$clevelMargin}" rowspan="{$rowspan}">
+                                 <div class="borderDisplay"> 
+                                       <xsl:apply-templates select="parent::did" mode="dsc"/>
+                                 </div>
+                              </td>                              
+                           </xsl:if>
                            <td class="container">
                               <xsl:if test="@label != 'Mixed materials'">
                                  <xsl:value-of select="@label"/>
@@ -1441,8 +1437,8 @@
                                <div class="inventoryTitle">Inventory</div>
                             </td>
                          </tr>  
-                         <tr class="containerTypes"> 
-                            <td class="{$clevelMargin}">
+                         <tr class="containerTypes">                          
+                            <td>
                                <div class="containerHeaderTitle"><xsl:text>Title</xsl:text></div>
                             </td>
                             <td>
@@ -1462,10 +1458,10 @@
                          <xsl:if test="@id">
                             <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
                          </xsl:if>           
-                          <td class="{$clevelMargin}">&#160;</td>
-                         <td class="borderDisplay"><div>&#160;</div></td>
-                         <td class="did">
+                         <td class="{$clevelMargin}">
+                            <div class="borderDisplay">
                                <xsl:apply-templates select="did" mode="dsc"/>  
+                            </div>
                           </td>
                          <td class="container">
                             <xsl:if test="did/container/@label != 'Mixed materials'">
@@ -1541,7 +1537,7 @@
                    </xsl:when>
                    <xsl:otherwise>
                        <tr> 
-                           <td class="{$clevelMargin}" colspan="6">
+                           <td class="{$clevelMargin}" colspan="7">
                                <xsl:apply-templates select="did" mode="dsc"/>
                                <xsl:apply-templates select="*[not(self::did) and 
                                    not(self::c) and not(self::c02) and not(self::c03) and
