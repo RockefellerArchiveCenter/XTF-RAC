@@ -413,6 +413,14 @@
             <level xtf:meta="true" xtf:tokenize="no">
                <xsl:value-of select="@level"/>
             </level>
+            <xsl:choose>
+               <xsl:when test="@level = 'item' or @level = 'file'">
+                  <seriesID xtf:meta="true" xtf:tokenize="no">
+                     <xsl:value-of select="ancestor::*[@level][1]/@id"/>
+                  </seriesID>
+               </xsl:when>
+            </xsl:choose>
+            
          </xsl:when>
          <xsl:otherwise>
             <level xtf:meta="true" xtf:tokenize="no">collection</level>
@@ -476,17 +484,17 @@
                   <collectionTitle xtf:meta="true">
                      <xsl:value-of select="$collTitle"/>
                   </collectionTitle>
-                  <subtitle xtf:meta="true">
+                  <title xtf:meta="true">
                      <xsl:value-of select="$seriesTitle"/>
-                  </subtitle>
+                  </title>
                </xsl:when>
                <xsl:otherwise>
                   <collectionTitle xtf:meta="true">
                      <xsl:value-of select="$collTitle"/>
                   </collectionTitle>
-                  <subtitle xtf:meta="true">
+                  <title xtf:meta="true">
                      <xsl:value-of select="'unknown'"/>
-                  </subtitle>
+                  </title>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:when>

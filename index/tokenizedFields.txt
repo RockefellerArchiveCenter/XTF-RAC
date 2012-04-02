@@ -16,7 +16,6 @@ rights
 set
 year
 collectionTitle
-subtitle
 collectionCreator
 subcreator
 description
