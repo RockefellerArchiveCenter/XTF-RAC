@@ -579,7 +579,6 @@
    -->
    
    <xsl:template match="archdesc/did/repository | archdesc/did/unitid   
-      | archdesc/did/unitdate 
       | archdesc/did/abstract | archdesc/did/langmaterial | archdesc/did/materialspec | archdesc/did/container">      
       <!--The template tests to see if there is a label attribute,
          inserting the contents if there is or adding display textif there isn't.
@@ -1352,7 +1351,7 @@
                               <xsl:variable name="didHitCount">
                                  <xsl:value-of select="count(../../descendant-or-self::xtf:hit)"/>
                               </xsl:variable>
-                              <xsl:if test=" ../../scopecontent | ../../accruals | ../../appraisal |  ../../arrangement | 
+                              <xsl:if test="../../scopecontent | ../../accruals | ../../appraisal |  ../../arrangement | 
                                  ../../bioghist |  ../../accessrestrict[not(child::legalstatus)] | ../../userestrict | 
                                  ../../custodhist | ../../altformavail | ../../originalsloc | ../../did/physdesc[@label='Dimensions note'] | 
                                  ../../fileplan | ../../did/physdesc[@label = 'General Physical Description note'] | ../../odd | 
@@ -1362,7 +1361,13 @@
                                  <xsl:call-template name="make-popup-link">
                                     <xsl:with-param name="name" select="'Additional description'"/>
                                     <xsl:with-param name="id" select="string(../../@id)"/>
-                                    <xsl:with-param name="nodes" select="../../scopecontent"/>
+                                    <xsl:with-param name="nodes" select="../../scopecontent | ../../accruals | ../../appraisal |  ../../arrangement | 
+                                       ../../bioghist |  ../../accessrestrict[not(child::legalstatus)] | ../../userestrict | 
+                                       ../../custodhist | ../../altformavail | ../../originalsloc | ../../did/physdesc[@label='Dimensions note'] | 
+                                       ../../fileplan | ../../did/physdesc[@label = 'General Physical Description note'] | ../../odd | 
+                                       ../../acqinfo | ../../did/langmaterial | ../../accessrestrict[child::legalstatus] | ../../did/materialspec |
+                                       ../../otherfindaid | ../../phystech | ../../did/physdesc[@label='Physical Facet note'] | ../../processinfo | 
+                                       ../../relatedmaterial | ../../separatedmaterial | ../../controlaccess"/>
                                     <xsl:with-param name="doc.view" select="'dscDescription'"/>
                                  </xsl:call-template>
                                  <xsl:if test="$didHitCount &gt; 0">
@@ -1459,7 +1464,7 @@
                              <xsl:variable name="didHitCount">
                                 <xsl:value-of select="count(descendant-or-self::xtf:hit)"/>
                              </xsl:variable>
-                             <xsl:if test=" child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
+                             <xsl:if test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
                                 child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
                                 child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
                                 child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
@@ -1470,6 +1475,7 @@
                                    <xsl:with-param name="name" select="'Additional description'"/>
                                    <xsl:with-param name="id" select="string(@id)"/>
                                    <xsl:with-param name="nodes" select="scopecontent"/>
+<!--                                   <xsl:with-param name="query" select="$query"/>-->
                                    <xsl:with-param name="doc.view" select="'dscDescription'"/>
                                 </xsl:call-template>
                                 <xsl:if test="$didHitCount &gt; 0">
