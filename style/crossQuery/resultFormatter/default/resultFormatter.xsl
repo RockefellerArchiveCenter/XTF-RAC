@@ -517,10 +517,19 @@
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <xsl:copy-of select="$brand.links"/>
          </head>
-         <body onload="autoCloseTimer = setTimeout('window.close()', 1000)">
+         <body>
             <xsl:copy-of select="$brand.header"/>
             <h1>E-mail My Citations</h1>
             <b>Your citations have been sent.</b>
+            <div class="closeWindow">
+               <a>
+                  <xsl:attribute name="href">javascript://</xsl:attribute>
+                  <xsl:attribute name="onClick">
+                     <xsl:text>javascript:window.close('popup')</xsl:text>
+                  </xsl:attribute>
+                  X Close this Window
+               </a>
+            </div>
          </body>
       </html>
       
