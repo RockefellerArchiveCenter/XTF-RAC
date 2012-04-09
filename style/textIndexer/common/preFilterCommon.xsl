@@ -122,7 +122,7 @@
          <xsl:apply-templates select="$meta/*:date[1]" mode="sort"/>
          
          <!-- Create facets -->
-         <xsl:apply-templates select="$meta/*:date" mode="facet"/>
+<!--         <xsl:apply-templates select="$meta/*:date" mode="facet"/>-->
          <xsl:apply-templates select="$meta/*:subject" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subjectname" mode="facet"/>
          <xsl:apply-templates select="$meta/*:geogname" mode="facet"/>

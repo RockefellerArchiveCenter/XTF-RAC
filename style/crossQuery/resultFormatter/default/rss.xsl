@@ -138,7 +138,14 @@
             <!-- publication date, should be in RFC-822 (e.g. Sun, 19 May 2002 15:21:36 GMT) -->
             <!-- meta/dateStamp is in YEAR-MONTH-DAY -->
             <pubDate>
-                <xsl:value-of select="xtf:dateTimeRFC822(meta/date)"/>
+                <xsl:choose>
+                    <xsl:when test="meta/sort-year">
+                        <xsl:value-of select="xtf:dateTimeRFC822(meta/sort-year)"/>  
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="xtf:dateTimeRFC822(string(current-date()))"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </pubDate>
 
         </item>

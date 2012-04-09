@@ -789,17 +789,6 @@
    <xsl:template name="get-ead-date">
       <!-- 9/27/11 WS: Changed date to grab from archdesc/did/unitdate/@type="inclusive" -->
       <xsl:choose>
-         <xsl:when test="@level">
-         <!--   <xsl:choose>
-               <xsl:when test="did/unitdate[@type='inclusive']">
-                  <date xtf:meta="true">
-                     <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
-                  </date>
-               </xsl:when>
-               <xsl:otherwise/>
-            </xsl:choose>
-            -->
-         </xsl:when>
          <xsl:when test="/ead/archdesc/did/unitdate[@type='inclusive']">
             <date xtf:meta="true">
                <xsl:value-of select="replace(string(/ead/archdesc/did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>

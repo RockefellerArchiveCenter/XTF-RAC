@@ -1306,7 +1306,7 @@
                                          </td>
                                       </tr>    
                                       <tr class="containerTypes"> 
-                                         <td>
+                                         <td class="{$clevelChildMargin}">
                                             <div class="containerHeaderTitle"><xsl:text>Title</xsl:text></div>
                                          </td>
                                          <td>
