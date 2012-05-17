@@ -68,7 +68,6 @@
       <div id="content-right">
          <xsl:choose>
          <xsl:when test="$chunk.id = 'headerlink'">
-            <!--<xsl:apply-templates select="/ead/eadheader"/>-->
             <xsl:apply-templates select="/ead/archdesc/did"/>
          </xsl:when>
          <xsl:when test="$chunk.id = 'restrictlink'">
@@ -325,7 +324,7 @@
    <xsl:template match="list">
       <xsl:if test="head"><h4><xsl:value-of select="head"/></h4></xsl:if>
       <xsl:choose>
-         <xsl:when test="descendant::defitem">
+         <xsl:when test="defitem">
             <dl>
                <xsl:apply-templates select="defitem"/>
             </dl>
@@ -544,11 +543,27 @@
          <xsl:apply-templates select="note"/>
          <xsl:call-template name="contributors"/>
          <!-- Added link to Contents list -->
+         <xsl:variable name="idFile">
+            <xsl:choose>
+               <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file']">
+                  <xsl:value-of select="'contentsLink'"/>
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:value-of select="/ead/archdesc/dsc/child::*[1]/@id"/>
+               </xsl:otherwise>
+            </xsl:choose>
+         </xsl:variable>
+         <xsl:variable name="nodesLst">
+            <xsl:choose>
+               <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file']">archdesc/dsc/child::*</xsl:when>
+               <xsl:otherwise>archdesc/dsc/child::*[1]</xsl:otherwise>
+            </xsl:choose>
+         </xsl:variable>
          <xsl:call-template name="make-tab-link">
             <xsl:with-param name="name" select="'Go to Contents List'"/>
-            <xsl:with-param name="id" select="/ead/archdesc/dsc/child::*[1]/@id"/>
+            <xsl:with-param name="id" select="$idFile"/> 
             <xsl:with-param name="doc.view" select="'contents'"/>
-            <xsl:with-param name="nodes" select="archdesc/dsc/child::*[1]"/>
+            <xsl:with-param name="nodes" select="$nodesLst"/>
          </xsl:call-template>
       </div>
    </xsl:template>
@@ -1073,8 +1088,9 @@
     <xsl:template match="archdesc/dsc">
         <h2>Contents List </h2>
           <!-- Call children of dsc -->
-          <xsl:apply-templates select="*[not(self::head)]"/>
+          <xsl:apply-templates select="*"/>
     </xsl:template>
+   <xsl:template match="arcdesc/dsc/head"/>
 
     <!--This section of the stylesheet creates a div for each c01 or c 
         It then recursively processes each child component of the c01 by 
@@ -1152,16 +1168,7 @@
                                 <xsl:for-each select="c08">
                                     <xsl:call-template name="clevel"/>
                                     <xsl:for-each select="c09">
-                                        <xsl:call-template name="clevel"/>
-                                        <xsl:for-each select="c10">
-                                            <xsl:call-template name="clevel"/>
-                                            <xsl:for-each select="c11">
-                                                <xsl:call-template name="clevel"/>
-                                                <xsl:for-each select="c12">
-                                                    <xsl:call-template name="clevel"/>
-                                                </xsl:for-each>
-                                            </xsl:for-each>
-                                        </xsl:for-each>
+                                       <xsl:call-template name="clevel"/>
                                     </xsl:for-each>
                                 </xsl:for-each>
                             </xsl:for-each>
@@ -1182,10 +1189,10 @@
     </xsl:template>
     <!--This is a named template that processes all c0* elements  -->
    <xsl:template name="clevel">
-           <!-- Establishes which level is being processed in order to provided indented displays. 
-               Indents handled by CSS margins-->
-           <xsl:param name="level" />
-           <xsl:variable name="clevelMargin">
+      <!-- Establishes which level is being processed in order to provided indented displays. 
+           Indents handled by CSS margins-->
+      <xsl:param name="level"/>
+      <xsl:variable name="clevelMargin">
                <xsl:choose>
                    <xsl:when test="$level = 01">c01</xsl:when>
                    <xsl:when test="$level = 02">c02</xsl:when>
@@ -1212,8 +1219,8 @@
                    <xsl:when test="../c08">c10</xsl:when>
                    <xsl:when test="../c08">c11</xsl:when>
                    <xsl:when test="../c08">c12</xsl:when>
-               </xsl:choose>
-           </xsl:variable>
+               </xsl:choose>     
+      </xsl:variable>
       <xsl:variable name="clevelChildMargin">
          <xsl:choose>
             <xsl:when test="$level = 01">c02</xsl:when>
@@ -1228,19 +1235,7 @@
             <xsl:when test="$level = 10">c11</xsl:when>
             <xsl:when test="$level = 11">c12</xsl:when>
          </xsl:choose>
-      </xsl:variable>
-      <!-- Establishes a class for even and odd rows in the table for color coding. 
-         Colors are Declared in the CSS. -->
-      <xsl:variable name="colorClass">
-         <xsl:choose>
-            <xsl:when test="ancestor-or-self::*[@level='file' or @level='item']">
-               <xsl:choose>
-                  <xsl:when test="(position() mod 2 = 0)">odd</xsl:when>
-                  <xsl:otherwise>even</xsl:otherwise>
-               </xsl:choose>
-            </xsl:when>
-         </xsl:choose>
-      </xsl:variable>      
+      </xsl:variable>    
       <!-- Processes the all child elements of the c or c0* level -->  
            <xsl:for-each select=".">
                <xsl:choose>
@@ -1259,7 +1254,7 @@
                              <xsl:call-template name="anchor"/>
                              <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
                              <xsl:apply-templates select="did/unittitle" mode="dsc"/>
-                             <xsl:apply-templates select="did/origination[starts-with(child::*/@role,'Author')]" mode="dsc"/>
+                             <xsl:apply-templates select="did/origination" mode="dsc"/>
                              <xsl:apply-templates select="scopecontent"/> 
                              <xsl:apply-templates select="unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
                              <xsl:for-each select="did/physdesc[extent]">
@@ -1296,34 +1291,31 @@
                           </td>
                        </tr>
                        
-                   <!-- ADDED 1/4/11: Adds container headings if series/subseries is followed by a file -->                   
-                       <xsl:choose>
-                           <xsl:when test="child::*[@level][1]/@level='subcollection' or child::*[@level][1]/@level='subgrp' or child::*[@level][1]/@level='subseries' or child::*[@level][1]/@level='subfonds'"/>                        
-                           <xsl:when test="child::*[@level][1]/@level='file' or child::*[@level][1]/@level='item' or (child::*[@level][1]/@level='otherlevel'and child::*[@level][1]/child::did/container)">
-                                      <tr>
-                                         <td colspan="6" class="{$clevelChildMargin}">
-                                            <div class="inventoryTitle">Inventory</div>
-                                         </td>
-                                      </tr>    
-                                      <tr class="containerTypes"> 
-                                         <td class="{$clevelChildMargin}">
-                                            <div class="containerHeaderTitle"><xsl:text>Title</xsl:text></div>
-                                         </td>
-                                         <td>
-                                            <div class="containerHeader">Format</div>  
-                                         </td>
-                                         <td>
-                                            <div class="containerHeader">Containers</div>  
-                                         </td>
-                                         <td>
-                                            <div class="containerHeader">&#160;</div>
-                                         </td> 
-                                         <td><div class="containerHeader">Notes</div></td>
-                                         <td><div class="containerHeader">Bookbag</div></td>
-                                      </tr>                                       
-                          </xsl:when>                        
-                           <xsl:otherwise/>
-                       </xsl:choose>                    
+                   <!-- ADDED 1/4/11: Adds container headings if series/subseries is followed by a file -->                                           
+                           
+                      <xsl:if test="child::*[@level][1]/@level='file' or child::*[@level][1]/@level='item' or (child::*[@level][1]/@level='otherlevel'and child::*[@level][1]/child::did/container)">
+                         <tr>
+                            <td colspan="6" class="{$clevelChildMargin}">
+                               <div class="inventoryTitle">Inventory</div>
+                            </td>
+                         </tr>    
+                         <tr class="containerTypes"> 
+                            <td class="{$clevelChildMargin}">
+                               <div class="containerHeaderTitle"><xsl:text>Title</xsl:text></div>
+                            </td>
+                            <td>
+                               <div class="containerHeader">Format</div>  
+                            </td>
+                            <td>
+                               <div class="containerHeader">Containers</div>  
+                            </td>
+                            <td>
+                               <div class="containerHeader">&#160;</div>
+                            </td> 
+                            <td><div class="containerHeader">Notes</div></td>
+                            <td><div class="containerHeader">Bookbag</div></td>
+                         </tr>                                       
+                      </xsl:if>                         
                    </xsl:when>      
                   <!--Items/Files with multiple formats linked using parent and id attributes -->
                   <!-- Have to put in rules to deal with multiple instances AND nested files -->
@@ -1349,7 +1341,7 @@
                               </td>                              
                            </xsl:if>
                            <td class="container">
-                              <xsl:if test="@label != 'Mixed materials'">
+                              <xsl:if test="@label != 'Mixed materials' and @lable !='mixed materials' and @label='Mixed Materials'">
                                  <xsl:value-of select="@label"/>
                               </xsl:if>
                            </td>
@@ -1464,7 +1456,7 @@
                             </div>
                           </td>
                          <td class="container">
-                            <xsl:if test="did/container/@label != 'Mixed materials'">
+                            <xsl:if test="did/container[@label != 'Mixed materials' and @label != 'Mixed Materials' and @label != 'mixed materials']">
                                <xsl:value-of select="did/container/@label"/>                               
                             </xsl:if>
                          </td>
@@ -1492,7 +1484,6 @@
                                    <xsl:with-param name="name" select="'Additional description'"/>
                                    <xsl:with-param name="id" select="string(@id)"/>
                                    <xsl:with-param name="nodes" select="scopecontent"/>
-<!--                                   <xsl:with-param name="query" select="$query"/>-->
                                    <xsl:with-param name="doc.view" select="'dscDescription'"/>
                                 </xsl:call-template>
                                 <xsl:if test="$didHitCount &gt; 0">
@@ -1537,13 +1528,15 @@
                    </xsl:when>
                    <xsl:otherwise>
                        <tr> 
-                           <td class="{$clevelMargin}" colspan="7">
+                           <td class="{$clevelMargin}" colspan="6">
                                <xsl:apply-templates select="did" mode="dsc"/>
-                               <xsl:apply-templates select="*[not(self::did) and 
-                                   not(self::c) and not(self::c02) and not(self::c03) and
-                                   not(self::c04) and not(self::c05) and not(self::c06) and not(self::c07)
-                                   and not(self::c08) and not(self::c09) and not(self::c10) and not(self::c11) and not(self::c12)]"/>  
-                           </td>
+                              <xsl:apply-templates select="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
+                                 child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
+                                 child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
+                                 child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
+                                 child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
+                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
+                                 child::separatedmaterial |  child::controlaccess"/></td>
                        </tr>
                    </xsl:otherwise>
                </xsl:choose>
@@ -1628,8 +1621,6 @@
                     <xsl:apply-templates/>
                     <xsl:text>&#160;</xsl:text>
                 </xsl:for-each>
-                <!--<xsl:for-each select="unitdate[@type = 'bulk']"> (<xsl:apply-templates/>)
-                </xsl:for-each>-->
             </xsl:otherwise>
         </xsl:choose>
         <xsl:if test="physdesc/extent">
@@ -1641,11 +1632,16 @@
             </xsl:for-each>)
         </xsl:if>
     </xsl:template>
-   <xsl:template match="did/unittitle | did/origination[starts-with(child::*/@role,'Author')] | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc">
+   <xsl:template match="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc">
       <h4>
          <xsl:choose>
             <xsl:when test="self::unittitle">Title </xsl:when>
-            <xsl:when test="self::origination[starts-with(child::*/@role,'Author')]">Creator </xsl:when>
+            <xsl:when test="self::origination">
+               <xsl:choose>
+                  <xsl:when test="@label != 'creator'"><xsl:value-of select="@label"/></xsl:when>
+                  <xsl:otherwise>Creator</xsl:otherwise>
+               </xsl:choose>               
+            </xsl:when>
             <xsl:when test="self::unitdate">Dates </xsl:when>
          </xsl:choose>
       </h4>
@@ -1678,7 +1674,7 @@
    <xsl:template match="xtf:meta"/>
    <xsl:template match="*" mode="moreInfo">
       <div>
-         <xsl:apply-templates select="did" mode="dsc"/>
+         <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
          <xsl:apply-templates select="did/physdesc"/>
          <xsl:apply-templates select="*[not(name() = 'did')]"/>
       </div>

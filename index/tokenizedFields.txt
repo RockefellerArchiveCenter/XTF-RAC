@@ -1,3 +1,4 @@
+series
 title
 creator
 subject
@@ -8,14 +9,12 @@ contributor
 date
 type
 format
-source
 language
-relation
 coverage
 rights
 set
 year
 collectionTitle
 collectionCreator
-subcreator
+subseries
 description

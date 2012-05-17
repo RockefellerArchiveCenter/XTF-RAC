@@ -871,8 +871,8 @@
                      </xsl:choose>
                   </a>
                   <xsl:text>&#160;</xsl:text>
-                  <xsl:variable name="type" select="meta/type"/>
                   <!--
+                  <xsl:variable name="type" select="meta/type"/>
                   <span class="typeIcon">
                      <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
                   </span>
@@ -1156,8 +1156,8 @@
                            </xsl:choose>
                         </a>
                         <xsl:text>&#160;</xsl:text>
-                        <xsl:variable name="type" select="meta/type"/>
                         <!--
+                        <xsl:variable name="type" select="meta/type"/>
                            <span class="typeIcon">
                            <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
                            </span>
@@ -1323,8 +1323,8 @@
                            </xsl:choose>
                         </a>
                         <xsl:text>&#160;</xsl:text>
-                        <xsl:variable name="type" select="meta/type"/>
                         <!--
+                        <xsl:variable name="type" select="meta/type"/>
                            <span class="typeIcon">
                            <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
                            </span>
@@ -1467,7 +1467,15 @@
       <table style="width:100%;">
          <tr>
             <td class="col1">
-               <xsl:text>&#160;</xsl:text>
+               <xsl:choose>
+                  <xsl:when test="$sort = ''">
+                     <b><xsl:value-of select="@rank"/></b>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <b><xsl:value-of select="@rank"/></b>
+                     <xsl:text>&#160;</xsl:text>
+                  </xsl:otherwise>
+               </xsl:choose>
             </td>
             <td class="col3" colspan="2">
                <a>
@@ -1499,8 +1507,8 @@
                   </xsl:choose>
                </a>
                <xsl:text>&#160;</xsl:text>
-               <xsl:variable name="type" select="meta/type"/>
                <!--
+               <xsl:variable name="type" select="meta/type"/>
                   <span class="typeIcon">
                   <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
                   </span>

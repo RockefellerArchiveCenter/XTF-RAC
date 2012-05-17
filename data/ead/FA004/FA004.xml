@@ -23,7 +23,7 @@
         </filedesc>
         <profiledesc>
             <creation>This finding aid was produced using the Archivists' Toolkit
-                <date>2012-01-31T10:01-0500</date>
+                <date>2011-07-27T10:45-0400</date>
             </creation>
             <langusage>English</langusage>
             <descrules>Describing Archives: A Content Standard</descrules>
@@ -45,37 +45,37 @@
             <unitdate normal="1916/1999" type="inclusive">1916-1999</unitdate>
             <abstract id="ref3928" label="Abstract">The records of the William T. Grant Foundation span the years 1916-1999 and are comprised primarily of the Foundation’s files of grantees (the bulk dating from 1970-1985) and administrative records (including annual reports and minutes) beginning in 1930. Also included in the collection are the papers of William T. Grant (correspondence, speeches and articles dating from 1916 to 1959), founder of the William T. Grant Foundation and W.T. Grant Company. The bulk of the collection is open for research; records that document the peer review process are restricted from public access.</abstract>
             <origination label="creator">
-                <persname source="lcnaf" role="Contributor (ctb)">Freud, Anna, 1895-1982</persname>
+                <persname source="lcnaf">Freud, Anna, 1895-1982</persname>
             </origination>
             <origination label="creator">
-                <persname source="lcnaf" role="Contributor (ctb)">Goodall, Jane, 1934-</persname>
+                <persname source="lcnaf">Goodall, Jane, 1934-</persname>
             </origination>
             <origination label="creator">
-                <corpname rules="dacs" role="Contributor (ctb)">Grant Study of Adult Development.</corpname>
+                <corpname rules="dacs">Grant Study of Adult Development.</corpname>
             </origination>
             <origination label="creator">
-                <persname source="lcnaf" role="Author (aut)">Grant, W. T. (William Thomas), 1876-1972</persname>
+                <persname source="lcnaf">Grant, W. T. (William Thomas), 1876-1972</persname>
             </origination>
             <origination label="creator">
-                <corpname source="lcnaf" role="Contributor (ctb)">Hampstead Child-Therapy Clinic.</corpname>
+                <corpname source="lcnaf">Hampstead Child-Therapy Clinic.</corpname>
             </origination>
             <origination label="creator">
-                <corpname source="lcnaf" role="Contributor (ctb)">Harvard University.</corpname>
+                <corpname source="lcnaf">Harvard University.</corpname>
             </origination>
             <origination label="creator">
-                <persname source="lcnaf" role="Contributor (ctb)">Spock, Benjamin, 1903-1998</persname>
+                <persname source="lcnaf">Spock, Benjamin, 1903-1998</persname>
             </origination>
             <origination label="creator">
-                <corpname source="lcnaf" role="Contributor (ctb)">Tavistock Institute of Human Relations.</corpname>
+                <corpname source="lcnaf">Tavistock Institute of Human Relations.</corpname>
             </origination>
             <origination label="creator">
-                <corpname source="lcnaf" role="Contributor (ctb)">W.T. Grant (Firm).</corpname>
+                <corpname source="lcnaf">W.T. Grant (Firm).</corpname>
             </origination>
             <origination label="creator">
-                <corpname source="lcnaf" role="Contributor (ctb)">William T. Grant Foundation. Commission on Work, Family, and Citizenship.</corpname>
+                <corpname source="lcnaf">William T. Grant Foundation. Commission on Work, Family, and Citizenship.</corpname>
             </origination>
             <origination label="creator">
-                <corpname source="lcnaf" role="Author (aut)">William T. Grant Foundation.</corpname>
+                <corpname source="lcnaf">William T. Grant Foundation.</corpname>
             </origination>
         </did>
         <processinfo id="ref7">
@@ -90,15 +90,23 @@
             <head>Custodial History note</head>
             <p>The records of the William T. Grant Foundation were donated to Teachers College, Columbia University by the Foundation in 1992. The collection was donated and physically transferred to the Rockefeller Archive Center by the Foundation in 2007.</p>
         </custodhist>
-        <userestrict id="ref4">
-            <head>Conditions Governing Use note</head>
+        <accessrestrict id="ref4">
+            <head>Conditions Governing Access note</head>
             <p>To the extent that the donor owns the copyright in these materials, the William T. Grant foundation has assigned the copyright in them to the Rockefeller Archive Center; however, copyright in some items may be held by their respective creators. Please consult an Archivist for further details.</p>
-        </userestrict>
+        </accessrestrict>
         <accessrestrict id="ref3">
             <head>Restrictions</head>
             <p>Records are closed, per agreement with the William T. Grant Foundation, for 10 years from the date of creation.</p>
             <p>The bulk of the collection is open for research; records that document the peer review process are restricted from public access.</p>
         </accessrestrict>
+        <accruals audience="internal" id="ref1">
+            <head>Accruals note</head>
+            <p>Future transfers of additional material are a possibility.</p>
+        </accruals>
+        <appraisal audience="internal" id="ref2">
+            <head>Appraisal note</head>
+            <p>There is no scheduled destruction for this collection.</p>
+        </appraisal>
         <bioghist id="ref3920">
             <head>Biographical/Historical note</head>
             <p>Foundation Mission</p>
@@ -708,7 +716,7 @@
                             <unitdate>1972-1981</unitdate>
                         </did>
                     </c>
-                    <c id="ref75" level="file">
+                    <c id="ref75" level="subseries">
                         <did>
                             <unittitle>Publications</unittitle>
                             <unitdate normal="1939/1946" type="inclusive">1939-1946</unitdate>
@@ -870,7 +878,7 @@
                         </did>
                     </c>
                 </c>
-                <c id="ref97" level="subseries">
+                <c id="ref97" level="file">
                     <did>
                         <unittitle>Collateral Projects (studies of Grant Store Managers, Boy Scouts, and Naval Aviation Cadets)</unittitle>
                         <unitid>2f</unitid>
@@ -27704,7 +27712,7 @@
                     </arrangement>
                     <c id="ref3564" level="file">
                         <did>
-                            <unittitle>William T. Grant papers - Christmas Cards</unittitle>
+                            <unittitle>William T. Grant papers - scrapbook - Christmas Cards</unittitle>
                             <container id="cid5552003" type="Box" label="Mixed materials">279</container>
                             <container id="cid5552001" type="Box" label="Mixed materials">279</container>
                             <container parent="cid5552001" type="Folder">3565</container>
@@ -27716,7 +27724,7 @@
                     </c>
                     <c id="ref3565" level="file">
                         <did>
-                            <unittitle>Grant files - Tavistock Institute, Child Development - James &amp; Joyce Robertson (74-0163-65)</unittitle>
+                            <unittitle>Grant files - scrapbooks - Tavistock Institute, Child Development - James &amp; Joyce Robertson (74-0163-65)</unittitle>
                             <container id="cid5552002" type="Box" label="Mixed materials">280</container>
                             <container parent="cid5552002" type="Folder">3566-3569</container>
                             <physdesc>
@@ -27735,7 +27743,7 @@
                     </c>
                     <c id="ref3562" level="file">
                         <did>
-                            <unittitle>Grant files - Tavistock Institute, Child Development - James &amp; Joyce Robertson (74-0163-65)</unittitle>
+                            <unittitle>Grant files - scrapbooks - Tavistock Institute, Child Development - James &amp; Joyce Robertson (74-0163-65)</unittitle>
                             <container id="cid5552004" type="Box" label="Mixed materials">281</container>
                             <container parent="cid5552004" type="Folder">3570-3571</container>
                             <physdesc>
@@ -27751,7 +27759,7 @@
                     </c>
                     <c id="ref3566" level="file">
                         <did>
-                            <unittitle>Grant files - Tavistock Institute, Child Development - James &amp; Joyce Robertson (74-0163-65)</unittitle>
+                            <unittitle>Grant files - scrapbooks - Tavistock Institute, Child Development - James &amp; Joyce Robertson (74-0163-65)</unittitle>
                             <container id="cid5552005" type="Box" label="Mixed materials">282</container>
                             <physdesc>
                                 <extent>2 scrapbooks</extent>
@@ -28128,7 +28136,7 @@
                             <unitdate normal="1939/1939">10 November 1939</unitdate>
                         </did>
                     </c>
-                    <c id="ref3616" level="file">
+                    <c id="ref3616" level="fonds">
                         <did>
                             <unittitle>Grant files - Harvard / Yale Florence Research Project, H. B. Young</unittitle>
                             <container id="cid5554006" type="Box" label="Cartographic">286</container>
@@ -28208,16 +28216,19 @@
                     </arrangement>
                     <c id="ref3692" level="file">
                         <did>
-                            <unittitle>Young Children in Brief Separation: Jane - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson</unittitle>
+                            <unittitle>Film - Young Children in Brief Separation: Jane - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson (2006.113.01)</unittitle>
                             <unitid>2006.113.01</unitid>
                             <container id="cid5583001" type="Reel" label="Moving image">1</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1967/1970" type="inclusive">probably late 1960s</unitdate>
+                            <physdesc audience="internal" id="ref3693" label="Physical Characteristics">gauge/medium: 16 mm film base: probably polyester black and white negative: no sound: yes sound type: optical code: 3M SAFETY</physdesc>
                             <physdesc id="ref3696" label="Dimensions note">
                                 <dimensions>1308 feet</dimensions>
                             </physdesc>
+                            <physdesc audience="internal" id="ref3699" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3700" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: n/a vinegar syndrome: no other condition notes: n/a</physdesc>
                         </did>
                         <userestrict id="ref3694">
                             <head>Conditions Governing Use note</head>
@@ -28242,16 +28253,19 @@
                     </c>
                     <c id="ref3681" level="file">
                         <did>
-                            <unittitle>Young Children in Brief Separation: Lucy - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson</unittitle>
+                            <unittitle>Film - Young Children in Brief Separation: Lucy - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson (2006.113.02)</unittitle>
                             <unitid>2006.113.02</unitid>
                             <container id="cid5573001" type="Reel" label="Moving image">2</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1967/1970" type="inclusive">probably late 1960s</unitdate>
+                            <physdesc audience="internal" id="ref3682" label="Physical Characteristics">gauge/medium: 16 mm film base: probably polyester black and white negative: no sound: yes sound type: optical code: SAFETY 140-3M</physdesc>
                             <physdesc id="ref3686" label="Dimensions note">
                                 <dimensions>1193 feet</dimensions>
                             </physdesc>
+                            <physdesc audience="internal" id="ref3689" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3690" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: n/a vinegar syndrome: no other condition notes: n/a</physdesc>
                         </did>
                         <userestrict id="ref3684">
                             <head>Conditions Governing Use note</head>
@@ -28276,16 +28290,19 @@
                     </c>
                     <c id="ref3701" level="file">
                         <did>
-                            <unittitle>Young Children in Brief Separation: Lucy - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson</unittitle>
+                            <unittitle>Film - Young Children in Brief Separation: Lucy - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson (2006.113.03)</unittitle>
                             <unitid>2006.113.03</unitid>
                             <container id="cid5586001" type="Reel" label="Moving image">3</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1967/1970" type="inclusive">probably late 1960s</unitdate>
+                            <physdesc audience="internal" id="ref3702" label="Physical Characteristics">gauge/medium: 16 mm film base: probably polyester black and white negative: no sound: yes sound type: optical code: SAFETY 3M</physdesc>
                             <physdesc id="ref3705" label="Dimensions note">
                                 <dimensions>1328 feet</dimensions>
                             </physdesc>
+                            <physdesc audience="internal" id="ref3708" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3709" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: n/a vinegar syndrome: no other condition notes: n/a</physdesc>
                         </did>
                         <userestrict id="ref3703">
                             <head>Conditions Governing Use note</head>
@@ -28310,16 +28327,19 @@
                     </c>
                     <c id="ref3710" level="file">
                         <did>
-                            <unittitle>Young Children in Brief Separation: Kate - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson</unittitle>
+                            <unittitle>Film - Young Children in Brief Separation: Kate - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson (2006.113.04)</unittitle>
                             <unitid>2006.113.04</unitid>
                             <container id="cid5586002" type="Reel" label="Moving image">4</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1967/1967">1967</unitdate>
+                            <physdesc audience="internal" id="ref3711" label="Physical Characteristics">gauge/medium: 16 mm film base: probably polyester black and white negative: no sound: yes sound type: optical code: n/a</physdesc>
                             <physdesc id="ref3715" label="Dimensions note">
                                 <dimensions>1163 feet</dimensions>
                             </physdesc>
+                            <physdesc audience="internal" id="ref3718" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3720" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: n/a vinegar syndrome: no other condition notes: n/a</physdesc>
                         </did>
                         <userestrict id="ref3712">
                             <head>Conditions Governing Use note</head>
@@ -28344,7 +28364,7 @@
                     </c>
                     <c id="ref3721" level="file">
                         <did>
-                            <unittitle>Young Children in Brief Separation: John - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson</unittitle>
+                            <unittitle>Film - Young Children in Brief Separation: John - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson (2006.113.05)</unittitle>
                             <unitid>2006.113.05</unitid>
                             <container id="cid5589002" type="Box" label="Mixed materials">286a</container>
                             <container parent="cid5589002" type="Folder">3623</container>
@@ -28353,9 +28373,12 @@
                                 <extent>1 reel and 1 folder of supplemental material </extent>
                             </physdesc>
                             <unitdate normal="1969/1969">1969</unitdate>
+                            <physdesc audience="internal" id="ref3722" label="Physical Characteristics">gauge/medium: 16 mm film base: probably polyester black and white negative: no sound: yes sound type: optical code: A GFA GEVAERT 2S</physdesc>
                             <physdesc id="ref3725" label="Dimensions note">
                                 <dimensions>1632 feet</dimensions>
                             </physdesc>
+                            <physdesc audience="internal" id="ref3727" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3729" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: n/a vinegar syndrome: no other condition notes: n/a</physdesc>
                         </did>
                         <userestrict id="ref3723">
                             <head>Conditions Governing Use note</head>
@@ -28380,13 +28403,16 @@
                     </c>
                     <c id="ref3682" level="file">
                         <did>
-                            <unittitle>Young Children in Brief Separation: The Importance of Substitute Mothering - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson</unittitle>
+                            <unittitle>Film - Young Children in Brief Separation: The Importance of Substitute Mothering - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson (2006.113.06)</unittitle>
                             <unitid>2006.113.07</unitid>
                             <container id="cid5578001" type="Reel" label="Moving image">6</container>
                             <unitdate normal="1965/1970" type="inclusive">probably late 1960s</unitdate>
+                            <physdesc audience="internal" id="ref3683" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester black and white negative: no sound: yes sound type: optical code: Kodak safety film</physdesc>
                             <physdesc id="ref3685" label="Dimensions note">
                                 <dimensions>783 feet</dimensions>
                             </physdesc>
+                            <physdesc audience="internal" id="ref3690" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3691" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: n/a vinegar syndrome: no other condition notes: n/a</physdesc>
                         </did>
                         <scopecontent id="ref3686">
                             <head>Credits</head>
@@ -28409,7 +28435,7 @@
                     </c>
                     <c id="ref3734" level="file">
                         <did>
-                            <unittitle>All About Sex (Cerca del Sexo) - Syracuse University - Saul Scheidlinger</unittitle>
+                            <unittitle>Film - All About Sex (Cerca del Sexo) - Syracuse University - Saul Scheidlinger (2006.113.07)</unittitle>
                             <unitid>2006.113.07</unitid>
                             <langmaterial>
                                 <language langcode="spa"/>
@@ -28419,6 +28445,9 @@
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1972/1972">probably 1972</unitdate>
+                            <physdesc audience="internal" id="ref3735" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3736" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3737" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3740" label="Dimensions note">
                                 <dimensions>832 feet</dimensions>
                             </physdesc>
@@ -28439,13 +28468,16 @@
                     </c>
                     <c id="ref3744" level="file">
                         <did>
-                            <unittitle>Sex and the Professional - Saul Scheidlinger</unittitle>
+                            <unittitle>Film - Sex and the Professional - Saul Scheidlinger (2006.113.08)</unittitle>
                             <unitid>2006.113.08</unitid>
                             <container id="cid5591001" type="Reel" label="Moving image">8</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1975/1975">probably 1975</unitdate>
+                            <physdesc audience="internal" id="ref3743" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3744" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3745" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3748" label="Dimensions note">
                                 <dimensions>920 feet</dimensions>
                             </physdesc>
@@ -28465,13 +28497,16 @@
                     </c>
                     <c id="ref3752" level="file">
                         <did>
-                            <unittitle>Infant Development in the Kibbutz - Institute for Child Mental Health - L. Joseph Stone &amp; Jeannette G. Stone</unittitle>
+                            <unittitle>Film - Infant Development in the Kibbutz - Institute for Child Mental Health - L. Joseph Stone &amp; Jeannette G. Stone (2006.113.09)</unittitle>
                             <unitid>2006.113.09</unitid>
                             <container id="cid5591002" type="Reel" label="Moving image">9</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1970/1977" type="inclusive">1970s</unitdate>
+                            <physdesc audience="internal" id="ref3749" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3750" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3751" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3754" label="Dimensions note">
                                 <dimensions>988 feet</dimensions>
                             </physdesc>
@@ -28491,13 +28526,16 @@
                     </c>
                     <c id="ref3756" level="file">
                         <did>
-                            <unittitle>Daycare for a Kibbutz Toddler - Institute for Child Mental Health - L. Joseph Stone &amp; Jeannette G. Stone</unittitle>
+                            <unittitle>Film - Daycare for a Kibbutz Toddler - Institute for Child Mental Health - L. Joseph Stone &amp; Jeannette G. Stone (2006.113.10)</unittitle>
                             <unitid>2006.113.10</unitid>
                             <container id="cid5593001" type="Reel" label="Moving image">10</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1970/1979" type="inclusive">probably 1970s</unitdate>
+                            <physdesc audience="internal" id="ref3757" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3758" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3759" label="Physical Condition">sound: poor quality emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue). Color improves as film advances. vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3762" label="Dimensions note">
                                 <dimensions>approximately 1000 feet</dimensions>
                             </physdesc>
@@ -28517,13 +28555,16 @@
                     </c>
                     <c id="ref3763" level="file">
                         <did>
-                            <unittitle>Rearing Kibbutz Babies - Institute for Child Mental Health - L. Joseph Stone &amp; Jeannette G. Stone</unittitle>
+                            <unittitle>Film - Rearing Kibbutz Babies - Institute for Child Mental Health - L. Joseph Stone &amp; Jeannette G. Stone (2006.113.11)</unittitle>
                             <unitid>2006.113.11</unitid>
                             <container id="cid5593002" type="Reel" label="Moving image">11</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1970/1979" type="inclusive">probably 1970s</unitdate>
+                            <physdesc audience="internal" id="ref3764" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3765" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3766" label="Physical Condition">sound: very poor quality. Soundtrack not understandable. emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3769" label="Dimensions note">
                                 <dimensions>1029 feet</dimensions>
                             </physdesc>
@@ -28543,13 +28584,16 @@
                     </c>
                     <c id="ref3770" level="file">
                         <did>
-                            <unittitle>The Amazing Brain of the Newborn - Case Western Reserve University - Marshall H. Klaus, M.D.</unittitle>
+                            <unittitle>Film - The Amazing Brain of the Newborn - Case Western Reserve University - Marshall H. Klaus, M.D. (2006.113.12)</unittitle>
                             <unitid>2006.113.12</unitid>
                             <container id="cid5593003" type="Reel" label="Moving image">12</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1975/1975">1975</unitdate>
+                            <physdesc audience="internal" id="ref3771" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: EASTMAN 37 1. SAFETY FILM</physdesc>
+                            <physdesc audience="internal" id="ref3772" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3773" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3776" label="Dimensions note">
                                 <dimensions>988 feet</dimensions>
                             </physdesc>
@@ -28568,13 +28612,16 @@
                     </c>
                     <c id="ref3777" level="file">
                         <did>
-                            <unittitle>Who are these People? - Gifted-Talented Institute - David Jackson</unittitle>
+                            <unittitle>Film - Who are these People? - Gifted-Talented Institute - David Jackson (2006.113.13)</unittitle>
                             <unitid>2006.113.13</unitid>
                             <container id="cid5593004" type="Reel" label="Moving image">13</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1977/1977">1977</unitdate>
+                            <physdesc audience="internal" id="ref3778" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: SAFETY FILM KODAK</physdesc>
+                            <physdesc audience="internal" id="ref3779" label="Preservation Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3780" label="Physical Condition">sound: very poor quality emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3783" label="Dimensions note">
                                 <dimensions>791 feet</dimensions>
                             </physdesc>
@@ -28591,13 +28638,16 @@
                     </c>
                     <c id="ref3785" level="file">
                         <did>
-                            <unittitle>People Who Care - Hospital Audiences, Inc.</unittitle>
+                            <unittitle>Film - People Who Care - Hospital Audiences, Inc. (2006.113.14)</unittitle>
                             <unitid>2006.113.14</unitid>
                             <container id="cid5595001" type="Reel" label="Moving image">14</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1975/1975">1975</unitdate>
+                            <physdesc audience="internal" id="ref3784" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3785" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3786" label="Physical Condition">sound: very poor quality emulsion scratches: no base scratches: no preforation damage: yes shrinkage: yes color fading: yes (magenta hue) vinegar syndrome: no other condition notes: Perforations are slightly damaged. Recommendation is to not play this film on a flatbed editor (steenbeck) again.</physdesc>
                             <physdesc id="ref3789" label="Dimensions note">
                                 <dimensions>1082 feet</dimensions>
                             </physdesc>
@@ -28622,13 +28672,16 @@
                     </c>
                     <c id="ref3792" level="file">
                         <did>
-                            <unittitle>Parent Education Program: An Opportunity Seized - Mount Sinai School of Medicine - Anne G. Morris</unittitle>
+                            <unittitle>Film - Parent Education Program: An Opportunity Seized - Mount Sinai School of Medicine - Anne G. Morris</unittitle>
                             <unitid>2006.113.15</unitid>
                             <container id="cid5595002" type="Reel" label="Moving image">15</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1970/1979" type="inclusive">probably 1970s</unitdate>
+                            <physdesc audience="internal" id="ref3793" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester black and white negative: no sound: yes sound type: optical code: AG.1[I?]S</physdesc>
+                            <physdesc audience="internal" id="ref3794" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3795" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: n/a vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3798" label="Dimensions note">
                                 <dimensions>366 feet</dimensions>
                             </physdesc>
@@ -28646,13 +28699,16 @@
                     </c>
                     <c id="ref3799" level="file">
                         <did>
-                            <unittitle>Mothers Out of Touch - Stanford University</unittitle>
+                            <unittitle>Film - Mothers Out of Touch - Stanford University (2006.113.16)</unittitle>
                             <unitid>2006.113.16</unitid>
                             <container id="cid5596001" type="Reel" label="Mixed materials">16</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate>undated</unitdate>
+                            <physdesc audience="internal" id="ref3800" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester black and white negative: no sound: yes sound type: optical code: EASTMAN ∆ •</physdesc>
+                            <physdesc audience="internal" id="ref3801" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3802" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: n/a vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3805" label="Dimensions note">
                                 <dimensions>401 feet</dimensions>
                             </physdesc>
@@ -28670,13 +28726,16 @@
                     </c>
                     <c id="ref3806" level="file">
                         <did>
-                            <unittitle>Children's TV Workshop, Program Report</unittitle>
+                            <unittitle>Film - Children's TV Workshop, Program Report (2006.113.17)</unittitle>
                             <unitid>2006.113.17</unitid>
                             <container id="cid5596002" type="Reel" label="Moving image">17</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1970/1979" type="inclusive">probably 1970s</unitdate>
+                            <physdesc audience="internal" id="ref3807" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3808" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3809" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: moderate fading vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3812" label="Dimensions note">
                                 <dimensions>280 feet</dimensions>
                             </physdesc>
@@ -28694,13 +28753,16 @@
                     </c>
                     <c id="ref3814" level="file">
                         <did>
-                            <unittitle>Development of the Child: A Cross Cultural Approach to the Acquisition of Sex Roles and Social Standards - Jerome Kagan</unittitle>
+                            <unittitle>Film - Development of the Child: A Cross Cultural Approach to the Acquisition of Sex Roles and Social Standards - Jerome Kagan (2006.113.18)</unittitle>
                             <unitid>2006.113.18</unitid>
                             <container id="cid5599001" type="Reel" label="Moving image">18</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1975/1975">1975</unitdate>
+                            <physdesc audience="internal" id="ref3813" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3814" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3815" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3818" label="Dimensions note">
                                 <dimensions>847 feet</dimensions>
                             </physdesc>
@@ -28718,13 +28780,16 @@
                     </c>
                     <c id="ref3819" level="file">
                         <did>
-                            <unittitle>Development of the Child: A Cross-Cultural Approach to Cognition - Jerome Kagan</unittitle>
+                            <unittitle>Film - Development of the Child: A Cross-Cultural Approach to Cognition - Jerome Kagan (2006.113.19)</unittitle>
                             <unitid>2006.113.19</unitid>
                             <container id="cid5600001" type="Reel" label="Moving image">19</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1975/1975">1975</unitdate>
+                            <physdesc audience="internal" id="ref3820" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: EASTMAN -1 16 1• SAFETY FILM</physdesc>
+                            <physdesc audience="internal" id="ref3821" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3822" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3825" label="Dimensions note">
                                 <dimensions>715 feet</dimensions>
                             </physdesc>
@@ -28742,13 +28807,16 @@
                     </c>
                     <c id="ref3829" level="file">
                         <did>
-                            <unittitle>Mothers and Toddlers : Humanizing the Growth Experience - Manuel Jackson</unittitle>
+                            <unittitle>Film - Mothers and Toddlers : Humanizing the Growth Experience - Manuel Jackson (2006.113.20)</unittitle>
                             <unitid>2006.113.20</unitid>
                             <container id="cid5601001" type="Reel" label="Moving image">20</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1960/1969" type="inclusive">probably 1960s</unitdate>
+                            <physdesc audience="internal" id="ref3828" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester black and white negative: no sound: yes sound type: optical code: EASTMAN SAFETY FILM</physdesc>
+                            <physdesc audience="internal" id="ref3827" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3826" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: n/a vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3860" label="Dimensions note">
                                 <dimensions>594 feet</dimensions>
                             </physdesc>
@@ -28766,13 +28834,16 @@
                     </c>
                     <c id="ref3833" level="file">
                         <did>
-                            <unittitle>Lab Science and Art Program for the Visually Impaired - Doris E. Hadary, Ph.D.</unittitle>
+                            <unittitle>Film - Lab Science and Art Program for the Visually Impaired - Doris E. Hadary, Ph.D. (2006.113.21)</unittitle>
                             <unitid>2006.113.21</unitid>
                             <container id="cid5601002" type="Reel" label="Moving image">21</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate>undated</unitdate>
+                            <physdesc audience="internal" id="ref3832" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3831" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3830" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3863" label="Dimensions note">
                                 <dimensions>470 feet</dimensions>
                             </physdesc>
@@ -28792,7 +28863,7 @@
                     </c>
                     <c id="ref3837" level="file">
                         <did>
-                            <unittitle>The Angels of Serra Center - Arthur Zegart</unittitle>
+                            <unittitle>Film - The Angels of Serra Center - Arthur Zegart (2006.113.22)</unittitle>
                             <unitid>2006.113.22</unitid>
                             <container id="cid5601003" type="Reel" label="Moving image">22</container>
                             <container id="cid5604002" type="Box" label="Mixed materials">286a</container>
@@ -28801,6 +28872,9 @@
                                 <extent>1 reel and 1 folder of supplemental material </extent>
                             </physdesc>
                             <unitdate normal="1970/1979" type="inclusive">probably 1970s</unitdate>
+                            <physdesc audience="internal" id="ref3836" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: SAFETY FILM 49 [] EASTMAN</physdesc>
+                            <physdesc audience="internal" id="ref3835" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3834" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3866" label="Dimensions note">
                                 <dimensions>approximately 900 feet</dimensions>
                             </physdesc>
@@ -28817,13 +28891,16 @@
                     </c>
                     <c id="ref3841" level="file">
                         <did>
-                            <unittitle>Loving Parents - University of Pennsylvania, Hospital of the University of Pennsylvania - Luigi Mastroianni, Jr.</unittitle>
+                            <unittitle>Film - Loving Parents - University of Pennsylvania, Hospital of the University of Pennsylvania - Luigi Mastroianni, Jr. (2006.113.23)</unittitle>
                             <unitid>2006.113.23</unitid>
                             <container id="cid5601004" type="Reel" label="Moving image">23</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1978/1978">1978</unitdate>
+                            <physdesc audience="internal" id="ref3840" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3839" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3838" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3869" label="Dimensions note">
                                 <dimensions>887 feet</dimensions>
                             </physdesc>
@@ -28842,13 +28919,16 @@
                     </c>
                     <c id="ref3845" level="file">
                         <did>
-                            <unittitle>Fulfillment of Human Potential - Doris E. Hadary</unittitle>
+                            <unittitle>Film - Fulfillment of Human Potential - Doris E. Hadary (2006.113.24)</unittitle>
                             <unitid>2006.113.24</unitid>
                             <container id="cid5601005" type="Reel" label="Moving image">24</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1970/1979" type="inclusive">probably 1970s</unitdate>
+                            <physdesc audience="internal" id="ref3844" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3843" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3842" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3872" label="Dimensions note">
                                 <dimensions>667 feet</dimensions>
                             </physdesc>
@@ -28867,13 +28947,16 @@
                     </c>
                     <c id="ref3849" level="file">
                         <did>
-                            <unittitle>Downey Side: The Other Face of Juvenile Justice - Arthur Zegart</unittitle>
+                            <unittitle>Film - Downey Side: The Other Face of Juvenile Justice - Arthur Zegart (2006.113.25)</unittitle>
                             <unitid>2006.113.25</unitid>
                             <container id="cid5601006" type="Reel" label="Moving image">25</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate normal="1970/1979" type="inclusive">probably 1970s</unitdate>
+                            <physdesc audience="internal" id="ref3848" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3847" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3846" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: no vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3875" label="Dimensions note">
                                 <dimensions>1056 feet</dimensions>
                             </physdesc>
@@ -28890,13 +28973,16 @@
                     </c>
                     <c id="ref3853" level="file">
                         <did>
-                            <unittitle>Lab Science and Art Program for the Visually Impaired - Doris E. Hadary, Ph.D.</unittitle>
+                            <unittitle>Film - Lab Science and Art Program for the Visually Impaired - Doris E. Hadary, Ph.D. (2006.113.26)</unittitle>
                             <unitid>2006.113.26</unitid>
                             <container id="cid5601007" type="Reel" label="Moving image">26</container>
                             <physdesc>
                                 <extent>1 reel</extent>
                             </physdesc>
                             <unitdate>undated</unitdate>
+                            <physdesc audience="internal" id="ref3852" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: n/a</physdesc>
+                            <physdesc audience="internal" id="ref3851" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3850" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (magenta hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3878" label="Dimensions note">
                                 <dimensions>456 feet</dimensions>
                             </physdesc>
@@ -28916,7 +29002,7 @@
                     </c>
                     <c id="ref3857" level="file">
                         <did>
-                            <unittitle>First Friends - The Mental Health Film Board - Alberta Jacoby</unittitle>
+                            <unittitle>Film - First Friends - The Mental Health Film Board - Alberta Jacoby (2006.113.27)</unittitle>
                             <unitid>2006.113.27</unitid>
                             <container id="cid5604001" type="Box" label="Mixed materials">286a</container>
                             <container parent="cid5604001" type="Folder">3625</container>
@@ -28925,6 +29011,9 @@
                                 <extent>1 reel and 1 folder of supplemental material </extent>
                             </physdesc>
                             <unitdate normal="1970/1979" type="inclusive">probably 1970s</unitdate>
+                            <physdesc audience="internal" id="ref3856" label="Physical Characteristics">gauge/medium: 16 mm film base: polyester color negative: no sound: yes sound type: optical code: Ectachrome film</physdesc>
+                            <physdesc audience="internal" id="ref3855" label="Physical Treatment">wind: preservation digitization recommendation: recommend film for digitization</physdesc>
+                            <physdesc audience="internal" id="ref3854" label="Physical Condition">sound: good emulsion scratches: no base scratches: no preforation damage: no shrinkage: no color fading: yes (blue hue) vinegar syndrome: no other condition notes: n/a</physdesc>
                             <physdesc id="ref3881" label="Dimensions note">
                                 <dimensions>799 feet</dimensions>
                             </physdesc>
@@ -28946,7 +29035,7 @@
                     </c>
                     <c id="ref3882" level="file">
                         <did>
-                            <unittitle>Young Children in Brief Separation - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson (-0163-)</unittitle>
+                            <unittitle>DVDs and VHS videocassettes - Young Children in Brief Separation - Tavistock Institute of Human Relations - James Robertson; Joyce Robertson (-0163-)</unittitle>
                             <container id="cid5604004" type="Box" label="Moving image">287</container>
                             <container parent="cid5604004" type="Folder">3626-3631</container>
                             <container id="cid5616001" type="Box" label="Moving image">286b</container>
@@ -28954,6 +29043,7 @@
                                 <extent>6 DVDs and 6 VHS videocassettes</extent>
                             </physdesc>
                             <unitdate normal="1967/1970" type="inclusive">probably late 1960s</unitdate>
+                            <physdesc audience="internal" id="ref3886" label="Preservation Treatment">DVD copies were made from VHS.</physdesc>
                             <physdesc id="ref3912" label="Running Time ">
                                 <dimensions>(hours: minutes: seconds) Jane 00:37:20 Lucy 1:02:42 Thomas 00:36:58 John 1:02:14 Kate 00:33:00 The Importance of Substitute Mothering 00:22:11</dimensions>
                             </physdesc>
@@ -28974,7 +29064,7 @@
                     </c>
                     <c id="ref3887" level="file">
                         <did>
-                            <unittitle>The Polished Stones: K-5 Math Achievement in Japan and Taiwan - The University of Michigan - Harold Stevenson</unittitle>
+                            <unittitle>DVD and VHS videocassette - The Polished Stones: K-5 Math Achievement in Japan and Taiwan - The University of Michigan - Harold Stevenson (-1267-)</unittitle>
                             <container id="cid5616002" type="Box" label="Moving image">286b</container>
                             <container id="cid5605001" type="Box" label="Moving image">287</container>
                             <container parent="cid5605001" type="Folder">3632</container>
@@ -28982,6 +29072,9 @@
                                 <extent>1 DVD and 1 VHS videocassette</extent>
                             </physdesc>
                             <unitdate normal="1989/1989">1989</unitdate>
+                            <physdesc audience="internal" id="ref3894" label="Preservation Treatment">DVD copies were made from VHS.</physdesc>
+                            <physdesc audience="internal" id="ref3908" label="Physical Condition">VHS videocassette will no longer play in VCR.</physdesc>
+                            <physdesc audience="internal" id="ref3907" label="Physical Characteristics">1 VHS videocassette and 1 DVD color sound: yes</physdesc>
                             <physdesc id="ref3910" label="Running Time">
                                 <dimensions>34 minutes and 58 seconds</dimensions>
                             </physdesc>
@@ -29005,44 +29098,40 @@
                     </c>
                     <c id="ref3890" level="file">
                         <did>
-                            <unittitle>Dental Detective - Health Futures, Children's Health Futures - Stephen R. Mosow (84-0999-84)</unittitle>
+                            <unittitle>5.25 inch floppy disc - Dental Detective - Health Futures, Children's Health Futures - Stephen R. Mosow (84-0999-84)</unittitle>
                             <container id="cid5605002" type="Box" label="Computer disks / tapes">287</container>
                             <container parent="cid5605002" type="Folder">3633</container>
                             <physdesc>
                                 <extent>5.25 inch floppy disc</extent>
                             </physdesc>
                             <unitdate normal="1986/1986">1986</unitdate>
-                            <physdesc id="ref3935" label="General Physical Description note">5.25 inch floppy disc</physdesc>
                         </did>
                     </c>
                     <c id="ref3891" level="file">
                         <did>
-                            <unittitle>Don't Break the Camel's Back - Health Futures, Children's Health Futures - Stephen R. Mosow (84-0999-84)</unittitle>
+                            <unittitle>5.25 inch floppy disc - Don't Break the Camel's Back - Health Futures, Children's Health Futures - Stephen R. Mosow (84-0999-84)</unittitle>
                             <container id="cid5605003" type="Box" label="Computer disks / tapes">287</container>
                             <container parent="cid5605003" type="Folder">3634</container>
                             <unitdate normal="1986/1986">1986</unitdate>
-                            <physdesc id="ref3936" label="General Physical Description note">5.25 inch floppy disc</physdesc>
                         </did>
                     </c>
                     <c id="ref3892" level="file">
                         <did>
-                            <unittitle>Nutrients, Calories - Health Futures, Children's Health Futures - Stephen R. Mosow (84-0999-84)</unittitle>
+                            <unittitle>5.25 inch floppy disc - Nutrients, Calories - Health Futures, Children's Health Futures - Stephen R. Mosow (84-0999-84)</unittitle>
                             <container id="cid5605004" type="Box" label="Computer disks / tapes">287</container>
                             <container parent="cid5605004" type="Folder">3635</container>
                             <unitdate normal="1986/1986">1986</unitdate>
-                            <physdesc id="ref3937" label="General Physical Description note">5.25 inch floppy disc</physdesc>
                         </did>
                     </c>
                     <c id="ref3893" level="file">
                         <did>
-                            <unittitle>Your Children, Our Children - Twin Cities Public Television - John Merrow</unittitle>
+                            <unittitle>Audiocassettes - Your Children, Our Children - Twin Cities Public Television - John Merrow</unittitle>
                             <container id="cid5607001" type="Box" label="Sound recording">287</container>
                             <container parent="cid5607001" type="Folder">3636</container>
                             <physdesc>
                                 <extent>2 audiocassette tapes</extent>
                             </physdesc>
                             <unitdate normal="1984/1984">1984</unitdate>
-                            <physdesc id="ref3938" label="General Physical Description note">Audiocassettes</physdesc>
                         </did>
                     </c>
                 </c>

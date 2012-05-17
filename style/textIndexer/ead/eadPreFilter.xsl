@@ -333,7 +333,7 @@
                <xsl:copy-of select="$dcMeta"/>
             </xsl:when>
             <xsl:otherwise>
-               <xsl:call-template name="get-ead-collection"/>
+<!--               <xsl:call-template name="get-ead-collection"/>-->
                <xsl:call-template name="get-ead-identifier"/>
                <xsl:call-template name="get-ead-level"/>
                <xsl:call-template name="get-ead-title"/>
@@ -347,9 +347,11 @@
                <xsl:call-template name="get-ead-date"/>
                <xsl:call-template name="get-ead-type"/>
                <xsl:call-template name="get-ead-format"/>
-               <xsl:call-template name="get-ead-source"/>
+<!-- This is coded as 'unkown,' as it does not contain any useful information we are not including it              
+   <xsl:call-template name="get-ead-source"/>
+-->
                <xsl:call-template name="get-ead-language"/>
-               <xsl:call-template name="get-ead-relation"/>
+<!--               <xsl:call-template name="get-ead-relation"/>-->
                <xsl:call-template name="get-ead-coverage"/>
 <!--  
                <xsl:call-template name="get-ead-scopecontent"/>
@@ -565,9 +567,9 @@
                      </collectionCreator>
                   </xsl:for-each>
                   <xsl:for-each select="did/origination">
-                     <subcreator xtf:meta="true">
+                     <creator xtf:meta="true">
                         <xsl:value-of select="normalize-space(string(child::*))"/>
-                     </subcreator>
+                     </creator>
                   </xsl:for-each>
                </xsl:when>
                <xsl:otherwise>
@@ -576,9 +578,9 @@
                         <xsl:value-of select="normalize-space(.)"/>
                      </collectionCreator>
                   </xsl:for-each>
-                  <subcreator xtf:meta="true">
+                  <creator xtf:meta="true">
                      <xsl:value-of select="'unknown'"/>
-                  </subcreator>
+                  </creator>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:when>
@@ -757,18 +759,22 @@
       <xsl:choose>
          <xsl:when test="@level">
             <xsl:choose>
-               <xsl:when test="did/origination[not(starts-with(@label, 'creator'))]">
-                  <contributor xtf:meta="true">
-                     <xsl:value-of select="normalize-space(string((not(did/origination[@label, 'creator'])[1])))"/>
-                  </contributor>
+               <xsl:when test="did/origination/child::*[@role != 'Author (aut)']">
+                  <xsl:for-each select="did/origination/child::*[@role != 'Author (aut)']">
+                     <contributor xtf:meta="true">
+                        <xsl:value-of select="."/>
+                     </contributor>                     
+                  </xsl:for-each>
                </xsl:when>
                <xsl:otherwise/>
             </xsl:choose>
          </xsl:when>
-         <xsl:when test="/ead/archdesc/did/origination[not(starts-with(@label, 'creator'))]">
-            <contributor xtf:meta="true">
-               <xsl:value-of select="normalize-space(string((not(/ead/archdesc/did/origination[@label, 'creator'])[1])))"/>
-            </contributor>
+         <xsl:when test="/ead/archdesc/did/origination/child::*[@role != 'Author (aut)']">
+            <xsl:for-each select="/ead/archdesc/did/origination/child::*[@role != 'Author (aut)']">
+               <contributor xtf:meta="true">
+                  <xsl:value-of select="."/>
+               </contributor>                     
+            </xsl:for-each>
          </xsl:when>
          <!-- 9/26/11 WS: Removed as irrelevant
          <xsl:when test="/ead/eadheader/filedesc/titlestmt/author">
@@ -789,6 +795,11 @@
    <xsl:template name="get-ead-date">
       <!-- 9/27/11 WS: Changed date to grab from archdesc/did/unitdate/@type="inclusive" -->
       <xsl:choose>
+         <xsl:when test="@level">
+            <date xtf:meta="true">
+               <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
+            </date>
+         </xsl:when>
          <xsl:when test="/ead/archdesc/did/unitdate[@type='inclusive']">
             <date xtf:meta="true">
                <xsl:value-of select="replace(string(/ead/archdesc/did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>

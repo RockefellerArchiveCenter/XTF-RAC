@@ -41,12 +41,12 @@ div.closeWindow a{color: #C45414;}
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
 /*h1#collectionGuides {background: url("images/collection_guides.gif") no-repeat left top; background-color:#fff;}*/
 
-#collectionGuides {margin-top:-60px; margin-left:150px;}
+#collectionGuides {margin-top:-60px; margin-bottom:1em; margin-left:150px; font-size:.5em !important;}
 #collectionGuides a {
    position:relative;
    display:block;
    width:260px;
-   height:40px; }
+   height:40px !important; }
 #collectionGuides a span {
    display:block;
    position:absolute;
@@ -55,7 +55,7 @@ div.closeWindow a{color: #C45414;}
    background:#ffffff url("images/collection_guides.gif") no-repeat left top;
    z-index:1; /* Places <span> on top of <a> text */  }
 
-.searchNav {background-color: #fff; width:100%; margin-top:-1.5em;}
+.searchNav {background-color: #fff; width:100%; margin-top:-.5em;}
 .searchNav .searchLinks {color: #555555; text-align:right; padding-right:.5em;}
 .searchNav .searchLinks a {color: #C45414; text-decoration:none;}/*555555*/
 
@@ -109,7 +109,8 @@ a.hit {
    color: #FD8239 !important;
    font-weight: bold;
 }
-.docHit {width:95%;}
+.results table{width:95% !important;}
+.docHit {width:95%; margin-left:2em !important;}
 .docHit table{width:auto;}
 
 /* Formats tabs for finding aids*/
@@ -207,6 +208,7 @@ ul.none {list-style:none;}
 .navright .left {margin-top:-12px;}
 .overview p{margin-top:0; margin-bottom:12px;}
 #content-right table tr td {padding-right:1em;}
+.col4 {padding-right: 1em;}
 .addToBag {
     font-weight:normal !important;    
 /*    background: url("images/bookbag.gif") no-repeat right top;*/

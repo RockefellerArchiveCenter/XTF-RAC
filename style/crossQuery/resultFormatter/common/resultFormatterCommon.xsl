@@ -679,8 +679,6 @@
          </xsl:otherwise>
       </xsl:choose>
 
-      
-
       <!-- -join & -prox are mutually exclusive -->
       <xsl:choose>
          <xsl:when test="$text-prox">

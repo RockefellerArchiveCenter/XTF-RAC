@@ -7,7 +7,6 @@
                 <titleproper>A Guide to the Wallace Buttrick Papers
                     <num>FA026</num>
                 </titleproper>
-                <titleproper type="filing">Buttrick (Wallace) papers</titleproper>
             </titlestmt>
             <publicationstmt>
                 <publisher>Rockefeller Archive Center</publisher>
@@ -22,7 +21,7 @@
         </filedesc>
         <profiledesc>
             <creation>This finding aid was produced using the Archivists' Toolkit
-                <date>2012-01-31T10:09-0500</date>
+                <date>2011-11-11T11:34-0500</date>
             </creation>
         </profiledesc>
         <revisiondesc>
@@ -47,7 +46,7 @@
             </physdesc>
             <unitdate normal="1888/1926" type="inclusive">1888-1926</unitdate>
             <origination label="creator">
-                <persname source="lcnaf" role="Author (aut)">Buttrick, Wallace, 1853-1926</persname>
+                <persname source="lcnaf">Buttrick, Wallace, 1853-1926</persname>
             </origination>
         </did>
         <arrangement id="ref2">
@@ -73,6 +72,10 @@
             <head>Immediate Source of Acquisition note</head>
             <p>The papers of Wallace Buttrick were deposited with the Rockefeller Foundation Archives in July 1967 by Mrs. Charles Merrill.</p>
         </acqinfo>
+        <fileplan audience="internal" id="ref6">
+            <head>File Plan note</head>
+            <p>IV 2A 01</p>
+        </fileplan>
         <userestrict id="ref35">
             <head>Conditions Governing Use note</head>
             <p>RAC users must abide by all applicable provisions of United States copyright law. Reproduction/duplication of archival items is routinely provided in accordance with "fair use." If the RAC does not hold copyright for an archival collection, or items within a collection, it is the user’s responsibility to contact the copyright holder, or make a fair effort to do so, prior to publication.</p>

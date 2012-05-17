@@ -162,9 +162,11 @@
                      <li>
                         <a href="javascript:openWin('{$xtfURL}{$crossqueryPath}?smode=archivalMat')">About Archival Materials</a>
                      </li>
+                     <!--
                      <li>
                         <a href="http://www.rockarch.org/collections/" target="_blank">Looking for our old collection guide pages?</a>
                      </li>
+                     -->
                   </ul>
                </td>
             </tr>
@@ -228,6 +230,10 @@
                      <option value="creator">Creator</option>
                      <option value="bioghist">Biographical or Historical Note</option>
                      <option value="scopecontent">Scope and Content Note</option>
+                     <option value="file">File</option>
+                     <option value="item">Item</option>
+                     <option value="series">Series</option>
+                     <option value="subseries">Subseries</option>
                      <option value="controlaccess">Subject Headings</option>
                   </select>
                   <br/>
@@ -254,6 +260,12 @@
                   <strong>Date(s):</strong>
                </td>
                <td><input type="text" name="year" size="60" value="{$year}"/></td>
+               <!-- 
+                  <input type="text" name="s" id="s" 
+                  value="Text to be displayed here" 
+                  onfocus="if(this.value==this.defaultValue)this.value='';" 
+                  onblur="if(this.value=='')this.value=this.defaultValue;"/>
+               -->
             </tr>
             <tr>
                <td>&#160;</td>

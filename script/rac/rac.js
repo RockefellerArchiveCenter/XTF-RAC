@@ -1,19 +1,4 @@
 //Custom Javascript for Rockefeller Archives Center
-
-function getParameterByName(name) {
- 
-    name = String(name).replace(/[.*+?|()[\]{}\\]/g, '\\$&');
- 
-    var match = RegExp('[?&]' + name + '=([^&]*)')
-                    .exec(window.location.search);
- 
-    return match ?
-        decodeURIComponent(match[1].replace(/\+/g, ' '))
-        : null;
- 
-}
-
-
 //Show hide layers
            function showHide(shID) {
                if (document.getElementById(shID)) {
