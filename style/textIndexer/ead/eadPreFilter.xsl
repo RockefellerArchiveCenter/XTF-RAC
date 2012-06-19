@@ -292,7 +292,7 @@
          <xsl:apply-templates mode="addChunkId" select="*"/>         
       </xsl:copy>
    </xsl:template>
-   <xsl:template match="c" mode="addChunkId">
+   <xsl:template match="c | c01 | c02 | c03 | c04 | c05 | c06 | c07 | c08 | c09 | c10 | c11 | c12" mode="addChunkId">
       <xsl:copy>
          <xsl:namespace name="xtf" select="'http://cdlib.org/xtf'"/>
          <xsl:attribute name="xtf:subDocument" select="@id"/>
@@ -932,7 +932,18 @@
       <dateStamp xtf:meta="true" xtf:tokenize="no">
          <xsl:choose>
             <xsl:when test="/ead/eadheader/filedesc/publicationstmt/date">
-               <xsl:value-of select="concat(parse:year(string(/ead/eadheader/filedesc/publicationstmt/date[1])),'-01-01')"/>
+               <xsl:choose>
+                  <xsl:when test="matches(/ead/eadheader/filedesc/publicationstmt[1]/date[1],'^(\d{4})')">
+                     <xsl:value-of select="concat(substring(string(/ead/eadheader/filedesc/publicationstmt[1]/date[1]),1,4),'-01-01')"/>
+                  </xsl:when>
+                  <xsl:when test="contains(/ead/eadheader/filedesc/publicationstmt[1]/date[1],'-')">
+                     <xsl:value-of select="concat(parse:year(string(/ead/eadheader/filedesc/publicationstmt[1]/date[1])),'-01-01')"/>                  
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <!-- I don't know, what would you put? -->
+                     <xsl:value-of select="'1950-01-01'"/>                  
+                  </xsl:otherwise>
+               </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                <!-- I don't know, what would you put? -->
