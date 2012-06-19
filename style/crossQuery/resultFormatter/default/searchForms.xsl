@@ -175,8 +175,6 @@
                   <h4>The Rockefeller Archive Center Holdings</h4>
                   <p>The Rockefeller Archive Center holdings encompass the records of the Rockefeller family and their wide-ranging philanthropic endeavors (including the Rockefeller Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the Center's growing holdings include materials from numerous non-Rockefeller foundations and nonprofit organizations, making it a premier center for research on philanthropy and civil society. It is also a major repository for the personal papers of leaders of the philanthropic community, Nobel Prize laureates, and world-renowned investigators in science and medicine.
                   </p>
-                  <p><strong>Researchers should note that collection guides may not identify collections or portions of collections whose access or use is restricted. When a researcher requests an appointment to visit the Center, the Head of Processing or Head of Reference will verify that the desired materials are open and available for research. 
-                  </strong></p>
                </td>
             </tr>
             <tr>
