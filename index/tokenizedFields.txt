@@ -1,4 +1,3 @@
-series
 title
 creator
 subject
@@ -16,5 +15,4 @@ set
 year
 collectionTitle
 collectionCreator
-subseries
 description
