@@ -319,8 +319,8 @@
                      <xsl:text> | </xsl:text>
                      -->
                      <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf">Print View</a>
-<!--                     <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>-->
+                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf">Print View (PDF)</a>
+<!--                     <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View (PDF)</a>-->
                   </td>
                </tr>
                <tr>
