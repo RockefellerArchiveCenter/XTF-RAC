@@ -1086,7 +1086,7 @@
    
    <!-- *** Begin templates for Container List *** -->
     <xsl:template match="archdesc/dsc">
-        <h2>Contents List </h2>
+        <h2>Contents List</h2>
           <!-- Call children of dsc -->
           <xsl:apply-templates select="*"/>
     </xsl:template>
@@ -1152,6 +1152,14 @@
     </xsl:template>
     <xsl:template match="c01">
        <table class="containerList" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+             <td>Testing</td>
+             <td style="width: 15%;"/>
+             <td style="width: 12%;"/>
+             <td style="width: 12%"/>
+             <td style="width: 18%"/>
+             <td style="width: 8%"/>
+          </tr>
         <xsl:call-template name="clevel"/>
         <xsl:for-each select="c02">
             <xsl:call-template name="clevel"/>

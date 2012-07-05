@@ -285,13 +285,13 @@
    </xsl:template>
    
    <!-- 1/27/12 WS: added sub-documents xtf:subDocument="mySubDocName" -->
-   <!-- NOTE: it is unclear how effective this is. also need someway to differentiate between docs and subdocs.-->   
    <xsl:template match="dsc" mode="addChunkId">
       <xsl:copy>
          <xsl:copy-of select="@*"/>
          <xsl:apply-templates mode="addChunkId" select="*"/>         
       </xsl:copy>
    </xsl:template>
+   
    <xsl:template match="c | c01 | c02 | c03 | c04 | c05 | c06 | c07 | c08 | c09 | c10 | c11 | c12" mode="addChunkId">
       <xsl:copy>
          <xsl:namespace name="xtf" select="'http://cdlib.org/xtf'"/>
@@ -303,18 +303,7 @@
          <xsl:apply-templates mode="addChunkId"/>
       </xsl:copy>
    </xsl:template>
-   <!--
-   <xsl:template match="c" mode="addChunkId">
-      <xsl:copy>
-         <xsl:copy-of select="@*"/>
-         <xsl:attribute name="xtf:subDocument" select="@id"/>
-         <xsl:attribute name="xtf:inheritMeta">false</xsl:attribute>
-         <xsl:attribute name="xtf:sectionType" select="@level"/>
-         <xsl:call-template name="get-meta"/>
-         <xsl:apply-templates mode="addChunkId"/>
-      </xsl:copy>
-   </xsl:template>
-   -->
+
    <!-- ====================================================================== -->
    <!-- Metadata Indexing                                                      -->
    <!-- ====================================================================== -->
@@ -422,7 +411,6 @@
                   </seriesID>
                </xsl:when>
             </xsl:choose>
-            
          </xsl:when>
          <xsl:otherwise>
             <level xtf:meta="true" xtf:tokenize="no">collection</level>
@@ -437,14 +425,30 @@
             <xsl:variable name="seriesTitle">
                <xsl:choose>
                   <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">
-                     File: 
+                     <xsl:for-each select="ancestor::*[@level='series'] | ancestor::*[@level='collection'][parent::dsc] | ancestor::*[@level='fonds'] | ancestor::*[@level='recordgrp']">
+                        <xsl:choose>
+                           <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
+                           <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
+                           <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
+                           <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
+                           <xsl:otherwise/>
+                        </xsl:choose>    
+                        <xsl:value-of select="did/unittitle"/>.&#160;                        
+                     </xsl:for-each>                    
+                    <xsl:text>File: </xsl:text> 
                      <xsl:choose>
-                        <xsl:when test="string-length(did/unittitle) &gt; 1">
-                           <xsl:value-of select="did/unittitle"/>       
+                        <xsl:when test="string-length(normalize-space(did/unittitle)) &gt; 1">
+                           <xsl:value-of select="did/unittitle"/>.       
                         </xsl:when>
-                        <xsl:when test="string-length(did/unitdate) &gt; 1"></xsl:when>
-                        <xsl:otherwise>Unknown</xsl:otherwise>
+                        <xsl:when test="string-length(normalize-space(did/unitdate)) &gt; 1"></xsl:when>
+                        <xsl:otherwise>Unknown.</xsl:otherwise>
                      </xsl:choose>
+                     <xsl:if test="child::did/container">
+                           <xsl:for-each select="did/container">
+                              <xsl:value-of select="concat(' ',@type,' ',.)"/>
+                              <xsl:if test="position()!=last()">, </xsl:if>
+                           </xsl:for-each>
+                     </xsl:if>
                   </xsl:when>
                   <xsl:otherwise>
                      <xsl:choose>
