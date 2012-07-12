@@ -1,0 +1,4 @@
+# robots.txt for collectionguides.rockarch.org. Sorry, but please go away (for now).
+
+User-agent: *
+Disallow: /
