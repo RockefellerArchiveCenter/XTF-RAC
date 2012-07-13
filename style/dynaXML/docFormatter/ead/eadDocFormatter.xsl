@@ -617,7 +617,11 @@
                               <!--<xsl:apply-templates select="archdesc/arrangement/head" mode="tocLink"/>-->
                            </xsl:if>
                            <xsl:if test="archdesc/bioghist/head">                        
-                              <xsl:apply-templates select="archdesc/bioghist/head" mode="tocLink"/>
+                              <xsl:call-template name="make-toc-link">
+                                 <xsl:with-param name="name" select="'Biographical/Historical Note'"/>
+                                 <xsl:with-param name="id" select="'bioghist'"/>
+                                 <xsl:with-param name="nodes" select="archdesc/bioghist"/>
+                              </xsl:call-template>
                            </xsl:if> 
                            <!--
                            <xsl:if test="archdesc/controlaccess/head">
