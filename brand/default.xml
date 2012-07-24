@@ -6,7 +6,7 @@
       <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
       <link rel="stylesheet" href="css/default/racustom.css" type="text/css"/>
-      <link rel="shortcut icon" href="icons/default/favicon.ico"/>
+      <link rel="shortcut icon" href="icons/default/favicon.png"/>
       <!-- 9/27/11 WS: RA links and javascript -->
       <link rel="stylesheet" rev="stylesheet" type="text/css" href="http://www.rockarch.org/css/globalStyle.css"/>
       <link rel="stylesheet" rev="stylesheet" type="text/css" href="http://www.rockarch.org/css/more.css"/>
@@ -137,7 +137,7 @@
       <link rel="stylesheet" href="css/default/content.css" type="text/css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
       <link rel="stylesheet" href="css/default/racustom.css" type="text/css"/>
-      <link rel="shortcut icon" href="icons/default/favicon.ico"/>
+      <link rel="shortcut icon" href="icons/default/favicon.png"/>
       <!-- 9/27/11 WS: RA links and javascript -->
       <link rel="stylesheet" rev="stylesheet" type="text/css" href="http://www.rockarch.org/css/globalStyle.css"/>
       <link rel="stylesheet" rev="stylesheet" type="text/css" href="http://www.rockarch.org/css/more.css"/>

@@ -6,16 +6,28 @@
     
     <web-app>
 
+<filter>
+    <filter-name>UrlRewriteFilter</filter-name>
+    <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>UrlRewriteFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+
         <servlet>
             <servlet-name>crossQuery</servlet-name>
             <servlet-class>org.cdlib.xtf.crossQuery.CrossQuery</servlet-class>
         </servlet>
         
+
         <servlet>
             <servlet-name>rawQuery</servlet-name>
             <servlet-class>org.cdlib.xtf.crossQuery.raw.RawQuery</servlet-class>
         </servlet>
-        
+       
         <servlet>
             <servlet-name>dynaXML</servlet-name>
             <servlet-class>org.cdlib.xtf.dynaXML.DynaXML</servlet-class>
@@ -90,5 +102,5 @@
             <servlet-name>org.cdlib.xtf.zing.SRU</servlet-name>
             <url-pattern>/servlet/org.cdlib.xtf.zing.SRU</url-pattern>
         </servlet-mapping>
-    
+ 
     </web-app>

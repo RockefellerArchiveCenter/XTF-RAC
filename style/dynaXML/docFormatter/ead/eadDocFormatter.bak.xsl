@@ -6,15 +6,10 @@
    extension-element-prefixes="session"
    exclude-result-prefixes="#all"
    xpath-default-namespace="urn:isbn:1-931666-22-9">
+   
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    <!-- EAD dynaXML Stylesheet                                                 -->
    <!-- 9/27/11 WS: Edited for Rockefeller Archives Center                     -->
-   
-    <!--  Modified by DG for RAC 5/17/12 - 6/11/12
-	This files goes in  /var/lib/tomcat6/webapps/xtf/style/dynaXML/docFormatter/ead/
- 
-	-->   
-  
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    
    <!--
@@ -265,7 +260,7 @@
                         </a> |
                         -->                        
                      </xsl:if>
-                     <a href="{$xtfURL}{$crossqueryPath}">
+                     <a href="{$xtfURL}/search">
                         <xsl:text>NEW SEARCH</xsl:text>
                      </a>
                      <xsl:text>&#160;|&#160;</xsl:text>
@@ -296,7 +291,6 @@
                   <td style="width:300px">
                      <!-- <a href="javascript://" onclick="javascript:window.open('/xtf/search?smode=getLang','popup','width=500,height=200,resizable=no,scrollbars=no')">Choose Language</a>-->
                      <form action="{$xtfURL}{$dynaxmlPath}" method="get" style="margin-top:0px;padding-top:0;">
-					 <!-- DG: possible todo: change form action: action="/xtf/view"  -->
                         <input name="query" type="text" size="15"/> 
                         <input type="hidden" name="docId" value="{$docId}"/>
                         <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
@@ -320,9 +314,8 @@
                      <xsl:text> | </xsl:text>
                      -->
                      <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-					 <!-- DG: todo -->
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf">Print View</a>
-<!--                     <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>-->
+                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf">Print View (PDF)</a>
+<!--                     <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View (PDF)</a>-->
                   </td>
                </tr>
                <tr>
@@ -414,7 +407,7 @@
                </xsl:variable>
                <xsl:call-template name="make-tab-link">
                   <xsl:with-param name="name" select="'Contents List'"/>
-                  <xsl:with-param name="id" select="'contentsLink'"/> 
+                  <xsl:with-param name="id" select="$idFile"/> 
                   <xsl:with-param name="doc.view" select="'contents'"/>
                   <xsl:with-param name="nodes" select="$nodesLst"/>
                </xsl:call-template>
@@ -429,7 +422,7 @@
          </ul>
       
    </xsl:template>
-   <!-- DG: tab links like "Collection Description", "Contents List"  -->
+   
    <xsl:template name="make-tab-link">
       <xsl:param name="name"/>
       <xsl:param name="id"/>
@@ -451,68 +444,9 @@
       </xsl:variable>
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>   
          <a>
-	<!-- 
-/FA068/collection
-	http://192.168.50.23/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=headerlink;brand=default&doc.view=collection 
- 
- /FA068/contents
-	http://192.168.50.23/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=contentsLink;brand=default&doc.view=contents
-	
-
-	-->		
-      <!-- 5/17/2012 DG:  new variables for the new href: documentname2, basicchoice2, xtfURL2, href2
-      Just use chunk.id and doc name for now
-        -->
-	<xsl:variable name="documentname2">
- 					 <xsl:analyze-string select="$query.string" regex="docId=ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
-
-					 <!--   "/xtf/view\?docId=ead/([a-z0-9^/]+)/([a-z0-9^/]+).xml;query=;brand=default" -->
-					
-					    <xsl:matching-substring>
-					      <xsl:value-of select="regex-group(2)" />
-					    </xsl:matching-substring>
-
-					    <xsl:non-matching-substring>
-					    	<xsl:text>no_match_docname</xsl:text>
-					    </xsl:non-matching-substring>
-					  </xsl:analyze-string>         	     	
-	</xsl:variable>
-	<xsl:variable name="basicchoice2">
-      	<xsl:choose>
-			<xsl:when test="$id='headerlink'">
-				<xsl:text>collection</xsl:text>
-			</xsl:when>
-			<xsl:when test="$id='contentsLink'">
-				<xsl:text>contents</xsl:text>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:text>nomatch_for_</xsl:text>
-				<xsl:value-of select="$id" />
-			</xsl:otherwise>
-		</xsl:choose>      	
-      </xsl:variable>
-      <xsl:variable name="xtfURL2"> <!-- remove xtf/ from end, if there.  -->
- 					 <xsl:analyze-string select="$xtfURL" regex="(.*)xtf/">
-					    <xsl:matching-substring>
-					      <xsl:value-of select="regex-group(1)" />
-					    </xsl:matching-substring>
-					    <xsl:non-matching-substring>
-					      <xsl:value-of select="$xtfURL"/>
-					    </xsl:non-matching-substring>
-					  </xsl:analyze-string>
-      </xsl:variable>
-      
-      <xsl:variable name="href2">
-				<xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2)"/>
-      </xsl:variable>
-   <!--  end new  DG: Just created $href2 --> 		 
             <xsl:attribute name="href">
-			<!-- DG: --> 
-				<xsl:value-of select="$href2"/>
-				<!-- instead of:
                <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-				-->
-			</xsl:attribute>
+            </xsl:attribute>
             <xsl:value-of select="$name"/>
          </a>   
       <xsl:if test="string-length($hit.count) &gt; 0 and $hit.count != '0'">
@@ -685,7 +619,7 @@
                            <xsl:if test="archdesc/bioghist/head">                        
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Biographical/Historical Note'"/>
-                                 <xsl:with-param name="id" select="'biohist'"/>
+                                 <xsl:with-param name="id" select="'bioghist'"/>
                                  <xsl:with-param name="nodes" select="archdesc/bioghist"/>
                               </xsl:call-template>
                            </xsl:if> 
@@ -774,99 +708,12 @@
    </xsl:template>
    
    <xsl:template name="make-toc-link">
-   <!-- DG:  5/17/12
-
-<a href="{$xtfURL}{$dynaxmlPath}?{$content.href}&amp;doc.view=collection">Collection Description</a>
- <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-
-
-example:  http://192.168.50.23/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=headerlink;brand=default&doc.view=collection
-
-
-$query.string example - docId=ead/FA068/FA068.xml
-$id = chunk.id value
-content.href  = calculated later to be everything after "?"
-document = FA068 eg.
-$xtfURL + $dynaxmlPath =  http://192.168.50.23/xtf/view
-   -->
       <xsl:param name="submenuID"/>
       <xsl:param name="name"/>
       <xsl:param name="id"/>
       <xsl:param name="nodes"/>
       <xsl:param name="indent" select="1"/>
       <xsl:variable name="hit.count" select="sum($nodes/@xtf:hitCount)"/>
-     <!-- 5/17/2012 DG:  a new variable for the new href.
-      Just use chunk.id and doc name for now
-        -->
-      <xsl:variable name="documentname2">
- 					 <xsl:analyze-string select="$query.string" regex="(.*)ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
-
-					 <!--   "/xtf/view\?docId=ead/([a-z0-9^/]+)/([a-z0-9^/]+).xml;query=;brand=default" -->
-					
-					    <xsl:matching-substring>
-					     <xsl:value-of select="regex-group(2)" />
-					    </xsl:matching-substring>
-
-					    <xsl:non-matching-substring>
-					    	<xsl:text>no_match_docname</xsl:text>
-					    </xsl:non-matching-substring>
-					  </xsl:analyze-string>         	     	
-      </xsl:variable>
-      <!-- <xsl:variable name="queryterm">
-               <xsl:analyze-string select="$query.string" regex="docId=ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml;query=([A-Z0-9]+);brand=default" flags="i">
-                  
-                  <xsl:matching-substring>
-                     <xsl:value-of select="regex-group(3)" />
-                  </xsl:matching-substring>
-                  
-                  <xsl:non-matching-substring>
-                     <xsl:text>no_match_query</xsl:text>
-                  </xsl:non-matching-substring>
-               </xsl:analyze-string>         	     	
-      </xsl:variable> -->
-      <xsl:variable name="basicchoice2">
-      	<xsl:choose>
-					<xsl:when test="$id='headerlink'">
-						<xsl:text>overview</xsl:text>
-					</xsl:when>
-					<xsl:when test="$id='restrictlink'">
-						<xsl:text>access</xsl:text>
-					</xsl:when>
-					<xsl:when test="$id='arrangementlink'">
-						<xsl:text>arrangement</xsl:text>
-					</xsl:when>
-					<xsl:when test="$id='biohist'">
-						<xsl:text>biohist</xsl:text>
-					</xsl:when>
-					<xsl:when test="$id='adminlink'">
-						<xsl:text>admin</xsl:text>
-					</xsl:when>
-					<xsl:when test="$id='physdesclink'">
-						<xsl:text>physdesc</xsl:text>
-					</xsl:when>
-					<xsl:otherwise>
-					<!-- just show the original URL, unshortened -->
-						<xsl:text>nomatch_for_id</xsl:text>
-						<!-- <xsl:value-of select="$id" /> -->
-					</xsl:otherwise>
-				</xsl:choose>      	
-      </xsl:variable>
-      <xsl:variable name="xtfURL2"> <!-- remove xtf/ from end, if there.  -->
- 					 <xsl:analyze-string select="$xtfURL" regex="(.*)xtf/">
-					    <xsl:matching-substring>
-					      <xsl:value-of select="regex-group(1)" />
-					    </xsl:matching-substring>
-					    <xsl:non-matching-substring>
-					      <xsl:value-of select="$xtfURL"/>
-					    </xsl:non-matching-substring>
-					  </xsl:analyze-string>
-      </xsl:variable>
-      
-      <xsl:variable name="href2">
-				<xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2)"/>
-      </xsl:variable>
-   <!--  end new  DG: Just created $href2 -->   
-
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of 
          select="$id"/>;brand=<xsl:value-of select="$brand"/>&amp;parentID=<xsl:value-of select="$submenuID"/><xsl:value-of 
             select="$search"/>&amp;doc.view=<xsl:value-of 
@@ -911,20 +758,8 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.23/xtf/view
                   </xsl:when>
                   <xsl:when test="$indent = 3">
                      <a>
-                  	<!--  if basicchoice2 = "nomatch_for_id" then use the original 
-                     -->
-                       <xsl:attribute name="href">
-					   
-                        <!--   <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>   (old had &amp;menu=more)-->
-						<xsl:choose>
-							<xsl:when test="$basicchoice2='nomatch_for_id'">	
-								<xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-							</xsl:when>
-							<xsl:otherwise>
-								<!-- 5/17/12 DG for RA: rewrite -->
-								<xsl:value-of select="$href2"/>
-							</xsl:otherwise>
-						</xsl:choose>
+                        <xsl:attribute name="href">
+                           <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
                         </xsl:attribute>
                         <xsl:value-of select="$name"/> 
                      </a>
@@ -933,20 +768,8 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.23/xtf/view
                      <a>
                         <xsl:attribute name="onclick">showHide('<xsl:value-of select="$submenuID"/>');</xsl:attribute>
                         <xsl:attribute name="href">
-						<!--
                            <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-                        -->
-							<xsl:choose>
-								<xsl:when test="$basicchoice2='nomatch_for_id'">	
-									<xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-								</xsl:when>
-								<xsl:otherwise>
-									<!-- 5/17/12 DG for RA: rewrite -->
-									<xsl:value-of select="$href2"/>
-								</xsl:otherwise>
-							</xsl:choose>
-						
-						</xsl:attribute>
+                        </xsl:attribute>
                         <xsl:value-of select="$name"/>
                      </a>
                   </xsl:otherwise>

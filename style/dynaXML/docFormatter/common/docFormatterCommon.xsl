@@ -176,7 +176,7 @@
                      <xsl:value-of select="$doc.title"/>
                   </title>
                   <link rel="stylesheet" type="text/css" href="{$css.path}bbar.css"/>
-                  <link rel="shortcut icon" href="icons/default/favicon.ico" />
+                  <link rel="shortcut icon" href="icons/default/favicon.png" />
                </head>
                <body>
                   <div class="bbar">
@@ -279,7 +279,7 @@
          <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <title><xsl:value-of select="//xtf:meta/title[1]"/></title>
-            <link rel="shortcut icon" href="icons/default/favicon.ico" />
+            <link rel="shortcut icon" href="icons/default/favicon.png" />
 
          </head>
          <body>

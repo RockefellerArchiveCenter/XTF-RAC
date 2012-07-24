@@ -561,7 +561,7 @@
          </xsl:variable>
          <xsl:call-template name="make-tab-link">
             <xsl:with-param name="name" select="'Go to Contents List'"/>
-            <xsl:with-param name="id" select="$idFile"/> 
+            <xsl:with-param name="id" select="'contentsLink'"/> 
             <xsl:with-param name="doc.view" select="'contents'"/>
             <xsl:with-param name="nodes" select="$nodesLst"/>
          </xsl:call-template>
@@ -974,9 +974,9 @@
          or string(archdesc/*/prefercite/*) or string(archdesc/*/acqinfo/*) or string(archdesc/*/processinfo/*)
          or string(archdesc/*/appraisal/*) or string(archdesc/*/accruals/*)">
          <h2>
-            <a name="adminlink">
+            <p name="adminlink">
                <xsl:text>Administrative Information</xsl:text>
-            </a>
+            </p>
          </h2>
          <xsl:apply-templates select="/ead/eadheader/filedesc/publicationstmt" mode="admin"/>
          <xsl:apply-templates select="/ead/eadheader/revisiondesc" mode="admin"/>

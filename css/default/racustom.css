@@ -207,6 +207,7 @@ ul.none {list-style:none;}
 }
 .navright .left {margin-top:-12px;}
 .overview p{margin-top:0; margin-bottom:12px;}
+.overview a {color: #C45414 !important;}
 #content-right table tr td {padding-right:1em;}
 .col4 {padding-right: 1em;}
 .addToBag {

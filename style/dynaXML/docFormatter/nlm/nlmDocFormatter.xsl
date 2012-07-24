@@ -145,7 +145,7 @@
                <title>
                   <xsl:value-of select="$doc.title"/>
                </title>
-               <link rel="shortcut icon" href="icons/default/favicon.ico" />
+               <link rel="shortcut icon" href="icons/default/favicon.png" />
             </head>
             <frameset rows="120,*">
                <frame frameborder="1" scrolling="no" title="Navigation Bar">
@@ -213,7 +213,7 @@
                      <xsl:value-of select="$doc.title"/>
                   </title>
                   <link rel="stylesheet" type="text/css" href="{$css.path}toc.css"/>
-                  <link rel="shortcut icon" href="icons/default/favicon.ico" />
+                  <link rel="shortcut icon" href="icons/default/favicon.png" />
 
                </head>
                <body>
@@ -279,7 +279,7 @@
                <xsl:value-of select="$doc.title"/>
             </title>
             <link rel="stylesheet" type="text/css" href="{$css.path}{$content.css}"/>
-            <link rel="shortcut icon" href="icons/default/favicon.ico" />
+            <link rel="shortcut icon" href="icons/default/favicon.png" />
 
          </head>
          <body>
@@ -357,7 +357,7 @@
                <xsl:value-of select="$doc.title"/>
             </title>
             <link rel="stylesheet" type="text/css" href="{$css.path}{$content.css}"/>
-            <link rel="shortcut icon" href="icons/default/favicon.ico" />
+            <link rel="shortcut icon" href="icons/default/favicon.png" />
 
          </head>
          <body bgcolor="white">
