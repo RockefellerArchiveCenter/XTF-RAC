@@ -301,7 +301,40 @@
                         <input type="hidden" name="docId" value="{$docId}"/>
                         <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
                         <input type="submit" value="Search this Collection"/>
-                     </form>               
+                     </form>
+                     <!-- 7/24/12 WS: added add to bag for whole finding aid -->
+                     <span class="addToBag">
+                        <xsl:variable name="identifier" select="/ead/meta/identifier[1]"/>
+                        <xsl:variable name="indexId" select="$identifier"/>
+                        <xsl:choose>
+                           <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                              <span>Added</span>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <script type="text/javascript">
+                                    add_1 = function() {
+                                       var span = YAHOO.util.Dom.get('add_1');
+                                       span.innerHTML = "Adding...";
+                                       YAHOO.util.Connect.asyncRequest('GET', 
+                                          '<xsl:value-of select="concat($xtfURL, 'search?smode=addToBag;identifier=', $identifier)"/>',
+                                          {  success: function(o) { 
+                                                span.innerHTML = o.responseText;
+                                                ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                             },
+                                             failure: function(o) { span.innerHTML = 'Failed to add!'; }
+                                          }, null);
+                                    };
+                                 </script>
+                              <span id="add_1">
+                                 <a href="javascript:add_1()">
+                                    Add to Bookbag
+                                 </a>
+                              </span>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        &#160;|&#160;
+                     </span>
+                     
                       <xsl:variable name="bag" select="session:getData('bag')"/>
                      <a href="/xtf/search?smode=showBag">Bookbag</a>
 <!--                        (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)-->
@@ -412,12 +445,15 @@
                      <xsl:otherwise>archdesc/dsc/child::*[1]</xsl:otherwise>
                   </xsl:choose>
                </xsl:variable>
-               <xsl:call-template name="make-tab-link">
-                  <xsl:with-param name="name" select="'Contents List'"/>
-                  <xsl:with-param name="id" select="'contentsLink'"/> 
-                  <xsl:with-param name="doc.view" select="'contents'"/>
-                  <xsl:with-param name="nodes" select="$nodesLst"/>
-               </xsl:call-template>
+               <!-- 7/24/12 WS: Added condition to test for finding aids with no contents list and supress this tab -->
+               <xsl:if test="/ead/archdesc/dsc/child::*">
+                  <xsl:call-template name="make-tab-link">
+                     <xsl:with-param name="name" select="'Contents List'"/>
+                     <xsl:with-param name="id" select="'contentsLink'"/> 
+                     <xsl:with-param name="doc.view" select="'contents'"/>
+                     <xsl:with-param name="nodes" select="$nodesLst"/>
+                  </xsl:call-template>
+               </xsl:if>
             </li>
            <!-- <li>
                <xsl:if test="$doc.view='digital'">
@@ -453,10 +489,10 @@
          <a>
 	<!-- 
 /FA068/collection
-	http://192.168.50.23/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=headerlink;brand=default&doc.view=collection 
+	http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=headerlink;brand=default&doc.view=collection 
  
  /FA068/contents
-	http://192.168.50.23/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=contentsLink;brand=default&doc.view=contents
+	http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=contentsLink;brand=default&doc.view=contents
 	
 
 	-->		
@@ -477,7 +513,16 @@
 					    </xsl:non-matching-substring>
 					  </xsl:analyze-string>         	     	
 	</xsl:variable>
-	<xsl:variable name="basicchoice2">
+            <xsl:variable name="queryterm">
+               <xsl:analyze-string select="$search" regex="query=([A-Z0-9]+)" flags="i">
+                  
+                  <xsl:matching-substring>
+                     <xsl:value-of select="concat(';query=',regex-group(1))" />
+                  </xsl:matching-substring>
+                  
+               </xsl:analyze-string>
+            </xsl:variable>
+	<!-- <xsl:variable name="basicchoice2">
       	<xsl:choose>
 			<xsl:when test="$id='headerlink'">
 				<xsl:text>collection</xsl:text>
@@ -490,7 +535,7 @@
 				<xsl:value-of select="$id" />
 			</xsl:otherwise>
 		</xsl:choose>      	
-      </xsl:variable>
+      </xsl:variable> -->
       <xsl:variable name="xtfURL2"> <!-- remove xtf/ from end, if there.  -->
  					 <xsl:analyze-string select="$xtfURL" regex="(.*)xtf/">
 					    <xsl:matching-substring>
@@ -503,7 +548,7 @@
       </xsl:variable>
       
       <xsl:variable name="href2">
-				<xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2)"/>
+				<xsl:value-of select="concat($xtfURL2,$documentname2,'/',$id,$queryterm)"/>
       </xsl:variable>
    <!--  end new  DG: Just created $href2 --> 		 
             <xsl:attribute name="href">
@@ -780,14 +825,14 @@
  <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
 
 
-example:  http://192.168.50.23/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=headerlink;brand=default&doc.view=collection
+example:  http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=headerlink;brand=default&doc.view=collection
 
 
 $query.string example - docId=ead/FA068/FA068.xml
 $id = chunk.id value
 content.href  = calculated later to be everything after "?"
 document = FA068 eg.
-$xtfURL + $dynaxmlPath =  http://192.168.50.23/xtf/view
+$xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
    -->
       <xsl:param name="submenuID"/>
       <xsl:param name="name"/>
@@ -812,20 +857,17 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.23/xtf/view
 					    </xsl:non-matching-substring>
 					  </xsl:analyze-string>         	     	
       </xsl:variable>
-      <!-- <xsl:variable name="queryterm">
-               <xsl:analyze-string select="$query.string" regex="docId=ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml;query=([A-Z0-9]+);brand=default" flags="i">
+      <xsl:variable name="queryterm">
+               <xsl:analyze-string select="$search" regex="query=([A-Z0-9]+)" flags="i">
                   
                   <xsl:matching-substring>
-                     <xsl:value-of select="regex-group(3)" />
+                     <xsl:value-of select="concat(';query=',regex-group(1))" />
                   </xsl:matching-substring>
                   
-                  <xsl:non-matching-substring>
-                     <xsl:text>no_match_query</xsl:text>
-                  </xsl:non-matching-substring>
-               </xsl:analyze-string>         	     	
-      </xsl:variable> -->
+               </xsl:analyze-string>
+      </xsl:variable>
       <xsl:variable name="basicchoice2">
-      	<xsl:choose>
+         <xsl:choose>
 					<xsl:when test="$id='headerlink'">
 						<xsl:text>overview</xsl:text>
 					</xsl:when>
@@ -845,11 +887,9 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.23/xtf/view
 						<xsl:text>physdesc</xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
-					<!-- just show the original URL, unshortened -->
 						<xsl:text>nomatch_for_id</xsl:text>
-						<!-- <xsl:value-of select="$id" /> -->
-					</xsl:otherwise>
-				</xsl:choose>      	
+					</xsl:otherwise> 
+         </xsl:choose>
       </xsl:variable>
       <xsl:variable name="xtfURL2"> <!-- remove xtf/ from end, if there.  -->
  					 <xsl:analyze-string select="$xtfURL" regex="(.*)xtf/">
@@ -861,9 +901,8 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.23/xtf/view
 					    </xsl:non-matching-substring>
 					  </xsl:analyze-string>
       </xsl:variable>
-      
       <xsl:variable name="href2">
-				<xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2)"/>
+         <xsl:value-of select="concat($xtfURL2,$documentname2,'/',$id,$queryterm)"/>
       </xsl:variable>
    <!--  end new  DG: Just created $href2 -->   
 
@@ -911,10 +950,8 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.23/xtf/view
                   </xsl:when>
                   <xsl:when test="$indent = 3">
                      <a>
-                  	<!--  if basicchoice2 = "nomatch_for_id" then use the original 
-                     -->
-                       <xsl:attribute name="href">
-					   
+                  	<!-- if basicchoice2 = "nomatch_for_id" then use the original -->
+                   <xsl:attribute name="href">
                         <!--   <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>   (old had &amp;menu=more)-->
 						<xsl:choose>
 							<xsl:when test="$basicchoice2='nomatch_for_id'">	
