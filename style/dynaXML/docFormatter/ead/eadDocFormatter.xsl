@@ -513,16 +513,16 @@
 					    </xsl:non-matching-substring>
 					  </xsl:analyze-string>         	     	
 	</xsl:variable>
-            <xsl:variable name="queryterm">
+   <!--  <xsl:variable name="queryterm">
                <xsl:analyze-string select="$search" regex="query=([A-Z0-9]+)" flags="i">
                   
                   <xsl:matching-substring>
-                     <xsl:value-of select="concat(';query=',regex-group(1))" />
+                     <xsl:value-of select="regex-group(1)" />
                   </xsl:matching-substring>
                   
                </xsl:analyze-string>
-            </xsl:variable>
-	<!-- <xsl:variable name="basicchoice2">
+            </xsl:variable> -->
+	<xsl:variable name="basicchoice2">
       	<xsl:choose>
 			<xsl:when test="$id='headerlink'">
 				<xsl:text>collection</xsl:text>
@@ -535,7 +535,7 @@
 				<xsl:value-of select="$id" />
 			</xsl:otherwise>
 		</xsl:choose>      	
-      </xsl:variable> -->
+      </xsl:variable>
       <xsl:variable name="xtfURL2"> <!-- remove xtf/ from end, if there.  -->
  					 <xsl:analyze-string select="$xtfURL" regex="(.*)xtf/">
 					    <xsl:matching-substring>
@@ -548,7 +548,7 @@
       </xsl:variable>
       
       <xsl:variable name="href2">
-				<xsl:value-of select="concat($xtfURL2,$documentname2,'/',$id,$queryterm)"/>
+				<xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2,$search)"/>
       </xsl:variable>
    <!--  end new  DG: Just created $href2 --> 		 
             <xsl:attribute name="href">
@@ -857,15 +857,15 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
 					    </xsl:non-matching-substring>
 					  </xsl:analyze-string>         	     	
       </xsl:variable>
-      <xsl:variable name="queryterm">
+      <!-- <xsl:variable name="queryterm">
                <xsl:analyze-string select="$search" regex="query=([A-Z0-9]+)" flags="i">
                   
                   <xsl:matching-substring>
-                     <xsl:value-of select="concat(';query=',regex-group(1))" />
+                     <xsl:value-of select="regex-group(1)" />
                   </xsl:matching-substring>
                   
                </xsl:analyze-string>
-      </xsl:variable>
+      </xsl:variable> -->
       <xsl:variable name="basicchoice2">
          <xsl:choose>
 					<xsl:when test="$id='headerlink'">
@@ -902,7 +902,7 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
 					  </xsl:analyze-string>
       </xsl:variable>
       <xsl:variable name="href2">
-         <xsl:value-of select="concat($xtfURL2,$documentname2,'/',$id,$queryterm)"/>
+         <xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2,$search)"/>
       </xsl:variable>
    <!--  end new  DG: Just created $href2 -->   
 
