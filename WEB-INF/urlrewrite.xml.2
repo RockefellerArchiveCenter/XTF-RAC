@@ -10,15 +10,12 @@
 -->
 <urlrewrite>
 
-    <rule>
-           <note>
-		The rule will rewrite /search
-	   </note>
-	   <from>^/$([a-z0-9]+)/([a-z0-0]+)$</from>
-	   <to>/xtf/search</to>
+    <rule enabled="true">
+        <from>^/ead/$</from>
+	<to>/chunkid</to>
     </rule>
 
-</urlrewrite>
 
 
+    <outbound-rule>
 
