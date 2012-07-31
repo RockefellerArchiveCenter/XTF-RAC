@@ -216,7 +216,7 @@
                                  <xsl:text>Citation</xsl:text>
                               </a>
                               <xsl:text> | </xsl:text>
-                              <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View (PDF)</a>
+                              <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">PDF</a>
                               <xsl:text> | </xsl:text>
                               <a href="javascript://" onclick="javascript:window.open('/xtf/search?smode=getLang','popup','width=500,height=200,resizable=no,scrollbars=no')">Choose Language</a>
                            </td>

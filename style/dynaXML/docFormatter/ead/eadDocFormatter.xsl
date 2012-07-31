@@ -354,7 +354,7 @@
                      -->
                      <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
 					 <!-- DG: todo -->
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf">Print View</a>
+                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf">PDF</a>
 <!--                     <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>-->
                   </td>
                </tr>
