@@ -746,7 +746,7 @@
    </xsl:template>
    
    <xsl:template name="browseLinks">
-         <p>
+         <div class="browselinks"><p>
             <xsl:choose>
                <xsl:when test="$browse-title">
                   <span style="font-weight:bold; color:#666;">Collection Title</span>
@@ -778,6 +778,7 @@
                </xsl:otherwise>
             </xsl:choose>  
              </p>
+         </div>
  </xsl:template>
    
    <!-- ====================================================================== -->
