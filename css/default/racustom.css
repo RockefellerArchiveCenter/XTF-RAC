@@ -75,7 +75,7 @@ h1.collectionGuides a {text-decoration:none; color:black;}
 
 /*Formats search tabs*/
 .browselinks p {font-size: 1.5em;}
-.browselinks a {color: #C45414 !important; font-size: 1em; padding-right: .3em; padding-left: .3em;}
+.browselinks a {color: #C45414 !important; font-size: 1em; text-decoration: none !important; font-weight: bold;}
 
 /* Formats search results (number and type) */
 table.advancedSearch tr td{vertical-align:text-top;}
