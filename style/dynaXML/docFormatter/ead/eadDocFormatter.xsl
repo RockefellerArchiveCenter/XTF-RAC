@@ -269,7 +269,7 @@
                         <xsl:text>NEW SEARCH</xsl:text>
                      </a>
                      <xsl:text>&#160;|&#160;</xsl:text>
-                     <a href="search?smode=browse">
+                     <a href="{$xtfURL}{$crossqueryPath}?smode=browse">
                         <xsl:text>BROWSE</xsl:text>
                      </a>
                   </div>
