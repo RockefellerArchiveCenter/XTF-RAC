@@ -52,7 +52,7 @@ div.closeWindow a{color: #C45414;}
    position:absolute;
    width:100%;
    height:100%;
-   background:#ffffff url("images/collection_guides.gif") no-repeat left top;
+   background: url("http://collectionguides.rockarch.org/FA246/css/default/images/collection_guides.gif") no-repeat left top; background-color:#fff;
    z-index:1; /* Places <span> on top of <a> text */  }
 
 .searchNav {background-color: #fff; width:100%; margin-top:-.5em;}
@@ -207,7 +207,7 @@ ul.none {list-style:none;}
 }
 .navright .left {margin-top:-12px;}
 .overview p{margin-top:0; margin-bottom:12px;}
-overview a {color: #C45414 !important;}
+.overview a {color: #C45414 !important;}
 #content-right table tr td {padding-right:1em;}
 .col4 {padding-right: 1em;}
 .addToBag {
