@@ -548,16 +548,19 @@
       </xsl:variable>
       
       <xsl:variable name="href2">
-				<xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2,$search)"/>
+				<xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2)"/>
       </xsl:variable>
    <!--  end new  DG: Just created $href2 --> 		 
             <xsl:attribute name="href">
-			<!-- DG: --> 
-				<xsl:value-of select="$href2"/>
-				<!-- instead of:
-               <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-				-->
-			</xsl:attribute>
+               <xsl:choose>
+                  <xsl:when test="($query != '0') and ($query != '')">
+                     <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="$href2"/>
+                  </xsl:otherwise>
+               </xsl:choose>
+           </xsl:attribute>
             <xsl:value-of select="$name"/>
          </a>   
       <xsl:if test="string-length($hit.count) &gt; 0 and $hit.count != '0'">
@@ -730,7 +733,7 @@
                            <xsl:if test="archdesc/bioghist/head">                        
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Biographical/Historical Note'"/>
-                                 <xsl:with-param name="id" select="'biohist'"/>
+                                 <xsl:with-param name="id" select="'bioghist'"/>
                                  <xsl:with-param name="nodes" select="archdesc/bioghist"/>
                               </xsl:call-template>
                            </xsl:if> 
@@ -877,7 +880,7 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
 					<xsl:when test="$id='arrangementlink'">
 						<xsl:text>arrangement</xsl:text>
 					</xsl:when>
-					<xsl:when test="$id='biohist'">
+					<xsl:when test="$id='bioghist'">
 						<xsl:text>biohist</xsl:text>
 					</xsl:when>
 					<xsl:when test="$id='adminlink'">
@@ -902,7 +905,7 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
 					  </xsl:analyze-string>
       </xsl:variable>
       <xsl:variable name="href2">
-         <xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2,$search)"/>
+         <xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2)"/>
       </xsl:variable>
    <!--  end new  DG: Just created $href2 -->   
 
@@ -970,20 +973,19 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
                      <a>
                         <xsl:attribute name="onclick">showHide('<xsl:value-of select="$submenuID"/>');</xsl:attribute>
                         <xsl:attribute name="href">
-						<!--
-                           <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-                        -->
-							<xsl:choose>
-								<xsl:when test="$basicchoice2='nomatch_for_id'">	
-									<xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-								</xsl:when>
-								<xsl:otherwise>
-									<!-- 5/17/12 DG for RA: rewrite -->
-									<xsl:value-of select="$href2"/>
-								</xsl:otherwise>
-							</xsl:choose>
-						
-						</xsl:attribute>
+                           <xsl:choose>
+                              <xsl:when test="($query != '0') and ($query != '')">
+                                 <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
+                              </xsl:when>
+                                 <xsl:when test="$basicchoice2='nomatch_for_id'">	
+                                    <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
+                                 </xsl:when>
+                              <xsl:otherwise>
+                                 <xsl:value-of select="$href2"/>
+                              </xsl:otherwise>
+                           </xsl:choose>
+                        </xsl:attribute>
+                        
                         <xsl:value-of select="$name"/>
                      </a>
                   </xsl:otherwise>
