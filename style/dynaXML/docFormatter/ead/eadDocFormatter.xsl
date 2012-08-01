@@ -781,7 +781,7 @@
                                  <xsl:for-each select="archdesc/controlaccess">
                                     <xsl:for-each select="subject | genreform | title | occupation">
                                        <li>
-                                          <a href="{$xtfURL}/search?browse-all=yes;f1-subject={.}">
+                                          <a href="{$xtfURL}search?browse-all=yes;f1-subject={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
