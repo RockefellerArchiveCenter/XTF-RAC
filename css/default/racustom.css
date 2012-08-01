@@ -73,9 +73,10 @@ h1.collectionGuides a {text-decoration:none; color:black;}
 .eadtitle {text-align:left; font-size:.80em; margin:0; padding-left:.5em; /*border: 1px solid #999;*/}
 .eadtitle h1 {color:#333; margin:0; padding:0;}
 
-/*Formats search tabs*/
+/*Formats main search tabs*/
 .browselinks p {font-size: 1.5em;}
 .browselinks a {color: #C45414 !important; font-size: 1em; text-decoration: none !important; font-weight: bold;}
+.browselinks a:hover {text-decoration: underline !important;}
 
 /* Formats search results (number and type) */
 table.advancedSearch tr td{vertical-align:text-top;}
