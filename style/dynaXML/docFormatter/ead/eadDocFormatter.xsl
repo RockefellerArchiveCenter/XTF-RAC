@@ -1,6 +1,7 @@
 <xsl:stylesheet version="2.0" 
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:xtf="http://cdlib.org/xtf"
+   xmlns:html="http://www.w3.org/1999/xhtml"
    xmlns="http://www.w3.org/1999/xhtml"
    xmlns:session="java:org.cdlib.xtf.xslt.Session"
    extension-element-prefixes="session"
@@ -304,7 +305,7 @@
                      </form>
                      <!-- 7/24/12 WS: added add to bag for whole finding aid -->
                      <span class="addToBag">
-                        <xsl:variable name="identifier" select="/ead/meta/identifier[1]"/>
+                        <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
                         <xsl:variable name="indexId" select="$identifier"/>
                         <xsl:choose>
                            <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
@@ -327,7 +328,7 @@
                                  </script>
                               <span id="add_1">
                                  <a href="javascript:add_1()">
-                                    Add to Bookbag
+                                    Add to Bookbag 
                                  </a>
                               </span>
                            </xsl:otherwise>
