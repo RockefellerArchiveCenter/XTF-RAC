@@ -4,7 +4,7 @@
         <eadid countrycode="US" mainagencycode="US-NNttR">FA001.xml</eadid>
         <filedesc>
             <titlestmt>
-                <titleproper>Guide to the Max Bergmann papers
+                <titleproper>A Guide to the Max Bergmann, Rockefeller University Faculty papers
                     <num>FA001</num>
                 </titleproper>
                 <titleproper type="filing">Bergmann (Max) papers</titleproper>
@@ -23,7 +23,7 @@
         </filedesc>
         <profiledesc>
             <creation>This finding aid was produced using the Archivists' Toolkit
-                <date>2012-01-31T09:55-0500</date>
+                <date>2012-07-11T16:09-0400</date>
             </creation>
             <langusage>English</langusage>
             <descrules>Describing Archives: A Content Standard</descrules>
@@ -31,7 +31,7 @@
     </eadheader>
     <archdesc level="collection">
         <did>
-            <unittitle>Max Bergmann papers</unittitle>
+            <unittitle>Max Bergmann, Rockefeller University Faculty papers</unittitle>
             <unitid>FA001</unitid>
             <repository>
                 <corpname>Rockefeller Archive Center</corpname>
@@ -144,7 +144,6 @@
         <prefercite id="ref252">
             <head>Preferred Citation note</head>
             <p>Repository Name, Collection Name, Record Group Name (if applicable), Series Name (if applicable), Box #, Folder #, and specific information identifying the individual item used.</p>
-            <p>Example: Rockefeller Archive Center, Max Bergmann papers, Laboratory Administration, Selective Service Deferments, Box 8, Folder 58, Deferment Policy, May 12, 1941.</p>
         </prefercite>
         <controlaccess>
             <persname rules="dacs">Bergmann, Martha</persname>
@@ -469,6 +468,10 @@
                         <container parent="cid189" type="Folder">17</container>
                         <unitdate normal="1942/1944" type="inclusive">1942–1944</unitdate>
                     </did>
+                    <fileplan id="ref347">
+                        <head>File Plan note</head>
+                        <p>Former Classification: I 450 B454, Box 2</p>
+                    </fileplan>
                 </c>
                 <c id="ref52" level="file">
                     <did>
@@ -765,7 +768,7 @@
                     <c id="ref89" level="file">
                         <did>
                             <unittitle>Invitations</unittitle>
-                            <container id="cid152" type="Box" label="Mixed materials">4</container>
+                            <container id="cid152" type="Box" label="Mixed materials">2742</container>
                             <container parent="cid152" type="Folder">13</container>
                             <unitdate>1941–1944</unitdate>
                         </did>
@@ -773,7 +776,7 @@
                     <c id="ref90" level="file">
                         <did>
                             <unittitle>Minutes and Notes</unittitle>
-                            <container id="cid151" type="Box" label="Mixed materials">4</container>
+                            <container id="cid151" type="Box" label="Mixed materials">2742</container>
                             <container parent="cid151" type="Folder">14</container>
                             <unitdate>1942–1944</unitdate>
                         </did>
@@ -782,10 +785,10 @@
                 <c id="ref91" level="file">
                     <did>
                         <unittitle>Moore, Stanford</unittitle>
-                        <container id="cid5864" type="Box" label="Mixed materials">5</container>
-                        <container parent="cid5864" type="Folder">1</container>
-                        <container id="cid149" type="Box" label="Mixed materials">4</container>
-                        <container parent="cid149" type="Folder">15</container>
+                        <container id="cid5864" type="Box" label="Mixed materials">4</container>
+                        <container parent="cid5864" type="Folder">15</container>
+                        <container id="cid149" type="Box" label="Mixed materials">5</container>
+                        <container parent="cid149" type="Folder">1</container>
                         <unitdate normal="1942/1946" type="inclusive">undated, 1942–1946</unitdate>
                     </did>
                 </c>
@@ -825,9 +828,9 @@
                     <did>
                         <unittitle>Office Memorandum (2 folders)</unittitle>
                         <container id="cid5863" type="Box" label="Mixed materials">5</container>
-                        <container parent="cid5863" type="Folder">7</container>
+                        <container parent="cid5863" type="Folder">6</container>
                         <container id="cid144" type="Box" label="Mixed materials">5</container>
-                        <container parent="cid144" type="Folder">6</container>
+                        <container parent="cid144" type="Folder">7</container>
                         <unitdate normal="1940/1945" type="inclusive">1940–1945</unitdate>
                     </did>
                 </c>
@@ -961,9 +964,9 @@
                         <did>
                             <unittitle>Special Reports (2 folders)</unittitle>
                             <container id="cid5895" type="Box" label="Mixed materials">7</container>
-                            <container parent="cid5895" type="Folder">4</container>
+                            <container parent="cid5895" type="Folder">3</container>
                             <container id="cid128" type="Box" label="Mixed materials">7</container>
-                            <container parent="cid128" type="Folder">3</container>
+                            <container parent="cid128" type="Folder">4</container>
                             <unitdate normal="1942/1945" type="inclusive">1942–1945</unitdate>
                         </did>
                     </c>
@@ -975,62 +978,94 @@
                     <c id="ref115" level="file">
                         <did>
                             <unittitle>9:5:1</unittitle>
-                            <container id="cid126" type="Box" label="Mixed materials">7</container>
+                            <container id="cid126" type="Box" label="Mixed materials">2745</container>
                             <container parent="cid126" type="Folder">5</container>
                             <unitdate normal="1942/1945" type="inclusive">1942–1945</unitdate>
                         </did>
+                        <fileplan id="ref422">
+                            <head>File Plan note</head>
+                            <p>Former Classification: I 450 B454, Box 7</p>
+                        </fileplan>
                     </c>
                     <c id="ref116" level="file">
                         <did>
                             <unittitle>Borrowed Log</unittitle>
-                            <container id="cid125" type="Box" label="Mixed materials">7</container>
+                            <container id="cid125" type="Box" label="Mixed materials">2745</container>
                             <container parent="cid125" type="Folder">6</container>
                             <unitdate normal="1944/1945" type="inclusive">1944–1945</unitdate>
                         </did>
+                        <fileplan id="ref423">
+                            <head>File Plan note</head>
+                            <p>Former Classification: I 450 B454, Box 7</p>
+                        </fileplan>
                     </c>
                     <c id="ref117" level="file">
                         <did>
                             <unittitle>CMR</unittitle>
-                            <container id="cid124" type="Box" label="Mixed materials">7</container>
+                            <container id="cid124" type="Box" label="Mixed materials">2745</container>
                             <container parent="cid124" type="Folder">7</container>
                             <unitdate normal="1943/1945" type="inclusive">1943–1945</unitdate>
                         </did>
+                        <fileplan id="ref424">
+                            <head>File Plan note</head>
+                            <p>Former Classification: I 450 B454, Box 7</p>
+                        </fileplan>
                     </c>
                     <c id="ref118" level="file">
                         <did>
                             <unittitle>Disposition of Extra Copies</unittitle>
-                            <container id="cid123" type="Box" label="Mixed materials">7</container>
+                            <container id="cid123" type="Box" label="Mixed materials">2745</container>
                             <container parent="cid123" type="Folder">8</container>
                             <unitdate normal="1942/1945" type="inclusive">1942–1945</unitdate>
                         </did>
+                        <fileplan id="ref425">
+                            <head>File Plan note</head>
+                            <p>Former Classification: I 450 B454, Box 7</p>
+                        </fileplan>
                     </c>
                     <c id="ref119" level="file">
                         <did>
                             <unittitle>Received, A–B–C</unittitle>
-                            <container id="cid122" type="Box" label="Mixed materials">7</container>
+                            <container id="cid122" type="Box" label="Mixed materials">2745</container>
                             <container parent="cid122" type="Folder">9</container>
                             <unitdate normal="1942/1945" type="inclusive">1942–1945</unitdate>
                         </did>
+                        <fileplan id="ref426">
+                            <head>File Plan note</head>
+                            <p>Former Classification: I 450 B454, Box 7</p>
+                        </fileplan>
                     </c>
                     <c id="ref120" level="file">
                         <did>
                             <unittitle>Received Log</unittitle>
-                            <container id="cid121" type="Box" label="Mixed materials">7</container>
+                            <container id="cid121" type="Box" label="Mixed materials">2745</container>
                             <container parent="cid121" type="Folder">10</container>
                             <unitdate normal="1943/1945" type="inclusive">1943–1945</unitdate>
                         </did>
+                        <fileplan id="ref427">
+                            <head>File Plan note</head>
+                            <p>Former Classification: I 450 B454, Box 7</p>
+                        </fileplan>
                     </c>
                     <c id="ref121" level="file">
                         <did>
                             <unittitle>Received, Other Progress Reports (3 folders)</unittitle>
-                            <container id="cid5894" type="Box" label="Mixed materials">8</container>
+                            <container id="cid5894" type="Box" label="Mixed materials">2746</container>
                             <container parent="cid5894" type="Folder">1</container>
-                            <container id="cid5893" type="Box" label="Mixed materials">8</container>
+                            <container id="cid5893" type="Box" label="Mixed materials">2746</container>
                             <container parent="cid5893" type="Folder">2</container>
-                            <container id="cid120" type="Box" label="Mixed materials">7</container>
+                            <container id="cid120" type="Box" label="Mixed materials">2745</container>
                             <container parent="cid120" type="Folder">11</container>
                             <unitdate normal="1942/1945" type="inclusive">1942–1945</unitdate>
                         </did>
+                        <fileplan id="ref417">
+                            <head>File Plan note</head>
+                            <p>Former Classification: I 450 B454, Box 7 (2745) and Box 8 (2746)</p>
+                        </fileplan>
+                        <fileplan id="ref428">
+                            <head>File Plan note</head>
+                            <p>Former Classification: I 450 B454, Box 7</p>
+                        </fileplan>
                     </c>
                     <c id="ref122" level="file">
                         <did>
@@ -1069,9 +1104,9 @@
                     <did>
                         <unittitle>Selective Service Deferment (2 folders)</unittitle>
                         <container id="cid5862" type="Box" label="Mixed materials">8</container>
-                        <container parent="cid5862" type="Folder">8</container>
+                        <container parent="cid5862" type="Folder">7</container>
                         <container id="cid114" type="Box" label="Mixed materials">8</container>
-                        <container parent="cid114" type="Folder">7</container>
+                        <container parent="cid114" type="Folder">8</container>
                         <unitdate normal="1941/1945" type="inclusive">1941–1945</unitdate>
                     </did>
                 </c>
@@ -1290,19 +1325,19 @@
                             <container id="cid5892" type="Box" label="Mixed materials">10</container>
                             <container parent="cid5892" type="Folder">4</container>
                             <container id="cid89" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid89" type="Folder">3</container>
+                            <container parent="cid89" type="Folder">7</container>
                             <container id="cid5887" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid5887" type="Folder">9</container>
+                            <container parent="cid5887" type="Folder">6</container>
                             <container id="cid5891" type="Box" label="Mixed materials">10</container>
                             <container parent="cid5891" type="Folder">5</container>
                             <container id="cid5886" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid5886" type="Folder">10</container>
+                            <container parent="cid5886" type="Folder">9</container>
                             <container id="cid5890" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid5890" type="Folder">6</container>
+                            <container parent="cid5890" type="Folder">8</container>
                             <container id="cid5889" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid5889" type="Folder">7</container>
+                            <container parent="cid5889" type="Folder">10</container>
                             <container id="cid5888" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid5888" type="Folder">8</container>
+                            <container parent="cid5888" type="Folder">3</container>
                             <unitdate>[194?]</unitdate>
                         </did>
                     </c>
@@ -1320,17 +1355,17 @@
                             <container id="cid87" type="Box" label="Mixed materials">10</container>
                             <container parent="cid87" type="Folder">12</container>
                             <container id="cid5883" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid5883" type="Folder">15</container>
+                            <container parent="cid5883" type="Folder">13</container>
                             <container id="cid5882" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid5882" type="Folder">16</container>
+                            <container parent="cid5882" type="Folder">14</container>
                             <container id="cid5881" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid5881" type="Folder">17</container>
+                            <container parent="cid5881" type="Folder">15</container>
                             <container id="cid5880" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid5880" type="Folder">18</container>
+                            <container parent="cid5880" type="Folder">16</container>
                             <container id="cid5885" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid5885" type="Folder">13</container>
+                            <container parent="cid5885" type="Folder">17</container>
                             <container id="cid5884" type="Box" label="Mixed materials">10</container>
-                            <container parent="cid5884" type="Folder">14</container>
+                            <container parent="cid5884" type="Folder">18</container>
                             <unitdate>[194?]</unitdate>
                         </did>
                     </c>
@@ -1555,7 +1590,7 @@
                     <c id="ref187" level="file">
                         <did>
                             <unittitle>July – August</unittitle>
-                            <container id="cid58" type="Box" label="Mixed materials">11</container>
+                            <container id="cid58" type="Box" label="Mixed materials">2749</container>
                             <container parent="cid58" type="Folder">11</container>
                             <unitdate normal="1944/1944">1944</unitdate>
                         </did>

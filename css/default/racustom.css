@@ -77,6 +77,9 @@ h1.collectionGuides a {text-decoration:none; color:black;}
 .browselinks p {font-size: 1.5em;}
 .browselinks a {color: #C45414 !important; font-size: 1em; text-decoration: none !important; font-weight: bold;}
 .browselinks a:hover {text-decoration: underline !important;}
+#fordtext p {color: #C45414; font-style: italic;}
+#fordtext a {color: #C45414 !important;}
+#fordtext a:hover {color: #888 !important;}
 
 /* Formats search results (number and type) */
 table.advancedSearch tr td{vertical-align:text-top;}
