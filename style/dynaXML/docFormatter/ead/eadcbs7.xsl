@@ -559,12 +559,15 @@
                <xsl:otherwise>archdesc/dsc/child::*[1]</xsl:otherwise>
             </xsl:choose>
          </xsl:variable>
+         <!-- 8/28/12 HA: Added condition to test for finding aids with no contents list and supress this tab -->
+         <xsl:if test="/ead/archdesc/dsc/child::*">
          <xsl:call-template name="make-tab-link">
             <xsl:with-param name="name" select="'Go to Contents List'"/>
             <xsl:with-param name="id" select="'contentsLink'"/> 
             <xsl:with-param name="doc.view" select="'contents'"/>
             <xsl:with-param name="nodes" select="$nodesLst"/>
          </xsl:call-template>
+         </xsl:if>
       </div>
    </xsl:template>
      
