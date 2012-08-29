@@ -796,7 +796,7 @@
          <xsl:when test="@label = 'General Physical Description note'">
             <xsl:choose>
                <xsl:when test="parent::*/parent::archdesc">
-                  Physical Description of Material   
+                  <h4>Physical Description of Material</h4>   
                   <xsl:apply-templates/>    
                </xsl:when>
                <xsl:otherwise>
