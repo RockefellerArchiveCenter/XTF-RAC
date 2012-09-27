@@ -625,7 +625,7 @@
                            <td width="155">
                               <img src="http://www.rockarch.org/images/spacer.gif" width="1" height="6" alt=""/>
                               <br/>
-                              <a href="http://192.168.50.18:8080/xtf/search" onmouseover="dhtmlShow('navOption3sub_11', '11');" class="subNav">Search All Collection Guides</a>
+                              <a href="http://collectionguides.rockarch.org/xtf/search" onmouseover="dhtmlShow('navOption3sub_11', '11');" class="subNav">Search All Collection Guides</a>
                               <br/>
                               <img src="http://www.rockarch.org/images/spacer.gif" width="1" height="6" alt=""/>
                            </td>
@@ -2514,7 +2514,7 @@
                            <td width="155">
                               <img src="http://www.rockarch.org/images/spacer.gif" width="1" height="6" alt=""/>
                               <br/>
-                              <a href="http://192.168.50.18:8080/xtf/search" onmouseover="dhtmlShow('navOption3sub_11', '11');" class="subNav">Search All Collection Guides</a>
+                              <a href="http://collectionguides.rockarch.org/xtf/search" onmouseover="dhtmlShow('navOption3sub_11', '11');" class="subNav">Search All Collection Guides</a>
                               <br/>
                               <img src="http://www.rockarch.org/images/spacer.gif" width="1" height="6" alt=""/>
                            </td>
