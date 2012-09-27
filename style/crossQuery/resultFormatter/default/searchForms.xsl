@@ -256,7 +256,7 @@
             </tr>
             <tr>
                <td style="text-align:right; padding-right:36px;">
-                  <strong>Date(s):</strong>
+                  <strong>Year(s):</strong>
                </td>
                <td><input type="text" name="year" size="60" value="{$year}"/></td>
                <!-- 
@@ -266,6 +266,7 @@
                   onblur="if(this.value=='')this.value=this.defaultValue;"/>
                -->
             </tr>
+            <tr><td></td><td>Enter a single year or range of years, for example 1997 or 1892-1942.</td></tr>
             <tr>
                <td>&#160;</td>
                <td colspan="2">
