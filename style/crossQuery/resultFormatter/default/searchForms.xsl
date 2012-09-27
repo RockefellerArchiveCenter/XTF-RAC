@@ -211,7 +211,7 @@
             </tr>
          </table>
       </form>
-   </xsl:template>
+     </xsl:template>
    
    <!-- advanced form -->
    <xsl:template name="advancedForm" exclude-result-prefixes="#all">
@@ -229,10 +229,10 @@
                      <option value="creator">Creator</option>
                      <option value="bioghist">Biographical or Historical Note</option>
                      <option value="scopecontent">Scope and Content Note</option>
-                     <option value="file">File</option>
+                     <option value="file">Folder Title</option>
                      <option value="item">Item</option>
-                     <option value="series">Series</option>
-                     <option value="subseries">Subseries</option>
+                     <option value="series">Series Name</option>
+                     <option value="subseries">Subseries Name</option>
                      <option value="controlaccess">Subject Headings</option>
                   </select>
                   <br/>
