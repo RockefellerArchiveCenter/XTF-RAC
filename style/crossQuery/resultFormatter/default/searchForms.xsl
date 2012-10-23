@@ -175,7 +175,7 @@
                   <h4>Rockefeller Archive Center Holdings</h4>
                   <p>The Rockefeller Archive Center holdings encompass the records of the Rockefeller family and their wide-ranging philanthropic endeavors (including the Rockefeller Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the Center's growing holdings include materials from numerous non-Rockefeller foundations and nonprofit organizations, making it a premier center for research on philanthropy and civil society. It is also a major repository for the personal papers of leaders of the philanthropic community, Nobel Prize laureates, and world-renowned investigators in science and medicine.
                   </p>
-                  <div id="fordtext"><p>Guides to Ford Foundation records are not yet included in this system. Please contact <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> or submit a <a href="http://www.rockarch.org/research/inquiryform.php">research inquiry</a> for further information.</p></div>
+                  <div id="fordtext"><p>Please note that only a portion of the Ford Foundation finding aids are currently available online; finding aids for Ford Foundation grant records are not yet available online. <br/>Please contact <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> or submit a <a href="http://www.rockarch.org/research/inquiryform.php">research inquiry</a> for further information.</p></div>
                </td>
             </tr>
             <tr>
