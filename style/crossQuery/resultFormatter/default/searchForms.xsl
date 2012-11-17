@@ -88,7 +88,7 @@
                         //]]>   
                   </script>
                   <xsl:comment>[if IE ]>
-                  <p class="chromeframe">You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, <a href="http://browsehappy.com/">use a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+                  &lt;p class="chromeframe"&gt;You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, &lt;a href=&quot;http://browsehappy.com/&quot;&gt;use a different browser&lt;/a&gt; or &lt;a href=&quot;http://www.google.com/chromeframe/?redirect=true&quot;&gt;install Google Chrome Frame&lt;/a&gt; to better experience this site.&lt;/p&gt;
                   &lt;![endif]</xsl:comment>
                </head>
                <body>
