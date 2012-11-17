@@ -16,6 +16,7 @@ body {
 h2 {margin-top:.5em; padding:0;}
 h4{margin-bottom:0; padding-bottom:0;}
 p{margin-top:0;margin-bottom:1em;}
+.modsInfo h3 {margin:0; padding:.25em .25em 1em .25em; background-color:#ccc !important; border:red;}
 div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em;}
 div.closeWindow {text-align:right !important; font-size:.85em !important; margin-top:1em;}
 div.closeWindow a{color: #C45414;}
@@ -36,7 +37,10 @@ div.closeWindow a{color: #C45414;}
 .fixedHeader .searchNav {width:99%;}
 .fixedHeader .bbar_custom{width:99%;} 
 .bookbag {text-align:right; border:none; background-color:white; margin-bottom:-2em;padding:0;margin-right:1em;}
-
+ul.bbicons {display:block; list-style: none; padding:0; margin:0; float:none; clear:both;}
+ul.bbicons li{width:30px !important; float: left; margin:0;}
+ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; text-align:center; font-size:.75em; color:#C45428;}
+.bbform {display:block; margin:0;padding:0;height:1em; overflow:hidden; text-align: right;}
 /* Formats header */
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
 /*h1#collectionGuides {background: url("images/collection_guides.gif") no-repeat left top; background-color:#fff;}*/
@@ -52,7 +56,7 @@ div.closeWindow a{color: #C45414;}
    position:absolute;
    width:100%;
    height:100%;
-   background: url("http://collectionguides.rockarch.org/FA246/css/default/images/collection_guides.gif") no-repeat left top; background-color:#fff;
+   background: url("http://192.168.50.29/xtf/css/default/images/collection_guides.gif") no-repeat left top; background-color:#fff;
    z-index:1; /* Places <span> on top of <a> text */  }
 
 .searchNav {background-color: #fff; width:100%; margin-top:-.5em;}
@@ -71,7 +75,7 @@ h1.collectionGuides a {text-decoration:none; color:black;}
     }  
 .navright form {text-align:right !important; padding:8px 8px;}
 .eadtitle {text-align:left; font-size:.80em; margin:0; padding-left:.5em; /*border: 1px solid #999;*/}
-.eadtitle h1 {color:#333; margin:0; padding:0;}
+.eadtitle h1 {color:#333; margin:0; padding:0; font-size:1.75em;}
 
 /*Formats main search tabs*/
 .browselinks p {font-size: 1.5em;}
@@ -80,6 +84,9 @@ h1.collectionGuides a {text-decoration:none; color:black;}
 #fordtext p {color: #C45414; font-style: italic;}
 #fordtext a {color: #C45414 !important;}
 #fordtext a:hover {color: #888 !important;}
+p.searchtip {font-size:smaller}
+td.bottomalign {vertical-align:bottom !important;}
+.searchtiplink {text-align:right !important;}
 
 /* Formats search results (number and type) */
 table.advancedSearch tr td{vertical-align:text-top;}
@@ -130,7 +137,9 @@ ul.tabs li.select{
     border-right:1px solid #999;
     border-left:1px solid #999;
     }
-
+ul.tabs li.clear {display:none;}
+.active a{font-weight:bold; text-decoration:none !important;}
+.currentBrowse a{color: #333 !important;}
 /* Styles for EAD */
 .main {
     display:block; 

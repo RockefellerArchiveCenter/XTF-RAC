@@ -102,7 +102,7 @@
                      <xsl:value-of select="'-sort-date,sort-title'"/>
                   </xsl:when>  
                   <xsl:when test="$sort='collection'">
-                     <xsl:value-of select="'collection,sort-title,sort-creator,sort-publisher,sort-year'"/>
+                     <xsl:value-of select="'collection,sort-title'"/>
                   </xsl:when>                     
                </xsl:choose>
             </xsl:attribute>
@@ -147,6 +147,12 @@
          <!-- 3/26/12 WS: Testing collection facet -->
          <xsl:call-template name="facet">
             <xsl:with-param name="field" select="'facet-collection'"/>
+            <xsl:with-param name="topGroups" select="'*'"/>
+            <xsl:with-param name="sort" select="'reverseValue'"/>
+         </xsl:call-template>
+         <!-- 10/29/12 WS: format facet -->
+         <xsl:call-template name="facet">
+            <xsl:with-param name="field" select="'facet-format'"/>
             <xsl:with-param name="topGroups" select="'*'"/>
             <xsl:with-param name="sort" select="'reverseValue'"/>
          </xsl:call-template>

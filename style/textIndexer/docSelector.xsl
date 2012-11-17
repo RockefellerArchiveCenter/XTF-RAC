@@ -156,6 +156,16 @@
                               preFilter="style/textIndexer/ead/eadPreFilter.xsl"
                               displayStyle="style/dynaXML/docFormatter/ead/eadDocFormatter.xsl"/>
                         </xsl:when>
+                        <!-- 10/10/12 WS: added mods selector -->
+                        <xsl:when test="matches($root-element-name,'^modsCollection$') or
+                           matches($root-element-name,'^mods$') or                           
+                           matches($pid,'modsCollection') or 
+                           matches($pid,'mods') or 
+                           matches($ns,'mods')">
+                           <indexFile fileName="{$fileName}"
+                              preFilter="style/textIndexer/mods/modsPreFilter.xsl"
+                              displayStyle="style/dynaXML/docFormatter/mods/modsDocFormatter.xsl"/>
+                        </xsl:when>
                         <!-- Look for NLM XML files -->
                         <xsl:when test="matches($root-element-name,'^article$') or
                                         matches($pid,'NLM') or 

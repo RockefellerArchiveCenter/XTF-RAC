@@ -241,7 +241,7 @@
    <xsl:template match="titleproper[parent::titlestmt]">
       <xsl:copy>
          <xsl:copy-of select="@*"/>
-         <xsl:attribute name="xtf:sectionType" select="'titleproper'"/>
+         <xsl:attribute name="xtf:sectionType" select="'title'"/>
          <xsl:attribute name="xtf:wordBoost" select="100.0"/>
          <xsl:apply-templates/>
       </xsl:copy>
@@ -838,7 +838,7 @@
    
    <!-- format -->
    <xsl:template name="get-ead-format">
-      <format xtf:meta="true">xml</format>
+      <format xtf:meta="true">collection</format>
    </xsl:template>
    
    <!-- identifier --> 

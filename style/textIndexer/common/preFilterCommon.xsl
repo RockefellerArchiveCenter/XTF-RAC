@@ -122,12 +122,12 @@
          <xsl:apply-templates select="$meta/*:date[1]" mode="sort"/>
          
          <!-- Create facets -->
-<!--         <xsl:apply-templates select="$meta/*:date" mode="facet"/>-->
+         <xsl:apply-templates select="$meta/*:date" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subject" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subjectname" mode="facet"/>
          <xsl:apply-templates select="$meta/*:geogname" mode="facet"/>
          <xsl:apply-templates select="$meta/*:collection" mode="facet"/>
-         
+         <xsl:apply-templates select="$meta/*:format" mode="facet"/>
          
          <xsl:apply-templates select="$meta/*:title[1]" mode="browse"/>
          <!-- Removed the [1] to select all creators for browsing -->         
@@ -217,6 +217,15 @@
          <xsl:attribute name="xtf:facet" select="'yes'"/>
          <xsl:value-of select="normalize-unicode(string(.))"/>
       </facet-geogname>
+   </xsl:template>
+   
+   <!-- Format -->
+   <xsl:template match="*:format" mode="facet">
+      <facet-format>
+         <xsl:attribute name="xtf:meta" select="'true'"/>
+         <xsl:attribute name="xtf:facet" select="'yes'"/>
+         <xsl:value-of select="normalize-unicode(string(.))"/>
+      </facet-format>
    </xsl:template>
    
    <!-- 3/26/12 WS: Added facet for collection faceting -->

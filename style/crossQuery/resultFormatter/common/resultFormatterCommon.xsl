@@ -221,6 +221,7 @@
    <xsl:param name="brand.links" select="$brand.file//links/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.header" select="$brand.file//header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.footer" select="$brand.file//footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="brand.browser" select="$brand.file//browser/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    
    <!-- Paging Parameters-->  
    <xsl:param name="startDoc" as="xs:integer" select="1"/>
@@ -889,7 +890,8 @@
              <span style="color: #FD8239"><xsl:value-of select="upper-case($alpha)"/></span>
          </xsl:when>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link]">
-            <a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level=collection;sort={$browse-name}"><xsl:value-of select="$alpha"/></a>
+             <!-- 10/29/12 WS: Added type parameter for browsing  -->
+            <a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level=collection;type={$type};sort={$browse-name}"><xsl:value-of select="$alpha"/></a>
          </xsl:when>
          <xsl:otherwise>
             <xsl:value-of select="upper-case($alpha)"/>
@@ -1035,7 +1037,8 @@
                                          editURL:escapeRegex(editURL:protectValue($value)))),
                    'browse-all=yes'))">
       </xsl:variable>
-      
+      <!-- 11/14/12 WS: added to strip blank subjects facets -->
+      <xsl:if test="string-length($value) &gt; 0">
       <tr>
          <td class="col1">&#8226;</td> <!-- bullet char -->
          <!-- Display the group name, with '[X]' box if it is selected. -->
@@ -1054,19 +1057,20 @@
                </td>
             </xsl:when>
             <xsl:otherwise>
-               <td class="col2">
-                  <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                  <a href="{$selectLink}">
-                     <xsl:value-of select="$value"/>
-                  </a>
-                  <xsl:apply-templates select="." mode="afterGroupValue"/>
-               </td>
-               <td class="col3">
-                  (<xsl:value-of select="@totalDocs"/>)
-               </td>
+                  <td class="col2">
+                     <xsl:apply-templates select="." mode="beforeGroupValue"/>
+                     <a href="{$selectLink}">
+                        <xsl:value-of select="$value"/>
+                     </a>
+                     <xsl:apply-templates select="." mode="afterGroupValue"/>
+                  </td>
+                  <td class="col3">
+                     (<xsl:value-of select="@totalDocs"/>)
+                  </td>                  
             </xsl:otherwise>
          </xsl:choose>
       </tr>
+      </xsl:if>
    </xsl:template>
    
    <!-- Hierarchical group or sub-group of facet -->

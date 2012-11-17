@@ -278,11 +278,23 @@
             </tr>
          </table>
          <table style="width:99%; margin:0;padding:0;height:100px;" class="navright">
-            <tr><td></td><td style="width:275;"></td><td style="width:275;"></td><td style="width:275;"></td></tr>
                <tr>
                   <td colspan="3">
                      <div class="eadtitle">
+                        <xsl:attribute name="style">
+                           background: url(/xtf/icons/default/collections.gif) left no-repeat;
+                           min-height: 50px;
+                        </xsl:attribute>
                         <h1>
+                           <xsl:variable name="title">
+                              <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
+                           </xsl:variable>
+                           <xsl:attribute name="style">
+                              <xsl:choose>
+                                 <xsl:when test="string-length($title) &gt; 175">margin-left:60px;font-size:1.15em;</xsl:when>
+                                 <xsl:otherwise>margin-left:60px;</xsl:otherwise>
+                              </xsl:choose>
+                           </xsl:attribute>
                            <xsl:choose>
                               <xsl:when test="eadheader/filedesc/titlestmt/titleproper[@type='filing']">
                                  <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper[not(@type='filing')]"/>
@@ -294,52 +306,58 @@
                         </h1>
                      </div>
                   </td>
-                  <td style="width:300px">
-                     <!-- <a href="javascript://" onclick="javascript:window.open('/xtf/search?smode=getLang','popup','width=500,height=200,resizable=no,scrollbars=no')">Choose Language</a>-->
-                     <form action="{$xtfURL}{$dynaxmlPath}" method="get" style="margin-top:0px;padding-top:0;">
-					 <!-- DG: possible todo: change form action: action="/xtf/view"  -->
+                  <td style="width:250px;">
+                     <form action="{$xtfURL}{$dynaxmlPath}" method="get" style="margin-top:0px;padding-top:0;" class="bbform">
+                        <!-- DG: possible todo: change form action: action="/xtf/view"  -->
                         <input name="query" type="text" size="15"/> 
                         <input type="hidden" name="docId" value="{$docId}"/>
                         <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
                         <input type="submit" value="Search this Collection"/>
                      </form>
+                  </td>
+                  <td style="text-align:right; width:100px;">
+                     <!-- <a href="javascript://" onclick="javascript:window.open('/xtf/search?smode=getLang','popup','width=500,height=200,resizable=no,scrollbars=no')">Choose Language</a>-->
+                     <div style="float:right;margin:0;padding:0;">
+                        
+                        <ul class="bbicons">
+                        <li>
                      <!-- 7/24/12 WS: added add to bag for whole finding aid -->
-                     <span class="addToBag">
-                        <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
-                        <xsl:variable name="indexId" select="$identifier"/>
-                        <xsl:choose>
-                           <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                              <span>Added</span>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <script type="text/javascript">
-                                    add_1 = function() {
-                                       var span = YAHOO.util.Dom.get('add_1');
-                                       span.innerHTML = "Adding...";
-                                       YAHOO.util.Connect.asyncRequest('GET', 
-                                          '<xsl:value-of select="concat($xtfURL, 'search?smode=addToBag;identifier=', $identifier)"/>',
-                                          {  success: function(o) { 
-                                                span.innerHTML = o.responseText;
-                                                ++(YAHOO.util.Dom.get('bagCount').innerHTML);
-                                             },
-                                             failure: function(o) { span.innerHTML = 'Failed to add!'; }
-                                          }, null);
-                                    };
+                        <span class="addToBag">
+                           <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
+                           <xsl:variable name="indexId" select="$identifier"/>
+                           <xsl:choose>
+                              <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                                 <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
+                                 <span class="caption">Added</span>
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <script type="text/javascript">
+                                       add_1 = function() {
+                                          var span = YAHOO.util.Dom.get('add_1');
+                                          span.innerHTML = "Adding...";
+                                          YAHOO.util.Connect.asyncRequest('GET', 
+                                             '<xsl:value-of select="concat($xtfURL, 'search?smode=addToBag;identifier=', $identifier)"/>',
+                                             {  success: function(o) { 
+                                                   span.innerHTML = o.responseText;
+                                                   ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                                },
+                                                failure: function(o) { span.innerHTML = 'Failed to add!'; }
+                                             }, null);
+                                       };
                                  </script>
-                              <span id="add_1">
-                                 <a href="javascript:add_1()">
-                                    Add to Bookbag 
-                                 </a>
-                              </span>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        &#160;|&#160;
-                     </span>
-                     
-                      <xsl:variable name="bag" select="session:getData('bag')"/>
-                     <a href="/xtf/search?smode=showBag">Bookbag</a>
-<!--                        (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)-->
-                        | 
+                                 <a href="javascript:add_1()"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a>
+                                 <span id="add_1" class="caption">
+                                    <a href="javascript:add_1()">Add</a>
+                                 </span>
+                              </xsl:otherwise>
+                           </xsl:choose>
+                        </span>
+                        </li>
+                        <li>
+                         <xsl:variable name="bag" select="session:getData('bag')"/>
+                           <a href="/xtf/search?smode=showBag"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" title="Bookbag"/></a>
+   <!--                        (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)-->
+                           </li> 
                      
                      <!-- Commented out citation until digital objects are added-->
                      <!--
@@ -353,9 +371,14 @@
                      </a>
                      <xsl:text> | </xsl:text>
                      -->
-                     <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
+                     <li>                    
+                        <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
 					 <!-- DG: todo -->
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf">PDF</a>
+                        <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf"><img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/></a>
+                     </li>
+                        </ul>
+                     </div>
+                     
 <!--                     <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>-->
                   </td>
                </tr>
@@ -363,7 +386,7 @@
                   <td style="vertical-align:bottom;text-align:left;">                    
                      <xsl:call-template name="tabs"/>  
                   </td>
-                  <td colspan="3" style="vertical-align:bottom;text-align:right; padding-bottom:4px;">
+                  <td colspan="4" style="vertical-align:bottom;text-align:right; padding-bottom:4px;">
                      <xsl:if test="($query != '0') and ($query != '')">
                            <strong>
                               <span class="hit-count">
@@ -447,14 +470,19 @@
                   </xsl:choose>
                </xsl:variable>
                <!-- 7/24/12 WS: Added condition to test for finding aids with no contents list and supress this tab -->
-               <xsl:if test="/ead/archdesc/dsc/child::*">
+               <xsl:choose>
+               <xsl:when test="/ead/archdesc/dsc/child::*">
                   <xsl:call-template name="make-tab-link">
                      <xsl:with-param name="name" select="'Contents List'"/>
                      <xsl:with-param name="id" select="'contentsLink'"/> 
                      <xsl:with-param name="doc.view" select="'contents'"/>
                      <xsl:with-param name="nodes" select="$nodesLst"/>
-                  </xsl:call-template>
-               </xsl:if>
+                   </xsl:call-template>
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:attribute name="class">clear</xsl:attribute>
+               </xsl:otherwise>
+               </xsl:choose>
             </li>
            <!-- <li>
                <xsl:if test="$doc.view='digital'">

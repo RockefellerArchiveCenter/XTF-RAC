@@ -115,6 +115,14 @@
                   matches($ns,'ead')">
                   <xsl:value-of select="'ead'"/>
                </xsl:when>
+               <!-- 10/10/12 WS: added mods selector -->
+               <xsl:when test="matches($root-element-name,'^modsCollection$') or
+                  matches($root-element-name,'^mods$') or                           
+                  matches($pid,'modsCollection') or 
+                  matches($pid,'mods') or 
+                  matches($ns,'mods')">
+                  <xsl:value-of select="'mods'"/>
+               </xsl:when>
                <!-- Look for NLM XML files -->
                <xsl:when test="matches($root-element-name,'^article$') or
                   matches($pid,'NLM') or 
@@ -150,6 +158,7 @@
       <style path="{
          if (matches($http.URL, $ercPat)) then 'style/dynaXML/docFormatter/erc/ercDocFormatter.xsl'
          else if ($fileType = 'ead') then 'style/dynaXML/docFormatter/ead/eadDocFormatter.xsl'
+         else if ($fileType = 'mods') then 'style/dynaXML/docFormatter/mods/modsDocFormatter.xsl'
          else if ($fileType = 'nlm') then 'style/dynaXML/docFormatter/nlm/nlmDocFormatter.xsl'
          else if ($fileType = 'tei') then 'style/dynaXML/docFormatter/tei/teiDocFormatter.xsl'
          else if ($fileType = 'book') then 'style/dynaXML/docFormatter/bookreader/bookDocFormatter.xsl'
@@ -191,6 +200,7 @@
       -->
       <preFilter path="{
          if      ($fileType = 'ead') then 'style/textIndexer/ead/eadPreFilter.xsl'
+         else if      ($fileType = 'mods') then 'style/textIndexer/mods/modsPreFilter.xsl'
          else if ($fileType = 'nlm') then 'style/textIndexer/nlm/nlmPreFilter.xsl'
          else if ($fileType = 'tei') then 'style/textIndexer/tei/teiPreFilter.xsl'
          else                             'style/textIndexer/default/defaultPreFilter.xsl'}"/>

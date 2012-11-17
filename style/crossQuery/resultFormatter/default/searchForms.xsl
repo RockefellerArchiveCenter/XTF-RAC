@@ -56,12 +56,40 @@
          <xsl:when test="$smode='archivalMat'">
             <xsl:call-template name="archivalMat"/>
          </xsl:when>
+         <xsl:when test="$smode='searchTips'">
+            <xsl:call-template name="searchTips"/>
+         </xsl:when>
          <xsl:otherwise>
             <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
                <head>
                   <title>RAC: Search Collection Guides</title>
                   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
                   <xsl:copy-of select="$brand.links"/>
+                  <script type='text/javascript'>
+                        //<![CDATA[
+                        $(document).ready(function() {
+                            $('#collections').hide();
+                            $('#library').hide();
+                             $('#type').change(function () {
+                                if ($('#type option:selected').text() == "Archival Collections"){
+                                    $('#collections').show();
+                                    $('#library').hide();
+                                }
+                                else if ($('#type option:selected').text() == "Library Materials"){
+                                    $('#library').show();
+                                    $('#collections').hide();
+                                }
+                                 else {
+                                      $('#collections').hide();
+                                      $('#library').hide();
+                                 }
+                            });
+                        });
+                        //]]>   
+                  </script>
+                  <xsl:comment>[if IE ]>
+                  <p class="chromeframe">You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, <a href="http://browsehappy.com/">use a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+                  &lt;![endif]</xsl:comment>
                </head>
                <body>
                   <xsl:copy-of select="$brand.header"/>
@@ -74,7 +102,7 @@
                   <div class="bookbag">
                      <xsl:if test="$smode != 'showBag'">
                         <xsl:variable name="bag" select="session:getData('bag')"/>
-                        <a href="{$xtfURL}{$crossqueryPath}?smode=showBag">Bookbag</a>
+                        <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"><img src="/xtf/icons/default/bookbag.gif" alt="bookbag" align="bottom"/></a>
                         (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
                      </xsl:if>
                   </div>
@@ -140,18 +168,21 @@
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <table>
             <tr>
-               <td colspan="2">
+               <td colspan="2" class="bottomalign">
                   <input type="text" name="keyword" size="40" value="{$keyword}"/>
+                  <xsl:text>&#160;</xsl:text>
+                  <select name="type">
+                     <option value="">All</option>
+                     <option value="ead">Archival Collections</option>
+                     <option value="mods">Library Materials</option>
+                  </select>
                   <xsl:text>&#160;</xsl:text>
                   <input type="submit" value="Search"/>
                   <input type="hidden" value="collection" name="sort"/>
 <!--                  <input type="hidden" value="series" name="level"/>-->
                   <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
-                  <p>
-                     <br/>
                  <!-- Uncomment and complete code when digital objects are included -->    
                  <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
-                  </p>
                </td>
                <td>
                   <ul class="nomark">
@@ -168,14 +199,16 @@
                      </li>
                      -->
                   </ul>
-               </td>
+                </td>
+            </tr>
+            <tr><td><p class="searchtip">Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc. <br/>To search an exact phrase, include quotation marks, e.g. "mental health". <a href="javascript:openWin('{$xtfURL}{$crossqueryPath}?smode=searchTips')">more</a></p></td>
             </tr>
             <tr>
                <td colspan="3">
                   <h4>Rockefeller Archive Center Holdings</h4>
                   <p>The Rockefeller Archive Center holdings encompass the records of the Rockefeller family and their wide-ranging philanthropic endeavors (including the Rockefeller Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the Center's growing holdings include materials from numerous non-Rockefeller foundations and nonprofit organizations, making it a premier center for research on philanthropy and civil society. It is also a major repository for the personal papers of leaders of the philanthropic community, Nobel Prize laureates, and world-renowned investigators in science and medicine.
                   </p>
-                  <div id="fordtext"><p>Please note that only a portion of the Ford Foundation finding aids are currently available online; finding aids for Ford Foundation grant records are not yet available online. <br/>Please contact <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> or submit a <a href="http://www.rockarch.org/research/inquiryform.php">research inquiry</a> for further information.</p></div>
+                  <div id="fordtext"><p>The Rockefeller Archive Center is still in the process of adding collections information to this system. Some large collections, like those of the Ford Foundation, Population Council, and Rockefeller University, are only partially represented in the online system; other smaller collections, like the Trilateral Commission, the Near East Foundation, and some collections of personal papers are not yet represented at all (note: finding aids for Ford Foundation grant records are not yet available online). Please contact the archival staff at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further information about these collections.</p></div>
                </td>
             </tr>
             <tr>
@@ -218,14 +251,28 @@
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <table class="advancedSearch">
             <tr>
-               <td style="text-align:right; padding-right:36px; width:250px">
-                  <strong>Search full text of finding aids:</strong>
+               <td style="text-align:right; padding-right:36px; width:200px">
+                  <strong>Search full text:</strong>
                </td>
                <td>
-                  <input type="text" name="text" size="60" value="{$text}"/>
-                  &#160;<select name="sectionType">
-                     <option value="">all</option>
-                     <option value="titleproper">Collection Title</option>
+                  <input type="text" name="text" size="60" value="{$text}"/>&#160;
+                  <select name="type" id="type">
+                     <option value="">All</option>
+                     <option value="ead">Archival Collections</option>
+                     <option value="mods">Library Materials</option>
+                  </select>
+                  &#160;
+                  <select name="sectionType" id="library">
+                     <option value="">All Library Materials</option>
+                     <option value="title">Title</option>
+                     <option value="creator">Author</option>
+                     <option value="callNumber">Call Number</option>
+                     <option value="isbn">ISBN/ISSN</option>
+                     <option value="lccn">LCCN</option>
+                  </select>
+                  <select name="sectionType" id="collections">
+                     <option value="">All Archival Collections</option>
+                     <option value="title">Title</option>
                      <option value="creator">Creator</option>
                      <option value="bioghist">Biographical or Historical Note</option>
                      <option value="scopecontent">Scope and Content Note</option>
@@ -266,7 +313,7 @@
                   onblur="if(this.value=='')this.value=this.defaultValue;"/>
                -->
             </tr>
-            <tr><td></td><td>Enter a single year or range of years, for example 1997 or 1892-1942.</td></tr>
+            <tr><td></td><td><p class="searchtip">Enter a single year or range of years, for example 1997 or 1892-1942.</p></td></tr>
             <tr>
                <td>&#160;</td>
                <td colspan="2">
@@ -274,6 +321,12 @@
                   <input type="hidden" name="smode" value="advanced" id="start"/>
                   <input type="reset" OnClick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
                </td>
+             </tr>
+            <tr>
+               <td>&#160;</td>
+               <td class="searchtiplink">
+               <a href="javascript:openWin('{$xtfURL}{$crossqueryPath}?smode=searchTips')">Search Tips and Tricks</a>
+            </td>
             </tr>            
          </table>  
       </form>
@@ -399,6 +452,54 @@
       </html>
    </xsl:template>
    
+   <!-- search tips and tricks -->
+   <xsl:template name="searchTips">
+      <html xml:lang="en" lang="en">
+         <head>
+            <title/>
+            <link rel="stylesheet" type="text/css" href="{$css.path}racustom.css"/>
+         </head>
+         <body>      
+            <div class="dscDescription">
+               <h4>Searching tips and tricks</h4>
+               <p>You can search across the RAC’s archival materials, books, DVDs, VHS and microfilm holdings from the home page or the Advanced Search page.</p>
+               <p>You can search within an archival collection by selecting that collection and then using the "search within this collection" in the navigation bar.</p>
+               <p>An asterisk - * - will find from one to many characters within a word:</p>
+               <ul>
+                  <li>hist* will retrieve history, histories, and historians</li>
+                  <li>coo*tion will find cooperation and coordination</li>
+               </ul>
+               <p>A question mark - ? - will find only one character within a word:<ul>
+                  <li>america? will retrieve american and americas</li>
+                  <li>wom?n will retrieve woman, women, and womyn</li>
+               </ul></p>
+               <p>To search for an exact string, place quotation marks around the string:</p>
+               <ul>
+                  <li>"south africa" will find south africa, but not south african</li>
+               </ul>
+               <p>Search queries are not case sensitive. Except for the above examples, punctuation is ignored.</p>
+               <h4>Refining your search</h4>
+               <p>On every search results screen you will see a box titled "Refine Search." It contains categories called facets, and you can discover relevant resources by browsing the contents of the facets. By selecting one or more facets (1) you can further narrow your initial search. In order to remove a facet and expand your search click on the [x] next to the search term (2) in the navigation bar. When you see a facet under "Refine Search" that is of interest to you, you can also dig in deeper by clicking the "more" link (3) to see additional terms.</p>
+               <img src="./icons/default/facets.png" alt="facets"/>
+               <h4>Get notified when we update the site</h4>
+               <p>When you see this icon <img src="./icons/default/i_rss.png" alt="rss feed"/> it means there is an RSS feed for this search. You can click on it to subscribe to see the most recent changes and additions in that search in your favorite feed reader.</p>
+               <h4>Not everything is up yet!</h4>
+               <p>We’re still in the process of adding information to this system. </p>
+               <p>Some large collections, like those of the <strong>Ford Foundation</strong>, <strong>Population Council</strong>, and <strong>Rockefeller University</strong>, are only partially represented in the online system; other smaller collections, like the <strong>Trilateral Commission</strong>, the <strong>Near East Foundation</strong>, and some collections of personal papers are not yet represented at all (note: finding aids for Ford Foundation grant records are not yet available online). Please contact the archival staff at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further information about these collections.</p>
+               <div class="closeWindow">
+                  <a>
+                     <xsl:attribute name="href">javascript://</xsl:attribute>
+                     <xsl:attribute name="onClick">
+                        <xsl:text>javascript:window.close('popup')</xsl:text>
+                     </xsl:attribute>
+                     X Close this Window
+                  </a>
+               </div>
+            </div>
+         </body>
+      </html>
+   </xsl:template>
+   
    <!-- archival materials -->
    <xsl:template name="archivalMat">
       <html xml:lang="en" lang="en">
@@ -423,6 +524,7 @@
          </body>
       </html>
    </xsl:template>
+   
    <!-- 
       <xsl:when test="$doc.view='collectionGuides'">
       <xsl:call-template name="collectionGuides"/>

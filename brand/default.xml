@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <brand xmlns="http://www.w3.org/1999/xhtml">
-
+   
    <links>
       <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
@@ -15,6 +15,7 @@
             <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/rollOver.js"></script>
             <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/popUp.js"></script> 
             <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/rac.js"></script>      
+            <script type='text/javascript' src='/xtf/script/rac/jquery-1.5.2.js'>//</script>
             <script type="text/javascript" language="JavaScript">
          	<!--
          		if (isNS4) {

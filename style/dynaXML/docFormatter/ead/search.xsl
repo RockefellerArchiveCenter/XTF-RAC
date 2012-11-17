@@ -43,7 +43,7 @@
          <a name="X"/>
       </xsl:if>
       
-      <xsl:call-template name="prev.hit"/>
+<!--      <xsl:call-template name="prev.hit"/>-->
       
       <xsl:choose>
          <xsl:when test="xtf:term">
@@ -57,11 +57,11 @@
             </span>
          </xsl:otherwise>
       </xsl:choose>
-      
+     <!-- 
       <xsl:if test="not(@more='yes')">
          <xsl:call-template name="next.hit"/>
       </xsl:if>
-      
+      -->
    </xsl:template>
    
    <xsl:template match="xtf:more">
@@ -141,9 +141,10 @@
                   <xsl:attribute name="href" select="concat('#', $prev)"/>
                </xsl:when>
                <xsl:otherwise>
+                  <xsl:attribute name="target" select="'_top'"/>
                   <xsl:attribute name="href" select="
                      concat($xtfURL, $dynaxmlPath, '?', $query.string, 
-                            ';hit.num=', $prev, ';brand=', $brand,'&amp;doc.view=',$doc.view, $search)"/>
+                            ';hit.num=', $prev, ';brand=', $brand, $search)"/>
                </xsl:otherwise>
             </xsl:choose>
             <img src="{$icon.path}b_inprev.gif" border="0" alt="previous hit"/>
@@ -174,9 +175,10 @@
                   <xsl:attribute name="href" select="concat('#', $next)"/>
                </xsl:when>
                <xsl:otherwise>
+                  <xsl:attribute name="target" select="'_top'"/>
                   <xsl:attribute name="href" select="
                      concat($xtfURL, $dynaxmlPath, '?', $query.string, 
-                     ';hit.num=', $next, ';brand=','&amp;doc.view=',$doc.view, $brand, $search)"/>
+                            ';hit.num=', $next, ';brand=', $brand, $search)"/>
                </xsl:otherwise>
             </xsl:choose>
             <img src="{$icon.path}b_innext.gif" border="0" alt="next hit"/>

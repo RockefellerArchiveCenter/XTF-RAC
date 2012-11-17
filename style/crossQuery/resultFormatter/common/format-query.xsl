@@ -55,6 +55,7 @@
    <xsl:template name="format-query">
       
       <xsl:choose>
+         <xsl:when test="$type"/>
          <xsl:when test="$browse-all">
             <div class="subQuery">&#160;All</div>
          </xsl:when>

@@ -1254,7 +1254,7 @@
                    <xsl:when test="@level='subcollection' or @level='subgrp' or @level='series' 
                        or @level='subseries' or @level='collection'or @level='fonds' or 
                        @level='recordgrp' or @level='subfonds' or @level='class' or (@level='otherlevel' and not(child::did/container))">
-                      <tr>                           
+                      <tr style="clear:both;height:30px;">                           
                          <xsl:attribute name="class">
                                <xsl:choose>
                                    <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
@@ -1400,7 +1400,8 @@
                               <xsl:variable name="indexId" select="$identifier"/>
                               <xsl:choose>
                                  <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                                    <span>Added</span>
+                                    <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
+                                    <span class="caption">Added</span>
                                  </xsl:when>
                                  <xsl:otherwise>
                                     <script type="text/javascript">
@@ -1416,8 +1417,9 @@
                                              failure: function(o) { span.innerHTML = 'Failed to add!'; }
                                           }, null);
                                     };
-                                 </script>
-                                    <span id="add_{@id}">
+                                    </script>
+                                    <a href="javascript:add_{@id}()"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
+                                    <span id="add_{@id}" class="caption">
                                        <a href="javascript:add_{@id}()">
                                           Add
                                        </a>
@@ -1509,7 +1511,8 @@
                             <xsl:variable name="indexId" select="$identifier"/>
                             <xsl:choose>
                                <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                                  <span>Added</span>
+                                  <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
+                                  <span class="caption">Added</span>
                                </xsl:when>
                                <xsl:otherwise>
                                   <script type="text/javascript">
@@ -1525,8 +1528,9 @@
                                              failure: function(o) { span.innerHTML = 'Failed to add!'; }
                                           }, null);
                                     };
-                                 </script>
-                                  <span id="add_{@id}">
+                                  </script>
+                                  <a href="javascript:add_{@id}()"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
+                                  <span id="add_{@id}" class="caption">
                                      <a href="javascript:add_{@id}()">
                                         Add
                                      </a>
@@ -1577,12 +1581,13 @@
                    <xsl:if test="unitdate[not(@type)] or unitdate[@type != 'bulk']">, <xsl:apply-templates select="unitdate[not(@type)] | unitdate[@type != 'bulk']"/></xsl:if>
                 <!--2/11/12 WS:  add to bookbag function -->
                    &#160;&#160;&#160;&#160;
-                   <span class="addToBag" style="font-size:.8em!important;">
+                   <span class="addToBag" style="font-size:.8em!important; float:right; clear:right;">
                    <xsl:variable name="identifier" select="concat($rootID,'|',../@id)"/>
                    <xsl:variable name="indexId" select="$identifier"/>
                    <xsl:choose>
                       <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                         <span>Added</span>
+                         <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
+                         <span class="caption">Added</span>
                       </xsl:when>
                       <xsl:otherwise>
                          <script type="text/javascript">
@@ -1598,9 +1603,10 @@
                                              failure: function(o) { span.innerHTML = 'Failed to add!'; }
                                           }, null);
                                     };
-                                 </script>
-                         <span id="add_{../@id}">
-                            <a href="javascript:add_{../@id}()">Add to Bookbag</a>
+                         </script>
+                         <a href="javascript:add_{../@id}()"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
+                         <span id="add_{../@id}" class="caption">
+                            <a href="javascript:add_{../@id}()">Add</a>
                          </span>
                       </xsl:otherwise>
                    </xsl:choose>
