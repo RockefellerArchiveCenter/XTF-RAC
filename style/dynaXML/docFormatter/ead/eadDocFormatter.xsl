@@ -652,6 +652,7 @@
                                                    <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
                                                    <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
                                                    <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
+                                                   <xsl:when test="@level='otherlevel'"><xsl:value-of select="@otherlevel"/>: </xsl:when>
                                                    <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>
                                                 </xsl:choose>                                          
                                              </xsl:variable>
