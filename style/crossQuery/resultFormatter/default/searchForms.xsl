@@ -278,8 +278,8 @@
                      <option value="scopecontent">Scope and Content Note</option>
                      <option value="file">Folder Title</option>
                      <option value="item">Item</option>
-                     <option value="series">Series Name</option>
-                     <option value="subseries">Subseries Name</option>
+                     <option value="series">Series Description</option>
+                     <option value="subseries">Subseries Description</option>
                      <option value="controlaccess">Subject Headings</option>
                   </select>
                   <br/>
