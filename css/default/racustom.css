@@ -77,6 +77,23 @@ h1.collectionGuides a {text-decoration:none; color:black;}
 .eadtitle {text-align:left; font-size:.80em; margin:0; padding-left:.5em; /*border: 1px solid #999;*/}
 .eadtitle h1 {color:#333; margin:0; padding:0; font-size:1.75em;}
 
+/*Formats IE specific warning*/
+.chromeframe p {
+    width: 100%;
+    background-color: #C45414;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+
+.chromeframe a {
+    color: #d3d3d3 !important;
+}
+
+.chromeframe a:hover {
+    color: #c2c2c2 !important;
+}
+
 /*Formats feedback tab*/
 .slide-out-div {
           padding: 20px;
