@@ -403,7 +403,7 @@
                            <xsl:text> [</xsl:text>
                            <a>
                               <xsl:attribute name="href">
-                                 <xsl:value-of select="$doc.path"/>;brand=<xsl:value-of select="$brand"/>
+                                 <xsl:value-of select="$doc.path"/>;chunk.id=<xsl:value-of select="$chunk.id"/>;brand=<xsl:value-of select="$brand"/>;doc.view=<xsl:value-of select="$doc.view"/>
                               </xsl:attribute>
                               <xsl:text>Clear Hits</xsl:text>
                            </a>
