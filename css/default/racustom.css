@@ -56,7 +56,7 @@ ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; t
    position:absolute;
    width:100%;
    height:100%;
-   background: url("http://192.168.50.29/xtf/css/default/images/collection_guides.gif") no-repeat left top; background-color:#fff;
+   background: url("images/collection_guides.gif") no-repeat left top; background-color:#fff;
    z-index:1; /* Places <span> on top of <a> text */  }
 
 .searchNav {background-color: #fff; width:100%; margin-top:-.5em;}
@@ -77,6 +77,49 @@ h1.collectionGuides a {text-decoration:none; color:black;}
 .eadtitle {text-align:left; font-size:.80em; margin:0; padding-left:.5em; /*border: 1px solid #999;*/}
 .eadtitle h1 {color:#333; margin:0; padding:0; font-size:1.75em;}
 
+/*Formats feedback tab*/
+.slide-out-div {
+          padding: 20px;
+          width: 250px;
+          background: #ccc;
+          border: #29216d 1px solid;
+      }      
+
+.feedback-panel {
+    padding:20px;
+    width: 250px;
+    background: #bab6d8;
+    border: #29216d 1px solid;
+    position:absolute;
+    top:200px;
+    left:-291px;
+}
+ 
+.feedback-panel a.feedback-tab {
+    background:transparent url(feedbacktab.gif) no-repeat scroll 0 0;
+    border-width: 1px 1px 1px 0;
+    display:block;
+    height:99px;
+    left:51px;
+    bottom:21px;
+    position:relative;
+    float:right;
+    text-indent:-9999px;
+    width:30px;
+    outline:none;
+}
+ 
+textarea {
+    width:90%;
+    padding:5px;
+}
+ 
+#response-message {
+    background: #ccc;
+    border: 1px solid #999;
+    padding:50px;
+}
+
 /*Formats main search tabs*/
 .browselinks p {font-size: 1.5em;}
 .browselinks a {color: #C45414 !important; font-size: 1em; text-decoration: none !important; font-weight: bold;}
@@ -84,7 +127,8 @@ h1.collectionGuides a {text-decoration:none; color:black;}
 #fordtext p {color: #C45414; font-style: italic;}
 #fordtext a {color: #C45414 !important;}
 #fordtext a:hover {color: #888 !important;}
-p.searchtip {font-size:smaller}
+p.searchtip {font-size:smaller;}
+.searchtip a {color: #C45414 !important;}
 td.bottomalign {vertical-align:bottom !important;}
 .searchtiplink {text-align:right !important;}
 
