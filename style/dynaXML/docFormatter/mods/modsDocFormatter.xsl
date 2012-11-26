@@ -179,15 +179,18 @@
                <script src="script/yui/connection-min.js" type="text/javascript"/> 
                <xsl:copy-of select="$brand.links"/>
                <title><xsl:value-of select="mods:titleInfo/mods:title"/></title>
-               <xsl:comment>[if IE ]>
-                  &lt;p class="chromeframe"&gt;You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, &lt;a href=&quot;http://browsehappy.com/&quot;&gt;use a different browser&lt;/a&gt; or &lt;a href=&quot;http://www.google.com/chromeframe/?redirect=true&quot;&gt;install Google Chrome Frame&lt;/a&gt; to better experience this site.&lt;/p&gt;
-                  &lt;![endif]</xsl:comment>
             </head>
             <body>
-               <div class="fixedHeader">
+               
                   <xsl:copy-of select="$brand.header"/>
+               <h1 id="collectionGuides">
+                  <a href="/xtf/search">
+                     <span></span>
+                     Collection Guides
+                  </a>
+               </h1>
                   <xsl:call-template name="bbar_custom"/>
-               </div>
+               
                <div class="main">
                   <xsl:call-template name="toc"/>
                   <xsl:call-template name="body"/>    
@@ -216,13 +219,7 @@
             <xsl:otherwise>occurrence</xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
-      <div class="bbar_custom">
-         <h1 id="collectionGuides">
-            <a href="/xtf/search">
-               <span></span>
-               Collection Guides
-            </a>
-         </h1>
+      <div class="bbar_custom">  
          <table class="searchNav">
             <tr>
                <td colspan="2">

@@ -132,6 +132,30 @@
          ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
          '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0];
          s.parentNode.insertBefore(ga, s); })(); </script>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+      <script type="text/javascript" src="/xtf/script/rac/jquery.tabSlideOut.v1.3.js"></script> 
+      
+      <script type="text/javascript" language="JavaScript">
+    $(function(){
+        $('.slide-out-div').tabSlideOut({
+            tabHandle: '.handle',                     //class of the element that will become your tab
+            pathToTabImage: './icons/default/contact_tab.png', //path to the image for the tab *required*
+            imageHeight: '122px',                      //height of tab image *required*
+            imageWidth: '40px',                      //width of tab image *required*    
+            tabLocation: 'right',                      //side of screen where tab lives, top, right, bottom, or left
+            speed: 300,                               //speed of animation
+            action: 'click',                          //options: 'click' or 'hover', action to trigger animation
+            topPos: '210px',                          //position from the top/ use if tabLocation is left or right
+            leftPos: '20px',                          //position from left/ use if tabLocation is bottom or top
+            fixedPosition: false                      //options: true makes it stick(fixed position) on scroll
+        });
+
+    });
+
+    </script>
+   <div><!--[if IE ]>
+                  <div class="chromeframe"><p>You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, <a href="http://browsehappy.com/">use a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p></div>
+                  <![endif]--></div>
    </links>
 
    <dynaxml.links>
@@ -258,8 +282,10 @@
             
             // -->
       </script>
+      <div><!--[if IE ]>
+                  <div class="chromeframe"><p>You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, <a href="http://browsehappy.com/">use a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p></div>
+                  <![endif]--></div>
    </dynaxml.links>
-
 
    <header>
       <!-- 9/27/11 WS: Changed to match RA header -->
@@ -4414,7 +4440,22 @@
       </div>
       -->
    </dynaxml.header>
-
+   
+   <feedback>
+      <div class="slide-out-div">
+         <div class="inner">
+            <form method="POST" action="/"><input type="hidden" name="tx_stwjqueryfeedback_pi1[action]" value="send" /><a class="handle"><img src="icons/default/feedback_tab.png" alt="Click to leave feedback"/></a>
+               <h3>Your Feedback</h3>
+               <fieldset><label for="tx_stwjqueryfeedback_pi1[cName]">Name:</label><input type="text" name="tx_stwjqueryfeedback_pi1[cName]" id="cName" value=""/><br/><label for="tx_stwjqueryfeedback_pi1[cEmail]">Email:</label><input type="text" name="tx_stwjqueryfeedback_pi1[cEmail]" id="cEmail" value=""/><br/><label for="tx_stwjqueryfeedback_pi1[cBusiness]">Feedback:</label>
+                  <textarea cols="20" rows="10" name="tx_stwjqueryfeedback_pi1[contactsMessage]" id="cBusiness"></textarea>
+                  <br/><label for="tx_stwjqueryfeedback_pi1[captcha]">Verification: <span class="tx-stwjqueryfeedback-required-mark">*</span></label>
+                  <div class="tx-stwjqueryfeedback-captcha"><img src="typo3conf/ext/captcha/captcha/captcha.php" alt="" /><br /><input class="tx-stwjqueryfeedback-captcha-input" type="text" size="35" name="tx_stwjqueryfeedback_pi1[captcha]" value=" " /><br /></div>
+                  <input type="submit" value="Send" id="submit"/></fieldset>
+            </form>
+         </div>
+      </div>
+   </feedback>
+   
    <footer>
       <div class="footer" style="text-align:left !important;">
          Copyright &#169; The Rockefeller Archive Center.  All rights reserved.<br/>

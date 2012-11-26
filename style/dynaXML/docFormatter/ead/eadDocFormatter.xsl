@@ -210,15 +210,19 @@
                   <xsl:text>  </xsl:text>
                   <xsl:value-of select="eadheader/filedesc/titlestmt/subtitle"/>
                </title>
-               <xsl:comment>[if IE ]>
-                  &lt;p class="chromeframe"&gt;You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, &lt;a href=&quot;http://browsehappy.com/&quot;&gt;use a different browser&lt;/a&gt; or &lt;a href=&quot;http://www.google.com/chromeframe/?redirect=true&quot;&gt;install Google Chrome Frame&lt;/a&gt; to better experience this site.&lt;/p&gt;
-                  &lt;![endif]</xsl:comment>
-            </head>
+               </head>
             <body>
-               <div class="fixedHeader">
-                  <xsl:copy-of select="$brand.header"/>
+               
+               <xsl:copy-of select="$brand.header"/>
+               <h1 id="collectionGuides">
+                  <a href="/xtf/search">
+                     <span></span>
+                     Collection Guides
+                  </a>
+               </h1>
+
                   <xsl:call-template name="bbar_custom"/>
-               </div>
+               
                <div class="main">
                   <xsl:call-template name="toc"/>
                   <xsl:call-template name="body"/>    
@@ -249,12 +253,6 @@
          </xsl:choose>
       </xsl:variable>
       <div class="bbar_custom">
-         <h1 id="collectionGuides">
-            <a href="/xtf/search">
-               <span></span>
-               Collection Guides
-            </a>
-         </h1>
          <table class="searchNav">
             <tr>
                <td colspan="2">
@@ -623,7 +621,7 @@
                                  evidenced by the level attribute series)and numbers them
                                  to form a hyperlink to each.   Delete this section if you do not
                                  wish the c01 titles to appear in the table of contents.-->
-                              <xsl:for-each select="archdesc/dsc/child::*[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or (@level='otherlevel' and not(child::did/container))]">
+                              <xsl:for-each select="archdesc/dsc/child::*[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or @level='subgrp' or (@level='otherlevel' and not(child::did/container))]">
                                  <div class="series">
                                     <xsl:variable name="submenuID">
                                        <xsl:variable name="seriesID" select="@id">
@@ -677,7 +675,7 @@
                                        (as evidenced by the level attribute series) and forms a hyperlink to each.   
                                        Delete this section if you do not wish the c02 titles to appear in the 
                                        table of contents. -->
-                                    <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds']">
+                                    <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='otherlevel']">
                                        <div class="more" id="{$submenuID}">
                                           <xsl:if test="$parentID = $submenuID">
                                              <xsl:attribute name="style">display:block;</xsl:attribute>
