@@ -153,12 +153,10 @@
     });
 
     </script>
-   <div><!--[if IE ]>
-                  <div class="chromeframe"><p>You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, <a href="http://browsehappy.com/">use a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p></div>
-                  <![endif]--></div>
    </links>
 
    <dynaxml.links>
+      
       <link rel="stylesheet" href="css/default/content.css" type="text/css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
       <link rel="stylesheet" href="css/default/racustom.css" type="text/css"/>
@@ -289,6 +287,11 @@
 
    <header>
       <!-- 9/27/11 WS: Changed to match RA header -->
+      <div>
+         <!--[if IE ]>
+                  <div class="chromeframe"><p>You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, <a href="http://browsehappy.com/">use a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p></div>
+                  <![endif]-->
+      </div>
       <div id="navOption0sub"
          style="visibility: hidden; position: absolute; right: 629px; top: 29px; z-index:99;">
          <layer>
