@@ -838,7 +838,7 @@
    
    <!-- format -->
    <xsl:template name="get-ead-format">
-      <format xtf:meta="true">collection</format>
+      <format xtf:meta="true">Collection</format>
    </xsl:template>
    
    <!-- identifier --> 
