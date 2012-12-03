@@ -466,8 +466,8 @@
                </xsl:otherwise>
             </xsl:choose>
             
-            <!-- feedbadk and footer -->
-            <xsl:copy-of select="$brand.feedback"/>
+            <!-- feedback and footer -->
+            <!-- <xsl:copy-of select="$brand.feedback"/> -->
             <xsl:copy-of select="$brand.footer"/>
             
          </body>
@@ -593,7 +593,7 @@
                </xsl:choose>-->
          </xsl:variable>
             Item number <xsl:value-of select="$num"/>: 
-         <xsl:value-of select="meta/creator"/>. <xsl:value-of select="meta/title"/>. <xsl:if test="meta/collectionTitle"><xsl:value-of select="meta/collectionTitle"/>.</xsl:if> <xsl:value-of select="meta/subtitle"/>.
+        <xsl:if test="meta/creator !='unknown'"><xsl:value-of select="meta/creator"/>. </xsl:if><xsl:value-of select="meta/title"/>. <xsl:if test="meta/collectionTitle"><xsl:value-of select="meta/collectionTitle"/>.</xsl:if> <xsl:value-of select="meta/subtitle"/>.
          <!-- 1/27/12 WS: changed meta/year to meta/date -->         
          <xsl:value-of select="meta/date"/>. 
          [<xsl:value-of select="$url"/>]
@@ -754,7 +754,7 @@
             </div>
             
             <!-- feedback and footer -->
-            <xsl:copy-of select="$brand.feedback"/>
+            <!-- <xsl:copy-of select="$brand.feedback"/> -->
             <xsl:copy-of select="$brand.footer"/>
             
          </body>
