@@ -1,0 +1,4 @@
+# robots.txt for collectionguides.rockarch.org. Welcome!
+
+User-agent: *
+Disallow:

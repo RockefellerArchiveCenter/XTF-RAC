@@ -1,0 +1,352 @@
+/* Rockefeller Archive Center customized css */
+body {
+   font-family: Arial, sans-serif;
+   /* 9/22/11 WS: Changed background color from silver to white for RA a */
+   background-color: #fff;
+   font-size: .85em;
+   color: #333;
+   /* 9/22/11 WS: Changed for RA, added margin and padding */
+   margin:0;
+   margin-right:12px;
+   padding:0;
+}
+
+/* general markup styles*/
+.nomark{list-style:none;}
+h2 {margin-top:.5em; padding:0;}
+h4{margin-bottom:0; padding-bottom:0;}
+p{margin-top:0;margin-bottom:1em;}
+.modsInfo h3 {margin:0; padding:.25em .25em 1em .25em; background-color:#ccc !important; border:red;}
+div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em;}
+div.closeWindow {text-align:right !important; font-size:.85em !important; margin-top:1em;}
+div.closeWindow a{color: #C45414;}
+.getAddress{border-top:1px solid #999 !important; margin-top:24px !important;}
+.fixedHeader {
+            position: fixed !important;
+            position: absolute; /* IE6 reads this */
+            height: 100px;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;              
+}
+.fixedHeader table{
+    margin-right:8px;    
+}
+.fixedHeader .navright {margin-right:12px !important;} 
+.fixedHeader .searchNav {width:99%;}
+.fixedHeader .bbar_custom{width:99%;} 
+.bookbag {text-align:right; border:none; background-color:white; margin-bottom:-2em;padding:0;margin-right:1em;}
+ul.bbicons {display:block; list-style: none; padding:0; margin:0; float:none; clear:both;}
+ul.bbicons li{width:30px !important; float: left; margin:0;}
+ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; text-align:center; font-size:.75em; color:#C45428;}
+.bbform {display:block; margin:0;padding:0;height:1em; overflow:hidden; text-align: right;}
+/* Formats header */
+#RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
+/*h1#collectionGuides {background: url("images/collection_guides.gif") no-repeat left top; background-color:#fff;}*/
+
+#collectionGuides {margin-top:-60px; margin-bottom:1em; margin-left:150px; font-size:.5em !important;}
+#collectionGuides a {
+   position:relative;
+   display:block;
+   width:260px;
+   height:40px !important; }
+#collectionGuides a span {
+   display:block;
+   position:absolute;
+   width:100%;
+   height:100%;
+   background: url("http://collectionguides.rockarch.org/xtf/css/default/images/collection_guides.gif") no-repeat left top; background-color:#fff;
+   z-index:1; /* Places <span> on top of <a> text */  }
+
+.searchNav {background-color: #fff; width:100%; margin-top:-.5em;}
+.searchNav .searchLinks {color: #555555; text-align:right; padding-right:.5em;}
+.searchNav .searchLinks a {color: #C45414; text-decoration:none;}/*555555*/
+
+.bbar_custom {padding:1em; border:none;}
+h1.collectionGuides {margin-top:-70px; margin-left:160px; font-size:2em;}
+h1.collectionGuides a {text-decoration:none; color:black;}
+.searchPage {margin-top:34px !important;}
+.navright {
+    background-color: #DDDDDD;
+    padding:12px;
+    text-align:right !important; 
+    border:1px solid #999; 
+    }  
+.navright form {text-align:right !important; padding:8px 8px;}
+.eadtitle {text-align:left; font-size:.80em; margin:0; padding-left:.5em; /*border: 1px solid #999;*/}
+.eadtitle h1 {color:#333; margin:0; padding:0; font-size:1.75em;}
+
+/*Formats IE specific warning*/
+.chromeframe p {
+    width: 100%;
+    background-color: #C45414;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+
+.chromeframe a {
+    color: #d3d3d3 !important;
+}
+
+.chromeframe a:hover {
+    color: #c2c2c2 !important;
+}
+
+/*Formats feedback link and overlay*/
+.feedback-tab {
+    display: block;
+    position: fixed;
+    bottom: 150px;
+    right: 0px;
+    cursor: pointer;
+    box-shadow:0 0 10px #000;
+    -moz-box-shadow:0 0 10px 5px #000;
+    -webkit-box-shadow: 0 0 10px #000;
+}
+
+.feedback-form label {
+    display: inline-block;
+    width: 100px;
+    margin: 5px;
+}
+
+.feedback-form input {
+    display: inline-block;
+    width: 200px;
+    margin: 5px;
+}
+
+.feedback-form textarea {
+    width: 200px;
+    vertical-align: top;
+    margin: 5px;
+}
+
+.feedback-form p {
+    font-size: smaller;
+    padding-left: 124px;
+}
+
+.feedback-form .button {
+    width: auto;
+    float: right;
+}
+
+.feedback-form ul li {
+    list-style: none;
+}
+
+.overlay {
+    display:none;
+    z-index:10000;
+    background-color:#fff;
+    width: 410px;
+    min-height:200px;
+    border:1px solid #666;
+    padding: 20px;
+    box-shadow:0 0 90px #000;
+
+    /* CSS3 styling for latest browsers */
+    -moz-box-shadow:0 0 90px 5px #000;
+    -webkit-box-shadow: 0 0 90px #000;
+}
+ 
+/* close button positioned on upper right corner */
+.overlay .close {
+    background-image:url(/xtf/icons/default/close.png);
+    position:absolute;
+    right:-15px;
+    top:-15px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+
+.overlay h3 {
+    border-bottom: 1px dotted;
+}
+
+/*Formats main search tabs*/
+.browselinks p {font-size: 1.5em;}
+.browselinks a {color: #C45414 !important; font-size: 1em; text-decoration: none !important; font-weight: bold;}
+.browselinks a:hover {text-decoration: underline !important;}
+#fordtext p {color: #C45414; font-style: italic;}
+#fordtext a {color: #C45414 !important;}
+#fordtext a:hover {color: #888 !important;}
+p.searchtip {font-size:smaller;}
+.searchtip a {color: #C45414 !important;}
+td.bottomalign {vertical-align:bottom !important;}
+.searchtiplink {text-align:right !important;}
+
+/* Formats search results (number and type) */
+table.advancedSearch tr td{vertical-align:text-top;}
+.ra-query {float:none !important; display:inline !important;}
+.subQuery {float:none !important; display:inline !important;}
+.clear {clear:both;}
+/*.navright .right{text-align:right; float:right; margin-top:-8px; padding-top:0;}*/
+.right{text-align:right;}
+.left {text-align:left; padding-left:18px;}
+.facetMatch {font-style:italic; color:#FD8239;}
+.facetGroup .col3 {font-weight:bold; color:#FD8239;}
+a.hit {
+   background-color:#ffffcc !important;
+   color: #FD8239 !important;
+   font-weight: bold;
+}
+.toc-hi{
+   background-color:#ffffcc !important;
+   color: #FD8239 !important;
+   font-weight: bold;
+}
+.hit-count{
+   background-color:#ffffcc !important;
+   color: #FD8239 !important;
+   font-weight: bold;
+}
+.subhit{
+   background-color:#ffffcc !important;
+   color: #FD8239 !important;
+   font-weight: bold;
+}
+
+.hit{
+   background-color:#ffffcc !important;
+   color: #FD8239 !important;
+   font-weight: bold;
+}
+.results table{width:95% !important;}
+.docHit {width:95%; margin-left:2em !important;}
+.docHit table{width:auto;}
+
+/* Formats tabs for finding aids*/
+ul.tabs {display:block; list-style: none; padding:0; margin-bottom:6px;}
+ul.tabs li{display:inline; padding:10px;/*padding: 10px 20px;*/ margin:0; font-weight:bold; border-top:1px solid #999; border-right:1px solid #999; border-left:1px solid #999;}
+ul.tabs li.select{
+    background-color:#fff; 
+    border-top:1px solid #999;
+    border-right:1px solid #999;
+    border-left:1px solid #999;
+    }
+ul.tabs li.clear {display:none;}
+.active a{font-weight:bold; text-decoration:none !important;}
+.currentBrowse a{color: #333 !important;}
+/* Styles for EAD */
+.main {
+    display:block; 
+    float:none; 
+    clear:both; 
+    margin-top:215px;    
+    margin-left:13px; 
+    margin-right:-3px; 
+    position:relative;
+    /*
+    border-left:1px solid #999; 
+    border-right:1px solid #999; 
+    border-bottom:1px solid #999;
+    */
+    }
+    
+    
+/* TOC for finding aids pages */
+#tocWrapper { /* required to avoid jumping */
+    position: fixed !important;
+    position: absolute;
+    top: 260px;
+    left: 0;
+    bottom:12px;
+    margin-left: 0;
+    width:235px;
+    margin:0;
+    padding:0;
+    clear:both;
+    overflow:auto;
+         }
+     
+#toc {
+    margin-top:-10px; 
+    padding-top: 0;
+    padding-left: 12px;	
+	padding-right: 10px;	
+	padding-bottom: 10px;
+	display:block;
+	width: 190px;	
+    
+	}
+#toc dl{margin-left:1em;}
+#toc .inventory{margin-left:0;}
+#toc .inventory2{padding-left:1em;}
+#toc div.contents {padding:1em;}
+
+/* TOC subjects submenu*/
+ul.none {list-style:none;}
+.subjects {margin-left:1.5em; padding-left:4px;}
+.subjects h4 {margin:0; padding:1em;}
+.subjects ul{margin:0;padding:0;}
+.subjects li{margin-left:.85em;padding:0; padding-bottom:.5em;}
+.more {display:none;}
+
+/* --- EAD body --- */
+#content-wrapper { /* required to avoid jumping */
+    position: fixed !important;
+    position: absolute;
+    top: 260px;
+    left: 240px;
+    right:10px;
+    bottom:12px;
+/*    margin-left:240px;*/
+    min-height:400px;
+    margin:0;
+    padding:0;
+    clear:both;
+    overflow:auto;
+}
+         
+#content-right {
+    display:block;
+    /*margin-left:240px;*/
+    margin-top:0;
+/*    padding-top:48px;*/
+    padding-left: 10px;
+    margin-right: 10px;
+    text-align: left;
+/*    min-height:400px;*/
+/*    position:relative;*/
+}
+.navright .left {margin-top:-12px;}
+.overview p{margin-top:0; margin-bottom:12px;}
+.overview a {color: #C45414 !important;}
+#content-right table tr td {padding-right:1em;}
+.col4 {padding-right: 1em;}
+.addToBag {
+    font-weight:normal !important;    
+/*    background: url("images/bookbag.gif") no-repeat right top;*/
+}
+
+/* Container list styles*/
+table.containerList {width:99%; position:relative;}
+table.containerList tr td{padding-top:2px; padding-bottom:2px;}
+.seriesTitle {background-color:#ddd; padding:8px 4px; font-size:1.25em; margin:10px -4px; font-weight:bold;}
+.container {margin-left:2em; text-align:left;}
+.instances {font-weight:bold;text-decoration:underline;}
+.containerHeader {font-weight:bold; padding-top:.5em; text-align:left;}
+.containerHeaderTitle {font-weight:bold; padding-top:.5em; text-align:left;}
+.moreLess a{text-decoration:none !important; font-weight:bold; color:#FD8239 !important;}
+.containerTypes {margin-top:.5em;}
+.inventoryTitle {font-weight:bold; background-color:#000; color:#fff; padding:4px 2px; margin-bottom:.5em;}
+tr.odd{background-color:#eee !important;}
+tr.file td {border-bottom: 1px dotted #ccc !important; margin-top:.5em;}
+tr.file td.noBorder {border:none!important;}
+/*tr.file .borderDisplay div{border-left: 3px solid #ccc !important; padding-left:1em; margin-top:.25em; }*/
+
+/* --- Clevel Margins --- */
+table td.c {border-left: none; padding-left:4px;}
+table td.c01 {border-left: none !important; padding-left:4px;}
+table td.c02 {border-left: 10px solid white !important; padding-left:4px;}
+table td.c03 {border-left: 20px solid white !important; padding-left:4px;}
+table td.c04 {border-left: 30px solid white !important; padding-left:4px;}
+table td.c05 {border-left: 40px solid white !important; padding-left:4px;}
+table td.c06 {border-left: 50px solid white !important; padding-left:4px;}
+table td.c07 {border-left: 60px solid white !important; padding-left:4px;}
+table td.c08 {border-left: 70px solid white !important; padding-left:4px;}
