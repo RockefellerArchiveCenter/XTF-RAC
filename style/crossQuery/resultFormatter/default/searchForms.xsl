@@ -49,7 +49,7 @@
    
    <!-- main form page -->
    <xsl:template match="crossQueryResult" mode="form" exclude-result-prefixes="#all">
-      <xsl:choose>
+      <!-- <xsl:choose>
          <xsl:when test="$smode='collectionGuides'">
             <xsl:call-template name="collectionGuides"/>
          </xsl:when>
@@ -59,7 +59,7 @@
          <xsl:when test="$smode='searchTips'">
             <xsl:call-template name="searchTips"/>
          </xsl:when>
-         <xsl:otherwise>
+         <xsl:otherwise> -->
             <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
                <head>
                   <title>RAC: Search Collection Guides</title>
@@ -189,8 +189,8 @@
                   <xsl:copy-of select="$brand.footer"/>
                </body>
             </html>
-         </xsl:otherwise>
-      </xsl:choose>
+         <!--</xsl:otherwise>
+      </xsl:choose>-->
    </xsl:template>
    
    <!-- simple form -->

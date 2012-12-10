@@ -229,6 +229,7 @@
                   <xsl:call-template name="body"/>    
                   <br class="clear"/>
                </div>
+               <xsl:copy-of select="$brand.feedback"/>
           </body>
          </html>
       </xsl:result-document>

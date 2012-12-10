@@ -467,7 +467,7 @@
             </xsl:choose>
             
             <!-- feedback and footer -->
-            <!-- <xsl:copy-of select="$brand.feedback"/> -->
+            <xsl:copy-of select="$brand.feedback"/>
             <xsl:copy-of select="$brand.footer"/>
             
          </body>
@@ -754,7 +754,7 @@
             </div>
             
             <!-- feedback and footer -->
-            <!-- <xsl:copy-of select="$brand.feedback"/> -->
+            <xsl:copy-of select="$brand.feedback"/>
             <xsl:copy-of select="$brand.footer"/>
             
          </body>

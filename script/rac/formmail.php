@@ -257,7 +257,7 @@ else
 define("EMAIL_NAME","^[-a-z0-9.]+");    // the '^' is an important security feature!
 
             /* Help: http://www.tectite.com/fmdoc/target_email.php */
-$TARGET_EMAIL = array(EMAIL_NAME."@rockarch\.org$");
+$TARGET_EMAIL = array("^harnold@rockarch\.org$");
 
             /* Help: http://www.tectite.com/fmdoc/def_alert.php */
 define("DEF_ALERT","harnold@rockarch.org");
@@ -279,7 +279,7 @@ if (isset($SET_REAL_DOCUMENT_ROOT) && $SET_REAL_DOCUMENT_ROOT !== "")
 $CONFIG_CHECK = array("TARGET_EMAIL");
 
             /* Help: http://www.tectite.com/fmdoc/at_mangle.php */
-define("AT_MANGLE","");
+define("AT_MANGLE","_*_");
 
             /* Help: http://www.tectite.com/fmdoc/target_urls.php */
 $TARGET_URLS = array();         // default; no URLs allowed
@@ -7190,6 +7190,7 @@ function CreatePage($text,$title = "",$b_show_about = true)
     {
         echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'."\n";
         echo '<html xmlns="http://www.w3.org/1999/xhtml">'."\n";
+        echo "<meta http-equiv=\"Refresh\" content=\"3; url={$_SERVER[HTTP_REFERER]}\">\n";
         echo "<head>\n";
         if (isset($sHTMLCharSet) && $sHTMLCharSet !== "")
             echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=$sHTMLCharSet\" />\n";
@@ -13732,7 +13733,9 @@ else
             // everything's good, so we don't need the session any more
             //
         ZapSession();
+
     }
+                
     elseif (IsAjax())
         JSON_Result("OK");
     else
@@ -13744,4 +13747,9 @@ else
             //
         Redirect($SPECIAL_VALUES["good_url"],GetMessage(MSG_FORM_OK));
 }
+
+//print "thanks";
+//sleep(5);
+//header("Location: {$_SERVER['HTTP_REFERER']}");
+
 ?>

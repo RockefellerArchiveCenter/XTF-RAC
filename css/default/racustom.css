@@ -98,7 +98,7 @@ h1.collectionGuides a {text-decoration:none; color:black;}
 .feedback-tab {
     display: block;
     position: fixed;
-    bottom: 150px;
+    top: 390px;
     right: 0px;
     cursor: pointer;
     box-shadow:0 0 10px #000;
