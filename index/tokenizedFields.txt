@@ -16,3 +16,7 @@ year
 collectionTitle
 collectionCreator
 description
+genre
+series
+callNo
+notes

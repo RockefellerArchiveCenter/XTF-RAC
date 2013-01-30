@@ -623,7 +623,7 @@
                                  evidenced by the level attribute series)and numbers them
                                  to form a hyperlink to each.   Delete this section if you do not
                                  wish the c01 titles to appear in the table of contents.-->
-                              <xsl:for-each select="archdesc/dsc/child::*[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or @level='subgrp' or (@level='otherlevel' and not(child::did/container))]">
+                              <xsl:for-each select="archdesc/dsc/child::*[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or @level='subgrp' or @level='subseries' or (@level='otherlevel' and not(child::did/container))]">
                                  <div class="series">
                                     <xsl:variable name="submenuID">
                                        <xsl:variable name="seriesID" select="@id">
@@ -678,12 +678,12 @@
                                        (as evidenced by the level attribute series) and forms a hyperlink to each.   
                                        Delete this section if you do not wish the c02 titles to appear in the 
                                        table of contents. -->
-                                    <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='otherlevel']">
+                                    <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
                                        <div class="more" id="{$submenuID}">
                                           <xsl:if test="$parentID = $submenuID">
                                              <xsl:attribute name="style">display:block;</xsl:attribute>
                                           </xsl:if>
-                                          <xsl:for-each select="child::*[@level='subgrp' or @level='subseries' or @level='subfonds']">                                                
+                                          <xsl:for-each select="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">                                                
                                              <xsl:call-template name="make-toc-link">
                                                 <xsl:with-param name="submenuID" select="$submenuID"/>
                                                 <xsl:with-param name="name">
@@ -698,6 +698,8 @@
                                                          <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
                                                          <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
                                                          <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
+                                                         <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"><xsl:value-of select="@otherlevel"/>: </xsl:when>
+                                                         <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)"><xsl:value-of select="@otherlevel"/></xsl:when>
                                                          <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>
                                                       </xsl:choose>                                          
                                                    </xsl:variable>
@@ -955,7 +957,7 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
          <tr>
             <td width="10px" class="moreLess">
                <xsl:if test=".[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds']">
-                  <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds']">
+                  <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='otherlevel' or (@level='series' and parent::*[@level='recordgrp'])]">
                      <xsl:choose>
                         <xsl:when test="$parentID = $submenuID">
                            <a onclick="showHide('{$submenuID}');return false;" id="{$submenuID}-hide" href="#">- </a>

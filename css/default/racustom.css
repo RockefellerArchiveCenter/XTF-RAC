@@ -45,18 +45,18 @@ ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; t
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
 /*h1#collectionGuides {background: url("images/collection_guides.gif") no-repeat left top; background-color:#fff;}*/
 
-#collectionGuides {margin-top:-60px; margin-bottom:1em; margin-left:150px; font-size:.5em !important;}
+#collectionGuides {margin-top:-100px; margin-bottom:1em; margin-left:170px; font-size:.5em !important;}
 #collectionGuides a {
    position:relative;
    display:block;
-   width:260px;
-   height:40px !important; }
+   width:650px;
+   height:80px !important; }
 #collectionGuides a span {
    display:block;
    position:absolute;
    width:100%;
    height:100%;
-   background: url("http://collectionguides.rockarch.org/xtf/css/default/images/collection_guides.gif") no-repeat left top; background-color:#fff;
+   background: url("images/dimes.gif") no-repeat left top; background-color:#fff;
    z-index:1; /* Places <span> on top of <a> text */  }
 
 .searchNav {background-color: #fff; width:100%; margin-top:-.5em;}
