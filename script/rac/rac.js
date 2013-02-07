@@ -18,7 +18,7 @@
 // launch new window
          var newwindow;
          function openWin(url) {
-             newwindow = window.open(url, 'name', 'height=400,width=500,resizable,scrollbars');
+             newwindow = window.open(url, 'name', 'height=500,width=500,resizable,scrollbars');
              if (window.focus) {
                  newwindow.focus()
              }
