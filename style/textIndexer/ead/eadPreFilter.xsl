@@ -323,6 +323,7 @@
             </xsl:when>
             <xsl:otherwise>
 <!--               <xsl:call-template name="get-ead-collection"/>-->
+               <xsl:call-template name="get-ead-parent"/>
                <xsl:call-template name="get-ead-identifier"/>
                <xsl:call-template name="get-ead-level"/>
                <xsl:call-template name="get-ead-title"/>
@@ -397,6 +398,40 @@
       </xsl:choose>
    </xsl:template>   
    
+   <!-- Get parent for components -->
+   <xsl:template name="get-ead-parent">
+      <xsl:for-each select="ancestor::*[@level]">
+         <xsl:variable name="level">
+            <xsl:choose>
+               <xsl:when test="self::archdesc">Collection</xsl:when>
+               <xsl:when test="@level = 'series'">Series</xsl:when>
+               <xsl:when test="@level = 'subseries'">Subseries</xsl:when>
+               <xsl:when test="@level = 'recordgrp'">Record Group</xsl:when>
+               <xsl:when test="@level = 'subgrp'">Subgroup</xsl:when>
+               <xsl:when test="@level = 'fonds'">Fonds</xsl:when>
+               <xsl:when test="@level = 'subfonds'">Subfonds</xsl:when>
+               <xsl:when test="@level = 'class'">Class</xsl:when>
+               <xsl:when test="@level = 'otherlevel'">otherlevel</xsl:when>
+               <xsl:when test="@level = 'file'">File</xsl:when>
+               <xsl:when test="@level = 'item'">Item</xsl:when>
+            </xsl:choose>            
+         </xsl:variable>
+         <xsl:variable name="id"><xsl:if test="did/unitid"><xsl:value-of select="concat(' ',did/unitid)"/></xsl:if></xsl:variable>
+         <xsl:choose>
+            <xsl:when test="self::archdesc">
+               <parent xtf:meta="true" xtf:tokenize="no">
+                  <xsl:value-of select="concat($level,': ',did/unittitle)"/>
+               </parent>
+            </xsl:when>
+            <xsl:otherwise>
+               <parent xtf:meta="true" xtf:tokenize="no">
+                  <xsl:value-of select="concat($level,$id,': ',did/unittitle)"/>
+               </parent>
+            </xsl:otherwise>
+         </xsl:choose>         
+      </xsl:for-each>
+   </xsl:template>
+  
    <!-- level -->
    <xsl:template name="get-ead-level">
       <xsl:choose>
@@ -424,17 +459,7 @@
          <xsl:when test="@level">
             <xsl:variable name="seriesTitle">
                <xsl:choose>
-                  <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">
-                     <xsl:for-each select="ancestor::*[@level='series'] | ancestor::*[@level='collection'][parent::dsc] | ancestor::*[@level='fonds'] | ancestor::*[@level='recordgrp']">
-                        <xsl:choose>
-                           <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
-                           <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
-                           <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
-                           <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
-                           <xsl:otherwise/>
-                        </xsl:choose>    
-                        <xsl:value-of select="did/unittitle"/>.&#160;                        
-                     </xsl:for-each>                    
+                  <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">                    
                     <xsl:text>File: </xsl:text> 
                      <xsl:choose>
                         <xsl:when test="string-length(normalize-space(did/unittitle)) &gt; 1">

@@ -186,6 +186,10 @@
             <xsl:when test="$smode = 'removeAllFromBag'">
                <xsl:call-template name="removeAllFromBag"/>
             </xsl:when>
+            <!-- 2/4/13 WS: added template to pull dochit results into address form for preview -->
+            <xsl:when test="matches($smode,'getAddress')">
+               <xsl:call-template name="showBag"/>
+            </xsl:when>
             <xsl:when test="matches($smode,'showBag|emailFolder')">
                <xsl:call-template name="showBag"/>
             </xsl:when>
