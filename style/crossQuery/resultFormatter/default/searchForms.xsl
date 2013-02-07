@@ -225,13 +225,13 @@
                   <ul class="nomark">
                      <!-- make popups, need text -->
                      <li>
-                        <a href="#" rel="#dscDescription">About Collection Guides</a>
+                        <a href="#" rel="#dscDescription" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);">About Collection Guides</a>
                      </li>
                      <li>
-                        <a href="#" rel="#archivalMat">About Archival Materials</a>
+                        <a href="#" rel="#archivalMat" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);">About Archival Materials</a>
                      </li>
                      <li>
-                        <a href="#" rel="#dimes">About this website's name</a>
+                        <a href="#" rel="#dimes" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">About This Website's Name</a>
                      </li>
                      <!--
                      <li>
@@ -241,7 +241,7 @@
                   </ul>
                 </td>
             </tr>
-            <tr><td><p class="searchtip">Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc. <br/>To search an exact phrase, include quotation marks, e.g. "mental health". <a href="#" rel="#searchTips">more</a></p></td>
+            <tr><td><p class="searchtip">Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc. <br/>To search an exact phrase, include quotation marks, e.g. "mental health". <a href="#" rel="#searchTips" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);">more</a></p></td>
             </tr>
             <tr>
                <td colspan="3">
@@ -365,7 +365,7 @@
             <tr>
                <td>&#160;</td>
                <td class="searchtiplink">
-               <a href="#" rel="#searchTips">Search Tips and Tricks</a>
+                  <a href="#" rel="#searchTips" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);">Search Tips and Tricks</a>
             </td>
             </tr>            
          </table>  
