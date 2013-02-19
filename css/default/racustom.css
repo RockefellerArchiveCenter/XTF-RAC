@@ -179,6 +179,7 @@ p.searchtip {font-size:smaller;}
 .searchtip a {color: #C45414 !important;}
 td.bottomalign {vertical-align:bottom !important;}
 .searchtiplink {text-align:right !important;}
+td.tab-select {box-shadow: 0px -10px 20px -10px #000000;}
 
 /* Formats search results (number and type) */
 table.advancedSearch tr td{vertical-align:text-top;}
