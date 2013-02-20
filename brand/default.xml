@@ -4439,7 +4439,7 @@
    </dynaxml.header>
 
       <feedback>
-         <div class="feedback-tab"><img src="/xtf/icons/default/feedback_tab.png" rel="#feedback"/></div>
+         <div class="feedback-tab"><img src="/xtf/icons/default/feedback_tab.png" rel="#feedback" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'feedback']);"/></div>
           <div class="overlay" id="feedback">
                <form class="feedback-form" action="/xtf/script/rac/formmail.php" method="post">
                   <input type="hidden" name="recipients" value="harnold_*_rockarch.org"/>
@@ -4470,7 +4470,7 @@
                        </li>
                     </ul>
                     <input type="reset" value="RESET" class="button"/>
-                    <input type="submit" value="SEND" class="button"/>
+                  <input type="submit" value="SEND" class="button" onClick="_gaq.push(['_trackEvent', 'interaction', 'send', 'feedback']);"/>
                   
                  </form>
                </div>

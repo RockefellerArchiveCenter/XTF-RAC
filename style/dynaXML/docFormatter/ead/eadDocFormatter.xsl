@@ -377,7 +377,7 @@
                      <li>                    
                         <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
 					 <!-- DG: todo -->
-                        <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf"><img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/></a>
+                        <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="_gaq.push(['_trackEvent', 'finding aids', 'view', 'pdf']);"><img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/></a>
                      </li>
                         </ul>
                      </div>

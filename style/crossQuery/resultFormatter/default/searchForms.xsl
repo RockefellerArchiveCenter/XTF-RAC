@@ -223,7 +223,7 @@
                </td>
                <td>
                   <ul class="nomark">
-                     <!-- make popups, need text -->
+                     <!-- links to JQuery popup windows -->
                      <li>
                         <a href="#" rel="#dscDescription" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);">About Collection Guides</a>
                      </li>
