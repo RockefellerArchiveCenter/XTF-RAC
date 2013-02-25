@@ -534,7 +534,7 @@
       <!-- Change the values for @smtpHost and @from to those valid for your domain -->
       <mail:send xmlns:mail="java:/org.cdlib.xtf.saxonExt.Mail"  
          xsl:extension-element-prefixes="mail" 
-         smtpHost="mail.rockarch.org" 
+         smtpHost="" 
          useSSL="no" 
          from="archive@rockarch.org"
          to="{$email}" 
