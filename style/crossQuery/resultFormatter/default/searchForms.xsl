@@ -62,7 +62,7 @@
          <xsl:otherwise> -->
             <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
                <head>
-                  <title>RAC: Search Collection Guides</title>
+                  <title>DIMES: Online Collections and Catalog of Rockefeller Archive Center</title>
                   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
                   <xsl:copy-of select="$brand.links"/>
                   <script type='text/javascript'>
