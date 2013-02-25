@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0">
+
+	<channel>
+		<title>NLM finding aids</title>
+		<link>http://collectionguides.rockarch.org/xtf/nlmRSS.xml</link>
+		<description>Finding aids to be crawled for the National Library of Medicine's History of
+			Medicine consortium</description>
+		<item>
+			<title>China Medical Board, Inc. records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA065/FA065.xml</link>
+		</item>
+		<item>
+			<title>Commonwealth Fund records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA018/FA018.xml</link>
+		</item>
+		<item>
+			<title>Foundation for Child Development records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA019/FA019.xml</link>
+		</item>
+		<item>
+			<title> Lucille P. Markey Charitable Trust records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA017/FA017.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation projects</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA086/FA086.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation records, general correspondence, 1924-1957</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA308/FA308.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation records, general correspondence, 1958-1970</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA400/FA400.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation records, general correspondence, 1971-1980</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA401/FA401.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation records, general correspondence, 1981-1990</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA402/FA402.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation, Administration, Program and Policy records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA112/FA112.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation records, China Medical Board records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA114/FA114.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation records, International Health Board/Division
+				records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA115/FA115.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation records, Field Offices</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA116/FA116.xml</link>
+		</item>
+		<item>
+			<title>International Education Board records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA062/FA062.xml</link>
+		</item>
+		<item>
+			<title>Population Council records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA210/FA210.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller University records, Collection of The Medical Letter
+				publication</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA241/FA241.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation records, officers' diaries, A-E</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA391/FA391.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation records, officers' diaries, F-L</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA392/FA392.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation records, officers' diaries, M-R</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA393/FA393.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Foundation records, officers' diaries, S-Z</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA394/FA394.xml</link>
+		</item>
+		<item>
+			<title>Theodore Malinin collection of Alexis Carrel and Charles Lindbergh papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA208/FA208.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller University, Business Manager records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA137/FA137.xml</link>
+		</item>
+		<item>
+			<title>General Education Board records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA058/FA058.xml</link>
+		</item>
+		<item>
+			<title> Paul Ehrlich papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA135/FA135.xml</link>
+		</item>
+		<item>
+			<title>John Auer, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA147/FA147.xml</link>
+		</item>
+		<item>
+			<title>Alfred E. Cohn, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA132/FA132.xml</link>
+		</item>
+		<item>
+			<title>Alexis Carrel, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA231/FA231.xml</link>
+		</item>
+		<item>
+			<title>Hideyo Noguchi, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA121/FA121.xml</link>
+		</item>
+		<item>
+			<title>Simon Flexner, Rockefeller University papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA139/FA139.xml</link>
+		</item>
+		<item>
+			<title>Louise Pearce, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA188/FA188.xml</link>
+		</item>
+		<item>
+			<title> Donald D. Van Slyke, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA203/FA203.xml</link>
+		</item>
+		<item>
+			<title>Oswald T. Avery, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA230/FA230.xml</link>
+		</item>
+		<item>
+			<title>Eugene L. Opie, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA185/FA185.xml</link>
+		</item>
+		<item>
+			<title>Winthrop J.V. Osterhout, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA186/FA186.xml</link>
+		</item>
+		<item>
+			<title>James B. Murphy, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA182/FA182.xml</link>
+		</item>
+		<item>
+			<title>Philip D. McMaster, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA179/FA179.xml</link>
+		</item>
+		<item>
+			<title>Paul A. Lewis, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA175/FA175.xml</link>
+		</item>
+		<item>
+			<title>Frederick Lamont Gates, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA161/FA161.xml</link>
+		</item>
+		<item>
+			<title>Samuel J. Meltzer, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA180/FA180.xml</link>
+		</item>
+		<item>
+			<title> Purnell W. Choppin, Rockefeller University Faculty papers </title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA151/FA151.xml</link>
+		</item>
+		<item>
+			<title>Albert Claude, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA152/FA152.xml</link>
+		</item>
+		<item>
+			<title>René Jules Dubos, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA122/FA122.xml</link>
+		</item>
+		<item>
+			<title>Karl Landsteiner, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA126/FA126.xml</link>
+		</item>
+		<item>
+			<title>F. Peyton Rous, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA194/FA194.xml</link>
+		</item>
+		<item>
+			<title>Rebecca C. Lancefield, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA173/FA173.xml</link>
+		</item>
+		<item>
+			<title>Richard E. Shope, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA199/FA199.xml</link>
+		</item>
+		<item>
+			<title>Albert B. Sabin, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA196/FA196.xml</link>
+		</item>
+		<item>
+			<title>Florence R. Sabin, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA197/FA197.xml</link>
+		</item>
+		<item>
+			<title>Florence R. Sabin, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA201/FA201.xml</link>
+		</item>
+		<item>
+			<title>William Trager, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA202/FA202.xml</link>
+		</item>
+		<item>
+			<title>Peter K. Olitsky, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA184/FA184.xml</link>
+		</item>
+		<item>
+			<title>John B. Nelson, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA183/FA183.xml</link>
+		</item>
+		<item>
+			<title>Wade H. Brown, Rockefeller University Faculty papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA010/FA010.xml</link>
+		</item>
+		<item>
+			<title>Claude H. Barlow Papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA037/FA037.xml</link>
+		</item>
+		<item>
+			<title>John C. Bugher papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA027/FA027.xml</link>
+		</item>
+		<item>
+			<title>Nelson C. Davis papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA048/FA048.xml</link>
+		</item>
+		<item>
+			<title>Wilbur G. Downs papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA055/FA055.xml</link>
+		</item>
+		<item>
+			<title>Mary E. Ferguson Papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA044/FA044.xml</link>
+		</item>
+		<item>
+			<title>Lewis W. Hackett papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA043/FA043.xml</link>
+		</item>
+		<item>
+			<title>Elvin A. Kabat papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA020/FA020.xml</link>
+		</item>
+		<item>
+			<title>John H. Knowles papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA047/FA047.xml</link>
+		</item>
+		<item>
+			<title>Harold H. Loucks papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA050/FA050.xml</link>
+		</item>
+		<item>
+			<title>Wickliffe Rose Papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA032/FA032.xml</link>
+		</item>
+		<item>
+			<title>Hugh H. Smith Papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA036/FA036.xml</link>
+		</item>
+		<item>
+			<title>Kenneth C. Smithburn Papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA040/FA040.xml</link>
+		</item>
+		<item>
+			<title>Benjamin E. Washburn papers</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA038/FA038.xml</link>
+		</item>
+		<item>
+			<title>William T. Grant Foundation records</title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA004/FA004.xml</link>
+		</item>
+		<item>
+			<title>Rockefeller Sanitary Commission for the Eradication of Hookworm Disease </title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA057/FA057.xml</link>
+		</item>
+		<item>
+			<title>Office of the Messrs. Rockefeller records, Rockefeller Boards </title>
+			<link>http://collectionguides.rockarch.org/xtf/data/ead/FA324/FA324.xml</link>
+		</item>
+	</channel>
+</rss>
