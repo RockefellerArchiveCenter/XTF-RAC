@@ -71,7 +71,9 @@ h1.collectionGuides a {text-decoration:none; color:black;}
     background-color: #DDDDDD;
     padding:12px;
     text-align:right !important; 
-    border:1px solid #999; 
+    border-top:1px solid #999; 
+    border-right:1px solid #999; 
+    border-left:1px solid #999; 
     }  
 .navright form {text-align:right !important; padding:8px 8px;}
 .eadtitle {text-align:left; font-size:.80em; margin:0; padding-left:.5em; /*border: 1px solid #999;*/}
@@ -229,6 +231,7 @@ ul.tabs li.select{
     border-top:1px solid #999;
     border-right:1px solid #999;
     border-left:1px solid #999;
+    box-shadow: 0px -10px 20px -10px #000000;
     }
 ul.tabs li.clear {display:none;}
 .active a{font-weight:bold; text-decoration:none !important;}

@@ -215,8 +215,7 @@
                   </select>
                   <xsl:text>&#160;</xsl:text>
                   <input type="submit" value="Search"/>
-                  <input type="hidden" value="collection" name="sort"/>
-<!--                  <input type="hidden" value="series" name="level"/>-->
+                  <!--<input type="hidden" value="series" name="level"/>-->
                   <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
                  <!-- Uncomment and complete code when digital objects are included -->    
                  <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
