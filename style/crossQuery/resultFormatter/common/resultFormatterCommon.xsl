@@ -591,6 +591,7 @@
                   </xsl:when>
                   <xsl:when test="$sort = 'collection'">
                      <option value="collection" selected="selected">collection</option>
+                     <option value="">relevance</option>
                      <option value="title">title</option>
                      <option value="creator">author</option>
                      <option value="year">date</option>
