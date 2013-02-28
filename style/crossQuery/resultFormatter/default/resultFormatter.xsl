@@ -132,7 +132,7 @@
             </xsl:call-template>
          </xsl:when>
          <!-- browse pages -->
-         <xsl:when test="$browse-title or $browse-creator or $browse-geogname or $browse-subject or $browse-subjectname">
+         <xsl:when test="$browse-title or $browse-creator or $browse-geogname or $browse-subject or $browse-subjectname or $browse-updated">
             <xsl:call-template name="translate">
                <xsl:with-param name="resultTree">
                   <xsl:apply-templates select="crossQueryResult" mode="browse"/>
@@ -765,6 +765,10 @@
                            <xsl:when test="$browse-creator">
                               <xsl:apply-templates select="facet[@field='browse-creator']/group/docHit"/>
                            </xsl:when>
+                           <!-- 2/28/2013 HA: added browse option -->
+                           <xsl:when test="$browse-updated">
+                              <xsl:apply-templates select="facet[@field='browse-updated']/group/docHit"/>
+                           </xsl:when>
                            <!-- 9/26/11 WS: Added browse options -->
                            <xsl:when test="$browse-subject">
                               <xsl:apply-templates select="facet[@field='browse-subject']/group/docHit"/>
@@ -806,6 +810,7 @@
                         </dt>
                         <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead">by Title</a></dd>
                         <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead">by Creator</a></dd>
+                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead">Recently Updated</a></dd>
                      </dl>
                   </td>
                   <td style="width:250px;">
@@ -840,7 +845,7 @@
             <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection">All</a>
           |
             <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">
-               <xsl:if test="$type='ead' and not($browse-title) and not($browse-creator)">
+               <xsl:if test="$type='ead' and not($browse-title) and not($browse-creator) and not($browse-updated)">
                   <xsl:attribute name="class">active</xsl:attribute>
                </xsl:if>
                Archival Collections</a> |  

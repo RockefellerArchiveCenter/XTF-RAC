@@ -192,6 +192,7 @@
    <xsl:param name="browse-title"/>
    <xsl:param name="browse-creator"/>
    <!-- add new browse parameters-->
+   <xsl:param name="browse-updated"/>
    <xsl:param name="browse-subjectname"/>
    <xsl:param name="browse-subject"/>
    <xsl:param name="browse-geogname"/>
@@ -541,6 +542,7 @@
                      <option value="creator">author</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'title'">
                      <option value="collection">collection</option>
@@ -548,6 +550,7 @@
                      <option value="creator">author</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'creator'">
                      <option value="collection">collection</option>
@@ -555,6 +558,7 @@
                      <option value="creator" selected="selected">author</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'year'">
                      <option value="collection">collection</option>
@@ -562,6 +566,7 @@
                      <option value="creator">author</option>
                      <option value="year" selected="selected">date</option>
                      <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'reverse-year'">
                      <option value="collection">collection</option>
@@ -569,6 +574,7 @@
                      <option value="creator">author</option>
                      <option value="year">date</option>
                      <option value="reverse-year" selected="selected">reverse date</option>
+                     <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'collection'">
                      <option value="collection" selected="selected">collection</option>
@@ -576,6 +582,15 @@
                      <option value="creator">author</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp">updated</option>
+                  </xsl:when>
+                  <xsl:when test="$sort = 'dateStamp'">
+                     <option value="collection">collection</option>
+                     <option value="title">title</option>
+                     <option value="creator">author</option>
+                     <option value="year">date</option>
+                     <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp" selected="selected">updated</option>
                   </xsl:when>
                </xsl:choose>
             </xsl:when>
@@ -588,6 +603,7 @@
                      <option value="creator">author</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'collection'">
                      <option value="collection" selected="selected">collection</option>
@@ -596,6 +612,7 @@
                      <option value="creator">author</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'title'">
                      <option value="collection">collection</option>
@@ -604,6 +621,7 @@
                      <option value="creator">author</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'creator'">
                      <option value="collection">collection</option>
@@ -612,6 +630,7 @@
                      <option value="creator" selected="selected">author</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'year'">
                      <option value="collection">collection</option>
@@ -620,6 +639,7 @@
                      <option value="creator">author</option>
                      <option value="year" selected="selected">date</option>
                      <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'reverse-year'">
                      <option value="collection">collection</option>
@@ -628,6 +648,15 @@
                      <option value="creator">author</option>
                      <option value="year">date</option>
                      <option value="reverse-year" selected="selected">reverse date</option>
+                     <option value="dateStamp">updated</option>
+                  </xsl:when>
+                  <xsl:when test="$sort = 'dateStamp'">
+                     <option value="collection">collection</option>
+                     <option value="title">title</option>
+                     <option value="creator">author</option>
+                     <option value="year">date</option>
+                     <option value="reverse-year">reverse date</option>
+                     <option value="dateStamp" selected="selected">updated</option>
                   </xsl:when>
                </xsl:choose>
             </xsl:otherwise>
@@ -858,6 +887,10 @@
             </xsl:when>
             <xsl:when test="$browse-title">
                <xsl:value-of select="$browse-title"/>
+            </xsl:when>
+            <!-- 2/28/2013 HA: Adding new browse option -->
+            <xsl:when test="$browse-updated">
+               <xsl:value-of select="$browse-updated"/>
             </xsl:when>
             <!-- 9/26/11 WS: Added new browse options -->
             <xsl:when test="$browse-subject">

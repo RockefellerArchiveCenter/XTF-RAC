@@ -104,6 +104,9 @@
                   <xsl:when test="$sort='collection'">
                      <xsl:value-of select="'collection,sort-title'"/>
                   </xsl:when>                     
+                  <xsl:when test="$sort='dateStamp'">
+                     <xsl:value-of select="'-dateStamp,sort-title'"/>
+                  </xsl:when>                     
                </xsl:choose>
             </xsl:attribute>
          </xsl:if>
@@ -169,6 +172,13 @@
             <xsl:variable name="page" select="//param[matches(@name,'browse-creator')]/@value"/> 
             <xsl:variable name="pageSel" select="if ($page = 'first') then '*[1]' else $page"/>
             <facet field="browse-creator" sortGroupsBy="value" sortDocsBy="sort-creator,sort-title,sort-publisher,sort-year" select="{concat('*|',$pageSel,'#all')}"/>
+         </xsl:if>
+         
+         <!-- to support recently updated pages -->
+         <xsl:if test="//param[matches(@name,'browse-updated')]">
+            <xsl:variable name="page" select="//param[matches(@name,'browse-updated')]/@value"/> 
+            <xsl:variable name="pageSel" select="if ($page = 'first') then '*[1]' else $page"/>
+            <facet field="browse-updated" sortGroupsBy="value" sortDocsBy="dateStamp,sort-title,sort-publisher,sort-year" select="{concat('*|',$pageSel,'#all')}"/>
          </xsl:if>
          
          <!-- process query -->

@@ -959,26 +959,27 @@
    <!-- OAI dateStamp -->
    <xsl:template name="oai-datestamp">
       <dateStamp xtf:meta="true" xtf:tokenize="no">
-         <xsl:choose>
-            <xsl:when test="/ead/eadheader/filedesc/publicationstmt/date">
+         <!--<xsl:choose>
+            <xsl:when test="/ead/eadheader/profiledesc/creation/date">
                <xsl:choose>
-                  <xsl:when test="matches(/ead/eadheader/filedesc/publicationstmt[1]/date[1],'^(\d{4})')">
-                     <xsl:value-of select="concat(substring(string(/ead/eadheader/filedesc/publicationstmt[1]/date[1]),1,4),'-01-01')"/>
+                  <xsl:when test="matches(/ead/eadheader/profiledesc/creation[1]/date[1],'^(\d{4})')">
+                     <xsl:value-of select="concat(substring(string(/ead/eadheader/profiledesc/creation[1]/date[1]),1,4),'-01-01')"/>
                   </xsl:when>
-                  <xsl:when test="contains(/ead/eadheader/filedesc/publicationstmt[1]/date[1],'-')">
-                     <xsl:value-of select="concat(parse:year(string(/ead/eadheader/filedesc/publicationstmt[1]/date[1])),'-01-01')"/>                  
+                  <xsl:when test="contains(/ead/eadheader/profiledesc/creation[1]/date[1],'-')">
+                     <xsl:value-of select="concat(parse:year(string(/ead/eadheader/profiledesc/creation[1]/date[1])),'-01-01')"/>                  
                   </xsl:when>
                   <xsl:otherwise>
-                     <!-- I don't know, what would you put? -->
+                     <!-\- I don't know, what would you put? -\->
                      <xsl:value-of select="'1950-01-01'"/>                  
                   </xsl:otherwise>
                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
-               <!-- I don't know, what would you put? -->
+               <!-\- I don't know, what would you put? -\->
                <xsl:value-of select="'1950-01-01'"/>
             </xsl:otherwise>
-         </xsl:choose>
+         </xsl:choose>-->
+         <xsl:value-of select="string(/ead/eadheader/profiledesc/creation/date[1])"/>
       </dateStamp>
    </xsl:template>
    
