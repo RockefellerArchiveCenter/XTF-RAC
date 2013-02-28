@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:session="java:org.cdlib.xtf.xslt.Session" 
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:ead="urn:isbn:1-931666-22-9"
    xmlns="http://www.w3.org/1999/xhtml" extension-element-prefixes="session"
    version="2.0">
    
@@ -205,7 +205,7 @@
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <table>
             <tr>
-               <td colspan="2">
+               <td colspan="2" style="vertical-align: middle;">
                   <input type="text" name="keyword" size="40" value="{$keyword}"/>
                   <xsl:text>&#160;</xsl:text>
                   <select name="type">
@@ -232,6 +232,10 @@
                      </li>
                      <li>
                         <a href="#" rel="#dimes" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">About This Website's Name</a>
+                     </li>
+                     <p></p>
+                     <li>
+                        <a href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead">Recently Updated Collections</a>
                      </li>
                      <!--
                      <li>

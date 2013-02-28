@@ -240,7 +240,7 @@
                                     <xsl:variable name="cleanString" select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
                                     <span><img src="{$icon.path}/i_rss.png" alt="rss icon" style="vertical-align:bottom;"/></span>
                                     <xsl:text>&#160;</xsl:text>
-                                    <a href="search?{$cleanString};docsPerPage=100;rmode=rss;sort=rss">RSS</a>
+                                    <a href="search?{$cleanString};rmode=rss;sort=rss">RSS</a>
                                     <xsl:text>&#160;</xsl:text>
                                  </xsl:if>
                                  </div>                                 
@@ -259,7 +259,7 @@
                                     <xsl:variable name="cleanString" select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
                                     <span><img src="{$icon.path}/i_rss.png" alt="rss icon" style="vertical-align:bottom;"/></span>
                                     <xsl:text>&#160;</xsl:text>
-                                    <a href="search?{$cleanString};docsPerPage=100;rmode=rss;sort=rss">RSS</a>
+                                    <a href="search?{$cleanString};rmode=rss;sort=rss">RSS</a>
                                     <xsl:text>&#160;</xsl:text>
                                  </xsl:if>
                                  </div>

@@ -99,7 +99,7 @@
                      <xsl:value-of select="'sort-publisher,sort-title,sort-year'"/>
                   </xsl:when>     
                   <xsl:when test="$sort='rss'">
-                     <xsl:value-of select="'-sort-date,sort-title'"/>
+                     <xsl:value-of select="'-dateStamp,sort-title'"/>
                   </xsl:when>  
                   <xsl:when test="$sort='collection'">
                      <xsl:value-of select="'collection,sort-title'"/>
