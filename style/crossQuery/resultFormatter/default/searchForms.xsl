@@ -205,7 +205,7 @@
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <table>
             <tr>
-               <td colspan="2" class="bottomalign">
+               <td colspan="2">
                   <input type="text" name="keyword" size="40" value="{$keyword}"/>
                   <xsl:text>&#160;</xsl:text>
                   <select name="type">
@@ -219,6 +219,7 @@
                   <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
                  <!-- Uncomment and complete code when digital objects are included -->    
                  <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
+                  <p class="searchtip">Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc. <br/>To search an exact phrase, include quotation marks, e.g. "mental health". <a href="#" rel="#searchTips" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);">more</a></p>
                </td>
                <td>
                   <ul class="nomark">
@@ -240,7 +241,7 @@
                   </ul>
                 </td>
             </tr>
-            <tr><td><p class="searchtip">Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc. <br/>To search an exact phrase, include quotation marks, e.g. "mental health". <a href="#" rel="#searchTips" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);">more</a></p></td>
+            <tr><td></td>
             </tr>
             <tr>
                <td colspan="3">
