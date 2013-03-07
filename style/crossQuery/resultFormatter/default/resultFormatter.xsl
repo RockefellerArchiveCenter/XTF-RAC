@@ -616,19 +616,36 @@
             </xsl:choose>   
          </xsl:variable>
          <!-- 1/30/13 WS: bookbag modifications -->          
-<!--       Item number <xsl:value-of select="$num"/>: -->
-         <pre>
-         <xsl:text>&#xA;</xsl:text>
-         <xsl:if test="meta/format = 'Collection'">
-            <xsl:for-each select="meta/parent">
-               <xsl:value-of select="."/><xsl:text>&#xA;</xsl:text>
-            </xsl:for-each>
-         </xsl:if>
-         <xsl:if test="meta/level"></xsl:if><xsl:value-of select="normalize-space(meta/title)"/> 
-         <xsl:if test="meta/data"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
-         <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>           
-         <xsl:text>&#xA;</xsl:text>  <xsl:text>&#xA;</xsl:text>
-         </pre>            
+         <xsl:choose>
+            <xsl:when test="meta/type='mods'">
+               <pre>
+                 <xsl:text>&#xA;</xsl:text>
+                 Title: <xsl:value-of select="normalize-space(meta/title)"/>
+                  <xsl:text>&#xA;</xsl:text>
+                  Creator: <xsl:value-of select="meta/creator"/>
+                 <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
+                  <xsl:if test="meta/callNo"><xsl:text>&#xA;</xsl:text>Call Number:  <xsl:value-of select="meta/callNo"/></xsl:if>
+                 <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>           
+                 <xsl:text>&#xA;</xsl:text>  <xsl:text>&#xA;</xsl:text>
+                </pre>            
+            </xsl:when>
+            <xsl:otherwise>
+               <pre>
+                 <xsl:text>&#xA;</xsl:text>
+                 <xsl:if test="meta/format = 'Collection'">
+                    <xsl:for-each select="meta/parent">
+                       <xsl:value-of select="."/><xsl:text>&#xA;</xsl:text>
+                    </xsl:for-each>
+                 </xsl:if>
+                 <xsl:if test="meta/level"></xsl:if><xsl:value-of select="normalize-space(meta/title)"/> 
+                 <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
+                 <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>           
+                 <xsl:text>&#xA;</xsl:text>  
+                  <xsl:text>&#xA;</xsl:text>
+                </pre>            
+            </xsl:otherwise>
+         </xsl:choose>
+         
       </xsl:for-each>
    </xsl:template>
    
