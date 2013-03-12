@@ -226,13 +226,15 @@ a.hit {
 
 /* Formats tabs for finding aids*/
 ul.tabs {display:block; list-style: none; padding:0; margin-bottom:6px;}
-ul.tabs li{display:inline; padding:10px;/*padding: 10px 20px;*/ margin:0; font-weight:bold; border-top:1px solid #999; border-right:1px solid #999; border-left:1px solid #999;}
+ul.tabs li{display:inline; padding:10px;/*padding: 10px 20px;*/ margin:0; font-weight:bold; border-top:1px solid #999; border-right:1px solid #999; border-left:1px solid #999; border-top-left-radius:7px; border-top-right-radius:7px;}
 ul.tabs li.select{
     background-color:#fff; 
     border-top:1px solid #999;
     border-right:1px solid #999;
     border-left:1px solid #999;
     box-shadow: 0px -10px 20px -10px #000000;
+    border-top-left-radius:7px;
+    border-top-right-radius:7px;
     }
 ul.tabs li.clear {display:none;}
 .active a{font-weight:bold; text-decoration:none !important;}
