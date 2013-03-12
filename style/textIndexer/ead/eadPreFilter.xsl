@@ -242,7 +242,7 @@
       <xsl:copy>
          <xsl:copy-of select="@*"/>
          <xsl:attribute name="xtf:sectionType" select="'title'"/>
-         <xsl:attribute name="xtf:wordBoost" select="100.0"/>
+         <xsl:attribute name="xtf:wordBoost" select="120.0"/>
          <xsl:apply-templates/>
       </xsl:copy>
    </xsl:template>
