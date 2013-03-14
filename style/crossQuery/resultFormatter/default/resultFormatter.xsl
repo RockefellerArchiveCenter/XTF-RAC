@@ -485,7 +485,8 @@
          <body>
             <div class="getAddress" style="margin:.5em;">
                <h2>E-mail My Bookbag</h2>
-               <form action="{$xtfURL}{$crossqueryPath};docsPerPage={$docsPerPage}" method="get">
+               <xsl:variable name="bagCount" select="count(bookbagContents//savedDoc)"/>
+               <form action="{$xtfURL}{$crossqueryPath};docsPerPage={$bagCount}" method="get">
                   <table style="width: 200px;border:0;">
                      <tr>
                         <td>Address:</td>
@@ -496,7 +497,7 @@
                         <td><input type="text" name="subject"/></td>
                      </tr>
                      <tr>
-                        <xsl:variable name="bagCount" select="count(bookbagContents//savedDoc)"/>
+
                         <td colspan="2" style="text-align:right;">
                            <input type="reset" value="CLEAR"/>
                            <xsl:text>&#160;</xsl:text>
@@ -619,10 +620,8 @@
          <xsl:choose>
             <xsl:when test="meta/type='mods'">
                <pre>
-                 <xsl:text>&#xA;</xsl:text>
-                 Title: <xsl:value-of select="normalize-space(meta/title)"/>
-                  <xsl:text>&#xA;</xsl:text>
-                  Creator: <xsl:value-of select="meta/creator"/>
+                 <xsl:text>&#xA;</xsl:text>Title: <xsl:value-of select="normalize-space(meta/title)"/>
+                  <xsl:text>&#xA;</xsl:text>Creator: <xsl:value-of select="meta/creator"/>
                  <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
                   <xsl:if test="meta/callNo"><xsl:text>&#xA;</xsl:text>Call Number:  <xsl:value-of select="meta/callNo"/></xsl:if>
                  <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>           
