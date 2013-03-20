@@ -485,8 +485,9 @@
          <body>
             <div class="getAddress" style="margin:.5em;">
                <h2>E-mail My Bookbag</h2>
-               <xsl:variable name="bagCount" select="count(bookbagContents//savedDoc)"/>
-               <form action="{$xtfURL}{$crossqueryPath};docsPerPage={$bagCount}" method="get">
+               <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
+               <p><xsl:value-of select="$bagCount"/> items in your bookbag</p>
+               <form action="{$xtfURL}{$crossqueryPath}" method="get">
                   <table style="width: 200px;border:0;">
                      <tr>
                         <td>Address:</td>
@@ -503,15 +504,15 @@
                            <xsl:text>&#160;</xsl:text>
                            <input type="submit" value="SUBMIT"/>
                            <input type="hidden" name="smode" value="emailFolder"/>
-<!--                           <input type="hidden" name="docsPerPage" value="{$bagCount}"/>-->
+                           <input type="hidden" name="docsPerPage" value="{$bagCount}"/>
                         </td>
                      </tr>
                   </table>
                </form>
                <div style="margin:2em;">
                   <a  onclick="showHide('preview');return false;" class="showLink" id="preview-show" href="#">+ Show preview</a>
-                  <div id="preview" class="more" style=" width: 550px; height: 450px; overflow-y: scroll; display:none; border:1px solid #ccc; margin:.5em; padding: .5em; word-wrap: break-word;">
-                     <xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>
+                  <div id="preview" class="more" style=" width: 550px; height: 450px; overflow-y: scroll; display:none; border:1px solid #ccc; margin:.5em; padding: .5em; word-wrap: break-word;"> 
+                        <xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>
                   </div>
                </div>
                <div class="closeWindow">
@@ -620,31 +621,30 @@
          <xsl:choose>
             <xsl:when test="meta/type='mods'">
                <pre>
-                 <xsl:text>&#xA;</xsl:text>Title: <xsl:value-of select="normalize-space(meta/title)"/>
+                  <xsl:text>&#xA;</xsl:text>Title: <xsl:value-of select="normalize-space(meta/title)"/>
                   <xsl:text>&#xA;</xsl:text>Creator: <xsl:value-of select="meta/creator"/>
-                 <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
+                  <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
                   <xsl:if test="meta/callNo"><xsl:text>&#xA;</xsl:text>Call Number:  <xsl:value-of select="meta/callNo"/></xsl:if>
-                 <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>           
-                 <xsl:text>&#xA;</xsl:text>  <xsl:text>&#xA;</xsl:text>
+                  <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>
+                  <xsl:text>&#xA;</xsl:text>  <xsl:text>&#xA;</xsl:text>
                 </pre>            
             </xsl:when>
             <xsl:otherwise>
                <pre>
-                 <xsl:text>&#xA;</xsl:text>
-                 <xsl:if test="meta/format = 'Collection'">
-                    <xsl:for-each select="meta/parent">
-                       <xsl:value-of select="."/><xsl:text>&#xA;</xsl:text>
-                    </xsl:for-each>
-                 </xsl:if>
-                 <xsl:if test="meta/level"></xsl:if><xsl:value-of select="normalize-space(meta/title)"/> 
-                 <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
-                 <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>           
-                 <xsl:text>&#xA;</xsl:text>  
+                  <xsl:text>&#xA;</xsl:text>
+                  <xsl:if test="meta/format = 'Collection'">
+                     <xsl:for-each select="meta/parent">
+                        <xsl:value-of select="."/><xsl:text>&#xA;</xsl:text>
+                     </xsl:for-each>
+                  </xsl:if>
+                  <xsl:if test="meta/level"></xsl:if><xsl:value-of select="normalize-space(meta/title)"/> 
+                  <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
+                  <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>
+                  <xsl:text>&#xA;</xsl:text>  
                   <xsl:text>&#xA;</xsl:text>
                 </pre>            
             </xsl:otherwise>
          </xsl:choose>
-         
       </xsl:for-each>
    </xsl:template>
    
