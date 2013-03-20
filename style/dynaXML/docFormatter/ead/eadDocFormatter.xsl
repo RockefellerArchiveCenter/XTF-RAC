@@ -241,8 +241,10 @@
    <xsl:template name="bbar_custom">
       <xsl:variable name="sum">
          <xsl:choose>
+            <xsl:when test="string(number(/ead/archdesc/@xtf:hitCount))='NaN'">
+               <xsl:text>0</xsl:text>
+            </xsl:when>
             <xsl:when test="($query != '0') and ($query != '')">
-               <!-- 4/19/12 WS: Adjusted to ignore hits in eadheader -->
                <xsl:value-of select="number(/ead/archdesc/@xtf:hitCount)"/>
             </xsl:when>
             <xsl:otherwise>0</xsl:otherwise>
