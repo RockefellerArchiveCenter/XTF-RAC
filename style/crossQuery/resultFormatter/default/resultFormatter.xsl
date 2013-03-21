@@ -485,8 +485,8 @@
          <body>
             <div class="getAddress" style="margin:.5em;">
                <h2>E-mail My Bookbag</h2>
-               <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
-               <p><xsl:value-of select="$bagCount"/> items in your bookbag</p>
+              <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
+<!--               <p><xsl:value-of select="$bagCount"/> items in your bookbag</p>-->
                <form action="{$xtfURL}{$crossqueryPath}" method="get">
                   <table style="width: 200px;border:0;">
                      <tr>
@@ -511,8 +511,9 @@
                </form>
                <div style="margin:2em;">
                   <a  onclick="showHide('preview');return false;" class="showLink" id="preview-show" href="#">+ Show preview</a>
-                  <div id="preview" class="more" style=" width: 550px; height: 450px; overflow-y: scroll; display:none; border:1px solid #ccc; margin:.5em; padding: .5em; word-wrap: break-word;"> 
-                        <xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>
+                  <div id="preview" class="more" style=" width: 550px; height: 450px; overflow-y: scroll; display:none; border:1px solid #ccc; margin:.5em; padding: .5em; word-wrap: break-word;">
+                   <xsl:call-template name="savedDoc"/>  
+<!--                     <xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>-->
                   </div>
                </div>
                <div class="closeWindow">
@@ -541,7 +542,8 @@
          from="archive@rockarch.org"
          to="{$email}" 
          subject="{$subject}">
-                  <xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>
+         <xsl:call-template name="savedDoc"/>
+<!--                  <xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>-->
       </mail:send>
       
       <html xml:lang="en" lang="en">
@@ -569,10 +571,90 @@
       
    </xsl:template>
    
+   <!-- 
+      <xsl:for-each-group select="$bookbagContents/savedDoc" group-by="@id">
+      <xsl:for-each select="current-group()">
+   -->
+   <xsl:template name="savedDoc">
+      <xsl:for-each select="$docHits">
+      <xsl:variable name="path" select="@path"/>
+      <xsl:variable name="chunk.id" select="@subDocument"/>     
+      <!-- 1/12/12 WS: Added docPath variable to enable scrolling to sub-document hits -->
+      <xsl:variable name="docPath">
+         <xsl:variable name="uri">
+            <xsl:call-template name="dynaxml.url">
+               <xsl:with-param name="path" select="$path"/>
+            </xsl:call-template>
+         </xsl:variable>
+         <xsl:choose>
+            <xsl:when test="$chunk.id != ''">
+               <xsl:value-of select="concat($xtfURL,$uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+               <!-- Link used to get sub-document out of context               
+                  <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
+               -->
+            </xsl:when>
+            <xsl:when test="starts-with($uri,'view')">
+               <xsl:value-of select="concat($xtfURL,$uri)"/>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="$uri"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <!-- Need to add choose statement to get correct url when subdocument -->
+      <xsl:variable name="url">
+         <xsl:value-of select="$docPath"/>
+      </xsl:variable>
+      <xsl:variable name="level">
+         <xsl:choose>
+            <xsl:when test="meta/level = 'collection'">Collection</xsl:when>
+            <xsl:when test="meta/level = 'series'">Series</xsl:when>
+            <xsl:when test="meta/level = 'subseries'">Subseries</xsl:when>
+            <xsl:when test="meta/level = 'recordgrp'">Record Group</xsl:when>
+            <xsl:when test="meta/level = 'subgrp'">Subgroup</xsl:when>
+            <xsl:when test="meta/level = 'fonds'">Fonds</xsl:when>
+            <xsl:when test="meta/level = 'subfonds'">Subfonds</xsl:when>
+            <xsl:when test="meta/level = 'class'">Class</xsl:when>
+            <xsl:when test="meta/level = 'otherlevel'">otherlevel</xsl:when>
+            <xsl:when test="meta/level = 'file'">File</xsl:when>
+            <xsl:when test="meta/level = 'item'">Item</xsl:when>
+         </xsl:choose>   
+      </xsl:variable>
+      <!-- 1/30/13 WS: bookbag modifications -->          
+      <xsl:choose>
+         <xsl:when test="meta/type='mods'">
+            <pre>
+                  <xsl:text>&#xA;</xsl:text>Title: <xsl:value-of select="normalize-space(meta/title)"/>
+                  <xsl:text>&#xA;</xsl:text>Creator: <xsl:value-of select="meta/creator"/>
+                  <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
+                  <xsl:if test="meta/callNo"><xsl:text>&#xA;</xsl:text>Call Number:  <xsl:value-of select="meta/callNo"/></xsl:if>
+                  <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>
+                  <xsl:text>&#xA;</xsl:text>  <xsl:text>&#xA;</xsl:text>
+                </pre>            
+         </xsl:when>
+         <xsl:otherwise>
+            <pre>
+                  <xsl:text>&#xA;</xsl:text>
+                  <xsl:if test="meta/format = 'Collection'">
+                     <xsl:for-each select="meta/parent">
+                        <xsl:value-of select="."/><xsl:text>&#xA;</xsl:text>
+                     </xsl:for-each>
+                  </xsl:if>
+                  <xsl:if test="meta/level"></xsl:if><xsl:value-of select="normalize-space(meta/title)"/> 
+                  <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
+                  <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>
+                  <xsl:text>&#xA;</xsl:text>  
+                  <xsl:text>&#xA;</xsl:text>
+                </pre>            
+         </xsl:otherwise>
+      </xsl:choose>
+      </xsl:for-each>
+   </xsl:template>
+   
    <xsl:template match="savedDoc" mode="emailFolder" exclude-result-prefixes="#all">
       <xsl:variable name="num" select="position()"/>
       <xsl:variable name="id" select="@id"/>
-      <xsl:for-each select="$docHits[string(meta/identifier[1]) = $id][1]">
+      <xsl:for-each select="$docHits[string(meta/identifier[1]) = $id]">
 <!--         <xsl:sort select="meta/collectionTitle"/>-->
          <xsl:variable name="path" select="@path"/>
          <xsl:variable name="chunk.id" select="@subDocument"/>     
