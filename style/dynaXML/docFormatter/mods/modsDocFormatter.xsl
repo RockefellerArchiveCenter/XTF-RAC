@@ -305,8 +305,9 @@
                      <li>
                         <xsl:variable name="bag" select="session:getData('bag')"/>
                         <a href="/xtf/search?smode=showBag"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" title="Bookbag"/></a>
-                        <!--                  <a href="/xtf/search?smode=showBag">Bookbag</a>-->
-                        <!--                        (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)-->
+                        <span class="caption">
+                           (<a href="/xtf/search?smode=showBag"><span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span></a>)
+                        </span>
                         
                         <!-- Commented out citation until digital objects are added-->
                         <!--

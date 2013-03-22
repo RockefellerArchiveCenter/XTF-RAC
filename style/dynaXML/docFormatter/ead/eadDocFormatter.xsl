@@ -7,6 +7,7 @@
    extension-element-prefixes="session"
    exclude-result-prefixes="#all"
    xpath-default-namespace="urn:isbn:1-931666-22-9">
+
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    <!-- EAD dynaXML Stylesheet                                                 -->
    <!-- 9/27/11 WS: Edited for Rockefeller Archives Center                     -->
@@ -321,17 +322,16 @@
                      </form>
                   </td>
                   <td style="text-align:right; width:100px;">
+                     <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
+                     <xsl:variable name="indexId" select="$identifier"/>
                      <!-- <a href="javascript://" onclick="javascript:window.open('/xtf/search?smode=getLang','popup','width=500,height=200,resizable=no,scrollbars=no')">Choose Language</a>-->
                      <div style="float:right;margin:0;padding:0;">
-                        <xsl:variable name="bag" select="session:getData('bag')"/>
                         <ul class="bbicons">
                         <li>
                      <!-- 7/24/12 WS: added add to bag for whole finding aid -->
                         <span class="addToBag">
-                           <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
-                           <xsl:variable name="indexId" select="$identifier"/>
                            <xsl:choose>
-                              <xsl:when test="$bag/bag/savedDoc[@id=$indexId]">
+                              <xsl:when test="session:getData('bag')/child::*/child::*[@id=$indexId]">
                                  <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
                                  <span class="caption">Added</span>
                               </xsl:when>
@@ -359,9 +359,13 @@
                         </span>
                         </li>
                         <li>
+                           <xsl:variable name="bag" select="session:getData('bag')"/>
                            <a href="/xtf/search?smode=showBag"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" title="Bookbag"/></a>
-<!--                           (<span id="bagCount"><xsl:value-of select="count(session:getData('bag')//bag//savedDoc)"/></span>)-->
-                           </li> 
+                           <span class="caption">
+                              (<a href="/xtf/search?smode=showBag"><span id="bagCount"><xsl:value-of select="count(session:getData('bag')/child::*/child::*)"/></span></a>)
+                           </span>
+                        </li>
+                           
                      
                      <!-- Commented out citation until digital objects are added-->
                      <!--
