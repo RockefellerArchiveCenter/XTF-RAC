@@ -1399,7 +1399,7 @@
                               <xsl:variable name="identifier" select="concat($rootID,'|',$levelID)"/>
                               <xsl:variable name="indexId" select="$identifier"/>
                               <xsl:choose>
-                                 <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                                 <xsl:when test="session:getData('bag')/child::*/child::*[@id=$indexId]">
                                     <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
                                     <span class="caption">Added</span>
                                  </xsl:when>
@@ -1510,7 +1510,7 @@
                             <xsl:variable name="identifier" select="concat($rootID,'|',@id)"/>
                             <xsl:variable name="indexId" select="$identifier"/>
                             <xsl:choose>
-                               <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                               <xsl:when test="session:getData('bag')/child::*/child::*[@id=$indexId]">
                                   <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
                                   <span class="caption">Added</span>
                                </xsl:when>
@@ -1585,7 +1585,7 @@
                    <xsl:variable name="identifier" select="concat($rootID,'|',../@id)"/>
                    <xsl:variable name="indexId" select="$identifier"/>
                    <xsl:choose>
-                      <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                      <xsl:when test="session:getData('bag')/child::*/child::*[@id=$indexId]">
                          <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
                          <span class="caption">Added</span>
                       </xsl:when>
