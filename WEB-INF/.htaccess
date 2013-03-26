@@ -1,4 +1,0 @@
-RewriteEngine On
-RewriteRule ^\http://collectionguides.rockarch.org$ http://192.168.50.18/xtf/search
-RewriteRule ^http://192.168.50.18/xtf/search/([FA0-9])+$ http://192.168.50.18.rac
-RewriteRule ^http://192.168.50.18/xtf/view?docId=ead/FA134/FA134.xml;query=FA134;brand=default;hit.rank=2 http://192.168.50.18/FA134
