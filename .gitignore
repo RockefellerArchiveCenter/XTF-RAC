@@ -8,3 +8,5 @@ config
 description
 info
 java
+WEB-INF/lib
+WEB-INF/cgi
