@@ -233,7 +233,7 @@
                               <xsl:if test="$smode != 'showBag'">
                                  <xsl:variable name="bag" select="session:getData('bag')"/>
                                  <div>
-                                    <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" style="vertical-align:bottom;"/></a>
+                                    <a href="{$xtfURL}{$crossqueryPath}?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" style="vertical-align:bottom;"/></a>
                                     <span>(<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)</span>
                                  <xsl:if test="docHit">
                                     <xsl:text>&#160;&#160;</xsl:text>
@@ -252,7 +252,7 @@
                               <xsl:if test="$smode != 'showBag'">
                                  <xsl:variable name="bag" select="session:getData('bag')"/>
                                  <div>
-                                    <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" style="vertical-align:bottom;"/></a>
+                                    <a href="{$xtfURL}{$crossqueryPath}?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" style="vertical-align:bottom;"/></a>
                                     <span>(<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)</span>
                                  <xsl:if test="docHit">
                                     <xsl:text>&#160;&#160;</xsl:text>
@@ -275,7 +275,7 @@
                               <xsl:variable name="bag" select="session:getData('bag')"/>
                               <xsl:variable name="bagCount" select="count($bag/bag/savedDoc)"/>
                               <a href="javascript://" 
-                                 onclick="javascript:window.open('{$xtfURL}{$crossqueryPath}?smode=getAddress;docsPerPage={$bagCount}','popup','width=650,height=400,resizable=no,scrollbars=no')">E-mail My Bookbag</a>
+                                 onclick="javascript:window.open('{$xtfURL}{$crossqueryPath}?smode=getAddress;docsPerPage={$bagCount}','popup','width=650,height=400,resizable=no,scrollbars=no')" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag email preview']);">E-mail My Bookbag</a>
                            </xsl:when>
                            <xsl:otherwise>
                               <!--<div class="query">
@@ -502,7 +502,7 @@
                         <td colspan="2" style="text-align:right;">
                            <input type="reset" value="CLEAR"/>
                            <xsl:text>&#160;</xsl:text>
-                           <input type="submit" value="SUBMIT"/>
+                           <input type="submit" value="SUBMIT" onClick="_gaq.push(['_trackEvent', 'interaction', 'send', 'bookbag']);"/>
                            <input type="hidden" name="smode" value="emailFolder"/>
                            <input type="hidden" name="docsPerPage" value="{$bagCount}"/>
                         </td>
@@ -794,7 +794,7 @@
                         <td class="right">
                         <xsl:variable name="bag" select="session:getData('bag')"/>
                            <div>
-                              <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" style="vertical-align:middle;"/></a>
+                              <a href="{$xtfURL}{$crossqueryPath}?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" style="vertical-align:middle;"/></a>
                               <span>(<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)</span>
                            </div>
                            

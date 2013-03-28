@@ -304,9 +304,9 @@
                      </li>
                      <li>
                         <xsl:variable name="bag" select="session:getData('bag')"/>
-                        <a href="/xtf/search?smode=showBag"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" title="Bookbag"/></a>
+                        <a href="/xtf/search?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" title="Bookbag"/></a>
                         <span class="caption">
-                           (<a href="/xtf/search?smode=showBag"><span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span></a>)
+                           (<a href="/xtf/search?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span></a>)
                         </span>
                         
                         <!-- Commented out citation until digital objects are added-->
