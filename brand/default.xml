@@ -4453,7 +4453,7 @@
                     <label>Email</label>
                     <input type="text" name="email"/><br/>
                   <label>Message</label>
-                  <textarea rows="5" name="message"></textarea><br/>
+                  <textarea rows="5" cols="10" name="message"></textarea><br/>
                   <p class="feedback-form">Please be as specific as possible.</p>
                   <ul class="feedback-form" style="padding:0px;">
                        <li>
