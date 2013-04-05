@@ -4458,7 +4458,7 @@
                   <ul class="feedback-form" style="padding:0px;">
                        <li>
                           <label style="width:auto;">
-                             <input style="width:auto;" type="radio" checked="" name="context" value="General Question"/>
+                             <input style="width:auto;" type="radio" checked="checked" name="context" value="General Question"/>
                              <span>My feedback is general in nature.</span>
                           </label>
                        </li>

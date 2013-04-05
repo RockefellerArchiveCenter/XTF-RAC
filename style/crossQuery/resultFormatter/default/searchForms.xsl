@@ -233,7 +233,7 @@
                      <li>
                         <a href="#" rel="#dimes" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">About This Website's Name</a>
                      </li>
-                     <p></p>
+                     <li></li>
                      <li>
                         <a href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead">Recently Updated Collections</a>
                      </li>
