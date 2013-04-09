@@ -1418,7 +1418,7 @@
                                           }, null);
                                     };
                                     </script>
-                                    <a href="javascript:add_{@id}()"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
+                                    <a href="javascript:add_{@id}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
                                     <span id="add_{@id}" class="caption">
                                        <a href="javascript:add_{@id}()">
                                           Add
@@ -1529,7 +1529,7 @@
                                           }, null);
                                     };
                                   </script>
-                                  <a href="javascript:add_{@id}()"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
+                                  <a href="javascript:add_{@id}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
                                   <span id="add_{@id}" class="caption">
                                      <a href="javascript:add_{@id}()">
                                         Add
@@ -1604,7 +1604,7 @@
                                           }, null);
                                     };
                          </script>
-                         <a href="javascript:add_{../@id}()"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
+                         <a href="javascript:add_{../@id}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
                          <span id="add_{../@id}" class="caption">
                             <a href="javascript:add_{../@id}()">Add</a>
                          </span>

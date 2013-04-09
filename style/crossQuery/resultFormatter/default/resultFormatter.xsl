@@ -1148,7 +1148,7 @@
                                           }, null);
                                     };
                                  </script>
-                                 <a href="javascript:add_{@rank}()"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
+                                 <a href="javascript:add_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
                                  <span id="add_{@rank}" class="caption">
                                     <span class="caption"><a href="javascript:add_{@rank}()">Add</a></span>
                                  </span>
@@ -1462,7 +1462,7 @@
                                           }, null);
                                     };
                                           </script>
-                                          <a href="javascript:add_{@rank}()"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
+                                          <a href="javascript:add_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
                                           <span id="add_{@rank}" class="caption">
                                              <a href="javascript:add_{@rank}()">Add</a>
                                           </span>

@@ -295,7 +295,7 @@
                                           }, null);
                                     };
                                  </script>
-                                 <a href="javascript:add_1()"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a>
+                                 <a href="javascript:add_1()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a>
                                  <span id="add_1" class="caption">
                                     <a href="javascript:add_1()">Add</a>
                                  </span>
