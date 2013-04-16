@@ -1227,10 +1227,18 @@
                      <b>Subjects:&#160;&#160;</b>
                   </td>
                   <td>
-                     <xsl:apply-templates select="meta/subject"/>
-                  </td>
-                  <td>
-                     <xsl:text>&#160;</xsl:text>
+                     <!-- 4/16/2013 HA: added logic to limit number of subjects that display -->
+                     <xsl:for-each select="meta/subject">
+                        <xsl:if test="position() = 1">
+                           <xsl:apply-templates select="."/>
+                        </xsl:if>
+                        <xsl:if test="position() &gt;= 2 and position() &lt;= 4">
+                           <xsl:text>&#160;|&#160;</xsl:text><xsl:apply-templates select="."/>
+                        </xsl:if>
+                     </xsl:for-each>
+                     <xsl:if test="position() = 5">
+                        <xsl:text>&#160;...more</xsl:text>
+                     </xsl:if>
                   </td>
                </tr>
             </xsl:if>
@@ -1683,10 +1691,18 @@
                      <b>Subjects:&#160;&#160;</b>
                   </td>
                   <td class="col3">
-                     <xsl:apply-templates select="meta/subject"/>
-                  </td>
-                  <td class="col4">
-                     <xsl:text>&#160;</xsl:text>
+                     <!-- 4/16/2013 HA: added logic to limit number of subjects that display -->
+                     <xsl:for-each select="meta/subject">
+                        <xsl:if test="position() = 1">
+                           <xsl:apply-templates select="."/>
+                        </xsl:if>
+                        <xsl:if test="position() &gt;= 2 and position() &lt;= 4">
+                           <xsl:text>&#160;|&#160;</xsl:text><xsl:apply-templates select="."/>
+                        </xsl:if>
+                        <xsl:if test="position() = 5">
+                           <xsl:text>&#160;...more</xsl:text>
+                        </xsl:if>
+                     </xsl:for-each>
                   </td>
                </tr>
             </xsl:if>
