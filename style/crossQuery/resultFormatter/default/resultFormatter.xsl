@@ -1148,7 +1148,10 @@
                                           }, null);
                                     };
                                  </script>
-                                 <a href="javascript:add_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
+                                 <xsl:choose>
+                                    <xsl:when test="meta/type = 'ead'"><a href="javascript:add_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/></xsl:when>
+                                    <xsl:otherwise><a href="javascript:add_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add-library', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/></xsl:otherwise>
+                                 </xsl:choose>
                                  <span id="add_{@rank}" class="caption">
                                     <span class="caption"><a href="javascript:add_{@rank}()">Add</a></span>
                                  </span>
@@ -1469,8 +1472,11 @@
                                              failure: function(o) { span.innerHTML = 'Failed to add!'; }
                                           }, null);
                                     };
-                                          </script>
-                                          <a href="javascript:add_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
+                                            </script>
+                                          <xsl:choose>
+                                             <xsl:when test="meta/type = 'ead'"><a href="javascript:add_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/></xsl:when>
+                                             <xsl:otherwise><a href="javascript:add_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add-library', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/></xsl:otherwise>
+                                          </xsl:choose><br/>
                                           <span id="add_{@rank}" class="caption">
                                              <a href="javascript:add_{@rank}()">Add</a>
                                           </span>
