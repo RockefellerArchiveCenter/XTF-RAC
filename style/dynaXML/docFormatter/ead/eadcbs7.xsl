@@ -1101,7 +1101,7 @@
     <xsl:template match="c|c01">
        <xsl:choose>
           <xsl:when test="$doc.view = 'dao'">
-             <div class="containerList" style="width:95%;">
+             <div class="containerList" style="width:95%;overflow: auto;">
                 <xsl:call-template name="clevel_dao"/>
                 <xsl:for-each select="c|c02">
                    <div class="c02">
@@ -1585,7 +1585,7 @@
                    <xsl:when test="@level='subcollection' or @level='subgrp' or @level='series' 
                        or @level='subseries' or @level='collection'or @level='fonds' or 
                        @level='recordgrp' or @level='subfonds' or @level='class' or (@level='otherlevel' and not(child::did/container))">
-                      <div style="clear:both;height:30px;">                           
+                      <div>                           
                          <xsl:attribute name="class">
                                <xsl:choose>
                                    <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
@@ -1629,9 +1629,9 @@
                              <xsl:apply-templates select="processinfo"/>
                              <xsl:apply-templates select="relatedmaterial"/>
                              <xsl:apply-templates select="separatedmaterial"/>
-                             <xsl:apply-templates select="controlaccess"/>
-                          </div>
-                       </div>
+                             <xsl:apply-templates select="controlaccess"/> 
+                         </div>
+                      </div>
                    </xsl:when>      
                    <!-- Items/Files--> 
                    <xsl:when test="dao">
