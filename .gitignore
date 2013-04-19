@@ -9,3 +9,4 @@ WEB-INF/lib
 WEB-INF/cgi
 fonts
 classpath.pl
+.DS_Store
