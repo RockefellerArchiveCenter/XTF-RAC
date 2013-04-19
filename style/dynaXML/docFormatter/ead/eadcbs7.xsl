@@ -1098,105 +1098,109 @@
     <!--This section of the stylesheet creates a div for each c01 or c 
         It then recursively processes each child component of the c01 by 
         calling the clevel template. -->
-    <xsl:template match="c">
-       <table class="containerList" cellpadding="0" cellspacing="0" border="0">
-        <xsl:call-template name="clevel">
-            <xsl:with-param name="level">01</xsl:with-param>
-        </xsl:call-template>
-        <xsl:for-each select="c">
-            <xsl:call-template name="clevel">
-                <xsl:with-param name="level">02</xsl:with-param>
-            </xsl:call-template>
-            <xsl:for-each select="c">
+    <xsl:template match="c|c01">
+       <xsl:choose>
+          <xsl:when test="$doc.view = 'dao'">
+             <div class="containerList" style="width:95%;">
+                <xsl:call-template name="clevel_dao"/>
+                <xsl:for-each select="c|c02">
+                   <div class="c02">
+                   <xsl:call-template name="clevel_dao"/>
+                   <xsl:for-each select="c|c03">
+                      <div class="c03">
+                      <xsl:call-template name="clevel_dao"/>
+                      <xsl:for-each select="c|c04">
+                         <div class="c04">
+                         <xsl:call-template name="clevel_dao"/>
+                         <xsl:for-each select="c|c05">
+                            <div class="c05">
+                            <xsl:call-template name="clevel_dao"/>
+                            <xsl:for-each select="c|c06">
+                               <div class="c06">
+                               <xsl:call-template name="clevel_dao"/>
+                               <xsl:for-each select="c|c07">
+                                  <div class="c07">
+                                  <xsl:call-template name="clevel_dao"/>
+                                  <xsl:for-each select="c|c08">
+                                     <div class="c08">
+                                     <xsl:call-template name="clevel_dao"/>
+                                     <xsl:for-each select="c|c09">
+                                        <div class="c04">
+                                          <xsl:call-template name="clevel_dao"/>
+                                        </div>
+                                     </xsl:for-each>
+                                     </div>
+                                  </xsl:for-each>
+                                  </div>
+                               </xsl:for-each>
+                               </div>
+                            </xsl:for-each>
+                            </div>
+                         </xsl:for-each>
+                         </div>
+                      </xsl:for-each>
+                      </div>
+                   </xsl:for-each>
+                  </div>
+                </xsl:for-each>
+             </div>
+          </xsl:when>
+          <xsl:otherwise>
+             <table class="containerList" cellpadding="0" cellspacing="0" border="0">
                 <xsl:call-template name="clevel">
-                    <xsl:with-param name="level">03</xsl:with-param>
-                </xsl:call-template>    
-                <xsl:for-each select="c">
-                    <xsl:call-template name="clevel">
-                        <xsl:with-param name="level">04</xsl:with-param>
-                    </xsl:call-template>
-                    <xsl:for-each select="c">
-                        <xsl:call-template name="clevel">
-                            <xsl:with-param name="level">05</xsl:with-param>
-                        </xsl:call-template>
-                        <xsl:for-each select="c">
+                   <xsl:with-param name="level">01</xsl:with-param>
+                </xsl:call-template>
+                <xsl:for-each select="c|c02">
+                   <xsl:call-template name="clevel">
+                      <xsl:with-param name="level">02</xsl:with-param>
+                   </xsl:call-template>
+                   <xsl:for-each select="c|c03">
+                      <xsl:call-template name="clevel">
+                         <xsl:with-param name="level">03</xsl:with-param>
+                      </xsl:call-template>    
+                      <xsl:for-each select="c|c04">
+                         <xsl:call-template name="clevel">
+                            <xsl:with-param name="level">04</xsl:with-param>
+                         </xsl:call-template>
+                         <xsl:for-each select="c|c05">
                             <xsl:call-template name="clevel">
-                                <xsl:with-param name="level">06</xsl:with-param>
-                            </xsl:call-template> 
-                            <xsl:for-each select="c">
-                                <xsl:call-template name="clevel">
-                                    <xsl:with-param name="level">07</xsl:with-param>
-                                </xsl:call-template>
-                                <xsl:for-each select="c">
-                                    <xsl:call-template name="clevel">
+                               <xsl:with-param name="level">05</xsl:with-param>
+                            </xsl:call-template>
+                            <xsl:for-each select="c|c06">
+                               <xsl:call-template name="clevel">
+                                  <xsl:with-param name="level">06</xsl:with-param>
+                               </xsl:call-template> 
+                               <xsl:for-each select="c|c07">
+                                  <xsl:call-template name="clevel">
+                                     <xsl:with-param name="level">07</xsl:with-param>
+                                  </xsl:call-template>
+                                  <xsl:for-each select="c|c08">
+                                     <xsl:call-template name="clevel">
                                         <xsl:with-param name="level">08</xsl:with-param>
-                                    </xsl:call-template>
-                                    <xsl:for-each select="c">
+                                     </xsl:call-template>
+                                     <xsl:for-each select="c|c09">
                                         <xsl:call-template name="clevel">
-                                            <xsl:with-param name="level">09</xsl:with-param>
+                                           <xsl:with-param name="level">09</xsl:with-param>
                                         </xsl:call-template>    
-                                    </xsl:for-each>
-                                </xsl:for-each>
+                                     </xsl:for-each>
+                                  </xsl:for-each>
+                               </xsl:for-each>
                             </xsl:for-each>
-                        </xsl:for-each>
-                    </xsl:for-each>
+                         </xsl:for-each>
+                      </xsl:for-each>
+                   </xsl:for-each>
                 </xsl:for-each>
-            </xsl:for-each>
-        </xsl:for-each>
-          <tr>
-             <td/>
-             <td style="width: 15%;"/>
-             <td style="width: 12%;"/>
-             <td style="width: 12%"/>
-             <td style="width: 18%"/>
-             <td style="width: 8%"/>
-          </tr>
-       </table>
-    </xsl:template>
-    <xsl:template match="c01">
-       <table class="containerList" cellpadding="0" cellspacing="0" border="0">
-          <tr>
-             <td>Testing</td>
-             <td style="width: 15%;"/>
-             <td style="width: 12%;"/>
-             <td style="width: 12%"/>
-             <td style="width: 18%"/>
-             <td style="width: 8%"/>
-          </tr>
-        <xsl:call-template name="clevel"/>
-        <xsl:for-each select="c02">
-            <xsl:call-template name="clevel"/>
-            <xsl:for-each select="c03">
-                <xsl:call-template name="clevel"/>
-                <xsl:for-each select="c04">
-                    <xsl:call-template name="clevel"/>
-                    <xsl:for-each select="c05">
-                        <xsl:call-template name="clevel"/>
-                        <xsl:for-each select="c06">
-                            <xsl:call-template name="clevel"/>
-                            <xsl:for-each select="c07">
-                                <xsl:call-template name="clevel"/>
-                                <xsl:for-each select="c08">
-                                    <xsl:call-template name="clevel"/>
-                                    <xsl:for-each select="c09">
-                                       <xsl:call-template name="clevel"/>
-                                    </xsl:for-each>
-                                </xsl:for-each>
-                            </xsl:for-each>
-                        </xsl:for-each>
-                    </xsl:for-each>
-                </xsl:for-each>
-            </xsl:for-each>
-        </xsl:for-each>
-          <tr>
-             <td/>
-             <td style="width: 15%;"/>
-             <td style="width: 12%;"/>
-             <td style="width: 12%"/>
-             <td style="width: 18%"/>
-             <td style="width: 8%"/>
-          </tr>
-       </table>
+                <tr>
+                   <td/>
+                   <td style="width: 15%;"/>
+                   <td style="width: 12%;"/>
+                   <td style="width: 12%"/>
+                   <td style="width: 18%"/>
+                   <td style="width: 8%"/>
+                </tr>
+             </table>
+          </xsl:otherwise>
+       </xsl:choose>
     </xsl:template>
     <!--This is a named template that processes all c0* elements  -->
    <xsl:template name="clevel">
@@ -1264,7 +1268,7 @@
                          <td colspan="6" class="{$clevelMargin}">
                              <xsl:call-template name="anchor"/>
                              <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
-                             <xsl:apply-templates select="did/unittitle" mode="dsc"/>
+<!--                             <xsl:apply-templates select="did/unittitle" mode="dsc"/>-->
                              <xsl:apply-templates select="did/origination" mode="dsc"/>
                              <xsl:apply-templates select="scopecontent"/> 
                              <xsl:apply-templates select="unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
@@ -1367,27 +1371,30 @@
                            </td>                                
                            <td class="moreInfo">
                               <xsl:variable name="didHitCount">
-                                 <xsl:value-of select="count(../../descendant-or-self::xtf:hit)"/>
+                                 <xsl:value-of select="count(descendant-or-self::xtf:hit)"/>
                               </xsl:variable>
-                              <xsl:if test="../../scopecontent | ../../accruals | ../../appraisal |  ../../arrangement | 
-                                 ../../bioghist |  ../../accessrestrict[not(child::legalstatus)] | ../../userestrict | 
-                                 ../../custodhist | ../../altformavail | ../../originalsloc | ../../did/physdesc[@label='Dimensions note'] | 
-                                 ../../fileplan | ../../did/physdesc[@label = 'General Physical Description note'] | ../../odd | 
-                                 ../../acqinfo | ../../did/langmaterial | ../../accessrestrict[child::legalstatus] | ../../did/materialspec |
-                                 ../../otherfindaid | ../../phystech | ../../did/physdesc[@label='Physical Facet note'] | ../../processinfo | 
-                                 ../../relatedmaterial | ../../separatedmaterial | ../../controlaccess">
-                                 <xsl:call-template name="make-popup-link">
-                                    <xsl:with-param name="name" select="'Additional description'"/>
-                                    <xsl:with-param name="id" select="string(../../@id)"/>
-                                    <xsl:with-param name="nodes" select="../../scopecontent | ../../accruals | ../../appraisal |  ../../arrangement | 
-                                       ../../bioghist |  ../../accessrestrict[not(child::legalstatus)] | ../../userestrict | 
-                                       ../../custodhist | ../../altformavail | ../../originalsloc | ../../did/physdesc[@label='Dimensions note'] | 
-                                       ../../fileplan | ../../did/physdesc[@label = 'General Physical Description note'] | ../../odd | 
-                                       ../../acqinfo | ../../did/langmaterial | ../../accessrestrict[child::legalstatus] | ../../did/materialspec |
-                                       ../../otherfindaid | ../../phystech | ../../did/physdesc[@label='Physical Facet note'] | ../../processinfo | 
-                                       ../../relatedmaterial | ../../separatedmaterial | ../../controlaccess"/>
-                                    <xsl:with-param name="doc.view" select="'dscDescription'"/>
-                                 </xsl:call-template>
+                              <xsl:if test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
+                                 child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
+                                 child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
+                                 child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
+                                 child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
+                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
+                                 child::separatedmaterial |  child::controlaccess">
+                                 <a href="#" rel="#{../../@id}_dsc" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Additional description']);">
+                                    Additional description
+                                 </a>
+                                 <div class="overlay_dao" id="{../../@id}_dsc">
+                                    <div class="dscDescription">
+                                       <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
+                                       <xsl:apply-templates select="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
+                                          child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
+                                          child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
+                                          child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
+                                          child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
+                                          child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
+                                          child::separatedmaterial |  child::controlaccess"/>
+                                    </div>
+                                 </div>
                                  <xsl:if test="$didHitCount &gt; 0">
                                     <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                  </xsl:if>
@@ -1493,12 +1500,21 @@
                                 child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
                                 child::separatedmaterial |  child::controlaccess">
-                                <xsl:call-template name="make-popup-link">
-                                   <xsl:with-param name="name" select="'Additional description'"/>
-                                   <xsl:with-param name="id" select="string(@id)"/>
-                                   <xsl:with-param name="nodes" select="scopecontent"/>
-                                   <xsl:with-param name="doc.view" select="'dscDescription'"/>
-                                </xsl:call-template>
+                                <a href="#" rel="#{../../@id}_dsc" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Additional description']);">
+                                   Additional description
+                                </a>
+                                <div class="overlay_dao" id="{../../@id}_dsc">
+                                   <div class="dscDescription">
+                                      <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
+                                      <xsl:apply-templates select="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
+                                         child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
+                                         child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
+                                         child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
+                                         child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
+                                         child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
+                                         child::separatedmaterial |  child::controlaccess"/>
+                                   </div>
+                                </div>
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                 </xsl:if>
@@ -1558,6 +1574,72 @@
            </xsl:for-each>
    </xsl:template>
    
+    <xsl:template name="clevel_dao">
+      <!-- Establishes which level is being processed in order to provided indented displays. 
+           Indents handled by CSS margins-->
+      <xsl:param name="level"/>
+     <!-- Processes the all child elements of the c or c0* level -->  
+           <xsl:for-each select=".">
+               <xsl:choose>
+                   <!--Formats Series and Groups  -->
+                   <xsl:when test="@level='subcollection' or @level='subgrp' or @level='series' 
+                       or @level='subseries' or @level='collection'or @level='fonds' or 
+                       @level='recordgrp' or @level='subfonds' or @level='class' or (@level='otherlevel' and not(child::did/container))">
+                      <div style="clear:both;height:30px;">                           
+                         <xsl:attribute name="class">
+                               <xsl:choose>
+                                   <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
+                                   <xsl:otherwise>dscSeries</xsl:otherwise>
+                               </xsl:choose>    
+                         </xsl:attribute>
+                         <div>
+                             <xsl:call-template name="anchor"/>
+                             <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
+<!--                             <xsl:apply-templates select="did/unittitle" mode="dsc"/>-->
+                             <xsl:apply-templates select="did/origination" mode="dsc"/>
+                             <xsl:apply-templates select="scopecontent"/> 
+                             <xsl:apply-templates select="unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
+                             <xsl:for-each select="did/physdesc[extent]">
+                                   <h4 font-weight="bold">Extent</h4>
+                                   <p space-after="8pt">
+                                      <xsl:value-of select="extent[1]"/>
+                                      <xsl:if test="extent[position() &gt; 1]">, <xsl:value-of select="extent[position() &gt; 1]"/> </xsl:if>
+                                   </p>
+                             </xsl:for-each>
+                             <xsl:apply-templates select="accruals"/>
+                             <xsl:apply-templates select="appraisal"/>
+                             <xsl:apply-templates select="arrangement"/>
+                             <xsl:apply-templates select="bioghist"/>
+                             <xsl:apply-templates select="accessrestrict[not(child::legalstatus)]"/>
+                             <xsl:apply-templates select="userestrict"/>
+                             <xsl:apply-templates select="custodhist"/>
+                             <xsl:apply-templates select="altformavail"/>
+                             <xsl:apply-templates select="originalsloc"/>
+                             <xsl:apply-templates select="did/physdesc[@label='Dimensions note']"/>
+                             <xsl:apply-templates select="fileplan"/>
+                             <xsl:apply-templates select="did/physdesc[@label = 'General Physical Description note']"/>
+                             <xsl:apply-templates select="odd"/>
+                             <xsl:apply-templates select="acqinfo"/>
+                             <xsl:apply-templates select="did/langmaterial"/>
+                             <xsl:apply-templates select="accessrestrict[child::legalstatus]"/>
+                             <xsl:apply-templates select="did/materialspec"/>
+                             <xsl:apply-templates select="otherfindaid"/>
+                             <xsl:apply-templates select="phystech"/>
+                             <xsl:apply-templates select="did/physdesc[@label='Physical Facet note']"/>
+                             <xsl:apply-templates select="processinfo"/>
+                             <xsl:apply-templates select="relatedmaterial"/>
+                             <xsl:apply-templates select="separatedmaterial"/>
+                             <xsl:apply-templates select="controlaccess"/>
+                          </div>
+                       </div>
+                   </xsl:when>      
+                   <!-- Items/Files--> 
+                   <xsl:when test="dao">
+                      <xsl:apply-templates select="dao" mode="popout"/>
+                   </xsl:when>
+               </xsl:choose>
+           </xsl:for-each>
+      </xsl:template>
       <!-- 8/17/11 WS for RA: added a test to include Series/Subseries and unitid, customized display -->
     <xsl:template match="did" mode="dsc">
         <xsl:choose>
@@ -1615,10 +1697,89 @@
             </xsl:when>
             <!--Otherwise render the text in its normal font.-->
             <xsl:otherwise>
-                <div><xsl:call-template name="component-did-core"/></div>
+                <div>
+                   <xsl:choose>
+                      <xsl:when test="../dao">
+                         <a href="#" rel="#{../@id}_dao" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+                            <xsl:call-template name="component-did-core"/><img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>                    
+                         </a>
+                         <xsl:apply-templates select="../dao" mode="popout"/>
+                      </xsl:when>
+                      <xsl:otherwise>
+                         <xsl:call-template name="component-did-core"/>                         
+                      </xsl:otherwise>
+                   </xsl:choose>
+                </div>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+   <xsl:template match="dao" mode="popout">
+      <xsl:if test="$doc.view = 'dao'">
+         <div class="daoItemDisplay" style="display:block; text-align:center; float:left; padding:1.5em; width:150px;">
+            <a href="#" rel="#{../@id}_dao" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);"><img src="/xtf/icons/default/no_image.gif"/></a>
+            <div class="caption">
+               <a href="#" rel="#{../@id}_dao" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+                  <xsl:choose>
+                     <xsl:when test="daodesc">
+                        <xsl:apply-templates select="daodesc"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:if test="did/unittitle"><xsl:value-of select="../did/unittitle"/>&#160;</xsl:if>
+                        <xsl:if test="did/unitdate"><xsl:value-of select="../did/unitdate"/></xsl:if>                  
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </a>
+            </div>
+         </div>
+      </xsl:if>
+      <div class="overlay_dao" id="{../@id}_dao">
+         <div class="dscDescription">
+            <div>
+               <xsl:value-of select="@ns2:title"/>
+            </div>
+            <iframe name="frametest" id="frametest" src="{@ns2:href}"></iframe>
+            <div>
+               <xsl:for-each select="ancestor::*[@level]">
+                  <xsl:variable name="level">
+                     <xsl:choose>
+                        <xsl:when test="self::archdesc">Collection</xsl:when>
+                        <xsl:when test="@level = 'series'">Series</xsl:when>
+                        <xsl:when test="@level = 'subseries'">Subseries</xsl:when>
+                        <xsl:when test="@level = 'recordgrp'">Record Group</xsl:when>
+                        <xsl:when test="@level = 'subgrp'">Subgroup</xsl:when>
+                        <xsl:when test="@level = 'fonds'">Fonds</xsl:when>
+                        <xsl:when test="@level = 'subfonds'">Subfonds</xsl:when>
+                        <xsl:when test="@level = 'class'">Class</xsl:when>
+                        <xsl:when test="@level = 'otherlevel'">otherlevel</xsl:when>
+                        <xsl:when test="@level = 'file'">File</xsl:when>
+                        <xsl:when test="@level = 'item'">Item</xsl:when>
+                     </xsl:choose>            
+                  </xsl:variable>
+                  <xsl:variable name="id"><xsl:if test="did/unitid"><xsl:value-of select="concat(' ',did/unitid)"/></xsl:if></xsl:variable>
+                  <xsl:variable name="title">
+                     <xsl:choose>
+                        <xsl:when test="did/unittitle != ''">
+                           <xsl:value-of select="did/unittitle"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:value-of select="'Unknown'"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </xsl:variable>
+                  <xsl:choose>
+                     <xsl:when test="self::archdesc">
+                          <xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat($level,': ',$title)"/>&#160;
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat($level,$id,': ',$title)"/>&#160;
+                     </xsl:otherwise>
+                  </xsl:choose>         
+               </xsl:for-each>.
+               <xsl:text>Rockefeller Archive Center, Sleepy Hollow, NY.</xsl:text>               
+            </div>
+         </div>
+      </div>
+   </xsl:template>
     <xsl:template name="component-did-core">
         <!--Inserts unitid and a space if it exists in the markup.-->
         <xsl:if test="unitid"><span style="font-style:italic;"><xsl:apply-templates select="unitid"/></span>
@@ -1665,28 +1826,6 @@
       <p>                     
          <xsl:apply-templates/>               
       </p>   
-   </xsl:template>
-   <xsl:template name="dscDescription">
-      <html xml:lang="en" lang="en">
-         <head>
-            <title/>
-            <link rel="stylesheet" type="text/css" href="{$css.path}racustom.css"/>
-         </head>
-         <body>
-         <div class="dscDescription">
-            <xsl:apply-templates select="descendant-or-self::*[@id = $chunk.id]" mode="moreInfo"/>
-            <div class="closeWindow">
-               <a>
-               <xsl:attribute name="href">javascript://</xsl:attribute>
-               <xsl:attribute name="onClick">
-                  <xsl:text>javascript:window.close('popup')</xsl:text>
-               </xsl:attribute>
-               X Close this Window
-               </a>
-            </div>
-         </div>
-         </body>
-      </html>
    </xsl:template>
    <xsl:template match="xtf:meta"/>
    <xsl:template match="*" mode="moreInfo">
