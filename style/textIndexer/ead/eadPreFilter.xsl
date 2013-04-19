@@ -859,6 +859,9 @@
    <!-- type -->
    <xsl:template name="get-ead-type">
       <type xtf:meta="true">ead</type>
+      <xsl:if test="descendant-or-self::dao">
+         <type xtf:meta="true">dao</type>
+      </xsl:if>
    </xsl:template>
    
    <!-- format -->
