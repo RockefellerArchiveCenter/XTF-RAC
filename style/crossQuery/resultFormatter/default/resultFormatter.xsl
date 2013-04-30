@@ -922,17 +922,17 @@
                         <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods">Library Materials by Creator</a></dd>
                      </dl>
                   </td>
-                  <!--<td style="width:250px;">
-                     <dl style="background: url(/xtf/icons/default/video.gif) left no-repeat; min-height: 50px;">
+                  <td style="width:250px;">
+                     <dl style="background: url(/xtf/icons/default/dao_large.gif) left no-repeat; min-height: 50px;">
                         <dt>
                            <h4 style="margin-left:60px; font-size:1.2em;">
-                              <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=other">Browse Other Material</a>
+                              <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao">Browse Digital Materials</a>
                            </h4>
                         </dt>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=other">by Title</a></dd>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=other">by Creator</a></dd>
+                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=dao">by Title</a></dd>
+                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao">by Creator</a></dd>
                      </dl>
-                  </td>-->
+                  </td>
                </tr>
             </table>
          </div>
@@ -1803,16 +1803,20 @@
       </xsl:variable>
       <table style="width:100%;">
          <tr>
-            <td class="col1">
-               <xsl:choose>
-                  <xsl:when test="$sort = ''">
-                     <b><xsl:value-of select="@rank"/></b>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     <b><xsl:value-of select="@rank"/></b>
-                     <xsl:text>&#160;</xsl:text>
-                  </xsl:otherwise>
-               </xsl:choose>
+            <td style="width: 10%;">
+               <div style="height:18px; overflow:hidden;">
+                  <xsl:if test="meta/type = 'dao'">
+                     <img src="/xtf/icons/default/dao.gif" alt="digital object" title="digital object" style="float:right; padding-right:.75em;"/>
+                  </xsl:if>
+                  <xsl:choose>
+                     <xsl:when test="$sort = ''">
+                       <strong><xsl:value-of select="string(@rank)"/></strong>
+                     </xsl:when>
+                     <xsl:otherwise>
+                       <strong><xsl:value-of select="string(@rank)"/></strong>&#160;
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </div>
             </td>
             <td class="col3" colspan="2">
                <a>
