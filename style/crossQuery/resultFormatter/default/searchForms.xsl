@@ -73,13 +73,21 @@
                              $('#type').change(function () {
                                 if ($('#type option:selected').text() == "Archival Collections"){
                                     $('#collections').show();
+                                    $('#dao').hide();
                                     $('#library').hide();
                                 }
                                 else if ($('#type option:selected').text() == "Library Materials"){
                                     $('#library').show();
+                                    $('#dao').hide();
                                     $('#collections').hide();
                                 }
+                                else if ($('#type option:selected').text() == "Digital Materials"){
+                                    $('#dao').show();
+                                    $('#collections').hide();
+                                    $('#library').hide();
+                                }
                                  else {
+                                      $('#dao').hide();
                                       $('#collections').hide();
                                       $('#library').hide();
                                  }
@@ -211,6 +219,7 @@
                   <select name="type">
                      <option value="">All</option>
                      <option value="ead">Archival Collections</option>
+                     <option value="dao">Digital Materials</option>
                      <option value="mods">Library Materials</option>
                   </select>
                   <xsl:text>&#160;</xsl:text>
@@ -303,6 +312,7 @@
                   <select name="type" id="type">
                      <option value="">All</option>
                      <option value="ead">Archival Collections</option>
+                     <option value="dao">Digital Materials</option>
                      <option value="mods">Library Materials</option>
                   </select>
                   &#160;
@@ -316,6 +326,18 @@
                   </select>
                   <select name="sectionType" id="collections">
                      <option value="">All Archival Collections</option>
+                     <option value="title">Title</option>
+                     <option value="creator">Creator</option>
+                     <option value="bioghist">Biographical or Historical Note</option>
+                     <option value="scopecontent">Scope and Content Note</option>
+                     <option value="file">Folder Title</option>
+                     <option value="item">Item</option>
+                     <option value="series">Series Description</option>
+                     <option value="subseries">Subseries Description</option>
+                     <option value="controlaccess">Subject Headings</option>
+                  </select>
+                  <select name="sectionType" id="dao">
+                     <option value="">All Digital Materials</option>
                      <option value="title">Title</option>
                      <option value="creator">Creator</option>
                      <option value="bioghist">Biographical or Historical Note</option>
