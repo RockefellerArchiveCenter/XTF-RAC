@@ -18,6 +18,7 @@ h4{margin-bottom:0; padding-bottom:0;}
 p{margin-top:0;margin-bottom:1em;}
 .modsInfo h3 {margin:0; padding:.25em .25em 1em .25em; background-color:#ccc !important; border:red;}
 div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em;}
+.overlay div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em; min-height: 500px;}
 div.closeWindow {text-align:right !important; font-size:.85em !important; margin-top:1em;}
 div.closeWindow a{color: #C45414;}
 .getAddress{border-top:1px solid #999 !important; margin-top:24px !important;}
@@ -154,7 +155,6 @@ h1.collectionGuides a {text-decoration:none; color:black;}
     -moz-box-shadow:0 0 90px 5px #000;
     -webkit-box-shadow: 0 0 90px #000;
 }
- 
 /* close button positioned on upper right corner */
 .overlay .close {
     background-image:url(/xtf/icons/default/close.png);
