@@ -70,6 +70,7 @@
                         $(document).ready(function() {
                             $('#collections').hide();
                             $('#library').hide();
+                            $('#dao').hide();
                              $('#type').change(function () {
                                 if ($('#type option:selected').text() == "Archival Collections"){
                                     $('#collections').show();
