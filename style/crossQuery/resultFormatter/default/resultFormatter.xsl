@@ -280,7 +280,7 @@
                            <xsl:otherwise>
                               <!--<div class="query">
                                  <div class="label">
-                                    <b><xsl:value-of select="if($browse-all) then 'Browse by' else 'Search'"/>:</b>
+                                    <strong><xsl:value-of select="if($browse-all) then 'Browse by' else 'Search'"/>:</strong>
                                  </div>
                                  <xsl:call-template name="format-query"/>
                               </div>-->
@@ -352,7 +352,7 @@
                         </form>
                         &#160;&#160;
                         <form method="get" action="{$xtfURL}{$crossqueryPath}">
-                           <b>Sorted by:&#160;</b>
+                           <strong>Sorted by:&#160;</strong>
                            <xsl:call-template name="sort.options"/>
                            <xsl:call-template name="hidden.query">
                               <xsl:with-param name="queryString" select="editURL:remove($queryString, 'sort')"/>
@@ -555,7 +555,7 @@
          <body>
             <div class="getAddress" style="margin:.5em;">
             <h1>E-mail My Citations</h1>
-            <b>Your citations have been sent.</b>
+            <strong>Your citations have been sent.</strong>
             <div class="closeWindow">
                <a>
                   <xsl:attribute name="href">javascript://</xsl:attribute>
@@ -1021,10 +1021,10 @@
                <td style="width:1em;">
                   <xsl:choose>
                      <xsl:when test="$sort = ''">
-                        <b><xsl:value-of select="@rank"/></b>
+                        <strong><xsl:value-of select="@rank"/></strong>
                      </xsl:when>
                      <xsl:otherwise>
-                        <b><xsl:value-of select="@rank"/></b>
+                        <strong><xsl:value-of select="@rank"/></strong>
                         <xsl:text>&#160;</xsl:text>
                      </xsl:otherwise>
                   </xsl:choose>
@@ -1060,7 +1060,7 @@
                   <xsl:if test="$sort = 'title'">
                      <a name="{$anchor}"/>
                   </xsl:if>
-                  <b>Title:&#160;&#160;</b>
+                  <strong>Title:&#160;&#160;</strong>
                </td>
                <td>
                   <a>
@@ -1173,7 +1173,7 @@
                      <a name="{$anchor}"/>
                   </xsl:if>
                   <!-- 9/26/11 WS: changed author to creator-->
-                  <b>Creator:&#160;&#160;</b>
+                  <strong>Creator:&#160;&#160;</strong>
                </td>
                <td class="col3">
                   <xsl:choose>
@@ -1194,7 +1194,7 @@
                </td>
                <td style="text-align:right;">
                   <!-- 9/26/11 WS: changed Published to Date -->
-                  <b>Date(s):&#160;&#160;</b>
+                  <strong>Date(s):&#160;&#160;</strong>
                </td>
                <td>
                   <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
@@ -1227,7 +1227,7 @@
                      <xsl:text>&#160;</xsl:text>
                   </td>
                   <td style="text-align:right;">
-                     <b>Subjects:&#160;&#160;</b>
+                     <strong>Subjects:&#160;&#160;</strong>
                   </td>
                   <td>
                      <!-- 4/16/2013 HA: added logic to limit number of subjects that display -->
@@ -1252,7 +1252,7 @@
                      <xsl:text>&#160;</xsl:text>
                   </td>
                   <td style="text-align:right;">
-                     <b>Matches:&#160;&#160;</b>
+                     <strong>Matches:&#160;&#160;</strong>
                      <br/>
                      <xsl:value-of select="@totalHits"/> 
                      <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>&#160;&#160;&#160;&#160;
@@ -1268,7 +1268,7 @@
                   <xsl:text>&#160;</xsl:text>
                </td>
                <td style="text-align:right;">
-                  <b>Similar&#160;Items:&#160;&#160;</b>
+                  <strong>Similar&#160;Items:&#160;&#160;</strong>
                </td>
                <td colspan="2">
                   <script type="text/javascript">
@@ -1346,10 +1346,10 @@
                      <td class="col1" style="width:2em;">
                         <xsl:choose>
                            <xsl:when test="$sort = ''">
-                              <b><xsl:value-of select="@rank"/></b>
+                              <strong><xsl:value-of select="@rank"/></strong>
                            </xsl:when>
                            <xsl:otherwise>
-                              <b><xsl:value-of select="@rank"/></b>
+                              <strong><xsl:value-of select="@rank"/></strong>
                               <xsl:text>&#160;</xsl:text>
                            </xsl:otherwise>
                         </xsl:choose>
@@ -1385,7 +1385,7 @@
                         <xsl:if test="$sort = 'title'">
                            <a name="{$anchor}"/>
                         </xsl:if>
-                        <b>Title:&#160;&#160;</b>
+                        <strong>Title:&#160;&#160;</strong>
                      </td>
                      <td class="col3">
                         <a>
@@ -1498,7 +1498,7 @@
                            <a name="{$anchor}"/>
                         </xsl:if>
                         <!-- 9/26/11 WS: changed author to creator-->
-                        <b>Creator:&#160;&#160;</b>
+                        <strong>Creator:&#160;&#160;</strong>
                      </td>
                      <td class="col3">
                         <xsl:choose>
@@ -1517,7 +1517,7 @@
                            <xsl:text>&#160;</xsl:text>
                         </td>
                         <td class="col2">
-                           <b>Publisher:&#160;&#160;</b>
+                           <strong>Publisher:&#160;&#160;</strong>
                         </td>
                         <td class="col3">
                            <xsl:apply-templates select="meta/publisher"/>
@@ -1532,7 +1532,7 @@
                      </td>
                      <td class="col2">
                         <!-- 9/26/11 WS: changed Published to Date -->
-                        <b>Date(s):&#160;&#160;</b>
+                        <strong>Date(s):&#160;&#160;</strong>
                      </td>
                      <td class="col3">
                         <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
@@ -1555,7 +1555,7 @@
                            <xsl:text>&#160;</xsl:text>
                         </td>
                         <td class="col2">
-                           <b>Call number:&#160;&#160;</b>
+                           <strong>Call number:&#160;&#160;</strong>
                         </td>
                         <td class="col3">
                            <xsl:apply-templates select="meta/callNo"/>
@@ -1572,7 +1572,7 @@
                            <xsl:text>&#160;</xsl:text>
                         </td>
                         <td class="col2">
-                           <b>Matches:&#160;&#160;</b>
+                           <strong>Matches:&#160;&#160;</strong>
                            <br/>
                            <xsl:value-of select="@totalHits"/> 
                            <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>&#160;&#160;&#160;&#160;
@@ -1589,10 +1589,10 @@
                      <td class="col1">
                         <xsl:choose>
                            <xsl:when test="$sort = ''">
-                              <b><xsl:value-of select="@rank"/></b>
+                              <strong><xsl:value-of select="@rank"/></strong>
                            </xsl:when>
                            <xsl:otherwise>
-                              <b><xsl:value-of select="@rank"/></b>
+                              <strong><xsl:value-of select="@rank"/></strong>
                               <xsl:text>&#160;</xsl:text>
                            </xsl:otherwise>
                         </xsl:choose>
@@ -1628,7 +1628,7 @@
                         <xsl:if test="$sort = 'title'">
                            <a name="{$anchor}"/>
                         </xsl:if>
-                        <b>Title:&#160;&#160;</b>
+                        <strong>Title:&#160;&#160;</strong>
                      </td>
                      <td class="col3">
                         <a>
@@ -1669,7 +1669,7 @@
                            <a name="{$anchor}"/>
                         </xsl:if>
                         <!-- 9/26/11 WS: changed author to creator-->
-                        <b>Creator:&#160;&#160;</b>
+                        <strong>Creator:&#160;&#160;</strong>
                      </td>
                      <td class="col3">
                         <xsl:choose>
@@ -1694,7 +1694,7 @@
                      <xsl:text>&#160;</xsl:text>
                   </td>
                   <td class="col2">
-                     <b>Subjects:&#160;&#160;</b>
+                     <strong>Subjects:&#160;&#160;</strong>
                   </td>
                   <td class="col3">
                      <!-- 4/16/2013 HA: added logic to limit number of subjects that display -->
@@ -1728,7 +1728,7 @@
                   <xsl:text>&#160;</xsl:text>
                </td>
                <td class="col2">
-                  <b>Similar&#160;Items:&#160;&#160;</b>
+                  <strong>Similar&#160;Items:&#160;&#160;</strong>
                </td>
                <td class="col3" colspan="2">
                   <script type="text/javascript">
@@ -1806,10 +1806,10 @@
             <td class="col1">
                <xsl:choose>
                   <xsl:when test="$sort = ''">
-                     <b><xsl:value-of select="@rank"/></b>
+                     <strong><xsl:value-of select="@rank"/></strong>
                   </xsl:when>
                   <xsl:otherwise>
-                     <b><xsl:value-of select="@rank"/></b>
+                     <strong><xsl:value-of select="@rank"/></strong>
                      <xsl:text>&#160;</xsl:text>
                   </xsl:otherwise>
                </xsl:choose>
@@ -1920,7 +1920,7 @@
                   <xsl:text>&#160;</xsl:text>
                </td>
                <td class="col3" colspan="3">
-                  <b>Matches:&#160;&#160;</b>
+                  <strong>Matches:&#160;&#160;</strong>
                   (<xsl:value-of select="@totalHits"/>
                   <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>)&#160;&#160;&#160;&#160;
                   <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
@@ -1998,7 +1998,7 @@
          </xsl:when>
          <xsl:otherwise>
             <div class="moreLike">
-               <b>No similar documents found.</b>
+               <strong>No similar documents found.</strong>
             </div>
          </xsl:otherwise>
       </xsl:choose>
