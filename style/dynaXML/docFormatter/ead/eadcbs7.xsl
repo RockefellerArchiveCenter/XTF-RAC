@@ -1733,11 +1733,11 @@
          </div>
       </xsl:if>
       <div class="overlay_dao" id="{../@id}_dao">
-         <div class="dscDescription" style="min-height:400px;">
+         <div class="dscDescription" style="min-height:450px;">
             <div>
                <xsl:value-of select="@ns2:title"/>
             </div>
-            <iframe name="frametest" id="frametest" src="{@ns2:href}" style="width:100%; min-height:400px;"></iframe>
+            <iframe name="frametest" id="frametest" src="{@ns2:href}" style="width:100%; min-height:450px;"></iframe>
             <div>
                <xsl:for-each select="ancestor::*[@level]">
                   <xsl:variable name="level">
