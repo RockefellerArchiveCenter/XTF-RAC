@@ -897,29 +897,29 @@
    <xsl:template name="browseLinks">
          <div class="browselinks">
             <table style="width:90%;margin-left:2em;">
-               <tr><td colspan="2"><span style="margin:left:60px; font-size:1.2em;"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection">Browse All</a></span></td></tr>
+               <tr><td colspan="2"><span style="margin:left:60px; font-size:1.2em;"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'all']);">Browse All</a></span></td></tr>
                <tr>
                   <td style="width:250px;">
                      <dl style="background: url(/xtf/icons/default/collections.gif) left no-repeat; min-height: 50px;">
                         <dt>
                               <h4 style="margin-left:60px; font-size:1.2em;">
-                                 <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">Browse Archival Collections</a>
+                                 <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival']);">Browse Archival Collections</a>
                               </h4>
                         </dt>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead">Collections by Title</a></dd>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead">Collections by Creator</a></dd>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead">Recently Updated Collections</a></dd>
+                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-title']);">Collections by Title</a></dd>
+                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-creator']);">Collections by Creator</a></dd>
+                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-recent']);">Recently Updated Collections</a></dd>
                      </dl>
                   </td>
                   <td style="width:250px;">
                      <dl style="background: url(/xtf/icons/default/book.gif) left no-repeat; min-height: 50px;">
                         <dt>
                            <h4 style="margin-left:60px; font-size:1.2em;">
-                              <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods">Browse Library Materials</a>
+                              <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library']);">Browse Library Materials</a>
                            </h4>
                         </dt>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods">Library Materials by Title</a></dd>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods">Library Materials by Creator</a></dd>
+                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-title']);">Library Materials by Title</a></dd>
+                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-creator']);">Library Materials by Creator</a></dd>
                      </dl>
                   </td>
                   <!--<td style="width:250px;">

@@ -214,7 +214,7 @@
                      <option value="mods">Library Materials</option>
                   </select>
                   <xsl:text>&#160;</xsl:text>
-                  <input type="submit" value="Search"/>
+                  <input type="submit" value="Search" onClick="_gaq.push(['_trackEvent', 'search', 'keyword', 'simple']);"/>
                   <!--<input type="hidden" value="series" name="level"/>-->
                   <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
                  <!-- Uncomment and complete code when digital objects are included -->    
@@ -361,7 +361,7 @@
             <tr>
                <td>&#160;</td>
                <td colspan="2">
-                  <input type="submit" value="Search"/>
+                  <input type="submit" value="Search" onClick="_gaq.push(['_trackEvent', 'search', 'keyword', 'advanced']);"/>
                   <input type="hidden" name="smode" value="advanced" id="start"/>
                   <input type="reset" OnClick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
                </td>

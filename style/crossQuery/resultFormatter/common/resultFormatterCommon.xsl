@@ -1069,7 +1069,7 @@
       <xsl:variable name="selectLink" select="
          concat(xtfURL, $crossqueryPath, '?',
                 editURL:set(editURL:remove($queryString,'browse-all=yes'), 
-                            $nextName, $value))">
+                $nextName, $value))">
       </xsl:variable>
       
       <xsl:variable name="clearLink" select="
@@ -1102,7 +1102,7 @@
             <xsl:otherwise>
                   <td class="col2">
                      <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                     <a href="{$selectLink}">
+                     <a href="{$selectLink}" onclick="_gaq.push(['_trackEvent', 'search', 'browse', 'facet']);">
                         <xsl:value-of select="$value"/>
                      </a>
                      <xsl:apply-templates select="." mode="afterGroupValue"/>
@@ -1198,7 +1198,7 @@
                <td class="col1">&#8226;</td> <!-- bullet char -->
                <td class="col2">
                   <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                  <a href="{$selectLink}">
+                  <a href="{$selectLink}" onclick="_gaq.push(['_trackEvent', 'search', 'browse', 'facet']);">
                      <xsl:value-of select="@value"/>
                   </a>
                   <xsl:apply-templates select="." mode="afterGroupValue"/>
@@ -1211,13 +1211,13 @@
             <!-- closed node: click to expand -->
             <xsl:when test="count(group) = 0">
                <td class="col1">
-                  <a href="{$selectLink}">
+                  <a href="{$selectLink}" onclick="_gaq.push(['_trackEvent', 'search', 'browse', 'facet']);">
                      <img src="{$icon.path}/i_expand.gif" border="0" alt="expand"/>
                   </a>
                </td>
                <td class="col2">
                   <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                  <a href="{$selectLink}">
+                  <a href="{$selectLink}" onclick="_gaq.push(['_trackEvent', 'search', 'browse', 'facet']);">
                      <xsl:value-of select="@value"/>
                   </a>
                   <xsl:apply-templates select="." mode="afterGroupValue"/>
