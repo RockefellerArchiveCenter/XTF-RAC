@@ -343,9 +343,10 @@ table.containerList tr td{padding-top:2px; padding-bottom:2px;}
 .containerTypes {margin-top:.5em;}
 .inventoryTitle {font-weight:bold; background-color:#000; color:#fff; padding:4px 2px; margin-bottom:.5em;}
 tr.odd{background-color:#eee !important;}
-tr.file td {border-bottom: 1px dotted #ccc !important; margin-top:.5em;}
+/*tr.file td {border-bottom: 1px dotted #ccc !important; margin-top:.5em;}*/
 tr.file td.noBorder {border:none!important;}
 /*tr.file .borderDisplay div{border-left: 3px solid #ccc !important; padding-left:1em; margin-top:.25em; }*/
+.file:nth-child(even) {background-color:#f0f0f0;}
 
 /* --- Clevel Margins --- */
 table td.c {border-left: none; padding-left:4px;}
