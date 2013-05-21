@@ -67,6 +67,7 @@ ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; t
 h1.collectionGuides {margin-top:-70px; margin-left:160px; font-size:2em;}
 h1.collectionGuides a {text-decoration:none; color:black;}
 .searchPage {margin-top:34px !important;}
+.searchPage input, .searchPage select {font-size: 1em;}
 .navright {
     background-color: #DDDDDD;
     padding:12px;
@@ -174,10 +175,10 @@ h1.collectionGuides a {text-decoration:none; color:black;}
 .browselinks p {font-size: 1.5em;}
 .browselinks a {color: #C45414 !important; font-size: 1em; text-decoration: none !important; font-weight: bold;}
 .browselinks a:hover {text-decoration: underline !important;}
-#fordtext p {color: #C45414; font-style: italic;}
-#fordtext a {color: #C45414 !important;}
-#fordtext a:hover {color: #888 !important;}
-p.searchtip {font-size:smaller;}
+.disclaimer {border: 1px dotted #C45414; padding: 1em;}
+.disclaimer a {color: #C45414 !important;}
+.disclaimer a:hover {color: #888 !important;}
+p.searchtip {color: #C45414;}
 .searchtip a {color: #C45414 !important;}
 td.bottomalign {vertical-align:bottom !important;}
 .searchtiplink {text-align:right !important;}

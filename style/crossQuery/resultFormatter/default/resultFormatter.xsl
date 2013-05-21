@@ -178,7 +178,23 @@
             <script src="script/yui/connection-min.js" type="text/javascript"/>
          </head>
          <body>
-            
+            <div class="overlay" id="searchTips" style="width:1100px; top:20px !important;">
+               <div class="dscDescription">
+                  <h4>Searching tips and tricks</h4>
+                  <p>You can search across the RAC’s archival materials, books, DVDs, VHS and microfilm holdings from the home page or the Advanced Search page. You can search within an archival collection by selecting that collection and then using the "search within this collection" in the navigation bar.</p>
+                  <p>An asterisk - * - will find from one to many characters within a word: hist* will retrieve history, histories, and historians, coo*tion will find cooperation and coordination</p>
+                  <p>A question mark - ? - will find only one character within a word: america? will retrieve american and americas, wom?n will retrieve woman, women, and womyn</p>
+                  <p>To search for an exact string, place quotation marks around the string: "south africa" will find south africa, but not south african</p>
+                  <p>Search queries are not case sensitive. Except for the above examples, punctuation is ignored.</p>
+                  <img src="./icons/default/facets.png" alt="facets" align="left" width="280px"/><h4>Refining your search</h4>
+                  <p>On every search results screen you will see a box titled "Refine Search." It contains categories called facets, and you can discover relevant resources by browsing the contents of the facets. By selecting one or more facets (1) you can further narrow your initial search. In order to remove a facet and expand your search click on the [x] next to the search term (2) in the navigation bar. When you see a facet under "Refine Search" that is of interest to you, you can also dig in deeper by clicking the "more" link (3) to see additional terms.</p>
+                  <h4>Get notified when we update the site</h4>
+                  <p>When you see this icon <img src="./icons/default/i_rss.png" alt="rss feed"/> it means there is an RSS feed for this search. You can click on it to subscribe to see the most recent changes and additions in that search in your favorite feed reader.</p>
+                  <h4>Not everything is up yet!</h4>
+                  <p>We’re still in the process of adding information to this system. </p>
+                  <p>Some large collections, like those of the <strong>Ford Foundation</strong>, <strong>Population Council</strong>, and <strong>Rockefeller University</strong>, are only partially represented in the online system; other smaller collections, like the <strong>Trilateral Commission</strong>, the <strong>Near East Foundation</strong>, and some collections of personal papers are not yet represented at all (note: finding aids for Ford Foundation grant records are not yet available online). Please contact the archival staff at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further information about these collections.</p>
+               </div>
+            </div>
             <!-- header -->
             <xsl:copy-of select="$brand.header"/>
             
@@ -215,6 +231,11 @@
                         </a>-->
                         <a href="search?smode=browse">
                            <xsl:text>BROWSE</xsl:text>
+                        </a>
+                        <xsl:text>&#160;|&#160;</xsl:text>
+                        <a href="#" rel="#searchTips"
+                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on results page']);">
+                           <xsl:text>SEARCH TIPS</xsl:text>
                         </a>
                      </div>
                   </td>
@@ -749,7 +770,24 @@
             <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
             <script src="script/yui/connection-min.js" type="text/javascript"/> 
          </head>
-         <body>            
+         <body>
+            <div class="overlay" id="searchTips" style="width:1100px; top:20px !important;">
+               <div class="dscDescription">
+                  <h4>Searching tips and tricks</h4>
+                  <p>You can search across the RAC’s archival materials, books, DVDs, VHS and microfilm holdings from the home page or the Advanced Search page. You can search within an archival collection by selecting that collection and then using the "search within this collection" in the navigation bar.</p>
+                  <p>An asterisk - * - will find from one to many characters within a word: hist* will retrieve history, histories, and historians, coo*tion will find cooperation and coordination</p>
+                  <p>A question mark - ? - will find only one character within a word: america? will retrieve american and americas, wom?n will retrieve woman, women, and womyn</p>
+                  <p>To search for an exact string, place quotation marks around the string: "south africa" will find south africa, but not south african</p>
+                  <p>Search queries are not case sensitive. Except for the above examples, punctuation is ignored.</p>
+                  <img src="./icons/default/facets.png" alt="facets" align="left" width="280px"/><h4>Refining your search</h4>
+                  <p>On every search results screen you will see a box titled "Refine Search." It contains categories called facets, and you can discover relevant resources by browsing the contents of the facets. By selecting one or more facets (1) you can further narrow your initial search. In order to remove a facet and expand your search click on the [x] next to the search term (2) in the navigation bar. When you see a facet under "Refine Search" that is of interest to you, you can also dig in deeper by clicking the "more" link (3) to see additional terms.</p>
+                  <h4>Get notified when we update the site</h4>
+                  <p>When you see this icon <img src="./icons/default/i_rss.png" alt="rss feed"/> it means there is an RSS feed for this search. You can click on it to subscribe to see the most recent changes and additions in that search in your favorite feed reader.</p>
+                  <h4>Not everything is up yet!</h4>
+                  <p>We’re still in the process of adding information to this system. </p>
+                  <p>Some large collections, like those of the <strong>Ford Foundation</strong>, <strong>Population Council</strong>, and <strong>Rockefeller University</strong>, are only partially represented in the online system; other smaller collections, like the <strong>Trilateral Commission</strong>, the <strong>Near East Foundation</strong>, and some collections of personal papers are not yet represented at all (note: finding aids for Ford Foundation grant records are not yet available online). Please contact the archival staff at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further information about these collections.</p>
+               </div>
+            </div>            
             <!-- header -->
             <xsl:copy-of select="$brand.header"/>
             
@@ -780,6 +818,10 @@
                            <a href="search?smode=browse">
                               <xsl:text>BROWSE</xsl:text>
                            </a>
+                           <xsl:text>&#160;|&#160;</xsl:text>
+                           <a href="#" rel="#searchTips"
+                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on results page']);">
+                           <xsl:text>SEARCH TIPS</xsl:text></a>
                         </div>
                      </td>
                   </tr>

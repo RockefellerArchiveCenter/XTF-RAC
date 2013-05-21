@@ -219,7 +219,7 @@
                   <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
                  <!-- Uncomment and complete code when digital objects are included -->    
                  <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
-                  <p class="searchtip">Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc. <br/>To search an exact phrase, include quotation marks, e.g. "mental health". <a href="#" rel="#searchTips" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);">more</a></p>
+                  <p class="searchtip">Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc. <br/>To search an exact phrase, include quotation marks, e.g. "mental health"...<a href="#" rel="#searchTips" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);">more search tips</a></p>
                </td>
                <td>
                   <ul class="nomark">
@@ -252,7 +252,7 @@
                   <h4>Rockefeller Archive Center Holdings</h4>
                   <p>The Rockefeller Archive Center holdings encompass the records of the Rockefeller family and their wide-ranging philanthropic endeavors (including the Rockefeller Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the Center's growing holdings include materials from numerous non-Rockefeller foundations and nonprofit organizations, making it a premier center for research on philanthropy and civil society. It is also a major repository for the personal papers of leaders of the philanthropic community, Nobel Prize laureates, and world-renowned investigators in science and medicine.
                   </p>
-                  <div id="fordtext"><p>The Rockefeller Archive Center is still in the process of adding collections information to this system. Some large collections, like those of the Ford Foundation, Population Council, and Rockefeller University, are only partially represented in the online system; other smaller collections, including some collections of personal papers and grant records for the Ford Foundation, are not yet represented at all. Please contact the archival staff at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further information about these collections.</p></div>
+                  <div class="disclaimer"><p>The Rockefeller Archive Center is still in the process of adding collections information to this system. Some large collections, like those of the Ford Foundation, Population Council, and Rockefeller University, are only partially represented in the online system; other smaller collections, including some collections of personal papers and grant records for the Ford Foundation, are not yet represented at all. Please contact the archival staff at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further information about these collections.</p></div>
                </td>
             </tr>
             <tr>
