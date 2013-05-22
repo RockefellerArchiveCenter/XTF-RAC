@@ -892,8 +892,14 @@
       </xsl:variable>
       <xsl:choose>
          <xsl:when test="@level">
+            <xsl:variable name="id">
+               <xsl:choose>
+                  <xsl:when test="@id"><xsl:value-of select="@id"/></xsl:when>
+                  <xsl:otherwise><xsl:value-of select="generate-id(.)"/></xsl:otherwise>
+               </xsl:choose>
+            </xsl:variable>
             <identifier xtf:meta="true" xtf:tokenize="no">
-               <xsl:value-of select="concat($parentID,'|',@id)"/>
+               <xsl:value-of select="concat($parentID,'|',$id)"/>
             </identifier>
          </xsl:when>
          <xsl:otherwise>
