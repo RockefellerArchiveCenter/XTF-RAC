@@ -66,6 +66,10 @@
       </xsl:variable> 
       <div id="content-wrapper">
       <div id="content-right">
+         
+         <!-- overlay element for dao display-->
+         <div class="overlay" id="daoDisplay" style="width:600px;"></div> 
+         
          <xsl:choose>
          <xsl:when test="$chunk.id = 'headerlink'">
             <xsl:apply-templates select="/ead/archdesc/did"/>
@@ -108,6 +112,8 @@
          <br class="clear"/>
       </div>
       </div>
+
+      
    </xsl:template>		
    <!-- Creates anchors within the document -->
    <xsl:template name="anchor">
@@ -1383,6 +1389,7 @@
                                  <a href="#" rel="#{../../@id}_dsc" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Additional description']);">
                                     Additional description
                                  </a>
+                                 <!--
                                  <div class="overlay_dao" id="{../../@id}_dsc">
                                     <div class="dscDescription">
                                        <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
@@ -1395,6 +1402,7 @@
                                           child::separatedmaterial |  child::controlaccess"/>
                                     </div>
                                  </div>
+                                 -->
                                  <xsl:if test="$didHitCount &gt; 0">
                                     <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                  </xsl:if>
@@ -1697,13 +1705,22 @@
             </xsl:when>
             <!--Otherwise render the text in its normal font.-->
             <xsl:otherwise>
-                <div>
+                <div class="daoLink">
                    <xsl:choose>
                       <xsl:when test="../dao">
+                         <xsl:variable name="daoLink" select="../dao/@ns2:href"/>
+                          
+                         <a href="{$daoLink}" rel="#daoDisplay">
+                            <xsl:call-template name="component-did-core"/>
+                            <img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>
+                         </a>
+                         
+                         <!--
                          <a href="#" rel="#{../@id}_dao" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                             <xsl:call-template name="component-did-core"/><img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>                    
                          </a>
                          <xsl:apply-templates select="../dao" mode="popout"/>
+                         -->
                       </xsl:when>
                       <xsl:otherwise>
                          <xsl:call-template name="component-did-core"/>                         
@@ -1732,6 +1749,7 @@
             </div>
          </div>
       </xsl:if>
+      <!--
       <div class="overlay_dao" id="{../@id}_dao">
          <div class="dscDescription" style="min-height:450px;">
             <div>
@@ -1779,6 +1797,7 @@
             </div>
          </div>
       </div>
+      -->
    </xsl:template>
     <xsl:template name="component-did-core">
         <!--Inserts unitid and a space if it exists in the markup.-->
