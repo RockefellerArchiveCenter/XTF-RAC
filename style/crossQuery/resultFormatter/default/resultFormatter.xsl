@@ -53,7 +53,8 @@
    <xsl:include href="searchForms.xsl"/>
    
    <xsl:param name="browse-collections"/>
-   <xsl:param name="type"/>   
+   <xsl:param name="type"/>
+   <xsl:param name="level"/>   
 
    <!-- ====================================================================== -->
    <!-- Output                                                                 -->
@@ -1246,22 +1247,28 @@
                </tr>
             </xsl:if>
             <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
-            <xsl:if test="descendant-or-self::snippet">
-               <tr>
-                  <td colspan="2">
-                     <xsl:text>&#160;</xsl:text>
-                  </td>
-                  <td style="text-align:right;">
-                     <b>Matches:&#160;&#160;</b>
-                     <br/>
-                     <xsl:value-of select="@totalHits"/> 
-                     <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>&#160;&#160;&#160;&#160;
-                  </td>
-                  <td colspan="2">
-                     <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
-                  </td>
-               </tr>
-            </xsl:if>
+            <xsl:choose>
+               <xsl:when test="$browse-all"/>
+               <xsl:otherwise>
+                  <xsl:if test="descendant-or-self::snippet">
+                     <tr>
+                        <td colspan="2">
+                           <xsl:text>&#160;</xsl:text>
+                        </td>
+                        <td style="text-align:right;">
+                           <b>Matches:&#160;&#160;</b>
+                           <br/>
+                           <xsl:value-of select="@totalHits"/> 
+                           <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>&#160;&#160;&#160;&#160;
+                        </td>
+                        <td colspan="2">
+                           <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
+                        </td>
+                     </tr>
+                  </xsl:if>
+               </xsl:otherwise>
+            </xsl:choose>
+            
             <!-- "more like this" -->
             <tr>
                <td colspan="2">
@@ -1566,22 +1573,27 @@
                      </tr>
                   </xsl:if>                   
                 <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
-                  <xsl:if test="descendant-or-self::snippet">
-                     <tr>
-                        <td class="col1" colspan="2">
-                           <xsl:text>&#160;</xsl:text>
-                        </td>
-                        <td class="col2">
-                           <b>Matches:&#160;&#160;</b>
-                           <br/>
-                           <xsl:value-of select="@totalHits"/> 
-                           <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>&#160;&#160;&#160;&#160;
-                        </td>
-                        <td class="col3" colspan="2">
-                           <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
-                        </td>
-                     </tr>
-                  </xsl:if>
+                  <xsl:choose>
+                     <xsl:when test="$browse-all"/>
+                     <xsl:otherwise>
+                        <xsl:if test="descendant-or-self::snippet">
+                           <tr>
+                              <td colspan="2">
+                                 <xsl:text>&#160;</xsl:text>
+                              </td>
+                              <td style="text-align:right;">
+                                 <b>Matches:&#160;&#160;</b>
+                                 <br/>
+                                 <xsl:value-of select="@totalHits"/> 
+                                 <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>&#160;&#160;&#160;&#160;
+                              </td>
+                              <td colspan="2">
+                                 <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
+                              </td>
+                           </tr>
+                        </xsl:if>
+                     </xsl:otherwise>
+                  </xsl:choose>
                </xsl:when>
                <xsl:otherwise>
                   <xsl:variable name="collectionId" select="substring-before(meta/identifier[1],'|')"/>
@@ -1918,19 +1930,24 @@
             </td>
          </tr> 
          <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
-         <xsl:if test="descendant-or-self::snippet">
-            <tr style="font-size:.95em;">
-               <td class="col1">
-                  <xsl:text>&#160;</xsl:text>
-               </td>
-               <td class="col3" colspan="3">
-                  <b>Matches:&#160;&#160;</b>
-                  (<xsl:value-of select="@totalHits"/>
-                  <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>)&#160;&#160;&#160;&#160;
-                  <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
-               </td>
-            </tr>
-         </xsl:if>         
+         <xsl:choose>
+            <xsl:when test="$browse-all"/>
+            <xsl:otherwise>
+               <xsl:if test="descendant-or-self::snippet">
+                  <tr style="font-size:.95em;">
+                     <td class="col1">
+                        <xsl:text>&#160;</xsl:text>
+                     </td>
+                     <td class="col3" colspan="3">
+                        <b>Matches:&#160;&#160;</b>
+                        (<xsl:value-of select="@totalHits"/>
+                        <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>)&#160;&#160;&#160;&#160;
+                        <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
+                     </td>
+                  </tr>
+               </xsl:if>
+            </xsl:otherwise>
+         </xsl:choose>    
       </table>
    </xsl:template>
 
