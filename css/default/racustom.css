@@ -175,7 +175,7 @@ h1.collectionGuides a {text-decoration:none; color:black;}
 .browselinks p {font-size: 1.5em;}
 .browselinks a {color: #C45414 !important; font-size: 1em; text-decoration: none !important; font-weight: bold;}
 .browselinks a:hover {text-decoration: underline !important;}
-.disclaimer {border: 1px dotted #C45414; padding: 1em;}
+.disclaimer {border: 1px dotted #C45414; padding: 1em; background-color: #dddddd;}
 .disclaimer a {color: #C45414 !important;}
 .disclaimer a:hover {color: #888 !important;}
 p.searchtip {color: #C45414;}
