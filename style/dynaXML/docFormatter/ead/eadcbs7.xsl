@@ -66,10 +66,6 @@
       </xsl:variable> 
       <div id="content-wrapper">
       <div id="content-right">
-         
-         <!-- overlay element for dao display-->
-         <div class="overlay" id="daoDisplay" style="width:600px;"></div> 
-         
          <xsl:choose>
          <xsl:when test="$chunk.id = 'headerlink'">
             <xsl:apply-templates select="/ead/archdesc/did"/>
@@ -112,6 +108,7 @@
          <br class="clear"/>
       </div>
       </div>
+      <!-- Jquery for dao display -->
 
       
    </xsl:template>		
@@ -1708,9 +1705,8 @@
                 <div class="daoLink">
                    <xsl:choose>
                       <xsl:when test="../dao">
-                         <xsl:variable name="daoLink" select="../dao/@ns2:href"/>
-                          
-                         <a href="{$daoLink}" rel="#daoDisplay">
+                         <xsl:variable name="daoLink" select="../dao/@ns2:href"/>                          
+                         <a href="{$daoLink}" data-title="Test" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                             <xsl:call-template name="component-did-core"/>
                             <img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>
                          </a>
@@ -1730,23 +1726,30 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+   
    <xsl:template match="dao" mode="popout">
       <xsl:if test="$doc.view = 'dao'">
          <div class="daoItemDisplay" style="display:block; text-align:center; float:left; padding:1.5em; width:150px;">
-            <a href="#" rel="#{../@id}_dao" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);"><img src="/xtf/icons/default/no_image.gif"/></a>
+            <div class="daoLink">   
+            <xsl:variable name="daoLink" select="@ns2:href"/>
+               <a href="{$daoLink}" data-title="Test" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+               <xsl:call-template name="component-did-core"/>
+              <img src="/xtf/icons/default/no_image.gif"/>
+            </a>
             <div class="caption">
-               <a href="#" rel="#{../@id}_dao" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+               <a href="{$daoLink}" data-title="Test" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                   <xsl:choose>
                      <xsl:when test="daodesc">
                         <xsl:apply-templates select="daodesc"/>
                      </xsl:when>
                      <xsl:otherwise>
-                        <xsl:if test="did/unittitle"><xsl:value-of select="../did/unittitle"/>&#160;</xsl:if>
-                        <xsl:if test="did/unitdate"><xsl:value-of select="../did/unitdate"/></xsl:if>                  
+                        <xsl:if test="../did/unittitle"><xsl:value-of select="../did/unittitle"/>&#160;</xsl:if>
+                        <xsl:if test="../did/unitdate"><xsl:value-of select="../did/unitdate"/></xsl:if>                  
                      </xsl:otherwise>
                   </xsl:choose>
                </a>
             </div>
+            </div>   
          </div>
       </xsl:if>
       <!--
