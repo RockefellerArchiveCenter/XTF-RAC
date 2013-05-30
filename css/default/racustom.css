@@ -392,3 +392,36 @@ table td.c05 {border-left: 40px solid white !important; padding-left:4px;}
 table td.c06 {border-left: 50px solid white !important; padding-left:4px;}
 table td.c07 {border-left: 60px solid white !important; padding-left:4px;}
 table td.c08 {border-left: 70px solid white !important; padding-left:4px;}
+
+/* --- Custom styles for dialog --- */
+.dao-container {
+            	position: relative;
+            	padding-bottom: 56.25%;
+            	padding-top: 30px;
+            	height: 0;
+            	overflow: hidden;
+            }
+            
+.dao-container iframe {
+            	position: absolute;
+            	top: 0;
+            	left: 0;
+            	width: 100%;
+            	height: 100%;
+            }       
+.ui-icon.ui-icon-myCloseButton{
+                     float:right;
+                     clear:left;
+                     margin-top:-.2em;
+                     width:25px;
+                     height:25px;
+                     background-image: url(images/close.png);
+                 }
+.ui-dialog .ui-dialog-titlebar {font-weight:normal; font-size:1em;}
+/*                 
+.ui-dialog .ui-dialog-titlebar-close { 
+                   	margin-top:-2em;
+                    margin-right: -1.5em;
+                    z-index: 1;
+            }       
+            */

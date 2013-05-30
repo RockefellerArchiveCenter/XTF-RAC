@@ -1732,12 +1732,15 @@
          <div class="daoItemDisplay" style="display:block; text-align:center; float:left; padding:1.5em; width:150px;">
             <div class="daoLink">   
             <xsl:variable name="daoLink" select="@ns2:href"/>
+            <xsl:variable name="daoTitle">
+               <xsl:call-template name="daoCitation"/>
+            </xsl:variable>
                <a href="{$daoLink}" data-title="Test" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                <xsl:call-template name="component-did-core"/>
               <img src="/xtf/icons/default/no_image.gif"/>
             </a>
             <div class="caption">
-               <a href="{$daoLink}" data-title="Test" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+               <a href="{$daoLink}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                   <xsl:choose>
                      <xsl:when test="daodesc">
                         <xsl:apply-templates select="daodesc"/>
@@ -1752,56 +1755,47 @@
             </div>   
          </div>
       </xsl:if>
-      <!--
-      <div class="overlay_dao" id="{../@id}_dao">
-         <div class="dscDescription" style="min-height:450px;">
-            <div>
-               <xsl:value-of select="@ns2:title"/>
-            </div>
-            <iframe name="frametest" id="frametest" src="{@ns2:href}" style="width:100%; min-height:450px;"></iframe>
-            <div>
-               <xsl:for-each select="ancestor::*[@level]">
-                  <xsl:variable name="level">
-                     <xsl:choose>
-                        <xsl:when test="self::archdesc">Collection</xsl:when>
-                        <xsl:when test="@level = 'series'">Series</xsl:when>
-                        <xsl:when test="@level = 'subseries'">Subseries</xsl:when>
-                        <xsl:when test="@level = 'recordgrp'">Record Group</xsl:when>
-                        <xsl:when test="@level = 'subgrp'">Subgroup</xsl:when>
-                        <xsl:when test="@level = 'fonds'">Fonds</xsl:when>
-                        <xsl:when test="@level = 'subfonds'">Subfonds</xsl:when>
-                        <xsl:when test="@level = 'class'">Class</xsl:when>
-                        <xsl:when test="@level = 'otherlevel'">otherlevel</xsl:when>
-                        <xsl:when test="@level = 'file'">File</xsl:when>
-                        <xsl:when test="@level = 'item'">Item</xsl:when>
-                     </xsl:choose>            
-                  </xsl:variable>
-                  <xsl:variable name="id"><xsl:if test="did/unitid"><xsl:value-of select="concat(' ',did/unitid)"/></xsl:if></xsl:variable>
-                  <xsl:variable name="title">
-                     <xsl:choose>
-                        <xsl:when test="did/unittitle != ''">
-                           <xsl:value-of select="did/unittitle"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                           <xsl:value-of select="'Unknown'"/>
-                        </xsl:otherwise>
-                     </xsl:choose>
-                  </xsl:variable>
-                  <xsl:choose>
-                     <xsl:when test="self::archdesc">
-                          <xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat($level,': ',$title)"/>&#160;
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat($level,$id,': ',$title)"/>&#160;
-                     </xsl:otherwise>
-                  </xsl:choose>         
-               </xsl:for-each>.
-               <xsl:text>Rockefeller Archive Center, Sleepy Hollow, NY.</xsl:text>               
-            </div>
-         </div>
-      </div>
-      -->
    </xsl:template>
+   <xsl:template name="daoCitation">
+      <xsl:value-of select="@ns2:title"/> 
+      <xsl:for-each select="ancestor::*[@level]">
+         <xsl:variable name="level">
+            <xsl:choose>
+               <xsl:when test="self::archdesc">Collection</xsl:when>
+               <xsl:when test="@level = 'series'">Series</xsl:when>
+               <xsl:when test="@level = 'subseries'">Subseries</xsl:when>
+               <xsl:when test="@level = 'recordgrp'">Record Group</xsl:when>
+               <xsl:when test="@level = 'subgrp'">Subgroup</xsl:when>
+               <xsl:when test="@level = 'fonds'">Fonds</xsl:when>
+               <xsl:when test="@level = 'subfonds'">Subfonds</xsl:when>
+               <xsl:when test="@level = 'class'">Class</xsl:when>
+               <xsl:when test="@level = 'otherlevel'">otherlevel</xsl:when>
+               <xsl:when test="@level = 'file'">File</xsl:when>
+               <xsl:when test="@level = 'item'">Item</xsl:when>
+            </xsl:choose>            
+         </xsl:variable>
+         <xsl:variable name="id"><xsl:if test="did/unitid"><xsl:value-of select="concat(' ',did/unitid)"/></xsl:if></xsl:variable>
+         <xsl:variable name="title">
+            <xsl:choose>
+               <xsl:when test="did/unittitle != ''">
+                  <xsl:value-of select="did/unittitle"/>
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:value-of select="'Unknown'"/>
+               </xsl:otherwise>
+            </xsl:choose>
+         </xsl:variable>
+         <xsl:choose>
+            <xsl:when test="self::archdesc">
+               <xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat($level,': ',$title)"/>&#160;
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat($level,$id,': ',$title)"/>&#160;
+            </xsl:otherwise>
+         </xsl:choose>         
+      </xsl:for-each>.
+      <xsl:text>Rockefeller Archive Center, Sleepy Hollow, NY.</xsl:text>
+   </xsl:template>         
     <xsl:template name="component-did-core">
         <!--Inserts unitid and a space if it exists in the markup.-->
         <xsl:if test="unitid"><span style="font-style:italic;"><xsl:apply-templates select="unitid"/></span>

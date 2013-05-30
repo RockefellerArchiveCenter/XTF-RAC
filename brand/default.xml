@@ -144,7 +144,7 @@
    </links>
 
    <dynaxml.links>
-      <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+      <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
       <link rel="stylesheet" href="css/default/content.css" type="text/css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
       <link rel="stylesheet" href="/xtf/css/default/racustom.css" type="text/css"/>
@@ -271,24 +271,6 @@
             
             // -->
       </script>      
-
-      <style>
-            .dao-container {
-            	position: relative;
-            	padding-bottom: 56.25%;
-            	padding-top: 30px;
-            	height: 0;
-            	overflow: hidden;
-            }
-            
-            .dao-container iframe {
-            	position: absolute;
-            	top: 0;
-            	left: 0;
-            	width: 100%;
-            	height: 100%;
-            }        
-        </style>
       
       <script type="text/javascript">
                       $(document).ready(function() {                
@@ -296,6 +278,10 @@
                             var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0"></iframe>');
                             var content = $('<div></div>')
                             var dialog = $('<div class="dao-container"></div>').append(content).append(iframe).appendTo('body').dialog({
+                                create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                },
                                 autoOpen: false,
                                 modal: true,
                                 resizable: true,
