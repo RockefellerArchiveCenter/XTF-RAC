@@ -1705,8 +1705,11 @@
                 <div class="daoLink">
                    <xsl:choose>
                       <xsl:when test="../dao">
-                         <xsl:variable name="daoLink" select="../dao/@ns2:href"/>                          
-                         <a href="{$daoLink}" data-title="Test" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+                         <xsl:variable name="daoLink" select="../dao/@ns2:href"/>
+                         <xsl:variable name="daoTitle">
+                            <xsl:call-template name="daoCitation"/>
+                         </xsl:variable>                         
+                         <a href="{$daoLink}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                             <xsl:call-template name="component-did-core"/>
                             <img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>
                          </a>
@@ -1757,7 +1760,7 @@
       </xsl:if>
    </xsl:template>
    <xsl:template name="daoCitation">
-      <xsl:value-of select="@ns2:title"/> 
+      <!--<xsl:value-of select="@ns2:title"/> :-->  
       <xsl:for-each select="ancestor::*[@level]">
          <xsl:variable name="level">
             <xsl:choose>

@@ -417,7 +417,18 @@ table td.c08 {border-left: 70px solid white !important; padding-left:4px;}
                      height:25px;
                      background-image: url(images/close.png);
                  }
-.ui-dialog .ui-dialog-titlebar {font-weight:normal; font-size:1em;}
+.ui-dialog .ui-dialog-title {
+                  font-size:.9em !important;
+                  white-space: normal !important;
+                  overflow: visible;
+                 }
+                 
+iframe {
+                    background-image: url("images/ajax-loader.gif");   
+                       background-repeat: no-repeat;
+                       background-position: 50% 50%;
+                   }
+                   
 /*                 
 .ui-dialog .ui-dialog-titlebar-close { 
                    	margin-top:-2em;
