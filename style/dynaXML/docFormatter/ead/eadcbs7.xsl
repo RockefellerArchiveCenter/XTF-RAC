@@ -1707,7 +1707,11 @@
                       <xsl:when test="../dao">
                          <xsl:variable name="daoLink" select="../dao/@ns2:href"/>
                          <xsl:variable name="daoTitle">
-                            <xsl:call-template name="daoCitation"/>
+                            <xsl:call-template name="daoCitation">
+                               <xsl:with-param name="daoTitleString">
+                                  <xsl:value-of select="../dao/@ns2:title"/>
+                               </xsl:with-param>
+                            </xsl:call-template>
                          </xsl:variable>                         
                          <a href="{$daoLink}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                             <xsl:call-template name="component-did-core"/>
@@ -1736,7 +1740,11 @@
             <div class="daoLink">   
             <xsl:variable name="daoLink" select="@ns2:href"/>
             <xsl:variable name="daoTitle">
-               <xsl:call-template name="daoCitation"/>
+               <xsl:call-template name="daoCitation">
+                  <xsl:with-param name="daoTitleString">
+                     <xsl:value-of select="@ns2:title"/>
+                  </xsl:with-param>
+               </xsl:call-template>
             </xsl:variable>
                <a href="{$daoLink}" data-title="Test" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                <xsl:call-template name="component-did-core"/>
@@ -1760,6 +1768,8 @@
       </xsl:if>
    </xsl:template>
    <xsl:template name="daoCitation">
+      <xsl:param name="daoTitleString"/>
+      <xsl:value-of select="$daoTitleString"/>&#xd; 
       <!--<xsl:value-of select="@ns2:title"/> :-->  
       <xsl:for-each select="ancestor::*[@level]">
          <xsl:variable name="level">
