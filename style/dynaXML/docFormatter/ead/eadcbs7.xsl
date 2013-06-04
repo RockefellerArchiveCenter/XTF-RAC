@@ -1599,7 +1599,7 @@
                          </xsl:attribute>
                          <div>
                              <xsl:call-template name="anchor"/>
-                             <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
+                            <div class="seriesTitle"  style="padding-left:.5em;"><xsl:apply-templates select="did" mode="dsc"/></div>
 <!--                             <xsl:apply-templates select="did/unittitle" mode="dsc"/>-->
                              <xsl:apply-templates select="did/origination" mode="dsc"/>
                              <xsl:apply-templates select="scopecontent"/> 
@@ -1747,7 +1747,7 @@
                   </xsl:with-param>
                </xsl:call-template>
             </xsl:variable>
-               <a href="{$daoLink}" data-title="Test" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+               <a href="{$daoLink}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                <xsl:call-template name="component-did-core"/>
               <img src="/xtf/icons/default/no_image.gif"/>
             </a>
