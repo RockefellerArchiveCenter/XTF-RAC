@@ -495,7 +495,7 @@
             </li>
            <li>
                <!-- Need to insure only shows up if digital material is available -->
-               <xsl:if test="$doc.view='dao'">
+              <xsl:if test="$doc.view='dao'">
                   <xsl:attribute name="class">select</xsl:attribute>
                </xsl:if>
                <xsl:variable name="idFile">
@@ -518,8 +518,8 @@
                   <xsl:when test="/ead/xtf:meta/*:type = 'dao'">
                      <xsl:call-template name="make-tab-link">
                         <xsl:with-param name="name" select="'Digital Materials'"/>
-                        <xsl:with-param name="id" select="$idFile"/> 
-                        <xsl:with-param name="doc.view" select="'dao'"/>
+                        <xsl:with-param name="id" select="'digitalLink'"/> 
+                        <xsl:with-param name="doc.view" select="'digital'"/>
                         <xsl:with-param name="nodes" select="$nodesLst"/>
                      </xsl:call-template>
                   </xsl:when>
@@ -554,31 +554,32 @@
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>   
          <a>
 	<!-- 
-/FA068/collection
-	http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=headerlink;brand=default&doc.view=collection 
- 
- /FA068/contents
-	http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=contentsLink;brand=default&doc.view=contents
-	
-
+         /FA068/collection
+         	http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=headerlink;brand=default&doc.view=collection 
+          
+          /FA068/contents
+         	http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=contentsLink;brand=default&doc.view=contents
+         
+         /FA068/digital
+         http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=contentsLink;brand=default&doc.view=digital
 	-->		
       <!-- 5/17/2012 DG:  new variables for the new href: documentname2, basicchoice2, xtfURL2, href2
       Just use chunk.id and doc name for now
         -->
-	<xsl:variable name="documentname2">
- 					 <xsl:analyze-string select="$query.string" regex="docId=ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
-
-					 <!--   "/xtf/view\?docId=ead/([a-z0-9^/]+)/([a-z0-9^/]+).xml;query=;brand=default" -->
-					
-					    <xsl:matching-substring>
-					      <xsl:value-of select="regex-group(2)" />
-					    </xsl:matching-substring>
-
-					    <xsl:non-matching-substring>
-					    	<xsl:text>no_match_docname</xsl:text>
-					    </xsl:non-matching-substring>
-					  </xsl:analyze-string>         	     	
-	</xsl:variable>
+      	<xsl:variable name="documentname2">
+       					 <xsl:analyze-string select="$query.string" regex="docId=ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
+      
+      					 <!--   "/xtf/view\?docId=ead/([a-z0-9^/]+)/([a-z0-9^/]+).xml;query=;brand=default" -->
+      					
+      					    <xsl:matching-substring>
+      					      <xsl:value-of select="regex-group(2)" />
+      					    </xsl:matching-substring>
+      
+      					    <xsl:non-matching-substring>
+      					    	<xsl:text>no_match_docname</xsl:text>
+      					    </xsl:non-matching-substring>
+      					  </xsl:analyze-string>         	     	
+      	</xsl:variable>
    <!--  <xsl:variable name="queryterm">
                <xsl:analyze-string select="$search" regex="query=([A-Z0-9]+)" flags="i">
                   
@@ -596,6 +597,9 @@
 			<xsl:when test="$id='contentsLink'">
 				<xsl:text>contents</xsl:text>
 			</xsl:when>
+      	   <xsl:when test="$id='digitalLink'">
+      	      <xsl:text>digital</xsl:text>
+      	   </xsl:when>
 			<xsl:otherwise>
 				<xsl:text>nomatch_for_</xsl:text>
 				<xsl:value-of select="$id" />
@@ -996,19 +1000,19 @@
    <xsl:template name="make-toc-link">
    <!-- DG:  5/17/12
 
-<a href="{$xtfURL}{$dynaxmlPath}?{$content.href}&amp;doc.view=collection">Collection Description</a>
- <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-
-
-example:  http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=headerlink;brand=default&doc.view=collection
-
-
-$query.string example - docId=ead/FA068/FA068.xml
-$id = chunk.id value
-content.href  = calculated later to be everything after "?"
-document = FA068 eg.
-$xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
-   -->
+         <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}&amp;doc.view=collection">Collection Description</a>
+          <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
+         
+         
+         example:  http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=headerlink;brand=default&doc.view=collection
+         
+         
+         $query.string example - docId=ead/FA068/FA068.xml
+         $id = chunk.id value
+         content.href  = calculated later to be everything after "?"
+         document = FA068 eg.
+         $xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
+            -->
       <xsl:param name="submenuID"/>
       <xsl:param name="name"/>
       <xsl:param name="id"/>

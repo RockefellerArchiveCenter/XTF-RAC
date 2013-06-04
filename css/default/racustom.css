@@ -428,6 +428,8 @@ iframe {
                        background-repeat: no-repeat;
                        background-position: 50% 50%;
                    }
+.daoCitation {padding-left: 2em !important; font-size:.9em !important; border:1px solid red;}                   
+                   
                    
 /*                 
 .ui-dialog .ui-dialog-titlebar-close { 

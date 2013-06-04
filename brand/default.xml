@@ -276,8 +276,7 @@
                       $(document).ready(function() {                
                        $(function () {
                             var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0"></iframe>');
-                            var content = $('<div></div>')
-                            var dialog = $('<div class="dao-container"></div>').append(content).append(iframe).appendTo('body').dialog({
+                            var dialog = $('<div class="dao-container"></div>').append(iframe).appendTo('body').dialog({
                                 create: function(event, ui) {
                                     var widget = $(this).dialog("widget");
                                     $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
@@ -289,6 +288,7 @@
                                 height: "600",
                                 close: function () {
                                     iframe.attr("src", "");
+                                    $('.daoCitation').remove();
                                 }
                             });
                             $(".daoLink a").on("click", function (e) {
@@ -297,12 +297,14 @@
                                 var title = $(this).attr("data-title");
                                 var width = $(this).attr("data-width");
                                 var height = $(this).attr("data-height");
+                                var citation = $(this).attr("data-citation");
+                                var buildCitation = $('<div class="daoCitation" style="margin-left:1em; font-size:.9em;"></div>').append(citation)
                                 iframe.attr({
                                     width: +width,
                                     height: +height,
                                     src: src
                                 });
-                                dialog.dialog("option", "title", title).dialog("open");
+                                dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
                             });
                             
                           
