@@ -380,11 +380,16 @@
                      </a>
                      <xsl:text> | </xsl:text>
                      -->
-                     <li>                    
-                        <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-					 <!-- DG: todo -->
-                        <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="_gaq.push(['_trackEvent', 'finding aids', 'view', 'pdf']);"><img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/></a>
-                     </li>
+                        <xsl:if test="$doc.view != 'dao'">
+                           <li>
+                              <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
+                              <!-- DG: todo -->
+                              <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf"
+                                 onClick="_gaq.push(['_trackEvent', 'finding aids', 'view', 'pdf']);">
+                                 <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
+                              </a>
+                           </li>
+                        </xsl:if>
                         </ul>
                      </div>
                      
