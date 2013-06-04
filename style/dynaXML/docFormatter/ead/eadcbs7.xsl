@@ -1666,7 +1666,7 @@
                     </xsl:if>
                     <xsl:apply-templates select="unittitle"/>
                    <xsl:if test="unitdate[not(@type)] or unitdate[@type != 'bulk']">, <xsl:apply-templates select="unitdate[not(@type)] | unitdate[@type != 'bulk']"/></xsl:if>
-                <!--2/11/12 WS:  add to bookbag function -->
+                <!-- 
                    &#160;&#160;&#160;&#160;
                    <span class="addToBag" style="font-size:.8em!important; float:right; clear:right;">
                    <xsl:variable name="identifier" select="concat($rootID,'|',../@id)"/>
@@ -1698,6 +1698,7 @@
                       </xsl:otherwise>
                    </xsl:choose>
                    </span>
+                   -->
                 </div>
             </xsl:when>
             <!--Otherwise render the text in its normal font.-->
@@ -1769,7 +1770,7 @@
    </xsl:template>
    <xsl:template name="daoCitation">
       <xsl:param name="daoTitleString"/>
-      <xsl:value-of select="$daoTitleString"/>&#xd; 
+      <xsl:value-of select="$daoTitleString"/>&#13;
       <!--<xsl:value-of select="@ns2:title"/> :-->  
       <xsl:for-each select="ancestor::*[@level]">
          <xsl:variable name="level">
