@@ -1793,12 +1793,12 @@
              </xsl:choose>
           </xsl:variable>
           <xsl:choose>
-             <xsl:when test="$level='Collection'"><xsl:value-of select="concat($level,': ',$title)"/>, </xsl:when>
-             <xsl:when test="self::archdesc"><xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat($level,': ',$title)"/></xsl:when>
-             <xsl:otherwise><xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat($level,$id,': ',$title)"/>&#160;</xsl:otherwise>
+             <xsl:when test="$level='Collection'"><xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title)"/>, </xsl:when>
+             <xsl:when test="self::archdesc"><xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title)"/></xsl:when>
+             <xsl:otherwise><xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,$id,'&lt;/strong&gt;',': ',$title)"/></xsl:otherwise>
           </xsl:choose>         
        </xsl:for-each>.
-       <xsl:text>Rockefeller Archive Center, Sleepy Hollow, NY.</xsl:text>
+       <xsl:text>&lt;i&gt;Rockefeller Archive Center, Sleepy Hollow, NY.&lt;/i&gt;</xsl:text>
       </div>
    </xsl:template>         
     <xsl:template name="component-did-core">
