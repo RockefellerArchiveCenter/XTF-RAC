@@ -285,8 +285,8 @@
                                 autoOpen: false,
                                 modal: true,
                                 resizable: true,
-                                width: "750",
-                                height: "500",
+                                width: "850",
+                                height: "600",
                                 close: function () {
                                     iframe.attr("src", "");
                                 }
