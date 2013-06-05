@@ -1713,7 +1713,7 @@
                          <xsl:variable name="daoTitle" select="../dao/@ns2:title"/>
                          <xsl:variable name="citation">
                             <xsl:call-template name="daoCitation"/>
-                         </xsl:variable>                         
+                         </xsl:variable>                      
                          <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                             <xsl:call-template name="component-did-core"/>
                             <img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>
@@ -1766,8 +1766,6 @@
       </xsl:if>
    </xsl:template>
    <xsl:template name="daoCitation">
-      <div>
-       <!--<xsl:value-of select="@ns2:title"/> :-->  
        <xsl:for-each select="ancestor::*[@level]">
           <xsl:variable name="level">
              <xsl:choose>
@@ -1801,8 +1799,7 @@
              <xsl:otherwise><xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,$id,'&lt;/strong&gt;',': ',$title)"/></xsl:otherwise>
           </xsl:choose>         
        </xsl:for-each>.
-       <xsl:text>&lt;i&gt;Rockefeller Archive Center, Sleepy Hollow, NY.&lt;/i&gt;</xsl:text>
-      </div>
+       <xsl:text>&lt;em&gt;Rockefeller Archive Center, Sleepy Hollow, NY.&lt;/em&gt;</xsl:text>     
    </xsl:template>         
     <xsl:template name="component-did-core">
         <!--Inserts unitid and a space if it exists in the markup.-->
