@@ -1799,7 +1799,7 @@
                   <xsl:otherwise><xsl:if test="parent::*[@level]"></xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,$id,'&lt;/strong&gt;',': ',$title,'&lt;br/&gt;')"/></xsl:otherwise>
                </xsl:choose>         
             </xsl:for-each>
-       <xsl:text>&lt;em&gt;Rockefeller Archive Center, Sleepy Hollow, NY.&lt;/em&gt;</xsl:text>     
+       <xsl:text>&lt;div class="repository"&gt;Rockefeller Archive Center, Sleepy Hollow, NY.&lt;/div&gt;</xsl:text>     
    </xsl:template>         
     <xsl:template name="component-did-core">
         <!--Inserts unitid and a space if it exists in the markup.-->

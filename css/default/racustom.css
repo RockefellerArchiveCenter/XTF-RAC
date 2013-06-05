@@ -407,7 +407,7 @@ table td.c08 {border-left: 70px solid white !important; padding-left:4px;}
             	top: 0;
             	left: 0;
             	width: 100%;
-            	height: 100%;
+            	height: 98%;
             }       
 .ui-icon.ui-icon-myCloseButton{
                      float:right;
@@ -428,7 +428,9 @@ iframe {
                        background-repeat: no-repeat;
                        background-position: 50% 50%;
                    }
-.daoCitation {padding-left: 2em !important; font-size:.9em !important; border:1px solid red;}                   
+.daoCitation {padding-bottom: 5px;}
+
+.daoCitation .repository {position: absolute; bottom: 0; left: 0; width: 98%; padding-left: 2%;}
                    
                    
 /*                 
