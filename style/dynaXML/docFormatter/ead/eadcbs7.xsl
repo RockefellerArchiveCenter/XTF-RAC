@@ -1794,11 +1794,11 @@
                   </xsl:choose>
                </xsl:variable>
                <xsl:choose>
-                  <xsl:when test="$level='Collection'"><xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title)"/>, </xsl:when>
-                  <xsl:when test="self::archdesc"><xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title)"/></xsl:when>
-                  <xsl:otherwise><xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,$id,'&lt;/strong&gt;',': ',$title)"/></xsl:otherwise>
+                  <xsl:when test="$level='Collection'"><xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title,'&lt;br/&gt;')"/></xsl:when>
+                  <xsl:when test="self::archdesc"><xsl:if test="parent::*[@level]"></xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title,'&lt;br/&gt;')"/></xsl:when>
+                  <xsl:otherwise><xsl:if test="parent::*[@level]"></xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,$id,'&lt;/strong&gt;',': ',$title,'&lt;br/&gt;')"/></xsl:otherwise>
                </xsl:choose>         
-            </xsl:for-each>.
+            </xsl:for-each>
        <xsl:text>&lt;em&gt;Rockefeller Archive Center, Sleepy Hollow, NY.&lt;/em&gt;</xsl:text>     
    </xsl:template>         
     <xsl:template name="component-did-core">
