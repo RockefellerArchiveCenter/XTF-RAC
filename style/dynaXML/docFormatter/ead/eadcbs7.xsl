@@ -1749,7 +1749,7 @@
               <img src="/xtf/icons/default/no_image.gif"/>
             </a>
             <div class="caption">
-               <a href="{$daoLink}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+               <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                   <xsl:choose>
                      <xsl:when test="daodesc">
                         <xsl:apply-templates select="daodesc"/>
@@ -1766,39 +1766,39 @@
       </xsl:if>
    </xsl:template>
    <xsl:template name="daoCitation">
-       <xsl:for-each select="ancestor::*[@level]">
-          <xsl:variable name="level">
-             <xsl:choose>
-                <xsl:when test="self::archdesc">Collection</xsl:when>
-                <xsl:when test="@level = 'series'">Series</xsl:when>
-                <xsl:when test="@level = 'subseries'">Subseries</xsl:when>
-                <xsl:when test="@level = 'recordgrp'">Record Group</xsl:when>
-                <xsl:when test="@level = 'subgrp'">Subgroup</xsl:when>
-                <xsl:when test="@level = 'fonds'">Fonds</xsl:when>
-                <xsl:when test="@level = 'subfonds'">Subfonds</xsl:when>
-                <xsl:when test="@level = 'class'">Class</xsl:when>
-                <xsl:when test="@level = 'otherlevel'">otherlevel</xsl:when>
-                <xsl:when test="@level = 'file'">File</xsl:when>
-                <xsl:when test="@level = 'item'">Item</xsl:when>
-             </xsl:choose>            
-          </xsl:variable>
-          <xsl:variable name="id"><xsl:if test="did/unitid"><xsl:value-of select="concat(' ',did/unitid)"/></xsl:if></xsl:variable>
-          <xsl:variable name="title">
-             <xsl:choose>
-                <xsl:when test="did/unittitle != ''">
-                   <xsl:value-of select="did/unittitle"/>
-                </xsl:when>
-                <xsl:otherwise>
-                   <xsl:value-of select="'Unknown'"/>
-                </xsl:otherwise>
-             </xsl:choose>
-          </xsl:variable>
-          <xsl:choose>
-             <xsl:when test="$level='Collection'"><xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title)"/>, </xsl:when>
-             <xsl:when test="self::archdesc"><xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title)"/></xsl:when>
-             <xsl:otherwise><xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,$id,'&lt;/strong&gt;',': ',$title)"/></xsl:otherwise>
-          </xsl:choose>         
-       </xsl:for-each>.
+            <xsl:for-each select="ancestor::*[@level]">
+               <xsl:variable name="level">
+                  <xsl:choose>
+                     <xsl:when test="self::archdesc">Collection</xsl:when>
+                     <xsl:when test="@level = 'series'">Series</xsl:when>
+                     <xsl:when test="@level = 'subseries'">Subseries</xsl:when>
+                     <xsl:when test="@level = 'recordgrp'">Record Group</xsl:when>
+                     <xsl:when test="@level = 'subgrp'">Subgroup</xsl:when>
+                     <xsl:when test="@level = 'fonds'">Fonds</xsl:when>
+                     <xsl:when test="@level = 'subfonds'">Subfonds</xsl:when>
+                     <xsl:when test="@level = 'class'">Class</xsl:when>
+                     <xsl:when test="@level = 'otherlevel'">otherlevel</xsl:when>
+                     <xsl:when test="@level = 'file'">File</xsl:when>
+                     <xsl:when test="@level = 'item'">Item</xsl:when>
+                  </xsl:choose>            
+               </xsl:variable>
+               <xsl:variable name="id"><xsl:if test="did/unitid"><xsl:value-of select="concat(' ',did/unitid)"/></xsl:if></xsl:variable>
+               <xsl:variable name="title">
+                  <xsl:choose>
+                     <xsl:when test="did/unittitle != ''">
+                        <xsl:value-of select="did/unittitle"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:value-of select="'Unknown'"/>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </xsl:variable>
+               <xsl:choose>
+                  <xsl:when test="$level='Collection'"><xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title)"/>, </xsl:when>
+                  <xsl:when test="self::archdesc"><xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title)"/></xsl:when>
+                  <xsl:otherwise><xsl:if test="parent::*[@level]">, </xsl:if><xsl:value-of select="concat('&lt;strong&gt;',$level,$id,'&lt;/strong&gt;',': ',$title)"/></xsl:otherwise>
+               </xsl:choose>         
+            </xsl:for-each>.
        <xsl:text>&lt;em&gt;Rockefeller Archive Center, Sleepy Hollow, NY.&lt;/em&gt;</xsl:text>     
    </xsl:template>         
     <xsl:template name="component-did-core">
