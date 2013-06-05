@@ -506,7 +506,7 @@
                <xsl:variable name="idFile">
                   <xsl:choose>
                      <xsl:when test="archdesc/dsc/child::*[1][@level = 'file' and exists(xtf:meta/*:type = 'dao')]">
-                        <xsl:value-of select="'contentsLink'"/>
+                        <xsl:value-of select="'digitalLink'"/>
                      </xsl:when>
                      <xsl:otherwise>
                         <xsl:value-of select="archdesc/dsc/child::*[xtf:meta/*:type = 'dao'][1]/@id"/>
@@ -524,7 +524,7 @@
                      <xsl:call-template name="make-tab-link">
                         <xsl:with-param name="name" select="'Digital Materials'"/>
                         <xsl:with-param name="id" select="'digitalLink'"/> 
-                        <xsl:with-param name="doc.view" select="'digital'"/>
+                        <xsl:with-param name="doc.view" select="'dao'"/>
                         <xsl:with-param name="nodes" select="$nodesLst"/>
                      </xsl:call-template>
                   </xsl:when>
@@ -566,7 +566,7 @@
          	http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=contentsLink;brand=default&doc.view=contents
          
          /FA068/digital
-         http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=contentsLink;brand=default&doc.view=digital
+         http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=digitalLink;brand=default&doc.view=dao
 	-->		
       <!-- 5/17/2012 DG:  new variables for the new href: documentname2, basicchoice2, xtfURL2, href2
       Just use chunk.id and doc name for now
