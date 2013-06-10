@@ -292,6 +292,7 @@ div.docHit table td.col2{
 div.docHit table td.col3{
    width: auto;
    text-align: left;
+   min-width: 560px;
 }
 
 div.docHit table td.col4{
