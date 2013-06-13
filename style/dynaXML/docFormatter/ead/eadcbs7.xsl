@@ -1508,10 +1508,10 @@
                                 child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
                                 child::separatedmaterial |  child::controlaccess">
-                                <a href="#" rel="#{../../@id}_dsc" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Additional description']);">
+                                <a href="#{@id}_dsc" class="dialog_dsc" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Additional description']);">
                                    Additional description
                                 </a>
-                                <div class="overlay_dao" id="{../../@id}_dsc">
+                                <div class="overlay" id="{@id}_dsc">
                                    <div class="dscDescription">
                                       <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
                                       <xsl:apply-templates select="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 

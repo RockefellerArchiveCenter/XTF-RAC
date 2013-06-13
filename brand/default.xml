@@ -291,6 +291,22 @@
                                     $('.daoCitation').remove();
                                 }
                             });
+                            
+                            var dialogDsc = $('<div class="dsc-container"></div>').appendTo('body').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "550",
+                                  height: "200",
+                                  close: function () {
+                                    $('.ui-dialog .dscDescription').remove();
+                                  }
+                               });
+                               
                             $(".daoLink a").on("click", function (e) {
                                 e.preventDefault();
                                 var src = $(this).attr("href");
@@ -306,6 +322,13 @@
                                 });
                                 dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
                             });
+                            
+                            $("a.dialog_dsc").on("click", function (e) {
+                              var id = $(this).attr("href");
+                              var content = $(id).html()
+                              dialogDsc.dialog("option", "title", '').dialog("open").before(content);
+                            });
+                            
                             //checks for hash tag jumps to location and opens appropriate diolog 
                             if(window.location.hash) {
                               var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
@@ -328,6 +351,7 @@
                         });
                     });
         </script>
+      
       <div><!--[if IE ]>
                   <div class="chromeframe"><p>You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, <a href="http://browsehappy.com/">use a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p></div>
                   <![endif]--></div>
@@ -4493,8 +4517,11 @@
    </dynaxml.header>
 
       <feedback>
-         <div class="feedback-tab"><img src="/xtf/icons/default/feedback_tab.png" alt="feedback" rel="#feedback" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'feedback']);"/></div>
+         <div class="feedback-tab">
+            <a href="#feedback" class="dialog_dsc"><img src="/xtf/icons/default/feedback_tab.png" alt="feedback" rel="#feedback" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'feedback']);"/></a>
+         </div>
           <div class="overlay" id="feedback">
+             <div class="dscDescription">
                <form class="feedback-form" action="/xtf/script/rac/formmail.php" method="post">
                   <input type="hidden" name="recipients" value="harnold_*_rockarch.org"/>
                   <input type="hidden" name="env_report" value="HTTP_REFERER,REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER" />
@@ -4527,7 +4554,8 @@
                   <input type="submit" value="SEND" class="button" onClick="_gaq.push(['_trackEvent', 'interaction', 'send', 'feedback']);"/>
                   
                  </form>
-               </div>
+             </div>
+          </div>
        
          </feedback>
    
