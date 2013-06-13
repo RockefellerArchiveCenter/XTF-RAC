@@ -739,7 +739,7 @@
       these elements are repeatable within the dsc section as well.-->
    <xsl:template match="physloc |  accessrestrict |  userestrict |  phystech |  otherfindaid | 
       relatedmaterial |  altformavail |  originalsloc | 
-      odd | custodhist | fileplan | acqinfo | processinfo | separatedmaterial | appraisal | materialspec">
+      odd | custodhist | fileplan | acqinfo | processinfo | separatedmaterial | appraisal | materialspec | prefercite">
       <h4>
          <xsl:choose>
             <xsl:when test="self::physloc">Location</xsl:when>
@@ -761,6 +761,7 @@
             <xsl:when test="self::acqinfo">Acquisition Information</xsl:when>
             <xsl:when test="self::processinfo">Processing Information</xsl:when>
             <xsl:when test="self::separatedmaterial">Separated Materials</xsl:when>
+            <xsl:when test="self::prefercite">Preferred Citation</xsl:when>
             <xsl:when test="self::appraisal">Appraisal</xsl:when>
             <xsl:when test="self::accruals">Accruals</xsl:when>
             <xsl:when test="self::materialspec">Material Specific Details</xsl:when>
@@ -991,6 +992,7 @@
          <xsl:apply-templates select="archdesc/appraisal"/>
          <xsl:apply-templates select="archdesc/separatedmaterial"/>
          <xsl:apply-templates select="archdesc/altformavail"/>
+         <xsl:apply-templates select="archdesc/prefercite"/>
       </xsl:if>
    </xsl:template>
    
