@@ -306,7 +306,24 @@
                                 });
                                 dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
                             });
-                            
+                            //checks for hash tag jumps to location and opens appropriate diolog 
+                            if(window.location.hash) {
+                              var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+                              $("#" + hash + " .daoLink a").each(function (e) {
+                                 var src = $(this).attr("href");
+                                 var title = $(this).attr("data-title");
+                                 var citation = $(this).attr("data-citation");
+                                 var width = $(this).attr("data-width");
+                                 var height = $(this).attr("data-height");
+                                 var buildCitation = $('<div class="daoCitation"></div>').append(citation)
+                                    iframe.attr({
+                                    width: +width,
+                                    height: +height,
+                                    src: src
+                                 });
+                                 dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
+                              });
+                            } 
                           
                         });
                     });
