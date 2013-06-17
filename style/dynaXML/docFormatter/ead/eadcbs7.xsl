@@ -1744,10 +1744,11 @@
                <xsl:variable name="citation">
                   <xsl:call-template name="daoCitation"/>
                </xsl:variable>     
+               <xsl:variable name="daoImg" select="concat(substring-before($daoLink,'.'),'_thumb.jpg')"/>
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
-               <xsl:call-template name="component-did-core"/>
-              <img src="/xtf/icons/default/no_image.gif"/>
-            </a>
+                 <xsl:call-template name="component-did-core"/>
+                 <img src="{$daoImg}"/>
+               </a>
             <div class="caption">
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                   <xsl:choose>
