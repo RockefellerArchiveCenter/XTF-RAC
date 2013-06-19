@@ -3,7 +3,7 @@
    the left side of the screen. It is an update to eadcbs3.xsl designed
    to work with EAD 2002.-->
 
-<xsl:stylesheet version="1.0"
+<xsl:stylesheet version="2.0"
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
    xmlns:xtf="http://cdlib.org/xtf" xmlns:ns2="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/1999/xhtml"
@@ -1744,7 +1744,9 @@
                <xsl:variable name="citation">
                   <xsl:call-template name="daoCitation"/>
                </xsl:variable>     
-               <xsl:variable name="daoImg" select="concat(substring-before($daoLink,'.'),'_thumb.jpg')"/>
+               <xsl:variable name="daoFile" select="substring-before(tokenize($daoLink,'/')[position()=last()],'.')"/>
+               <xsl:variable name="daoImg" select="concat(string-join(tokenize($daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/>
+               
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                  <xsl:call-template name="component-did-core"/>
                  <img src="{$daoImg}"/>
