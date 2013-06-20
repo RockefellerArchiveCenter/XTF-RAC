@@ -124,9 +124,9 @@ div.forms table td.tab-select a {
 }
 
 div.form {
-   width: 99%;
-	 margin: 20px 0 10px 10px;
-	 text-align: center;
+   width: 98%;
+   margin: 20px 0 10px 1%;
+text-align: center;
 }
 
 div.form table {

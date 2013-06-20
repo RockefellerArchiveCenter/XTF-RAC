@@ -126,10 +126,25 @@
                   </div>
                   </div>
                   <div class="overlay" id="archivalMat">
-                  <div class="dscDescription">
-                     <h4>About Archival Materials</h4>
-                     <p>Archival holdings are generally comprised of original, unpublished material of enduring value created by a person, family, or organization. This material often includes primary source records and firsthand accounts of events and transactions. Archival material may include a variety of media or formats such as correspondence, memos, reports, bound diaries, scrapbooks, maps, blueprints, photographic negatives and prints, films, VHS or audio tapes, or electronic records.</p>
-                  </div>
+               <div class="dscDescription">
+                  <h4>Archival Materials</h4>
+                  <p>Archival holdings are generally comprised of original, unpublished material of
+                     enduring value created by a person, family, or organization. This material
+                     often includes primary source records and firsthand accounts of events and
+                     transactions. Archival material may include a variety of media or formats such
+                     as correspondence, memos, reports, bound diaries, scrapbooks, maps, blueprints,
+                     photographic negatives and prints, films, VHS or audio tapes, or electronic
+                     records.</p>
+                  <h4>Rockefeller Archive Center Holdings</h4>
+                  <p>The Rockefeller Archive Center holdings encompass the records of the Rockefeller
+                     family and their wide-ranging philanthropic endeavors (including the Rockefeller
+                     Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the
+                     Center's growing holdings include materials from numerous non-Rockefeller foundations
+                     and nonprofit organizations, making it a premier center for research on philanthropy
+                     and civil society. It is also a major repository for the personal papers of leaders
+                     of the philanthropic community, Nobel Prize laureates, and world-renowned
+                     investigators in science and medicine. </p>
+               </div>
                   </div>
                   <div class="overlay" id="dimes" style="width:800px; top:35px !important;">
                      <div class="dscDescription" style="float:left;">
@@ -212,10 +227,8 @@
    <!-- simple form -->
    <xsl:template name="simpleForm" exclude-result-prefixes="#all">
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
-         <table>
-            <tr>
-               <td colspan="2" style="vertical-align: middle;">
-                  <input type="text" name="keyword" size="40" value="{$keyword}"/>
+         <div class="home">
+            <div id="hometop"><div id="searchbox"><input type="text" name="keyword" size="40" value="{$keyword}"/>
                   <xsl:text>&#160;</xsl:text>
                   <select name="type">
                      <option value="">All</option>
@@ -229,44 +242,66 @@
                   <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
                  <!-- Uncomment and complete code when digital objects are included -->    
                  <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
-                  <p class="searchtip">Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc. <br/>To search an exact phrase, include quotation marks, e.g. "mental health". <a href="#" rel="#searchTips" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);">more</a></p>
-               </td>
-               <td>
-                  <ul class="nomark">
-                     <!-- links to JQuery popup windows -->
-                     <li>
-                        <a href="#" rel="#dscDescription" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);">About Collection Guides</a>
-                     </li>
-                     <li>
-                        <a href="#" rel="#archivalMat" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);">About Archival Materials</a>
-                     </li>
-                     <li>
-                        <a href="#" rel="#dimes" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">About This Website's Name</a>
-                     </li>
-                     <li><p></p></li>
-                     <li>
-                        <a href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead">Recently Updated Collections</a>
-                     </li>
-                     <!--
-                     <li>
-                        <a href="http://www.rockarch.org/collections/" target="_blank">Looking for our old collection guide pages?</a>
-                     </li>
-                     -->
-                  </ul>
-                </td>
-            </tr>
-            <tr><td></td>
-            </tr>
-            <tr>
-               <td colspan="3">
-                  <h4>Rockefeller Archive Center Holdings</h4>
-                  <p>The Rockefeller Archive Center holdings encompass the records of the Rockefeller family and their wide-ranging philanthropic endeavors (including the Rockefeller Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the Center's growing holdings include materials from numerous non-Rockefeller foundations and nonprofit organizations, making it a premier center for research on philanthropy and civil society. It is also a major repository for the personal papers of leaders of the philanthropic community, Nobel Prize laureates, and world-renowned investigators in science and medicine.
-                  </p>
-                  <div id="fordtext"><p>The Rockefeller Archive Center is still in the process of adding collections information to this system. Some large collections, like those of the Ford Foundation, Population Council, and Rockefeller University, are only partially represented in the online system; other smaller collections, like the Trilateral Commission, the Near East Foundation, and some collections of personal papers are not yet represented at all (note: finding aids for Ford Foundation grant records are not yet available online). Please contact the archival staff at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further information about these collections.</p></div>
-               </td>
-            </tr>
-            <tr>
-               <td>
+         </div>
+         <div id="searchtip">
+            <ul>   
+            <li>Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc. To search
+               an exact phrase, include quotation marks, e.g. "mental health". </li>
+               <li><a href="#"
+                  rel="#searchTips"
+                  onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
+                  >More search tips</a></li>
+            </ul>
+         </div></div>
+         <div id="homebottom"><div id="homeleft">
+            <h4>News</h4>
+            <ul>
+               <li>Guides for selected Ford Foundation collections are now available</li>
+               <li>View digitized material from our <a href="http://rockefeller100.org/">Rockefeller Foundation collections</a></li>
+               <li>
+                  <a
+                     href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
+                     >Recently Updated Collections</a>
+               </li>
+            </ul>
+         </div>
+         
+         <div id="homecenter">
+            <ul>
+               <li>The Rockefeller Archive Center is still in the process of adding collections
+               information to this system. Some large collections, like those of the Ford
+               Foundation, Population Council, and Rockefeller University, are only partially
+               represented in the online system; other smaller collections, including some
+               collections of personal papers and grant records for the Ford Foundation, are not yet
+               represented at all. Please contact the archival staff at 
+               <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further
+               information about these collections.</li>
+            </ul>
+         </div>
+         
+         <div id="homeright">
+            <h4>About</h4>
+            <ul>
+               <!-- links to JQuery popup windows -->
+               <li>
+                  <a href="#" rel="#archivalMat"
+                     onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);"
+                     >Our Collections</a>
+               </li>
+               <li>
+                  <a href="#" rel="#dscDescription"
+                     onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);"
+                     >Collection Guides</a>
+               </li>
+               
+               <li>
+                  <a href="#" rel="#dimes"
+                     onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">This
+                     Website's Name</a>
+               </li>
+            </ul>
+         </div></div></div>
+               
                   <!-- 9/21/11 WS: Moved to Advanced Search tab
                   <table class="sampleTable">
                      <tr>
@@ -294,9 +329,6 @@
                      </tr>
                   </table>
                   -->
-               </td>
-            </tr>
-         </table>
       </form>
      </xsl:template>
    
