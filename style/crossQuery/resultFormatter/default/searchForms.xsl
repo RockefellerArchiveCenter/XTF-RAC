@@ -231,7 +231,7 @@
             <div id="hometop"><div id="searchbox"><input type="text" name="keyword" size="40" value="{$keyword}"/>
                   <xsl:text>&#160;</xsl:text>
                   <select name="type">
-                     <option value="">All</option>
+                     <option value="">All Materials</option>
                      <option value="ead">Archival Collections</option>
                      <option value="dao">Digital Materials</option>
                      <option value="mods">Library Materials</option>
@@ -239,7 +239,7 @@
                   <xsl:text>&#160;</xsl:text>
                   <input type="submit" value="Search"/>
                   <!--<input type="hidden" value="series" name="level"/>-->
-                  <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
+                  <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
                  <!-- Uncomment and complete code when digital objects are included -->    
                  <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
          </div>
@@ -257,7 +257,7 @@
             <h4>News</h4>
             <ul>
                <li>Guides for selected Ford Foundation collections are now available</li>
-               <li>View digitized material from our <a href="http://rockefeller100.org/">Rockefeller Foundation collections</a></li>
+               <li>View <a href="http://rockefeller100.org/">digitized material</a> from our Rockefeller Foundation collections</li>
                <li>
                   <a
                      href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
@@ -273,8 +273,7 @@
                Foundation, Population Council, and Rockefeller University, are only partially
                represented in the online system; other smaller collections, including some
                collections of personal papers and grant records for the Ford Foundation, are not yet
-               represented at all. Please contact the archival staff at 
-               <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further
+               represented at all. Please <a href="http://rockarch.org/about/contact.php">contact archival staff</a> for further
                information about these collections.</li>
             </ul>
          </div>
@@ -343,7 +342,7 @@
                <td>
                   <input type="text" name="text" size="60" value="{$text}"/>&#160;
                   <select name="type" id="type">
-                     <option value="">All</option>
+                     <option value="">All Materials</option>
                      <option value="ead">Archival Collections</option>
                      <option value="dao">Digital Materials</option>
                      <option value="mods">Library Materials</option>

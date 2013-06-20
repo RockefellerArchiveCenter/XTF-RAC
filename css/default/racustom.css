@@ -217,17 +217,17 @@ td.tab-select {box-shadow: 0px -10px 20px -10px #000000;}
 
 /*Formats home page*/
 #hometop, #homebottom {width:100%;padding-bottom:3em; float:left;}
-#homeleft, #homecenter, #homeright {width:31%; background: #dddddd;border:1px dotted #C45414;box-shadow: 0px 5px 10px #666;height:16em}
+#homeleft, #homecenter, #homeright {width:31%; background: rgba(221, 221, 221, 0.8);box-shadow: 0px 5px 10px #666;height:16em}
 #homeleft {float:left;}
 #homeright {float:right;}
 #homecenter {float: left; margin-left:3%; margin-right:3%;}
-#searchbox {width:65%; float:left;padding-top:3em;height:7em;border:1px dotted #C45414;box-shadow: 0px 5px 10px #666;}
+#searchbox {width:65%; float:left;padding-top:3em;height:7em;}
 #searchbox input, #searchbox select {font-size:1.3em;}
 #searchbox input:focus, #searchbox select:focus {outline-color: #C45414}
-#searchtip {width:31%; float:right;border:1px dotted #C45414;box-shadow: 0px 5px 10px #666;height:10em;background: #dddddd;}
+#searchtip {width:31%; float:right;box-shadow: 0px 5px 10px #666;height:10em;background: rgba(221, 221, 221, 0.8);}
 .home li {list-style: none;margin: 0px;padding: .5em;text-align:left;}
 .home ul {padding: .5em;}
-.home h4 {padding: .5em .5em .5em 1em;text-align: left;background-color: #c45414;margin: 0;}
+.home h4 {padding: .5em .5em .5em 1em;text-align: left;background-color: rgba(196, 84, 20, 0.8);margin: 0;}
 
 /* Formats search results (number and type) */
 table.advancedSearch tr td{vertical-align:text-top;}
