@@ -291,7 +291,7 @@ ul.tabs li.clear {display:none;}
     clear:both; 
     margin-top:215px;    
     margin-left:13px; 
-    margin-right:-3px; 
+    margin-right:0px; 
     position:relative;
     /*
     border-left:1px solid #999; 
