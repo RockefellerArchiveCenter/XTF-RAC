@@ -216,15 +216,25 @@ td.tab-select {box-shadow: 0px -10px 20px -10px #000000;}
 .form td {vertical-align: middle;}
 
 /*Formats home page*/
-#hometop, #homebottom {width:100%;padding-bottom:3em; float:left;}
-#homeleft, #homecenter, #homeright {width:31%; background: rgba(221, 221, 221, 0.8);box-shadow: 0px 5px 10px #666;height:16em}
-#homeleft {float:left;}
-#homeright {float:right;}
-#homecenter {float: left; margin-left:3%; margin-right:3%;}
-#searchbox {width:65%; float:left;padding-top:3em;height:7em;}
-#searchbox input, #searchbox select {font-size:1.3em;}
+#homeTop, #homeBottom {width:100%;padding-bottom:2em; float:left;}
+#boxLeft, #boxCenter, #boxRight {width:32%; background: rgba(221, 221, 221, 0.8);box-shadow: 0px 5px 10px #666;height:15em}
+#boxLeft {float:left;}
+#boxRight {float:right;}
+#boxCenter {float: left; margin-left:2%; margin-right:2%;}
+#searchbox {width:50%; float:left;height:7em;}
+#searchbox input[type="text"] {font-size:2em;width:36%; position: absolute; top: 8em; left: 3%;}
+#searchbox input[type="submit"] {font-size:1.6em; padding-top:.2em; padding-bottom:.2em; position:absolute; top:10em; left:40%}
 #searchbox input:focus, #searchbox select:focus {outline-color: #C45414}
-#searchtip {width:31%; float:right;box-shadow: 0px 5px 10px #666;height:10em;background: rgba(221, 221, 221, 0.8);}
+.showAdvanced.closed {width:77%;float:left;padding-top:3em;text-align:right;}
+.showAdvanced.open {z-index:1; text-align:right; position: absolute;top: 6em;right: 1em;}
+#advancedSearch {z-index:1; font-size:1em; display:none;position: absolute; top:19em;left:3%;text-align:left;width:36%;padding:1px;border-bottom: 1px solid #999;
+border-left: 1px solid #999;
+border-right: 1px solid #999;
+background-color: rgb(247, 247, 247);}
+#boolean, #materialType, #date {padding:.5em;}
+#type, #library, #collections, #dao {font-size:1em;}
+#date input {font-size:1em !important; position: relative !important; top:0 !important; left:0 !important;}
+#searchtip {width:32%; float:right;box-shadow: 0px 5px 10px #666;height:10em;background: rgba(221, 221, 221, 0.8);}
 .home li {list-style: none;margin: 0px;padding: .5em;text-align:left;}
 .home ul {padding: .5em;}
 .home h4 {padding: .5em .5em .5em 1em;text-align: left;background-color: rgba(196, 84, 20, 0.8);margin: 0;}

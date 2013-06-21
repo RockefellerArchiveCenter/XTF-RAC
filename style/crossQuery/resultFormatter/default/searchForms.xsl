@@ -96,6 +96,15 @@
                         });
                         //]]>   
                   </script>
+                  <script type='text/javascript'>
+                        //<![CDATA[
+                        $(document).ready(function() {
+                            $('.showAdvanced').click(function() {
+                            $('#advancedSearch').slideToggle('fast');
+                            });
+                        });
+                        //]]>   
+                  </script>
                   
                </head>
                <body>
@@ -171,7 +180,7 @@
                         <table>
                            <tr>
                               <td class="{if(matches($smode,'simple')) then 'tab-select' else 'tab'}"><a href="search?smode=simple">Keyword</a></td>
-                              <td class="{if(matches($smode,'advanced')) then 'tab-select' else 'tab'}"><a href="search?smode=advanced">Advanced</a></td>
+                              <!-- 6/21/2013 HA: remove advanced search tab <td class="{if(matches($smode,'advanced')) then 'tab-select' else 'tab'}"><a href="search?smode=advanced">Advanced</a></td> -->
                               <!-- 9/21/11 WS for RA: removed Freeform tab
                                  <td class="{if(matches($smode,'freeform')) then 'tab-select' else 'tab'}"><a href="search?smode=freeform">Freeform</a></td>
                               -->
@@ -228,32 +237,97 @@
    <xsl:template name="simpleForm" exclude-result-prefixes="#all">
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <div class="home">
-            <div id="hometop"><div id="searchbox"><input type="text" name="keyword" size="40" value="{$keyword}"/>
-                  <xsl:text>&#160;</xsl:text>
-                  <select name="type">
-                     <option value="">All Materials</option>
-                     <option value="ead">Archival Collections</option>
-                     <option value="dao">Digital Materials</option>
-                     <option value="mods">Library Materials</option>
-                  </select>
-                  <xsl:text>&#160;</xsl:text>
+            <div id="homeTop">
+               <div id="searchbox">
+                  <input type="text" name="keyword" value="{$keyword}"/>
+                  <div id="advancedSearch">
+                     <div id="boolean">
+                     <xsl:choose>
+                        <xsl:when test="$text-join = 'or'">
+                           <input type="radio" name="text-join" value=""/>
+                           <xsl:text> all of </xsl:text>
+                           <input type="radio" name="text-join" value="or" checked="checked"/>
+                           <xsl:text> any of </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <input type="radio" name="text-join" value="" checked="checked"/>
+                           <xsl:text> all of </xsl:text>
+                           <input type="radio" name="text-join" value="or"/>
+                           <xsl:text> any of </xsl:text>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                     <xsl:text>these words</xsl:text>
+                     </div>
+                     <div id="materialType">
+                        <xsl:text>Type of materials: </xsl:text>
+                     <select name="type" id="type">
+                        <option value="">All Materials</option>
+                        <option value="ead">Archival Collections</option>
+                        <option value="dao">Digital Materials</option>
+                        <option value="mods">Library Materials</option>
+                     </select>
+                     <!-- 6/21/2013 HA: adding advanced search to home page -->
+                     <select name="sectionType" id="library">
+                        <option value="">All Library Materials</option>
+                        <option value="title">Title</option>
+                        <option value="creator">Author</option>
+                        <option value="callNumber">Call Number</option>
+                        <option value="isbn">ISBN/ISSN</option>
+                        <option value="lccn">LCCN</option>
+                     </select>
+                     <select name="sectionType" id="collections">
+                        <option value="">All Archival Collections</option>
+                        <option value="title">Title</option>
+                        <option value="creator">Creator</option>
+                        <option value="bioghist">Biographical or Historical Note</option>
+                        <option value="scopecontent">Scope and Content Note</option>
+                        <option value="file">Folder Title</option>
+                        <option value="item">Item</option>
+                        <option value="series">Series Description</option>
+                        <option value="subseries">Subseries Description</option>
+                        <option value="controlaccess">Subject Headings</option>
+                     </select>
+                     <select name="sectionType" id="dao">
+                        <option value="">All Digital Materials</option>
+                        <option value="title">Title</option>
+                        <option value="creator">Creator</option>
+                        <option value="bioghist">Biographical or Historical Note</option>
+                        <option value="scopecontent">Scope and Content Note</option>
+                        <option value="file">Folder Title</option>
+                        <option value="item">Item</option>
+                        <option value="series">Series Description</option>
+                        <option value="subseries">Subseries Description</option>
+                        <option value="controlaccess">Subject Headings</option>
+                     </select>
+                     </div>
+                     <div id="date">
+                        <xsl:text>Years: </xsl:text>
+                     <input type="text" name="year" size="20" value="{$year}"/>
+                     </div>
+                     <input type="hidden" name="smode" value="advanced" id="start"/>
+                     <div class="showAdvanced open"><a href="#">close</a></div>
+                  </div>
                   <input type="submit" value="Search"/>
                   <!--<input type="hidden" value="series" name="level"/>-->
                   <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
-                 <!-- Uncomment and complete code when digital objects are included -->    
-                 <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
-         </div>
-         <div id="searchtip">
-            <ul>   
-            <li>Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc. To search
-               an exact phrase, include quotation marks, e.g. "mental health". </li>
-               <li><a href="#"
-                  rel="#searchTips"
-                  onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
-                  >More search tips</a></li>
-            </ul>
-         </div></div>
-         <div id="homebottom"><div id="homeleft">
+                  <!-- Uncomment and complete code when digital objects are included -->
+                  <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
+                  <a href="#" class="showAdvanced closed">show more search options</a>
+               </div>
+
+               <div id="searchtip">
+                  <ul>
+                     <li>Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc.
+                        To search an exact phrase, include quotation marks, e.g. "mental health". </li>
+                     <li>
+                        <a href="#" rel="#searchTips"
+                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
+                           >More search tips</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         <div id="homeBottom"><div id="boxLeft">
             <h4>News</h4>
             <ul>
                <li>Guides for selected Ford Foundation collections are now available</li>
@@ -265,20 +339,8 @@
                </li>
             </ul>
          </div>
-         
-         <div id="homecenter">
-            <ul>
-               <li>The Rockefeller Archive Center is still in the process of adding collections
-               information to this system. Some large collections, like those of the Ford
-               Foundation, Population Council, and Rockefeller University, are only partially
-               represented in the online system; other smaller collections, including some
-               collections of personal papers and grant records for the Ford Foundation, are not yet
-               represented at all. Please <a href="http://rockarch.org/about/contact.php">contact archival staff</a> for further
-               information about these collections.</li>
-            </ul>
-         </div>
-         
-         <div id="homeright">
+            
+         <div id="boxCenter">
             <h4>About</h4>
             <ul>
                <!-- links to JQuery popup windows -->
@@ -299,7 +361,21 @@
                      Website's Name</a>
                </li>
             </ul>
-         </div></div></div>
+         </div>
+         
+            <div id="boxRight">
+               <ul>
+                  <li>The Rockefeller Archive Center is still in the process of adding collections
+                     information to this system. Some large collections, like those of the Ford
+                     Foundation, Population Council, and Rockefeller University, are only partially
+                     represented in the online system; other smaller collections, including some
+                     collections of personal papers and grant records for the Ford Foundation, are not yet
+                     represented at all. Please <a href="http://rockarch.org/about/contact.php">contact archival staff</a> for further
+                     information about these collections.</li>
+               </ul>
+            </div>
+            
+         </div></div>
                
                   <!-- 9/21/11 WS: Moved to Advanced Search tab
                   <table class="sampleTable">
