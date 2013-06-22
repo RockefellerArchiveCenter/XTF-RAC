@@ -100,7 +100,7 @@
          <xsl:when test="$chunk.id = 'bioghist'">
                <xsl:apply-templates select="/ead/archdesc/bioghist"/>
          </xsl:when>              
-         <xsl:when test="$chunk.id != 0">
+         <xsl:when test="$chunk.id != '0'">
             <xsl:apply-templates select="key('chunk-id', $chunk.id)"/>
          </xsl:when>
          <xsl:otherwise>

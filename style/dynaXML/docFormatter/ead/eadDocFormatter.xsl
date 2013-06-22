@@ -131,7 +131,7 @@
             </xsl:call-template>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:value-of select="'0'"/>
+            <xsl:value-of select="'ref0'"/>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:param>
