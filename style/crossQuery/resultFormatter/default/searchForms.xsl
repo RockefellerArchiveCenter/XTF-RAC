@@ -102,6 +102,9 @@
                             $('.showAdvanced').click(function() {
                             $('#advancedSearch').slideToggle('fast');
                             });
+                            $('input').focus(function() {
+                            $('#searchtip').show('slow');
+                            });
                         });
                         //]]>   
                   </script>
