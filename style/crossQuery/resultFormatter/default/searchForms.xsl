@@ -101,9 +101,13 @@
                         $(document).ready(function() {
                             $('.showAdvanced').click(function() {
                             $('#advancedSearch').slideToggle('fast');
+                            $('#searchbox').toggleClass('top');
                             });
                             $('input').focus(function() {
                             $('#searchtip').show('slow');
+                            });
+                            $('.ui-icon-myCloseButton').click(function() {
+                            $('#searchtip').hide('slow');
                             });
                         });
                         //]]>   
@@ -208,18 +212,7 @@
                                           <xsl:call-template name="freeformForm"/>
                                        </xsl:when>
                                        <xsl:when test="matches($smode,'browse')">
-                                          <table>
-                                             <tr>
-                                                <td>
-                                                   <p>Browse all documents by:</p>
-                                                </td>
-                                             </tr>
-                                             <tr>
-                                                <td>
-                                                   <xsl:call-template name="browseLinks"/>
-                                                </td>
-                                             </tr>
-                                          </table>
+                                          <xsl:call-template name="browseLinks"/>
                                        </xsl:when>
                                     </xsl:choose>
                                  </div>
@@ -241,6 +234,18 @@
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <div class="home">
             <div id="homeTop">
+               <div id="searchtip">
+                  <a href="#"><span class="ui-icon ui-icon-myCloseButton"></span></a>
+                  <ul>
+                     <li>Hint: philanthrop* finds philanthropy, philanthropies, philanthropic, etc.
+                        To search an exact phrase, include quotation marks, e.g. "mental health". </li>
+                     <li>
+                        <a href="#" rel="#searchTips"
+                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
+                           >More search tips</a>
+                     </li>
+                  </ul>
+               </div>
                <div id="searchbox">
                   <input type="text" name="keyword" value="{$keyword}"/>
                   <div id="advancedSearch">
@@ -318,19 +323,8 @@
                   <a href="#" class="showAdvanced closed">show more search options</a>
                </div>
 
-               <div id="searchtip">
-                  <ul>
-                     <li>Tip: philanthrop* finds philanthropy, philanthropies, philanthropic, etc.
-                        To search an exact phrase, include quotation marks, e.g. "mental health". </li>
-                     <li>
-                        <a href="#" rel="#searchTips"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
-                           >More search tips</a>
-                     </li>
-                  </ul>
-               </div>
             </div>
-         <div id="homeBottom"><div id="boxLeft">
+         <div id="homeBottom"><div class="boxLeft">
             <h4>News</h4>
             <ul>
                <li>Guides for selected Ford Foundation collections are now available</li>
@@ -343,7 +337,7 @@
             </ul>
          </div>
             
-         <div id="boxCenter">
+         <div class="boxCenter">
             <h4>About</h4>
             <ul>
                <!-- links to JQuery popup windows -->
@@ -366,7 +360,7 @@
             </ul>
          </div>
          
-            <div id="boxRight">
+            <div class="boxRight">
                <ul>
                   <li>The Rockefeller Archive Center is still in the process of adding collections
                      information to this system. Some large collections, like those of the Ford

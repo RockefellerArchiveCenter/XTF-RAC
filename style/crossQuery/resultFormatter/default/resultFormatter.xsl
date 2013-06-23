@@ -896,48 +896,51 @@
    </xsl:template>
    
    <xsl:template name="browseLinks">
-         <div class="browselinks">
-            <table style="width:90%;margin-left:2em;">
-               <tr><td colspan="2"><span style="margin:left:60px; font-size:1.2em;"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection">Browse All</a></span></td></tr>
-               <tr>
-                  <td style="width:250px;">
-                     <dl style="background: url(/xtf/icons/default/collections.gif) left no-repeat; min-height: 50px;">
-                        <dt>
-                              <h4 style="margin-left:60px; font-size:1.2em;">
-                                 <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">Browse Archival Collections</a>
-                              </h4>
-                        </dt>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead">Collections by Title</a></dd>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead">Collections by Creator</a></dd>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead">Recently Updated Collections</a></dd>
-                     </dl>
-                  </td>
-                  <td style="width:250px;">
-                     <dl style="background: url(/xtf/icons/default/book.gif) left no-repeat; min-height: 50px;">
-                        <dt>
-                           <h4 style="margin-left:60px; font-size:1.2em;">
-                              <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods">Browse Library Materials</a>
-                           </h4>
-                        </dt>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods">Library Materials by Title</a></dd>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods">Library Materials by Creator</a></dd>
-                     </dl>
-                  </td>
-                  <td style="width:250px;">
-                     <dl style="background: url(/xtf/icons/default/dao_large.gif) left no-repeat; min-height: 50px;">
-                        <dt>
-                           <h4 style="margin-left:60px; font-size:1.2em;">
-                              <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao">Browse Digital Materials</a>
-                           </h4>
-                        </dt>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=dao">by Title</a></dd>
-                        <dd style="margin-left:70px;"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao">by Creator</a></dd>
-                     </dl>
-                  </td>
-               </tr>
-            </table>
+      <div class="browselinks">
+         <h3><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection">Browse
+            All</a></h3>
+         <div class="boxLeft">
+            <img src="/xtf/icons/default/collections.gif" alt="archival collections"/>
+            <h4>Archival Collections</h4><li><a
+               href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
+               >Browse All Archival Collections</a></li>
+            <li><a
+               href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
+               >Collections by Title</a></li>
+            <li><a
+               href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
+               >Collections by Creator</a></li>
+            <li><a
+               href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
+               >Recently Updated Collections</a></li>
          </div>
- </xsl:template>
+         <div class="boxCenter">
+            <img src="/xtf/icons/default/book.gif" alt="library materials"/>
+            <h4>Library Materials</h4><li><a
+               href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
+               >Browse All Library Materials</a></li>
+            <li><a
+               href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
+               >Library Materials by Title</a></li>
+            <li><a
+               href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
+               >Library Materials by Creator</a></li>
+         </div>
+         <div class="boxRight">
+            <img src="/xtf/icons/default/dao_large.gif" alt="digital materials"/>
+            <h4>Digital Materials</h4>
+            <li><a
+               href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao"
+               >Browse All Digital Materials</a></li>
+            <li><a
+               href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=dao"
+               >by Title</a></li>
+            <li><a
+               href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao"
+               >by Creator</a></li>
+         </div>
+      </div>
+   </xsl:template>
    
    <xsl:template name="currentBrowseLinks">
       <span class="currentBrowse">
