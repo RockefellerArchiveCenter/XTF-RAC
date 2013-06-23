@@ -100,14 +100,18 @@
                         //<![CDATA[
                         $(document).ready(function() {
                             $('.showAdvanced').click(function() {
-                            $('#advancedSearch').slideToggle('fast');
+                            $('#advancedSearch').slideToggle(400, 'linear');
                             $('#searchbox').toggleClass('top');
                             });
-                            $('input').focus(function() {
-                            $('#searchtip').show('slow');
+                            $('#searchbox input').focus(function(e) {
+                            e.preventDefault();
+                            $('#searchtipDate').hide('fast');
+                            $('#searchtip').fadeIn('slow');
                             });
-                            $('.ui-icon-myCloseButton').click(function() {
-                            $('#searchtip').hide('slow');
+                            $('#date input').focus(function(f) {
+                            f.preventDefault();
+                            $('#searchtip').hide('fast');
+                            $('#searchtipDate').fadeIn('slow');
                             });
                         });
                         //]]>   
@@ -235,10 +239,19 @@
          <div class="home">
             <div id="homeTop">
                <div id="searchtip">
-                  <a href="#"><span class="ui-icon ui-icon-myCloseButton"></span></a>
                   <ul>
                      <li>Hint: philanthrop* finds philanthropy, philanthropies, philanthropic, etc.
                         To search an exact phrase, include quotation marks, e.g. "mental health". </li>
+                     <li>
+                        <a href="#" rel="#searchTips"
+                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
+                           >More search tips</a>
+                     </li>
+                  </ul>
+               </div>
+               <div id="searchtipDate">
+                  <ul>
+                     <li>Hint: Enter a single year or range of years, for example 1997 or 1892-1942.</li>
                      <li>
                         <a href="#" rel="#searchTips"
                            onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"

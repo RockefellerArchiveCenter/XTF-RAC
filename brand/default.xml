@@ -3,6 +3,7 @@
 <brand xmlns="http://www.w3.org/1999/xhtml">
    
    <links>
+      <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
       <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
       <link rel="stylesheet" href="css/default/racustom.css" type="text/css"/>
@@ -12,6 +13,8 @@
          href="http://www.rockarch.org/css/globalStyle.css"/>
       <link rel="stylesheet" rev="stylesheet" type="text/css"
          href="http://www.rockarch.org/css/more.css"/>
+      <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
+      <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
       <script type="text/javascript" language="JavaScript"
          src="http://www.rockarch.org/js/browserDetect.js"/>
       <script type="text/javascript" language="JavaScript"
@@ -136,12 +139,7 @@
          ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
          '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0];
          s.parentNode.insertBefore(ga, s); })(); </script>
-      <script type="text/javascript"
-         src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"/>
-      <script type="text/javascript" src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"/>
-      <script type="text/javascript"> $(document).ready(function() { $("img[rel]").overlay(); }); </script>
-      <script type="text/javascript"> $(document).ready(function() { $("a[rel]").overlay(); }); </script>
-   </links>
+    </links>
 
    <dynaxml.links>
       <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
