@@ -319,6 +319,7 @@
                         <input name="query" type="text" size="15"/> 
                         <input type="hidden" name="docId" value="{$docId}"/>
                         <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
+                        <input type="hidden" name="doc.view" value="{$doc.view}"/>
                         <input type="submit" value="Search this Collection"/>
                      </form>
                   </td>
