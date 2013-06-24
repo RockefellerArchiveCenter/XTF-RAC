@@ -99,18 +99,17 @@
                   <script type='text/javascript'>
                         //<![CDATA[
                         $(document).ready(function() {
-                            $('.showAdvanced').click(function() {
+                            $('.showAdvanced').click(function(event) {
+                            event.preventDefault();
                             $('#advancedSearch').slideToggle(400, 'linear');
                             $('#searchbox').toggleClass('top');
                             });
-                            $('#searchbox input').focus(function(e) {
-                            e.preventDefault();
-                            $('#searchtipDate').hide('fast');
+                            $('#searchbox input').focus(function() {
+                            $('#searchtipDate').hide();
                             $('#searchtip').fadeIn('slow');
                             });
-                            $('#date input').focus(function(f) {
-                            f.preventDefault();
-                            $('#searchtip').hide('fast');
+                            $('#date input').focus(function() {
+                            $('#searchtip').hide();
                             $('#searchtipDate').fadeIn('slow');
                             });
                         });
@@ -186,24 +185,29 @@
                         (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
                      </xsl:if>
                   </div>
+                 
                   <div class="searchPage">
+                     <div class="tabs">
+                        <a href="search?smode=simple"><div class="{if(matches($smode,'simple')) then 'tab-select' else 'tab'}">Keyword</div></a>
+                        <a href="search?smode=browse"><div class="{if(matches($smode,'browse')) then 'tab-select' else 'tab'}">Browse</div></a>
+                     </div>
                      <div class="forms">
-                        <table>
+                        <!-- <table>
                            <tr>
                               <td class="{if(matches($smode,'simple')) then 'tab-select' else 'tab'}"><a href="search?smode=simple">Keyword</a></td>
-                              <!-- 6/21/2013 HA: remove advanced search tab <td class="{if(matches($smode,'advanced')) then 'tab-select' else 'tab'}"><a href="search?smode=advanced">Advanced</a></td> -->
+                              6/21/2013 HA: remove advanced search tab <td class="{if(matches($smode,'advanced')) then 'tab-select' else 'tab'}"><a href="search?smode=advanced">Advanced</a></td> -->
                               <!-- 9/21/11 WS for RA: removed Freeform tab
                                  <td class="{if(matches($smode,'freeform')) then 'tab-select' else 'tab'}"><a href="search?smode=freeform">Freeform</a></td>
                               -->
-                              <td class="{if(matches($smode,'browse')) then 'tab-select' else 'tab'}">
-                                 <!--<a href="search?browse-all=yes">
+                              <!--<td class="{if(matches($smode,'browse')) then 'tab-select' else 'tab'}">
+                                 <a href="search?browse-all=yes">
                                     <xsl:text>Browse</xsl:text>
                                  </a>-->
-                                 <a href="search?smode=browse">Browse</a>
+                                 <!--<a href="search?smode=browse">Browse</a>
                               </td>
                            </tr>
                            <tr>
-                              <td colspan="4">
+                              <td colspan="4">-->
                                  <div class="form">
                                     <xsl:choose>
                                        <xsl:when test="matches($smode,'simple')">
@@ -220,9 +224,9 @@
                                        </xsl:when>
                                     </xsl:choose>
                                  </div>
-                              </td>
+                              <!--</td>
                            </tr>
-                        </table>
+                        </table>-->
                      </div>
                   </div>
                   <xsl:copy-of select="$brand.feedback"/>
@@ -239,8 +243,9 @@
          <div class="home">
             <div id="homeTop">
                <div id="searchtip">
+                  <h4>Hint</h4>
                   <ul>
-                     <li>Hint: philanthrop* finds philanthropy, philanthropies, philanthropic, etc.
+                     <li>philanthrop* finds philanthropy, philanthropies, philanthropic, etc.
                         To search an exact phrase, include quotation marks, e.g. "mental health". </li>
                      <li>
                         <a href="#" rel="#searchTips"
@@ -250,8 +255,9 @@
                   </ul>
                </div>
                <div id="searchtipDate">
+                  <h4>Hint</h4>
                   <ul>
-                     <li>Hint: Enter a single year or range of years, for example 1997 or 1892-1942.</li>
+                     <li>Enter a single year or range of years, for example 1997 or 1892-1942.</li>
                      <li>
                         <a href="#" rel="#searchTips"
                            onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"

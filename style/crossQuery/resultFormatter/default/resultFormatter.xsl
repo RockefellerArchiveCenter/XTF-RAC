@@ -900,44 +900,74 @@
          <h3><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection">Browse
             All</a></h3>
          <div class="boxLeft">
-            <img src="/xtf/icons/default/collections.gif" alt="archival collections"/>
-            <h4>Archival Collections</h4><li><a
-               href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
-               >Browse All Archival Collections</a></li>
-            <li><a
-               href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-               >Collections by Title</a></li>
-            <li><a
-               href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-               >Collections by Creator</a></li>
-            <li><a
-               href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
-               >Recently Updated Collections</a></li>
+            <img class="categoryImage" src="/xtf/icons/default/collections.gif"
+               alt="archival collections"/>
+            <h4>Archival Collections</h4>
+            <ul>
+               <li>
+                  <a
+                     href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
+                     >Browse All Archival Collections</a>
+               </li>
+               <li>
+                  <a
+                     href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
+                     >Collections by Title</a>
+               </li>
+               <li>
+                  <a
+                     href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
+                     >Collections by Creator</a>
+               </li>
+               <li>
+                  <a
+                     href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
+                     >Recently Updated Collections</a>
+               </li>
+            </ul>
          </div>
          <div class="boxCenter">
-            <img src="/xtf/icons/default/book.gif" alt="library materials"/>
-            <h4>Library Materials</h4><li><a
-               href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
-               >Browse All Library Materials</a></li>
-            <li><a
-               href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-               >Library Materials by Title</a></li>
-            <li><a
-               href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-               >Library Materials by Creator</a></li>
+            <img class="categoryImage" src="/xtf/icons/default/book.gif" alt="library materials"/>
+            <h4>Library Materials</h4>
+            <ul>
+               <li>
+                  <a
+                     href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
+                     >Browse All Library Materials</a>
+               </li>
+               <li>
+                  <a
+                     href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
+                     >Library Materials by Title</a>
+               </li>
+               <li>
+                  <a
+                     href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
+                     >Library Materials by Creator</a>
+               </li>
+            </ul>
          </div>
          <div class="boxRight">
-            <img src="/xtf/icons/default/dao_large.gif" alt="digital materials"/>
+            <img class="categoryImage" src="/xtf/icons/default/dao_large.gif"
+               alt="digital materials"/>
             <h4>Digital Materials</h4>
-            <li><a
-               href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao"
-               >Browse All Digital Materials</a></li>
-            <li><a
-               href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=dao"
-               >by Title</a></li>
-            <li><a
-               href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao"
-               >by Creator</a></li>
+            <ul>
+               <li>
+                  <a
+                     href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao"
+                     >Browse All Digital Materials</a>
+               </li>
+               <li>
+                  <a
+                     href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=dao"
+                     >by Title</a>
+               </li>
+               <li>
+                  <a
+                     href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao"
+                     >by Creator</a>
+               </li>
+            </ul>
          </div>
       </div>
    </xsl:template>
