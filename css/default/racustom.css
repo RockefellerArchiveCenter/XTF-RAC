@@ -256,6 +256,7 @@ left: 23.5em;
 .home ul {padding-left: .5em;padding-right:.5em;margin-top:.5em; margin-bottom:.5em;}
 .home h4 {padding: 1em .5em .5em 1em;text-align: left;margin-top:0;}
 .home h2 {background-color:#c45414; padding:.5em; margin-top:0;}
+.homeDialog {border:1px solid #ccc; margin:1em; padding:1em;}
 
 /* Formats search results (number and type) */
 table.advancedSearch tr td{vertical-align:text-top;}

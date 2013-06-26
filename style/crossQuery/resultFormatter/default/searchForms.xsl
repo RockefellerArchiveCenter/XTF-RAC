@@ -126,15 +126,15 @@
                <body>
                   <xsl:copy-of select="$brand.header"/>
                   <div class="overlay" id="dscDescription">
-                     <div class="dscDescription">
+                     <div class="homeDialog">
                      <h4>About Collection Guides</h4>
                         <p>Collection guides are documents that describe and map archival material held at a particular institution. Researchers use collection guides to find and identify archival holdings that may be pertinent to their research.</p>
                         <p>Most collection guides include background information on the person or institution responsible for the creation of the records; a description of the contents, strengths, and weaknesses of the collection; as well as information on how the collection is arranged, how it has been managed, and how researchers can access and use it.</p>
                         <p>Collection guides are only pointers to archival material. They describe the collection and its arrangement, but rarely the individual items contained within it. In many cases it is only by examining a file that one can know its exact contents. Most archival material at the RAC is not digitized and must be consulted on site. Researchers are invited to schedule an appointment to examine our holdings.</p>
                   </div>
                   </div>
-                  <div class="overlay" id="searchTips" style="width:1100px; top:20px !important;">
-                  <div class="dscDescription">
+                  <div class="overlay" id="searchTips">
+                  <div class="homeDialog">
                      <h4>Searching tips and tricks</h4>
                      <p>You can search across the RAC’s archival materials, books, DVDs, VHS and microfilm holdings from the home page or the Advanced Search page. You can search within an archival collection by selecting that collection and then using the "search within this collection" in the navigation bar.</p>
                      <p>An asterisk - * - will find from one to many characters within a word: hist* will retrieve history, histories, and historians, coo*tion will find cooperation and coordination</p>
@@ -151,28 +151,28 @@
                   </div>
                   </div>
                   <div class="overlay" id="archivalMat">
-               <div class="dscDescription">
-                  <h4>Archival Materials</h4>
-                  <p>Archival holdings are generally comprised of original, unpublished material of
-                     enduring value created by a person, family, or organization. This material
-                     often includes primary source records and firsthand accounts of events and
-                     transactions. Archival material may include a variety of media or formats such
-                     as correspondence, memos, reports, bound diaries, scrapbooks, maps, blueprints,
-                     photographic negatives and prints, films, VHS or audio tapes, or electronic
-                     records.</p>
-                  <h4>Rockefeller Archive Center Holdings</h4>
-                  <p>The Rockefeller Archive Center holdings encompass the records of the Rockefeller
-                     family and their wide-ranging philanthropic endeavors (including the Rockefeller
-                     Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the
-                     Center's growing holdings include materials from numerous non-Rockefeller foundations
-                     and nonprofit organizations, making it a premier center for research on philanthropy
-                     and civil society. It is also a major repository for the personal papers of leaders
-                     of the philanthropic community, Nobel Prize laureates, and world-renowned
-                     investigators in science and medicine. </p>
-               </div>
+                     <div class="homeDialog">
+                        <h4>Archival Materials</h4>
+                        <p>Archival holdings are generally comprised of original, unpublished material of
+                           enduring value created by a person, family, or organization. This material
+                           often includes primary source records and firsthand accounts of events and
+                           transactions. Archival material may include a variety of media or formats such
+                           as correspondence, memos, reports, bound diaries, scrapbooks, maps, blueprints,
+                           photographic negatives and prints, films, VHS or audio tapes, or electronic
+                           records.</p>
+                        <h4>Rockefeller Archive Center Holdings</h4>
+                        <p>The Rockefeller Archive Center holdings encompass the records of the Rockefeller
+                           family and their wide-ranging philanthropic endeavors (including the Rockefeller
+                           Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the
+                           Center's growing holdings include materials from numerous non-Rockefeller foundations
+                           and nonprofit organizations, making it a premier center for research on philanthropy
+                           and civil society. It is also a major repository for the personal papers of leaders
+                           of the philanthropic community, Nobel Prize laureates, and world-renowned
+                           investigators in science and medicine. </p>
+                     </div>
                   </div>
-                  <div class="overlay" id="dimes" style="width:800px; top:35px !important;">
-                     <div class="dscDescription" style="float:left;">
+                  <div class="overlay" id="dimes">
+                     <div class="homeDialog" style="float:left;">
                         <h4>Why DIMES?</h4>
                         <img src="./icons/default/dimes.jpg" alt="John D. Rockefeller, Sr. handing out dimes" style="float:right; width:45%;"/>
                         <p style="float:left; width:50%;">DIMES is an acronym for Digital Information Management Engine for Searching. It's also a reference to John D. Rockefeller Sr.'s ritual practice of dispensing dimes to reward services exceptionally rendered, deliver a brief sermon on the virtues of frugality, and engage with the public in a way that did not involve signing autographs (a practice he hated). "I think it is easier," he said "to remember a lesson when we have some token to recall it by, something we can look at which reminds us of the idea."</p>
@@ -252,7 +252,7 @@
                   <li>philanthrop* finds philanthropy, philanthropies, philanthropic, etc. To search
                      an exact phrase, include quotation marks, e.g. "mental health". </li>
                   <li>
-                     <a href="#" rel="#searchTips"
+                     <a href="#searchTips" class="dialog_dsc"
                         onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
                         >More search tips</a>
                   </li>
@@ -263,7 +263,7 @@
                <ul>
                   <li>Enter a single year or range of years, for example 1997 or 1892-1942.</li>
                   <li>
-                     <a href="#" rel="#searchTips"
+                     <a href="#searchTips" class="dialog_dsc"
                         onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
                         >More search tips</a>
                   </li>
@@ -454,18 +454,18 @@
                <h4>About</h4>
                <ul>
                <li>
-                  <a href="#" rel="#archivalMat"
+                  <a href="#archivalMat" class="archivalMat"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);"
                      >Our Collections</a>
                </li>
                <li>
-                  <a href="#" rel="#dscDescription"
+                  <a href="#dscDescription" class="dscDescription"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);"
                      >Collection Guides</a>
                </li>
                
                <li>
-                  <a href="#" rel="#dimes"
+                  <a href="#dimes" class="dimes"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">This
                      Website's Name</a>
                </li>

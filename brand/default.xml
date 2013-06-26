@@ -133,6 +133,91 @@
             
             // -->
       </script>
+      <script type="text/javascript">
+                      $(document).ready(function() {                
+                       $(function () {
+                            var dialogArchivalMat = $('#archivalMat').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "600",
+                                  height: "500",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $("a.archivalMat").on("click", function (e) {
+                            e.preventDefault();
+                              dialogArchivalMat.dialog("option", "title", '').dialog("open");
+                            });
+                        });
+                         $(function () {
+                        var dialogDscDescription = $('#dscDescription').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "600",
+                                  height: "450",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $("a.dscDescription").on("click", function (e) {
+                            e.preventDefault();
+                              dialogDscDescription.dialog("option", "title", '').dialog("open");
+                            });
+                        });
+                         $(function () {
+                        var dialogDimes = $('#dimes').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "800",
+                                  height: "580",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $("a.dimes").on("click", function (e) {
+                            e.preventDefault();
+                              dialogDimes.dialog("option", "title", '').dialog("open");
+                            });
+                        });
+                        $(function () {
+                        var dialogFeedback = $('#feedback').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "400",
+                                  height: "430",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $(".feedback-tab").on("click", function (e) {
+                            e.preventDefault();
+                              dialogFeedback.dialog("option", "title", '').dialog("open");
+                            });
+                        });
+                    });
+        </script>
+      
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
          'UA-10013579-1']); _gaq.push(['_trackPageview']); (function() { var ga =
          document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src =
@@ -271,7 +356,27 @@
       </script>      
       
       <script type="text/javascript">
-                      $(document).ready(function() {                
+                      $(document).ready(function() {
+                      $(function () {
+                        var dialogFeedback = $('#feedback').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "400",
+                                  height: "430",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $(".feedback-tab").on("click", function (e) {
+                            e.preventDefault();
+                              dialogFeedback.dialog("option", "title", '').dialog("open");
+                            });
+                        });
                        $(function () {
                             var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0"></iframe>');
                             var dialog = $('<div class="dao-container"></div>').append(iframe).appendTo('body').dialog({
@@ -299,7 +404,7 @@
                                   modal: true,
                                   resizable: true,
                                   width: "550",
-                                  height: "200",
+                                  height: "300",
                                   close: function () {
                                     $('.ui-dialog .dscDescription').remove();
                                   }
@@ -324,7 +429,7 @@
                             $("a.dialog_dsc").on("click", function (e) {
                               var id = $(this).attr("href");
                               var content = $(id).html()
-                              dialogDsc.dialog("option", "title", '').dialog("open").before(content);
+                              dialogDsc.dialog("option", "title", '').dialog("open").append(content);
                             });
                             
                             //checks for hash tag jumps to location and opens appropriate diolog 
@@ -4516,10 +4621,9 @@
 
       <feedback>
          <div class="feedback-tab">
-            <a href="#feedback" class="dialog_dsc"><img src="/xtf/icons/default/feedback_tab.png" alt="feedback" rel="#feedback" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'feedback']);"/></a>
+            <a href="#feedback-tab"><img src="/xtf/icons/default/feedback_tab.png" alt="feedback" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'feedback']);"/></a>
          </div>
           <div class="overlay" id="feedback">
-             <div class="dscDescription">
                <form class="feedback-form" action="/xtf/script/rac/formmail.php" method="post">
                   <input type="hidden" name="recipients" value="harnold_*_rockarch.org"/>
                   <input type="hidden" name="env_report" value="HTTP_REFERER,REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER" />
@@ -4552,7 +4656,7 @@
                   <input type="submit" value="SEND" class="button" onClick="_gaq.push(['_trackEvent', 'interaction', 'send', 'feedback']);"/>
                   
                  </form>
-             </div>
+             
           </div>
        
          </feedback>
