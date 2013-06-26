@@ -102,18 +102,24 @@
                             $('.showAdvanced').click(function(event) {
                             event.preventDefault();
                             $('#advancedSearch').slideToggle(400, 'linear');
-                            $('#searchbox').toggleClass('top');
                             });
-                            $('#searchbox input').focus(function() {
-                            $('#searchtipDate').hide();
-                            $('#searchtip').fadeIn('slow');
-                            });
-                            $('#date input').focus(function() {
-                            $('#searchtip').hide();
-                            $('#searchtipDate').fadeIn('slow');
-                            });
+                            //$('#searchbox input').focus(function() {
+                            //$('#searchtipDate').hide();
+                            //$('#searchtip').fadeIn('slow');
+                            //});
+                            //$('.date input').focus(function() {
+                            //$('#searchtip').hide();
+                            //$('#searchtipDate').fadeIn('slow');
+                            //});
                         });
                         //]]>   
+                  </script>
+                  <script>
+                     //<![CDATA[
+                        $(function() {
+                           $( ".accordion" ).accordion();
+                        });
+                     //]]>   
                   </script>
                   
                </head>
@@ -187,10 +193,10 @@
                   </div>
                  
                   <div class="searchPage">
-                     <div class="tabs">
+                     <!--<div class="tabs">
                         <a href="search?smode=simple"><div class="{if(matches($smode,'simple')) then 'tab-select' else 'tab'}">Keyword</div></a>
                         <a href="search?smode=browse"><div class="{if(matches($smode,'browse')) then 'tab-select' else 'tab'}">Browse</div></a>
-                     </div>
+                     </div>-->
                      <div class="forms">
                         <!-- <table>
                            <tr>
@@ -241,34 +247,33 @@
    <xsl:template name="simpleForm" exclude-result-prefixes="#all">
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <div class="home">
-            <div id="homeTop">
-               <div id="searchtip">
-                  <h4>Hint</h4>
-                  <ul>
-                     <li>philanthrop* finds philanthropy, philanthropies, philanthropic, etc.
-                        To search an exact phrase, include quotation marks, e.g. "mental health". </li>
-                     <li>
-                        <a href="#" rel="#searchTips"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
-                           >More search tips</a>
-                     </li>
-                  </ul>
-               </div>
-               <div id="searchtipDate">
-                  <h4>Hint</h4>
-                  <ul>
-                     <li>Enter a single year or range of years, for example 1997 or 1892-1942.</li>
-                     <li>
-                        <a href="#" rel="#searchTips"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
-                           >More search tips</a>
-                     </li>
-                  </ul>
-               </div>
-               <div id="searchbox">
-                  <input type="text" name="keyword" value="{$keyword}"/>
-                  <div id="advancedSearch">
-                     <div id="boolean">
+            <div id="searchtip" class="box">
+               <ul>
+                  <li>philanthrop* finds philanthropy, philanthropies, philanthropic, etc. To search
+                     an exact phrase, include quotation marks, e.g. "mental health". </li>
+                  <li>
+                     <a href="#" rel="#searchTips"
+                        onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
+                        >More search tips</a>
+                  </li>
+               </ul>
+               <div class="arrow-right"/>
+            </div>
+            <div id="searchtipDate" class="box">
+               <ul>
+                  <li>Enter a single year or range of years, for example 1997 or 1892-1942.</li>
+                  <li>
+                     <a href="#" rel="#searchTips"
+                        onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
+                        >More search tips</a>
+                  </li>
+               </ul>
+               <div class="arrow-right"/>
+            </div>
+            <div id="searchbox">
+               <input type="text" name="keyword" value="{$keyword}"/>
+               <div id="advancedSearch">
+                  <div id="boolean">
                      <xsl:choose>
                         <xsl:when test="$text-join = 'or'">
                            <input type="radio" name="text-join" value=""/>
@@ -284,9 +289,9 @@
                         </xsl:otherwise>
                      </xsl:choose>
                      <xsl:text>these words</xsl:text>
-                     </div>
-                     <div id="materialType">
-                        <xsl:text>Type of materials: </xsl:text>
+                  </div>
+                  <div id="materialType">
+                     <xsl:text>Type of materials: </xsl:text>
                      <select name="type" id="type">
                         <option value="">All Materials</option>
                         <option value="ead">Archival Collections</option>
@@ -326,40 +331,128 @@
                         <option value="subseries">Subseries Description</option>
                         <option value="controlaccess">Subject Headings</option>
                      </select>
-                     </div>
-                     <div id="date">
-                        <xsl:text>Years: </xsl:text>
-                     <input type="text" name="year" size="20" value="{$year}"/>
-                     </div>
-                     <input type="hidden" name="smode" value="advanced" id="start"/>
-                     <div class="showAdvanced open"><a href="#">close</a></div>
                   </div>
-                  <input type="submit" value="Search"/>
-                  <!--<input type="hidden" value="series" name="level"/>-->
-                  <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
-                  <!-- Uncomment and complete code when digital objects are included -->
-                  <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
-                  <a href="#" class="showAdvanced closed">show more search options</a>
+                  <div id="date">
+                     <xsl:text>Years: </xsl:text>
+                     <input type="text" name="year" size="20" value="{$year}"/>
+                  </div>
+                  <input type="hidden" name="smode" value="advanced" id="start"/>
+                  <div class="showAdvanced open">
+                     <a href="#">close</a>
+                  </div>
+               </div>
+               <input type="submit" value="Search"/>
+               <!--<input type="hidden" value="series" name="level"/>-->
+               <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
+               <!-- Uncomment and complete code when digital objects are included -->
+               <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
+               <a href="#" class="showAdvanced closed">show more search options</a>
+            </div>
+            <div id="browse" class="box">
+               <h2>Browse</h2>
+
+               <div>
+               <img class="categoryImage" src="/xtf/icons/default/collections.gif"
+                  alt="archival collections"/>
+               <h4>Archival Collections</h4>
+               
+                  <ul>
+                     <li>
+                        <a
+                           href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
+                           >Browse All Archival Collections</a>
+                     </li>
+                     <li>
+                        <a
+                           href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
+                           >Collections by Title</a>
+                     </li>
+                     <li>
+                        <a
+                           href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
+                           >Collections by Creator</a>
+                     </li>
+                     <li>
+                        <a
+                           href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
+                           >Recently Updated Collections</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div>
+                  <img class="categoryImage" src="/xtf/icons/default/book.gif"
+                     alt="library materials"/>
+                  <h4>Library Materials</h4>
+                  <ul>
+                     <li>
+                        <a
+                           href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
+                           >Browse All Library Materials</a>
+                     </li>
+                     <li>
+                        <a
+                           href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
+                           >Library Materials by Title</a>
+                     </li>
+                     <li>
+                        <a
+                           href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
+                           >Library Materials by Creator</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div>
+                  <img class="categoryImage" src="/xtf/icons/default/dao_large.gif"
+                     alt="digital materials"/>
+                  <h4>Digital Materials</h4>
+                  <ul>
+                     <li>
+                        <a
+                           href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao"
+                           >Browse All Digital Materials</a>
+                     </li>
+                     <li>
+                        <a
+                           href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=dao"
+                           >by Title</a>
+                     </li>
+                     <li>
+                        <a
+                           href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao"
+                           >by Creator</a>
+                     </li>
+                  </ul>
                </div>
 
             </div>
-         <div id="homeBottom"><div class="boxLeft">
-            <h4>News</h4>
-            <ul>
-               <li>Guides for selected Ford Foundation collections are now available</li>
-               <li>View <a href="http://rockefeller100.org/">digitized material</a> from our Rockefeller Foundation collections</li>
-               <li>
-                  <a
-                     href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
-                     >Recently Updated Collections</a>
-               </li>
-            </ul>
-         </div>
             
-         <div class="boxCenter">
-            <h4>About</h4>
-            <ul>
-               <!-- links to JQuery popup windows -->
+            <div id="featured" class="box">
+               <h4>Featured content</h4>
+               <ul>
+                  <li>Check out this amazing image!</li>
+                  <img src="./icons/default/dimes.jpg" alt="Senior"/>
+               </ul>
+            </div>
+
+            <div id="news" class="box">
+               <h4>News</h4>
+               <ul>
+                  <li>Guides for selected Ford Foundation collections are now available</li>
+                  <li>View <a href="http://rockefeller100.org/">digitized material</a> from our
+                     Rockefeller Foundation collections</li>
+                  <li>
+                     <a
+                        href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
+                        >Recently Updated Collections</a>
+                  </li>
+               </ul>
+            </div>
+
+            <div id="about" class="box">
+               <h4>About</h4>
+               <ul>
                <li>
                   <a href="#" rel="#archivalMat"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);"
@@ -378,20 +471,20 @@
                </li>
             </ul>
          </div>
-         
-            <div class="boxRight">
+
+            <div id="disclaimer" class="box">
                <ul>
-                  <li>The Rockefeller Archive Center is still in the process of adding collections
-                     information to this system. Some large collections, like those of the Ford
-                     Foundation, Population Council, and Rockefeller University, are only partially
-                     represented in the online system; other smaller collections, including some
-                     collections of personal papers and grant records for the Ford Foundation, are not yet
-                     represented at all. Please <a href="http://rockarch.org/about/contact.php">contact archival staff</a> for further
-                     information about these collections.</li>
+                  <li>We are still in the process of adding collections information to this system.
+                     Some large collections, like those of the Ford Foundation, Population Council,
+                     and Rockefeller University, are only partially represented in the online
+                     system; other smaller collections, including some collections of personal
+                     papers and grant records for the Ford Foundation, are not yet represented at
+                     all. Please <a href="http://rockarch.org/about/contact.php">contact archival
+                        staff</a> for further information about these collections.</li>
                </ul>
             </div>
-            
-         </div></div>
+
+         </div>
                
                   <!-- 9/21/11 WS: Moved to Advanced Search tab
                   <table class="sampleTable">

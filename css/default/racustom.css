@@ -218,30 +218,44 @@ td.bottomalign {vertical-align:bottom !important;}
 /*Formats home page*/
 .forms {float:left; width:100%;padding-bottom:2em;border: 1px solid #999;}
 #homeTop, #homeBottom {width:100%;float:left;}
-#homeTop {min-height:11em;padding-bottom:2em;}
-.boxLeft, .boxCenter, .boxRight {width:32%; background: rgba(221, 221, 221, 0.8);box-shadow: 0px 5px 10px #666;min-height:15em}
-.categoryImage {float:left; height:2.2em;}
-.boxLeft {float:left;}
-.boxRight {float:right;}
-.boxCenter {float: left; margin-left:2%; margin-right:2%;}
-#searchbox {width:50%; float:right;height:7em;padding-top:3em;}
-#searchbox input[type="text"] {font-size:1.4em;padding-top:.2em; padding-bottom:.2em;width:30%; position: absolute; top: 13.5em; left: 35%;}
-#searchbox input[type="submit"] {font-size:1.4em; padding-top:.2em; padding-bottom:.2em; position:absolute; top:13.5em; left:67%}
-#searchbox.top input[type="text"], #searchbox.top input[type="submit"] {position:absolute; top:11.3em;}
+#homeTop {}
+.box {width:31%; margin: 1%; background: rgba(221, 221, 221, 0.8);float:left}
+.box:hover {box-shadow: 0px 0px 10px #666;}
+.categoryImage {float:left; height:2.2em;margin: 0 .5em 0 .5em;}
+#searchbox {width:64%; float:left;height:8em;border:1px solid #c45414;margin: 1% 0 1% 1%;}
+#searchbox input[type="text"] {font-size:1.4em;padding-top:.2em; padding-bottom:.2em;width:40%;float:left; margin:0;position:absolute; top:12em;left:10%}
+#searchbox input[type="submit"] {font-size:1.4em; padding-top:.2em; padding-bottom:.2em;float:left; margin:0 0 0 1%;position:absolute; top:12em;left:50%}
+#searchbox.top input[type="text"], #searchbox.top input[type="submit"] {}
 #searchbox input:focus, #searchbox select:focus {outline-color: #C45414}
-.showAdvanced.closed {float:right;padding-top:3em;padding-right:69%;}
-.showAdvanced.open {z-index:1; text-align:right; position: absolute;top: 6em;right: 1em;}
-#advancedSearch {z-index:1; font-size:1em; display:none;position: absolute; top:18.5em;left:35%;text-align:left;width:30%;padding:1px;border-bottom: 1px solid #999;
+.showAdvanced.closed {float:right;padding-right:14.5em;padding-top:5em}
+.showAdvanced.open {z-index:1; text-align:right; position: absolute;top: 6.6em;right: 1em;}
+#advancedSearch {z-index:1; font-size:1em; display:none;position:absolute; top:19.4em;left:10%;text-align:left;width:40%;padding:1px;border-bottom: 1px solid #999;
 border-left: 1px solid #999;
 border-right: 1px solid #999;
 background-color: rgb(247, 247, 247);}
 #boolean, #materialType, #date {padding:.5em;}
+#browse {float:right; width:32%}
 #type, #library, #collections, #dao {font-size:1em;}
-#date input {font-size:1em !important; position: relative !important; top:0 !important; left:0 !important;}
-#searchtip, #searchtipDate {display:none; width:32%;float:left;box-shadow: 0px 5px 10px #666;height:11em;background: rgba(221, 221, 221, 0.3);}
-.home li, .browselinks li {list-style: none;margin: 0px;padding: .5em;text-align:left;}
-.home ul, .browselinks ul {padding-left: .5em;padding-right:.5em;}
-.home h4, .browselinks h4 {padding: .5em .5em .5em 1em;text-align: left;background-color: rgba(196, 84, 20, 0.8);margin: 0;}
+#date input {font-size:1em !important; position: relative !important; top:0 !important; left:0 !important; float:none !important;margin-bottom:0.5em !important;}
+#searchtip, #searchtipDate {display:none; float:left;width:19%; font-size:.8em;box-shadow: 0px 5px 10px #666;background: rgba(221, 221, 221, 0.3);position: absolute;
+top: 16.5em;
+left: 2%;}
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+border-bottom: 10px solid transparent;
+border-left: 20px solid rgba(221, 221, 221, 0.3);
+position: absolute;
+top: 2.2em;
+left: 23.5em;
+}
+#featured {float:right}
+#featured img {width:100%; height: auto;}
+.home li {list-style: none;margin: 0px;padding: .5em;text-align:left;}
+.home ul {padding-left: .5em;padding-right:.5em;margin-top:.5em; margin-bottom:.5em;}
+.home h4 {padding: 1em .5em .5em 1em;text-align: left;margin-top:0;}
+.home h2 {background-color:#c45414; padding:.5em; margin-top:0;}
 
 /* Formats search results (number and type) */
 table.advancedSearch tr td{vertical-align:text-top;}
