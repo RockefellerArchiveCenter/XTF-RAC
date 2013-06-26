@@ -1350,46 +1350,47 @@
                         <xsl:variable name="containerSib" select="count(../container[@parent = $id] | ../container[@id = $id])"/>
                         
                         <!-- Item lists are printed here -->
-                        <tr class="file"> 
-                              <xsl:if test="parent::did/parent::*/@id">
-                                 <xsl:attribute name="id"><xsl:value-of select="parent::did/parent::*/@id"/></xsl:attribute>
-                              </xsl:if>
-                           <xsl:if test="position()=1">
-                              <td class="{$clevelMargin}" rowspan="{$rowspan}">
-                                 <div class="borderDisplay"> 
-                                       <xsl:apply-templates select="parent::did" mode="dsc"/>
-                                 </div>
-                              </td>                              
-                           </xsl:if>
-                           <td class="container">
-                              <xsl:if test="@label != 'Mixed materials' and @lable !='mixed materials' and @label='Mixed Materials'">
-                                 <xsl:value-of select="@label"/>
-                              </xsl:if>
-                           </td>
-                           <td class="container">   
-                              <xsl:value-of select="@type"/>
-                                 &#160;
-                              <xsl:apply-templates select="."/>
-                           </td>
-                           <td class="container">
-                              <xsl:value-of select="../container[@parent = $id]/@type"/>&#160;
-                              <xsl:value-of select="../container[@parent = $id]"/>
-                           </td>                                
-                           <td class="moreInfo">
-                              <xsl:variable name="didHitCount">
-                                 <xsl:value-of select="count(descendant-or-self::xtf:hit)"/>
-                              </xsl:variable>
-                              <xsl:if test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
-                                 child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
-                                 child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
+                  <tr class="file">
+                     <xsl:if test="parent::did/parent::*/@id">
+                        <xsl:attribute name="id">
+                           <xsl:value-of select="parent::did/parent::*/@id"/>
+                        </xsl:attribute>
+                     </xsl:if>
+                     <xsl:if test="position()=1">
+                        <td class="{$clevelMargin}" rowspan="{$rowspan}">
+                           <div class="borderDisplay">
+                              <xsl:apply-templates select="parent::did" mode="dsc"/>
+                           </div>
+                        </td>
+                     </xsl:if>
+                     <td class="container">
+                        <xsl:if
+                           test="@label != 'Mixed materials' and @lable !='mixed materials' and @label='Mixed Materials'">
+                           <xsl:value-of select="@label"/>
+                        </xsl:if>
+                     </td>
+                     <td class="container">
+                        <xsl:value-of select="@type"/> &#160; <xsl:apply-templates select="."/>
+                     </td>
+                     <td class="container">
+                        <xsl:value-of select="../container[@parent = $id]/@type"/>&#160;
+                           <xsl:value-of select="../container[@parent = $id]"/>
+                     </td>
+                     <td class="moreInfo">
+                        <xsl:variable name="didHitCount">
+                           <xsl:value-of select="count(descendant-or-self::xtf:hit)"/>
+                        </xsl:variable>
+                        <xsl:if
+                           test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
+                                 child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
                                  child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
                                  child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                  child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
                                  child::separatedmaterial |  child::controlaccess">
-                                 <a href="#" rel="#{../../@id}_dsc" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Additional description']);">
-                                    Additional description
-                                 </a>
-                                 <!--
+                           <a href="#" rel="#{../../@id}_dsc"
+                              onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Additional description']);"
+                              > Additional description </a>
+                           <!--
                                  <div class="overlay_dao" id="{../../@id}_dsc">
                                     <div class="dscDescription">
                                        <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
@@ -1403,23 +1404,34 @@
                                     </div>
                                  </div>
                                  -->
-                                 <xsl:if test="$didHitCount &gt; 0">
-                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
-                                 </xsl:if>
-                              </xsl:if>
-                           </td>   
-                           <!--2/11/12 WS:  add to bookbag function -->
-                           <td style="text-align:center;">
-                              <span class="addToBag">
-                              <xsl:variable name="identifier" select="concat($rootID,'|',$levelID)"/>
-                              <xsl:variable name="indexId" select="$identifier"/>
-                              <xsl:choose>
-                                 <xsl:when test="session:getData('bag')/child::*/child::*[@id=$indexId]">
-                                    <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
-                                    <span class="caption">Added</span>
-                                 </xsl:when>
-                                 <xsl:otherwise>
-                                    <script type="text/javascript">
+                           <xsl:if test="$didHitCount &gt; 0">
+                              <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                           </xsl:if>
+                        </xsl:if>
+                        <xsl:if
+                           test="child::accessrestrict[not(child::legalstatus)] |   child::userestrict">
+                           <a href="#" rel="#{../../@id}_dscrestrict"
+                              onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Restrictions']);"
+                              > Restrictions </a>
+                           <xsl:if test="$didHitCount &gt; 0">
+                              <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                           </xsl:if>
+                        </xsl:if>
+                     </td>
+                     <!--2/11/12 WS:  add to bookbag function -->
+                     <td style="text-align:center;">
+                        <span class="addToBag">
+                           <xsl:variable name="identifier" select="concat($rootID,'|',$levelID)"/>
+                           <xsl:variable name="indexId" select="$identifier"/>
+                           <xsl:choose>
+                              <xsl:when
+                                 test="session:getData('bag')/child::*/child::*[@id=$indexId]">
+                                 <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
+                                    title="Added to bookbag"/>
+                                 <span class="caption">Added</span>
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <script type="text/javascript">
                                     add_<xsl:value-of select="@id"/> = function() {
                                        var span = YAHOO.util.Dom.get('add_<xsl:value-of select="@id"/>');
                                        span.innerHTML = "Adding...";
@@ -1433,17 +1445,20 @@
                                           }, null);
                                     };
                                     </script>
-                                    <a href="javascript:add_{@id}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
-                                    <span id="add_{@id}" class="caption">
-                                       <a href="javascript:add_{@id}()">
-                                          Add
-                                       </a>
-                                    </span>
-                                 </xsl:otherwise>
-                              </xsl:choose>
-                              </span>
-                           </td>                         
-                        </tr>
+                                 <a href="javascript:add_{@id}()"
+                                    onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);">
+                                    <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
+                                       title="Add to bookbag"/>
+                                 </a>
+                                 <br/>
+                                 <span id="add_{@id}" class="caption">
+                                    <a href="javascript:add_{@id}()"> Add </a>
+                                 </span>
+                              </xsl:otherwise>
+                           </xsl:choose>
+                        </span>
+                     </td>
+                  </tr>
                      </xsl:for-each> 
                   </xsl:when>
                   
@@ -1502,8 +1517,7 @@
                                 <xsl:value-of select="count(descendant-or-self::xtf:hit)"/>
                              </xsl:variable>
                              <xsl:if test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
-                                child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
-                                child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
+                                child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
                                 child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
                                 child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
@@ -1515,12 +1529,25 @@
                                    <div class="dscDescription">
                                       <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
                                       <xsl:apply-templates select="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
-                                         child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
-                                         child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
+                                         child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
                                          child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
                                          child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                          child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
                                          child::separatedmaterial |  child::controlaccess"/>
+                                   </div>
+                                </div>
+                                <xsl:if test="$didHitCount &gt; 0">
+                                   <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                                </xsl:if>
+                             </xsl:if>
+                             <xsl:if test="child::accessrestrict[not(child::legalstatus)] |   child::userestrict">
+                                <a href="#{@id}_dscrestrict" class="dialog_dsc" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Restrictions']);">
+                                   Restrictions
+                                </a>
+                                <div class="overlay" id="{@id}_dscrestrict">
+                                   <div class="dscDescription">
+                                      <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
+                                      <xsl:apply-templates select="child::accessrestrict[not(child::legalstatus)] |   child::userestrict"/>
                                    </div>
                                 </div>
                                 <xsl:if test="$didHitCount &gt; 0">
