@@ -1505,7 +1505,7 @@
                          </td>
                            <!--7/16/11 WS: Adjusted Containers -->    
                          <td class="container">
-                            <xsl:value-of select="did/container/@type"/>&#160;
+                            <xsl:value-of select="did/container[1]/@type"/>&#160;
                             <xsl:value-of select="did/container[1]"/>
                          </td>
                          <td class="container">
