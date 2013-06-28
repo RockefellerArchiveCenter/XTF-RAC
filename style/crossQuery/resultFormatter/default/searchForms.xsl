@@ -103,14 +103,20 @@
                             event.preventDefault();
                             $('#advancedSearch').slideToggle(400, 'linear');
                             });
-                            //$('#searchbox input').focus(function() {
-                            //$('#searchtipDate').hide();
-                            //$('#searchtip').fadeIn('slow');
-                            //});
-                            //$('.date input').focus(function() {
-                            //$('#searchtip').hide();
-                            //$('#searchtipDate').fadeIn('slow');
-                            //});
+                            $('input.searchbox').focus(function() {
+                            $('#searchtipDate').hide();
+                            $('#searchtip').fadeIn('slow');
+                            });
+                            $('input.searchbox').blur(function() {
+                            $('#searchtip').fadeOut('slow');
+                            });
+                            $('input.date').focus(function() {
+                            $('#searchtip').hide();
+                            $('#searchtipDate').fadeIn('slow');
+                            });
+                            $('input.date').blur(function() {
+                            $('#searchtipDate').fadeOut('slow');
+                            });
                         });
                         //]]>   
                   </script>
@@ -134,7 +140,7 @@
                   </div>
                   </div>
                   <div class="overlay" id="searchTips">
-                  <div class="homeDialog">
+                     <div class="searchtips">
                      <h4>Searching tips and tricks</h4>
                      <p>You can search across the RAC’s archival materials, books, DVDs, VHS and microfilm holdings from the home page or the Advanced Search page. You can search within an archival collection by selecting that collection and then using the "search within this collection" in the navigation bar.</p>
                      <p>An asterisk - * - will find from one to many characters within a word: hist* will retrieve history, histories, and historians, coo*tion will find cooperation and coordination</p>
@@ -147,8 +153,8 @@
                      <p>When you see this icon <img src="./icons/default/i_rss.png" alt="rss feed"/> it means there is an RSS feed for this search. You can click on it to subscribe to see the most recent changes and additions in that search in your favorite feed reader.</p>
                      <h4>Not everything is up yet!</h4>
                      <p>We’re still in the process of adding information to this system. </p>
-                     <p>Some large collections, like those of the <strong>Ford Foundation</strong>, <strong>Population Council</strong>, and <strong>Rockefeller University</strong>, are only partially represented in the online system; other smaller collections, like the <strong>Trilateral Commission</strong>, the <strong>Near East Foundation</strong>, and some collections of personal papers are not yet represented at all (note: finding aids for Ford Foundation grant records are not yet available online). Please contact the archival staff at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further information about these collections.</p>
-                  </div>
+                     <p>Some large collections, like those of the <strong>Ford Foundation</strong>, <strong>Population Council</strong>, and <strong>Rockefeller University</strong>, are only partially represented in the online system; other smaller collections, like the <strong>Trilateral Commission</strong>, the <strong>Near East Foundation</strong>, and some collections of personal papers are not yet represented at all (note: finding aids for Ford Foundation grant records are not yet available online). Please <a href="mailto:archive@rockarch.org">contact us</a> for further information about these collections.</p>
+                     </div>
                   </div>
                   <div class="overlay" id="archivalMat">
                      <div class="homeDialog">
@@ -184,13 +190,13 @@
                         Collection Guides
                      </a>
                   </h1>
-                  <div class="bookbag">
+                  <!--<div class="bookbag">
                      <xsl:if test="$smode != 'showBag'">
                         <xsl:variable name="bag" select="session:getData('bag')"/>
                         <a href="{$xtfURL}{$crossqueryPath}?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><img src="/xtf/icons/default/bookbag.gif" alt="bookbag" align="bottom"/></a>
                         (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
                      </xsl:if>
-                  </div>
+                  </div>-->
                  
                   <div class="searchPage">
                      <!--<div class="tabs">
@@ -249,29 +255,20 @@
          <div class="home">
             <div id="searchtip" class="box">
                <ul>
-                  <li>philanthrop* finds philanthropy, philanthropies, philanthropic, etc. To search
-                     an exact phrase, include quotation marks, e.g. "mental health". </li>
-                  <li>
-                     <a href="#searchTips" class="dialog_dsc"
+                  <li>Want help? See these
+                     <a href="#searchTips" class="searchTips"
                         onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
-                        >More search tips</a>
+                        >search tips</a>.
                   </li>
                </ul>
-               <div class="arrow-right"/>
             </div>
             <div id="searchtipDate" class="box">
                <ul>
                   <li>Enter a single year or range of years, for example 1997 or 1892-1942.</li>
-                  <li>
-                     <a href="#searchTips" class="dialog_dsc"
-                        onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
-                        >More search tips</a>
-                  </li>
                </ul>
-               <div class="arrow-right"/>
             </div>
             <div id="searchbox">
-               <input type="text" name="keyword" value="{$keyword}"/>
+               <input class="searchbox" type="text" name="keyword" value="{$keyword}"/>
                <div id="advancedSearch">
                   <div id="boolean">
                      <xsl:choose>
@@ -334,7 +331,7 @@
                   </div>
                   <div id="date">
                      <xsl:text>Years: </xsl:text>
-                     <input type="text" name="year" size="20" value="{$year}"/>
+                     <input class="date" type="text" name="year" size="20" value="{$year}"/>
                   </div>
                   <input type="hidden" name="smode" value="advanced" id="start"/>
                   <div class="showAdvanced open">
@@ -348,14 +345,21 @@
                <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
                <a href="#" class="showAdvanced closed">show more search options</a>
             </div>
+            
+            <div id="featured" class="box">
+               <h4>Featured content</h4>
+               <ul>
+                  <li>Check out this amazing image!</li>
+                  <img src="./icons/default/dimes.jpg" alt="Senior"/>
+               </ul>
+            </div>
+
             <div id="browse" class="box">
                <h2>Browse</h2>
-
-               <div>
-               <img class="categoryImage" src="/xtf/icons/default/collections.gif"
-                  alt="archival collections"/>
-               <h4>Archival Collections</h4>
-               
+               <div class="category">
+                  <img class="categoryImage" src="/xtf/icons/default/collections.gif"
+                     alt="archival collections"/>
+                  <h4>Archival Collections</h4>
                   <ul>
                      <li>
                         <a
@@ -379,8 +383,7 @@
                      </li>
                   </ul>
                </div>
-
-               <div>
+               <div class="category">
                   <img class="categoryImage" src="/xtf/icons/default/book.gif"
                      alt="library materials"/>
                   <h4>Library Materials</h4>
@@ -402,8 +405,7 @@
                      </li>
                   </ul>
                </div>
-
-               <div>
+               <div class="category">
                   <img class="categoryImage" src="/xtf/icons/default/dao_large.gif"
                      alt="digital materials"/>
                   <h4>Digital Materials</h4>
@@ -425,17 +427,8 @@
                      </li>
                   </ul>
                </div>
-
             </div>
             
-            <div id="featured" class="box">
-               <h4>Featured content</h4>
-               <ul>
-                  <li>Check out this amazing image!</li>
-                  <img src="./icons/default/dimes.jpg" alt="Senior"/>
-               </ul>
-            </div>
-
             <div id="news" class="box">
                <h4>News</h4>
                <ul>

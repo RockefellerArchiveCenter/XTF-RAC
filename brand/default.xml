@@ -215,6 +215,26 @@
                               dialogFeedback.dialog("option", "title", '').dialog("open");
                             });
                         });
+                        $(function () {
+                        var dialogSearchTips = $('#searchTips').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "950",
+                                  height: "568",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $(".searchTips").on("click", function (e) {
+                            e.preventDefault();
+                              dialogSearchTips.dialog("option", "title", '').dialog("open");
+                            });
+                        });
                     });
         </script>
       

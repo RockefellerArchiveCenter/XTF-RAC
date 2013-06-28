@@ -68,7 +68,7 @@ ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; t
 .bbar_custom {padding:1em; border:none;}
 h1.collectionGuides {margin-top:-70px; margin-left:160px; font-size:2em;}
 h1.collectionGuides a {text-decoration:none; color:black;}
-.searchPage {margin-top:34px !important;}
+/*.searchPage {margin-top:34px !important;}*/
 .navright {
     background-color: #DDDDDD;
     padding:12px;
@@ -206,56 +206,47 @@ h1.collectionGuides a {text-decoration:none; color:black;}
     border-bottom: 1px dotted;
 }
 
-/*Formats main search tabs*/
-.browselinks p {font-size: 1.5em;}
-td.bottomalign {vertical-align:bottom !important;}
-.searchtiplink {text-align:right !important;}
-.tab, .tab-select {z-index:1;width: 20%;text-align: center;padding: 0.5em;margin-bottom:-1px;background: #B8411C;display:inline-block; margin-right:.2em;border-top: 1px solid #999;border-right: 1px solid #999;border-left: 1px solid #999;}
-.tab {background:#ddd; border-bottom: 1px solid #999;}
-.tab-select {box-shadow: 0px -10px 20px -10px #000000;background:#ffffff;border-bottom: 1px solid #fff;}
-.form td {vertical-align: middle;}
-
 /*Formats home page*/
 .forms {float:left; width:100%;padding-bottom:2em;border: 1px solid #999;}
-#homeTop, #homeBottom {width:100%;float:left;}
-#homeTop {}
-.box {width:31%; margin: 1%; background: rgba(221, 221, 221, 0.8);float:left}
-.box:hover {box-shadow: 0px 0px 10px #666;}
+.box {margin: 1%; background: rgba(221, 221, 221, 0.5);float:left; border-radius:5px; box-shadow: 0px 0px 10px #666;}
+.box:hover {box-shadow: 0px 0px 5px #666;}
 .categoryImage {float:left; height:2.2em;margin: 0 .5em 0 .5em;}
-#searchbox {width:64%; float:left;height:8em;border:1px solid #c45414;margin: 1% 0 1% 1%;}
-#searchbox input[type="text"] {font-size:1.4em;padding-top:.2em; padding-bottom:.2em;width:40%;float:left; margin:0;position:absolute; top:12em;left:10%}
-#searchbox input[type="submit"] {font-size:1.4em; padding-top:.2em; padding-bottom:.2em;float:left; margin:0 0 0 1%;position:absolute; top:12em;left:50%}
+#searchbox {width:64%; float:left;height:7em;margin: 1% 0 1% 1%;border-radius:5px;}
+#searchbox input[type="text"] {font-size:1.4em;padding-top:.2em; padding-bottom:.2em;width:40%;float:left; margin:0;position:absolute; top:10em;left:10%}
+#searchbox input[type="submit"] {font-size:1.4em; padding-top:.2em; padding-bottom:.2em;float:left; margin:0 0 0 1%;position:absolute; top:10em;left:50%}
 #searchbox.top input[type="text"], #searchbox.top input[type="submit"] {}
 #searchbox input:focus, #searchbox select:focus {outline-color: #C45414}
-.showAdvanced.closed {float:right;padding-right:14.5em;padding-top:5em}
+.showAdvanced.closed {position: absolute; right:50%;top:16.6em}
 .showAdvanced.open {z-index:1; text-align:right; position: absolute;top: 6.6em;right: 1em;}
-#advancedSearch {z-index:1; font-size:1em; display:none;position:absolute; top:19.4em;left:10%;text-align:left;width:40%;padding:1px;border-bottom: 1px solid #999;
+#advancedSearch {z-index:1; font-size:1em; display:none;position:absolute; top:16.6em;left:10%;text-align:left;width:40%;padding:1px;border-bottom: 1px solid #999;
 border-left: 1px solid #999;
 border-right: 1px solid #999;
 background-color: rgb(247, 247, 247);}
 #boolean, #materialType, #date {padding:.5em;}
-#browse {float:right; width:32%}
+#browse {float:left; width:64%; margin-bottom:2%}
+.category {float: left; width:28%;min-height:13em;margin-left:5%;}
+#browse h2 {border-radius: 5px 5px 0 0;background-color:rgba(196, 84, 20, 0.8); padding:.5em; margin-top:0;}
 #type, #library, #collections, #dao {font-size:1em;}
 #date input {font-size:1em !important; position: relative !important; top:0 !important; left:0 !important; float:none !important;margin-bottom:0.5em !important;}
-#searchtip, #searchtipDate {display:none; float:left;width:19%; font-size:.8em;box-shadow: 0px 5px 10px #666;background: rgba(221, 221, 221, 0.3);position: absolute;
-top: 16.5em;
-left: 2%;}
-.arrow-right {
-	width: 0; 
-	height: 0; 
-	border-top: 10px solid transparent;
-border-bottom: 10px solid transparent;
-border-left: 20px solid rgba(221, 221, 221, 0.3);
-position: absolute;
-top: 2.2em;
-left: 23.5em;
-}
-#featured {float:right}
+#searchtip, #searchtipDate {display:none; box-shadow: 0px 0px 10px #c45414;background: #efefef}
+#searchtipDate:hover, #searchtip:hover {box-shadow: 0px 0px 5px #c45414;}
+#searchtip li, #searchtipDate li {padding:0em}
+#searchtip {display:none; float:left;width:7%; position: absolute;top: 12.5em;left: 1%;font-size:1em;}
+#searchtipDate {width: 13%;position: absolute;left: 31%;top: 29.5em;z-index: 2;font-size: .7em;font-size:.7em}
+.searchtips {font-size:.9em;}
+.arrow-right {width: 0; height: 0; border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-left: 11px solid #ddd;position: absolute;top: 2em;left: 100%}
+.arrow-left {width: 0; height: 0; border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-right: 11px solid #ddd;position: absolute;top: 1.3em;right: 100%}
+#news h4, #about h4, #featured h4 {background-color: #bbbbbb; border-radius: 5px 5px 0 0;}
+#featured {float:right; width: 31%}
 #featured img {width:100%; height: auto;}
+#news {width: 41%; min-height:12em;}
+#about {width: 21%; min-height:12em;}
+#disclaimer {width:64%}
+.home a {text-decoration: none !important; color: #c45414 !important;}
+.home a:hover {color:#c45414 !important; text-shadow:0 1px 1px #666; }
 .home li {list-style: none;margin: 0px;padding: .5em;text-align:left;}
 .home ul {padding-left: .5em;padding-right:.5em;margin-top:.5em; margin-bottom:.5em;}
-.home h4 {padding: 1em .5em .5em 1em;text-align: left;margin-top:0;}
-.home h2 {background-color:#c45414; padding:.5em; margin-top:0;}
+.home h4 {padding: .5em .5em .5em 1em;text-align: left;margin-top:0;}
 .homeDialog {border:1px solid #ccc; margin:1em; padding:1em;}
 
 /* Formats search results (number and type) */
