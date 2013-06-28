@@ -47,19 +47,11 @@ ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; t
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
 /*h1#collectionGuides {background: url("images/collection_guides.gif") no-repeat left top; background-color:#fff;}*/
 
-#collectionGuides {margin-top:-100px; margin-bottom:1em; margin-left:170px; font-size:.5em !important;}
-#collectionGuides a {
-   position:relative;
-   display:block;
-   width:650px;
-   height:80px !important; }
-#collectionGuides a span {
-   display:block;
-   position:absolute;
-   width:100%;
-   height:100%;
-   background: url("images/dimes.gif") no-repeat left top; background-color:#fff;
-   z-index:1; /* Places <span> on top of <a> text */  }
+#header {margin-top:-100px; margin-bottom:1em; margin-left:170px; height:80px !important; font-family: 'Comfortaa', cursive;width:49em;}
+#header a, #header a:hover {text-decoration:none;}
+#header h1 {font-size: 3em; margin: 0; text-decoration:none; text-shadow: 0 0 4px #444;color: #000000;}
+.tagline {font-size: 1.5em;color: #444;}
+.tagline:hover {text-shadow: 0 0 2px #777;}
 
 .searchNav {background-color: #fff; width:100%; margin-top:-.5em;}
 .searchNav .searchLinks {color: #555555; text-align:right; padding-right:.5em;}
@@ -207,32 +199,36 @@ h1.collectionGuides a {text-decoration:none; color:black;}
 }
 
 /*Formats home page*/
-.forms {float:left; width:100%;padding-bottom:2em;border: 1px solid #999;}
+.forms {float:left; width:100%;padding-bottom:2em;border: 1px solid #999;border-radius:5px;}
 .box {margin: 1%; background: rgba(221, 221, 221, 0.5);float:left; border-radius:5px; box-shadow: 0px 0px 10px #666;}
 .box:hover {box-shadow: 0px 0px 5px #666;}
 .categoryImage {float:left; height:2.2em;margin: 0 .5em 0 .5em;}
 #searchbox {width:64%; float:left;height:7em;margin: 1% 0 1% 1%;border-radius:5px;}
-#searchbox input[type="text"] {font-size:1.4em;padding-top:.2em; padding-bottom:.2em;width:40%;float:left; margin:0;position:absolute; top:10em;left:10%}
-#searchbox input[type="submit"] {font-size:1.4em; padding-top:.2em; padding-bottom:.2em;float:left; margin:0 0 0 1%;position:absolute; top:10em;left:50%}
-#searchbox.top input[type="text"], #searchbox.top input[type="submit"] {}
-#searchbox input:focus, #searchbox select:focus {outline-color: #C45414}
-.showAdvanced.closed {position: absolute; right:50%;top:16.6em}
-.showAdvanced.open {z-index:1; text-align:right; position: absolute;top: 6.6em;right: 1em;}
-#advancedSearch {z-index:1; font-size:1em; display:none;position:absolute; top:16.6em;left:10%;text-align:left;width:40%;padding:1px;border-bottom: 1px solid #999;
+#searchbox input, #searchbox select {border-radius:5px;padding:.2em;}
+#searchbox select {border: 1px inset #ddd;}
+#searchbox input:focus, #searchbox select:focus {box-shadow:0px 0px 5px #C45414; background-color: #ffffff; outline:none;}
+input.searchbox {font-size:1.4em;}
+input[type="text"].searchbox {width:40%;margin:0;position:absolute; top:10em;left:10%; background-color:rgb(253, 253, 253);z-index:2;border: 1px inset #ddd;padding:.2em;}
+input[type="submit"].searchbox {margin:0 0 0 1%;position:absolute; top:10em;left:50%;border: 1px outset #dddddd; background-color:#dddddd}
+input[type="submit"].searchbox:hover {box-shadow:0px 0px 3px #C45414;color: #c45414;}
+input[type="submit"].searchbox:active {border: 1px inset #dddddd;color: #c45414;}
+.showAdvanced.closed {position: absolute; right:50%;top:16.5em}
+.showAdvanced.open {z-index:1; text-align:right; position: absolute;top: 7.4em;right: 1em;}
+#advancedSearch {z-index:1; font-size:1em; display:none;position:absolute; top:16em;left:10%;text-align:left;width:40%;padding:4px;border-bottom: 1px solid #999;
 border-left: 1px solid #999;
 border-right: 1px solid #999;
-background-color: rgb(247, 247, 247);}
+background-color: rgb(245, 245, 245);box-shadow: 0px 5px 10px #666;}
 #boolean, #materialType, #date {padding:.5em;}
 #browse {float:left; width:64%; margin-bottom:2%}
 .category {float: left; width:28%;min-height:13em;margin-left:5%;}
 #browse h2 {border-radius: 5px 5px 0 0;background-color:rgba(196, 84, 20, 0.8); padding:.5em; margin-top:0;}
 #type, #library, #collections, #dao {font-size:1em;}
-#date input {font-size:1em !important; position: relative !important; top:0 !important; left:0 !important; float:none !important;margin-bottom:0.5em !important;}
-#searchtip, #searchtipDate {display:none; box-shadow: 0px 0px 10px #c45414;background: #efefef}
-#searchtipDate:hover, #searchtip:hover {box-shadow: 0px 0px 5px #c45414;}
+#date input {font-size:1em !important; position: relative !important; top:0 !important; left:0 !important; float:none !important;margin-bottom:0.5em !important;border: 1px inset #ddd; padding:.2em}
+#searchtip, #searchtipDate {display:none; box-shadow: 0px 0px 5px #c45414;background: #efefef}
+#searchtipDate:hover, #searchtip:hover {box-shadow: 0px 0px 10px #c45414;}
 #searchtip li, #searchtipDate li {padding:0em}
 #searchtip {display:none; float:left;width:7%; position: absolute;top: 12.5em;left: 1%;font-size:1em;}
-#searchtipDate {width: 13%;position: absolute;left: 31%;top: 29.5em;z-index: 2;font-size: .7em;font-size:.7em}
+#searchtipDate {width: 13%;position: absolute;left: 31%;top: 29em;z-index: 2;font-size: .7em;font-size:.7em}
 .searchtips {font-size:.9em;}
 .arrow-right {width: 0; height: 0; border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-left: 11px solid #ddd;position: absolute;top: 2em;left: 100%}
 .arrow-left {width: 0; height: 0; border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-right: 11px solid #ddd;position: absolute;top: 1.3em;right: 100%}
