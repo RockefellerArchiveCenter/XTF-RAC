@@ -756,12 +756,13 @@
             <xsl:copy-of select="$brand.header"/>
             
             <!-- result header -->
-               <h1 id="collectionGuides">
-                  <a href="/xtf/search">
-                     <span></span>
-                     Collection Guides
-                  </a>
-               </h1>
+            <div id="header">
+               <a href="/xtf/search">
+                  <h1> DIMES </h1>
+                  <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
+                     Center</p>
+               </a>
+            </div>
                <table class="searchNav">
                   <tr>
                      <td colspan="2">
