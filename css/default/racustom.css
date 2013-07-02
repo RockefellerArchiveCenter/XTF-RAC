@@ -234,7 +234,7 @@ background-color: rgb(245, 245, 245);box-shadow: 0px 5px 10px #666;}
 .arrow-left {width: 0; height: 0; border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-right: 11px solid #ddd;position: absolute;top: 1.3em;right: 100%}
 #news h4, #about h4, #featured h4 {background-color: #bbbbbb; border-radius: 5px 5px 0 0;}
 #featured {float:right; width: 31%}
-#featured img {width:100%; height: auto;}
+#featured img {height:100%; width: auto;}
 #news {width: 41%; min-height:12em;}
 #about {width: 21%; min-height:12em;}
 #disclaimer {width:64%}

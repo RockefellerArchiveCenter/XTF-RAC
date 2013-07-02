@@ -120,13 +120,13 @@
                         });
                         //]]>   
                   </script>
-                  <script>
-                     //<![CDATA[
-                        $(function() {
-                           $( ".accordion" ).accordion();
-                        });
-                     //]]>   
-                  </script>
+                  <script type="text/javascript" src="/xtf/script/rac/featured.js"></script>
+                 <script>
+                 //<![CDATA[
+                  $(document).ready(function(){
+                     $('#featured img').randomImage();
+                  });//]]>
+                 </script>
                   
                </head>
                <body>
@@ -349,10 +349,10 @@
             </div>
             
             <div id="featured" class="box">
-               <h4>Featured content</h4>
+               <h4>From our collections</h4>
                <ul>
-                  <li>Check out this amazing image!</li>
-                  <img src="./icons/default/dimes.jpg" alt="Senior"/>
+                  <img src="" alt=""></img>
+                  <li id="caption"></li>
                </ul>
             </div>
 
