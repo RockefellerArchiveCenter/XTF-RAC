@@ -182,12 +182,13 @@
             </head>
             <body>
                <xsl:copy-of select="$brand.header"/>
-               <h1 id="collectionGuides">
+               <div id="header">
                   <a href="/xtf/search">
-                     <span></span>
-                     Collection Guides
+                     <h1> DIMES </h1>
+                     <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
+                        Center</p>
                   </a>
-               </h1>
+               </div>
                   <xsl:call-template name="bbar_custom"/>
                
                <div class="main">

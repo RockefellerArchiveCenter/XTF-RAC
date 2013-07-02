@@ -185,12 +185,13 @@
             
             <!-- result header -->
             <!-- 9/27/11 WS:  Adjusted results header for a cleaner look-->
-            <h1 id="collectionGuides">
+            <div id="header">
                <a href="/xtf/search">
-                  <span></span>
-                  Collection Guides
+                  <h1> DIMES </h1>
+                  <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
+                     Center</p>
                </a>
-            </h1>
+            </div>
             <table class="searchNav">
                <tr>
                   <td colspan="2">
