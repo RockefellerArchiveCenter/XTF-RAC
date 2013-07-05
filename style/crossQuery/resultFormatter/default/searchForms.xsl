@@ -145,15 +145,12 @@
             	.mouseout(function() {
          	     	$(this).removeClass('over');										
             	});
+            	$('.accordionContent').click(function(){
+            	$('.accordionContent').delay(1000).slideUp('normal');
+            	});
                   $('.accordionContent').hide();
-
                });//]]>
             </script>
-            <script>
-                  //<![CDATA[
-
-                  //]]>
-             </script>
                </head>
                <body>
                   <xsl:copy-of select="$brand.header"/>
@@ -296,21 +293,16 @@
    <xsl:template name="simpleForm" exclude-result-prefixes="#all">
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <div class="home">
-            <div id="searchtip" class="box">
-               <ul>
-                  <li>Want help? See these
-                     <a href="#searchTips" class="searchTips"
-                        onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
-                        >search tips</a>.
-                  </li>
-               </ul>
-            </div>
-            <div id="searchtipDate" class="box">
-               <ul>
-                  <li>Enter a single year or range of years, for example 1997 or 1892-1942.</li>
-               </ul>
-            </div>
             <div id="searchTop">
+               <div id="searchtip" class="box">
+                  <ul>
+                     <li>Want help? See these
+                        <a href="#searchTips" class="searchTips"
+                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
+                           >search tips</a>.
+                     </li>
+                  </ul>
+               </div>
                <div id="searchbox">
                   <input class="searchbox" type="text" name="keyword" value="{$keyword}"/>
                   <div id="advancedSearch">
@@ -376,7 +368,12 @@
                      <div id="date">
                         <xsl:text>Years: </xsl:text>
                         <input class="date" type="text" name="year" size="20" value="{$year}"/>
-                     </div>
+                        <div id="searchtipDate" class="box">
+                           <ul>
+                              <li>Enter a single year or range of years, for example 1997 or 1892-1942.</li>
+                           </ul>
+                        </div>
+                     </div>         
                      <input type="hidden" name="smode" value="advanced" id="start"/>
                      <div class="showAdvanced open">
                         <a href="#">close</a>
