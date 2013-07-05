@@ -3,7 +3,7 @@
 <brand xmlns="http://www.w3.org/1999/xhtml">
    
    <links>
-      <link href='http://fonts.googleapis.com/css?family=Corben|Averia+Serif+Libre|Averia+Libre|Comfortaa' rel='stylesheet' type='text/css'/>
+      <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
       <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
       <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
@@ -248,7 +248,7 @@
     </links>
 
    <dynaxml.links>
-      <link href='http://fonts.googleapis.com/css?family=Corben|Averia+Serif+Libre|Averia+Libre|Comfortaa' rel='stylesheet' type='text/css'/>
+      <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
       <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
       <link rel="stylesheet" href="css/default/content.css" type="text/css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
@@ -4684,9 +4684,8 @@
          </feedback>
    
    <footer>
-      <div class="footer" style="text-align:left !important;">
-         Copyright &#169; The Rockefeller Archive Center.  All rights reserved.<br/>
-         <a href="http://www.rockarch.org/site.php">Site Index</a>
+      <div class="footer">
+         <p>Copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a></p>
       </div>
    </footer>
 

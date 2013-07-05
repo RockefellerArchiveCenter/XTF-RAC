@@ -47,11 +47,11 @@ ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; t
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
 /*h1#collectionGuides {background: url("images/collection_guides.gif") no-repeat left top; background-color:#fff;}*/
 
-#header {margin-top:-100px; margin-bottom:1em; margin-left:170px; height:80px !important; font-family: 'Comfortaa', cursive;width:49em;}
+#header {margin-top:-100px; margin-bottom:1em; margin-left:170px; height:80px !important; font-family: 'Questrial', sans;-webkit-text-stroke: 1px;width:49em;}
 #header a, #header a:hover {text-decoration:none;}
-#header h1 {font-size: 3em; margin: 0; text-decoration:none; text-shadow: 0 0 4px #444;color: #000000;font-family: 'Comfortaa', cursive;}
+#header h1 {font-size: 3em; margin: 0; text-decoration:none;color: #000000;font-family: 'Questrial', sans;}
+#header h1:hover {text-shadow:0 0 5px #c45414;}
 .tagline {font-size: 1.5em;color: #444;}
-.tagline:hover {text-shadow: 0 0 2px #777;}
 
 .searchNav {background-color: #fff; width:100%; margin-top:-.5em;}
 .searchNav .searchLinks {color: #555555; text-align:right; padding-right:.5em;}
@@ -199,48 +199,66 @@ ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; t
 }
 
 /*Formats home page*/
-.forms {float:left; width:100%;padding-bottom:2em;border: 1px solid #999;border-radius:5px;}
-.box {margin: 1%; background: rgba(221, 221, 221, 0.5);float:left; border-radius:5px; box-shadow: 0px 0px 10px #666;}
+.forms {float:left; width:100%;border: 1px solid #999;border-radius:5px 0 5px 5px;}
+.box {margin: 1%; background: #EEEEEE;float:left; border-radius:5px 5px 0px 0px; box-shadow: 0px 0px 10px #666;width:31%;}
 .box:hover {box-shadow: 0px 0px 5px #666;}
-.categoryImage {float:left; height:2.2em;margin: 0 .5em 0 .5em;}
-#searchbox {width:64%; float:left;height:7em;margin: 1% 0 1% 1%;border-radius:5px;}
+.box h2 {border-radius: 5px 5px 0 0; padding:.5em; margin:0;}
+#searchTop {width:100%; float:left;margin: 1em 0 1% 1%;height:6em;}
+#searchbox {position:absolute; top:12em; left:0;width:100%}
 #searchbox input, #searchbox select {border-radius:5px;padding:.2em;}
 #searchbox select {border: 1px inset #ddd;}
 #searchbox input:focus, #searchbox select:focus {box-shadow:0px 0px 5px #C45414; background-color: #ffffff; outline:none;}
 input.searchbox {font-size:1.4em;}
-input[type="text"].searchbox {width:40%;margin:0;position:absolute; top:10em;left:10%; background-color:rgb(253, 253, 253);z-index:2;border: 1px inset #ddd;padding:.2em;}
-input[type="submit"].searchbox {margin:0 0 0 1%;position:absolute; top:10em;left:50%;border: 1px outset #dddddd; background-color:#dddddd}
+input[type="text"].searchbox {width:40%;margin:0;background-color:rgb(253, 253, 253);z-index:2;border: 1px inset #ddd;padding:.2em;position:absolute; left:26%;}
+input[type="submit"].searchbox {margin:0 0 0 1%;border: 1px outset #dddddd; background-color:#dddddd; position:absolute; top:0; left:67%;}
 input[type="submit"].searchbox:hover {box-shadow:0px 0px 3px #C45414;color: #c45414;}
 input[type="submit"].searchbox:active {border: 1px inset #dddddd;color: #c45414;}
-.showAdvanced.closed {position: absolute; right:50%;top:16.5em}
-.showAdvanced.open {z-index:1; text-align:right; position: absolute;top: 7.4em;right: 1em;}
-#advancedSearch {z-index:1; font-size:1em; display:none;position:absolute; top:16em;left:10%;text-align:left;width:40%;padding:4px;border-bottom: 1px solid #999;
+.showAdvanced.closed {position: absolute; top: 2.5em; right: 34%;}
+.showAdvanced.open {text-align:right; float:right;}
+#advancedSearch {z-index:1; position:absolute; top:2.2em; left:0em; margin-left:26%; font-size:1em; display:none;text-align:left;width:40%;padding:4px;border-bottom: 1px solid #999;
 border-left: 1px solid #999;
 border-right: 1px solid #999;
-background-color: rgb(245, 245, 245);box-shadow: 0px 5px 10px #666;}
+background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #boolean, #materialType, #date {padding:.5em;}
-#browse {float:left; width:64%; margin-bottom:2%}
-.category {float: left; width:28%;min-height:13em;margin-left:5%;}
-#browse h2 {border-radius: 5px 5px 0 0;background-color:rgba(196, 84, 20, 0.8); padding:.5em; margin-top:0;}
+#browse {padding:0;min-height:12em;}
+#browse h2 {background-color:#c45414;}
+.category {float: left;width:100%}
+.category h3 {margin:.5em; vertical-align:bottom}
+.category img {vertical-align:middle; margin-right:.5em;}
+.accordionButton {background: #BBBBBB;border-top: 1px solid #FFFFFF;cursor: pointer;}
+.accordionButton:before {width: 0;height: 0;border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-left: 5px solid #000;content: " ";float: left;margin-left: 1em;margin-right: -1em;margin-top: 1.1em;}
+.accordionContent {background:#EEEEEE;float:left;width:100%}
+.browseOption {font-size:1.2em; padding:.3em}
+.on {background: #CCCCCC}
+.on:before {width: 0;height: 0;border-top: 5px solid #000;border-right: 5px solid transparent;border-left: 5px solid transparent;content: " ";float: left;margin-left: .8em;margin-right: -1em;margin-top: 1.3em;}
+.over {background: #CCCCCC;}
 #type, #library, #collections, #dao {font-size:1em;}
 #date input {font-size:1em !important; position: relative !important; top:0 !important; left:0 !important; float:none !important;margin-bottom:0.5em !important;border: 1px inset #ddd; padding:.2em}
-#searchtip, #searchtipDate {display:none; box-shadow: 0px 0px 5px #c45414;background: #efefef}
+#searchtip, #searchtipDate {display:none; box-shadow: 0px 0px 5px #c45414;background: #eeeeee}
 #searchtipDate:hover, #searchtip:hover {box-shadow: 0px 0px 10px #c45414;}
-#searchtip li, #searchtipDate li {padding:0em}
-#searchtip {display:none; float:left;width:7%; position: absolute;top: 12.5em;left: 1%;font-size:1em;}
+#searchtip li, #searchtipDate li {padding:0em; text-align:center;}
+#searchtip {display:none; height:2.5em; width:20%; position: absolute;top: 10.8em;left: 2%;font-size:1em;}
 #searchtipDate {width: 13%;position: absolute;left: 31%;top: 29em;z-index: 2;font-size: .7em;font-size:.7em}
 .searchtips {font-size:.9em;}
 .arrow-right {width: 0; height: 0; border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-left: 11px solid #ddd;position: absolute;top: 2em;left: 100%}
 .arrow-left {width: 0; height: 0; border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-right: 11px solid #ddd;position: absolute;top: 1.3em;right: 100%}
-#news h4, #about h4, #featured h4 {background-color: #bbbbbb; border-radius: 5px 5px 0 0;}
-#featured {float:right; width: 31%}
-#featured img {height:100%; width: auto;}
-#news {width: 41%; min-height:12em;}
-#about {width: 21%; min-height:12em;}
-#disclaimer {width:64%}
-.home a {text-decoration: none !important; color: #c45414 !important;}
-.home a:hover {color:#c45414 !important; text-decoration:underline !important; }
-.home li {list-style: none;margin: 0px;padding: .5em;text-align:left;}
+#news h2, #featured h2 {background-color: #bbbbbb;}
+#featured {width:32%}
+#featured img {max-height:100%; max-width: 100%;}
+#news {}
+#about {position: absolute;top: 7.2em;right: 1%; width:13em;text-align:right}
+#about a {font-size:1.2em;}
+#about h3 {padding: .5em;margin: 0;}
+#about .accordionButton {border-radius:5px 5px 0 0;border-top: 1px solid #999;border-left: 1px solid #999;border-right: 1px solid #999;
+border-bottom: 0;background: #eee;margin-right: -2px;background:#EEEEEE;}
+#about .over {background:#bbbbbb}
+#about .on {background: #bbbbbb}
+#about .accordionContent {padding:1em;width:11em; box-shadow: 0px 4px 10px -5px #666;border-left: 1px solid #999;border-right: 1px solid #999;border-bottom: 1px solid #999;}
+#disclaimer {width:100%; float:left; border-top: 1px solid #999;color:#666;text-align:justify;margin-top:2em;}
+#disclaimer p { margin:1%; }
+.home a, #about a {text-decoration: none !important; color: #c45414 !important;}
+.home a:hover, #about a:hover {color:#c45414 !important; text-decoration:underline !important; }
+.home li {list-style: none;margin: 0px;padding: .5em;text-align:left;font-size:1.2em;}
 .home ul {padding-left: .5em;padding-right:.5em;margin-top:.5em; margin-bottom:.5em;}
 .home h4 {padding: .5em .5em .5em 1em;text-align: left;margin-top:0;}
 .homeDialog {border:1px solid #ccc; margin:1em; padding:1em;}

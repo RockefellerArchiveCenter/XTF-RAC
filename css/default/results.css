@@ -58,17 +58,14 @@ div.header img.your-logo {
 }
 
 div.footer {
-   margin: 0 auto;
-	 width: 99%;
+   margin-left: 1%;
 	 text-align: left;
-	 padding: 10px 0;
-	 margin-bottom: 20px;
 }
 
 /* Forms */
 
 div.searchPage {
-   margin: 0 auto;
+   margin-left: 1%;
 	 width: 98%;
 }
 

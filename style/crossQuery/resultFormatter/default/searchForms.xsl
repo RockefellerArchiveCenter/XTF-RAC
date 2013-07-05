@@ -96,38 +96,64 @@
                         });
                         //]]>   
                   </script>
-                  <script type='text/javascript'>
+            <script type="text/javascript">
                         //<![CDATA[
-                        $(document).ready(function() {
-                            $('.showAdvanced').click(function(event) {
-                            event.preventDefault();
-                            $('#advancedSearch').slideToggle(400, 'linear');
-                            });
-                            $('input.searchbox').focus(function() {
-                            $('#searchtipDate').hide();
-                            $('#searchtip').fadeIn('slow');
-                            });
-                            $('input.searchbox').blur(function() {
-                            $('#searchtip').fadeOut('slow');
-                            });
-                            $('input.date').focus(function() {
-                            $('#searchtip').hide();
-                            $('#searchtipDate').fadeIn('slow');
-                            });
-                            $('input.date').blur(function() {
-                            $('#searchtipDate').fadeOut('slow');
-                            });
-                        });
-                        //]]>   
+                $(document).ready(function () {
+                    $('.showAdvanced').click(function (event) {
+                        event.preventDefault();
+                        $('#advancedSearch').slideToggle(400, 'linear');
+                    });
+                    $('input.searchbox').focus(function () {
+                        $('#searchtipDate').hide();
+                        $('#searchtip').fadeIn('slow');
+                    });
+                    $('input.searchbox').blur(function () {
+                        $('#searchtip').fadeOut('slow');
+                    });
+                    $('input.date').focus(function () {
+                        $('#searchtip').hide();
+                        $('#searchtipDate').fadeIn('slow');
+                    });
+                    $('input.date').blur(function () {
+                        $('#searchtipDate').fadeOut('slow');
+                    });
+                });//]]>   
                   </script>
-                  <script type="text/javascript" src="/xtf/script/rac/featured.js"></script>
-                 <script>
+            <script type="text/javascript" src="/xtf/script/rac/featured.js"></script>
+            <script>
                  //<![CDATA[
                   $(document).ready(function(){
                      $('#featured img').randomImage();
                   });//]]>
-                 </script>
-                  
+            </script>
+            <script>
+            //<![CDATA[
+            $(document).ready(function() {
+             	$('.accordionButton').click(function() {
+         		$('.accordionButton').removeClass('on');
+		    	 	$('.accordionContent').slideUp('normal');
+
+               if($(this).next().is(':hidden') == true) {
+		          	$(this).addClass('on');
+		          	$(this).next().slideDown('normal');
+	             	 } 		  
+            	 });
+            	 
+            	$('.accordionButton').mouseover(function() {
+         		$(this).addClass('over');
+            	})
+            	.mouseout(function() {
+         	     	$(this).removeClass('over');										
+            	});
+                  $('.accordionContent').hide();
+
+               });//]]>
+            </script>
+            <script>
+                  //<![CDATA[
+
+                  //]]>
+             </script>
                </head>
                <body>
                   <xsl:copy-of select="$brand.header"/>
@@ -187,11 +213,26 @@
                   
                <div id="header">
                   <a href="/xtf/search">
-                  <h1> DIMES </h1>
+                  <h1>dimes.rockarch.org</h1>
                   <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
                      Center</p>
                   </a>
                </div>
+            <div id="about">
+               <div class="accordionButton"><h3>About</h3></div>
+               <div class="accordionContent">
+                     <div><a href="#archivalMat" class="archivalMat"
+                        onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);"
+                        >Our Collections</a></div>
+                     <div><a href="#dscDescription" class="dscDescription"
+                        onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);"
+                        >Collection Guides</a></div>
+                     <div><a href="#dimes" class="dimes"
+                        onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">This
+                        Website's Name</a></div>
+               </div>
+               
+            </div>
                   <!--<div class="bookbag">
                      <xsl:if test="$smode != 'showBag'">
                         <xsl:variable name="bag" select="session:getData('bag')"/>
@@ -269,170 +310,119 @@
                   <li>Enter a single year or range of years, for example 1997 or 1892-1942.</li>
                </ul>
             </div>
-            <div id="searchbox">
-               <input class="searchbox" type="text" name="keyword" value="{$keyword}"/>
-               <div id="advancedSearch">
-                  <div id="boolean">
-                     <xsl:choose>
-                        <xsl:when test="$text-join = 'or'">
-                           <input type="radio" name="text-join" value=""/>
-                           <xsl:text> all of </xsl:text>
-                           <input type="radio" name="text-join" value="or" checked="checked"/>
-                           <xsl:text> any of </xsl:text>
-                        </xsl:when>
-                        <xsl:otherwise>
-                           <input type="radio" name="text-join" value="" checked="checked"/>
-                           <xsl:text> all of </xsl:text>
-                           <input type="radio" name="text-join" value="or"/>
-                           <xsl:text> any of </xsl:text>
-                        </xsl:otherwise>
-                     </xsl:choose>
-                     <xsl:text>these words</xsl:text>
+            <div id="searchTop">
+               <div id="searchbox">
+                  <input class="searchbox" type="text" name="keyword" value="{$keyword}"/>
+                  <div id="advancedSearch">
+                     <div id="boolean">
+                        <xsl:choose>
+                           <xsl:when test="$text-join = 'or'">
+                              <input type="radio" name="text-join" value=""/>
+                              <xsl:text> all of </xsl:text>
+                              <input type="radio" name="text-join" value="or" checked="checked"/>
+                              <xsl:text> any of </xsl:text>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <input type="radio" name="text-join" value="" checked="checked"/>
+                              <xsl:text> all of </xsl:text>
+                              <input type="radio" name="text-join" value="or"/>
+                              <xsl:text> any of </xsl:text>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:text>these words</xsl:text>
+                     </div>
+                     <div id="materialType">
+                        <xsl:text>Type of materials: </xsl:text>
+                        <select name="type" id="type">
+                           <option value="">All Materials</option>
+                           <option value="ead">Archival Collections</option>
+                           <option value="dao">Digital Materials</option>
+                           <option value="mods">Library Materials</option>
+                        </select>
+                        <!-- 6/21/2013 HA: adding advanced search to home page -->
+                        <select name="sectionType" id="library">
+                           <option value="">All Library Materials</option>
+                           <option value="title">Title</option>
+                           <option value="creator">Author</option>
+                           <option value="callNumber">Call Number</option>
+                           <option value="isbn">ISBN/ISSN</option>
+                           <option value="lccn">LCCN</option>
+                        </select>
+                        <select name="sectionType" id="collections">
+                           <option value="">All Archival Collections</option>
+                           <option value="title">Title</option>
+                           <option value="creator">Creator</option>
+                           <option value="bioghist">Biographical or Historical Note</option>
+                           <option value="scopecontent">Scope and Content Note</option>
+                           <option value="file">Folder Title</option>
+                           <option value="item">Item</option>
+                           <option value="series">Series Description</option>
+                           <option value="subseries">Subseries Description</option>
+                           <option value="controlaccess">Subject Headings</option>
+                        </select>
+                        <select name="sectionType" id="dao">
+                           <option value="">All Digital Materials</option>
+                           <option value="title">Title</option>
+                           <option value="creator">Creator</option>
+                           <option value="bioghist">Biographical or Historical Note</option>
+                           <option value="scopecontent">Scope and Content Note</option>
+                           <option value="file">Folder Title</option>
+                           <option value="item">Item</option>
+                           <option value="series">Series Description</option>
+                           <option value="subseries">Subseries Description</option>
+                           <option value="controlaccess">Subject Headings</option>
+                        </select>
+                     </div>
+                     <div id="date">
+                        <xsl:text>Years: </xsl:text>
+                        <input class="date" type="text" name="year" size="20" value="{$year}"/>
+                     </div>
+                     <input type="hidden" name="smode" value="advanced" id="start"/>
+                     <div class="showAdvanced open">
+                        <a href="#">close</a>
+                     </div>
                   </div>
-                  <div id="materialType">
-                     <xsl:text>Type of materials: </xsl:text>
-                     <select name="type" id="type">
-                        <option value="">All Materials</option>
-                        <option value="ead">Archival Collections</option>
-                        <option value="dao">Digital Materials</option>
-                        <option value="mods">Library Materials</option>
-                     </select>
-                     <!-- 6/21/2013 HA: adding advanced search to home page -->
-                     <select name="sectionType" id="library">
-                        <option value="">All Library Materials</option>
-                        <option value="title">Title</option>
-                        <option value="creator">Author</option>
-                        <option value="callNumber">Call Number</option>
-                        <option value="isbn">ISBN/ISSN</option>
-                        <option value="lccn">LCCN</option>
-                     </select>
-                     <select name="sectionType" id="collections">
-                        <option value="">All Archival Collections</option>
-                        <option value="title">Title</option>
-                        <option value="creator">Creator</option>
-                        <option value="bioghist">Biographical or Historical Note</option>
-                        <option value="scopecontent">Scope and Content Note</option>
-                        <option value="file">Folder Title</option>
-                        <option value="item">Item</option>
-                        <option value="series">Series Description</option>
-                        <option value="subseries">Subseries Description</option>
-                        <option value="controlaccess">Subject Headings</option>
-                     </select>
-                     <select name="sectionType" id="dao">
-                        <option value="">All Digital Materials</option>
-                        <option value="title">Title</option>
-                        <option value="creator">Creator</option>
-                        <option value="bioghist">Biographical or Historical Note</option>
-                        <option value="scopecontent">Scope and Content Note</option>
-                        <option value="file">Folder Title</option>
-                        <option value="item">Item</option>
-                        <option value="series">Series Description</option>
-                        <option value="subseries">Subseries Description</option>
-                        <option value="controlaccess">Subject Headings</option>
-                     </select>
-                  </div>
-                  <div id="date">
-                     <xsl:text>Years: </xsl:text>
-                     <input class="date" type="text" name="year" size="20" value="{$year}"/>
-                  </div>
-                  <input type="hidden" name="smode" value="advanced" id="start"/>
-                  <div class="showAdvanced open">
-                     <a href="#">close</a>
-                  </div>
+                  <input class="searchbox" type="submit" value="Search"/>
+                  <!--<input type="hidden" value="series" name="level"/>-->
+                  <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
+                  <!-- Uncomment and complete code when digital objects are included -->
+                  <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
+                  <a href="#" class="showAdvanced closed">show more search options</a>
                </div>
-               <input class="searchbox" type="submit" value="Search"/>
-               <!--<input type="hidden" value="series" name="level"/>-->
-               <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
-               <!-- Uncomment and complete code when digital objects are included -->
-               <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
-               <a href="#" class="showAdvanced closed">show more search options</a>
+            </div>
+            
+            <div id="browse" class="box">
+               <h2>Browse</h2>
+               <div class="accordionButton category"><h3><img src="/xtf/icons/default/collections.gif" alt="archival collections" height="25px"/>Archival Collections</h3></div>
+                  <div class="accordionContent">
+                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">Browse All</a></div>
+                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead">By Title</a></div>
+                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead">By Creator</a></div>
+                  </div>
+               <div class="accordionButton category"><h3><img src="/xtf/icons/default/book.gif" alt="library materials" height="25px"/>Library Materials</h3></div>
+                  <div class="accordionContent">
+                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods">Browse All</a></div>
+                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods">By Title</a></div>
+                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods">By Creator</a></div>
+                  </div>
+               <div class="accordionButton category"><h3><img src="/xtf/icons/default/dao_large.gif" alt="digital materials" height="25px"/>Digital Materials</h3></div>
+                  <div class="accordionContent">
+                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao">Browse All</a></div>
+                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=dao">By Title</a></div>
+                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao">By Creator</a></div>
+                  </div>
             </div>
             
             <div id="featured" class="box">
-               <h4>From our collections</h4>
+               <h2>From our collections</h2>
                <ul>
                   <img src="" alt=""></img>
                   <li id="caption"></li>
                </ul>
             </div>
 
-            <div id="browse" class="box">
-               <h2>Browse</h2>
-               <div class="category">
-                  <img class="categoryImage" src="/xtf/icons/default/collections.gif"
-                     alt="archival collections"/>
-                  <h4>Archival Collections</h4>
-                  <ul>
-                     <li>
-                        <a
-                           href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
-                           >Browse All Archival Collections</a>
-                     </li>
-                     <li>
-                        <a
-                           href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                           >Collections by Title</a>
-                     </li>
-                     <li>
-                        <a
-                           href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                           >Collections by Creator</a>
-                     </li>
-                     <li>
-                        <a
-                           href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
-                           >Recently Updated Collections</a>
-                     </li>
-                  </ul>
-               </div>
-               <div class="category">
-                  <img class="categoryImage" src="/xtf/icons/default/book.gif"
-                     alt="library materials"/>
-                  <h4>Library Materials</h4>
-                  <ul>
-                     <li>
-                        <a
-                           href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
-                           >Browse All Library Materials</a>
-                     </li>
-                     <li>
-                        <a
-                           href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                           >Library Materials by Title</a>
-                     </li>
-                     <li>
-                        <a
-                           href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                           >Library Materials by Creator</a>
-                     </li>
-                  </ul>
-               </div>
-               <div class="category">
-                  <img class="categoryImage" src="/xtf/icons/default/dao_large.gif"
-                     alt="digital materials"/>
-                  <h4>Digital Materials</h4>
-                  <ul>
-                     <li>
-                        <a
-                           href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao"
-                           >Browse All Digital Materials</a>
-                     </li>
-                     <li>
-                        <a
-                           href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=dao"
-                           >by Title</a>
-                     </li>
-                     <li>
-                        <a
-                           href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao"
-                           >by Creator</a>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-            
             <div id="news" class="box">
-               <h4>News</h4>
+               <h2>News</h2>
                <ul>
                   <li>Guides for selected Ford Foundation collections are now available</li>
                   <li>View <a href="http://rockefeller100.org/">digitized material</a> from our
@@ -444,39 +434,15 @@
                   </li>
                </ul>
             </div>
-
-            <div id="about" class="box">
-               <h4>About</h4>
-               <ul>
-               <li>
-                  <a href="#archivalMat" class="archivalMat"
-                     onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);"
-                     >Our Collections</a>
-               </li>
-               <li>
-                  <a href="#dscDescription" class="dscDescription"
-                     onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);"
-                     >Collection Guides</a>
-               </li>
-               
-               <li>
-                  <a href="#dimes" class="dimes"
-                     onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">This
-                     Website's Name</a>
-               </li>
-            </ul>
-         </div>
-
-            <div id="disclaimer" class="box">
-               <ul>
-                  <li>We are still in the process of adding collections information to this system.
-                     Some large collections, like those of the Ford Foundation, Population Council,
-                     and Rockefeller University, are only partially represented in the online
-                     system; other smaller collections, including some collections of personal
-                     papers and grant records for the Ford Foundation, are not yet represented at
-                     all. Please <a href="http://rockarch.org/about/contact.php">contact archival
-                        staff</a> for further information about these collections.</li>
-               </ul>
+            
+            <div id="disclaimer">
+               <p>We are still in the process of adding collections information to DIMES. Some
+                  large collections, like those of the Ford Foundation, Population Council, and
+                  Rockefeller University, are only partially represented; other
+                  smaller collections, including some collections of personal papers and grant
+                  records for the Ford Foundation, are not yet represented at all. Please <a
+                     href="http://rockarch.org/about/contact.php">contact archival staff</a> for
+                  further information.</p>
             </div>
 
          </div>

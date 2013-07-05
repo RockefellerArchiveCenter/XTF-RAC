@@ -187,7 +187,7 @@
             <!-- 9/27/11 WS:  Adjusted results header for a cleaner look-->
             <div id="header">
                <a href="/xtf/search">
-                  <h1> DIMES </h1>
+                  <h1>dimes.rockarch.org</h1>
                   <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
                      Center</p>
                </a>
@@ -758,7 +758,7 @@
             <!-- result header -->
             <div id="header">
                <a href="/xtf/search">
-                  <h1> DIMES </h1>
+                  <h1>dimes.rockarch.org</h1>
                   <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
                      Center</p>
                </a>
