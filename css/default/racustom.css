@@ -250,16 +250,16 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #about {position: absolute;top: 6.4em;right: 1%;width:14em;}
 #about a {font-size:1.2em;}
 #about h3 {padding: .8em;margin: 0;float:left;}
-#about .accordionButton {border-radius:5px 5px 0 0;border-right: 1px solid #999;border-left: 1px solid #999;border-top: 1px solid #999;border-bottom:0;margin-right: -2px;background:#bbb;float:right; width:14em;padding-bottom:1px;}
+#about .accordionButton {border-radius:5px 5px 0 0;border-right: 1px solid #999;border-left: 1px solid #999;border-top: 1px solid #999;border-bottom:0;margin-right: -2px;background:#ddd;float:right; width:14em;padding-bottom:1px;}
 #about .over {box-shadow: 0px -1px 5px #666;}
-#about .on {background: #bbb; box-shadow: 0px -1px 5px #666;}
+#about .on {background: #ccc; box-shadow: 0px -1px 5px #666;}
 #about .accordionContent {padding:1em;width:12em; box-shadow: 0px 1px 5px #666;border-left: 1px solid #999;border-right: 1px solid #999;border-bottom: 1px solid #999;text-align:left;}
 #disclaimer {width:100%; float:left; border-top: 1px solid #999;color:#666;text-align:justify;margin-top:2em;}
 #disclaimer p { margin:1%; }
 .home a, #about a {text-decoration: none !important; color: #c45414 !important;}
 .home a:hover, #about a:hover {color:#c45414 !important; text-decoration:underline !important; }
 .home li {list-style: none;margin: 0px;padding: .5em 1em .5em 1em;text-align:left;font-size:1.2em;}
-.home li:nth-child(even) {background-color: #dedede;border-bottom:1px dashed #999; border-top:1px dashed #999;}
+.home li:nth-child(even) {background-color: rgb(228, 228, 228);border-bottom:1px dashed #999; border-top:1px dashed #999;}
 .home ul {padding-left: 0em;padding-right:0em;margin-top:.5em; margin-bottom:.5em;}
 .home h4 {padding: .5em .5em .5em 1em;text-align: left;margin-top:0;}
 .homeDialog {border:1px solid #ccc; margin:1em; padding:1em;}
@@ -406,6 +406,7 @@ ul.none {list-style:none;}
 .overview a {color: #C45414 !important;}
 #content-right table tr td {padding-right:1em;}
 .col4 {padding-right: 1em;}
+.moreInfo a {width:100%; float:left;}
 .addToBag {
     font-weight:normal !important;    
 /*    background: url("images/bookbag.gif") no-repeat right top;*/
