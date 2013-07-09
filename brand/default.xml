@@ -135,7 +135,27 @@
             // -->
       </script>
       <script type="text/javascript">
-                      $(document).ready(function() {                
+                      $(document).ready(function() {
+                      $(function () {
+                            var dialogTakedown = $('#takedown').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "600",
+                                  height: "300",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $("a.takedown").on("click", function (e) {
+                            e.preventDefault();
+                              dialogTakedown.dialog("option", "title", '').dialog("open");
+                            });
+                        });
                        $(function () {
                             var dialogArchivalMat = $('#archivalMat').dialog({
                                create: function(event, ui) {
@@ -379,6 +399,26 @@
       
       <script type="text/javascript">
                       $(document).ready(function() {
+                      $(function () {
+                            var dialogTakedown = $('#takedown').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "600",
+                                  height: "300",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $("a.takedown").on("click", function (e) {
+                            e.preventDefault();
+                              dialogTakedown.dialog("option", "title", '').dialog("open");
+                            });
+                        });
                       $(function () {
                         var dialogFeedback = $('#feedback').dialog({
                                create: function(event, ui) {
@@ -4684,8 +4724,19 @@
          </feedback>
    
    <footer>
+      <div class="overlay" id="takedown">
+         <div class="homeDialog">
+            <h4>Take-Down policy</h4>
+            <p>These digitized collections are presented for purposes of education and research. We
+               have indicated what we know about copyright. Due to the nature of archival
+               collections, we are not always able to identify this information. Upon <a
+                  href="mailto:archive@rockarch.org?Subject=DIMES%20Take-down%20Request">request</a>
+               from potential rights owners, we will remove material from public view while we
+               address any outstanding rights issues. </p>
+         </div>
+      </div>
       <div class="footer">
-         <p>Copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a></p>
+         <p>Copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a> <a href="#takedown" class="takedown">Take-down policy</a></p>
       </div>
    </footer>
 

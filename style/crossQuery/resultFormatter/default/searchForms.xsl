@@ -227,6 +227,7 @@
                      <div><a href="#dimes" class="dimes"
                         onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">This
                         Website's Name</a></div>
+                     <div><a href="#takedown" class="takedown">Our Take-Down Policy</a></div>
                </div>
                
             </div>

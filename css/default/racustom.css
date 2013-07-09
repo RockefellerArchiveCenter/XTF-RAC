@@ -246,14 +246,13 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #featured {width:32%}
 #featured img {max-height:100%; max-width: 100%;}
 #news {}
-#about {position: absolute;top: 7.2em;right: 1%; width:13em;text-align:right}
+#about {position: absolute;top: 7.1em;right: 1%; width:14em;text-align:right;}
 #about a {font-size:1.2em;}
-#about h3 {padding: .5em;margin: 0;}
-#about .accordionButton {border-radius:5px 5px 0 0;border-top: 1px solid #999;border-left: 1px solid #999;border-right: 1px solid #999;
-border-bottom: 0;background: #eee;margin-right: -2px;background:#EEEEEE;}
-#about .over {background:#bbbbbb}
-#about .on {background: #bbbbbb}
-#about .accordionContent {padding:1em;width:11em; box-shadow: 0px 4px 10px -5px #666;border-left: 1px solid #999;border-right: 1px solid #999;border-bottom: 1px solid #999;text-align:left;}
+#about h3 {padding: 8px;margin: 0;}
+#about .accordionButton {border-radius:5px 5px 0 0;border: 1px solid #999;margin-right: -2px;background:#bbb;}
+#about .over {box-shadow: 0px -1px 5px #666;}
+#about .on {background: #bbb; box-shadow: 0px -1px 5px #666;}
+#about .accordionContent {padding:1em;width:12em; box-shadow: 0px 1px 5px #666;border-left: 1px solid #999;border-right: 1px solid #999;border-bottom: 1px solid #999;text-align:left;}
 #disclaimer {width:100%; float:left; border-top: 1px solid #999;color:#666;text-align:justify;margin-top:2em;}
 #disclaimer p { margin:1%; }
 .home a, #about a {text-decoration: none !important; color: #c45414 !important;}
