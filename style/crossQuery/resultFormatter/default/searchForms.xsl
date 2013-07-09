@@ -121,12 +121,6 @@
                   </script>
             <script type="text/javascript" src="/xtf/script/rac/featured.js"></script>
             <script>
-                 //<![CDATA[
-                  $(document).ready(function(){
-                     $('#featured img').randomImage();
-                  });//]]>
-            </script>
-            <script>
             //<![CDATA[
             $(document).ready(function() {
              	$('.accordionButton').click(function() {
@@ -146,7 +140,8 @@
          	     	$(this).removeClass('over');										
             	});
             	$('.accordionContent').click(function(){
-            	$('.accordionContent').delay(1000).slideUp('normal');
+            	$('.accordionContent').delay(500).slideUp('normal');
+            	$('.accordionButton').removeClass('on');
             	});
                   $('.accordionContent').hide();
                });//]]>
@@ -305,7 +300,7 @@
                   </ul>
                </div>
                <div id="searchbox">
-                  <input class="searchbox" type="text" name="keyword" value="{$keyword}"/>
+                  <input class="searchbox" type="text" name="text" value="{$text}"/>
                   <div id="advancedSearch">
                      <div id="boolean">
                         <xsl:choose>
@@ -393,42 +388,44 @@
                <h2>Browse</h2>
                <div class="accordionButton category"><h3><img src="/xtf/icons/default/collections.gif" alt="archival collections" height="25px"/>Archival Collections</h3></div>
                   <div class="accordionContent">
-                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">Browse All</a></div>
-                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead">By Title</a></div>
-                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead">By Creator</a></div>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">Browse All</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead">By Title</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead">By Creator</a></li>
                   </div>
                <div class="accordionButton category"><h3><img src="/xtf/icons/default/book.gif" alt="library materials" height="25px"/>Library Materials</h3></div>
                   <div class="accordionContent">
-                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods">Browse All</a></div>
-                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods">By Title</a></div>
-                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods">By Creator</a></div>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods">Browse All</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods">By Title</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods">By Creator</a></li>
                   </div>
                <div class="accordionButton category"><h3><img src="/xtf/icons/default/dao_large.gif" alt="digital materials" height="25px"/>Digital Materials</h3></div>
                   <div class="accordionContent">
-                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao">Browse All</a></div>
-                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=dao">By Title</a></div>
-                     <div class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao">By Creator</a></div>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao">Browse All</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=dao">By Title</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao">By Creator</a></li>
                   </div>
             </div>
             
             <div id="featured" class="box">
                <h2>From our collections</h2>
-               <ul>
-                  <img src="" alt=""></img>
-                  <li id="caption"></li>
-               </ul>
+               <img src="/xtf/icons/default/featured/dimes.jpg" alt="John D. Rockefeller handing out dimes"></img>
+               <p id="caption">John D. Rockefeller handing out dimes, the inspiration for this <a href="#dimes" class="dimes"
+                  onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">website's name</a>.</p>
             </div>
 
             <div id="news" class="box">
                <h2>News</h2>
                <ul>
-                  <li>Guides for selected Ford Foundation collections are now available</li>
-                  <li>View <a href="http://rockefeller100.org/">digitized material</a> from our
-                     Rockefeller Foundation collections</li>
+                  <li>Guides for selected Ford Foundation collections are <a
+                     href="/xtf/search?text=ford%20foundation;sectionType=title;smode=advanced;type=ead"
+                     >now available</a>.</li>
+                  <li>Check out our website celebrating the <a
+                        href="http://rockefeller100.org/">Rockefeller Foundation's Centennial</a>, with lots of
+                     digitized material!</li>
                   <li>
-                     <a
+                     View <a
                         href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
-                        >Recently Updated Collections</a>
+                        >Recently Updated Collections</a>.
                   </li>
                </ul>
             </div>
