@@ -1277,7 +1277,6 @@
                            <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
                               <img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
                                  title="Added to bookbag"/>
-                              <br/>
                               <span class="caption">Added</span>
                            </xsl:when>
                            <xsl:otherwise>
@@ -1302,7 +1301,6 @@
                                        <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                                           title="Add to bookbag"/>
                                     </a>
-                                    <br/>
                                  </xsl:when>
                                  <xsl:otherwise>
                                     <a href="javascript:add_{@rank}()"
@@ -1310,7 +1308,6 @@
                                        <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                                           title="Add to bookbag"/>
                                     </a>
-                                    <br/>
                                  </xsl:otherwise>
                               </xsl:choose>
                               <span id="add_{@rank}" class="caption">
@@ -1813,7 +1810,7 @@
                                     <img src="/xtf/icons/default/addbag.gif"
                                        alt="Add to bookbag" title="Add to bookbag"/>
                                  </a>
-                                 <br/>
+
                               </xsl:when>
                               <xsl:otherwise>
                                  <a href="javascript:add_{@rank}()"
@@ -1821,10 +1818,10 @@
                                     <img src="/xtf/icons/default/addbag.gif"
                                        alt="Add to bookbag" title="Add to bookbag"/>
                                  </a>
-                                 <br/>
+
                               </xsl:otherwise>
                            </xsl:choose>
-                           <br/>
+
                            <span id="add_{@rank}" class="caption">
                               <a href="javascript:add_{@rank}()">Add</a>
                            </span>
@@ -1980,7 +1977,6 @@
                         <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
                            <img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
                               title="Added to bookbag"/>
-                           <br/>
                            <span class="caption">Added</span>
                         </xsl:when>
                         <xsl:otherwise>
@@ -2002,7 +1998,6 @@
                               <img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
                                  title="Added to bookbag"/>
                            </a>
-                           <br/>
                            <span id="add_{@rank}" class="caption">
                               <a href="javascript:add_{@rank}()">Add</a>
                            </span>
@@ -2022,11 +2017,16 @@
             <xsl:when test="$browse-all"/>
             <xsl:otherwise>
                <xsl:if test="descendant-or-self::snippet">
-                     <div class="matches">
+                     <div class="result">
+                        <div class="resultLabel">
                         <b>Matches:&#160;&#160;</b>
+                           <br/>
                         (<xsl:value-of select="@totalHits"/>
-                        <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>)&#160;&#160;&#160;&#160;
+                           <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>)&#160;&#160;
+                        </div>
+                        <div class="resultText">
                         <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
+                        </div>
                      </div>
                </xsl:if>
             </xsl:otherwise>
