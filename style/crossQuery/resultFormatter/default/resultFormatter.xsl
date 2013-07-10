@@ -1890,10 +1890,8 @@
             </xsl:when>
          </xsl:choose>
       </xsl:variable>
-      <table style="width:100%;">
-         <tr>
-            <td style="width: 10%;">
-               <div style="height:18px; overflow:hidden;">
+      <div class="hitRank">
+         <div style="height:18px; overflow:hidden;">
                   <xsl:if test="meta/type = 'dao'">
                      <img src="/xtf/icons/default/dao.gif" alt="digital object" title="digital object" style="float:right; padding-right:.75em;"/>
                   </xsl:if>
@@ -1906,51 +1904,52 @@
                      </xsl:otherwise>
                   </xsl:choose>
                </div>
-            </td>
-            <td class="col3" colspan="2">
-               <a>
-                  <xsl:attribute name="href">
-                     <xsl:value-of select="$docPath"/>
-                  </xsl:attribute>
+            </div>
+      <div class="title">
+         <a>
+            <xsl:attribute name="href">
+               <xsl:value-of select="$docPath"/>
+            </xsl:attribute>
+            <xsl:choose>
+               <xsl:when test="meta/title">
                   <xsl:choose>
-                     <xsl:when test="meta/title">
-                        <xsl:choose>
-                           <xsl:when test="count(meta/title) &gt; 1">
-                              <xsl:apply-templates select="meta/title[2]"/>      
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <xsl:apply-templates select="meta/title[1]"/>
-                           </xsl:otherwise>
-                        </xsl:choose>
+                     <xsl:when test="count(meta/title) &gt; 1">
+                        <xsl:apply-templates select="meta/title[2]"/>
                      </xsl:when>
-                     <xsl:when test="meta/subtitle">
-                        <xsl:choose>
-                           <xsl:when test="count(meta/subtitle) &gt; 1">
-                              <xsl:apply-templates select="meta/subtitle[2]"/>      
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <xsl:apply-templates select="meta/subtitle[1]"/>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </xsl:when>
-                     <xsl:otherwise>none</xsl:otherwise>
+                     <xsl:otherwise>
+                        <xsl:apply-templates select="meta/title[1]"/>
+                     </xsl:otherwise>
                   </xsl:choose>
-               </a>
-               <xsl:text>&#160;</xsl:text>
-               <!--
+               </xsl:when>
+               <xsl:when test="meta/subtitle">
+                  <xsl:choose>
+                     <xsl:when test="count(meta/subtitle) &gt; 1">
+                        <xsl:apply-templates select="meta/subtitle[2]"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:apply-templates select="meta/subtitle[1]"/>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </xsl:when>
+               <xsl:otherwise>none</xsl:otherwise>
+            </xsl:choose>
+         </a>
+         <xsl:text>&#160;</xsl:text>
+         <!--
                <xsl:variable name="type" select="meta/type"/>
                   <span class="typeIcon">
                   <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
                   </span>
                -->
-            </td>
-            <td class="col4" style="text-align:center">
-               <!-- Add/remove logic for the session bag (only if session tracking enabled) -->
-               <span class="addToBag">
-                  <xsl:if test="session:isEnabled()">
-                     <xsl:choose>
-                        <xsl:when test="$smode = 'showBag'">
-                           <script type="text/javascript">
+      </div>
+            
+      <div class="bookbag">
+         <!-- Add/remove logic for the session bag (only if session tracking enabled) -->
+         <span class="addToBag">
+            <xsl:if test="session:isEnabled()">
+               <xsl:choose>
+                  <xsl:when test="$smode = 'showBag'">
+                     <script type="text/javascript">
                               remove_<xsl:value-of select="@rank"/> = function() {
                                  var span = YAHOO.util.Dom.get('remove_<xsl:value-of select="@rank"/>');
                                  span.innerHTML = "Deleting...";
@@ -1965,21 +1964,27 @@
                                     }, null);
                               };
                            </script>
-                           <span id="remove_{@rank}">
-                              <a href="javascript:remove_{@rank}()">Delete</a>
-                           </span>
-                        </xsl:when>
-                        <xsl:when test="session:noCookie()">
-                           <span><a href="javascript:alert('To use the bag, you must enable cookies in your web browser.')">Requires cookie*</a></span>                                 
+                     <span id="remove_{@rank}">
+                        <a href="javascript:remove_{@rank}()">Delete</a>
+                     </span>
+                  </xsl:when>
+                  <xsl:when test="session:noCookie()">
+                     <span>
+                        <a
+                           href="javascript:alert('To use the bag, you must enable cookies in your web browser.')"
+                           >Requires cookie*</a>
+                     </span>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:choose>
+                        <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                           <img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
+                              title="Added to bookbag"/>
+                           <br/>
+                           <span class="caption">Added</span>
                         </xsl:when>
                         <xsl:otherwise>
-                           <xsl:choose>
-                              <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                                 <img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag" title="Added to bookbag"/><br/>
-                                    <span class="caption">Added</span>
-                              </xsl:when>
-                              <xsl:otherwise>
-                                 <script type="text/javascript">
+                           <script type="text/javascript">
                                     add_<xsl:value-of select="@rank"/> = function() {
                                        var span = YAHOO.util.Dom.get('add_<xsl:value-of select="@rank"/>');
                                        span.innerHTML = "Adding...";
@@ -1993,39 +1998,40 @@
                                           }, null);
                                     };
                                  </script>
-                                 <a href="javascript:add_{@rank}()"><img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag" title="Added to bookbag"/></a><br/>
-                                 <span id="add_{@rank}" class="caption">
-                                    <a href="javascript:add_{@rank}()">Add</a>
-                                 </span>
-                              </xsl:otherwise>
-                           </xsl:choose>
-                           <xsl:value-of select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString))"/>
+                           <a href="javascript:add_{@rank}()">
+                              <img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
+                                 title="Added to bookbag"/>
+                           </a>
+                           <br/>
+                           <span id="add_{@rank}" class="caption">
+                              <a href="javascript:add_{@rank}()">Add</a>
+                           </span>
                         </xsl:otherwise>
                      </xsl:choose>
-                  </xsl:if>
-               </span>
-            </td>
-         </tr> 
+                     <xsl:value-of
+                        select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString))"
+                     />
+                  </xsl:otherwise>
+               </xsl:choose>
+            </xsl:if>
+         </span>
+      </div>
+
          <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
          <xsl:choose>
             <xsl:when test="$browse-all"/>
             <xsl:otherwise>
                <xsl:if test="descendant-or-self::snippet">
-                  <tr style="font-size:.95em;">
-                     <td class="col1">
-                        <xsl:text>&#160;</xsl:text>
-                     </td>
-                     <td class="col3" colspan="3">
+                     <div class="matches">
                         <b>Matches:&#160;&#160;</b>
                         (<xsl:value-of select="@totalHits"/>
                         <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>)&#160;&#160;&#160;&#160;
                         <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
-                     </td>
-                  </tr>
+                     </div>
                </xsl:if>
             </xsl:otherwise>
          </xsl:choose>    
-      </table>
+
    </xsl:template>
 
    <!-- ====================================================================== -->

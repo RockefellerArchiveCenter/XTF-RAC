@@ -291,6 +291,11 @@ div.docHit table td {
 #docHits .resultLabel {width:15%;}
 #docHits .resultText {width:80%;}
 
+.subdocument {width:100%; float:left; margin-top:.5em;margin-bottom:.5em;margin-left:15%;
+}
+.subdocument .title {width:80%; float:left;}
+.subdocument .matches {float:left;width:97%;margin-left:3%;font-size:.9em;margin-top:.5em;}
+
 div#main_2, div#main_4, div#main_6, div#main_8, div#main_10, div#main_12 {
 	
 }
