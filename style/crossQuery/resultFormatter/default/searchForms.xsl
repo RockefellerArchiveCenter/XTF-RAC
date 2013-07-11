@@ -210,22 +210,6 @@
                      Center</p>
                   </a>
                </div>
-            <div id="about">
-               <div class="accordionButton"><h3>About</h3></div>
-               <div class="accordionContent">
-                     <div><a href="#archivalMat" class="archivalMat"
-                        onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);"
-                        >Our Collections</a></div>
-                     <div><a href="#dscDescription" class="dscDescription"
-                        onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);"
-                        >Collection Guides</a></div>
-                     <div><a href="#dimes" class="dimes"
-                        onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">This
-                        Website's Name</a></div>
-                     <div><a href="#takedown" class="takedown">Our Take-Down Policy</a></div>
-               </div>
-               
-            </div>
                   <!--<div class="bookbag">
                      <xsl:if test="$smode != 'showBag'">
                         <xsl:variable name="bag" select="session:getData('bag')"/>
@@ -289,6 +273,24 @@
    <xsl:template name="simpleForm" exclude-result-prefixes="#all">
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <div class="home">
+            <div id="about">
+               <div class="accordionButton"><h3>About</h3></div>
+               <div class="accordionContent">
+                  <ul>
+                  <li><a href="#archivalMat" class="archivalMat"
+                     onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);"
+                     >Our Collections</a></li>
+                  <li><a href="#dscDescription" class="dscDescription"
+                     onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);"
+                     >Collection Guides</a></li>
+                  <li><a href="#dimes" class="dimes"
+                     onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">This
+                     Website's Name</a></li>
+                  <li><a href="#takedown" class="takedown">Our Take-Down Policy</a></li>
+                  </ul>
+               </div>
+               
+            </div>
             <div id="searchTop">
                <div id="searchtip" class="box">
                   <ul>
