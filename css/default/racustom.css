@@ -243,7 +243,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #news h2, #featured h2 {background-color: #bbbbbb;}
 #featured {width:32%}
 #featured img {max-height:100%; width: 94%;margin:3%;}
-#caption {width:94%; margin:3%}
+#caption {width:94%; margin:0 3% 3% 3%; text-align:left;}
 #news {}
 #about {position: absolute;top: 131px;right: 3%;width:11em;}
 #about ul {margin:0}
