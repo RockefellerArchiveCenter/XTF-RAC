@@ -1,0 +1,30 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>DIMES Issues</title>
+        <link rel="stylesheet" href="css/default/issues.css"></link>
+        <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
+        <script type="text/javascript" src="script/issues/Markdown.Converter.js"></script>
+        <script type="text/javascript" src="script/issues/Markdown.Sanitizer.js"></script>
+        <script type="text/javascript" src="script/issues/Markdown.Editor.js"></script>
+        <script type="text/javascript">
+        $.getJSON('https://api.github.com/repos/RockefellerArchiveCenter/XTF-RAC/issues?access_token=d2c3b7d5be32660c0cefd731dd6862f699131903&token_type=bearer', 'application/vnd.github.v3.html+json', function(data) {
+            var items = [];
+ 
+            $.each(data, function(key, val) {
+                items.push('<div class="issue">');
+                items.push('<h2>' + val.title + '</h2>');
+                items.push('<p>' + 'Created at: ' + val.created_at + '</p>');
+                items.push('<div class="comment">' + val.body + '</div>');
+                items.push('</div>');
+              });
+
+  $('<div/>', {
+    'class': 'main',
+    html: items.join(''),
+  }).appendTo('body');
+});
+        </script>
+    </head>
+    <body><h1>DIMES Issues</h1></body>
+</html>

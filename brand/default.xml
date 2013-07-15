@@ -136,87 +136,6 @@
             // -->
       </script>
       <script type="text/javascript">
-                      $(document).ready(function() {
-                      $(function () {
-                            var dialogTakedown = $('#takedown').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "600",
-                                  height: "300",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                            $("a.takedown").on("click", function (e) {
-                            e.preventDefault();
-                              dialogTakedown.dialog("option", "title", '').dialog("open");
-                            });
-                        });
-                       $(function () {
-                            var dialogArchivalMat = $('#archivalMat').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "600",
-                                  height: "500",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                            $("a.archivalMat").on("click", function (e) {
-                            e.preventDefault();
-                              dialogArchivalMat.dialog("option", "title", '').dialog("open");
-                            });
-                        });
-                         $(function () {
-                        var dialogDscDescription = $('#dscDescription').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "600",
-                                  height: "450",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                            $("a.dscDescription").on("click", function (e) {
-                            e.preventDefault();
-                              dialogDscDescription.dialog("option", "title", '').dialog("open");
-                            });
-                        });
-                         $(function () {
-                        var dialogDimes = $('#dimes').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "800",
-                                  height: "580",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                            $("a.dimes").on("click", function (e) {
-                            e.preventDefault();
-                              dialogDimes.dialog("option", "title", '').dialog("open");
-                            });
-                        });
                         $(function () {
                         var dialogFeedback = $('#feedback').dialog({
                                create: function(event, ui) {
@@ -237,27 +156,6 @@
                               dialogFeedback.dialog("option", "title", '').dialog("open");
                             });
                         });
-                        $(function () {
-                        var dialogSearchTips = $('#searchTips').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "950",
-                                  height: "568",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                            $(".searchTips").on("click", function (e) {
-                            e.preventDefault();
-                              dialogSearchTips.dialog("option", "title", '').dialog("open");
-                            });
-                        });
-                    });
         </script>
       
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',

@@ -1,0 +1,5 @@
+body {font-family: 'Times New Roman', times, serif;}
+p, h1, h2 {margin:0}
+h1 {text-align:center;border-bottom:1px solid #999}
+.main {margin:1%}
+.issue {margin-top:1em;padding-bottom:1em;border-bottom:2px dotted #666;}

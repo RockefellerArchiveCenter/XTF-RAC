@@ -140,12 +140,161 @@
          	     	$(this).removeClass('over');										
             	});
             	$('.accordionContent').click(function(){
-            	$('.accordionContent').delay(500).slideUp('normal');
             	$('.accordionButton').removeClass('on');
             	});
                   $('.accordionContent').hide();
                });//]]>
             </script>
+               <script type="text/javascript">
+                  //<![CDATA[
+                  $(document).ready(function() {
+             	$('.aboutButton').click(function() {
+               $('.aboutContent').slideUp('normal', function (){
+         		$('.aboutButton').removeClass('on', 400);});
+
+               if($('.aboutContent').is(':hidden') == true) {
+		          	$('.aboutButton').addClass('on')
+		          	$('.aboutContent').slideDown('normal');
+	             	 } 		  
+            	 });
+            	 
+            	$('.aboutButton').mouseover(function() {
+         		$(this).addClass('over');
+            	})
+            	.mouseout(function() {
+         	     	$(this).removeClass('over');										
+            	});
+            	$('.aboutContent').click(function(){
+            	$('.aboutContent').slideUp('normal', function (){
+         		$('.aboutButton').removeClass('on', 400);});
+            	});
+                  $('.aboutContent').hide();
+               });//]]>
+               </script>
+                  <script type="text/javascript">
+                      $(document).ready(function() {
+                      $(function () {
+                            var dialogTakedown = $('#takedown').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "600",
+                                  height: "300",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $("a.takedown").on("click", function (e) {
+                            e.preventDefault();
+                              dialogTakedown.dialog("option", "title", '').dialog("open");
+                            });
+                        });
+                       $(function () {
+                            var dialogArchivalMat = $('#archivalMat').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "400",
+                                  height: "400",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $("a.archivalMat").on("click", function (e) {
+                            e.preventDefault();
+                              dialogArchivalMat.dialog("option", "title", '').dialog("open");
+                            });
+                        });
+                        $(function () {
+                            var dialogHoldings = $('#holdings').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "500",
+                                  height: "400",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $("a.holdings").on("click", function (e) {
+                            e.preventDefault();
+                              dialogHoldings.dialog("option", "title", '').dialog("open");
+                            });
+                        });
+                         $(function () {
+                        var dialogDscDescription = $('#dscDescription').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "600",
+                                  height: "450",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $("a.dscDescription").on("click", function (e) {
+                            e.preventDefault();
+                              dialogDscDescription.dialog("option", "title", '').dialog("open");
+                            });
+                        });
+                         $(function () {
+                        var dialogDimes = $('#dimes').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "800",
+                                  height: "580",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $("a.dimes").on("click", function (e) {
+                            e.preventDefault();
+                              dialogDimes.dialog("option", "title", '').dialog("open");
+                            });
+                        });
+                        $(function () {
+                        var dialogSearchTips = $('#searchTips').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "950",
+                                  height: "568",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $(".searchTips").on("click", function (e) {
+                            e.preventDefault();
+                              dialogSearchTips.dialog("option", "title", '').dialog("open");
+                            });
+                        });
+                    });
+        </script>
                </head>
                <body>
                   <xsl:copy-of select="$brand.header"/>
@@ -184,15 +333,20 @@
                            as correspondence, memos, reports, bound diaries, scrapbooks, maps, blueprints,
                            photographic negatives and prints, films, VHS or audio tapes, or electronic
                            records.</p>
-                        <h4>Rockefeller Archive Center Holdings</h4>
-                        <p>The Rockefeller Archive Center holdings encompass the records of the Rockefeller
-                           family and their wide-ranging philanthropic endeavors (including the Rockefeller
-                           Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the
-                           Center's growing holdings include materials from numerous non-Rockefeller foundations
-                           and nonprofit organizations, making it a premier center for research on philanthropy
-                           and civil society. It is also a major repository for the personal papers of leaders
-                           of the philanthropic community, Nobel Prize laureates, and world-renowned
-                           investigators in science and medicine. </p>
+                        
+                     </div>
+                  </div>
+                  <div class="overlay" id="holdings">
+                     <div class="homeDialog">
+                     <h4>Rockefeller Archive Center Holdings</h4>
+                     <p>The Rockefeller Archive Center holdings encompass the records of the Rockefeller
+                        family and their wide-ranging philanthropic endeavors (including the Rockefeller
+                        Foundation, the Rockefeller Brothers Fund and Rockefeller University). Today, the
+                        Center's growing holdings include materials from numerous non-Rockefeller foundations
+                        and nonprofit organizations, making it a premier center for research on philanthropy
+                        and civil society. It is also a major repository for the personal papers of leaders
+                        of the philanthropic community, Nobel Prize laureates, and world-renowned
+                        investigators in science and medicine. </p>
                      </div>
                   </div>
                   <div class="overlay" id="dimes">
@@ -274,12 +428,13 @@
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <div class="home">
             <div id="about">
-               <div class="accordionButton"><h3>About</h3></div>
-               <div class="accordionContent">
+               <div class="aboutButton"><h3>About</h3></div>
+               <div class="aboutContent">
                   <ul>
                   <li><a href="#archivalMat" class="archivalMat"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);"
-                     >Our Collections</a></li>
+                     >Archival Materials</a></li>
+                     <li><a href="#holdings" class="holdings" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'our holdings']);">Our Collections</a></li>
                   <li><a href="#dscDescription" class="dscDescription"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);"
                      >Collection Guides</a></li>
