@@ -461,7 +461,7 @@
          <xsl:if test="($pageNum = $showPages) and ($pageStart != $start)">
             <xsl:variable name="lastPage" select="$nPages"/>
             <xsl:text>&#160;&#160;</xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}"><xsl:value-of select="$nPages"/></a>
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}"><xsl:value-of select="($lastPage - 1)"/></a>
          </xsl:if>
          
          <!-- Individual Paging -->      
