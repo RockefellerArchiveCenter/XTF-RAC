@@ -1,7 +1,9 @@
 <!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>DIMES Issues</title>
+        <title>dimes.rockarch.org issues</title>
+        <link rel="icon" type="image/png" href="icons/default/favicon.png">
+        <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
         <link rel="stylesheet" href="css/default/issues.css"></link>
         <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
         <script type="text/javascript" src="script/issues/Markdown.Converter.js"></script>
@@ -14,7 +16,7 @@
             $.each(data, function(key, val) {
                 items.push('<div class="issue">');
                 items.push('<h2>' + val.title + '</h2>');
-                items.push('<p>' + 'Created at: ' + val.created_at + '</p>');
+                items.push('<p>' + 'Created ' + val.created_at + '</p>');
                 items.push('<div class="comment">' + val.body + '</div>');
                 items.push('</div>');
               });
@@ -26,5 +28,5 @@
 });
         </script>
     </head>
-    <body><h1>DIMES Issues</h1></body>
+    <body><h1>dimes.rockarch.org issues</h1></body>
 </html>
