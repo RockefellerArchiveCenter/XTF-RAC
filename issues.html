@@ -2,15 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>dimes.rockarch.org issues</title>
-        <link rel="icon" type="image/png" href="icons/default/favicon.png">
+        <link rel="icon" type="image/png" href="/xtf/icons/default/favicon.png">
         <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
-        <link rel="stylesheet" href="css/default/issues.css"></link>
+        <link rel="stylesheet" href="/xtf/css/default/issues.css"></link>
         <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
-        <script type="text/javascript" src="script/issues/Markdown.Converter.js"></script>
-        <script type="text/javascript" src="script/issues/Markdown.Sanitizer.js"></script>
-        <script type="text/javascript" src="script/issues/Markdown.Editor.js"></script>
         <script type="text/javascript">
-        $.getJSON('https://api.github.com/repos/RockefellerArchiveCenter/XTF-RAC/issues?access_token=d2c3b7d5be32660c0cefd731dd6862f699131903&token_type=bearer', 'application/vnd.github.v3.html+json', function(data) {
+        $.getJSON('https://api.github.com/repos/RockefellerArchiveCenter/XTF-RAC/issues?access_token=d2c3b7d5be32660c0cefd731dd6862f699131903&token_type=bearer&state=open', function(data) {
             var items = [];
  
             $.each(data, function(key, val) {
@@ -22,11 +19,53 @@
               });
 
   $('<div/>', {
-    'class': 'main',
+    'class': 'open',
+    html: items.join(''),
+  }).appendTo('body');
+});
+$.getJSON('https://api.github.com/repos/RockefellerArchiveCenter/XTF-RAC/issues?access_token=d2c3b7d5be32660c0cefd731dd6862f699131903&token_type=bearer&state=closed', function(data) {
+            var items = [];
+ 
+            $.each(data, function(key, val) {
+                items.push('<div class="issue">');
+                items.push('<h2>' + val.title + '</h2>');
+                items.push('<p>' + 'Created ' + val.created_at + '</p>');
+                items.push('<div class="comment">' + val.body + '</div>');
+                items.push('</div>');
+              });
+
+  $('<div/>', {
+    'class': 'closed',
     html: items.join(''),
   }).appendTo('body');
 });
         </script>
+            <script>
+                $(document).ready(function () {
+                $('.closed').hide();
+                $('#open').click(function () {
+                    $('.closed').hide();
+                    $('.open').show();
+                });
+                $('#closed').click(function() {
+                    $('.open').hide();
+                    $('.closed').show();
+                });
+               
+                });
+            </script>
     </head>
-    <body><h1>dimes.rockarch.org issues</h1></body>
+    <body>
+        <div class="header">
+            <h1>dimes.rockarch.org issues</h1>
+            <div class="switch">
+                <input type="radio" class="switch-input" name="view" value="open" id="open"
+                    checked="checked" />
+                <label for="open" class="switch-label switch-label-off">Open</label>
+                <input type="radio" class="switch-input" name="view" value="closed" id="closed" />
+                <label for="closed" class="switch-label switch-label-on">Closed</label>
+                <span class="switch-selection"></span>
+            </div>
+        </div>
+    </body>
 </html>

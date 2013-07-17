@@ -2,9 +2,94 @@ body {font-family: 'Times New Roman', times, serif;margin:0}
 p, h1, h2 {margin:0}
 p {font-style:italic; color:#333}
 a {text-decoration:none;color:#333}
-h1 {font-size:2.5em; color:#000; text-decoration:none;font-family:'Questrial', sans; -webkit-text-stroke: 1px; text-align:center;border-bottom:10px solid #c45414;padding:.5em;background:#eee;}
+h1 {font-size:2.5em; color:#000; text-decoration:none;font-family:'Questrial', sans; -webkit-text-stroke: 1px; text-align:center;float:left; width:70%; margin-left:15%;}
 h1:hover {text-shadow: 0px 0px 5px #c45414;}
 h2 {font-family: 'Questrial', sans; -webkit-text-stroke: 1px; color:#000}
-.main {margin:1%}
+.header {float:left;width:100%;border-bottom:10px solid #c45414;padding:.5em;background:#eee;}
+.navigation {float:left; width:30%; font-family:'Questrial', sans; color:#666; -webkit-text-stroke: 1px;}
+.closed {display:none;}
+.open, .closed {margin:1%; float:left;}
+.about {float:left;}
 .issue {margin-top:1em;padding-bottom:1em;border-bottom:2px dotted #666;padding-left:1%; padding-right:1%}
 .comment {margin:.5em;}
+.switch {
+    float:right;
+  position: relative;
+  margin-right: 2%;
+  margin-top:.5em;
+  height: 26px;
+  width: 120px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.switch-label {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 58px;
+  line-height: 26px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+}
+.switch-label:active {
+  font-weight: bold;
+}
+
+.switch-label-off {
+  padding-left: 2px;
+}
+
+.switch-label-on {
+  padding-right: 2px;
+}
+
+/*
+ * Note: using adjacent or general sibling selectors combined with
+ *       pseudo classes doesn't work in Safari 5.0 and Chrome 12.
+ *       See this article for more info and a potential fix:
+ *       http://css-tricks.com/webkit-sibling-bug/
+ */
+.switch-input {
+  display: none;
+}
+.switch-input:checked + .switch-label {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.65);
+  text-shadow: 0 1px rgba(255, 255, 255, 0.25);
+  -webkit-transition: 0.15s ease-out;
+  -moz-transition: 0.15s ease-out;
+  -o-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+}
+.switch-input:checked + .switch-label-on ~ .switch-selection {
+  left: 60px;
+  /* Note: left: 50% doesn't transition in WebKit */
+}
+
+.switch-selection {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  left: 2px;
+  width: 58px;
+  height: 22px;
+  background: #c45414;
+  border-radius: 3px;
+  background-image: -webkit-linear-gradient(top, #E66317, #c45414);
+  background-image: -moz-linear-gradient(top, #E66317, #c45414);
+  background-image: -o-linear-gradient(top, #E66317, #c45414);
+  background-image: linear-gradient(to bottom, #E66317, #c45414);
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+  -webkit-transition: left 0.15s ease-out;
+  -moz-transition: left 0.15s ease-out;
+  -o-transition: left 0.15s ease-out;
+  transition: left 0.15s ease-out;
+}
