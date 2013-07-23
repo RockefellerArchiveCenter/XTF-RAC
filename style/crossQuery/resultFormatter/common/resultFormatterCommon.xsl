@@ -458,7 +458,7 @@
          </xsl:if>
          
          <!-- 2013-04-22 HA: Adding Last Page -->      
-         <xsl:if test="($pageNum = $showPages) and ($pageStart != $start)">
+         <xsl:if test="($pageNum = $showPages) and (($showPages * $perPage) &gt; $nextBlock)">
             <xsl:variable name="lastPage" select="$nPages"/>
             <xsl:text>&#160;&#160;</xsl:text>
             <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}"><xsl:value-of select="($lastPage - 1)"/></a>
