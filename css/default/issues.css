@@ -5,13 +5,15 @@ a {text-decoration:none;color:#333}
 h1 {font-size:2.5em; color:#000; text-decoration:none;font-family:'Questrial', sans; -webkit-text-stroke: 1px; text-align:center;float:left; width:70%; margin-left:15%;}
 h1:hover {text-shadow: 0px 0px 5px #c45414;}
 h2 {font-family: 'Questrial', sans; -webkit-text-stroke: 1px; color:#000}
-.header {float:left;width:100%;border-bottom:10px solid #c45414;padding:.5em;background:#eee;}
-.navigation {float:left; width:30%; font-family:'Questrial', sans; color:#666; -webkit-text-stroke: 1px;}
+img {max-width:100%;}
+.header {float:left;width:98%;border-bottom:10px solid #c45414;padding:1%;background:#eee;}
 .closed {display:none;}
 .open, .closed {margin:1%; float:left;}
 .about {float:left;}
 .issue {margin-top:1em;padding-bottom:1em;border-bottom:2px dotted #666;padding-left:1%; padding-right:1%}
-.comment {margin:.5em;}
+.number {float: left;font-family: 'Questrial', sans-serif;font-size: 3em;-webkit-text-stroke: 1px;color:#666;}
+.content {margin-left:8em;}
+.body {margin:.5em;}
 .switch {
     float:right;
   position: relative;
@@ -32,7 +34,7 @@ h2 {font-family: 'Questrial', sans; -webkit-text-stroke: 1px; color:#000}
   width: 58px;
   line-height: 26px;
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.8);
   text-align: center;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
   cursor: pointer;

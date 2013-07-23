@@ -457,7 +457,7 @@
                   </ul>
                </div>
                <div id="searchbox">
-                  <input class="searchbox" type="text" name="text" value="{$text}"/>
+                  <input class="searchbox" type="text" name="keyword" value="{$text}"/>
                   <div id="advancedSearch">
                      <div id="boolean">
                         <xsl:choose>
@@ -485,7 +485,7 @@
                            <option value="mods">Library Materials</option>
                         </select>
                         <!-- 6/21/2013 HA: adding advanced search to home page -->
-                        <select name="sectionType" id="library">
+                        <!--<select name="sectionType" id="library">
                            <option value="">All Library Materials</option>
                            <option value="title">Title</option>
                            <option value="creator">Author</option>
@@ -516,7 +516,7 @@
                            <option value="series">Series Description</option>
                            <option value="subseries">Subseries Description</option>
                            <option value="controlaccess">Subject Headings</option>
-                        </select>
+                        </select>-->
                      </div>
                      <div id="date">
                         <xsl:text>Years: </xsl:text>
@@ -527,7 +527,7 @@
                            </ul>
                         </div>
                      </div>         
-                     <input type="hidden" name="smode" value="advanced" id="start"/>
+                     <!--<input type="hidden" name="smode" value="advanced" id="start"/>-->
                      <div class="showAdvanced open">
                         <a href="#">close</a>
                      </div>

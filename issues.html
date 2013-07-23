@@ -11,10 +11,16 @@
             var items = [];
  
             $.each(data, function(key, val) {
+                var body = val.body;
+                body = body.replace("\r\n", "<br />").replace(/\!\[(.*)\]\((.*)\)/g, '<img alt="$1" src="$2"></img>');
+            
                 items.push('<div class="issue">');
+                items.push('<div class="number">' + '#' + val.number + '</div>');
+                items.push('<div class="content">');
                 items.push('<h2>' + val.title + '</h2>');
                 items.push('<p>' + 'Created ' + val.created_at + '</p>');
-                items.push('<div class="comment">' + val.body + '</div>');
+                items.push('<div class="body">' + body + '</div>');
+                items.push('</div>');
                 items.push('</div>');
               });
 
@@ -23,14 +29,23 @@
     html: items.join(''),
   }).appendTo('body');
 });
+
+
+
 $.getJSON('https://api.github.com/repos/RockefellerArchiveCenter/XTF-RAC/issues?access_token=d2c3b7d5be32660c0cefd731dd6862f699131903&token_type=bearer&state=closed', function(data) {
             var items = [];
  
             $.each(data, function(key, val) {
+                var body = val.body;
+                body = body.replace("\r\n", "<br />").replace(/\!\[(.*)\]\((.*)\)/g, '<img alt="$1" src="$2"></img>');
+            
                 items.push('<div class="issue">');
+                items.push('<div class="number">' + '#' + val.number + '</div>');
+                items.push('<div class="content">');
                 items.push('<h2>' + val.title + '</h2>');
-                items.push('<p>' + 'Created ' + val.created_at + '</p>');
-                items.push('<div class="comment">' + val.body + '</div>');
+                items.push('<p>' + 'Closed ' + val.created_at + '</p>');
+                items.push('<div class="comment">' + body + '</div>')
+                items.push('</div>');
                 items.push('</div>');
               });
 
@@ -61,9 +76,9 @@ $.getJSON('https://api.github.com/repos/RockefellerArchiveCenter/XTF-RAC/issues?
             <div class="switch">
                 <input type="radio" class="switch-input" name="view" value="open" id="open"
                     checked="checked" />
-                <label for="open" class="switch-label switch-label-off">Open</label>
+                <label for="open" class="switch-label switch-label-off">OPEN</label>
                 <input type="radio" class="switch-input" name="view" value="closed" id="closed" />
-                <label for="closed" class="switch-label switch-label-on">Closed</label>
+                <label for="closed" class="switch-label switch-label-on">CLOSED</label>
                 <span class="switch-selection"></span>
             </div>
         </div>
