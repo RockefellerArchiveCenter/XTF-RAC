@@ -1038,26 +1038,26 @@
     <xsl:template match="/crossQueryResult/facet[matches(@field,'^facet-')]" exclude-result-prefixes="#all">
       <xsl:variable name="field" select="replace(@field, 'facet-(.*)', '$1')"/>
       <xsl:variable name="needExpand" select="@totalGroups > count(group)"/>
-      <div class="facet">
-         <div class="facetName">
+      <div class="facet accordionButton category">
+         <h3>
             <xsl:apply-templates select="." mode="facetName"/>
-         </div>
+         </h3>
+      </div>
+       <div class="facetGroup accordionContent">
          <xsl:if test="$expand=$field">
             <div class="facetLess">
                <i><a href="{$xtfURL}{$crossqueryPath}?{editURL:remove($queryString,'expand')}">less</a></i>
             </div>
          </xsl:if>
-         <div class="facetGroup">
             <table>
                <xsl:apply-templates/>
             </table>
-         </div>
          <xsl:if test="$needExpand and not($expand=$field)">
             <div class="facetMore">
                <i><a href="{$xtfURL}{$crossqueryPath}?{editURL:set($queryString,'expand',$field)}">more</a></i>
             </div>
          </xsl:if>
-      </div>
+       </div>
    </xsl:template>
    
    <!-- Plain (non-hierarchical) group of a facet -->

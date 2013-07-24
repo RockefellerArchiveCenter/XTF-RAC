@@ -96,82 +96,8 @@
                         });
                         //]]>   
                   </script>
-            <script type="text/javascript">
-                        //<![CDATA[
-                $(document).ready(function () {
-                    $('.showAdvanced').click(function (event) {
-                        event.preventDefault();
-                        $('#advancedSearch').slideToggle(400, 'linear');
-                    });
-                    $('input.searchbox').focus(function () {
-                        $('#searchtipDate').hide();
-                        $('#searchtip').fadeIn('slow');
-                    });
-                    $('input.searchbox').blur(function () {
-                        $('#searchtip').fadeOut('slow');
-                    });
-                    $('input.date').focus(function () {
-                        $('#searchtip').hide();
-                        $('#searchtipDate').fadeIn('slow');
-                    });
-                    $('input.date').blur(function () {
-                        $('#searchtipDate').fadeOut('slow');
-                    });
-                });//]]>   
-                  </script>
             <script type="text/javascript" src="/xtf/script/rac/featured.js"></script>
-            <script>
-            //<![CDATA[
-            $(document).ready(function() {
-             	$('.accordionButton').click(function() {
-         		$('.accordionButton').removeClass('on');
-		    	 	$('.accordionContent').slideUp('normal');
-
-               if($(this).next().is(':hidden') == true) {
-		          	$(this).addClass('on');
-		          	$(this).next().slideDown('normal');
-	             	 } 		  
-            	 });
-            	 
-            	$('.accordionButton').mouseover(function() {
-         		$(this).addClass('over');
-            	})
-            	.mouseout(function() {
-         	     	$(this).removeClass('over');										
-            	});
-            	$('.accordionContent').click(function(){
-            	$('.accordionButton').removeClass('on');
-            	});
-                  $('.accordionContent').hide();
-               });//]]>
-            </script>
-               <script type="text/javascript">
-                  //<![CDATA[
-                  $(document).ready(function() {
-             	$('.aboutButton').click(function() {
-               $('.aboutContent').slideUp('normal', function (){
-         		$('.aboutButton').removeClass('on', 400);});
-
-               if($('.aboutContent').is(':hidden') == true) {
-		          	$('.aboutButton').addClass('on')
-		          	$('.aboutContent').slideDown('normal');
-	             	 } 		  
-            	 });
-            	 
-            	$('.aboutButton').mouseover(function() {
-         		$(this).addClass('over');
-            	})
-            	.mouseout(function() {
-         	     	$(this).removeClass('over');										
-            	});
-            	$('.aboutContent').click(function(){
-            	$('.aboutContent').slideUp('normal', function (){
-         		$('.aboutButton').removeClass('on', 400);});
-            	});
-                  $('.aboutContent').hide();
-               });//]]>
-               </script>
-                  <script type="text/javascript">
+            <script type="text/javascript">
                       $(document).ready(function() {
                       $(function () {
                             var dialogTakedown = $('#takedown').dialog({
@@ -428,8 +354,8 @@
       <form method="get" action="{$xtfURL}{$crossqueryPath}">
          <div class="home">
             <div id="about">
-               <div class="aboutButton"><h3>About</h3></div>
-               <div class="aboutContent">
+               <div class="aboutButton dropdownButton"><h3>About</h3></div>
+               <div class="aboutContent dropdownContent">
                   <ul>
                   <li><a href="#archivalMat" class="archivalMat"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);"

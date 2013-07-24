@@ -186,35 +186,21 @@ table td.sampleDescrip {
 
 div.resultsHeader {
    width: 98%;
+   float:left;
 	 border-right: 1px solid #666;
 	 border-left: 1px solid #666;
 	 border-top: 1px solid #999;
 	 border-bottom: 1px solid #999;
-	 background-color: #dededf;
+	 background-color: rgb(247, 247, 247);
 	 margin-left: 1%;
 	 margin-right: 1%;
+	 padding-top:1em;
+	 padding-bottom:1em;
 	 border-radius: 5px 5px 0 0;
 }
 
-div.resultsHeader table {
-   width: 100%;
-}
-
-div.resultsHeader table td {
-	padding: 2px 5px;
-}
-
-td.right {
-   text-align: right;
-}
-
-td.left {
-   text-align: left;
-}
-
-td.center {
-   text-align: center;
-	 padding: 10px;
+.resultsHeader input, .resultsHeader select {
+    font-size:1em;
 }
 
 div.query {

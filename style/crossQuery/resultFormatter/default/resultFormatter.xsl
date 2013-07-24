@@ -192,7 +192,7 @@
                      Center</p>
                </a>
             </div>
-            <table class="searchNav">
+            <!--<table class="searchNav">
                <tr>
                   <td colspan="2">
                      <div class="searchLinks">
@@ -212,117 +212,21 @@
                            </a>
                         </xsl:if>
                         <xsl:text>&#160;|&#160;</xsl:text>
-                        <!--<a href="search?browse-all=yes">
-                           <xsl:text>BROWSE</xsl:text>
-                        </a>-->
                         <a href="search?smode=browse">
                            <xsl:text>BROWSE</xsl:text>
                         </a>
                      </div>
                   </td>
                </tr>
-            </table>
+            </table>-->
             
             <div class="resultsHeader">
-              <table>
-                  <tr>
-                     <xsl:choose>
-                        <xsl:when test="$browse-all">
-                           <td colspan="2">
-                              <strong>Browse by: </strong><xsl:call-template name="currentBrowseLinks"/>
-                           </td>
-                           <td class="right" style="vertical-align:top;">
-                              <xsl:if test="$smode != 'showBag'">
-                                 <xsl:variable name="bag" select="session:getData('bag')"/>
-                                 <div>
-                                    <a href="{$xtfURL}{$crossqueryPath}?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" style="vertical-align:bottom;"/></a>
-                                    <span>(<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)</span>
-                                 <xsl:if test="docHit">
-                                    <xsl:text>&#160;&#160;</xsl:text>
-                                    <xsl:variable name="cleanString" select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
-                                    <span><img src="{$icon.path}/i_rss.png" alt="rss icon" style="vertical-align:bottom;"/></span>
-                                    <xsl:text>&#160;</xsl:text>
-                                    <a href="search?{$cleanString};rmode=rss;sort=rss">RSS</a>
-                                    <xsl:text>&#160;</xsl:text>
-                                 </xsl:if>
-                                 </div>                                 
-                              </xsl:if>
-                           </td>
-                        </xsl:when>
-                        <xsl:otherwise>
-                           <td colspan="3" class="right">
-                              <xsl:if test="$smode != 'showBag'">
-                                 <xsl:variable name="bag" select="session:getData('bag')"/>
-                                 <div>
-                                    <a href="{$xtfURL}{$crossqueryPath}?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" style="vertical-align:bottom;"/></a>
-                                    <span>(<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)</span>
-                                 <xsl:if test="docHit">
-                                    <xsl:text>&#160;&#160;</xsl:text>
-                                    <xsl:variable name="cleanString" select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
-                                    <span><img src="{$icon.path}/i_rss.png" alt="rss icon" style="vertical-align:bottom;"/></span>
-                                    <xsl:text>&#160;</xsl:text>
-                                    <a href="search?{$cleanString};rmode=rss;sort=rss">RSS</a>
-                                    <xsl:text>&#160;</xsl:text>
-                                 </xsl:if>
-                                 </div>
-                              </xsl:if>
-                           </td>
-                        </xsl:otherwise>
-                     </xsl:choose>
-                  </tr>
-                  <tr>
-                     <td colspan="3">
-                        <xsl:choose>
-                           <xsl:when test="$smode='showBag'">
-                              <xsl:variable name="bag" select="session:getData('bag')"/>
-                              <xsl:variable name="bagCount" select="count($bag/bag/savedDoc)"/>
-                              <a href="javascript://" 
-                                 onclick="javascript:window.open('{$xtfURL}{$crossqueryPath}?smode=getAddress;docsPerPage={$bagCount}','popup','width=650,height=400,resizable=no,scrollbars=no')" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag email preview']);">E-mail My Bookbag</a>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <!--<div class="query">
-                                 <div class="label">
-                                    <b><xsl:value-of select="if($browse-all) then 'Browse by' else 'Search'"/>:</b>
-                                 </div>
-                                 <xsl:call-template name="format-query"/>
-                              </div>-->
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <strong><xsl:value-of select="if($smode='showBag') then 'Bookbag' else 'Results'"/>:</strong>&#160;
-                        <xsl:variable name="items" select="@totalDocs"/>
-                        <xsl:choose>
-                           <xsl:when test="$type='ead' or $type = 'mods'">
-                              <span id="bookbagCount">
-                                 <span id="itemCount"><xsl:value-of select="$items"/></span>
-                                 <xsl:text> Item</xsl:text><xsl:if test="$items &gt; 1">s</xsl:if>
-                                 <xsl:value-of select="if($smode='showBag') then ':' else ' for '"/>
-                                 <div class="ra-query"><xsl:call-template name="currentBrowse"/></div>
-                              </span>
-                           </xsl:when>
-                           <xsl:when test="$items = 1">
-                              <span id="bookbagCount">
-                                 <span id="itemCount">1</span>
-                                 <xsl:text> Item</xsl:text><xsl:value-of select="if($smode='showBag') then ':' else ' for '"/>
-                                 <div class="ra-query"><xsl:call-template name="format-query"/></div>
-                              </span>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <span id="bookbagCount">
-                                 <span id="itemCount">
-                                    <xsl:value-of select="$items"/>
-                                 </span>
-                                 <xsl:text> Items</xsl:text><xsl:value-of select="if($smode='showBag') then ':' else ' for '"/>
-                                 <div class="ra-query"><xsl:call-template name="format-query"/></div>
-                              </span>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                        <!-- 3/26/12 WS: Added template to clear all items from bookbag -->
-                        <xsl:if test="$smode='showBag'">
-                        <script type="text/javascript">
+               <form method="get" action="{$xtfURL}{$crossqueryPath}">
+                     
+               
+                           <!-- 3/26/12 WS: Added template to clear all items from bookbag -->
+                           <xsl:if test="$smode='showBag'">
+                              <script type="text/javascript">
                               removeAll = function() {
                                  var span = YAHOO.util.Dom.get('removeAll');
                                  var bbCount = YAHOO.util.Dom.get('bookbagCount');
@@ -339,50 +243,171 @@
                                     }, null);
                               };
                            </script>
-                        <p id="removeAll" style="margin-top:4px;">
-                           <a href="javascript:removeAll()">Clear All</a><br/>
-                        </p>
-                        </xsl:if>
-                     </td>
-                     <td>
-                        <form method="get" action="{$xtfURL}{$crossqueryPath}">
-                           <input type="text" name="keyword" size="40" value="{$keyword}"/>
-                           <xsl:text>&#160;</xsl:text>
-                           <input type="submit" value="Search"/>
-                           <input type="hidden" value="collection" name="sort"/>
-                           <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
-                        </form>
-                        &#160;&#160;
-                        <form method="get" action="{$xtfURL}{$crossqueryPath}">
-                           <b>Sorted by:&#160;</b>
-                           <xsl:call-template name="sort.options"/>
-                           <xsl:call-template name="hidden.query">
-                              <xsl:with-param name="queryString" select="editURL:remove($queryString, 'sort')"/>
-                           </xsl:call-template>
-                           <xsl:text>&#160;</xsl:text>
-                           <input type="submit" value="Go!"/>
-                        </form>
-                     </td>
-                     <td class="right">
-                        <xsl:call-template name="pages"/>
-                     </td>
-                  </tr>
+                              <p id="removeAll" style="margin-top:4px;">
+                                 <a href="javascript:removeAll()">Clear All</a><br/>
+                              </p>
+                           </xsl:if>
+               
                   <xsl:if test="//spelling">
-                     <tr>
-                        <td>
+                     <div>
+                        <div>
                            <xsl:call-template name="did-you-mean">
-                              <xsl:with-param name="baseURL" select="concat($xtfURL, $crossqueryPath, '?', $queryString)"/>
+                              <xsl:with-param name="baseURL"
+                                 select="concat($xtfURL, $crossqueryPath, '?', $queryString)"/>
                               <xsl:with-param name="spelling" select="//spelling"/>
                            </xsl:call-template>
-                        </td>
-                        <td class="right">&#160;</td>
-                     </tr>
+                        </div>
+                        <div>&#160;</div>
+                     </div>
                   </xsl:if>
-                  <xsl:if test="docHit">
-                     
-                  </xsl:if>
-               </table>
+               
+
+
+
+                  <!--<xsl:if test="$smode != 'showBag'">
+                     <xsl:variable name="bag" select="session:getData('bag')"/>
+                     <div id="bookbag">
+                        <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
+                           onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);">
+                           <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
+                              style="vertical-align:bottom;"/>
+                        </a>
+                        <span>(<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"
+                              /></span>)</span>
+                     </div>
+                  </xsl:if>-->
+               
+               <!-- <div>
+                  <xsl:choose>
+                     <xsl:when test="$smode='showBag'">
+                        <xsl:variable name="bag" select="session:getData('bag')"/>
+                        <xsl:variable name="bagCount" select="count($bag/bag/savedDoc)"/>
+                        <a href="javascript://"
+                           onclick="javascript:window.open('{$xtfURL}{$crossqueryPath}?smode=getAddress;docsPerPage={$bagCount}','popup','width=650,height=400,resizable=no,scrollbars=no')"
+                           onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag email preview']);"
+                           >E-mail My Bookbag</a>
+                     </xsl:when>
+                     <xsl:otherwise>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </div> -->
+
+               <div id="searchForm">
+                  <div id="searchTop">
+                     <div id="searchtip" class="box">
+                        <ul>
+                           <li>Want help? See these
+                              <a href="#searchTips" class="searchTips"
+                                 onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
+                                 >search tips</a>.
+                           </li>
+                        </ul>
+                     </div>
+                     <div id="searchbox">
+                        <input class="searchbox" type="text" name="keyword" value="{$text}"/>
+                        <div id="advancedSearch">
+                           <div id="boolean">
+                              <xsl:choose>
+                                 <xsl:when test="$text-join = 'or'">
+                                    <input type="radio" name="text-join" value=""/>
+                                    <xsl:text> all of </xsl:text>
+                                    <input type="radio" name="text-join" value="or" checked="checked"/>
+                                    <xsl:text> any of </xsl:text>
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <input type="radio" name="text-join" value="" checked="checked"/>
+                                    <xsl:text> all of </xsl:text>
+                                    <input type="radio" name="text-join" value="or"/>
+                                    <xsl:text> any of </xsl:text>
+                                 </xsl:otherwise>
+                              </xsl:choose>
+                              <xsl:text>these words</xsl:text>
+                           </div>
+                           <div id="materialType">
+                              <xsl:text>Type of materials: </xsl:text>
+                              <select name="type" id="type">
+                                 <option value="">All Materials</option>
+                                 <option value="ead">Archival Collections</option>
+                                 <option value="dao">Digital Materials</option>
+                                 <option value="mods">Library Materials</option>
+                              </select>
+                              <!-- 6/21/2013 HA: adding advanced search to home page -->
+                              <!--<select name="sectionType" id="library">
+                           <option value="">All Library Materials</option>
+                           <option value="title">Title</option>
+                           <option value="creator">Author</option>
+                           <option value="callNumber">Call Number</option>
+                           <option value="isbn">ISBN/ISSN</option>
+                           <option value="lccn">LCCN</option>
+                        </select>
+                        <select name="sectionType" id="collections">
+                           <option value="">All Archival Collections</option>
+                           <option value="title">Title</option>
+                           <option value="creator">Creator</option>
+                           <option value="bioghist">Biographical or Historical Note</option>
+                           <option value="scopecontent">Scope and Content Note</option>
+                           <option value="file">Folder Title</option>
+                           <option value="item">Item</option>
+                           <option value="series">Series Description</option>
+                           <option value="subseries">Subseries Description</option>
+                           <option value="controlaccess">Subject Headings</option>
+                        </select>
+                        <select name="sectionType" id="dao">
+                           <option value="">All Digital Materials</option>
+                           <option value="title">Title</option>
+                           <option value="creator">Creator</option>
+                           <option value="bioghist">Biographical or Historical Note</option>
+                           <option value="scopecontent">Scope and Content Note</option>
+                           <option value="file">Folder Title</option>
+                           <option value="item">Item</option>
+                           <option value="series">Series Description</option>
+                           <option value="subseries">Subseries Description</option>
+                           <option value="controlaccess">Subject Headings</option>
+                        </select>-->
+                           </div>
+                           <div id="date">
+                              <xsl:text>Years: </xsl:text>
+                              <input class="date" type="text" name="year" size="20" value="{$year}"/>
+                              <div id="searchtipDate" class="box">
+                                 <ul>
+                                    <li>Enter a single year or range of years, for example 1997 or 1892-1942.</li>
+                                 </ul>
+                              </div>
+                           </div>         
+                           <!--<input type="hidden" name="smode" value="advanced" id="start"/>-->
+                           <div class="showAdvanced open">
+                              <a href="#">close</a>
+                           </div>
+                        </div>
+                        <input class="searchbox" type="submit" value="Search"/>
+                        <!--<input type="hidden" value="series" name="level"/>-->
+                        <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
+                        <!-- Uncomment and complete code when digital objects are included -->
+                        <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
+                        <a href="#" class="showAdvanced closed">show more search options</a>
+                     </div>
+                  </div>
+                  <!--<div id="browse">
+                     <div class="dropdownButton">
+                        <h3>Browse</h3></div>
+                        <div class="dropdownContent">
+                           <ul>
+                              <li><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">Archival Collections</a></li>
+                              <li><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods">Library Materials</a></li>
+                              <li><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao">Digital Materials</a></li>
+                           </ul>
+                        </div>
+                  </div> -->
+               </div>
+               
+               <div id="pages">
+                  <xsl:call-template name="pages"/>
+               </div>
+               </form>
             </div>
+
+               
+               <xsl:if test="docHit"> </xsl:if>
             
             <!-- results -->
             <xsl:choose>
@@ -390,10 +415,32 @@
                   <div class="results">
                      <xsl:if test="not($smode='showBag')">
                         <div class="facets">
+                           <div class="browse">
+                              <h2>Browse</h2>
+                              <div class="accordionButton category"><h3><img src="/xtf/icons/default/collections.gif" alt="archival collections" height="25px"/>Archival Collections</h3></div>
+                              <div class="accordionContent">
+                                 <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">Browse All</a></li>
+                                 <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead">By Title</a></li>
+                                 <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead">By Creator</a></li>
+                              </div>
+                              <div class="accordionButton category"><h3><img src="/xtf/icons/default/book.gif" alt="library materials" height="25px"/>Library Materials</h3></div>
+                              <div class="accordionContent">
+                                 <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods">Browse All</a></li>
+                                 <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods">By Title</a></li>
+                                 <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods">By Creator</a></li>
+                              </div>
+                              <div class="accordionButton category"><h3><img src="/xtf/icons/default/dao_large.gif" alt="digital materials" height="25px"/>Digital Materials</h3></div>
+                              <div class="accordionContent">
+                                 <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=dao">Browse All</a></li>
+                                 <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=dao">By Title</a></li>
+                                 <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao">By Creator</a></li>
+                              </div>
+                           </div>
+                           <div id="facets">
                            <!-- 3/26/12 WS: Added some if statements to only show facets if facet data is available -->
                            <xsl:if
                               test="facet[@field='facet-subject']/child::* or facet[@field='facet-subjectname']/child::* or facet[@field='facet-geogname']/child::*">
-                              <h3>Refine Search</h3>
+                              <h2>Filter Search Results</h2>
                               <xsl:if test="facet[@field='facet-subject']/child::*">
                                  <xsl:apply-templates select="facet[@field='facet-subject']"/>
                               </xsl:if>
@@ -409,7 +456,60 @@
                                     -->
                            </xsl:if>
                         </div>
+                        </div>
                         <div id="docHits">
+                           <div id="results">
+                              <div id="rss">
+                                 <xsl:if test="docHit">
+                                    <xsl:variable name="cleanString"
+                                       select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
+                                    <a href="search?{$cleanString};rmode=rss;sort=rss">
+                                       <img src="{$icon.path}/i_rss.png" alt="rss icon"
+                                          style="vertical-align:bottom;"/>
+                                    </a>
+                                 </xsl:if>
+                              </div>
+                              <div id="hits">
+                                 <xsl:variable name="items" select="@totalDocs"/>
+                              <xsl:choose>
+                                 <xsl:when test="$type='ead' or $type = 'mods' or $type = 'dao'">
+                                    <span id="itemCount"><xsl:value-of select="$items"/></span>
+                                       <xsl:text> Result</xsl:text><xsl:if test="$items &gt; 1"
+                                          >s</xsl:if>
+                                       <xsl:value-of
+                                          select="if($smode='showBag') then ':' else ' for '"/>
+                                       <div class="ra-query"><xsl:call-template name="currentBrowse"/></div>
+                                 </xsl:when>
+                                 <xsl:when test="$items = 1">
+                                    <span id="itemCount">1</span>
+                                       <xsl:text> Result</xsl:text><xsl:value-of
+                                          select="if($smode='showBag') then ':' else ' for '"/>
+                                       <div class="ra-query"><xsl:call-template name="format-query"/></div>
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <span id="itemCount">
+                                          <xsl:value-of select="$items"/>
+                                       </span>
+                                       <xsl:text> Results</xsl:text><xsl:value-of
+                                          select="if($smode='showBag') then ':' else ' for '"/>
+                                       <div class="ra-query"><xsl:call-template name="format-query"/></div>
+                                 </xsl:otherwise>
+                              </xsl:choose>
+                              </div>
+                              <div id="sort">
+                              <form method="get" action="{$xtfURL}{$crossqueryPath}">
+                                 Sorted by:
+                                 <xsl:call-template name="sort.options"/>
+                                 <xsl:call-template name="hidden.query">
+                                    <xsl:with-param name="queryString"
+                                       select="editURL:remove($queryString, 'sort')"/>
+                                 </xsl:call-template>
+                                 <xsl:text>&#160;</xsl:text>
+                                 <input type="submit" value="Go!"/>
+                              </form>
+                              </div>
+                           </div>
+                           
                            <xsl:for-each-group select="docHit" group-by="@path">
                               <xsl:call-template name="docHitColl"/>
                            </xsl:for-each-group>
@@ -755,9 +855,8 @@
                      Center</p>
                </a>
             </div>
-               <table class="searchNav">
-                  <tr>
-                     <td colspan="2">
+               <div class="searchNav">
+                  <div>
                         <div class="searchLinks">
                            <a href="{$xtfURL}{$crossqueryPath}">
                               <xsl:text>NEW SEARCH</xsl:text>
@@ -776,42 +875,16 @@
                               <xsl:text>BROWSE</xsl:text>
                            </a>
                         </div>
-                     </td>
-                  </tr>
-               </table>
-               <div class="resultsHeader">
-                  <table>
-                     <tr>
-                        <td colspan="2">
-                           <strong>Browse by: </strong>
-                           <xsl:call-template name="currentBrowseLinks"/>
-                        </td>
-                        <td class="right">
-                        <xsl:variable name="bag" select="session:getData('bag')"/>
-                           <div>
-                              <a href="{$xtfURL}{$crossqueryPath}?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" style="vertical-align:middle;"/></a>
-                              <span>(<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)</span>
-                           </div>
-                           
-                        </td>
-                     </tr>
-                     <tr>
-                     <td>
-                        
-                     </td>
-                     <td class="right">
-                        <xsl:if test="$smode = 'showBag'">
-                           <xsl:text>&#160;|&#160;</xsl:text>
-                           <a href="{session:getData('queryURL')}">
-                              <xsl:text>Return to Search Results</xsl:text>
-                           </a>
-                        </xsl:if>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td colspan="3">
-                         <strong>Browsing:&#160;</strong><xsl:call-template name="currentBrowse"/>
-                        <!--<strong>Results:&#160;</strong>
+                     </div>
+               </div>
+            <div class="resultsHeader">
+               <div class="left">
+                  <strong>Browse by: </strong>
+                  <xsl:call-template name="currentBrowseLinks"/>
+                  <div>
+                     <strong>Browsing:&#160;</strong>
+                     <xsl:call-template name="currentBrowse"/>
+                     <!--<strong>Results:&#160;</strong>
                         <xsl:variable name="items" select="facet/group[docHit]/@totalDocs"/>
                         <xsl:choose>
                            <xsl:when test="$items &gt; 1">
@@ -823,27 +896,47 @@
                               <xsl:text> Item</xsl:text>
                            </xsl:otherwise>
                         </xsl:choose>-->
-                     </td>
-                  </tr>
-                  <tr>
-                     <td colspan="2" class="center">
-                        <xsl:call-template name="alphaList">
-                           <xsl:with-param name="alphaList" select="$alphaList"/>
-<!--                           <xsl:with-param name="level" select="'collection'"/>-->
-                        </xsl:call-template>
-                        <xsl:choose>
-                           <xsl:when test="$browse-title">
-                              &#160;| <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;level=collection;sort=title">BROWSE ALL</a>
-                           </xsl:when>
-                           <xsl:when test="$browse-creator">
-                              &#160;| <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;level=collection;sort=creator">BROWSE ALL</a>
-                           </xsl:when>
-                        </xsl:choose>
+                  </div>
+               </div>
 
-                     </td>
-                  </tr>
-                  
-               </table>
+               <div class="right">
+                  <xsl:variable name="bag" select="session:getData('bag')"/>
+                  <div class="bookbag">
+                     <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
+                        onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);">
+                        <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
+                           style="vertical-align:middle;"/>
+                     </a>
+                     <span>(<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"
+                           /></span>)</span>
+                  </div>
+
+                  <div>
+                     <xsl:if test="$smode = 'showBag'">
+                        <xsl:text>&#160;|&#160;</xsl:text>
+                        <a href="{session:getData('queryURL')}">
+                           <xsl:text>Return to Search Results</xsl:text>
+                        </a>
+                     </xsl:if>
+                  </div>
+               </div>
+               
+               <div class="center">
+                  <xsl:call-template name="alphaList">
+                     <xsl:with-param name="alphaList" select="$alphaList"/>
+                     <!--                           <xsl:with-param name="level" select="'collection'"/>-->
+                  </xsl:call-template>
+                  <xsl:choose>
+                     <xsl:when test="$browse-title"> &#160;| <a
+                           href="{$xtfURL}{$crossqueryPath}?browse-all=yes;level=collection;sort=title"
+                           >BROWSE ALL</a>
+                     </xsl:when>
+                     <xsl:when test="$browse-creator"> &#160;| <a
+                           href="{$xtfURL}{$crossqueryPath}?browse-all=yes;level=collection;sort=creator"
+                           >BROWSE ALL</a>
+                     </xsl:when>
+                  </xsl:choose>
+               </div>
             </div>
             
             <!-- results -->
@@ -983,9 +1076,9 @@
       <xsl:choose>
          <xsl:when test="$type='ead'">
             <xsl:choose>
-               <xsl:when test="$browse-title">Collections by Title</xsl:when>
-               <xsl:when test="$browse-creator">Collections by Creator</xsl:when>
-               <xsl:otherwise>All Collections</xsl:otherwise>
+               <xsl:when test="$browse-title">Archival Collections by Title</xsl:when>
+               <xsl:when test="$browse-creator">Archival Collections by Creator</xsl:when>
+               <xsl:otherwise>All Archival Collections</xsl:otherwise>
             </xsl:choose>
          </xsl:when>
          <xsl:when test="$type='mods'">
@@ -993,6 +1086,13 @@
                <xsl:when test="$browse-title">Library Materials by Title</xsl:when>
                <xsl:when test="$browse-creator">Library Materials by Creator</xsl:when>
                <xsl:otherwise>All Library Materials</xsl:otherwise>
+            </xsl:choose>
+         </xsl:when>
+         <xsl:when test="$type='dao'">
+            <xsl:choose>
+               <xsl:when test="$browse-title">Digital Materials by Title</xsl:when>
+               <xsl:when test="$browse-creator">Digital Materials by Creator</xsl:when>
+               <xsl:otherwise>All Digital Materials</xsl:otherwise>
             </xsl:choose>
          </xsl:when>
       </xsl:choose>
