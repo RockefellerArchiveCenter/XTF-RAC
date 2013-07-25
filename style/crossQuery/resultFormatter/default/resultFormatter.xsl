@@ -431,8 +431,9 @@
                                     -->
                               </xsl:if>
                            </div>
+                           <xsl:if test="$browse-all != ''">
                            <div class="browse">
-                              <h2>Browse</h2>
+                              <h2>New Browse</h2>
                               <div class="accordionButton category"><h3><img src="/xtf/icons/default/collections.gif" alt="archival collections" height="25px"/>Archival Collections</h3></div>
                               <div class="accordionContent">
                                  <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">Browse All</a></li>
@@ -452,6 +453,7 @@
                                  <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=dao">By Creator</a></li>
                               </div>
                            </div>
+                           </xsl:if>
                         </div>
                         <div id="docHits">
                            <div id="results">

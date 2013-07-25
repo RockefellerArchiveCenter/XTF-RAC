@@ -293,7 +293,7 @@ table.advancedSearch tr td{vertical-align:text-top;}
 #rss {float:left;margin-right:.5em;}
 #hits {float:left;}
 #sort {float:right;}
-.facets h2 {margin:0; margin-top:6%;padding:.5em;border-radius:5px 5px 0 0;background-color:#c45414; color:#fff;}
+.facets h2 {margin:0; margin-top:6%;padding:.5em;border-radius:5px 5px 0 0;background-color:#c45414; color:#fff;text-align:center;}
 .facets #facets h2 {background-color:#0D8061}
 .facets .browse {float:left; width:100%}
 .facets #facets {float:left; width:100%}
