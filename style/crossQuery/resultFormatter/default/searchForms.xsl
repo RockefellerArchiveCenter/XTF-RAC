@@ -290,13 +290,16 @@
                      Center</p>
                   </a>
                </div>
-                  <!--<div class="bookbag">
-                     <xsl:if test="$smode != 'showBag'">
-                        <xsl:variable name="bag" select="session:getData('bag')"/>
-                        <a href="{$xtfURL}{$crossqueryPath}?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><img src="/xtf/icons/default/bookbag.gif" alt="bookbag" align="bottom"/></a>
-                        (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"/></span>)
-                     </xsl:if>
-                  </div>-->
+            <div id="bookbag">
+                  <xsl:variable name="bag" select="session:getData('bag')"/>
+                  <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
+                     onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);">
+                     <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
+                        style="vertical-align:bottom;"/>
+                  </a>
+                  <span>(<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"
+                        /></span>)</span>
+            </div>
                  
                   <div class="searchPage">
                      <!--<div class="tabs">
