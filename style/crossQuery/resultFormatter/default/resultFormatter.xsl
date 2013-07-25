@@ -287,7 +287,7 @@
                            </ul>
                         </div>
                         <div id="searchbox">
-                           <input class="searchbox" type="text" name="keyword" value="{$text}"/>
+                           <input class="searchbox" type="text" name="keyword" value="{$keyword}"/>
                            <div id="advancedSearch">
                               <div id="boolean">
                                  <xsl:choose>
