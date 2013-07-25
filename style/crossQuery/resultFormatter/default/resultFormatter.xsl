@@ -465,15 +465,9 @@
                                     <p>Sorry, no results...</p>
                                     <p>Try modifying your search:</p>
                                     <div class="forms">
-                                       <xsl:choose>
-                                          <xsl:when test="matches($smode,'advanced')">
-                                             <xsl:call-template name="advancedForm"/>
-                                          </xsl:when>
-                                          <xsl:otherwise>
-                                             <xsl:call-template name="simpleForm"/>
-                                          </xsl:otherwise>
-                                       </xsl:choose>
-                                    </div></xsl:otherwise>
+                                       <xsl:call-template name="simpleForm"/>
+                                    </div>
+                                 </xsl:otherwise>
                               </xsl:choose>
                            </td>
                         </tr>
