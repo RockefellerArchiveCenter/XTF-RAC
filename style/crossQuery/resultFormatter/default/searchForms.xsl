@@ -87,7 +87,9 @@
                         });
                         //]]>   
                   </script>
-                  
+                  <script type="text/javascript" src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+                  <script type="text/javascript"> $(document).ready(function() { $("img[rel]").overlay(); }); </script>
+                  <script type="text/javascript"> $(document).ready(function() { $("a[rel]").overlay(); }); </script>
                </head>
                <body>
                   <xsl:copy-of select="$brand.header"/>
