@@ -226,6 +226,7 @@ div.results {
 	 border-top: 0;
 	 float:left;
 	 border-radius:0 0 5px 5px;
+	 padding-top:.5em;
 }
 
 .results>p {margin:1em;}
@@ -246,7 +247,6 @@ div.results table td.docHit{
 
 div.docHit {
 	background-color: #FAFAFB;
-	border: 1px solid #ccc;
 	margin: 1%;
 	width:96%;
 	padding:1%;
