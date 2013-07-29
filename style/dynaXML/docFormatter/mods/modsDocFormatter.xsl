@@ -189,6 +189,18 @@
                         Center</p>
                   </a>
                </div>
+               
+               <div id="bookbag">
+                  <xsl:variable name="bag" select="session:getData('bag')"/>
+                  <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
+                     onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);">
+                     <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
+                        style="vertical-align:bottom;"/>
+                  </a>
+                  <span>(<span id="bagCount"><xsl:value-of
+                     select="count(session:getData('bag')/child::*/child::*)"/></span>)</span>
+               </div>
+               
                   <xsl:call-template name="bbar_custom"/>
                
                <div class="main">

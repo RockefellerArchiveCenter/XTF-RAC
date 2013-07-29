@@ -224,8 +224,18 @@
                         Center</p>
                   </a>
                </div>
+               <div id="bookbag">
+                     <xsl:variable name="bag" select="session:getData('bag')"/>
+                     <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
+                        onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);">
+                        <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
+                           style="vertical-align:bottom;"/>
+                     </a>
+                  <span>(<span id="bagCount"><xsl:value-of
+                     select="count(session:getData('bag')/child::*/child::*)"/></span>)</span>
+               </div>
 
-                  <xsl:call-template name="bbar_custom"/>
+               <xsl:call-template name="bbar_custom"/>
                
                <div class="main">
                   <xsl:call-template name="toc"/>
@@ -361,13 +371,7 @@
                            </xsl:choose>
                         </span>
                         </li>
-                        <li>
-                           <xsl:variable name="bag" select="session:getData('bag')"/>
-                           <a href="/xtf/search?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><img src="/xtf/icons/default/bookbag.gif" alt="Bookbag" title="Bookbag"/></a>
-                           <span class="caption">
-                              (<a href="/xtf/search?smode=showBag" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);"><span id="bagCount"><xsl:value-of select="count(session:getData('bag')/child::*/child::*)"/></span></a>)
-                           </span>
-                        </li>
+
                            
                      
                      <!-- Commented out citation until digital objects are added-->
