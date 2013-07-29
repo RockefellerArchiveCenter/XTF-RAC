@@ -1479,6 +1479,7 @@
          <xsl:variable name="uri">
             <xsl:call-template name="dynaxml.url">
                <xsl:with-param name="path" select="$path"/>
+               <xsl:with-param name="chunk.id" select="'headerlink'"/>
             </xsl:call-template>
          </xsl:variable>
          <xsl:choose>

@@ -139,6 +139,27 @@
             // -->
       </script>
       <script type="text/javascript">
+         $(document).ready(function() {
+                      $(function () {
+                            var dialogTakedown = $('#takedown').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "600",
+                                  height: "300",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                            $("a.takedown").on("click", function (e) {
+                            e.preventDefault();
+                              dialogTakedown.dialog("option", "title", '').dialog("open");
+                            });
+                        });
                         $(function () {
                         var dialogFeedback = $('#feedback').dialog({
                                create: function(event, ui) {
@@ -154,10 +175,11 @@
                                     $('.ui-dialog').hide();
                                   }
                                });
-                            $(".feedback-tab").on("click", function (e) {
+                            $(".feedback").on("click", function (e) {
                             e.preventDefault();
                               dialogFeedback.dialog("option", "title", '').dialog("open");
                             });
+                        });
                         });
         </script>
       
@@ -8013,9 +8035,6 @@
    </dynaxml.header>
 
       <feedback>
-         <div class="feedback-tab">
-            <a href="#feedback-tab"><img src="/xtf/icons/default/feedback_tab.png" alt="feedback" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'feedback']);"/></a>
-         </div>
           <div class="overlay" id="feedback">
                <form class="feedback-form" action="/xtf/script/rac/formmail.php" method="post">
                   <input type="hidden" name="recipients" value="harnold_*_rockarch.org"/>
@@ -8067,7 +8086,7 @@
          </div>
       </div>
       <div class="footer">
-         <p>Copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a> <a href="#takedown" class="takedown">Take-down policy</a></p>
+         <p>Copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a> | <a href="#takedown" class="takedown" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'takedown']);">Take-down policy</a> | <a href="#feedback" class="feedback" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'feedback']);">Feedback</a></p>
       </div>
    </footer>
 
