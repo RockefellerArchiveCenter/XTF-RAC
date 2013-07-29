@@ -363,14 +363,14 @@
                   <li><a href="#archivalMat" class="archivalMat"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);"
                      >Archival Materials</a></li>
-                     <li><a href="#holdings" class="holdings" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'our holdings']);">Our Collections</a></li>
+                     <li><a href="#holdings" class="holdings" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'our collections']);">Our Collections</a></li>
                   <li><a href="#dscDescription" class="dscDescription"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);"
                      >Collection Guides</a></li>
                   <li><a href="#dimes" class="dimes"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">This
                      Website's Name</a></li>
-                  <li><a href="#takedown" class="takedown">Our Take-Down Policy</a></li>
+                     <li><a href="#takedown" class="takedown" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'takedown']);">Our Take-Down Policy</a></li>
                   </ul>
                </div>
                

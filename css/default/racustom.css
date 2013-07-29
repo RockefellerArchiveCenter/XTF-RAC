@@ -289,7 +289,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .resultsHeader #browse .over {box-shadow:0px 0px 3px #C45414;color: #c45414;cursor:pointer}
 .resultsHeader #searchtip {top:12em;width:23%;font-size:1em;}
 #pages {float:right; width:30%;margin-top:.5em;margin-right:1em;text-align:right;}
-#results {width:96%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:rgba(13, 128, 97, 0.1);border-radius:5px;font-size:1em;}
+#results {width:96%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:#eee;border-radius:5px;font-size:1em;}
 #results select, #results input {font-size:.8em;margin-top:0; margin-bottom:0;}
 #rss {float:left;margin-right:.5em;}
 #hits {float:left;}
