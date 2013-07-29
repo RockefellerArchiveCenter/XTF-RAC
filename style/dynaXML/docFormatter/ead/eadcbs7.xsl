@@ -1736,15 +1736,35 @@
                 <div class="daoLink">
                    <xsl:choose>
                       <xsl:when test="../dao">
-                         <xsl:variable name="daoLink" select="../dao/@ns2:href"/>
-                         <xsl:variable name="daoTitle" select="../dao/@ns2:title"/>
-                         <xsl:variable name="citation">
-                            <xsl:call-template name="daoCitation"/>
-                         </xsl:variable>                      
-                         <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
-                            <xsl:call-template name="component-did-core"/>
-                            <img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>
-                         </a>
+                         <xsl:if test="count(../dao) &gt; 1">
+                            <xsl:call-template name="component-did-core"/><br/> 
+                         </xsl:if>
+                         <xsl:for-each select="../dao">
+                            <xsl:variable name="daoLink" select="@ns2:href"/>
+                            <xsl:variable name="daoTitle" select="@ns2:title"/>
+                            <xsl:variable name="citation">
+                               <xsl:call-template name="daoCitation"/>
+                            </xsl:variable>                      
+                            <a href="{$daoLink}" 
+                               data-citation="{$citation}" data-title="{$daoTitle}" 
+                               data-width="512" data-height="384" 
+                               onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+                               <xsl:if test="count(../dao) &gt; 1">
+                                  <xsl:attribute name="style">margin-left:1em;</xsl:attribute>
+                               </xsl:if>
+                               <xsl:choose>
+                                  <xsl:when test="count(../dao) &gt; 1">
+                                     <xsl:value-of select="$daoTitle"/>
+                                  </xsl:when>
+                                  <xsl:otherwise>
+                                     <xsl:for-each select="../did">
+                                        <xsl:call-template name="component-did-core"/>                                        
+                                     </xsl:for-each>
+                                  </xsl:otherwise>
+                               </xsl:choose>
+                               <img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>
+                            </a>
+                         </xsl:for-each>
                          
                          <!--
                          <a href="#" rel="#{../@id}_dao" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
@@ -1846,7 +1866,7 @@
             <!--This code process the elements when unitdate is not a child of untititle-->
             <xsl:otherwise>
                <xsl:apply-templates select="unittitle"/><xsl:if test="unitdate"><xsl:if test="string-length(unittitle) &gt; 0">, </xsl:if> </xsl:if>
-                <xsl:for-each select="unitdate[not(self::unitdate[@type='bulk'])]">
+                <xsl:for-each select="unitdate">
                     <xsl:apply-templates/>
                     <xsl:text>&#160;</xsl:text>
                 </xsl:for-each>

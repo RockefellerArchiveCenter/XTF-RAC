@@ -884,7 +884,7 @@
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Overview'"/>
                                  <xsl:with-param name="id" select="'headerlink'"/>
-                                 <xsl:with-param name="nodes" select="archdesc/did|archdesc/scopecontent"/>
+                                 <xsl:with-param name="nodes" select="archdesc/did | archdesc/scopecontent"/>
                               </xsl:call-template>
                            </xsl:if>
                            <xsl:if test="archdesc/did/head">
