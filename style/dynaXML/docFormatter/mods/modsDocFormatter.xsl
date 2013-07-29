@@ -233,32 +233,6 @@
          </xsl:choose>
       </xsl:variable>
       <div class="bbar_custom">  
-         <table class="searchNav">
-            <tr>
-               <td colspan="2">
-                  <div class="searchLinks">
-                     <xsl:if test="$query !=''">
-                        <a href="{session:getData('queryURL')}">
-                           <xsl:text>SEARCH RESULTS</xsl:text>
-                        </a> | 
-                        <!--
-                        <a href="{session:getData('queryURL')}">
-                           <xsl:text>MODIFY SEARCH</xsl:text>
-                        </a> |
-                        -->                        
-                     </xsl:if>
-                     <a href="{$xtfURL}{$crossqueryPath}">
-                        <xsl:text>NEW SEARCH</xsl:text>
-                     </a>
-                     <xsl:text>&#160;|&#160;</xsl:text>
-                     <a href="{$xtfURL}{$crossqueryPath}?smode=browse">
-                        <xsl:text>BROWSE</xsl:text>
-                     </a>
-                  </div>
-               </td>
-            </tr>
-         </table>
-
          <table style="width:99%; margin:0;padding:0;height:100px;" class="navright">
             <tr><td></td><td style="width:275;"></td><td style="width:275;"></td><td style="width:275;"></td></tr>
             <tr>
