@@ -17,61 +17,21 @@ body {
 h2 {margin-top:.5em; padding:0;}
 h4{margin-bottom:0; padding-bottom:0;}
 p{margin-top:0;margin-bottom:1em;}
-.modsInfo h3 {margin:0; padding:.25em .25em 1em .25em; background-color:#ccc !important; border:red;}
-div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em;}
-.overlay div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em; min-height: 500px;}
+.footer {margin-left: 1%;text-align: left;float:left;margin-bottom:.5em;margin-top:.5em;}
+.fixedFooter {position:absolute;bottom:0;left:1%;margin:0;padding:0;width:98%;height:1.6em;border-top:1px solid #666}
+.footer p {margin:0}
 div.closeWindow {text-align:right !important; font-size:.85em !important; margin-top:1em;}
 div.closeWindow a{color: #C45414;}
+
 .getAddress{border-top:1px solid #999 !important; margin-top:24px !important;}
-.fixedHeader {
-            position: fixed !important;
-            position: absolute; /* IE6 reads this */
-            height: 100px;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 2;              
-}
-.fixedHeader table{
-    margin-right:8px;    
-}
-.fixedHeader .navright {margin-right:12px !important;} 
-.fixedHeader .searchNav {width:99%;}
-.fixedHeader .bbar_custom{width:99%;} 
 .bookbag {width:3em; text-align:center;border:none; float:right;margin-bottom:-2em;}
-ul.bbicons {display:block; list-style: none; padding:0; margin:0; float:none; clear:both;}
-ul.bbicons li{width:30px !important; float: left; margin:0;}
-ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; text-align:center; font-size:.75em; color:#C45428;}
-.bbform {display:block; margin:0;padding:0;height:1em; overflow:hidden; text-align: right;}
 /* Formats header */
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
-/*h1#collectionGuides {background: url("images/collection_guides.gif") no-repeat left top; background-color:#fff;}*/
-
 #header {margin-top:-100px; margin-left:170px; height:80px !important; font-family: 'Questrial', sans;-webkit-text-stroke: 1px;width:49em;}
 #header a, #header a:hover {text-decoration:none;}
 #header h1 {font-size: 3em; margin: 0; text-decoration:none;color: #000000;font-family: 'Questrial', sans;}
 #header h1:hover {text-shadow:0 0 5px #c45414;}
 .tagline {font-size: 1.5em;color: #444;}
-
-.searchNav {background-color: #fff; width:100%; margin-top:-.5em;}
-.searchNav .searchLinks {color: #555555; text-align:right; padding-right:.5em;}
-.searchNav .searchLinks a {color: #C45414; text-decoration:none;}/*555555*/
-
-.bbar_custom {padding:1em; border:none;}
-/*h1.collectionGuides {margin-top:-70px; margin-left:160px; font-size:2em;}*/
-/*h1.collectionGuides a {text-decoration:none; color:black;}*/
-/*.searchPage {margin-top:34px !important;}*/
-.navright {
-    background-color: #DDDDDD;
-    padding:12px;
-    text-align:right !important; 
-    border-top:1px solid #999; 
-    border-right:1px solid #999; 
-    border-left:1px solid #999; 
-    }  
-.navright form {text-align:right !important; padding:8px 8px;}
-.eadtitle {text-align:left; font-size:.80em; margin:0; padding-left:.5em; /*border: 1px solid #999;*/}
-.eadtitle h1 {color:#333; margin:0; padding:0; font-size:1.75em;}
 
 /*Formats IE specific warning*/
 .chromeframe p {
@@ -143,12 +103,9 @@ ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; t
     border:1px solid #666;
     padding: 20px;
     box-shadow:0 0 90px #000;
-
-    /* CSS3 styling for latest browsers */
     -moz-box-shadow:0 0 90px 5px #000;
     -webkit-box-shadow: 0 0 90px #000;
 }
-/* close button positioned on upper right corner */
 .overlay .close {
     background-image:url(/xtf/icons/default/close.png);
     position:absolute;
@@ -163,6 +120,8 @@ ul.bbicons li .caption{display:block; width:30px; margin-top:-.5em; padding:0; t
     border-bottom: 1px dotted;
 }
 
+div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em;}
+.overlay div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em; min-height: 500px;}
 
 /* Overlay for digital objects */
 .overlay_dao {
@@ -259,7 +218,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #disclaimer p { margin:1%; }
 .home a, #about a, .resultsHeader a, .facets a {text-decoration: none !important; color: #c45414 !important;}
 .home a:hover, #about a:hover, .resultsHeader a:hover, .facets a:hover {color:#c45414 !important; text-decoration:underline !important; }
-.home li, .resultsHeader li, .facets li {list-style: none;margin: 0px;padding: .5em 1em .5em 1em;text-align:left;font-size:1.2em;}
+.home li, .resultsHeader li {list-style: none;margin: 0px;padding: .5em 1em .5em 1em;text-align:left;font-size:1.2em;}
 .home li:nth-child(even), .resultsHeader li:nth-child(even), .facets li:nth-child(even) {background-color: rgb(228, 228, 228);border-bottom:1px dashed #999; border-top:1px dashed #999;}
 .home ul, .resultsHeader ul, .facets ul {padding-left: 0em;padding-right:0em;margin-top:.5em; margin-bottom:.5em;}
 .home h4 {padding: .5em .5em .5em 1em;text-align: left;margin-top:0;}
@@ -271,7 +230,6 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .ra-query {float:none !important; display:inline !important;}
 .subQuery {float:none !important; display:inline !important;}
 .clear {clear:both;}
-/*.navright .right{text-align:right; float:right; margin-top:-8px; padding-top:0;}*/
 #bookbag {float:right;margin-right:1%;margin-bottom:.5em;margin-top:-.8em;height:2em;}
 .resultsHeader h2 {text-align:center; margin:0 0 .5em 0;}
 .resultsHeader .actions {text-align:center;width:20%; float:left; margin-left:40%}
@@ -295,6 +253,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #hits {float:left;}
 #sort {float:right;}
 .facets h2 {margin:0; padding:.5em;border-radius:5px 5px 0 0;background-color:#c45414; color:#fff;text-align:center;}
+.facets li {list-style: none;margin: 0px;padding: 1%;text-align:left;font-size:1em;}
 .facets #facets h2 {background-color:#0D8061}
 .facets .browse {float:left; width:100%;margin-top:3%; border-radius:5px 5px 0px 0px;}
 .facets #facets {float:left; width:100%;margin-top:3%; border-radius:5px 5px 0px 0px;}
@@ -329,10 +288,24 @@ a.hit {
    font-weight: bold;
 }
 
+/*Formats document headers*/
+.bbar_custom {float:left;border-right: 1px solid #666;border-left: 1px solid #666;border-top: 1px solid #999;border-bottom: 1px solid #999;background-color: #ddd;margin-left: 1%;margin-right: 1%;padding: 5px .5em 0 .5em;border-radius: 5px 5px 0 0;height:100px;}
+.headerIcons {float:right; margin-left:.5em;width:5%;}
+.headerIcons ul {display:block; list-style: none; padding:0; margin:0; float:none; clear:both;}
+.headerIcons ul li{width:30px !important; float: left; margin:0;}
+.headerIcons ul li .caption{display:block; width:30px; margin-top:-.5em; padding:0; text-align:center; font-size:.75em; color:#C45428;}
+.bbform {display:block; margin:0;padding:0; overflow:hidden; text-align: right;float:right;width:100%}
+.bbform input {font-size:1em;}
+.documentTitle {text-align:left; font-size:.80em; margin:0; padding-left:.5em; float:left; width:64%;height:50px}
+.documentTitle h1 {color:#333; margin:0; margin-left:60px; padding:0; font-size:1.75em;}
+.ead {background: url(/xtf/icons/default/collections.gif) left no-repeat; min-height: 50px;}
+.headerSearch {width:30%; float:right;height:7em;text-align:right;}
+.headerResults {float:right;width:100%;}
+
 /* Formats tabs for finding aids*/
-ul.tabs {display:block; list-style: none; padding:0; margin-bottom:6px;}
-ul.tabs li{display:inline; padding:10px;/*padding: 10px 20px;*/ margin:0; font-weight:bold; border-top:1px solid #999; border-right:1px solid #999; border-left:1px solid #999; border-top-left-radius:5px; border-top-right-radius:5px;}
-ul.tabs li.select{
+.tabs {float:left; margin-top:10px;}
+.tab {display:inline; float:left;height:20px; padding:10px;font-weight:bold; border-top:1px solid #999; border-right:1px solid #999; border-left:1px solid #999; border-bottom:0; border-top-left-radius:5px; border-top-right-radius:5px; margin-right:.5em;}
+.tabs .select{
     background-color:#fff; 
     border-top:1px solid #999;
     border-right:1px solid #999;
@@ -341,90 +314,63 @@ ul.tabs li.select{
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     }
-ul.tabs li.clear {display:none;}
+.tabs .clear {display:none;}
+.tab a {text-decoration: none !important;}
 .active a{font-weight:bold; text-decoration:none !important;}
 .currentBrowse a{color: #333 !important;}
 /* Styles for EAD */
 .main {
-    display:block; 
-    float:none; 
-    clear:both; 
-    margin-top:215px;    
-    margin-left:13px; 
-    margin-right:0px; 
-    position:relative;
-    /*
-    border-left:1px solid #999; 
-    border-right:1px solid #999; 
-    border-bottom:1px solid #999;
-    */
-    }
-    
+    float:left; 
+    width:98%;
+    margin-left:1%;
+    margin-right:1%;}
     
 /* TOC for finding aids pages */
 #tocWrapper { /* required to avoid jumping */
     position: fixed !important;
     position: absolute;
-    top: 260px;
-    left: 0;
-    bottom:12px;
-    margin-left: 0;
-    width:235px;
-    margin:0;
-    padding:0;
-    clear:both;
+    top: 250px;
+    left: 1%;
+    bottom:1.6em;
+    width:15%;
+    padding-left:1%;
+    padding-right:2%;
     overflow:auto;
-         }
+    border-left:1px solid #666;
+   }
      
-#toc {
-    margin-top:-10px; 
-    padding-top: 0;
-    padding-left: 12px;	
-	padding-right: 10px;	
-	padding-bottom: 10px;
-	display:block;
-	width: 190px;	
-    
-	}
+#toc {display:block;}
 #toc dl{margin-left:1em;}
 #toc .inventory{margin-left:0;}
 #toc .inventory2{padding-left:1em;}
-#toc div.contents {padding:1em;}
+#toc .tocItem {padding-top:.2em;padding-bottom:.2em;padding-left:2%;}
+#toc .tocLink {}
 
 /* TOC subjects submenu*/
 ul.none {list-style:none;}
-.subjects {margin-left:1.5em; padding-left:4px;}
-.subjects h4 {margin:0; padding:1em;}
+.subjects {margin:0; padding:0;}
+.subjects h4 {margin:0;}
 .subjects ul{margin:0;padding:0;}
-.subjects li{margin-left:.85em;padding:0; padding-bottom:.5em;}
+.subjects li{padding-top:.2em;padding-bottom:.2em;padding-left:2%}
 .more {display:none;}
 
 /* --- EAD body --- */
 #content-wrapper { /* required to avoid jumping */
     position: fixed !important;
     position: absolute;
-    top: 260px;
-    left: 240px;
-    right:10px;
-    bottom:12px;
+    top: 250px;
+    right:1%;
+    left:20%;
+    bottom:1.6em;
 /*    margin-left:240px;*/
-    min-height:400px;
     margin:0;
     padding:0;
-    clear:both;
     overflow:auto;
 }
          
 #content-right {
     display:block;
-    /*margin-left:240px;*/
-    margin-top:0;
-/*    padding-top:48px;*/
-    padding-left: 10px;
-    margin-right: 10px;
     text-align: left;
-/*    min-height:400px;*/
-/*    position:relative;*/
 }
 .navright .left {margin-top:-12px;}
 .overview p{margin-top:0; margin-bottom:12px;}
@@ -432,10 +378,7 @@ ul.none {list-style:none;}
 #content-right table tr td {padding-right:1em;}
 .col4 {padding-right: 1em;}
 .moreInfo a {width:100%; float:left;}
-.addToBag {
-    font-weight:normal !important;    
-/*    background: url("images/bookbag.gif") no-repeat right top;*/
-}
+.addToBag {font-weight:normal !important;}
 
 /* Container list styles*/
 table.containerList {width:99%; position:relative;}
@@ -463,6 +406,9 @@ table td.c05 {border-left: 40px solid white !important; padding-left:4px;}
 table td.c06 {border-left: 50px solid white !important; padding-left:4px;}
 table td.c07 {border-left: 60px solid white !important; padding-left:4px;}
 table td.c08 {border-left: 70px solid white !important; padding-left:4px;}
+
+/* --- Formats library records --- */
+.modsInfo h3 {margin:0; padding:.25em .25em 1em .25em; background-color:#ccc !important; border:red;}
 
 /* --- Custom styles for dialog --- */
 .dao-container {
@@ -502,12 +448,3 @@ iframe {
 .daoCitation {padding-bottom: 5px;}
 
 .daoCitation .repository {position: absolute; bottom: 0; left: 0; width: 98%; padding-left: 2%;}
-                   
-                   
-/*                 
-.ui-dialog .ui-dialog-titlebar-close { 
-                   	margin-top:-2em;
-                    margin-right: -1.5em;
-                    z-index: 1;
-            }       
-            */

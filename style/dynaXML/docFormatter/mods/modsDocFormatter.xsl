@@ -205,10 +205,10 @@
                
                <div class="main">
                   <xsl:call-template name="toc"/>
-                  <xsl:call-template name="body"/>    
-                  <br class="clear"/>
+                  <xsl:call-template name="body"/>
                </div>
                <xsl:copy-of select="$brand.feedback"/>
+               <xsl:copy-of select="$brand.footer"/>
           </body>
          </html>
       </xsl:result-document>
@@ -233,42 +233,41 @@
          </xsl:choose>
       </xsl:variable>
       <div class="bbar_custom">  
-         <table style="width:99%; margin:0;padding:0;height:100px;" class="navright">
-            <tr><td></td><td style="width:275;"></td><td style="width:275;"></td><td style="width:275;"></td></tr>
-            <tr>
-               <td colspan="3">
-                  <div class="eadtitle"> 
-                     <xsl:attribute name="style">
-                        <xsl:choose>
-                           <xsl:when test="/mods:mods/mods:genre[contains(.,'Volume')]">background: url(/xtf/icons/default/book.gif) left no-repeat;</xsl:when>
-                           <xsl:when test="/mods:mods/mods:genre[contains(.,'DVD')]">background: url(/xtf/icons/default/video.gif) left no-repeat;</xsl:when>
-                           <xsl:when test="/mods:mods/mods:genre[contains(.,'Videocassette')]">background: url(/xtf/icons/default/video.gif) left no-repeat;</xsl:when>
-                           <xsl:when test="/mods:mods/mods:genre[contains(.,'Reel')]">background: url(/xtf/icons/default/microfilm.gif) left no-repeat;</xsl:when>
-                        </xsl:choose>
-                        <xsl:text>min-height: 50px;</xsl:text>
-                     </xsl:attribute>
-                     <h1>
-                        <xsl:attribute name="style">
-                           <xsl:text>margin-left:60px;</xsl:text>
-                           <xsl:if test="string-length(/mods:mods/mods:titleInfo[not(@type)]/mods:title) &gt; 125">font-size:1.15em;</xsl:if>
-                        </xsl:attribute>                           
-                        <xsl:value-of select="/mods:mods/mods:titleInfo[not(@type)]/mods:title"/>
-                     </h1>
-                  </div>
-               </td>
-               <td style="text-align:right; width:250px;">
-                  <div style="float:right;margin:0;padding:0;">
-                  <ul class="bbicons">
-                     <li>
-                        <xsl:variable name="identifier" select="/mods:mods/mods:identifier[1]"/>
-                           <xsl:variable name="indexId" select="$identifier"/>
-                           <xsl:choose>
-                              <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                                 <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
-                                 <span class="caption">Added</span>
-                              </xsl:when>
-                              <xsl:otherwise>
-                                 <script type="text/javascript">
+         <div class="documentTitle">
+            <xsl:attribute name="style">
+               <xsl:choose>
+                  <xsl:when test="/mods:mods/mods:genre[contains(.,'Volume')]">background:
+                     url(/xtf/icons/default/book.gif) left no-repeat;</xsl:when>
+                  <xsl:when test="/mods:mods/mods:genre[contains(.,'DVD')]">background:
+                     url(/xtf/icons/default/video.gif) left no-repeat;</xsl:when>
+                  <xsl:when test="/mods:mods/mods:genre[contains(.,'Videocassette')]">background:
+                     url(/xtf/icons/default/video.gif) left no-repeat;</xsl:when>
+                  <xsl:when test="/mods:mods/mods:genre[contains(.,'Reel')]">background:
+                     url(/xtf/icons/default/microfilm.gif) left no-repeat;</xsl:when>
+               </xsl:choose>
+               <xsl:text>min-height: 50px;</xsl:text>
+            </xsl:attribute>
+            <h1>
+               <xsl:if
+                  test="string-length(/mods:mods/mods:titleInfo[not(@type)]/mods:title) &gt; 125">
+                  <xsl:attribute name="style"> font-size:1.15em; </xsl:attribute>
+               </xsl:if>
+               <xsl:value-of select="/mods:mods/mods:titleInfo[not(@type)]/mods:title"/>
+            </h1>
+         </div>
+         <div class="headerIcons">
+            <ul>
+               <li>
+                  <xsl:variable name="identifier" select="/mods:mods/mods:identifier[1]"/>
+                  <xsl:variable name="indexId" select="$identifier"/>
+                  <xsl:choose>
+                     <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                        <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
+                           title="Added to bookbag"/>
+                        <span class="caption">Added</span>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <script type="text/javascript">
                                     add_1 = function() {
                                        var span = YAHOO.util.Dom.get('add_1');
                                        span.innerHTML = "Adding...";
@@ -282,15 +281,19 @@
                                           }, null);
                                     };
                                  </script>
-                                 <a href="javascript:add_1()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add-library', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a>
-                                 <span id="add_1" class="caption">
-                                    <a href="javascript:add_1()">Add</a>
-                                 </span>
-                              </xsl:otherwise>
-                           </xsl:choose>
-                     </li>
-                        <!-- Commented out citation until digital objects are added-->
-                        <!--
+                        <a href="javascript:add_1()"
+                           onClick="_gaq.push(['_trackEvent', 'interaction', 'add-library', 'bookbag']);">
+                           <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
+                              title="Add to bookbag"/>
+                        </a>
+                        <span id="add_1" class="caption">
+                           <a href="javascript:add_1()">Add</a>
+                        </span>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </li>
+               <!-- Commented out citation until digital objects are added-->
+               <!--
                            <a>
                            <xsl:attribute name="href">javascript://</xsl:attribute>
                            <xsl:attribute name="onclick">
@@ -300,51 +303,40 @@
                            <xsl:text>Citation</xsl:text>
                            </a>
                            <xsl:text> | </xsl:text>
-                        --> 
-                  </ul>
-                  </div>
-                  <br class="clear"/>
-               </td>
-            </tr>
-            <tr>
-               <td style="vertical-align:bottom;text-align:left;">                    
-                  <xsl:call-template name="tabs"/>  
-               </td>
-               <td colspan="3" style="vertical-align:bottom;text-align:right; padding-bottom:4px;">
-                  <xsl:if test="($query != '0') and ($query != '')">
-                     <strong>
-                        <span class="hit-count">
-                           <xsl:value-of select="$sum"/>
-                        </span>
-                        <xsl:text> </xsl:text>
-                        <xsl:value-of select="$occur"/>
-                        <xsl:text> of </xsl:text>
-                        <span class="hit-count">
-                           <xsl:value-of select="$query"/>
-                        </span>
-                     </strong>
-                     <xsl:text> [</xsl:text>
-                     <a>
-                        <xsl:attribute name="href">
-                           <xsl:value-of select="$doc.path"/>;brand=<xsl:value-of select="$brand"/>
-                        </xsl:attribute>
-                        <xsl:text>Clear Hits</xsl:text>
-                     </a>
-                     <xsl:text>]</xsl:text>
-                     <xsl:choose>
-                        <xsl:when test="$docId"/>
-                        <xsl:otherwise>
-                           &#160;[
-                           <a href="{session:getData('queryURL')}">
-                              Back to Search Results
-                           </a>
-                           ]
-                        </xsl:otherwise>
-                     </xsl:choose>                    
-                  </xsl:if>
-               </td>
-            </tr>
-         </table>
+                        -->
+            </ul>
+         </div>
+         <div class="headerSearch">
+         <xsl:if test="($query != '0') and ($query != '')">
+            <div class="headerResults">
+            <strong>
+               <span class="hit-count">
+                  <xsl:value-of select="$sum"/>
+               </span>
+               <xsl:text> </xsl:text>
+               <xsl:value-of select="$occur"/>
+               <xsl:text> of </xsl:text>
+               <span class="hit-count">
+                  <xsl:value-of select="$query"/>
+               </span>
+            </strong>
+            <xsl:text> [</xsl:text>
+            <a>
+               <xsl:attribute name="href">
+                  <xsl:value-of select="$doc.path"/>;brand=<xsl:value-of select="$brand"/>
+               </xsl:attribute>
+               <xsl:text>Clear Hits</xsl:text>
+            </a>
+            <xsl:text>]</xsl:text>
+            <xsl:choose>
+               <xsl:when test="$docId"/>
+               <xsl:otherwise> &#160;[ <a href="{session:getData('queryURL')}"> Back to Search
+                     Results </a> ] </xsl:otherwise>
+            </xsl:choose>
+            </div>
+         </xsl:if>
+      </div>
+         <xsl:call-template name="tabs"/> 
       </div>
    </xsl:template>
    <xsl:template match="mods:titleproper/mods:num"><br/><xsl:value-of select="."/></xsl:template>
@@ -354,9 +346,9 @@
    
    <xsl:template name="tabs">
          <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/></xsl:variable>
-         <ul class="tabs">
-            <li class="select">Item Description</li>
-         </ul>
+         <div class="tabs">
+            <div class="tab select">Item Description</div>
+         </div>
       
    </xsl:template>
 
@@ -516,88 +508,93 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
       
       <xsl:if test="@id = $chunk.id">
          <a name="X"/>
-      </xsl:if>     
-      <table>
-         <tr>
-            <td width="10px" class="moreLess">
-               <xsl:if test=".[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds']">
-                  <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds']">
-                     <xsl:choose>
-                        <xsl:when test="$parentID = $submenuID">
-                           <a onclick="showHide('{$submenuID}');return false;" id="{$submenuID}-hide" href="#">- </a>
-                        </xsl:when>
-                        <xsl:otherwise>                           
-                           <a  onclick="showHide('{$submenuID}');return false;" class="showLink" id="{$submenuID}-show" href="#">+ </a>
-                           <a class="more" onclick="showHide('{$submenuID}');return false;" id="{$submenuID}-hide" href="#">- </a>                                                         
-                        </xsl:otherwise>
-                     </xsl:choose>
-                  </xsl:if>
-               </xsl:if>            
-            </td>
-            <td>
-               <xsl:choose>
-                  <xsl:when test="$indent = 2">
-                     <xsl:attribute name="class">inventory</xsl:attribute>
-                  </xsl:when>
-                  <xsl:when test="$indent = 3">
-                     <xsl:attribute name="class">inventory2</xsl:attribute>
-                  </xsl:when>
-                  <xsl:otherwise/>
-               </xsl:choose>
-               <xsl:choose>
-                  <xsl:when test="$chunk.id = @id">
-                     <a name="X"/>
-                     <span class="toc-hi">
-                        <xsl:value-of select="$name"/>
-                     </span>
-                  </xsl:when>
-                  <xsl:when test="$indent = 3">
-                     <a>
-                  	<!-- if basicchoice2 = "nomatch_for_id" then use the original -->
-                   <xsl:attribute name="href">
+      </xsl:if>
+      <div class="tocItem">
+         <div class="moreLess">
+            <xsl:if
+               test=".[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds']">
+               <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds']">
+                  <xsl:choose>
+                     <xsl:when test="$parentID = $submenuID">
+                        <a onclick="showHide('{$submenuID}');return false;" id="{$submenuID}-hide"
+                           href="#">- </a>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <a onclick="showHide('{$submenuID}');return false;" class="showLink"
+                           id="{$submenuID}-show" href="#">+ </a>
+                        <a class="more" onclick="showHide('{$submenuID}');return false;"
+                           id="{$submenuID}-hide" href="#">- </a>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </xsl:if>
+            </xsl:if>
+         </div>
+         <div class="tocLink">
+            <xsl:choose>
+               <xsl:when test="$indent = 2">
+                  <xsl:attribute name="class">inventory</xsl:attribute>
+               </xsl:when>
+               <xsl:when test="$indent = 3">
+                  <xsl:attribute name="class">inventory2</xsl:attribute>
+               </xsl:when>
+               <xsl:otherwise/>
+            </xsl:choose>
+            <xsl:choose>
+               <xsl:when test="$chunk.id = @id">
+                  <a name="X"/>
+                  <span class="toc-hi">
+                     <xsl:value-of select="$name"/>
+                  </span>
+               </xsl:when>
+               <xsl:when test="$indent = 3">
+                  <a>
+                     <!-- if basicchoice2 = "nomatch_for_id" then use the original -->
+                     <xsl:attribute name="href">
                         <!--   <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>   (old had &amp;menu=more)-->
-						<xsl:choose>
-							<xsl:when test="$basicchoice2='nomatch_for_id'">	
-								<xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-							</xsl:when>
-							<xsl:otherwise>
-								<!-- 5/17/12 DG for RA: rewrite -->
-								<xsl:value-of select="$href2"/>
-							</xsl:otherwise>
-						</xsl:choose>
-                        </xsl:attribute>
-                        <xsl:value-of select="$name"/> 
-                     </a>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     <a>
-                        <xsl:attribute name="onclick">showHide('<xsl:value-of select="$submenuID"/>');</xsl:attribute>
-                        <xsl:attribute name="href">
-                           <xsl:choose>
-                              <xsl:when test="($query != '0') and ($query != '')">
-                                 <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-                              </xsl:when>
-                                 <xsl:when test="$basicchoice2='nomatch_for_id'">	
-                                    <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-                                 </xsl:when>
-                              <xsl:otherwise>
-                                 <xsl:value-of select="$href2"/>
-                              </xsl:otherwise>
-                           </xsl:choose>
-                        </xsl:attribute>
-                        
-                        <xsl:value-of select="$name"/>
-                     </a>
-                  </xsl:otherwise>
-               </xsl:choose>
-               <span class="hit-count">
-                  <xsl:if test="$hit.count">
-                     (<xsl:value-of select="$hit.count"/>)
-                  </xsl:if>  
-               </span>
-            </td>
-         </tr>
-      </table>
+                        <xsl:choose>
+                           <xsl:when test="$basicchoice2='nomatch_for_id'">
+                              <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
+                                 />?<xsl:value-of select="$content.href"/>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <!-- 5/17/12 DG for RA: rewrite -->
+                              <xsl:value-of select="$href2"/>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </xsl:attribute>
+                     <xsl:value-of select="$name"/>
+                  </a>
+               </xsl:when>
+               <xsl:otherwise>
+                  <a>
+                     <xsl:attribute name="onclick">showHide('<xsl:value-of select="$submenuID"
+                        />');</xsl:attribute>
+                     <xsl:attribute name="href">
+                        <xsl:choose>
+                           <xsl:when test="($query != '0') and ($query != '')">
+                              <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
+                                 />?<xsl:value-of select="$content.href"/>
+                           </xsl:when>
+                           <xsl:when test="$basicchoice2='nomatch_for_id'">
+                              <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
+                                 />?<xsl:value-of select="$content.href"/>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <xsl:value-of select="$href2"/>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </xsl:attribute>
+
+                     <xsl:value-of select="$name"/>
+                  </a>
+               </xsl:otherwise>
+            </xsl:choose>
+            <span class="hit-count">
+               <xsl:if test="$hit.count"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
+            </span>
+         </div>
+      </div>
+      
    </xsl:template>
    
    <!-- ====================================================================== -->

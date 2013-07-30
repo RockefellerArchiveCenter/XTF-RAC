@@ -57,63 +57,11 @@ div.header img.your-logo {
 	margin: 10px 15px;
 }
 
-div.footer {
-   margin-left: 1%;
-	 text-align: left;
-	 float:left;
-}
-
 /* Forms */
 
 div.searchPage {
    margin-left: 1%;
 	 width: 98%;
-}
-
-div.forms {
-    /* 9/21/11 WS: Removed min height */
-	/*min-height: 500px;*/
-}
-
-div.forms table {
-   width: 100%;
-}
-
-div.forms table,
-div.forms table td {
-	/*border: 1px solid #ccc;*/
-}
-
-div.forms table td.tab,
-div.forms table td.tab-select {
-	width: 20%;
-	text-align: center;
-	padding: 0.5em;
-	color: #B8411C;
-}
-
-div.forms table td.tab {
-   border: 1px solid #999;
-   /* 9/21/11 WS changed background color to DDDDDD from E8EBF1*/
-   background-color: #DDDDDD;
-}
-
-div.forms table td.tab-select {
-   border: 1px solid #999;
-   border-bottom: 0;
-}
-
-div.forms table td.tab a {
-	text-decoration: none;
-	color: #333;
-}
-
-div.forms table td.tab a:hover {
-	text-decoration: underline;
-}
-
-div.forms table td.tab-select a {
-/*	color: #424F8D;*/
 }
 
 div.form {
@@ -122,72 +70,11 @@ div.form {
 text-align: center;
 }
 
-div.form table {
-	margin: 0 auto;
-}
-
-div.form table.top_table {
-	width: 85%;
-	margin: 0 auto;
-}
-
-div.form table.left_table {
-	border-right: 1px solid #ccc;
-	text-align: left;
-	margin-right: 40px;
-	width: 90%;
-}
-
-div.form table.right_table {
-	margin: 0 25px;
-}
-
-div.form table h4 {
-	margin: 0 0 10px 0;
-}
-
-div.form table,
-div.form table td {
-	/*border: 1px solid #ccc;*/
-}
-
-div.form table td {
-	vertical-align: top;
-	text-align: left;
-}
-
-div.form table td table td {
-	vertical-align: middle;
-}
-
-div.form table td.indent {
-   width: 2px;
-}
-
-table.sampleTable {
-	margin-top: 20px;
-}
-
-table.sampleTable td {
-	padding: 5px;
-}
-
-table td.sampleQuery {
-   font-family: courier, serif;
-   border-style: solid;
-   border-color: black;
-   border-width: 1px 1px 1px 1px;
-}
-
-table td.sampleDescrip {
-    font-style: italic;
-}
-
 /* Results */
 
 div.resultsHeader {
-   width: 98%;
-   float:left;
+     width: 98%;
+     float:left;
 	 border-right: 1px solid #666;
 	 border-left: 1px solid #666;
 	 border-top: 1px solid #999;
@@ -205,8 +92,8 @@ div.resultsHeader {
 }
 
 div.query {
-   width: 350px;
-	 float: left;
+    width: 350px;
+    float: left;
 }
 
 div.label {
@@ -242,9 +129,6 @@ div.facetGroup {
 	font-size: 95%;	
 }
 
-div.results table td.docHit{
-}
-
 div.docHit {
 	background-color: #FAFAFB;
 	margin: 1%;
@@ -260,10 +144,6 @@ div.docHit {
 .result {float:left;width:100%;margin-bottom:.5em;}
 .resultLabel {float:left; width:10%; text-align:right;}
 .resultText {float:left; width:85%;}
-
-div.docHit table td {
-	/* border: 1px solid red; */
-}
 
 #docHits {float:right; width:73%;}
 #docHits .hitRank {width:3%}
@@ -325,41 +205,22 @@ div.docHit .typeIcon {
    background-color: #D6DCE5;
 }
 
-div.facetName {
-  font-weight: bold;
-	margin: 10px 0;
-	font-size: 95%;
-}
-
-div.facet table {
-   border-style: none;
-}
-
-div.facet table td.col1 {
-   width: 12px;
-   text-align: center;
-   vertical-align: middle;
-   padding-right: 0.5em;
-	 color: #6699CC;
-}
-
-div.facet table td.col2 {
-   padding-bottom: 0.1em;
-   padding-top: 0.1em;
-}
-
-div.facet table td.col3 {
-   text-align: right;
-}
+.facetWrapper {width:98%;float:left;padding:1%}
+.facetWrapper:nth-child(even) {background-color:rgb(228, 228, 228);border-top:1px dashed #999; border-bottom:1px dashed #999}
+.facetName {float:left;}
+.totalDocs {float:right;}
+.clearLink {float:right;}
 
 div.facetMore {
    margin-top: 0.5em;
    margin-left: 2em;
+   font-style:italic;
 }
 
 div.facetLess {
    margin-left: 2em;
    margin-bottom: 0.5em;
+   font-style:italic;
 }
 
 div.getAddress {

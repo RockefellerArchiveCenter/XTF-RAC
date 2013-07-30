@@ -240,9 +240,9 @@
                <div class="main">
                   <xsl:call-template name="toc"/>
                   <xsl:call-template name="body"/>    
-                  <br class="clear"/>
                </div>
                <xsl:copy-of select="$brand.feedback"/>
+               <div class="fixedFooter"><xsl:copy-of select="$brand.footer"/></div>
           </body>
          </html>
       </xsl:result-document>
@@ -250,6 +250,7 @@
    
    <!-- ====================================================================== -->
    <!-- 9/27/11 WS: Internal navbar ammended from docFormatterCommon           -->
+   <!-- 7/29/2013 HA: making additional changes                                -->
    <!-- ====================================================================== -->
    <xsl:template name="bbar_custom">
       <xsl:variable name="sum">
@@ -270,61 +271,41 @@
          </xsl:choose>
       </xsl:variable>
       <div class="bbar_custom">
-         <table style="width:99%; margin:0;padding:0;height:100px;" class="navright">
-               <tr>
-                  <td colspan="3">
-                     <div class="eadtitle">
-                        <xsl:attribute name="style">
-                           background: url(/xtf/icons/default/collections.gif) left no-repeat;
-                           min-height: 50px;
-                        </xsl:attribute>
-                        <h1>
-                           <xsl:variable name="title">
-                              <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
-                           </xsl:variable>
-                           <xsl:attribute name="style">
-                              <xsl:choose>
-                                 <xsl:when test="string-length($title) &gt; 175">margin-left:60px;font-size:1.15em;</xsl:when>
-                                 <xsl:otherwise>margin-left:60px;</xsl:otherwise>
-                              </xsl:choose>
-                           </xsl:attribute>
-                           <xsl:choose>
-                              <xsl:when test="eadheader/filedesc/titlestmt/titleproper[@type='filing']">
-                                 <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper[not(@type='filing')]"/>
-                              </xsl:when>
-                              <xsl:otherwise>
-                                 <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
-                              </xsl:otherwise>
-                           </xsl:choose>
-                        </h1>
-                     </div>
-                  </td>
-                  <td style="width:250px;">
-                     <form action="{$xtfURL}{$dynaxmlPath}" method="get" style="margin-top:0px;padding-top:0;" class="bbform">
-                        <!-- DG: possible todo: change form action: action="/xtf/view"  -->
-                        <input name="query" type="text" size="15"/> 
-                        <input type="hidden" name="docId" value="{$docId}"/>
-                        <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
-                        <input type="hidden" name="doc.view" value="{$doc.view}"/>
-                        <input type="submit" value="Search this Collection"/>
-                     </form>
-                  </td>
-                  <td style="text-align:right; width:100px;">
-                     <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
-                     <xsl:variable name="indexId" select="$identifier"/>
-                     <!-- <a href="javascript://" onclick="javascript:window.open('/xtf/search?smode=getLang','popup','width=500,height=200,resizable=no,scrollbars=no')">Choose Language</a>-->
-                     <div style="float:right;margin:0;padding:0;">
-                        <ul class="bbicons">
-                        <li>
-                     <!-- 7/24/12 WS: added add to bag for whole finding aid -->
-                        <span class="addToBag">
-                           <xsl:choose>
-                              <xsl:when test="session:getData('bag')/child::*/child::*[@id=$indexId]">
-                                 <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
-                                 <span class="caption">Added</span>
-                              </xsl:when>
-                              <xsl:otherwise>
-                                 <script type="text/javascript">
+         <div class="documentTitle ead">
+            <h1>
+               <xsl:variable name="title">
+                  <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
+               </xsl:variable>
+               <xsl:if test="string-length($title) &gt; 175">
+                  <xsl:attribute name="style"> font-size:1.15em; </xsl:attribute>
+               </xsl:if>
+               <xsl:choose>
+                  <xsl:when test="eadheader/filedesc/titlestmt/titleproper[@type='filing']">
+                     <xsl:apply-templates
+                        select="eadheader/filedesc/titlestmt/titleproper[not(@type='filing')]"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </h1>
+         </div>
+
+         <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
+         <xsl:variable name="indexId" select="$identifier"/>
+         <div class="headerIcons">
+            <ul>
+               <li>
+                  <!-- 7/24/12 WS: added add to bag for whole finding aid -->
+                  <span class="addToBag">
+                     <xsl:choose>
+                        <xsl:when test="session:getData('bag')/child::*/child::*[@id=$indexId]">
+                           <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
+                              title="Added to bookbag"/>
+                           <span class="caption">Added</span>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <script type="text/javascript">
                                        add_1 = function() {
                                           var span = YAHOO.util.Dom.get('add_1');
                                           span.innerHTML = "Adding...";
@@ -338,19 +319,20 @@
                                              }, null);
                                        };
                                  </script>
-                                 <a href="javascript:add_1()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a>
-                                 <span id="add_1" class="caption">
-                                    <a href="javascript:add_1()">Add</a>
-                                 </span>
-                              </xsl:otherwise>
-                           </xsl:choose>
-                        </span>
-                        </li>
-
-                           
-                     
-                     <!-- Commented out citation until digital objects are added-->
-                     <!--
+                           <a href="javascript:add_1()"
+                              onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);">
+                              <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
+                                 title="Add to bookbag"/>
+                           </a>
+                           <span id="add_1" class="caption">
+                              <a href="javascript:add_1()">Add</a>
+                           </span>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </span>
+               </li>
+               <!-- Commented out citation until digital objects are added-->
+               <!--
                      <a>
                         <xsl:attribute name="href">javascript://</xsl:attribute>
                         <xsl:attribute name="onclick">
@@ -361,80 +343,79 @@
                      </a>
                      <xsl:text> | </xsl:text>
                      -->
-                        <xsl:if test="$doc.view != 'dao'">
-                           <li>
-                              <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-                              <!-- DG: todo -->
-                              <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf"
-                                 onClick="_gaq.push(['_trackEvent', 'finding aids', 'view', 'pdf']);">
-                                 <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
-                              </a>
-                           </li>
-                        </xsl:if>
-                        </ul>
-                     </div>
-                     
-<!--                     <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>-->
-                  </td>
-               </tr>
-               <tr>
-                  <td style="vertical-align:bottom;text-align:left;">                    
-                     <xsl:call-template name="tabs"/>  
-                  </td>
-                  <td colspan="4" style="vertical-align:bottom;text-align:right; padding-bottom:4px;">
-                     <xsl:if test="($query != '0') and ($query != '')">
-                           <strong>
-                              <span class="hit-count">
-                                 <xsl:value-of select="$sum"/>
-                              </span>
-                              <xsl:text> </xsl:text>
-                              <xsl:value-of select="$occur"/>
-                              <xsl:text> of </xsl:text>
-                              <span class="hit-count">
-                                 <xsl:value-of select="$query"/>
-                              </span>
-                           </strong>
-                           <xsl:text> [</xsl:text>
-                           <a>
-                              <xsl:attribute name="href">
-                                 <xsl:value-of select="$doc.path"/>;chunk.id=<xsl:value-of select="$chunk.id"/>;brand=<xsl:value-of select="$brand"/>;doc.view=<xsl:value-of select="$doc.view"/>
-                              </xsl:attribute>
-                              <xsl:text>Clear Hits</xsl:text>
-                           </a>
-                           <xsl:text>]</xsl:text>
-                           <xsl:choose>
-                              <xsl:when test="$docId"/>
-                              <xsl:otherwise>
-                                 &#160;[
-                                 <a href="{session:getData('queryURL')}">
-                                    Back to Search Results
-                                 </a>
-                                 ]
-                              </xsl:otherwise>
-                           </xsl:choose>                    
-                     </xsl:if>
-                  </td>
-               </tr>
-            </table>
+               <xsl:if test="$doc.view != 'dao'">
+                  <li>
+                     <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
+                     <!-- DG: todo -->
+                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf"
+                        onClick="_gaq.push(['_trackEvent', 'finding aids', 'view', 'pdf']);">
+                        <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
+                     </a>
+                  </li>
+               </xsl:if>
+            </ul>
+         </div>
+         <div class="headerSearch">
+            <form action="{$xtfURL}{$dynaxmlPath}" method="get" class="bbform">
+               <!-- DG: possible todo: change form action: action="/xtf/view"  -->
+               <input name="query" type="text"/>
+               <input type="hidden" name="docId" value="{$docId}"/>
+               <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
+               <input type="hidden" name="doc.view" value="{$doc.view}"/>
+               <input type="submit" value="Search this Collection"/>
+            </form>
+            <!--                     <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>-->
+            <xsl:if test="($query != '0') and ($query != '')">
+               <div class="headerResults">
+               <strong>
+                  <span class="hit-count">
+                     <xsl:value-of select="$sum"/>
+                  </span>
+                  <xsl:text> </xsl:text>
+                  <xsl:value-of select="$occur"/>
+                  <xsl:text> of </xsl:text>
+                  <span class="hit-count">
+                     <xsl:value-of select="$query"/>
+                  </span>
+               </strong>
+               <xsl:text> [</xsl:text>
+               <a>
+                  <xsl:attribute name="href">
+                     <xsl:value-of select="$doc.path"/>;chunk.id=<xsl:value-of select="$chunk.id"
+                        />;brand=<xsl:value-of select="$brand"/>;doc.view=<xsl:value-of
+                        select="$doc.view"/>
+                  </xsl:attribute>
+                  <xsl:text>Clear Hits</xsl:text>
+               </a>
+               <xsl:text>]</xsl:text>
+               <xsl:choose>
+                  <xsl:when test="$docId"/>
+                  <xsl:otherwise> &#160;[ <a href="{session:getData('queryURL')}"> Back to Search
+                        Results </a> ] </xsl:otherwise>
+               </xsl:choose>
+               </div>
+            </xsl:if>
+         </div>
+         <xsl:call-template name="tabs"/>
       </div>
    </xsl:template>
    <xsl:template match="titleproper/num"><br/><xsl:value-of select="."/></xsl:template>
    <!-- ====================================================================== -->
-   <!-- Tabs Templates                                                          -->
+   <!-- Tabs Templates                                                         -->
    <!-- ====================================================================== -->
    
    <xsl:template name="tabs">
          <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/></xsl:variable>
-         <ul class="tabs">
-            <li>               
+         <div class="tabs">
+            <div class="tab">               
                <xsl:choose>
                   <xsl:when test="$doc.view = 'collection'">
-                     <xsl:attribute name="class">select</xsl:attribute>
+                     <xsl:attribute name="class">tab select</xsl:attribute>
                   </xsl:when>
                   <xsl:when test="$doc.view = 'contents'"/>
                   <xsl:when test="$doc.view = 'dao'"/>
                   <xsl:otherwise>
-                     <xsl:attribute name="class">select</xsl:attribute>                     
+                     <xsl:attribute name="class">tab select</xsl:attribute>                     
                   </xsl:otherwise>
                </xsl:choose>  
                   <xsl:call-template name="make-tab-link">
@@ -443,10 +424,10 @@
                      <xsl:with-param name="doc.view" select="'collection'"/>
                      <xsl:with-param name="nodes" select="archdesc/did"/>
                   </xsl:call-template>
-            </li>
-            <li>
+            </div>
+            <div class="tab">
                <xsl:if test="$doc.view='contents'">
-                  <xsl:attribute name="class">select</xsl:attribute>
+                  <xsl:attribute name="class">tab select</xsl:attribute>
                </xsl:if>
                <xsl:variable name="idFile">
                   <xsl:choose>
@@ -478,11 +459,11 @@
                   <xsl:attribute name="class">clear</xsl:attribute>
                </xsl:otherwise>
                </xsl:choose>
-            </li>
-           <li>
+            </div>
+           <div class="tab">
                <!-- Need to insure only shows up if digital material is available -->
               <xsl:if test="$doc.view='dao'">
-                  <xsl:attribute name="class">select</xsl:attribute>
+                  <xsl:attribute name="class">tab select</xsl:attribute>
                </xsl:if>
                <xsl:variable name="idFile">
                   <xsl:choose>
@@ -513,8 +494,8 @@
                      <xsl:attribute name="class">clear</xsl:attribute>
                   </xsl:otherwise>
                </xsl:choose>
-            </li>
-         </ul>
+            </div>
+         </div>
       
    </xsl:template>
    <!-- DG: tab links like "Collection Description", "Contents List"  -->
@@ -858,7 +839,6 @@
                      </xsl:when>
                      <xsl:otherwise>  
                         <div class="contents">
-                           <h4/>
                            <xsl:if test="archdesc/did">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Overview'"/>
@@ -1079,10 +1059,9 @@
       
       <xsl:if test="@id = $chunk.id">
          <a name="X"/>
-      </xsl:if>     
-      <table>
-         <tr>
-            <td width="8px" class="moreLess">
+      </xsl:if>
+      <div class="tocItem">
+            <div class="moreLess">
                <xsl:if test=".[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds']">
                   <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='otherlevel' or (@level='series' and parent::*[@level='recordgrp'])]">
                      <xsl:choose>
@@ -1096,8 +1075,8 @@
                      </xsl:choose>
                   </xsl:if>
                </xsl:if>            
-            </td>
-            <td>
+            </div>
+            <div class="tocLink">
                <xsl:choose>
                   <xsl:when test="$indent = 2">
                      <xsl:attribute name="class">inventory</xsl:attribute>
@@ -1159,9 +1138,10 @@
                      (<xsl:value-of select="$hit.count"/>)
                   </xsl:if>  
                </span>
-            </td>
-         </tr>
-      </table>
+            </div>
+      </div>
+         
+      
    </xsl:template>
    
    <!-- ====================================================================== -->

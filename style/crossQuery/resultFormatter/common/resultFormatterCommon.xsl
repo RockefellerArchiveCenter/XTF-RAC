@@ -1046,15 +1046,15 @@
        <div class="facetGroup accordionContent">
          <xsl:if test="$expand=$field">
             <div class="facetLess">
-               <i><a href="{$xtfURL}{$crossqueryPath}?{editURL:remove($queryString,'expand')}">less</a></i>
+               <a href="{$xtfURL}{$crossqueryPath}?{editURL:remove($queryString,'expand')}">less</a>
             </div>
          </xsl:if>
-            <table>
-               <xsl:apply-templates/>
-            </table>
+
+            <xsl:apply-templates/>
+         
          <xsl:if test="$needExpand and not($expand=$field)">
             <div class="facetMore">
-               <i><a href="{$xtfURL}{$crossqueryPath}?{editURL:set($queryString,'expand',$field)}">more</a></i>
+               <a href="{$xtfURL}{$crossqueryPath}?{editURL:set($queryString,'expand',$field)}">more</a>
             </div>
          </xsl:if>
        </div>
@@ -1082,37 +1082,36 @@
       </xsl:variable>
       <!-- 11/14/12 WS: added to strip blank subjects facets -->
       <xsl:if test="string-length($value) &gt; 0">
-      <tr>
-         <td class="col1">&#8226;</td> <!-- bullet char -->
+      <li class="facetWrapper">
          <!-- Display the group name, with '[X]' box if it is selected. -->
          <xsl:choose>
             <xsl:when test="//param[matches(@name,concat('f[0-9]+-',$field))]/@value=$value">
-               <td class="col2">
+               <div class="facetName">
                   <xsl:apply-templates select="." mode="beforeGroupValue"/>
                   <!-- 1/17/12 WS -->
-                  <span class="facetMatch">
+                  <div class="facetMatch">
                      <xsl:value-of select="$value"/>
-                  </span>
+                  </div>
                   <xsl:apply-templates select="." mode="afterGroupValue"/>
-               </td>
-               <td class="col3">
+               </div>
+               <div class="clearLink">
                   <a href="{$clearLink}">[X]</a>
-               </td>
+               </div>
             </xsl:when>
             <xsl:otherwise>
-                  <td class="col2">
+                  <div class="facetName">
                      <xsl:apply-templates select="." mode="beforeGroupValue"/>
                      <a href="{$selectLink}">
                         <xsl:value-of select="$value"/>
                      </a>
                      <xsl:apply-templates select="." mode="afterGroupValue"/>
-                  </td>
-                  <td class="col3">
+                  </div>
+                  <div class="totalDocs">
                      (<xsl:value-of select="@totalDocs"/>)
-                  </td>                  
+                  </div>                  
             </xsl:otherwise>
          </xsl:choose>
-      </tr>
+      </li>
       </xsl:if>
    </xsl:template>
    
