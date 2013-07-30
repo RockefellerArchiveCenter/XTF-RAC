@@ -368,7 +368,6 @@
                   </ul>
                   <div class="subjects">
                      <xsl:if test="mods:subject">
-                        <hr/>
                         <h4>Subjects</h4>
                         <ul class="none">
                            <xsl:for-each select="mods:subject">

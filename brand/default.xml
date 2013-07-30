@@ -194,7 +194,6 @@
    <dynaxml.links>
       <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
       <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
-      <link rel="stylesheet" href="css/default/content.css" type="text/css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
       <link rel="stylesheet" href="/xtf/css/default/racustom.css" type="text/css"/>
       <link rel="shortcut icon" href="icons/default/favicon.png"/>

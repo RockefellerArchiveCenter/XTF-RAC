@@ -629,7 +629,6 @@
                                  to form a hyperlink to each.   Delete this section if you do not
                                  wish the c01 titles to appear in the table of contents.-->
                               <xsl:for-each select="archdesc/dsc/child::*[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or @level='subgrp' or @level='subseries' or (@level='otherlevel' and not(child::did/container))]">
-                                 <div class="series">
                                     <xsl:variable name="submenuID">
                                        <xsl:variable name="seriesID" select="@id"/>
                                        <xsl:value-of select="concat('dsc',$seriesID)"/>
@@ -726,7 +725,7 @@
                                        </div>
                                     </xsl:if>
                                     <!--This ends the section that causes the c02 titles to appear in the table of contents.-->
-                                 </div>
+                                 
                               </xsl:for-each>
                               <!--This ends the section that causes the c01 titles to appear in the table of contents.-->
                            </xsl:if>
@@ -736,7 +735,6 @@
                         <div class="contents">
                            <h4>Contents List</h4>
                            <xsl:for-each select="archdesc/dsc/child::*[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or @level='subgrp' or @level='subseries' or (@level='otherlevel' and not(child::did/container))][descendant-or-self::dao]">
-                              <div class="series">
                                  <xsl:variable name="submenuID">
                                     <xsl:variable name="seriesID" select="@id"/>
                                     <xsl:value-of select="concat('dsc',$seriesID)"/>
@@ -833,12 +831,13 @@
                                     </div>
                                  </xsl:if>
                                  <!--This ends the section that causes the c02 titles to appear in the table of contents.-->
-                              </div>
+                              
                            </xsl:for-each>
                         </div>
                      </xsl:when>
                      <xsl:otherwise>  
                         <div class="contents">
+                           <h4>Contents</h4>
                            <xsl:if test="archdesc/did">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Overview'"/>
@@ -917,7 +916,6 @@
                         </div>
                         <div class="subjects">
                            <xsl:if test="archdesc/controlaccess">
-                              <hr/>
                               <h4>Subjects</h4>
                               <ul class="none">
                                  <xsl:for-each select="archdesc/controlaccess">
