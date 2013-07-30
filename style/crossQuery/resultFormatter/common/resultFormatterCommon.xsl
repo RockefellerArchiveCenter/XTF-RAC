@@ -927,10 +927,10 @@
       
       <xsl:choose>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(descendant::group[docHit]) > 1]">
-             <span style="color: #FD8239"><xsl:value-of select="upper-case($alpha)"/></span>
+             <span class="active"><xsl:value-of select="upper-case($alpha)"/></span>
          </xsl:when>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(docHit) > 0]">
-             <span style="color: #FD8239"><xsl:value-of select="upper-case($alpha)"/></span>
+             <span class="active"><xsl:value-of select="upper-case($alpha)"/></span>
          </xsl:when>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link]">
              <!-- 10/29/12 WS: Added type parameter for browsing  -->

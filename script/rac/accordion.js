@@ -21,4 +21,6 @@
             	$('.accordionButton').removeClass('on');
             	});
                 $('.accordionContent').hide();
+
+
                });

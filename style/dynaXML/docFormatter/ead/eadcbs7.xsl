@@ -65,54 +65,56 @@
          <xsl:value-of select="/ead/eadheader/eadid"/>
       </xsl:variable> 
       <div id="content-wrapper">
-      <div id="content-right">
-         <xsl:choose>
-         <xsl:when test="$chunk.id = 'headerlink'">
-            <xsl:apply-templates select="/ead/archdesc/did"/>
-         </xsl:when>
-         <xsl:when test="$chunk.id = 'restrictlink'">
-            <xsl:call-template name="archdesc-restrict"/>
-         </xsl:when>
-         <xsl:when test="$chunk.id = 'relatedmatlink'">
-            <xsl:call-template name="archdesc-relatedmaterial"/>
-         </xsl:when>
-         <xsl:when test="$chunk.id = 'adminlink'">
-            <xsl:call-template name="archdesc-admininfo"/>
-         </xsl:when>
-         <xsl:when test="$chunk.id = 'arrangementlink'">
-            <xsl:apply-templates select="/ead/archdesc/arrangement"/>
-         </xsl:when>
-         <xsl:when test="$chunk.id = 'scopecontentlink'">
-            <xsl:apply-templates select="/ead/archdesc/scopecontent"/>
-         </xsl:when>
-         <xsl:when test="$chunk.id = 'controlaccesslink'">
-            <xsl:apply-templates select="/ead/archdesc/controlaccess"/>
-         </xsl:when>
-         <xsl:when test="$chunk.id = 'physdesclink'">
-            <xsl:apply-templates select="/ead/archdesc/did/physdesc[@label = 'General Physical Description note']"/>
-         </xsl:when>
-         <xsl:when test="$chunk.id = 'contentsLink'">
-               <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
-         </xsl:when>
-         <xsl:when test="$chunk.id = 'digitalLink'">
-               <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>         
-         </xsl:when>
-         <xsl:when test="$chunk.id = 'bioghist'">
-               <xsl:apply-templates select="/ead/archdesc/bioghist"/>
-         </xsl:when>              
-         <xsl:when test="$chunk.id != '0'">
-            <xsl:apply-templates select="key('chunk-id', $chunk.id)"/>
-         </xsl:when>
-         <xsl:otherwise>
-            <!--<xsl:apply-templates select="/ead/eadheader"/>-->
-            <xsl:apply-templates select="/ead/archdesc/did"/>
-         </xsl:otherwise>
-      </xsl:choose>
-         <br class="clear"/>
-      </div>
+         <div id="{$chunk.id}">
+            <xsl:choose>
+
+               <xsl:when test="$chunk.id = 'headerlink'">
+                  <xsl:apply-templates select="/ead/archdesc/did"/>
+               </xsl:when>
+               <xsl:when test="$chunk.id = 'restrictlink'">
+                  <xsl:call-template name="archdesc-restrict"/>
+               </xsl:when>
+               <xsl:when test="$chunk.id = 'relatedmatlink'">
+                  <xsl:call-template name="archdesc-relatedmaterial"/>
+               </xsl:when>
+               <xsl:when test="$chunk.id = 'adminlink'">
+                  <xsl:call-template name="archdesc-admininfo"/>
+               </xsl:when>
+               <xsl:when test="$chunk.id = 'arrangementlink'">
+                  <xsl:apply-templates select="/ead/archdesc/arrangement"/>
+               </xsl:when>
+               <xsl:when test="$chunk.id = 'scopecontentlink'">
+                  <xsl:apply-templates select="/ead/archdesc/scopecontent"/>
+               </xsl:when>
+               <xsl:when test="$chunk.id = 'controlaccesslink'">
+                  <xsl:apply-templates select="/ead/archdesc/controlaccess"/>
+               </xsl:when>
+               <xsl:when test="$chunk.id = 'physdesclink'">
+                  <xsl:apply-templates
+                     select="/ead/archdesc/did/physdesc[@label = 'General Physical Description note']"
+                  />
+               </xsl:when>
+               <xsl:when test="$chunk.id = 'contentsLink'">
+                  <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
+               </xsl:when>
+               <xsl:when test="$chunk.id = 'digitalLink'">
+                  <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
+               </xsl:when>
+               <xsl:when test="$chunk.id = 'bioghist'">
+                  <xsl:apply-templates select="/ead/archdesc/bioghist"/>
+               </xsl:when>
+               <xsl:when test="$chunk.id != '0'">
+                  <xsl:apply-templates select="key('chunk-id', $chunk.id)"/>
+               </xsl:when>
+               <xsl:otherwise>
+                  <!--<xsl:apply-templates select="/ead/eadheader"/>-->
+                  <xsl:apply-templates select="/ead/archdesc/did"/>
+               </xsl:otherwise>
+            </xsl:choose>
+         </div>
       </div>
       <!-- Jquery for dao display -->
-
+      
       
    </xsl:template>		
    <!-- Creates anchors within the document -->
@@ -899,6 +901,7 @@
             | archdesc/separatedmaterial/note/p
             | archdesc/*/separatedmaterial/note/p"/>
       </xsl:if>
+         
       </xsl:template>
    
    <xsl:template match="extref">

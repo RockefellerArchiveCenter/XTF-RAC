@@ -325,7 +325,7 @@ a.hit {
 .tabs .select a {color:#c45414 !important;}
 .tabs .clear {display:none;}
 .tab a {text-decoration: none !important;}
-.active a{font-weight:bold; text-decoration:none !important;}
+.active {font-weight:bold; text-decoration:none !important;color:#c45414;}
 .currentBrowse a{color: #333 !important;}
 /* Styles for EAD */
 .main {
@@ -388,6 +388,7 @@ ul.none {list-style:none;}
     margin:0;
     padding:0;
     overflow:auto;
+    border-right:1px solid #666;
 }
 
 #content-wrapper a {text-decoration:none; color:#c45414;}
@@ -413,7 +414,7 @@ table.containerList tr td{padding-top:2px; padding-bottom:2px;}
 .instances {font-weight:bold;text-decoration:underline;}
 .containerHeader {font-weight:bold; padding-top:.5em; text-align:left;}
 .containerHeaderTitle {font-weight:bold; padding-top:.5em; text-align:left;}
-.moreLess a{text-decoration:none !important; font-weight:bold; color:#FD8239 !important;}
+.moreLess a{text-decoration:none !important; font-weight:bold; color:#c45414 !important;}
 .containerTypes {margin-top:.5em;}
 .inventoryTitle {font-weight:bold; background-color:#000; color:#fff; padding:4px 2px; margin-bottom:.5em;}
 tr.odd{background-color:#eee !important;}

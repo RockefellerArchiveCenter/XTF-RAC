@@ -207,6 +207,7 @@
                <link rel="alternate" type="application/xml" href="data/{$docId}" />
                <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
                <script src="script/yui/connection-min.js" type="text/javascript"/> 
+               
                <xsl:copy-of select="$brand.links"/>
                <title>
                   <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
@@ -1051,6 +1052,7 @@
 						<xsl:text>nomatch_for_id</xsl:text>
 					</xsl:otherwise> 
          </xsl:choose>
+         
       </xsl:variable>
       <xsl:variable name="xtfURL2"> <!-- remove xtf/ from end, if there.  -->
  					 <xsl:analyze-string select="$xtfURL" regex="(.*)xtf/">
@@ -1113,7 +1115,7 @@
 							</xsl:otherwise>
 						</xsl:choose>
                         </xsl:attribute>
-                        <div class="tocItem">
+                        <div class="tocItem" id="{$id}Menu">
                            <xsl:choose>
                               <xsl:when test="$indent = 2">
                                  <xsl:attribute name="class">inventory</xsl:attribute>
@@ -1148,7 +1150,7 @@
                               </xsl:otherwise>
                            </xsl:choose>
                         </xsl:attribute>
-                        <div class="tocItem">
+                        <div class="tocItem" id="{$id}Menu">
                            <xsl:choose>
                               <xsl:when test="$indent = 2">
                                  <xsl:attribute name="class">inventory</xsl:attribute>
