@@ -168,7 +168,7 @@ div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em;}
 #searchbox select {border: 1px inset #ddd;}
 #searchbox input:focus, #searchbox select:focus {box-shadow:0px 0px 5px #C45414; background-color: #ffffff; outline:none;}
 input.searchbox {font-size:1.4em;}
-input[type="text"].searchbox {width:40%;margin:0;background-color:rgb(253, 253, 253);z-index:2;border: 1px inset #ddd;padding:.2em;position:absolute; left:26%;}
+input[type="text"].searchbox {box-shadow:0px 0px 5px #666;width:40%;margin:0;background-color:rgb(253, 253, 253);z-index:2;border: 1px inset #ddd;padding:.2em;position:absolute; left:26%;}
 input[type="submit"].searchbox {margin:0 0 0 1%;border: 1px outset #dddddd; background-color:#dddddd; position:absolute; top:0; left:67%;}
 input[type="submit"].searchbox:hover {box-shadow:0px 0px 3px #C45414;color: #c45414;cursor:pointer;}
 input[type="submit"].searchbox:active {border: 1px inset #dddddd;color: #c45414;}
@@ -199,11 +199,11 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #searchtip {display:none;width:20%; position: absolute;top: 13em;left: 3%;font-size:1em;margin:0}
 #searchtipDate {width: 40%;float:right;margin-top:0;margin-right:4em;padding:.2em;font-size: .7em;font-size:.7em}
 .searchtips {font-size:.9em;}
-#news h2, #featured h2 {background-color: #bbbbbb;}
+#featured h2 {background-color: #bbbbbb;}
 #featured {width:32%}
 #featured img {max-height:100%; width: 94%;margin:3%;}
 #caption {width:94%; margin:0 3% 3% 3%; text-align:left;}
-#news {}
+#news h2 {background-color:#0D8061; color: #fff;}
 #about {position: absolute;top: 140px;right: 8%;width:11em;}
 #about ul {margin:0}
 #about li {font-size:1em;padding:.2em}
@@ -275,6 +275,7 @@ a.hit {
    background-color:rgba(196, 84, 20, 0.1) !important;
    color: #c45414 !important;
    font-weight: bold;
+   display:inline;
 }
 .subhit{
    background-color:rgba(196, 84, 20, 0.1) !important;
@@ -300,8 +301,6 @@ a.hit {
 .bbform input[type="submit"] {margin:0 0 0 1%;border: 1px outset #eee; background-color:rgb(253, 253, 253)}
 .bbform input[type="submit"]:hover {box-shadow:0px 0px 3px #C45414;color: #c45414;cursor:pointer;}
 .bbform input[type="submit"]:active {border: 1px inset #dddddd;color: #c45414;}
-
-
 .documentTitle {text-align:left; font-size:.8em;margin:0; padding-left:.5em; float:left; width:64%;min-width:65em;height:50px}
 .documentTitle h1 {color:#333; margin:0; margin-left:50px; padding:0; font-size:1.75em;}
 .ead {background: url(/xtf/icons/default/collections.gif) left no-repeat; min-height: 50px;}
@@ -316,11 +315,11 @@ a.hit {
     border-top:1px solid #999;
     border-right:1px solid #999;
     border-left:1px solid #999;
-    box-shadow: 0px -10px 20px -10px #000000;
+    box-shadow: 0px -6px 8px #666;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     }
- .tab:hover {box-shadow: 0px -5px 20px -10px #000000;}
+ .tab:hover {box-shadow: 0px -3px 5px #666;}
 .tabs a {color: #666 !important;}
 .tabs a:hover {color:#c45414 !important;}
 .tabs .select a {color:#c45414 !important;}
@@ -353,22 +352,28 @@ a.hit {
 #toc a {text-decoration:none; color: #c45414;}
 #toc a:hover {text-decoration:underline;}
 #toc h4 {padding:.5em; background-color:#0D8061;border-radius:5px 5px 0 0;margin:0;color:#fff;font-size:1.5em;}
-#toc .inventory{margin-left:0;}
-#toc .inventory2{padding-left:1em;}
-#toc .tocItem {padding:.5em;font-size:1.2em;}
-#toc .tocItem:nth-of-type(even) {background-color: rgb(228, 228, 228); border-top: 1px dashed #999;border-bottom:1px dashed #999;}
-#toc .tocLink {}
+#toc .inventory{padding-left:.2em;padding-right:.2em;float:left;width:95%}
+#toc .inventory2{padding-left:1.5em;padding-right:.2em;float:left;width:94%}
+#toc .tocItem {float:left; padding-right:.2em;width:100%}
+#toc .tocRow {font-size:1.2em;float:left;width:96%;padding:2%;}
+#toc .tocRow:hover {background-color:#ccc}
+div.tocRow:nth-of-type(even) {background-color: rgb(228, 228, 228); border-top: 1px dashed #999;border-bottom:1px dashed #999;}
+#toc .tocSubrow {float:left;width:100%}
+.tocSubrow:nth-of-type(odd) {background-color: rgb(228, 228, 228); border-top: 1px dashed #999;border-bottom:1px dashed #999;}
 
-.contents {background-color:#eee;}
+.contents {background-color:#eee;border-radius:5px 5px 0 0;box-shadow: 0px 0px 10px #666;float:left}
+.contents:hover {box-shadow: 0px 0px 5px #666;}
 
-.moreLess {float:left; padding-right:.2em;}
+.moreLess {float:left; padding-right:.2em;width:2%;}
 
 /* TOC subjects submenu*/
 ul.none {list-style:none;}
-.subjects {margin:1em 0 0 0; padding:0;background-color:#eee;}
+.subjects {margin:1em 0 0 0; padding:0;background-color:#eee;border-radius:5px 5px 0 0;box-shadow: 0px 0px 10px #666;float:left;width:100%;}
+.subjects:hover {box-shadow: 0px 0px 5px #666;}
 .subjects h4 {margin:0;}
 .subjects ul{margin:0;padding:0;}
-.subjects li{padding-top:.2em;padding-bottom:.2em;padding-left:5%;padding-right:5%}
+.subjects li{padding-top:.2em;padding-bottom:.2em;padding-left:.5em;padding-right:.5em}
+.subjects li:nth-of-type(even) {background-color: rgb(228, 228, 228); border-top: 1px dashed #999;border-bottom:1px dashed #999;}
 .more {display:none;}
 
 /* --- EAD body --- */
