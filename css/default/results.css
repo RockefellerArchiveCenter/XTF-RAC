@@ -152,7 +152,7 @@ div.docHit {
 #docHits .resultLabel {width:15%;}
 #docHits .resultText {width:80%;}
 
-.subdocument {float:left; padding-top:.5em;padding-bottom:.5em;padding-left:1%;padding-right:1%;}
+.subdocument {float:left; padding-top:.5em;padding-bottom:.5em;padding-left:1%;padding-right:1%;min-height:3em;}
 #docHits .subdocument {width:113%;}
 .results .subdocument {width:103%;}
 .subdocument:nth-of-type(odd) {background: rgb(228, 228, 228);border-top: 1px dashed #999;border-bottom: 1px dashed #999;}

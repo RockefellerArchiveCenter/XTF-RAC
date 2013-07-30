@@ -45,7 +45,7 @@
    <!-- ====================================================================== -->
    
    <!-- hidden queries -->
-   <xsl:param name="noShow" select="'all|display|browse-[a-z]+'"/>
+   <xsl:param name="noShow" select="'all|display|browse-[a-z]+|type|level'"/>
    
    <!-- ====================================================================== -->
    <!-- Format Query for Display                                               -->
@@ -54,17 +54,17 @@
    <!-- main template -->
    <xsl:template name="format-query">
       
-      <xsl:choose>
-         <xsl:when test="$type"/>
-         <xsl:when test="$browse-all">
-            <div class="subQuery">&#160;All</div>
+      <!--<xsl:choose>
+         <xsl:when test="$type"/>-->
+         <!--<xsl:when test="$browse-all">
+            <div class="subQuery">All</div>
          </xsl:when>
-         <xsl:otherwise>
+         <xsl:otherwise>-->
             <div class="subQuery">
                <xsl:apply-templates select="query" mode="query"/>
             </div>
-         </xsl:otherwise>
-      </xsl:choose>
+         <!--</xsl:otherwise>
+      </xsl:choose>-->
       
    </xsl:template>
    
@@ -143,11 +143,11 @@
             <!-- query removal widget -->
             <!-- 3/6/12 WS: Added choose statement to return users to browse all option if last term is removed-->
             <xsl:choose>
-               <xsl:when test="following-sibling::*">
+               <xsl:when test="following-sibling::* or preceding-sibling::*">
                   <a href="{$xtfURL}{$crossqueryPath}?{editURL:clean($finalString)}">[X]</a>                  
                </xsl:when>
                <xsl:otherwise>
-                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes?{editURL:clean($finalString)}">[X]</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;{editURL:clean($finalString)}">[X]</a>
                </xsl:otherwise>
             </xsl:choose>
             <br/>

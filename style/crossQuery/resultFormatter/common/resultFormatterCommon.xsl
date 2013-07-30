@@ -233,7 +233,7 @@
             <xsl:value-of select="10000"/>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:value-of select="20"/>
+            <xsl:value-of select="40"/>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:param>
@@ -266,7 +266,7 @@
    <xsl:param name="facet"/>
    <xsl:param name="group"/>
    <xsl:param name="startGroup" as="xs:integer" select="1"/>
-   <xsl:param name="groupsPerPage" as="xs:integer" select="20"/>
+   <xsl:param name="groupsPerPage" as="xs:integer" select="40"/>
    <xsl:param name="sortGroupsBy"/>
    <xsl:param name="sortDocsBy"/>
    
@@ -319,7 +319,7 @@
       <xsl:variable name="total" as="xs:integer">
          <xsl:choose>
             <xsl:when test="matches($smode,'moreLike')">
-               <xsl:value-of select="'20'"/>
+               <xsl:value-of select="'40'"/>
             </xsl:when>
             <xsl:otherwise>
                <xsl:value-of select="/crossQueryResult/@totalDocs"/>

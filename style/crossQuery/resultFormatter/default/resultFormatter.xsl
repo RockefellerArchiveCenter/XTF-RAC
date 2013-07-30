@@ -467,20 +467,26 @@
                                  </xsl:if>
                               </div>
                               <div id="hits">
+                                 <xsl:if test="(/crossQueryResult/@totalDocs &gt; 1)">
+                                    <xsl:text>Showing </xsl:text>
+                                    <xsl:value-of select="$startDoc"/>
+                                    <xsl:text>-</xsl:text>
+                                    <xsl:choose>
+                                       <xsl:when
+                                          test="(/crossQueryResult/@totalDocs &lt; $docsPerPage)">
+                                          <xsl:value-of select="/crossQueryResult/@totalDocs"/>
+                                       </xsl:when>
+                                       <xsl:when test="(/crossQueryResult/@totalDocs &lt; ($docsPerPage + ($startDoc - 1)))">
+                                          <xsl:value-of select="/crossQueryResult/@totalDocs"/>
+                                       </xsl:when>
+                                       <xsl:otherwise>
+                                          <xsl:value-of select="($docsPerPage + ($startDoc - 1))"/>
+                                       </xsl:otherwise>
+                                    </xsl:choose>
+                                    <xsl:text> of </xsl:text>
+                                 </xsl:if>
                                  <xsl:variable name="items" select="@totalDocs"/>
                                  <xsl:choose>
-                                    <xsl:when test="$type='ead' or $type = 'mods' or $type = 'dao'">
-                                       <span id="itemCount">
-                                          <xsl:value-of select="$items"/>
-                                       </span>
-                                       <xsl:text> Result</xsl:text>
-                                       <xsl:if test="$items &gt; 1">s</xsl:if>
-                                       <xsl:value-of
-                                          select="if($smode='showBag') then ':' else ' for '"/>
-                                       <div class="ra-query">
-                                          <xsl:call-template name="currentBrowse"/>
-                                       </div>
-                                    </xsl:when>
                                     <xsl:when test="$items = 1">
                                        <span id="itemCount">1</span>
                                        <xsl:text> Result</xsl:text>
@@ -488,6 +494,7 @@
                                           select="if($smode='showBag') then ':' else ' for '"/>
                                        <div class="ra-query">
                                           <xsl:call-template name="format-query"/>
+                                          <xsl:call-template name="currentBrowse"/>
                                        </div>
                                     </xsl:when>
                                     <xsl:otherwise>
@@ -499,6 +506,7 @@
                                           select="if($smode='showBag') then ':' else ' for '"/>
                                        <div class="ra-query">
                                           <xsl:call-template name="format-query"/>
+                                          <xsl:call-template name="currentBrowse"/>
                                        </div>
                                     </xsl:otherwise>
                                  </xsl:choose>
