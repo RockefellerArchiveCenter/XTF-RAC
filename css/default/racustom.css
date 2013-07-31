@@ -246,7 +246,10 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .resultsHeader #browse .on:after {width: 0;height: 0;border-top: 8px solid #666666;border-right: 8px solid transparent;border-left: 8px solid transparent;content: " ";float: right;margin-left: .8em;margin-right: .8em;margin-top: .9em;}
 .resultsHeader #browse .over {box-shadow:0px 0px 3px #C45414;color: #c45414;cursor:pointer}
 .resultsHeader #searchtip {top:12em;width:23%;font-size:1em;}
-#pages {float:right; width:30%;margin-top:.5em;margin-right:1em;text-align:right;}
+.pages {width:96%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:#eee;border-radius:5px;font-size:1em;}
+.pages .pageLabel {}
+.pages .pageButton {}
+.pages .pageNumber {}
 #results {width:96%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:#eee;border-radius:5px;font-size:1em;}
 #results select, #results input {font-size:.8em;margin-top:0; margin-bottom:0;}
 #rss {float:left;margin-right:.5em;}
@@ -260,6 +263,9 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .facetMatch {font-style:italic; color:#c45414;}
 .facetGroup .col3 {font-weight:bold; color:#c45414;}
 #currentBrowse, #alphaList {text-align:center}
+#alphaList {border: 2px outset;padding: .2em;margin-left: 24%;margin-right: 24%;font-size: 1.2em;border-radius: 5px;width:52%;float:left}
+.alphaLink {float:left;width:.8em;border-left:1px inset;border-right:1px inset;padding:0em 6px 0em 6px;}
+.aplphaLink .active {font-weight:bold; text-decoration:none !important;color:#fff;background-color:#999;margin-top: -4px;padding-top: 4px;margin-bottom: -4px;padding-bottom: 4px;margin-right:-2px;padding-right:8px;}
 #currentBrowse {font-size: 1.4em;margin-bottom: 1em;}
 a.hit {
    background-color:rgba(196, 84, 20, 0.1) !important;
@@ -325,7 +331,6 @@ a.hit {
 .tabs .select a {color:#c45414 !important;}
 .tabs .clear {display:none;}
 .tab a {text-decoration: none !important;}
-.active {font-weight:bold; text-decoration:none !important;color:#c45414;}
 .currentBrowse a{color: #333 !important;}
 /* Styles for EAD */
 .main {
@@ -358,6 +363,9 @@ a.hit {
 #toc .tocRow {font-size:1.2em;float:left;width:96%;padding:2%;}
 #toc .tocRow:hover {background-color:#ccc}
 div.tocRow:nth-of-type(even) {background-color: rgb(228, 228, 228); border-top: 1px dashed #999;border-bottom:1px dashed #999;}
+#toc .active {background-color: #999;border-left: .5em solid #c45414;padding-right: 0em;}
+#toc .active a {color:#fff}
+#toc .active:hover {background-color:#999}
 #toc .tocSubrow {float:left;width:100%}
 .tocSubrow:nth-of-type(odd) {background-color: rgb(228, 228, 228); border-top: 1px dashed #999;border-bottom:1px dashed #999;}
 

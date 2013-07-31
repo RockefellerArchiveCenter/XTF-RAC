@@ -391,10 +391,10 @@
       
       <xsl:choose>
          <xsl:when test="$nPages &gt; 2">
-            <xsl:text>Page: </xsl:text>
+            <div class="pageLabel">Page</div>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:text>Page: 1</xsl:text>
+            <div class="pageLabel">Page</div> <div class="pageNumber">1</div>
          </xsl:otherwise>
       </xsl:choose>
       
@@ -417,15 +417,13 @@
          <!-- Individual Paging -->
          <xsl:if test="($pageNum = 1) and ($pageStart != $start)">
             <xsl:variable name="prevPage" as="xs:integer" select="$start - $perPage"/>
-            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$prevPage}">Prev</a>
-            <xsl:text>&#160;&#160;</xsl:text>
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$prevPage}"><div class="pageButton">&lt;</div></a>
          </xsl:if>
          
          <!-- Paging by Blocks -->
          <xsl:variable name="prevBlock" as="xs:integer" select="(($blockStart - $blockSize) * $perPage) - ($perPage - 1)"/>
          <xsl:if test="($pageNum = 1) and ($prevBlock &gt;= 1)">
-            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$prevBlock}">...</a>
-            <xsl:text>&#160;&#160;</xsl:text>
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$prevBlock}"><div class="pageButton">&lt;&lt;</div></a>
          </xsl:if>
          
          <!-- If there are hits on the page, show it -->
@@ -435,7 +433,7 @@
                <!-- Make a hyperlink if it's not the page we're currently on. -->
                <xsl:when test="($pageStart != $start)">
                   <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}">
-                     <xsl:value-of select="$pageNum"/>
+                     <div class="pageNumber"><xsl:value-of select="$pageNum"/></div>
                   </a>
                   <xsl:if test="$pageNum &lt; $showPages">
                      <xsl:text>&#160;</xsl:text>
@@ -450,25 +448,23 @@
             </xsl:choose>
          </xsl:if>
          
-         <!-- Paging by Blocks -->   
+         <!-- 2013-04-22 HA: Adding Last Page -->      
          <xsl:variable name="nextBlock" as="xs:integer" select="(($blockStart + $blockSize) * $perPage) - ($perPage - 1)"/>
          <xsl:if test="($pageNum = $showPages) and (($showPages * $perPage) &gt; $nextBlock)">
-            <xsl:text>&#160;&#160;</xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$nextBlock}">...</a>
+            <xsl:variable name="lastPage" select="$nPages"/>
+            <div class="pageNumber"><xsl:text> ... </xsl:text></div>
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}"><div class="pageNumber"><xsl:value-of select="($lastPage - 1)"/></div></a>
          </xsl:if>
          
-         <!-- 2013-04-22 HA: Adding Last Page -->      
+         <!-- Paging by Blocks -->   
          <xsl:if test="($pageNum = $showPages) and (($showPages * $perPage) &gt; $nextBlock)">
-            <xsl:variable name="lastPage" select="$nPages"/>
-            <xsl:text>&#160;&#160;</xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}"><xsl:value-of select="($lastPage - 1)"/></a>
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$nextBlock}"><div class="pageButton">&gt;&gt;</div></a>
          </xsl:if>
          
          <!-- Individual Paging -->      
          <xsl:if test="($pageNum = $showPages) and ($pageStart != $start)">
             <xsl:variable name="nextPage" as="xs:integer" select="$start + $perPage"/>
-            <xsl:text>&#160;&#160;</xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$nextPage}">Next</a>
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$nextPage}"><div class="pageButton">&gt;</div></a>
          </xsl:if>
          
       </xsl:for-each>
@@ -927,22 +923,22 @@
       
       <xsl:choose>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(descendant::group[docHit]) > 1]">
-             <span class="active"><xsl:value-of select="upper-case($alpha)"/></span>
+             <div class="alphaLink active"><xsl:value-of select="upper-case($alpha)"/></div>
          </xsl:when>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(docHit) > 0]">
-             <span class="active"><xsl:value-of select="upper-case($alpha)"/></span>
+             <div class="alphaLink active"><xsl:value-of select="upper-case($alpha)"/></div>
          </xsl:when>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link]">
              <!-- 10/29/12 WS: Added type parameter for browsing  -->
-            <a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level=collection;type={$type};sort={$browse-name}"><xsl:value-of select="$alpha"/></a>
+            <div class="alphaLink"><a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level=collection;type={$type};sort={$browse-name}"><xsl:value-of select="$alpha"/></a></div>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:value-of select="upper-case($alpha)"/>
+            <div class="alphaLink"><xsl:value-of select="upper-case($alpha)"/></div>
          </xsl:otherwise>
       </xsl:choose>
       
       <xsl:if test="contains($alphaList,' ')">
-         <xsl:text> | </xsl:text>
+         <!--<xsl:text> | </xsl:text>-->
          <xsl:call-template name="alphaList">
             <xsl:with-param name="alphaList" select="replace($alphaList,'^[A-Z]+ ','')"/>
          </xsl:call-template>

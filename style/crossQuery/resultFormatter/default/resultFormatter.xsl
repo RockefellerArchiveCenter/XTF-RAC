@@ -388,9 +388,7 @@
                   </div>
                   </xsl:if>
 
-                  <div id="pages">
-                     <xsl:call-template name="pages"/>
-                  </div>
+
                </form>
             </div>
             
@@ -523,10 +521,22 @@
                                  </form>
                               </div>
                            </div>
-
+                           
+                           <xsl:if test="@totalDocs > $docsPerPage">
+                              <div class="pages">
+                                 <xsl:call-template name="pages"/>
+                              </div>
+                           </xsl:if>
+                           
                            <xsl:for-each-group select="docHit" group-by="@path">
                               <xsl:call-template name="docHitColl"/>
                            </xsl:for-each-group>
+                           
+                           <xsl:if test="@totalDocs > $docsPerPage">
+                              <div class="pages">
+                                 <xsl:call-template name="pages"/>
+                              </div>
+                           </xsl:if>
                         </div>
                      </xsl:if>
 
@@ -536,11 +546,6 @@
                         </xsl:for-each-group>
                      </xsl:if>
 
-                     <xsl:if test="@totalDocs > $docsPerPage">
-                        <div class="pages">
-                           <xsl:call-template name="pages"/>
-                        </div>
-                     </xsl:if>
                   </xsl:when>
                   <xsl:otherwise>
                      <xsl:choose>
@@ -844,7 +849,7 @@
    
    <xsl:template match="crossQueryResult" mode="browse" exclude-result-prefixes="#all">
       
-      <xsl:variable name="alphaList" select="'A B C D E F G H I J K L M N O P Q R S T U V W Y Z OTHER'"/>
+      <xsl:variable name="alphaList" select="'A B C D E F G H I J K L M N O P Q R S T U V W Y Z'"/>
       
       <html xml:lang="en" lang="en">
          <head>
