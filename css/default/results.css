@@ -74,6 +74,7 @@ text-align: center;
 
 div.resultsHeader {
      width: 98%;
+     min-height:3.5em;
      float:left;
 	 border-right: 1px solid #666;
 	 border-left: 1px solid #666;
@@ -145,7 +146,7 @@ div.docHit {
 .resultLabel {float:left; width:10%; text-align:right;}
 .resultText {float:left; width:85%;}
 
-#docHits {float:right; width:73%;}
+#docHits {float:right; width:73%;padding-bottom:1%}
 #docHits .hitRank {width:3%}
 #docHits .resultIcon {width:6%;}
 #docHits .resultContent {width:80%;}
@@ -236,6 +237,5 @@ div.getAddress h2 {
 	margin: 0 0 10px 0;
 	font-size: 120%;
 }
-.pages {width:98%;float:left;margin:1%; text-align:center;}
 .nohits, .spelling, .empty {margin: 1em;text-align: center;background: rgba(196, 84, 20, 0.1);padding: .5em;border: 1px solid #c45414;border-radius: 5px;}
 .empty img {vertical-align:middle}

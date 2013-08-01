@@ -389,14 +389,14 @@
          <xsl:value-of select="editURL:remove($queryString, 'startDoc')"/>
       </xsl:variable>   
       
-      <xsl:choose>
+      <!--<xsl:choose>
          <xsl:when test="$nPages &gt; 2">
             <div class="pageLabel">Page</div>
          </xsl:when>
          <xsl:otherwise>
             <div class="pageLabel">Page</div> <div class="pageNumber">1</div>
          </xsl:otherwise>
-      </xsl:choose>
+      </xsl:choose>-->
       
       <xsl:for-each select="(1 to $maxPages)">
          <!-- Figure out which block you need to be in -->
@@ -440,7 +440,7 @@
                   </xsl:if>
                </xsl:when>
                <xsl:when test="($pageStart = $start)">
-                  <xsl:value-of select="$pageNum"/>
+                  <div class="pageNumber active"><xsl:value-of select="$pageNum"/></div>
                   <xsl:if test="$pageNum &lt; $showPages">
                      <xsl:text>&#160;</xsl:text>
                   </xsl:if>
@@ -930,7 +930,7 @@
          </xsl:when>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link]">
              <!-- 10/29/12 WS: Added type parameter for browsing  -->
-            <div class="alphaLink"><a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level=collection;type={$type};sort={$browse-name}"><xsl:value-of select="$alpha"/></a></div>
+             <a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level=collection;type={$type};sort={$browse-name}"><div class="alphaLink"><xsl:value-of select="$alpha"/></div></a>
          </xsl:when>
          <xsl:otherwise>
             <div class="alphaLink"><xsl:value-of select="upper-case($alpha)"/></div>
@@ -1034,7 +1034,7 @@
     <xsl:template match="/crossQueryResult/facet[matches(@field,'^facet-')]" exclude-result-prefixes="#all">
       <xsl:variable name="field" select="replace(@field, 'facet-(.*)', '$1')"/>
       <xsl:variable name="needExpand" select="@totalGroups > count(group)"/>
-      <div class="facet accordionButton category">
+      <div class="facet accordionButton category" id="{@field}">
          <h3>
             <xsl:apply-templates select="." mode="facetName"/>
          </h3>

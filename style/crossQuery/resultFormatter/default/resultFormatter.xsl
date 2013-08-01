@@ -387,9 +387,12 @@
                   </div> -->
                   </div>
                   </xsl:if>
-
-
                </form>
+               <xsl:if test="@totalDocs > $docsPerPage">
+                  <div class="pages">
+                     <xsl:call-template name="pages"/>
+                  </div>
+               </xsl:if>
             </div>
             
             <!-- results -->
@@ -521,12 +524,6 @@
                                  </form>
                               </div>
                            </div>
-                           
-                           <xsl:if test="@totalDocs > $docsPerPage">
-                              <div class="pages">
-                                 <xsl:call-template name="pages"/>
-                              </div>
-                           </xsl:if>
                            
                            <xsl:for-each-group select="docHit" group-by="@path">
                               <xsl:call-template name="docHitColl"/>
