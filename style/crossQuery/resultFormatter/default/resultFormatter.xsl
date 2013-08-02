@@ -388,11 +388,6 @@
                   </div>
                   </xsl:if>
                </form>
-               <xsl:if test="@totalDocs > $docsPerPage">
-                  <div class="pages">
-                     <xsl:call-template name="pages"/>
-                  </div>
-               </xsl:if>
             </div>
             
             <!-- results -->
@@ -490,9 +485,7 @@
                                  <xsl:choose>
                                     <xsl:when test="$items = 1">
                                        <span id="itemCount">1</span>
-                                       <xsl:text> Result</xsl:text>
-                                       <xsl:value-of
-                                          select="if($smode='showBag') then ':' else ' for '"/>
+                                       <xsl:text> result</xsl:text>
                                        <div class="ra-query">
                                           <xsl:call-template name="format-query"/>
                                           <xsl:call-template name="currentBrowse"/>
@@ -502,18 +495,21 @@
                                        <span id="itemCount">
                                           <xsl:value-of select="$items"/>
                                        </span>
-                                       <xsl:text> Results</xsl:text>
-                                       <xsl:value-of
-                                          select="if($smode='showBag') then ':' else ' for '"/>
-                                       <div class="ra-query">
+                                       <xsl:text> results</xsl:text>
+                                       <div class="resultsQuery">
                                           <xsl:call-template name="format-query"/>
                                           <xsl:call-template name="currentBrowse"/>
                                        </div>
                                     </xsl:otherwise>
                                  </xsl:choose>
                               </div>
+                              <div class="pages">
+                                 <xsl:if test="@totalDocs > $docsPerPage">
+                                    <xsl:call-template name="pages"/>
+                                 </xsl:if>
+                              </div>
                               <div id="sort">
-                                 <form method="get" action="{$xtfURL}{$crossqueryPath}"> Sorted by:
+                                 <form method="get" action="{$xtfURL}{$crossqueryPath}"> Sort:
                                        <xsl:call-template name="sort.options"/>
                                     <xsl:call-template name="hidden.query">
                                        <xsl:with-param name="queryString"
@@ -1160,6 +1156,7 @@
          <xsl:variable name="uri">
             <xsl:call-template name="dynaxml.url">
                <xsl:with-param name="path" select="$path"/>
+               <xsl:with-param name="chunk.id" select="'headerlink'"/>
             </xsl:call-template>
          </xsl:variable>
          <xsl:choose>

@@ -8,6 +8,7 @@ $('.accordionContent').slideUp('normal');
 if($(this).next().is(':hidden') == true) {
 $(this).addClass('on');
 $(this).next().slideDown('normal');}
+$.removeCookie('openContent');
 $.cookie('openContent', $(this).attr("id")); 
 });
 
@@ -22,5 +23,4 @@ $('.accordionButton').removeClass('on');
 
 $('.accordionContent').hide();
 $(active).next().show();
-$.removeCookie('openContent');
 });
