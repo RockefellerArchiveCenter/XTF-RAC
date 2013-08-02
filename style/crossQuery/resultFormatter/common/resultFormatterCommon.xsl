@@ -420,6 +420,13 @@
             <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$prevPage}"><div class="pageButton">&lt;</div></a>
          </xsl:if>
          
+         <!-- 2013-08-02 HA: Adding First Page -->      
+         <xsl:variable name="prevBlock" as="xs:integer" select="(($blockStart - $blockSize) * $perPage) - ($perPage - 1)"/>
+         <xsl:if test="($pageNum = 1) and ($prevBlock &gt;= 1)">
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}=1"><div class="pageNumber">1</div></a>
+            <xsl:text>... </xsl:text>
+         </xsl:if>
+         
          <!-- Paging by Blocks -->
          <!--<xsl:variable name="prevBlock" as="xs:integer" select="(($blockStart - $blockSize) * $perPage) - ($perPage - 1)"/>
          <xsl:if test="($pageNum = 1) and ($prevBlock &gt;= 1)">
