@@ -442,15 +442,15 @@
                   <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}">
                      <div class="pageNumber"><xsl:value-of select="$pageNum"/></div>
                   </a>
-                  <xsl:if test="$pageNum &lt; $showPages">
+                  <!--<xsl:if test="$pageNum &lt; $showPages">
                      <xsl:text>&#160;</xsl:text>
-                  </xsl:if>
+                  </xsl:if>-->
                </xsl:when>
                <xsl:when test="($pageStart = $start)">
                   <div class="pageNumber active"><xsl:value-of select="$pageNum"/></div>
-                  <xsl:if test="$pageNum &lt; $showPages">
+                  <!--<xsl:if test="$pageNum &lt; $showPages">
                      <xsl:text>&#160;</xsl:text>
-                  </xsl:if>
+                  </xsl:if>-->
                </xsl:when>
             </xsl:choose>
          </xsl:if>

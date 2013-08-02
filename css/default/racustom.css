@@ -248,12 +248,12 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .resultsHeader #searchtip {top:12em;width:23%;font-size:1em;}
 .pages {width:98%;padding:1% 0 1% 0;float:left; margin-left:1%;border-radius:5px;font-size:1em;text-align:center;font-weight:bold;background:#eee}
 #results .pages {width:32%;float:left;font-size:.8em;padding:.8em;border-left:2px groove #fff; border-right:2px groove #fff;background:0;border-radius:0}
-.pages a {text-decoration:none !important; color:#c45414 !important;}
+.pages a {text-decoration:none !important; color:#333 !important;}
 .pages .pageButton {display:inline;vertical-align:middle;padding:.1em .5em .1em .5em;border:2px outset #999;border-radius:4px;margin-left:1em;margin-right:1em;background-color:#bbb;color:#fff}
 #results .pageButton {margin-left:.3em;margin-right:.3em;}
 .pages .pageButton:hover {border:2px outset #c45414;color:#c45414;}
 .pages .pageNumber {display:inline;vertical-align:middle;width: 1em;padding: .2em .3em .2em .3em;}
-#results .pageNumber {padding:.1em;}
+#results .pageNumber {padding:.2em .4em .2em .4em;}
 #results {width:96%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:#eee;border-radius:5px;font-size:1em;}
 #results select, #results input {font-size:.8em;margin-top:0; margin-bottom:0;}
 #rss {float:left;margin-right:.5em;}
@@ -267,9 +267,9 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .facetMatch {font-style:italic; color:#c45414;}
 .facetGroup .col3 {font-weight:bold; color:#c45414;}
 #currentBrowse, #alphaList {text-align:center}
-#alphaList {width:42%;margin-left: 29%;margin-right: 29%;padding:.4em;font-size: 1em;font-weight:bold;border:2px groove;border-radius: 5px;float:left;}
-.alphaLink {display:inline;vertical-align:middle;width:1em; padding:.5em;}
-.alphaLink:hover, .pageNumber:hover {background-color:#ccc}
+#alphaList {padding:.4em;font-size: 1em;font-weight:bold;}
+.alphaLink {display:inline;vertical-align:middle;width:1em; padding:.5em;text-decoration:none;}
+#alphaList a .alphaLink:hover, .pageNumber:hover {outline: 1px solid; color:#c45414;text-decoration:none !important;}
 #alphaList .active, .pages .active {text-decoration:none !important;color:#fff;background-color:#666;}
 #currentBrowse {font-size: 1.4em;margin-bottom: 1em;}
 a.hit {
