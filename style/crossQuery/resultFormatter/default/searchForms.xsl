@@ -65,37 +65,7 @@
                   <title>DIMES: Online Collections and Catalog of Rockefeller Archive Center</title>
                   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
                   <xsl:copy-of select="$brand.links"/>
-                  <script type='text/javascript'>
-                        //<![CDATA[
-                        $(document).ready(function() {
-                            $('#collections').hide();
-                            $('#library').hide();
-                            $('#dao').hide();
-                             $('#type').change(function () {
-                                if ($('#type option:selected').text() == "Archival Collections"){
-                                    $('#collections').show();
-                                    $('#dao').hide();
-                                    $('#library').hide();
-                                }
-                                else if ($('#type option:selected').text() == "Library Materials"){
-                                    $('#library').show();
-                                    $('#dao').hide();
-                                    $('#collections').hide();
-                                }
-                                else if ($('#type option:selected').text() == "Digital Materials"){
-                                    $('#dao').show();
-                                    $('#collections').hide();
-                                    $('#library').hide();
-                                }
-                                 else {
-                                      $('#dao').hide();
-                                      $('#collections').hide();
-                                      $('#library').hide();
-                                 }
-                            });
-                        });
-                        //]]>   
-                  </script>
+                  
             <script type="text/javascript" src="/xtf/script/rac/featured.js"></script>
             <script type="text/javascript">
                       $(document).ready(function() {
@@ -419,7 +389,7 @@
                            <option value="mods">Library Materials</option>
                         </select>
                         <!-- 6/21/2013 HA: adding advanced search to home page -->
-                        <!--<select name="sectionType" id="library">
+                        <select name="sectionType" id="library">
                            <option value="">All Library Materials</option>
                            <option value="title">Title</option>
                            <option value="creator">Author</option>
@@ -450,7 +420,7 @@
                            <option value="series">Series Description</option>
                            <option value="subseries">Subseries Description</option>
                            <option value="controlaccess">Subject Headings</option>
-                        </select>-->
+                        </select>
                      </div>
                      <div id="date">
                         <xsl:text>Years: </xsl:text>

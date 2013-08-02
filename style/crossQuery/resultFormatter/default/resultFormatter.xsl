@@ -317,7 +317,7 @@
                                     <option value="mods">Library Materials</option>
                                  </select>
                                  <!-- 6/21/2013 HA: adding advanced search to home page -->
-                                 <!--<select name="sectionType" id="library">
+                                 <select name="sectionType" id="library">
                            <option value="">All Library Materials</option>
                            <option value="title">Title</option>
                            <option value="creator">Author</option>
@@ -348,7 +348,7 @@
                            <option value="series">Series Description</option>
                            <option value="subseries">Subseries Description</option>
                            <option value="controlaccess">Subject Headings</option>
-                        </select>-->
+                        </select>
                               </div>
                               <div id="date">
                                  <xsl:text>Years: </xsl:text>
@@ -503,11 +503,11 @@
                                     </xsl:otherwise>
                                  </xsl:choose>
                               </div>
+                              <xsl:if test="@totalDocs > $docsPerPage">
                               <div class="pages">
-                                 <xsl:if test="@totalDocs > $docsPerPage">
                                     <xsl:call-template name="pages"/>
-                                 </xsl:if>
                               </div>
+                              </xsl:if>
                               <div id="sort">
                                  <form method="get" action="{$xtfURL}{$crossqueryPath}"> Sort:
                                        <xsl:call-template name="sort.options"/>
