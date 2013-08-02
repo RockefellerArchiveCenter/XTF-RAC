@@ -1185,7 +1185,7 @@
       <div id="main_{@rank}" class="docHit">
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
             <!-- 9/26/11 WS: Moved title above Author -->
-         <div class="hitRank">
+         <!--<div class="hitRank">
             <xsl:choose>
                <xsl:when test="$sort = ''">
                   <b>
@@ -1199,7 +1199,7 @@
                   <xsl:text>&#160;</xsl:text>
                </xsl:otherwise>
             </xsl:choose>
-         </div>
+         </div>-->
          <div class="resultIcon">
             <xsl:choose>
                <xsl:when test="meta/genre[contains(.,'DVD')]">
@@ -1233,7 +1233,7 @@
                   <xsl:if test="$sort = 'title'">
                      <a name="{$anchor}"/>
                   </xsl:if>
-                  <b>Title:&#160;&#160;</b>
+                  <xsl:text>Title</xsl:text>
                </div>
                <div class="resultText">
                   <a>
@@ -1264,7 +1264,6 @@
                         <xsl:otherwise>none</xsl:otherwise>
                      </xsl:choose>
                   </a>
-                  <xsl:text>&#160;</xsl:text>
                   <!--
                   <xsl:variable name="type" select="meta/type"/>
                   <span class="typeIcon">
@@ -1280,7 +1279,7 @@
                      <a name="{$anchor}"/>
                   </xsl:if>
                   <!-- 9/26/11 WS: changed author to creator-->
-                  <b>Creator:&#160;&#160;</b>
+                  <xsl:text>Creator</xsl:text>
                </div>
                <div class="resultText">
                   <xsl:choose>
@@ -1295,7 +1294,7 @@
             <div class="result">
                <div class="resultLabel">
                   <!-- 9/26/11 WS: changed Published to Date -->
-                  <b>Date(s):&#160;&#160;</b>
+                  <xsl:text>Date(s)</xsl:text>
                </div>
                <div class="resultText">
                   <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
@@ -1320,7 +1319,7 @@
             <xsl:if test="meta/subject">
                <div class="result">
                   <div class="resultLabel">
-                     <b>Subjects:&#160;&#160;</b>
+                     <xsl:text>Subjects</xsl:text>
                   </div>
                   <div class="resultText">
                      <!-- 4/16/2013 HA: added logic to limit number of subjects that display -->
@@ -1347,11 +1346,13 @@
 
                      <div class="result">
                         <div class="resultLabel">
-                           <b>Matches:&#160;&#160;</b>
+                           <xsl:text>Matches</xsl:text>
                            <br/>
-                           <xsl:value-of select="@totalHits"/>
+                           <!-- 8/2/2013 HA: commenting out hit counts -->
+                           <!--<xsl:value-of select="@totalHits"/>
                            <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"
-                           />&#160;&#160;&#160;&#160; </div>
+                           />-->
+                           </div>
                         <div class="resultText">
                            <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
                         </div>
@@ -1363,7 +1364,7 @@
             <!-- "more like this" -->
             <div class="result">
                <div class="resultLabel">
-                  <b>Similar&#160;Items:&#160;&#160;</b>
+                  <xsl:text>Similar Items</xsl:text>
                </div>
                <div class="resultText">
                   <script type="text/javascript">
@@ -1525,7 +1526,7 @@
             <!-- Deals with collections vrs. series/files -->
             <xsl:choose>
                <xsl:when test="meta/level = 'collection'">
-                     <div class="hitRank">
+                     <!--<div class="hitRank">
                         <xsl:choose>
                            <xsl:when test="$sort = ''">
                               <b><xsl:value-of select="@rank"/></b>
@@ -1535,7 +1536,7 @@
                               <xsl:text>&#160;</xsl:text>
                            </xsl:otherwise>
                         </xsl:choose>
-                     </div>
+                     </div> -->
                      <div class="resultIcon">
                         <xsl:choose>
                            <xsl:when test="meta/genre[contains(.,'DVD')]">
@@ -1569,7 +1570,7 @@
                         <xsl:if test="$sort = 'title'">
                            <a name="{$anchor}"/>
                         </xsl:if>
-                        <b>Title:&#160;&#160;</b>
+                        <xsl:text>Title</xsl:text>
                      </div>
                      <div class="resultText">
                         <a>
@@ -1615,7 +1616,7 @@
                            <a name="{$anchor}"/>
                         </xsl:if>
                         <!-- 9/26/11 WS: changed author to creator-->
-                        <b>Creator:&#160;&#160;</b>
+                        <xsl:text>Creator</xsl:text>
                      </div>
                      <div class="resultText">
                         <xsl:choose>
@@ -1629,7 +1630,7 @@
                      
                         <div class="result">
                         <div class="resultLabel">
-                           <b>Publisher:&#160;&#160;</b>
+                           <xsl:text>Publisher</xsl:text>
                         </div>
                         <div class="resultText">
                            <xsl:apply-templates select="meta/publisher"/>
@@ -1639,7 +1640,7 @@
                      <div class="result">
                      <div class="resultLabel">
                         <!-- 9/26/11 WS: changed Published to Date -->
-                        <b>Date(s):&#160;&#160;</b>
+                        <xsl:text>Date(s)</xsl:text>
                      </div>
                      <div class="resultText">
                         <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
@@ -1659,7 +1660,7 @@
                   <xsl:if test="meta/callNo">
                      <div class="result">
                         <div class="resultLabel">
-                           <b>Call number:&#160;&#160;</b>
+                           <xsl:text>Call number</xsl:text>
                         </div>
                         <div class="resultText">
                            <xsl:apply-templates select="meta/callNo"/>
@@ -1675,10 +1676,10 @@
                         <xsl:if test="descendant-or-self::snippet">
                               <div class="result">
                                  <div class="resultLabel">
-                                 <b>Matches:&#160;&#160;</b>
+                                 <xsl:text>Matches</xsl:text>
                                  <br/>
-                                 <xsl:value-of select="@totalHits"/> 
-                                 <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>&#160;&#160;&#160;&#160;
+                                 <!--<xsl:value-of select="@totalHits"/> 
+                                 <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/> -->
                               </div>
                               <div class="resultText">
                                  <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
@@ -1691,7 +1692,7 @@
                      <xsl:if test="meta/subject">
                         <div class="result">
                            <div class="resultLabel">
-                              <b>Subjects:&#160;&#160;</b>
+                              <xsl:text>Subjects</xsl:text>
                            </div>
                            <div class="resultText">
                               <!-- 4/16/2013 HA: added logic to limit number of subjects that display -->
@@ -1719,7 +1720,7 @@
                      <!-- "more like this" -->
                      <div class="result">
                         <div class="resultLabel">
-                           <b>Similar&#160;Items:&#160;&#160;</b>
+                           <xsl:text>Similar Items</xsl:text>
                         </div>
                         <div class="resultText">
                            <script type="text/javascript">
@@ -1742,7 +1743,7 @@
                </xsl:when>
                <xsl:otherwise>
                   <xsl:variable name="collectionId" select="substring-before(meta/identifier[1],'|')"/>
-                     <div class="hitRank">
+                     <!--<div class="hitRank">
                         <xsl:choose>
                            <xsl:when test="$sort = ''">
                               <b><xsl:value-of select="@rank"/></b>
@@ -1752,7 +1753,7 @@
                               <xsl:text>&#160;</xsl:text>
                            </xsl:otherwise>
                         </xsl:choose>
-                     </div>
+                     </div>-->
                      <div class="resultIcon">
                         <xsl:choose>
                            <xsl:when test="meta/genre[contains(.,'DVD')]">
@@ -1787,7 +1788,7 @@
                      <xsl:if test="$sort = 'title'">
                         <a name="{$anchor}"/>
                      </xsl:if>
-                     <b>Title:&#160;&#160;</b>
+                     <xsl:text>Title</xsl:text>
                   </div>
                   <div class="resultText">
                      <a>
@@ -1823,7 +1824,7 @@
                         <a name="{$anchor}"/>
                      </xsl:if>
                      <!-- 9/26/11 WS: changed author to creator-->
-                     <b>Creator:&#160;&#160;</b>
+                     <xsl:text>Creator</xsl:text>
                   </div>
                   <div class="resultText">
                      <xsl:choose>
@@ -1840,7 +1841,7 @@
                   <xsl:if test="meta/subject">
                      <div class="result">
                         <div class="resultLabel">
-                           <b>Subjects:&#160;&#160;</b>
+                           <xsl:text>Subjects</xsl:text>
                         </div>
                         <div class="resultText">
                            <!-- 4/16/2013 HA: added logic to limit number of subjects that display -->
@@ -1868,7 +1869,7 @@
                   <!-- "more like this" -->
                   <div class="result">
                      <div class="resultLabel">
-                        <b>Similar&#160;Items:&#160;&#160;</b>
+                        <xsl:text>Similar Items</xsl:text>
                      </div>
                      <div class="resultText">
                         <script type="text/javascript">
@@ -2032,7 +2033,7 @@
             </xsl:when>
          </xsl:choose>
       </xsl:variable>
-      <div class="hitRank">
+      <!--<div class="hitRank">
          <div style="height:18px; overflow:hidden;">
                   <xsl:if test="meta/type = 'dao'">
                      <img src="/xtf/icons/default/dao.gif" alt="digital object" title="digital object" style="float:right; padding-right:.75em;"/>
@@ -2046,7 +2047,7 @@
                      </xsl:otherwise>
                   </xsl:choose>
                </div>
-            </div>
+            </div>-->
       <div class="title">
          <a>
             <xsl:attribute name="href">
@@ -2164,10 +2165,10 @@
                <xsl:if test="descendant-or-self::snippet">
                      <div class="result">
                         <div class="resultLabel">
-                        <b>Matches:&#160;&#160;</b>
+                        <xsl:text>Matches</xsl:text>
                            <br/>
-                        (<xsl:value-of select="@totalHits"/>
-                           <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>)&#160;&#160;
+                        <!--(<xsl:value-of select="@totalHits"/>
+                           <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>)-->
                         </div>
                         <div class="resultText">
                         <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
