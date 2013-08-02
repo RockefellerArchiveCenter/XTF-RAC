@@ -221,6 +221,11 @@
                         });
                     });
         </script>
+            <script type="text/javascript">
+                     $(document).ready(function() {
+                        $.removeCookie('openContent');
+                     });
+                  </script>
                </head>
                <body>
                   <xsl:copy-of select="$brand.header"/>

@@ -421,10 +421,10 @@
          </xsl:if>
          
          <!-- Paging by Blocks -->
-         <xsl:variable name="prevBlock" as="xs:integer" select="(($blockStart - $blockSize) * $perPage) - ($perPage - 1)"/>
+         <!--<xsl:variable name="prevBlock" as="xs:integer" select="(($blockStart - $blockSize) * $perPage) - ($perPage - 1)"/>
          <xsl:if test="($pageNum = 1) and ($prevBlock &gt;= 1)">
             <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$prevBlock}"><div class="pageButton">&lt;&lt;</div></a>
-         </xsl:if>
+         </xsl:if> -->
          
          <!-- If there are hits on the page, show it -->
          <xsl:if test="(($pageNum &gt;= $blockStart) and ($pageNum &lt;= ($blockStart + ($blockSize - 1)))) and
@@ -452,14 +452,14 @@
          <xsl:variable name="nextBlock" as="xs:integer" select="(($blockStart + $blockSize) * $perPage) - ($perPage - 1)"/>
          <xsl:if test="($pageNum = $showPages) and (($showPages * $perPage) &gt; $nextBlock)">
             <xsl:variable name="lastPage" select="$nPages"/>
-            <div class="pageNumber"><xsl:text> ... </xsl:text></div>
+            <xsl:text>... </xsl:text>
             <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}"><div class="pageNumber"><xsl:value-of select="($lastPage - 1)"/></div></a>
          </xsl:if>
          
          <!-- Paging by Blocks -->   
-         <xsl:if test="($pageNum = $showPages) and (($showPages * $perPage) &gt; $nextBlock)">
+         <!--<xsl:if test="($pageNum = $showPages) and (($showPages * $perPage) &gt; $nextBlock)">
             <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$nextBlock}"><div class="pageButton">&gt;&gt;</div></a>
-         </xsl:if>
+         </xsl:if> -->
          
          <!-- Individual Paging -->      
          <xsl:if test="($pageNum = $showPages) and ($pageStart != $start)">

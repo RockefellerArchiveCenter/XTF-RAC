@@ -747,7 +747,7 @@
       these elements are repeatable within the dsc section as well.-->
    <xsl:template match="physloc |  accessrestrict |  userestrict |  phystech |  otherfindaid | 
       relatedmaterial |  altformavail |  originalsloc | 
-      odd | custodhist | fileplan | acqinfo | processinfo | separatedmaterial | appraisal | materialspec">
+      odd | custodhist | fileplan | acqinfo | processinfo | separatedmaterial | appraisal | materialspec | prefercite">
       <h4>
          <xsl:choose>
             <xsl:when test="self::physloc">Location</xsl:when>
@@ -772,6 +772,7 @@
             <xsl:when test="self::appraisal">Appraisal</xsl:when>
             <xsl:when test="self::accruals">Accruals</xsl:when>
             <xsl:when test="self::materialspec">Material Specific Details</xsl:when>
+            <xsl:when test="self::prefercite">Preferred Citation</xsl:when>
          </xsl:choose>
       </h4>
       <xsl:choose>
@@ -980,11 +981,11 @@
       It begins by testing to see if there are any elements of this type
       with content.-->   
    <xsl:template name="archdesc-admininfo">
-      <xsl:if test="string(archdesc/admininfo/custodhist/*) or string(archdesc/altformavailable/*)
+      <!--<xsl:if test="string(archdesc/admininfo/custodhist/*) or string(archdesc/altformavailable/*)
          or string(archdesc/prefercite/*) or string(archdesc/acqinfo/*) or string(archdesc/processinfo/*) or string(archdesc/appraisal/*)
          or string(archdesc/accruals/*) or string(archdesc/*/custodhist/*) or string(archdesc/*/altformavailable/*)
          or string(archdesc/*/prefercite/*) or string(archdesc/*/acqinfo/*) or string(archdesc/*/processinfo/*)
-         or string(archdesc/*/appraisal/*) or string(archdesc/*/accruals/*)">
+         or string(archdesc/*/appraisal/*) or string(archdesc/*/accruals/*)">-->
          <h2>
             <p name="adminlink">
                <xsl:text>Administrative Information</xsl:text>
@@ -1000,7 +1001,8 @@
          <xsl:apply-templates select="archdesc/appraisal"/>
          <xsl:apply-templates select="archdesc/separatedmaterial"/>
          <xsl:apply-templates select="archdesc/altformavail"/>
-      </xsl:if>
+         <xsl:apply-templates select="archdesc/prefercite"/>
+      <!--</xsl:if>-->
    </xsl:template>
    
    <!-- Templates for publication information  -->
