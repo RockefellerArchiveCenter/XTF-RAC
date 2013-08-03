@@ -356,6 +356,7 @@
                </xsl:if>
             </ul>
          </div>
+         <xsl:call-template name="tabs"/>
          <div class="headerSearch">
             <form action="{$xtfURL}{$dynaxmlPath}" method="get" class="bbform">
                <!-- DG: possible todo: change form action: action="/xtf/view"  -->
@@ -397,7 +398,6 @@
                </div>
             </xsl:if>
          </div>
-         <xsl:call-template name="tabs"/>
       </div>
    </xsl:template>
    <xsl:template match="titleproper/num"><br/><xsl:value-of select="."/></xsl:template>

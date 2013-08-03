@@ -28,8 +28,7 @@ div.header {
 	 background-color: #B1B8C6;
 }
 */
-div.header {
-	 width: 100%;
+div.header {	 width: 100%;
 	 margin: 0 auto;
 	 background-color: #DDDDDD;
 	 height:35px;
@@ -143,7 +142,7 @@ div.docHit {
 .resultIcon {float:left; width:5%;}
 .resultContent {float:left; width:89%;}
 .result {float:left;width:100%;margin-bottom:.5em;}
-.resultLabel {float:left; width:10%; text-align:right;}
+.resultLabel {float:left; width:10%; text-align:right;font-weight:bold;margin-right:1%}
 .resultText {float:left; width:85%;}
 
 #docHits {float:right; width:73%;padding-bottom:1%}
