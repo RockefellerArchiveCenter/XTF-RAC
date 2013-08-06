@@ -174,6 +174,7 @@
             <title>DIMES: Search Results</title>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <xsl:copy-of select="$brand.links"/>
+
             <!-- AJAX support -->
             <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
             <script src="script/yui/connection-min.js" type="text/javascript"/>
@@ -187,6 +188,8 @@
             <!-- 9/27/11 WS:  Adjusted results header for a cleaner look-->
             <div id="header">
                <a href="/xtf/search">
+                  <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
+                     alt="The Rockefeller Archive Center"/>
                   <h1>dimes.rockarch.org</h1>
                   <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
                      Center</p>
@@ -860,6 +863,8 @@
             <!-- result header -->
             <div id="header">
                <a href="/xtf/search">
+                  <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
+                     alt="The Rockefeller Archive Center" border="0"/>
                   <h1>dimes.rockarch.org</h1>
                   <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
                      Center</p>
@@ -2203,7 +2208,7 @@
          <xsl:call-template name="dynaxml.url">
             <xsl:with-param name="path" select="$path"/>
          </xsl:call-template>
-         <xsl:value-of select="concat(';hit.rank=', $hit.rank)"/>
+         <!--<xsl:value-of select="concat(';hit.rank=', $hit.rank)"/>-->
       </xsl:variable>
       
       <xsl:choose>
@@ -2212,7 +2217,8 @@
             <span class="hit"><xsl:apply-templates/></span>
          </xsl:when>
          <xsl:otherwise>
-            <a href="{$snippet.link}" class="hit"><xsl:apply-templates/></a>
+            <!--<a href="{$snippet.link}" class="hit"><xsl:apply-templates/></a>-->
+            <span class="hit"><xsl:apply-templates/></span>
          </xsl:otherwise>
       </xsl:choose> 
       
