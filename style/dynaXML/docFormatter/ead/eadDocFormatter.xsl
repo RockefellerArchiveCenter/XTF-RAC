@@ -208,6 +208,11 @@
                <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
                <script src="script/yui/connection-min.js" type="text/javascript"/>
                <xsl:copy-of select="$brand.links"/>
+               <script type="text/javascript">
+                  $(document).ready(function(){
+                  $(".active")[0].scrollIntoView();
+                  });
+               </script>
                <title>
                   <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
                   <xsl:text>  </xsl:text>
@@ -715,6 +720,11 @@
                                           <xsl:for-each
                                              select="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
                                              <div class="tocSubrow">
+                                                <xsl:if test="$chunk.id = @id">
+                                                   <xsl:attribute name="class">
+                                                      <xsl:value-of select="concat(@class,'tocSubrow active')"/>
+                                                   </xsl:attribute>
+                                                </xsl:if>
                                                 <xsl:call-template name="make-toc-link">
                                                   <xsl:with-param name="submenuID"
                                                   select="$submenuID"/>
