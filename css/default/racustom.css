@@ -278,11 +278,6 @@ a.hit {
    color: #c45414 !important;
    font-weight: bold;
 }
-.toc-hi{
-   background-color:rgba(196, 84, 20, 0.1) !important;
-   color: #c45414 !important;
-   font-weight: bold;
-}
 .hit-count{
    background-color:rgba(196, 84, 20, 0.1) !important;
    color: #c45414 !important;
@@ -349,7 +344,7 @@ a.hit {
 #tocWrapper { /* required to avoid jumping */
     position: fixed !important;
     position: absolute;
-    top: 255px;
+    top: 257px;
     left: 1%;
     bottom:1.6em;
     width:27%;
@@ -394,7 +389,7 @@ ul.none {list-style:none;}
 #content-wrapper { /* required to avoid jumping */
     position: fixed !important;
     position: absolute;
-    top: 255px;
+    top: 257px;
     right:1%;
     left:31%;
     bottom:1.6em;

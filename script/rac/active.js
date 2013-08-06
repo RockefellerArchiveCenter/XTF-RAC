@@ -11,5 +11,5 @@ else if ($("#adminlink").is(':visible')){
     $("#adminlinkMenu").parent().parent().addClass("active"); } 
 else if ($("#physdesclink").is(':visible')){
     $("#physdesclinkMenu").parent().parent().addClass("active"); } 
-else {}   
+else {    }   
     });
