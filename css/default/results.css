@@ -139,8 +139,8 @@ div.docHit {
 }
 
 .hitRank {float:left; width:2%;}
-.resultIcon {float:left; width:5%;}
-.resultContent {float:left; width:89%;}
+.resultIcon {float:left; width:6%;}
+.resultContent {float:left; width:82%;}
 .result {float:left;width:100%;margin-bottom:.5em;}
 .resultLabel {float:left; width:10%; text-align:right;font-weight:bold;margin-right:1%}
 .resultText {float:left; width:85%;}
@@ -148,17 +148,18 @@ div.docHit {
 #docHits {float:right; width:73%;padding-bottom:1%}
 #docHits .hitRank {width:3%}
 #docHits .resultIcon {width:6%;}
-#docHits .resultContent {width:80%;}
+#docHits .resultContent {width:82%;}
 #docHits .resultLabel {width:15%;}
 #docHits .resultText {width:80%;}
 
 .subdocument {float:left; padding-top:.5em;padding-bottom:.5em;padding-left:1%;padding-right:1%;min-height:3em;}
-#docHits .subdocument {width:113%;}
+#docHits .subdocument {width:114%;}
 .results .subdocument {width:103%;}
 .subdocument:nth-of-type(odd) {background: rgb(228, 228, 228);border-top: 1px dashed #999;border-bottom: 1px dashed #999;}
-.subdocument .title {width:80%; float:left;}
+.subdocument .title {width:80%; float:left;font-weight:bold}
 .subdocument .matches {float:left;width:97%;margin-left:3%;font-size:.9em;margin-top:.5em;}
 .subdocument .result {font-size:.9em;}
+.subdocument .resultLabel {width:10% !important}
 
 div#main_2, div#main_4, div#main_6, div#main_8, div#main_10, div#main_12 {
 	
