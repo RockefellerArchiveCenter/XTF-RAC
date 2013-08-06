@@ -8,7 +8,7 @@ else if ($("#arrangementlink").is(':visible')){
 else if ($("#bioghist").is(':visible')){
     $("#bioghistMenu").parent().parent().addClass("active"); }
 else if ($("#adminlink").is(':visible')){
-    $("#aminlinkMenu").parent().parent().addClass("active"); } 
+    $("#adminlinkMenu").parent().parent().addClass("active"); } 
 else if ($("#physdesclink").is(':visible')){
     $("#physdesclinkMenu").parent().parent().addClass("active"); } 
 else {}   
