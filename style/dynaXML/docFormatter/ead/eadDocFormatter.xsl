@@ -206,9 +206,19 @@
                <link rel="stylesheet" type="text/css" href="{$css.path}ead.css"/>
                <link rel="alternate" type="application/xml" href="data/{$docId}" />
                <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
-               <script src="script/yui/connection-min.js" type="text/javascript"/> 
-               
+               <script src="script/yui/connection-min.js" type="text/javascript"/>
                <xsl:copy-of select="$brand.links"/>
+               <script type="text/javascript">
+                  //<![CDATA[
+ var nearToBottom = 100;
+
+if ($(window).scrollTop() + $(window).height() >
+    $(document).height() - nearToBottom) { 
+   $(this).next().show();
+} 
+//]]>
+</script>
+
                <title>
                   <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
                   <xsl:text>  </xsl:text>
@@ -220,6 +230,8 @@
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
                   <a href="/xtf/search">
+                     <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
+                        alt="The Rockefeller Archive Center" border="0"/>
                      <h1>dimes.rockarch.org</h1>
                      <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
                         Center</p>
