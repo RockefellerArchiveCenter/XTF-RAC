@@ -210,7 +210,7 @@
                   <xsl:call-template name="body"/>
                </div>
                <xsl:copy-of select="$brand.feedback"/>
-               <xsl:copy-of select="$brand.footer"/>
+               <div class="fixedFooter"><xsl:copy-of select="$brand.footer"/></div>
           </body>
          </html>
       </xsl:result-document>
@@ -363,11 +363,12 @@
          <xsl:with-param name="resultTree"> 
             <div id="tocWrapper">
                <div id="toc">
-                  <ul class="nomark">
-                     <li><a href="#overview">Overview</a></li>
-                     <li><a href="#location">Location</a></li>
-                     <li><a href="#details">Details</a></li>
-                  </ul>
+                  <div class="contents">
+                  <h4>Contents</h4>
+                  <div class="tocRow"><a href="#overview"><div class="tocItem">Overview</div></a></div>
+                     <div class="tocRow"><a href="#location"><div class="tocItem">Location</div></a></div>
+                     <div class="tocRow"><a href="#details"><div class="tocItem">Details</div></a></div>
+                  </div>
                   <div class="subjects">
                      <xsl:if test="mods:subject">
                         <h4>Subjects</h4>
