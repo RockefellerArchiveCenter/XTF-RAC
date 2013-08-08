@@ -210,7 +210,7 @@
                <xsl:copy-of select="$brand.links"/>
                <script type="text/javascript">
                   $(document).ready(function(){
-                  $(".active")[0].scrollIntoView();
+                  $(".contentsList .active")[0].scrollIntoView();
                   });
                </script>
                <title>
@@ -641,16 +641,28 @@
                                  to form a hyperlink to each.   Delete this section if you do not
                                  wish the c01 titles to appear in the table of contents.-->
                               <xsl:for-each select="archdesc/dsc/child::*[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or @level='subgrp' or @level='subseries' or (@level='otherlevel' and not(child::did/container))]">
-                                 <div class="tocRow">
-                                    <xsl:if test="$chunk.id = @id">
-                                       <xsl:attribute name="class">
-                                          <xsl:value-of select="concat(@class,'tocRow active')"/>
-                                       </xsl:attribute>
-                                    </xsl:if>
-                                    <xsl:variable name="submenuID">
-                                       <xsl:variable name="seriesID" select="@id"/>
-                                       <xsl:value-of select="concat('dsc',$seriesID)"/>
-                                    </xsl:variable>
+                                 <xsl:variable name="submenuID">
+                                    <xsl:variable name="seriesID" select="@id"/>
+                                    <xsl:value-of select="concat('dsc',$seriesID)"/>
+                                 </xsl:variable>
+                                 <div class="tocRow" id="{@id}">
+                                    <xsl:attribute name="class">
+                                       <xsl:value-of select="'tocRow'"/>
+                                    </xsl:attribute>
+                                    <xsl:choose>
+                                       <xsl:when
+                                          test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+                                          <xsl:attribute name="class">
+                                             <xsl:value-of select="'tocRow accordionButton'"/>
+                                          </xsl:attribute>
+                                       </xsl:when>
+                                       <!--<xsl:when test="$chunk.id = @id">
+                                          <xsl:attribute name="class">
+                                             <xsl:value-of select="'tocRow active'"/>
+                                          </xsl:attribute>
+                                       </xsl:when>-->
+                                    </xsl:choose>
+
                                     <xsl:call-template name="make-toc-link">
                                        <xsl:with-param name="submenuID" select="$submenuID"/>
                                        <xsl:with-param name="name">
@@ -706,13 +718,15 @@
                                           <xsl:if test="descendant-or-self::dao">true</xsl:if>
                                        </xsl:with-param>
                                     </xsl:call-template>
+                                 </div>
+
                                     <!-- Displays the unittitle and unitdates for each c02 if it is a subseries 
                                        (as evidenced by the level attribute series) and forms a hyperlink to each.   
                                        Delete this section if you do not wish the c02 titles to appear in the 
                                        table of contents. -->
                                     <xsl:if
                                        test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
-                                       <div class="more" id="{$submenuID}">
+                                       <div class="more accordionContent" id="{$submenuID}">
                                           <xsl:if test="$parentID = $submenuID">
                                              <xsl:attribute name="style"
                                                 >display:block;</xsl:attribute>
@@ -791,14 +805,14 @@
                                        </div>
                                     </xsl:if>
                                     <!--This ends the section that causes the c02 titles to appear in the table of contents.-->
-                                 </div>
+
                               </xsl:for-each>
                               <!--This ends the section that causes the c01 titles to appear in the table of contents.-->
                            </xsl:if>
                         </div> 
                      </xsl:when>
                     <xsl:when test="$doc.view='dao'">
-                        <div class="contents">
+                        <div class="contentsList">
                            <h4>Contents List</h4>
                            <xsl:for-each select="archdesc/dsc/child::*[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or @level='subgrp' or @level='subseries' or (@level='otherlevel' and not(child::did/container))][descendant-or-self::dao]">
                                  <xsl:variable name="submenuID">
@@ -905,7 +919,7 @@
                         <div class="contents">
                            <h4>Contents</h4>
                            <xsl:if test="archdesc/did">
-                              <div class="tocRow">
+                              <div class="tocRow" id="headerlink">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Overview'"/>
                                  <xsl:with-param name="id" select="'headerlink'"/>
@@ -921,7 +935,7 @@
                            <xsl:if test="archdesc/accessrestrict or archdesc/userestrict or 
                               archdesc/phystech or archdesc/otherfindaid or  archdesc/relatedmaterial or 
                               archdesc/altformavail or archdesc/originalsloc or archdesc/bibliography">
-                              <div class="tocRow">
+                              <div class="tocRow" id="restrictlink">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Access and Use'"/>
                                  <xsl:with-param name="id" select="'restrictlink'"/>
@@ -936,7 +950,7 @@
                               </div>
                            </xsl:if>
                            <xsl:if test="archdesc/arrangement/head">
-                              <div class="tocRow">
+                              <div class="tocRow" id="arrangementlink">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Arrangement'"/>
                                  <xsl:with-param name="id" select="'arrangementlink'"/>
@@ -946,7 +960,7 @@
                               </div>
                            </xsl:if>
                            <xsl:if test="archdesc/bioghist/head"> 
-                              <div class="tocRow">
+                              <div class="tocRow" id="bioghist">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Biographical/Historical Note'"/>
                                  <xsl:with-param name="id" select="'bioghist'"/>
@@ -967,7 +981,7 @@
                               archdesc/fileplan or archdesc/custodialhist or archdesc/accruals or
                               archdesc/processinfo or archdesc/appraisal or
                               archdesc/separatedmaterial or archdesc/altformavail or archdesc/accruals">
-                              <div class="tocRow">
+                              <div class="tocRow" id="adminlink">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Administrative Information'"/>
                                  <xsl:with-param name="id" select="'adminlink'"/>
@@ -985,7 +999,7 @@
                               </div>
                            </xsl:if>
                            <xsl:if test="archdesc/did/physdesc[@label = 'General Physical Description note']">
-                              <div class="tocRow">
+                              <div class="tocRow" id="physdesclink">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Physical Description'"/>
                                  <xsl:with-param name="id" select="'physdesclink'"/>
@@ -1139,7 +1153,7 @@
       <xsl:if test="@id = $chunk.id">
          <a name="X"/>
       </xsl:if>
-      <div class="moreLess">
+      <!--<div class="moreLess">
                <xsl:if test=".[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds']">
                   <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='otherlevel' or (@level='series' and parent::*[@level='recordgrp'])]">
                      <xsl:choose>
@@ -1153,7 +1167,7 @@
                      </xsl:choose>
                   </xsl:if>
                </xsl:if>            
-            </div>
+            </div>-->
             
                <xsl:choose>
                   <!--<xsl:when test="$chunk.id = @id">
@@ -1177,7 +1191,7 @@
 							</xsl:otherwise>
 						</xsl:choose>
                         </xsl:attribute>
-                        <div class="tocItem" id="{$id}Menu">
+                        <div class="tocItem">
                            <xsl:choose>
                               <xsl:when test="$indent = 2">
                                  <xsl:attribute name="class">inventory</xsl:attribute>
@@ -1198,7 +1212,7 @@
                   </xsl:when>
                   <xsl:otherwise>
                      <a>
-                        <xsl:attribute name="onclick">showHide('<xsl:value-of select="$submenuID"/>');</xsl:attribute>
+                        <!--<xsl:attribute name="onclick">showHide('<xsl:value-of select="$submenuID"/>');</xsl:attribute>-->
                         <xsl:attribute name="href">
                            <xsl:choose>
                               <xsl:when test="($query != '0') and ($query != '')">
@@ -1212,7 +1226,7 @@
                               </xsl:otherwise>
                            </xsl:choose>
                         </xsl:attribute>
-                        <div class="tocItem" id="{$id}Menu">
+                        <div class="tocItem">
                            <xsl:choose>
                               <xsl:when test="$indent = 2">
                                  <xsl:attribute name="class">inventory</xsl:attribute>
