@@ -204,11 +204,11 @@
                <script src="script/yui/connection-min.js" type="text/javascript"/>
                <xsl:copy-of select="$brand.links"/>
               
-               <script type="text/javascript">
+               <!--<script type="text/javascript">
                   $(document).ready(function(){
                   $(".contentsList .active")[0].scrollIntoView();
                   });
-               </script>
+               </script>-->
                
                <title>
                   <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>

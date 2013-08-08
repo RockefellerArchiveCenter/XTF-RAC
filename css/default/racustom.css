@@ -359,21 +359,21 @@ a.hit {
 #toc a:hover {text-decoration:underline;}
 #toc h4 {padding:.5em; background-color:#0D8061;border-radius:5px 5px 0 0;margin:0;color:#fff;font-size:1.5em;}
 #toc .inventory{padding-left:.2em;padding-right:.2em;float:left;}
-#toc .inventory2{padding-left:2em;float:left;}
+#toc .inventory2{padding-left:1em;float:left;width:88%}
 #toc .tocItem {float:left; padding-right:.2em;width:100%}
-#toc .tocRow {font-size:1.2em;float:left;width:96%;padding:2%;}
-#toc .tocRow:hover {background-color:#ccc}
-div.tocRow:nth-of-type(even) {background-color: rgb(228, 228, 228); border-top: 1px dashed #999;border-bottom:1px dashed #999;}
-#toc .active {background-color: #999;border-left: .5em solid #c45414;padding-right: .5em;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+#toc .tocRow {font-size:1.2em;float:left;width:96%;padding:2%;background:#eee;border-bottom:1px dashed #999; border-top:0}
+#toc .tocRow:hover {background-color:#ccc !important}
+#toc .active {background-color: #999 !important;border-left: .5em solid #c45414;padding-right: .5em;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 #toc .active a {color:#fff}
-#toc .active:hover {background-color:#999}
-#toc .tocSubrow {float:left;width:100%}
+#toc .active:hover {background-color:#999 !important}
+#toc .tocSubrow {float:left;width:100%;padding:1%;border-bottom:1px dashed #999;border-left:5px solid #999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 #toc .accordionButton:after {margin-top: .1em;}
 #toc .on:after {margin-top: .4em;}
-.tocSubrow:nth-of-type(odd) {background-color: rgb(228, 228, 228); border-top: 1px dashed #999;border-bottom:1px dashed #999;}
-.tocSubrow.active {border-left: .2em solid #c45414 !important;}
+.tocSubrow:nth-of-type(odd) {background-color: rgb(228, 228, 228);}
+.tocSubrow.active {border-left: 5px solid #c45414 !important;}
 
 .contents, .contentsList {background-color:#eee;border-radius:5px 5px 0 0;box-shadow: 0px 0px 10px #666;float:left; width:100%}
+.contents .accordionButton {background-color:#eee;}
 .contents:hover {box-shadow: 0px 0px 5px #666;}
 
 .moreLess {float:left; padding-right:.2em;width:2%;}
