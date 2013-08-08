@@ -1544,7 +1544,7 @@
                                       <xsl:with-param name="name" select="'Restrictions'"/>
                                       <xsl:with-param name="id" select="string(@id)"/>
                                       <xsl:with-param name="nodes" select="accessrestrict"/>
-                                      <xsl:with-param name="doc.view" select="'Restrictions'"/>
+                                      <xsl:with-param name="doc.view" select="'restrictions'"/>
                                    </xsl:call-template>
                                 </div>
                                 <xsl:if test="$didHitCount &gt; 0">
@@ -1919,8 +1919,17 @@
    </xsl:template>
      
    <xsl:template name="restrictions">
-      <h4>Restrictions</h4>
-      <xsl:apply-templates select="accessrestrict[not(child::legalstatus)] | userestrict"/>
+      <html xml:lang="en" lang="en">
+         <head>
+            <title/>
+            <link rel="stylesheet" type="text/css" href="{$css.path}racustom.css"/>
+         </head>
+         <body>
+            <div class="dscDescription">
+            <xsl:apply-templates select="accessrestrict[not(child::legalstatus)] | userestrict"/>
+            </div>
+         </body>
+      </html>
    </xsl:template>
    
    <xsl:template name="make-popup-link">

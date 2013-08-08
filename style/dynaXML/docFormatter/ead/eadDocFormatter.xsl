@@ -237,7 +237,7 @@
                
                <div class="main">
                   <xsl:call-template name="toc"/>
-                  <xsl:call-template name="body"/>    
+                  <xsl:call-template name="body"/>  
                </div>
                <xsl:copy-of select="$brand.feedback"/>
                <div class="fixedFooter"><xsl:copy-of select="$brand.footer"/></div>
@@ -506,7 +506,6 @@
             </xsl:choose>
          </div>
       </div>
-
    </xsl:template>
    <!-- DG: tab links like "Collection Description", "Contents List"  -->
    <xsl:template name="make-tab-link">
@@ -638,7 +637,7 @@
                                  evidenced by the level attribute series)and numbers them
                                  to form a hyperlink to each.   Delete this section if you do not
                                  wish the c01 titles to appear in the table of contents.-->
-                              <xsl:for-each select="archdesc/dsc/child::*[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or @level='subgrp' or @level='subseries' or (@level='otherlevel' and not(child::did/container))]">
+                              <xsl:for-each select="archdesc/dsc/child::*[@level!='file' or @level='collection' or @level='recordgrp' or @level='fonds' or @level='subgrp' or @level='subseries' or (@level='otherlevel' and not(child::did/container))]">
                                  <xsl:variable name="submenuID">
                                     <xsl:variable name="seriesID" select="@id"/>
                                     <xsl:value-of select="concat('dsc',$seriesID)"/>

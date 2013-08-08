@@ -192,9 +192,9 @@
                     });
         </script>
             <script type="text/javascript">
-                     $(document).ready(function() {
+
                         $.removeCookie('openContent');
-                     });
+
                   </script>
                </head>
                <body>

@@ -2,6 +2,7 @@ $(document).ready(function() {
 var open = "#" + $.cookie('openContent');
 
 $('.accordionButton').click(function() {
+$.removeCookie('openContent');
 $('.accordionButton').removeClass('on');
 $('.accordionContent').slideUp('normal');
 

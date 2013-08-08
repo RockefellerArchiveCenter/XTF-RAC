@@ -358,8 +358,8 @@ a.hit {
 #toc a {text-decoration:none; color: #c45414;}
 #toc a:hover {text-decoration:underline;}
 #toc h4 {padding:.5em; background-color:#0D8061;border-radius:5px 5px 0 0;margin:0;color:#fff;font-size:1.5em;}
-#toc .inventory{padding-left:.2em;padding-right:.2em;float:left;}
-#toc .inventory2{padding-left:1em;float:left;width:88%}
+#toc .inventory{padding-left:.2em;padding-right:.2em;float:left;max-width:86%;}
+#toc .inventory2{padding-left:1em;float:left;max-width:88%}
 #toc .tocItem {float:left; padding-right:.2em;width:100%}
 #toc .tocRow {font-size:1.2em;float:left;width:96%;padding:2%;background:#eee;border-bottom:1px dashed #999; border-top:0}
 #toc .tocRow:hover {background-color:#ccc !important}
