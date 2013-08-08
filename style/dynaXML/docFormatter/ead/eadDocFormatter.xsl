@@ -642,23 +642,18 @@
                                     <xsl:variable name="seriesID" select="@id"/>
                                     <xsl:value-of select="concat('dsc',$seriesID)"/>
                                  </xsl:variable>
-                                 <div class="tocRow" id="{@id}">
+                                 <div id="{@id}">
                                     <xsl:attribute name="class">
-                                       <xsl:value-of select="'tocRow'"/>
+                                       <xsl:value-of select="'tocRow '"/>
+                                       <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+                                          <xsl:value-of select="'accordionButton '"/>
+                                       </xsl:if>
+                                       <xsl:if test="$chunk.id = @id">
+                                          <xsl:attribute name="class">
+                                             <xsl:value-of select="'active '"/>
+                                          </xsl:attribute>
+                                       </xsl:if>
                                     </xsl:attribute>
-                                    <xsl:choose>
-                                       <xsl:when
-                                          test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
-                                          <xsl:attribute name="class">
-                                             <xsl:value-of select="'tocRow accordionButton'"/>
-                                          </xsl:attribute>
-                                       </xsl:when>
-                                       <!--<xsl:when test="$chunk.id = @id">
-                                          <xsl:attribute name="class">
-                                             <xsl:value-of select="'tocRow active'"/>
-                                          </xsl:attribute>
-                                       </xsl:when>-->
-                                    </xsl:choose>
 
                                     <xsl:call-template name="make-toc-link">
                                        <xsl:with-param name="submenuID" select="$submenuID"/>
@@ -916,7 +911,7 @@
                         <div class="contents">
                            <h4>Contents</h4>
                            <xsl:if test="archdesc/did">
-                              <div class="tocRow" id="headerlink">
+                              <div class="tocRow" id="headerlinkMenu">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Overview'"/>
                                  <xsl:with-param name="id" select="'headerlink'"/>
@@ -932,7 +927,7 @@
                            <xsl:if test="archdesc/accessrestrict or archdesc/userestrict or 
                               archdesc/phystech or archdesc/otherfindaid or  archdesc/relatedmaterial or 
                               archdesc/altformavail or archdesc/originalsloc or archdesc/bibliography">
-                              <div class="tocRow" id="restrictlink">
+                              <div class="tocRow" id="restrictlinkMenu">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Access and Use'"/>
                                  <xsl:with-param name="id" select="'restrictlink'"/>
@@ -947,7 +942,7 @@
                               </div>
                            </xsl:if>
                            <xsl:if test="archdesc/arrangement/head">
-                              <div class="tocRow" id="arrangementlink">
+                              <div class="tocRow" id="arrangementlinkMenu">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Arrangement'"/>
                                  <xsl:with-param name="id" select="'arrangementlink'"/>
@@ -957,7 +952,7 @@
                               </div>
                            </xsl:if>
                            <xsl:if test="archdesc/bioghist/head"> 
-                              <div class="tocRow" id="bioghist">
+                              <div class="tocRow" id="bioghistMenu">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Biographical/Historical Note'"/>
                                  <xsl:with-param name="id" select="'bioghist'"/>
@@ -978,7 +973,7 @@
                               archdesc/fileplan or archdesc/custodialhist or archdesc/accruals or
                               archdesc/processinfo or archdesc/appraisal or
                               archdesc/separatedmaterial or archdesc/altformavail or archdesc/accruals">
-                              <div class="tocRow" id="adminlink">
+                              <div class="tocRow" id="adminlinkMenu">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Administrative Information'"/>
                                  <xsl:with-param name="id" select="'adminlink'"/>
@@ -996,7 +991,7 @@
                               </div>
                            </xsl:if>
                            <xsl:if test="archdesc/did/physdesc[@label = 'General Physical Description note']">
-                              <div class="tocRow" id="physdesclink">
+                              <div class="tocRow" id="physdesclinkMenu">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Physical Description'"/>
                                  <xsl:with-param name="id" select="'physdesclink'"/>
