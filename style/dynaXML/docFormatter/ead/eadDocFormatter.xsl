@@ -163,17 +163,12 @@
          <xsl:when test="$doc.view='print'">
             <xsl:call-template name="print"/>
          </xsl:when>
-         <!-- popup for additional formats -->
-         <xsl:when test="$doc.view='additionalFormats'">
-            <xsl:call-template name="additionalFormats"/>
-         </xsl:when>
-         <!-- popup for file level descriptions 
+         <!-- popup for file level descriptions -->
          <xsl:when test="$doc.view='dscDescription'">
             <xsl:call-template name="dscDescription"/>
          </xsl:when>
-        -->
-         <xsl:when test="$doc.view='dscRelatedmaterial'">
-            <xsl:call-template name="dscRelatedmaterial"/>
+         <xsl:when test="$doc.view='restrictions'">
+            <xsl:call-template name="restrictions"/>
          </xsl:when>
          <!--XML view for debugging -->
          <xsl:when test="$doc.view='xml'">
@@ -208,11 +203,13 @@
                <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
                <script src="script/yui/connection-min.js" type="text/javascript"/>
                <xsl:copy-of select="$brand.links"/>
+              
                <script type="text/javascript">
                   $(document).ready(function(){
                   $(".contentsList .active")[0].scrollIntoView();
                   });
                </script>
+               
                <title>
                   <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
                   <xsl:text>  </xsl:text>

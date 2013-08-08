@@ -67,7 +67,6 @@
       <div id="content-wrapper">
          <div id="{$chunk.id}">
             <xsl:choose>
-
                <xsl:when test="$chunk.id = 'headerlink'">
                   <xsl:apply-templates select="/ead/archdesc/did"/>
                </xsl:when>
@@ -1527,33 +1526,26 @@
                                 child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
                                 child::separatedmaterial |  child::controlaccess">
-                                <a href="#{@id}_dsc" class="dialog_dsc" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Additional description']);">
-                                   Additional description
-                                </a>
-                                <div class="overlay" id="{@id}_dsc">
-                                   <div class="dscDescription">
-                                      <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
-                                      <xsl:apply-templates select="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
-                                         child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
-                                         child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
-                                         child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
-                                         child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
-                                         child::separatedmaterial |  child::controlaccess"/>
-                                   </div>
+                                <div class="daoLink"> 
+                                   <xsl:call-template name="make-popup-link">
+                                      <xsl:with-param name="name" select="'Additional description'"/>
+                                      <xsl:with-param name="id" select="string(@id)"/>
+                                      <xsl:with-param name="nodes" select="scopecontent"/>
+                                      <xsl:with-param name="doc.view" select="'dscDescription'"/>
+                                   </xsl:call-template>
                                 </div>
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                 </xsl:if>
                              </xsl:if>
-                             <xsl:if test="child::accessrestrict[not(child::legalstatus)] |   child::userestrict">
-                                <a href="#{@id}_dscrestrict" class="dialog_dsc" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Restrictions']);">
-                                   Restrictions
-                                </a>
-                                <div class="overlay" id="{@id}_dscrestrict">
-                                   <div class="dscDescription">
-                                      <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
-                                      <xsl:apply-templates select="child::accessrestrict[not(child::legalstatus)] |   child::userestrict"/>
-                                   </div>
+                             <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
+                                <div class="daoLink"> 
+                                   <xsl:call-template name="make-popup-link">
+                                      <xsl:with-param name="name" select="'Restrictions'"/>
+                                      <xsl:with-param name="id" select="string(@id)"/>
+                                      <xsl:with-param name="nodes" select="accessrestrict"/>
+                                      <xsl:with-param name="doc.view" select="'Restrictions'"/>
+                                   </xsl:call-template>
                                 </div>
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
@@ -1797,8 +1789,7 @@
                   <xsl:call-template name="daoCitation"/>
                </xsl:variable>     
                <xsl:variable name="daoFile" select="substring-before(tokenize($daoLink,'/')[position()=last()],'.')"/>
-               <xsl:variable name="daoImg" select="concat(string-join(tokenize($daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/>
-               
+               <xsl:variable name="daoImg" select="concat(string-join(tokenize($daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/>               
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                  <xsl:call-template name="component-did-core"/>
                  <img src="{$daoImg}"/>
@@ -1904,42 +1895,34 @@
       </p>   
    </xsl:template>
    <xsl:template match="xtf:meta"/>
+   <xsl:template match="dao" mode="moreInfo"/>
    <xsl:template match="*" mode="moreInfo">
       <div>
-         <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
-         <xsl:apply-templates select="did/physdesc"/>
+         <xsl:apply-templates select="did/unittitle | did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
+         <xsl:apply-templates select="../did/physdesc"/>
          <xsl:apply-templates select="*[not(name() = 'did')]"/>
       </div>
    </xsl:template>
-   
-   <xsl:template name="dscRelatedmaterial">
+
+   <xsl:template name="dscDescription">
       <html xml:lang="en" lang="en">
          <head>
             <title/>
             <link rel="stylesheet" type="text/css" href="{$css.path}racustom.css"/>
          </head>
-         <body>      
+         <body>
             <div class="dscDescription">
-               <xsl:for-each select="descendant-or-self::*[@id = $chunk.id]">
-                  <xsl:apply-templates select="altformavail | relatedmaterial"/>
-               </xsl:for-each>
-               <div class="closeWindow">
-                  <a>
-                     <xsl:attribute name="href">javascript://</xsl:attribute>
-                     <xsl:attribute name="onClick">
-                        <xsl:text>javascript:window.close('popup')</xsl:text>
-                     </xsl:attribute>
-                     X Close this Window
-                  </a>
-               </div>
+               <xsl:apply-templates select="descendant-or-self::*[@id = $chunk.id]" mode="moreInfo"/>
             </div>
-               </body>
+         </body>
       </html>
    </xsl:template>
-   <xsl:template name="additionalFormats">
-      <h4>Location of Copies</h4>
-      <xsl:apply-templates select="altformavail"/>
+     
+   <xsl:template name="restrictions">
+      <h4>Restrictions</h4>
+      <xsl:apply-templates select="accessrestrict[not(child::legalstatus)] | userestrict"/>
    </xsl:template>
+   
    <xsl:template name="make-popup-link">
       <xsl:param name="name"/>
       <xsl:param name="id"/>
@@ -1947,10 +1930,7 @@
       <xsl:param name="doc.view"/>
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of 
          select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>
-      <a>
-         <xsl:attribute name="href">
-            <xsl:text>javascript:openWin('</xsl:text><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/><xsl:text>')</xsl:text>
-         </xsl:attribute>
+      <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}" data-citation="" data-title="{$name}" data-width="400" data-height="200" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Additional Information']);">
          <xsl:value-of select="$name"/>
       </a>
    </xsl:template>
