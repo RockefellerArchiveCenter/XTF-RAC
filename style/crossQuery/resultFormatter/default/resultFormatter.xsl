@@ -290,7 +290,11 @@
                            </ul>
                         </div>
                         <div id="searchbox">
-                           <input class="searchbox" type="text" name="keyword" value="{$keyword}"/>
+                           <input class="searchbox" type="text" name="keyword">
+                           <xsl:attribute name="value">
+                              <xsl:if test="$keyword"><xsl:value-of select="$keyword"/></xsl:if>
+                              <xsl:if test="$text"><xsl:value-of select="$text"/></xsl:if>
+                           </xsl:attribute></input>
                            <div id="advancedSearch">
                               <div id="boolean">
                                  <xsl:choose>
