@@ -204,12 +204,6 @@
                <script src="script/yui/connection-min.js" type="text/javascript"/>
                <xsl:copy-of select="$brand.links"/>
               
-               <!--<script type="text/javascript">
-                  $(document).ready(function(){
-                  $(".contentsList .active")[0].scrollIntoView();
-                  });
-               </script>-->
-               
                <title>
                   <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
                   <xsl:text>  </xsl:text>
@@ -248,6 +242,13 @@
                <xsl:copy-of select="$brand.feedback"/>
                <div class="fixedFooter"><xsl:copy-of select="$brand.footer"/></div>
           </body>
+            <script type="text/javascript">
+                  $(document).ready(function(){
+                  if($(".contentsList .active").length) {
+                  $(".contentsList .active")[0].scrollIntoView();
+                  } else {}
+                  });
+               </script>
          </html>
       </xsl:result-document>
    </xsl:template>
@@ -629,7 +630,7 @@
                      a matching element with content in the finding aid.-->
                   <xsl:choose>   
                      <xsl:when test="$doc.view='contents'">
-                        <div class="contents">
+                        <div class="contentsList">
                            <h4>Contents List</h4>
                            <xsl:if test="archdesc/dsc/child::*">
                               <xsl:apply-templates select="archdesc/dsc/head" mode="tocLink"/>
