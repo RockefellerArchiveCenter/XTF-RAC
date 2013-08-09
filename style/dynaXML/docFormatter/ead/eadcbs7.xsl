@@ -1912,7 +1912,7 @@
          </head>
          <body>
             <div class="dscDescription">
-               <xsl:apply-templates select="descendant-or-self::*[@id = $chunk.id]" mode="moreInfo"/>
+               <xsl:apply-templates select="*[@id = $chunk.id]" mode="moreInfo"/>
             </div>
          </body>
       </html>

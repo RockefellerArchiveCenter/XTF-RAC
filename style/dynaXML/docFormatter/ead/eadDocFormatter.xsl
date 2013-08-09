@@ -637,274 +637,24 @@
                                  evidenced by the level attribute series)and numbers them
                                  to form a hyperlink to each.   Delete this section if you do not
                                  wish the c01 titles to appear in the table of contents.-->
-                              <xsl:for-each select="archdesc/dsc/child::*[@level!='file' or @level='collection' or @level='recordgrp' or @level='fonds' or @level='subgrp' or @level='subseries' or (@level='otherlevel' and not(child::did/container))]">
-                                 <xsl:variable name="submenuID">
-                                    <xsl:variable name="seriesID" select="@id"/>
-                                    <xsl:value-of select="concat('dsc',$seriesID)"/>
-                                 </xsl:variable>
-                                 <div id="{@id}">
-                                    <xsl:attribute name="class">
-                                       <xsl:value-of select="'tocRow '"/>
-                                       <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
-                                          <xsl:value-of select="'accordionButton '"/>
-                                       </xsl:if>
-                                       <xsl:if test="$chunk.id = @id">
-                                          <xsl:attribute name="class">
-                                             <xsl:value-of select="'active '"/>
-                                          </xsl:attribute>
-                                       </xsl:if>
-                                    </xsl:attribute>
-
-                                    <xsl:call-template name="make-toc-link">
-                                       <xsl:with-param name="submenuID" select="$submenuID"/>
-                                       <xsl:with-param name="name">
-                                          <xsl:variable name="levelID">
-                                             <xsl:choose>
-                                                <xsl:when test="@level='series'">Series
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                <xsl:when test="@level='subseries'">Subseries
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                <xsl:when test="@level='subsubseries'">Sub-Subseries
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                <xsl:when test="@level='collection'">Collection
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                <xsl:when test="@level='subcollection'"
-                                                  >Subcollection <xsl:value-of select="did/unitid"
-                                                  />: </xsl:when>
-                                                <xsl:when test="@level='fonds'">Fonds <xsl:value-of
-                                                  select="did/unitid"/>: </xsl:when>
-                                                <xsl:when test="@level='subfonds'">Subfonds
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                <xsl:when test="@level='recordgrp'">Record Group
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                <xsl:when test="@level='subgrp'">Subgroup
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                <xsl:when
-                                                  test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"
-                                                  ><xsl:value-of select="@otherlevel"/>: </xsl:when>
-                                                <xsl:when
-                                                  test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">
-                                                  <xsl:value-of select="@otherlevel"/>
-                                                </xsl:when>
-                                                <xsl:otherwise><xsl:value-of select="did/unitid"/>:
-                                                </xsl:otherwise>
-                                             </xsl:choose>
-                                          </xsl:variable>
-                                          <xsl:variable name="untititle">
-                                             <xsl:choose>
-                                                <xsl:when test="string-length(did/unittitle) &gt; 1">
-                                                  <xsl:value-of select="did/unittitle"/>
-                                                </xsl:when>
-                                                <xsl:when test="string-length(did/unitdate) &gt; 1">
-                                                  <xsl:value-of select="did/unitdate"/>
-                                                </xsl:when>
-                                                <xsl:otherwise>Unknown</xsl:otherwise>
-                                             </xsl:choose>
-                                          </xsl:variable>
-                                          <xsl:value-of select="concat($levelID,$untititle)"/>
-                                       </xsl:with-param>
-                                       <xsl:with-param name="id" select="@id"/>
-                                       <xsl:with-param name="nodes" select="."/>
-                                       <xsl:with-param name="indent" select="2"/>
-                                       <xsl:with-param name="dao">
-                                          <xsl:if test="descendant-or-self::dao">true</xsl:if>
-                                       </xsl:with-param>
-                                    </xsl:call-template>
-                                 </div>
-
-                                    <!-- Displays the unittitle and unitdates for each c02 if it is a subseries 
-                                       (as evidenced by the level attribute series) and forms a hyperlink to each.   
-                                       Delete this section if you do not wish the c02 titles to appear in the 
-                                       table of contents. -->
-                                    <xsl:if
-                                       test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
-                                       <div class="more accordionContent" id="{$submenuID}">
-                                          <xsl:if test="$parentID = $submenuID">
-                                             <xsl:attribute name="style"
-                                                >display:block;</xsl:attribute>
-                                          </xsl:if>
-                                          <xsl:for-each
-                                             select="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
-                                             <div class="tocSubrow">
-                                                <xsl:if test="$chunk.id = @id">
-                                                   <xsl:attribute name="class">
-                                                      <xsl:value-of select="concat(@class,'tocSubrow active')"/>
-                                                   </xsl:attribute>
-                                                </xsl:if>
-                                                <xsl:call-template name="make-toc-link">
-                                                  <xsl:with-param name="submenuID"
-                                                  select="$submenuID"/>
-                                                  <xsl:with-param name="name">
-                                                  <xsl:variable name="levelID">
-                                                  <xsl:choose>
-                                                  <xsl:when test="@level='series'">Series
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                  <xsl:when test="@level='subseries'">Subseries
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                  <xsl:when test="@level='subsubseries'"
-                                                  >Sub-Subseries <xsl:value-of select="did/unitid"
-                                                  />: </xsl:when>
-                                                  <xsl:when test="@level='collection'">Collection
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                  <xsl:when test="@level='subcollection'"
-                                                  >Subcollection <xsl:value-of select="did/unitid"
-                                                  />: </xsl:when>
-                                                  <xsl:when test="@level='fonds'">Fonds
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                  <xsl:when test="@level='subfonds'">Subfonds
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                  <xsl:when test="@level='recordgrp'">Record Group
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                  <xsl:when test="@level='subgrp'">Subgroup
-                                                  <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                  <xsl:when
-                                                  test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"
-                                                  ><xsl:value-of select="@otherlevel"/>: </xsl:when>
-                                                  <xsl:when
-                                                  test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">
-                                                  <xsl:value-of select="@otherlevel"/>
-                                                  </xsl:when>
-                                                  <xsl:otherwise><xsl:value-of select="did/unitid"
-                                                  />: </xsl:otherwise>
-                                                  </xsl:choose>
-                                                  </xsl:variable>
-                                                  <xsl:variable name="untititle">
-                                                  <xsl:choose>
-                                                  <xsl:when
-                                                  test="string-length(did/unittitle) &gt; 1">
-                                                  <xsl:value-of select="did/unittitle"/>
-                                                  </xsl:when>
-                                                  <xsl:when
-                                                  test="string-length(did/unitdate) &gt; 1">
-                                                  <xsl:value-of select="did/unitdate"/>
-                                                  </xsl:when>
-                                                  <xsl:otherwise>Unknown</xsl:otherwise>
-                                                  </xsl:choose>
-                                                  </xsl:variable>
-                                                  <xsl:value-of select="concat($levelID,$untititle)"
-                                                  />
-                                                  </xsl:with-param>
-                                                  <xsl:with-param name="id" select="@id"/>
-                                                  <xsl:with-param name="nodes" select="."/>
-                                                  <xsl:with-param name="indent" select="3"/>
-                                                  <xsl:with-param name="dao">
-                                                  <xsl:if test="descendant-or-self::dao"
-                                                  >true</xsl:if>
-                                                  </xsl:with-param>
-                                                </xsl:call-template>
-                                             </div>
-                                          </xsl:for-each>
-                                       </div>
-                                    </xsl:if>
-                                    <!--This ends the section that causes the c02 titles to appear in the table of contents.-->
-
-                              </xsl:for-each>
-                              <!--This ends the section that causes the c01 titles to appear in the table of contents.-->
+                              <xsl:apply-templates select="archdesc/dsc/child::*[@level='series'] | 
+                                 archdesc/dsc/child::*[@level='recordgrp'] | 
+                                 archdesc/dsc/child::*[@level='fonds'] | archdesc/dsc/child::*[@level='subgrp'] 
+                                 | archdesc/dsc/child::*[@level='subseries'] 
+                                 | archdesc/dsc/child::*[@level='otherlevel' and not(child::did/container)]" 
+                                 mode="dscTocSeries"/>
                            </xsl:if>
                         </div> 
                      </xsl:when>
                     <xsl:when test="$doc.view='dao'">
                         <div class="contentsList">
                            <h4>Contents List</h4>
-                           <xsl:for-each select="archdesc/dsc/child::*[@level='series' or @level='collection' or @level='recordgrp' or @level='fonds' or @level='subgrp' or @level='subseries' or (@level='otherlevel' and not(child::did/container))][descendant-or-self::dao]">
-                                 <xsl:variable name="submenuID">
-                                    <xsl:variable name="seriesID" select="@id"/>
-                                    <xsl:value-of select="concat('dsc',$seriesID)"/>
-                                 </xsl:variable>                              
-                                 <xsl:call-template name="make-toc-link">
-                                    <xsl:with-param name="submenuID" select="$submenuID"/>
-                                    <xsl:with-param name="name">
-                                       <xsl:variable name="levelID">
-                                          <xsl:choose>
-                                             <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                             <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                             <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                             <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                             <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                             <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                             <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                             <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                             <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                             <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"><xsl:value-of select="@otherlevel"/>: </xsl:when>
-                                             <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)"><xsl:value-of select="@otherlevel"/></xsl:when>
-                                             <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>
-                                          </xsl:choose>
-                                       </xsl:variable>
-                                       <xsl:variable name="untititle">
-                                          <xsl:choose>
-                                             <xsl:when test="string-length(did/unittitle) &gt; 1">
-                                                <xsl:value-of select="did/unittitle"/>       
-                                             </xsl:when>
-                                             <xsl:when test="string-length(did/unitdate) &gt; 1">
-                                                <xsl:value-of select="did/unitdate"/> 
-                                             </xsl:when>
-                                             <xsl:otherwise>Unknown</xsl:otherwise>
-                                          </xsl:choose>
-                                       </xsl:variable>
-                                       <xsl:value-of select="concat($levelID,$untititle)"/>
-                                    </xsl:with-param>
-                                    <xsl:with-param name="id" select="@id"/>
-                                    <xsl:with-param name="nodes" select="."/>
-                                    <xsl:with-param name="indent" select="2"/>
-                                    <xsl:with-param name="dao">
-                                       <xsl:if test="descendant-or-self::dao">true</xsl:if>
-                                    </xsl:with-param>
-                                 </xsl:call-template> 
-                                 <!-- Displays the unittitle and unitdates for each c02 if it is a subseries 
-                                    (as evidenced by the level attribute series) and forms a hyperlink to each.   
-                                    Delete this section if you do not wish the c02 titles to appear in the 
-                                    table of contents. -->
-                                 <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
-                                    <div class="more" id="{$submenuID}">
-                                       <xsl:if test="$parentID = $submenuID">
-                                          <xsl:attribute name="style">display:block;</xsl:attribute>
-                                       </xsl:if>
-                                       <xsl:for-each select="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">                                                
-                                          <xsl:call-template name="make-toc-link">
-                                             <xsl:with-param name="submenuID" select="$submenuID"/>
-                                             <xsl:with-param name="name">
-                                                <xsl:variable name="levelID">
-                                                   <xsl:choose>
-                                                      <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                      <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                      <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                      <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                      <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                      <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                      <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                      <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                      <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
-                                                      <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"><xsl:value-of select="@otherlevel"/>: </xsl:when>
-                                                      <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)"><xsl:value-of select="@otherlevel"/></xsl:when>
-                                                      <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>
-                                                   </xsl:choose>                                          
-                                                </xsl:variable>
-                                                <xsl:variable name="untititle">
-                                                   <xsl:choose>
-                                                      <xsl:when test="string-length(did/unittitle) &gt; 1">
-                                                         <xsl:value-of select="did/unittitle"/>       
-                                                      </xsl:when>
-                                                      <xsl:when test="string-length(did/unitdate) &gt; 1">
-                                                         <xsl:value-of select="did/unitdate"/> 
-                                                      </xsl:when>
-                                                      <xsl:otherwise>Unknown</xsl:otherwise>
-                                                   </xsl:choose>
-                                                </xsl:variable>
-                                                <xsl:value-of select="concat($levelID,$untititle)"/>
-                                             </xsl:with-param>
-                                             <xsl:with-param name="id" select="@id"/>
-                                             <xsl:with-param name="nodes" select="."/>
-                                             <xsl:with-param name="indent" select="3"/>
-                                             <xsl:with-param name="dao">
-                                                <xsl:if test="descendant-or-self::dao">true</xsl:if>
-                                             </xsl:with-param>
-                                          </xsl:call-template>
-                                       </xsl:for-each>                                   
-                                    </div>
-                                 </xsl:if>
-                                 <!--This ends the section that causes the c02 titles to appear in the table of contents.-->
-                              
-                           </xsl:for-each>
+                           <xsl:apply-templates select="archdesc/dsc/child::*[@level='series'][child::dao] | 
+                              archdesc/dsc/child::*[@level='recordgrp'][child::dao] | 
+                              archdesc/dsc/child::*[@level='fonds'][child::dao] | archdesc/dsc/child::*[@level='subgrp'][child::dao] 
+                              | archdesc/dsc/child::*[@level='subseries'][child::dao] 
+                              | archdesc/dsc/child::*[@level='otherlevel' and not(child::did/container)][child::dao]" 
+                              mode="dscTocDao"/>
                         </div>
                      </xsl:when>
                      <xsl:otherwise>  
@@ -1045,6 +795,216 @@
          <xsl:with-param name="id" select="ancestor-or-self::*[@id][1]/@id"/>
          <xsl:with-param name="nodes" select="parent::*"/>
       </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="*" mode="dscTocSeries">
+      <div class="series">
+         <xsl:variable name="submenuID">
+            <xsl:variable name="seriesID" select="@id"/>
+            <xsl:value-of select="concat('dsc',$seriesID)"/>
+         </xsl:variable>
+         <xsl:variable name="levelID">
+            <xsl:choose>
+               <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
+               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"><xsl:value-of select="@otherlevel"/>: </xsl:when>
+               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)"><xsl:value-of select="@otherlevel"/></xsl:when>
+               <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>
+            </xsl:choose>
+         </xsl:variable>
+         <xsl:variable name="untititle">
+            <xsl:choose>
+               <xsl:when test="string-length(did/unittitle) &gt; 1">
+                  <xsl:value-of select="did/unittitle"/>       
+               </xsl:when>
+               <xsl:when test="string-length(did/unitdate) &gt; 1">
+                  <xsl:value-of select="did/unitdate"/> 
+               </xsl:when>
+               <xsl:otherwise>Unknown</xsl:otherwise>
+            </xsl:choose>
+         </xsl:variable>   
+         <xsl:call-template name="make-toc-link">
+            <xsl:with-param name="submenuID" select="$submenuID"/>
+            <xsl:with-param name="name">
+               <xsl:value-of select="concat($levelID,$untititle)"/>
+            </xsl:with-param>
+            <xsl:with-param name="id" select="@id"/>
+            <xsl:with-param name="nodes" select="."/>
+            <xsl:with-param name="indent" select="2"/>
+            <xsl:with-param name="dao">
+               <xsl:if test="child::dao">true</xsl:if>
+            </xsl:with-param>
+         </xsl:call-template> 
+         <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' 
+            or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+            <div class="more" id="{$submenuID}">
+               <xsl:if test="$parentID = $submenuID">
+                  <xsl:attribute name="style">display:block;</xsl:attribute>
+               </xsl:if>
+               <xsl:apply-templates select="child::*[@level='subgrp'] 
+                  | child::*[@level='subseries'] 
+                  | child::*[@level='otherlevel' and not(child::did/container)]" 
+                  mode="dscTocSubseries">
+                  <xsl:with-param name="submenuID" select="$submenuID"/>
+               </xsl:apply-templates>
+            </div>
+         </xsl:if>
+      </div>
+   </xsl:template>
+   <xsl:template match="*" mode="dscTocSubseries">
+      <xsl:param name="submenuID"/>
+      <xsl:variable name="levelID">
+         <xsl:choose>
+            <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"><xsl:value-of select="@otherlevel"/>: </xsl:when>
+            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)"><xsl:value-of select="@otherlevel"/></xsl:when>
+            <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:variable name="untititle">
+         <xsl:choose>
+            <xsl:when test="string-length(did/unittitle) &gt; 1">
+               <xsl:value-of select="did/unittitle"/>       
+            </xsl:when>
+            <xsl:when test="string-length(did/unitdate) &gt; 1">
+               <xsl:value-of select="did/unitdate"/> 
+            </xsl:when>
+            <xsl:otherwise>Unknown</xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:call-template name="make-toc-link">
+            <xsl:with-param name="submenuID" select="$submenuID"/>
+            <xsl:with-param name="name">
+               <xsl:value-of select="concat($levelID,$untititle)"/>
+            </xsl:with-param>
+            <xsl:with-param name="id" select="@id"/>
+            <xsl:with-param name="nodes" select="."/>
+            <xsl:with-param name="indent" select="3"/>
+            <xsl:with-param name="dao">
+               <xsl:if test="child::dao">true</xsl:if>
+            </xsl:with-param>
+         </xsl:call-template> 
+   </xsl:template>
+   <xsl:template match="*" mode="dscTocDao">
+      <xsl:variable name="submenuID">
+         <xsl:variable name="seriesID" select="@id"/>
+         <xsl:value-of select="concat('dsc',$seriesID)"/>
+      </xsl:variable>                
+      <xsl:variable name="levelID">
+         <xsl:choose>
+            <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"><xsl:value-of select="@otherlevel"/>: </xsl:when>
+            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)"><xsl:value-of select="@otherlevel"/></xsl:when>
+            <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:variable name="untititle">
+         <xsl:choose>
+            <xsl:when test="string-length(did/unittitle) &gt; 1">
+               <xsl:value-of select="did/unittitle"/>       
+            </xsl:when>
+            <xsl:when test="string-length(did/unitdate) &gt; 1">
+               <xsl:value-of select="did/unitdate"/> 
+            </xsl:when>
+            <xsl:otherwise>Unknown</xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:call-template name="make-toc-link">
+         <xsl:with-param name="submenuID" select="$submenuID"/>
+         <xsl:with-param name="name">
+            <xsl:value-of select="concat($levelID,$untititle)"/>
+         </xsl:with-param>
+         <xsl:with-param name="id" select="@id"/>
+         <xsl:with-param name="nodes" select="."/>
+         <xsl:with-param name="indent" select="2"/>
+         <xsl:with-param name="dao">
+            <xsl:if test="child::dao">true</xsl:if>
+         </xsl:with-param>
+      </xsl:call-template> 
+      
+      <!-- Displays the unittitle and unitdates for each c02 if it is a subseries 
+                                    (as evidenced by the level attribute series) and forms a hyperlink to each.   
+                                    Delete this section if you do not wish the c02 titles to appear in the 
+                                    table of contents. -->
+         <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' 
+            or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+            <div class="more" id="{$submenuID}">
+               <xsl:if test="$parentID = $submenuID">
+                  <xsl:attribute name="style">display:block;</xsl:attribute>
+               </xsl:if>
+               <xsl:apply-templates select="child::*[@level='subgrp'] 
+                  | child::*[@level='subseries'] 
+                  | child::*[@level='otherlevel' and not(child::did/container)]" 
+                  mode="dscTocDaoSubseries">
+                  <xsl:with-param name="submenuID" select="$submenuID"/>
+               </xsl:apply-templates>
+            </div>
+         </xsl:if>
+   </xsl:template>
+   
+   <xsl:template match="*" mode="dscTocDaoSubseries">
+      <xsl:param name="submenuID"/>
+      <xsl:variable name="levelID">
+         <xsl:choose>
+            <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"><xsl:value-of select="@otherlevel"/>: </xsl:when>
+            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)"><xsl:value-of select="@otherlevel"/></xsl:when>
+            <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:variable name="untititle">
+         <xsl:choose>
+            <xsl:when test="string-length(did/unittitle) &gt; 1">
+               <xsl:value-of select="did/unittitle"/>       
+            </xsl:when>
+            <xsl:when test="string-length(did/unitdate) &gt; 1">
+               <xsl:value-of select="did/unitdate"/> 
+            </xsl:when>
+            <xsl:otherwise>Unknown</xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:call-template name="make-toc-link">
+         <xsl:with-param name="submenuID" select="$submenuID"/>
+         <xsl:with-param name="name">
+            <xsl:value-of select="concat($levelID,$untititle)"/>
+         </xsl:with-param>
+         <xsl:with-param name="id" select="@id"/>
+         <xsl:with-param name="nodes" select="."/>
+         <xsl:with-param name="indent" select="2"/>
+         <xsl:with-param name="dao">
+            <xsl:if test="child::dao">true</xsl:if>
+         </xsl:with-param>
+      </xsl:call-template> 
    </xsl:template>
    
    <xsl:template name="make-toc-link">
