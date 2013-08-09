@@ -3,6 +3,7 @@
 <brand xmlns="http://www.w3.org/1999/xhtml">
    
    <links>
+      <meta name="viewport" content="width=device-width,initial-scale=1"/>
       <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
       <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
       <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
@@ -194,6 +195,7 @@
     </links>
 
    <dynaxml.links>
+      <meta name="viewport" content="width=device-width,initial-scale=1"/>
       <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
       <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
