@@ -797,11 +797,23 @@
       </xsl:call-template>
    </xsl:template>
    <xsl:template match="*" mode="dscTocSeries">
-      <div class="series">
-         <xsl:variable name="submenuID">
-            <xsl:variable name="seriesID" select="@id"/>
-            <xsl:value-of select="concat('dsc',$seriesID)"/>
-         </xsl:variable>
+      <xsl:variable name="submenuID">
+         <xsl:variable name="seriesID" select="@id"/>
+         <xsl:value-of select="concat('dsc',$seriesID)"/>
+      </xsl:variable>
+      <div id="{@id}">
+         <xsl:attribute name="class">
+            <xsl:value-of select="'tocRow '"/>
+            <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+               <xsl:value-of select="'accordionButton '"/>
+            </xsl:if>
+            <xsl:if test="$chunk.id = @id">
+               <xsl:attribute name="class">
+                  <xsl:value-of select="'active '"/>
+               </xsl:attribute>
+            </xsl:if>
+         </xsl:attribute>
+         
          <xsl:variable name="levelID">
             <xsl:choose>
                <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
@@ -840,10 +852,11 @@
             <xsl:with-param name="dao">
                <xsl:if test="child::dao">true</xsl:if>
             </xsl:with-param>
-         </xsl:call-template> 
+         </xsl:call-template>
+      </div>
          <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' 
             or @level='series' or (@level='otherlevel' and not(child::did/container))]">
-            <div class="more" id="{$submenuID}">
+            <div class="more accordionContent" id="{$submenuID}">
                <xsl:if test="$parentID = $submenuID">
                   <xsl:attribute name="style">display:block;</xsl:attribute>
                </xsl:if>
@@ -855,7 +868,6 @@
                </xsl:apply-templates>
             </div>
          </xsl:if>
-      </div>
    </xsl:template>
    <xsl:template match="*" mode="dscTocSubseries">
       <xsl:param name="submenuID"/>
@@ -886,6 +898,13 @@
             <xsl:otherwise>Unknown</xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
+      <div>
+         <xsl:attribute name="class">
+            <xsl:value-of select="'tocSubrow '"/>
+            <xsl:if test="$chunk.id = @id">
+               <xsl:value-of select="'active '"/>
+            </xsl:if>
+         </xsl:attribute>
       <xsl:call-template name="make-toc-link">
             <xsl:with-param name="submenuID" select="$submenuID"/>
             <xsl:with-param name="name">
@@ -897,7 +916,8 @@
             <xsl:with-param name="dao">
                <xsl:if test="child::dao">true</xsl:if>
             </xsl:with-param>
-         </xsl:call-template> 
+         </xsl:call-template>
+      </div>
    </xsl:template>
    <xsl:template match="*" mode="dscTocDao">
       <xsl:variable name="submenuID">

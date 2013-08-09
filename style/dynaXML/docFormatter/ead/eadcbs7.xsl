@@ -1526,7 +1526,7 @@
                                 child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
                                 child::separatedmaterial |  child::controlaccess">
-                                <div class="daoLink"> 
+                                <div class="dialog_dsc"> 
                                    <xsl:call-template name="make-popup-link">
                                       <xsl:with-param name="name" select="'Additional description'"/>
                                       <xsl:with-param name="id" select="string(@id)"/>
@@ -1539,7 +1539,7 @@
                                 </xsl:if>
                              </xsl:if>
                              <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
-                                <div class="daoLink"> 
+                                <div class="dialog_dsc"> 
                                    <xsl:call-template name="make-popup-link">
                                       <xsl:with-param name="name" select="'Restrictions'"/>
                                       <xsl:with-param name="id" select="string(@id)"/>
@@ -1926,7 +1926,7 @@
          </head>
          <body>
             <div class="dscDescription">
-            <xsl:apply-templates select="accessrestrict[not(child::legalstatus)] | userestrict"/>
+            <xsl:apply-templates select="*[accessrestrict[not(child::legalstatus)] | userestrict]" mode="moreInfo"/>
             </div>
          </body>
       </html>

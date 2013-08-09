@@ -387,21 +387,6 @@
                                 }
                             });
                             
-                            var dialogDsc = $('<div class="dsc-container"></div>').appendTo('body').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "550",
-                                  height: "300",
-                                  close: function () {
-                                    $('.ui-dialog .dscDescription').remove();
-                                  }
-                               });
-                               
                             $(".daoLink a").on("click", function (e) {
                                 e.preventDefault();
                                 var src = $(this).attr("href");
@@ -416,12 +401,6 @@
                                     src: src
                                 });
                                 dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
-                            });
-                            
-                            $("a.dialog_dsc").on("click", function (e) {
-                              var id = $(this).attr("href");
-                              var content = $(id).html()
-                              dialogDsc.dialog("option", "title", '').dialog("open").append(content);
                             });
                             
                             //checks for hash tag jumps to location and opens appropriate diolog 
@@ -444,6 +423,40 @@
                             } 
                           
                         });
+                    $(function () {
+                    var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0"></iframe>');
+                    var dialogDsc = $('<div class="dsc-container"></div>').append(iframe).appendTo('body').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "550",
+                                  height: "300",
+                                  close: function () {
+                                    iframe.attr("src", "");
+                                    $('.ui-dialog .dscDescription').remove();
+                                  }
+                               });
+                               
+                            $(".dialog_dsc a").on("click", function (e) {
+                              e.preventDefault();
+                                var src = $(this).attr("href");
+                                var title = $(this).attr("data-title");
+                                var width = $(this).attr("data-width");
+                                var height = $(this).attr("data-height");
+                                iframe.attr({
+                                    width: +width,
+                                    height: +height,
+                                    src: src
+                                });
+                              dialogDsc.dialog("option", "title", '').dialog("open");
+                            });
+                    });
+                        
+                        
                     });
         </script>
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
