@@ -630,7 +630,13 @@
                   <xsl:choose>   
                      <xsl:when test="$doc.view='contents'">
                         <div class="contentsList">
-                           <h4>Contents List</h4>
+                           <xsl:if test="archdesc/dsc/child::*[@level='series'] | 
+                              archdesc/dsc/child::*[@level='recordgrp'] | 
+                              archdesc/dsc/child::*[@level='fonds'] | archdesc/dsc/child::*[@level='subgrp'] 
+                              | archdesc/dsc/child::*[@level='subseries'] 
+                              | archdesc/dsc/child::*[@level='otherlevel' and not(child::did/container)]">
+                              <h4>Contents List</h4>
+                           </xsl:if>
                            <xsl:if test="archdesc/dsc/child::*">
                               <xsl:apply-templates select="archdesc/dsc/head" mode="tocLink"/>
                               <!-- Displays the unittitle and unitdates for a c01 if it is a series (as
