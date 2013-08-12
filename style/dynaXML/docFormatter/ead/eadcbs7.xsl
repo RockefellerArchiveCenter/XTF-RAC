@@ -1530,7 +1530,7 @@
                                    <xsl:call-template name="make-popup-link">
                                       <xsl:with-param name="name" select="'Additional description'"/>
                                       <xsl:with-param name="id" select="string(@id)"/>
-                                      <xsl:with-param name="nodes" select="scopecontent"/>
+                                      <xsl:with-param name="nodes" select="."/>
                                       <xsl:with-param name="doc.view" select="'dscDescription'"/>
                                    </xsl:call-template>
                                 </div>
@@ -1912,7 +1912,7 @@
          </head>
          <body>
             <div class="dscDescription">
-               <xsl:apply-templates select="*[@id = $chunk.id]" mode="moreInfo"/>
+               <xsl:apply-templates select="descendant::*[@id = $chunk.id]" mode="moreInfo"/>
             </div>
          </body>
       </html>
@@ -1926,7 +1926,7 @@
          </head>
          <body>
             <div class="dscDescription">
-            <xsl:apply-templates select="*[accessrestrict[not(child::legalstatus)] | userestrict]" mode="moreInfo"/>
+               <xsl:apply-templates select="descendant::*[@id = $chunk.id]/accessrestrict[not(child::legalstatus)] | descendant::*[@id = $chunk.id]/userestrict" mode="moreInfo"/>
             </div>
          </body>
       </html>
