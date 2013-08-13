@@ -1543,7 +1543,7 @@
                                    <xsl:call-template name="make-popup-link">
                                       <xsl:with-param name="name" select="'Restrictions'"/>
                                       <xsl:with-param name="id" select="string(@id)"/>
-                                      <xsl:with-param name="nodes" select="accessrestrict"/>
+                                      <xsl:with-param name="nodes" select="."/>
                                       <xsl:with-param name="doc.view" select="'restrictions'"/>
                                    </xsl:call-template>
                                 </div>
@@ -1900,7 +1900,14 @@
       <div>
          <xsl:apply-templates select="did/unittitle | did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
          <xsl:apply-templates select="../did/physdesc"/>
-         <xsl:apply-templates select="*[not(name() = 'did')]"/>
+         <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict')]"/>
+      </div>
+   </xsl:template>
+   <xsl:template match="*" mode="restrictions">
+      <div>
+         <xsl:apply-templates select="../did/unittitle | ../did/origination | ../did/unitdate[not(@type)] | ../did/unitdate[@type != 'bulk']" mode="dsc"/>
+         <xsl:apply-templates select="../did/physdesc"/>
+         <xsl:apply-templates select="../*[(name() = 'accessrestrict' or name() = 'userestrict')]"/>
       </div>
    </xsl:template>
 
@@ -1926,7 +1933,7 @@
          </head>
          <body>
             <div class="dscDescription">
-               <xsl:apply-templates select="descendant::*[@id = $chunk.id]/accessrestrict[not(child::legalstatus)] | descendant::*[@id = $chunk.id]/userestrict" mode="moreInfo"/>
+               <xsl:apply-templates select="descendant::*[@id = $chunk.id]/accessrestrict[not(child::legalstatus)] | descendant::*[@id = $chunk.id]/userestrict" mode="restrictions"/>
             </div>
          </body>
       </html>
