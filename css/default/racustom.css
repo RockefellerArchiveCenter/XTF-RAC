@@ -1,14 +1,10 @@
 /* Rockefeller Archive Center customized css */
 body {
    font-family: Arial, sans-serif;
-   /* 9/22/11 WS: Changed background color from silver to white for RA a */
    background-color: #fff;
    font-size: .85em;
    color: #333;
-   /* 9/22/11 WS: Changed for RA, added margin and padding */
    margin:0;
-   /*6/20/2013 HA: removing right margin*/
-   /*margin-right:12px;*/
    padding:0;
 }
 
@@ -22,9 +18,9 @@ p{margin-top:0;margin-bottom:1em;}
 .footer p {margin:0}
 div.closeWindow {text-align:right !important; font-size:.85em !important; margin-top:1em;}
 div.closeWindow a{color: #C45414;}
-
 .getAddress{border-top:1px solid #999 !important; margin-top:24px !important;}
 .bookbag {width:3em; text-align:center;border:none; float:right;margin-bottom:-2em;}
+
 /* Formats header */
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
 #header {margin-top:-80px; margin-left:2%; font-family: 'Questrial', sans;-webkit-text-stroke: 1px;width:70%;float:left;}
@@ -35,128 +31,30 @@ div.closeWindow a{color: #C45414;}
 .tagline {font-size: 1.5em;color: #444;}
 
 /*Formats IE specific warning*/
-.chromeframe p {
-    width: 100%;
-    background-color: #C45414;
-    color: #fff;
-    padding: 5px;
-    text-align: center;
-}
-
-.chromeframe a {
-    color: #d3d3d3 !important;
-}
-
-.chromeframe a:hover {
-    color: #c2c2c2 !important;
-}
+.chromeframe p {width: 100%; background-color: #C45414;color: #fff; padding: 5px; text-align: center;}
+.chromeframe a {color: #d3d3d3 !important;}
+.chromeframe a:hover {color: #c2c2c2 !important;}
 
 /*Formats feedback link and overlay*/
-.feedback-tab {
-    display: block;
-    position: fixed;
-    top: 390px;
-    right: 0px;
-    cursor: pointer;
-    box-shadow:0 0 10px #000;
-    -moz-box-shadow:0 0 10px 5px #000;
-    -webkit-box-shadow: 0 0 10px #000;
-}
+.feedback-tab {display: block; position: fixed; top: 390px; right: 0px; cursor: pointer; box-shadow:0px 0px 10px #000; -moz-box-shadow:0 0 10px 5px #000; -webkit-box-shadow: 0 0 10px #000;}
+.feedback-form label {display: inline-block; width: 100px; margin: 5px;}
+.feedback-form input {display: inline-block; width: 200px; margin: 5px;}
+.feedback-form textarea {width: 200px; vertical-align: top; margin: 5px;}
+.feedback-form p {font-size: smaller; padding-left: 124px;}
+.feedback-form .button { width: auto; float: right;}
+.feedback-form ul li {list-style: none;}
 
-.feedback-form label {
-    display: inline-block;
-    width: 100px;
-    margin: 5px;
-}
-
-.feedback-form input {
-    display: inline-block;
-    width: 200px;
-    margin: 5px;
-}
-
-.feedback-form textarea {
-    width: 200px;
-    vertical-align: top;
-    margin: 5px;
-}
-
-.feedback-form p {
-    font-size: smaller;
-    padding-left: 124px;
-}
-
-.feedback-form .button {
-    width: auto;
-    float: right;
-}
-
-.feedback-form ul li {
-    list-style: none;
-}
-
-.overlay {
-    display:none;
-    z-index:10000;
-    background-color:#fff;
-    width: 410px;
-    min-height:200px;
-    border:1px solid #666;
-    padding: 20px;
-    box-shadow:0 0 90px #000;
-    -moz-box-shadow:0 0 90px 5px #000;
-    -webkit-box-shadow: 0 0 90px #000;
-}
-.overlay .close {
-    background-image:url(/xtf/icons/default/close.png);
-    position:absolute;
-    right:-15px;
-    top:-15px;
-    cursor:pointer;
-    height:35px;
-    width:35px;
-}
-
-.overlay h3 {
-    border-bottom: 1px dotted;
-}
+.overlay {display:none;z-index:10000;background-color:#fff;width: 410px;min-height:200px;border:1px solid #666;padding: 20px;box-shadow:0px 0px 90px #000;-moz-box-shadow:0 0 90px 5px #000;-webkit-box-shadow: 0 0 90px #000;}
+.overlay .close {background-image:url(/xtf/icons/default/close.png); position:absolute; right:-15px; top:-15px; cursor:pointer; height:35px; width:35px;}
+.overlay h3 {border-bottom: 1px dotted;}
 
 div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em;}
 .overlay div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em; min-height: 500px;}
 
 /* Overlay for digital objects */
-.overlay_dao {
-    display:none;
-    position: fixed;
-    top: 50px !important;
-    right: 125px !important;
-    z-index:3 !important;
-    background-color:#fff;
-/*    width: 410px; */
-/*    min-height:400px; */
-    border:1px solid #666;
-    padding: 20px;
-    box-shadow:0 0 90px #000;
-
-    /* CSS3 styling for latest browsers */
-    -moz-box-shadow:0 0 90px 5px #000;
-    -webkit-box-shadow: 0 0 90px #000;
-}
- 
-/* close button positioned on upper right corner */
-.overlay_dao .close {
-    background-image:url(/xtf/icons/default/close.png);
-    position:absolute;
-    right:-15px;
-    top:-15px;
-    cursor:pointer;
-    height:35px;
-    width:35px;
-}
-
-.overlay_dao h3 {
-    border-bottom: 1px dotted;
-}
+.overlay_dao {display:none;position: fixed;top: 50px !important;right: 125px !important;z-index:3 !important;background-color:#fff;border:1px solid #666;padding: 20px;box-shadow:0px 0px 90px #000;-moz-box-shadow:0 0 90px 5px #000;-webkit-box-shadow: 0 0 90px #000;}
+.overlay_dao .close {background-image:url(/xtf/icons/default/close.png);position:absolute;right:-15px;top:-15px;cursor:pointer;height:35px; width:35px;}
+.overlay_dao h3 {border-bottom: 1px dotted;}
 
 /*Formats home page*/
 .forms {float:left; width:100%;border: 1px solid #999;border-radius:5px}
@@ -231,7 +129,9 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .ra-query {float:none !important; display:inline !important;}
 .subQuery {float:none !important; display:inline !important;}
 .clear {clear:both;}
+
 #bookbag {float:right;margin-right:1%;margin-top:2em;height:2em;}
+
 .resultsHeader h2 {text-align:center; margin:0 0 .5em 0;}
 .resultsHeader .actions {text-align:center;width:20%; float:left; margin-left:40%}
 .resultsHeader #searchTop {height:0;}
@@ -247,6 +147,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .resultsHeader #browse .on:after {width: 0;height: 0;border-top: 8px solid #666666;border-right: 8px solid transparent;border-left: 8px solid transparent;content: " ";float: right;margin-left: .8em;margin-right: .8em;margin-top: .9em;}
 .resultsHeader #browse .over {box-shadow:0px 0px 3px #C45414;color: #c45414;cursor:pointer}
 .resultsHeader #searchtip {top:12em;width:23%;font-size:1em;}
+
 .pages {width:98%;padding:1% 0 1% 0;float:left; margin-left:1%;border-radius:5px;font-size:1em;text-align:center;font-weight:bold;background:#eee}
 #results .pages {width:32%;float:left;font-size:.8em;padding:.8em;border-left:2px groove #fff; border-right:2px groove #fff;background:0;border-radius:0}
 .pages a {text-decoration:none !important; color:#333 !important;}
@@ -255,11 +156,13 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .pages .pageButton:hover {border:2px outset #c45414;color:#c45414;}
 .pages .pageNumber {display:inline;vertical-align:middle;width: 1em;padding: .2em .3em .2em .3em;}
 #results .pageNumber {padding:.2em .4em .2em .4em;}
+
 #results {width:96%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:#eee;border-radius:5px;font-size:1em;}
 #results select, #results input {font-size:.8em;margin-top:0; margin-bottom:0;}
 #rss {float:left;margin-right:.5em;}
 #hits {float:left;margin-bottom:1%;width:32%}
 #sort {float:right;}
+
 .facets h2 {margin:0; padding:.5em;border-radius:5px 5px 0 0;background-color:#c45414; color:#fff;text-align:center;}
 .facets li {list-style: none;margin: 0px;padding: 1%;text-align:left;font-size:1em;}
 .facets #facets h2 {background-color:#0D8061}
@@ -267,33 +170,18 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .facets #facets {float:left; width:100%;margin-top:3%; border-radius:5px 5px 0px 0px;}
 .facetMatch {font-style:italic; color:#c45414;}
 .facetGroup .col3 {font-weight:bold; color:#c45414;}
+
 #currentBrowse, #alphaList {text-align:center}
 #alphaList {padding:.4em;font-size: 1em;font-weight:bold;}
 .alphaLink {display:inline;vertical-align:middle;width:1em; padding:.5em;text-decoration:none;}
 #alphaList a .alphaLink:hover, .pageNumber:hover {outline: 1px solid; color:#c45414;text-decoration:none !important;}
 #alphaList .active, .pages .active {text-decoration:none !important;color:#fff;background-color:#666;}
 #currentBrowse {font-size: 1.4em;margin-bottom: 1em;}
-a.hit {
-   background-color:rgba(196, 84, 20, 0.1) !important;
-   color: #c45414 !important;
-   font-weight: bold;
-}
-.hit-count{
-   background-color:rgba(196, 84, 20, 0.1) !important;
-   color: #c45414 !important;
-   font-weight: bold;
-   display:inline;
-}
-.subhit{
-   background-color:rgba(196, 84, 20, 0.1) !important;
-   color: #c45414 !important;
-   font-weight: bold;
-}
 
-.hit{
-   color: #c45414 !important;
-   font-weight: bold;
-}
+a.hit {background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !important;font-weight: bold;}
+.hit-count{background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !important;font-weight: bold;display:inline;}
+.subhit{background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !important;font-weight: bold;}
+.hit{color: #c45414 !important;font-weight: bold;}
 
 /*Formats document headers*/
 .bbar_custom {float:left;width:96%;border-right: 1px solid #666;border-left: 1px solid #666;border-top: 1px solid #999;border-bottom: 1px solid #999;background-color: #ddd;margin-left: 1%;margin-right: 1%;padding: 10px 1% 0 1%;border-radius: 5px 5px 0 0;height:100px;}
@@ -333,6 +221,7 @@ a.hit {
 .tabs .clear {display:none;}
 .tab a {text-decoration: none !important;}
 .currentBrowse a{color: #333 !important;}
+
 /* Styles for EAD */
 .main {
     float:left; 
@@ -433,7 +322,6 @@ table.containerList tr td{padding-top:2px; padding-bottom:2px;}
 tr.odd{background-color:#eee !important;}
 tr.file td {border-bottom: 1px dotted #ccc !important; margin-top:.5em;}
 tr.file td.noBorder {border:none!important;}
-/*tr.file .borderDisplay div{border-left: 3px solid #ccc !important; padding-left:1em; margin-top:.25em; }*/
 
 /* --- Clevel Margins --- */
 table td.c {border-left: none; padding-left:4px;}
@@ -490,7 +378,9 @@ iframe {
 
 .daoCitation .repository {position: absolute; bottom: 0; left: 0; width: 98%; padding-left: 2%;}
 
-/* Responsive Styles */
+/* --------------------------------------------- */
+/* ------------- RESPONSIVE STYLES ------------- */
+/* --------------------------------------------- */
 
 @media screen and (max-width:768px) {
 h2 {font-size:1.2em}
@@ -523,7 +413,6 @@ input[type="submit"].searchbox {left:80%}
 .box {width:98%}
 #featured {width:98%}
 
-/*hide raheader*/
 div[id^='navOption'] {display:none}
 #menu {display:none}
 

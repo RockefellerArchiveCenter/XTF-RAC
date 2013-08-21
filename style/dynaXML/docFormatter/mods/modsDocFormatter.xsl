@@ -174,7 +174,6 @@
    
          <html xml:lang="en" lang="en">
             <head>
-               <link rel="stylesheet" type="text/css" href="{$css.path}ead.css"/>
                <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
                <script src="script/yui/connection-min.js" type="text/javascript"/> 
                <xsl:copy-of select="$brand.links"/>

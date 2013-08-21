@@ -2,11 +2,9 @@
 
 body {
    font-family: Arial, sans-serif;
-   /* 9/22/11 WS: Changed background color from silver to white for RA a */
    background-color: #fff;
    font-size: .85em;
    color: #333;
-   /* 9/22/11 WS: Changed for RA, added margin and padding */
    margin:0;
    padding:0;
 }
@@ -19,15 +17,6 @@ form {
 	clear: both;
 }
 
-/* 9/22/11 WS: Changed Header for RA
-div.header {
-	 border: 1px solid #666;
-	 width: 99%;
-	 border-bottom: 0;
-	 margin: 0 auto;
-	 background-color: #B1B8C6;
-}
-*/
 div.header {	 width: 100%;
 	 margin: 0 auto;
 	 background-color: #DDDDDD;
@@ -45,12 +34,6 @@ img.RAC-logo {
 	padding-right: 8px;
 	}
 	
-/* 9/22/11 WS: Changed Header for RA
-div.header img.xtf-logo {
-	float: left;
-	margin: 21px 0 0 15px
-}
-*/
 div.header img.your-logo {
 	float: right;
 	margin: 10px 15px;
