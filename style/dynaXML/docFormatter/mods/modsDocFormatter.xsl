@@ -65,8 +65,6 @@
       doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
       exclude-result-prefixes="#all"
       omit-xml-declaration="yes"/>
-      
-<!--   <xsl:output method="xml"/>-->
    
    <!-- ====================================================================== -->
    <!-- Strip Space                                                            -->
@@ -77,18 +75,13 @@
    <!-- ====================================================================== -->
    <!-- Included Stylesheets                                                   -->
    <!-- ====================================================================== -->
+
    <xsl:include href="parameter.xsl"/>
    <xsl:include href="search.xsl"/>
    <xsl:include href="modsToHTML.xsl"/>
-
    
    <!-- ====================================================================== -->
    <!-- Define Keys                                                            -->
-   <!--          
-      <xsl:when test="$chunk.id != 0">
-      <xsl:apply-templates select="key('chunk-id', $chunk.id)"/>
-      </xsl:when>
-   -->
    <!-- ====================================================================== -->
    
    <xsl:key name="chunk-id" match="*[parent::mods:mods]" use="@id"/>
@@ -116,20 +109,6 @@
       </xsl:choose>
    </xsl:param>
    
-   <!-- To support direct links from snippets, the following two parameters must check value of $hit.rank 
-   <xsl:param name="chunk.id">
-      <xsl:choose>
-         <xsl:when test="$hit.rank != '0'">
-            <xsl:call-template name="findHitChunk">
-               <xsl:with-param name="hitNode" select="key('hit-rank-dynamic', string($hit.rank))"/>
-            </xsl:call-template>
-         </xsl:when>
-         <xsl:otherwise>
-            <xsl:value-of select="'0'"/>
-         </xsl:otherwise>
-      </xsl:choose>
-   </xsl:param>
-  -->
    <xsl:param name="parentID"/>  
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
@@ -149,11 +128,6 @@
          <xsl:when test="$doc.view='print'">
             <xsl:call-template name="print"/>
          </xsl:when>
-         <!-- citation 
-         <xsl:when test="$doc.view='citation'">
-            <xsl:call-template name="citation"/>
-         </xsl:when>
-         -->
          <!-- Creates the basic frameset.-->
          <xsl:otherwise>
             <xsl:call-template name="contents"/>
@@ -453,15 +427,7 @@ $xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
 					    </xsl:non-matching-substring>
 					  </xsl:analyze-string>         	     	
       </xsl:variable>
-      <!-- <xsl:variable name="queryterm">
-               <xsl:analyze-string select="$search" regex="query=([A-Z0-9]+)" flags="i">
-                  
-                  <xsl:matching-substring>
-                     <xsl:value-of select="regex-group(1)" />
-                  </xsl:matching-substring>
-                  
-               </xsl:analyze-string>
-      </xsl:variable> -->
+      
       <xsl:variable name="basicchoice2">
          <xsl:choose>
 					<xsl:when test="$id='headerlink'">
