@@ -251,7 +251,7 @@
                               <!--<div class="ra-query"><xsl:call-template name="format-query"/></div>-->
                            </xsl:otherwise>
                         </xsl:choose></h2>
-                     
+
                      <div class="actions">
                         <xsl:variable name="bag" select="session:getData('bag')"/>
                         <xsl:variable name="bagCount" select="count($bag/bag/savedDoc)"/>
@@ -259,11 +259,11 @@
                            onclick="javascript:window.open('{$xtfURL}{$crossqueryPath}?smode=getAddress;docsPerPage={$bagCount}','popup','width=650,height=400,resizable=no,scrollbars=no')"
                            onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag email preview']);"
                            >E-mail My Bookbag</a>
-                        
+
                         <xsl:text> | </xsl:text>
-                     
-                     <!-- 3/26/12 WS: Added template to clear all items from bookbag -->
-                     <script type="text/javascript">
+
+                        <!-- 3/26/12 WS: Added template to clear all items from bookbag -->
+                        <script type="text/javascript">
                               removeAll = function() {
                                  var span = YAHOO.util.Dom.get('removeAll');
                                  var bbCount = YAHOO.util.Dom.get('bookbagCount');
@@ -275,113 +275,120 @@
                                     }, null);
                               };
                            </script>
-                        <a id="removeAll" href="javascript:removeAll()">Remove All Items</a>        
+                        <a id="removeAll" href="javascript:removeAll()">Remove All Items</a>
                      </div>
                   </xsl:if>
-                  
+
                   <xsl:if test="$smode != 'showBag'">
                      <div id="searchForm">
-                     <div id="searchTop">
-                        <div id="searchtip" class="box">
-                           <ul>
-                              <li>Want help? See these <a href="#searchTips" class="searchTips"
-                                    onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
-                                    >search tips</a>. </li>
-                           </ul>
-                        </div>
-                        <div id="searchbox">
-                           <input class="searchbox" type="text" name="keyword">
-                           <xsl:attribute name="value">
-                              <xsl:if test="$keyword"><xsl:value-of select="$keyword"/></xsl:if>
-                              <xsl:if test="$text"><xsl:value-of select="$text"/></xsl:if>
-                           </xsl:attribute></input>
-                           <div id="advancedSearch">
-                              <div id="boolean">
-                                 <xsl:choose>
-                                    <xsl:when test="$text-join = 'or'">
-                                       <input type="radio" name="text-join" value=""/>
-                                       <xsl:text> all of </xsl:text>
-                                       <input type="radio" name="text-join" value="or"
-                                          checked="checked"/>
-                                       <xsl:text> any of </xsl:text>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                       <input type="radio" name="text-join" value=""
-                                          checked="checked"/>
-                                       <xsl:text> all of </xsl:text>
-                                       <input type="radio" name="text-join" value="or"/>
-                                       <xsl:text> any of </xsl:text>
-                                    </xsl:otherwise>
-                                 </xsl:choose>
-                                 <xsl:text>these words</xsl:text>
-                              </div>
-                              <div id="materialType">
-                                 <xsl:text>Type of materials: </xsl:text>
-                                 <select name="type" id="type">
-                                    <option value="">All Materials</option>
-                                    <option value="ead">Archival Collections</option>
-                                    <option value="dao">Digital Materials</option>
-                                    <option value="mods">Library Materials</option>
-                                 </select>
-                                 <!-- 6/21/2013 HA: adding advanced search to home page -->
-                                 <select name="sectionType" id="library">
-                           <option value="">All Library Materials</option>
-                           <option value="title">Title</option>
-                           <option value="creator">Author</option>
-                           <option value="callNumber">Call Number</option>
-                           <option value="isbn">ISBN/ISSN</option>
-                           <option value="lccn">LCCN</option>
-                        </select>
-                        <select name="sectionType" id="collections">
-                           <option value="">All Archival Collections</option>
-                           <option value="title">Title</option>
-                           <option value="creator">Creator</option>
-                           <option value="bioghist">Biographical or Historical Note</option>
-                           <option value="scopecontent">Scope and Content Note</option>
-                           <option value="file">Folder Title</option>
-                           <option value="item">Item</option>
-                           <option value="series">Series Description</option>
-                           <option value="subseries">Subseries Description</option>
-                           <option value="controlaccess">Subject Headings</option>
-                        </select>
-                        <select name="sectionType" id="dao">
-                           <option value="">All Digital Materials</option>
-                           <option value="title">Title</option>
-                           <option value="creator">Creator</option>
-                           <option value="bioghist">Biographical or Historical Note</option>
-                           <option value="scopecontent">Scope and Content Note</option>
-                           <option value="file">Folder Title</option>
-                           <option value="item">Item</option>
-                           <option value="series">Series Description</option>
-                           <option value="subseries">Subseries Description</option>
-                           <option value="controlaccess">Subject Headings</option>
-                        </select>
-                              </div>
-                              <div id="date">
-                                 <xsl:text>Years: </xsl:text>
-                                 <input class="date" type="text" name="year" size="20"
-                                    value="{$year}"/>
-                                 <div id="searchtipDate" class="box">
-                                    <ul>
-                                       <li>Enter a single year or range of years, for example 1997
-                                          or 1892-1942.</li>
-                                    </ul>
+                        <div id="searchTop">
+                           <div id="searchtip" class="box">
+                              <ul>
+                                 <li>Want help? See these <a href="#searchTips" class="searchTips"
+                                       onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
+                                       >search tips</a>. </li>
+                              </ul>
+                           </div>
+                           <div id="searchbox">
+                              <input class="searchbox" type="text" name="keyword">
+                                 <xsl:attribute name="value">
+                                    <xsl:if test="$keyword">
+                                       <xsl:value-of select="$keyword"/>
+                                    </xsl:if>
+                                    <xsl:if test="$text">
+                                       <xsl:value-of select="$text"/>
+                                    </xsl:if>
+                                 </xsl:attribute>
+                              </input>
+                              <div id="advancedSearch">
+                                 <div id="boolean">
+                                    <xsl:choose>
+                                       <xsl:when test="$text-join = 'or'">
+                                          <input type="radio" name="text-join" value=""/>
+                                          <xsl:text> all of </xsl:text>
+                                          <input type="radio" name="text-join" value="or"
+                                             checked="checked"/>
+                                          <xsl:text> any of </xsl:text>
+                                       </xsl:when>
+                                       <xsl:otherwise>
+                                          <input type="radio" name="text-join" value=""
+                                             checked="checked"/>
+                                          <xsl:text> all of </xsl:text>
+                                          <input type="radio" name="text-join" value="or"/>
+                                          <xsl:text> any of </xsl:text>
+                                       </xsl:otherwise>
+                                    </xsl:choose>
+                                    <xsl:text>these words</xsl:text>
+                                 </div>
+                                 <div id="materialType">
+                                    <xsl:text>Type of materials: </xsl:text>
+                                    <select name="type" id="type">
+                                       <option value="">All Materials</option>
+                                       <option value="ead">Archival Collections</option>
+                                       <option value="dao">Digital Materials</option>
+                                       <option value="mods">Library Materials</option>
+                                    </select>
+                                    <!-- 6/21/2013 HA: adding advanced search to home page -->
+                                    <select name="sectionType" id="library">
+                                       <option value="">All Library Materials</option>
+                                       <option value="title">Title</option>
+                                       <option value="creator">Author</option>
+                                       <option value="callNumber">Call Number</option>
+                                       <option value="isbn">ISBN/ISSN</option>
+                                       <option value="lccn">LCCN</option>
+                                    </select>
+                                    <select name="sectionType" id="collections">
+                                       <option value="">All Archival Collections</option>
+                                       <option value="title">Title</option>
+                                       <option value="creator">Creator</option>
+                                       <option value="bioghist">Biographical or Historical
+                                          Note</option>
+                                       <option value="scopecontent">Scope and Content Note</option>
+                                       <option value="file">Folder Title</option>
+                                       <option value="item">Item</option>
+                                       <option value="series">Series Description</option>
+                                       <option value="subseries">Subseries Description</option>
+                                       <option value="controlaccess">Subject Headings</option>
+                                    </select>
+                                    <select name="sectionType" id="dao">
+                                       <option value="">All Digital Materials</option>
+                                       <option value="title">Title</option>
+                                       <option value="creator">Creator</option>
+                                       <option value="bioghist">Biographical or Historical
+                                          Note</option>
+                                       <option value="scopecontent">Scope and Content Note</option>
+                                       <option value="file">Folder Title</option>
+                                       <option value="item">Item</option>
+                                       <option value="series">Series Description</option>
+                                       <option value="subseries">Subseries Description</option>
+                                       <option value="controlaccess">Subject Headings</option>
+                                    </select>
+                                 </div>
+                                 <div id="date">
+                                    <xsl:text>Years: </xsl:text>
+                                    <input class="date" type="text" name="year" size="20"
+                                       value="{$year}"/>
+                                    <div id="searchtipDate" class="box">
+                                       <ul>
+                                          <li>Enter a single year or range of years, for example
+                                             1997 or 1892-1942.</li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                                 <!--<input type="hidden" name="smode" value="advanced" id="start"/>-->
+                                 <div class="showAdvanced open">
+                                    <a href="#">close</a>
                                  </div>
                               </div>
-                              <!--<input type="hidden" name="smode" value="advanced" id="start"/>-->
-                              <div class="showAdvanced open">
-                                 <a href="#">close</a>
-                              </div>
+                              <input class="searchbox" type="submit" value="Search"/>
+                              <!--<input type="hidden" value="series" name="level"/>-->
+                              <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
+                              <!-- Uncomment and complete code when digital objects are included -->
+                              <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
+                              <a href="#" class="showAdvanced closed">show more search options</a>
                            </div>
-                           <input class="searchbox" type="submit" value="Search"/>
-                           <!--<input type="hidden" value="series" name="level"/>-->
-                           <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
-                           <!-- Uncomment and complete code when digital objects are included -->
-                           <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
-                           <a href="#" class="showAdvanced closed">show more search options</a>
                         </div>
-                     </div>
-                     <!--<div id="browse">
+                        <!--<div id="browse">
                      <div class="dropdownButton">
                         <h3>Browse</h3></div>
                         <div class="dropdownContent">
@@ -392,7 +399,7 @@
                            </ul>
                         </div>
                   </div> -->
-                  </div>
+                     </div>
                   </xsl:if>
                </form>
             </div>

@@ -1781,7 +1781,7 @@
    
    <xsl:template match="dao" mode="popout">
       <xsl:if test="$doc.view = 'dao'">
-         <div class="daoItemDisplay" style="display:block; text-align:center; float:left; padding:1.5em; width:150px;">
+         <div class="daoItemDisplay" style="display:block; text-align:center; float:left; padding:1.5em; width:150px;height:12em;">
             <div class="daoLink">   
             <xsl:variable name="daoLink" select="@ns2:href"/>
                <xsl:variable name="daoTitle" select="@ns2:title"/>
