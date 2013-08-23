@@ -327,6 +327,9 @@ td .seriesTitle {margin:10px -4px}
 tr.odd{background-color:#eee !important;}
 tr.file td {border-bottom: 1px dotted #ccc !important; margin-top:.5em;}
 tr.file td.noBorder {border:none!important;}
+/*.daoItemDisplay {float:left; padding:.5em; width:100%;}
+.daoItemDisplay .caption {float:left;padding: 3em 0 0 1em;width: 88%;font-size:1em;}
+.daoItemDisplay .daoLink {float:left; width:10%}*/
 
 /* --- Clevel Margins --- */
 table td.c {border-left: none; padding-left:4px;}

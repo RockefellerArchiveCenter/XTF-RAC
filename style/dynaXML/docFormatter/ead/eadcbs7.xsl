@@ -1111,7 +1111,7 @@
     <xsl:template match="c|c01">
        <xsl:choose>
           <xsl:when test="$doc.view = 'dao'">
-             <div class="containerList" style="width:95%;overflow: auto;">
+             <div class="containerList" style="width:100%;float:left;">
                 <xsl:call-template name="clevel_dao"/>
                 <xsl:for-each select="c|c02">
                    <div class="c02">
@@ -1626,10 +1626,10 @@
                          </xsl:attribute>
                          <div>
                              <xsl:call-template name="anchor"/>
-                            <div class="seriesTitle"  style="padding-left:.5em;"><xsl:apply-templates select="did" mode="dsc"/></div>
-<!--                             <xsl:apply-templates select="did/unittitle" mode="dsc"/>-->
-                             <xsl:apply-templates select="did/origination" mode="dsc"/>
-                             <xsl:apply-templates select="scopecontent"/> 
+                            <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
+                             <!--<xsl:apply-templates select="did/unittitle" mode="dsc"/>-->
+                             <!--<xsl:apply-templates select="did/origination" mode="dsc"/>
+                             <xsl:apply-templates select="scopecontent"/>
                              <xsl:apply-templates select="unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
                              <xsl:for-each select="did/physdesc[extent]">
                                    <h4 font-weight="bold">Extent</h4>
@@ -1661,7 +1661,7 @@
                              <xsl:apply-templates select="processinfo"/>
                              <xsl:apply-templates select="relatedmaterial"/>
                              <xsl:apply-templates select="separatedmaterial"/>
-                             <xsl:apply-templates select="controlaccess"/> 
+                             <xsl:apply-templates select="controlaccess"/> -->
                          </div>
                       </div>
                    </xsl:when>      
@@ -1781,21 +1781,22 @@
    
    <xsl:template match="dao" mode="popout">
       <xsl:if test="$doc.view = 'dao'">
-         <div class="daoItemDisplay" style="display:block; text-align:center; float:left; padding:1.5em; width:150px;height:12em;">
-            <div class="daoLink">   
+         <div class="daoItemDisplay" style="float:left; padding:.5em; width:100%;">
             <xsl:variable name="daoLink" select="@ns2:href"/>
-               <xsl:variable name="daoTitle" select="@ns2:title"/>
-               <xsl:variable name="citation">
-                  <xsl:call-template name="daoCitation"/>
-               </xsl:variable>     
-               <xsl:variable name="daoFile" select="substring-before(tokenize($daoLink,'/')[position()=last()],'.')"/>
-               <xsl:variable name="daoImg" select="concat(string-join(tokenize($daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/>               
+            <xsl:variable name="daoTitle" select="@ns2:title"/>
+            <xsl:variable name="citation">
+               <xsl:call-template name="daoCitation"/>
+            </xsl:variable>     
+            <xsl:variable name="daoFile" select="substring-before(tokenize($daoLink,'/')[position()=last()],'.')"/>
+            <xsl:variable name="daoImg" select="concat(string-join(tokenize($daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/> 
+            <div class="daoLink" style="float:left; width:10%">   
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                  <xsl:call-template name="component-did-core"/>
                  <img src="{$daoImg}"/>
                </a>
-            <div class="caption">
-               <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+            </div>
+            <div class="caption" style="float:left;padding: 3em 0 0 1em;width: 88%;font-size:1em;">
+               <!--<a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">-->
                   <xsl:choose>
                      <xsl:when test="daodesc">
                         <xsl:apply-templates select="daodesc"/>
@@ -1805,8 +1806,7 @@
                         <xsl:if test="../did/unitdate"><xsl:value-of select="../did/unitdate"/></xsl:if>                  
                      </xsl:otherwise>
                   </xsl:choose>
-               </a>
-            </div>
+               <!--</a>-->
             </div>   
          </div>
       </xsl:if>
