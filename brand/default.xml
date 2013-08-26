@@ -389,7 +389,7 @@
                                 }
                             });
                             
-                            $(".daoLink a").on("click", function (e) {
+                            $(".daoLink a, .caption a").on("click", function (e) {
                                 e.preventDefault();
                                 var src = $(this).attr("href");
                                 var title = $(this).attr("data-title");
