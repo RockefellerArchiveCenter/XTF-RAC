@@ -1219,6 +1219,7 @@
          </div>-->
          <div class="resultIcon">
             <xsl:choose>
+               <xsl:when test="meta/type = 'dao' and meta/type = 'ead'"/>
                <xsl:when test="meta/genre[contains(.,'DVD')]">
                   <img src="/xtf/icons/default/video.gif" alt="Moving Image"/>
                   <span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>
@@ -1235,7 +1236,7 @@
                   <img src="/xtf/icons/default/book.gif" alt="Book"/>
                   <span style="font-size:.75em;color:#C45428;display:block;">Book</span>
                </xsl:when>
-               <xsl:when test="meta/type = 'ead'">
+               <xsl:when test="meta/type = 'ead' and meta/type != 'dao'">
                   <img src="/xtf/icons/default/collections.gif" alt="Collection"/>
                   <span style="font-size:.75em;color:#C45428;display:block;">Collection</span>
                </xsl:when>
@@ -1556,6 +1557,7 @@
                      </div> -->
                      <div class="resultIcon">
                         <xsl:choose>
+                           
                            <xsl:when test="meta/genre[contains(.,'DVD')]">
                               <img src="/xtf/icons/default/video.gif" alt="Moving Image"/>
                               <span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>
@@ -1572,7 +1574,7 @@
                               <img src="/xtf/icons/default/book.gif" alt="Book"/>   
                               <span style="font-size:.75em;color:#C45428;display:block;">Book</span>                        
                            </xsl:when>
-                           <xsl:when test="meta/type = 'ead'">
+                           <xsl:when test="meta/type = 'ead' and meta/type != 'dao'">
                               <img src="/xtf/icons/default/collections.gif" alt="Collection"/>
                               <span style="font-size:.75em;color:#C45428;display:block;">Collection</span>
                            </xsl:when>

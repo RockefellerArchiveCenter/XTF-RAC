@@ -459,8 +459,13 @@
          <xsl:when test="@level">
             <xsl:variable name="seriesTitle">
                <xsl:choose>
-                  <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">                    
-                    <xsl:text>File: </xsl:text> 
+                  <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">
+                     <xsl:choose>
+                        <xsl:when test="descendant-or-self::dao"/>
+                        <xsl:otherwise>
+                           <xsl:text>File: </xsl:text>
+                        </xsl:otherwise>
+                     </xsl:choose>
                      <xsl:choose>
                         <xsl:when test="string-length(normalize-space(did/unittitle)) &gt; 1">
                            <xsl:value-of select="did/unittitle"/>.       
@@ -475,6 +480,7 @@
                            </xsl:for-each>
                      </xsl:if>
                   </xsl:when>
+                  
                   <xsl:otherwise>
                      <xsl:choose>
                         <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
@@ -606,10 +612,10 @@
                      <collectionCreator xtf:meta="true">
                         <xsl:value-of select="normalize-space(.)"/>
                      </collectionCreator>
+                     <creator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </creator>
                   </xsl:for-each>
-                  <creator xtf:meta="true">
-                     <xsl:value-of select="'unknown'"/>
-                  </creator>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:when>

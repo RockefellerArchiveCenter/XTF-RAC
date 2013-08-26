@@ -937,7 +937,7 @@
          </xsl:when>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link]">
              <!-- 10/29/12 WS: Added type parameter for browsing  -->
-             <a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level=collection;type={$type};sort={$browse-name}"><div class="alphaLink"><xsl:value-of select="$alpha"/></div></a>
+             <a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level={$level};type={$type};sort={$browse-name}"><div class="alphaLink"><xsl:value-of select="$alpha"/></div></a>
          </xsl:when>
          <xsl:otherwise>
             <div class="alphaLink"><xsl:value-of select="upper-case($alpha)"/></div>
