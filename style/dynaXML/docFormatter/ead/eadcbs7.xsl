@@ -1741,26 +1741,42 @@
                             <xsl:variable name="daoTitle" select="@ns2:title"/>
                             <xsl:variable name="citation">
                                <xsl:call-template name="daoCitation"/>
-                            </xsl:variable>                      
-                            <a href="{$daoLink}" 
-                               data-citation="{$citation}" data-title="{$daoTitle}" 
-                               data-width="512" data-height="384" 
-                               onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
-                               <xsl:if test="count(../dao) &gt; 1">
-                                  <xsl:attribute name="style">margin-left:1em;</xsl:attribute>
-                               </xsl:if>
-                               <xsl:choose>
-                                  <xsl:when test="count(../dao) &gt; 1">
-                                     <xsl:value-of select="$daoTitle"/>
-                                  </xsl:when>
-                                  <xsl:otherwise>
-                                     <xsl:for-each select="../did">
-                                        <xsl:call-template name="component-did-core"/>                                        
-                                     </xsl:for-each>
-                                  </xsl:otherwise>
-                               </xsl:choose>
-                               <img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>
-                            </a>
+                            </xsl:variable>  
+                            <xsl:choose>
+                               <xsl:when test="@ns2:actuate and @ns2:actuate != 'none'">
+                                  <a href="{$daoLink}" 
+                                     data-citation="{$citation}" data-title="{$daoTitle}" 
+                                     data-width="512" data-height="384" 
+                                     onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+                                     <xsl:if test="count(../dao) &gt; 1">
+                                        <xsl:attribute name="style">margin-left:1em;</xsl:attribute>
+                                     </xsl:if>
+                                     <xsl:choose>
+                                        <xsl:when test="count(../dao) &gt; 1">
+                                           <xsl:value-of select="$daoTitle"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                           <xsl:for-each select="../did">
+                                              <xsl:call-template name="component-did-core"/>                                        
+                                           </xsl:for-each>
+                                        </xsl:otherwise>
+                                     </xsl:choose>
+                                     <img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>
+                                  </a>
+                               </xsl:when>
+                               <xsl:otherwise>
+                                  <xsl:choose>
+                                     <xsl:when test="count(../dao) &gt; 1">
+                                        <xsl:value-of select="$daoTitle"/>
+                                     </xsl:when>
+                                     <xsl:otherwise>
+                                        <xsl:for-each select="../did">
+                                           <xsl:call-template name="component-did-core"/>                                        
+                                        </xsl:for-each>
+                                     </xsl:otherwise>
+                                  </xsl:choose>
+                               </xsl:otherwise>
+                            </xsl:choose>
                          </xsl:for-each>
                          
                          <!--
