@@ -615,12 +615,11 @@
                     <xsl:when test="$doc.view='dao'">
                         <div class="contentsList">
                            <h4>Digital Contents List</h4>
-                           <xsl:apply-templates select="archdesc/dsc/head" mode="tocLink"/>
-                           <xsl:apply-templates select="archdesc/dsc/child::*[@level='series'][child::dao] | 
-                              archdesc/dsc/child::*[@level='recordgrp'][child::dao] | 
-                              archdesc/dsc/child::*[@level='fonds'][child::dao] | archdesc/dsc/child::*[@level='subgrp'][child::dao] 
-                              | archdesc/dsc/child::*[@level='subseries'][child::dao] 
-                              | archdesc/dsc/child::*[@level='otherlevel' and not(child::did/container)][child::dao]" 
+                           <xsl:apply-templates select="archdesc/dsc/child::*[@level='series'][descendant::dao] | 
+                              archdesc/dsc/child::*[@level='recordgrp'][descendant::dao] | 
+                              archdesc/dsc/child::*[@level='fonds'][descendant::dao] | archdesc/dsc/child::*[@level='subgrp'][descendant::dao] 
+                              | archdesc/dsc/child::*[@level='subseries'][descendant::dao] 
+                              | archdesc/dsc/child::*[@level='otherlevel' and not(child::did/container)][descendant::dao]" 
                               mode="dscTocDao"/>
                         </div>
                      </xsl:when>
