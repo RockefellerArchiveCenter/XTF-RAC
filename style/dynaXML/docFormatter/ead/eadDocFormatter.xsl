@@ -507,7 +507,7 @@
          </xsl:choose>
       </xsl:variable>
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>   
-         <a>
+      <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'tab', '{$id}']);">
 
       <!-- 5/17/2012 DG: create variables for the new href: documentname2, basicchoice2, xtfURL2, href2. Just use chunk.id and doc name for now-->
       	<xsl:variable name="documentname2">
@@ -1107,7 +1107,7 @@
             
                <xsl:choose>
                   <xsl:when test="$indent = 3">
-                     <a>
+                     <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$id}']);">
                   	<!-- if basicchoice2 = "nomatch_for_id" then use the original -->
                    <xsl:attribute name="href">
                         <!--   <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>   (old had &amp;menu=more)-->
@@ -1141,7 +1141,7 @@
                      </a>
                   </xsl:when>
                   <xsl:otherwise>
-                     <a>
+                     <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$id}']);">
                         <!--<xsl:attribute name="onclick">showHide('<xsl:value-of select="$submenuID"/>');</xsl:attribute>-->
                         <xsl:attribute name="href">
                            <xsl:choose>
