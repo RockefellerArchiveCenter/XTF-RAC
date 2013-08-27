@@ -308,10 +308,10 @@ ul.none {list-style:none;}
 #content-right table tr td {padding-right:1em;}
 .col4 {padding-right: 1em;}
 .moreInfo a {width:100%; float:left;}
-.addToBag {font-weight:normal !important;}
+/*.addToBag {font-weight:normal !important;}*/
 
 /* Container list styles*/
-table.containerList {width:99%; position:relative}
+/*table.containerList {width:99%; position:relative}*/
 table.containerList tr td{padding-top:2px; padding-bottom:2px;}
 .dscSeries, .dscSubseries {float: left;width: 100%;}
 tr.dscSeries, tr.dscSubseries {float:none}

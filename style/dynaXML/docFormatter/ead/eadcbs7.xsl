@@ -1156,7 +1156,7 @@
              </div>
           </xsl:when>
           <xsl:otherwise>
-             <table class="containerList" cellpadding="0" cellspacing="0" border="0">
+             <table class="containerList" cellpadding="0" cellspacing="0" border="0" style="width:99%;position:relative;">
                 <xsl:call-template name="clevel">
                    <xsl:with-param name="level">01</xsl:with-param>
                 </xsl:call-template>
@@ -1277,7 +1277,7 @@
                          </xsl:attribute>
                          <td colspan="6" class="{$clevelMargin}">
                              <xsl:call-template name="anchor"/>
-                             <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
+                            <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
 <!--                             <xsl:apply-templates select="did/unittitle" mode="dsc"/>-->
                              <xsl:apply-templates select="did/origination" mode="dsc"/>
                              <xsl:apply-templates select="scopecontent"/> 

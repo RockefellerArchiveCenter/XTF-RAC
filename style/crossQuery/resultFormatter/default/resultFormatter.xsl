@@ -435,7 +435,9 @@
                                  <xsl:if test="facet[@field='facet-geogname']/child::*">
                                     <xsl:apply-templates select="facet[@field='facet-geogname']"/>
                                  </xsl:if>
-                                 <xsl:apply-templates select="facet[@field='facet-format']"/>
+                                 <xsl:if test="facet[@field='facet-format']/child::*">
+                                    <xsl:apply-templates select="facet[@field='facet-format']"/>
+                                 </xsl:if>
                                  <!-- 10/31/12 WS: Commented out date facet 
                                        <xsl:apply-templates select="facet[@field='facet-date']"/>
                                     -->

@@ -941,7 +941,7 @@
          <xsl:with-param name="nodes" select="."/>
          <xsl:with-param name="indent" select="2"/>
          <xsl:with-param name="dao">
-            <xsl:if test="child::dao">true</xsl:if>
+            <xsl:if test="xtf:meta/*:type = 'dao'">true</xsl:if>
          </xsl:with-param>
       </xsl:call-template> 
       </div>
@@ -1010,7 +1010,7 @@
          <xsl:with-param name="nodes" select="."/>
          <xsl:with-param name="indent" select="2"/>
          <xsl:with-param name="dao">
-            <xsl:if test="child::dao">true</xsl:if>
+            <xsl:if test="xtf:meta/*:type = 'dao'">true</xsl:if>
          </xsl:with-param>
       </xsl:call-template> 
       </div>
