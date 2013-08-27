@@ -615,11 +615,11 @@
                     <xsl:when test="$doc.view='dao'">
                         <div class="contentsList">
                            <h4>Digital Contents List</h4>
-                           <xsl:apply-templates select="archdesc/dsc/child::*[@level='series'][descendant::dao] | 
-                              archdesc/dsc/child::*[@level='recordgrp'][descendant::dao] | 
-                              archdesc/dsc/child::*[@level='fonds'][descendant::dao] | archdesc/dsc/child::*[@level='subgrp'][descendant::dao] 
-                              | archdesc/dsc/child::*[@level='subseries'][descendant::dao] 
-                              | archdesc/dsc/child::*[@level='otherlevel' and not(child::did/container)][descendant::dao]" 
+                           <xsl:apply-templates select="archdesc/dsc/child::*[@level='series'] [xtf:meta/*:type = 'dao'] | 
+                              archdesc/dsc/child::*[@level='recordgrp'][xtf:meta/*:type = 'dao'] | 
+                              archdesc/dsc/child::*[@level='fonds'][xtf:meta/*:type = 'dao'] | archdesc/dsc/child::*[@level='subgrp'][xtf:meta/*:type = 'dao'] 
+                              | archdesc/dsc/child::*[@level='subseries'][xtf:meta/*:type = 'dao'] 
+                              | archdesc/dsc/child::*[@level='otherlevel' and not(child::did/container)][xtf:meta/*:type = 'dao']" 
                               mode="dscTocDao"/>
                         </div>
                      </xsl:when>
@@ -757,10 +757,16 @@
          <xsl:variable name="seriesID" select="@id"/>
          <xsl:value-of select="concat('dsc',$seriesID)"/>
       </xsl:variable>
+      <xsl:variable name="submenu">
+            <xsl:if
+               test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+               <xsl:value-of select="'true'"/>
+            </xsl:if>
+      </xsl:variable>
       <div id="{@id}">
          <xsl:attribute name="class">
             <xsl:value-of select="'tocRow '"/>
-            <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+            <xsl:if test="$submenu = 'true'">
                <xsl:value-of select="'accordionButton '"/>
             </xsl:if>
             <xsl:if test="$chunk.id = @id">
@@ -806,12 +812,11 @@
             <xsl:with-param name="nodes" select="."/>
             <xsl:with-param name="indent" select="2"/>
             <xsl:with-param name="dao">
-               <xsl:if test="child::dao">true</xsl:if>
+               <xsl:if test="xtf:meta/*:type = 'dao'">true</xsl:if>
             </xsl:with-param>
          </xsl:call-template>
       </div>
-         <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' 
-            or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+         <xsl:if test="$submenu = 'true'">
             <div class="more accordionContent" id="{$submenuID}">
                <xsl:if test="$parentID = $submenuID">
                   <xsl:attribute name="style">display:block;</xsl:attribute>
@@ -870,7 +875,7 @@
             <xsl:with-param name="nodes" select="."/>
             <xsl:with-param name="indent" select="3"/>
             <xsl:with-param name="dao">
-               <xsl:if test="child::dao">true</xsl:if>
+               <xsl:if test="xtf:meta/*:type = 'dao'">true</xsl:if>
             </xsl:with-param>
          </xsl:call-template>
       </div>
@@ -881,10 +886,16 @@
          <xsl:variable name="seriesID" select="@id"/>
          <xsl:value-of select="concat('dsc',$seriesID)"/>
       </xsl:variable>
+      <xsl:variable name="submenu">
+         <xsl:if
+            test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+            <xsl:value-of select="'true'"/>
+         </xsl:if>
+      </xsl:variable>
       <div id="{@id}">
          <xsl:attribute name="class">
             <xsl:value-of select="'tocRow '"/>
-            <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+            <xsl:if test="$submenu = 'true'">
                <xsl:value-of select="'accordionButton '"/>
             </xsl:if>
             <xsl:if test="$chunk.id = @id">
@@ -913,10 +924,10 @@
       <xsl:variable name="untititle">
          <xsl:choose>
             <xsl:when test="string-length(did/unittitle) &gt; 1">
-               <xsl:value-of select="did/unittitle"/>       
+               <xsl:value-of select="did/unittitle"/>
             </xsl:when>
             <xsl:when test="string-length(did/unitdate) &gt; 1">
-               <xsl:value-of select="did/unitdate"/> 
+               <xsl:value-of select="did/unitdate"/>
             </xsl:when>
             <xsl:otherwise>Unknown</xsl:otherwise>
          </xsl:choose>
@@ -939,8 +950,7 @@
       (as evidenced by the level attribute series) and forms a hyperlink to each.   
       Delete this section if you do not wish the c02 titles to appear in the 
       table of contents. -->
-         <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' 
-            or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+         <xsl:if test="$submenu = 'true'">
             <div class="more accordionContent " id="{$submenuID}">
                <xsl:if test="$parentID = $submenuID">
                   <xsl:attribute name="style">display:block;</xsl:attribute>
