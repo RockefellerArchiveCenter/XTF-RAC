@@ -873,6 +873,7 @@
    <!-- format -->
    <xsl:template name="get-ead-format">
       <format xtf:meta="true">Collection</format>
+      <xsl:if test="descendant-or-self::dao"><format xtf:meta="true">Digital Material</format></xsl:if>
    </xsl:template>
    
    <!-- identifier --> 
