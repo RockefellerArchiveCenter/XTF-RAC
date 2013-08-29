@@ -460,12 +460,7 @@
             <xsl:variable name="seriesTitle">
                <xsl:choose>
                   <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">
-                     <xsl:choose>
-                        <xsl:when test="descendant-or-self::dao"/>
-                        <xsl:otherwise>
-                           <xsl:text>File: </xsl:text>
-                        </xsl:otherwise>
-                     </xsl:choose>
+                        <xsl:text>File: </xsl:text>
                      <xsl:choose>
                         <xsl:when test="string-length(normalize-space(did/unittitle)) &gt; 1">
                            <xsl:value-of select="did/unittitle"/>.       
