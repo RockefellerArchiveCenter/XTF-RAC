@@ -465,7 +465,9 @@
                         <xsl:when test="string-length(normalize-space(did/unittitle)) &gt; 1">
                            <xsl:value-of select="did/unittitle"/>.       
                         </xsl:when>
-                        <xsl:when test="string-length(normalize-space(did/unitdate)) &gt; 1"></xsl:when>
+                        <xsl:when test="string-length(normalize-space(did/unitdate)) &gt; 1">
+                           <xsl:value-of select="did/unitdate"/>.
+                        </xsl:when>
                         <xsl:otherwise>Unknown.</xsl:otherwise>
                      </xsl:choose>
                      <xsl:if test="child::did/container">
