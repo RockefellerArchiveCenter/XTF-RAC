@@ -125,6 +125,7 @@ div.docHit {
 .resultIcon {float:left; width:6%;}
 .resultContent {float:left; width:82%;}
 .result {float:left;width:100%;margin-bottom:.5em;}
+.result img, .title img {vertical-align:middle;}
 .resultLabel {float:left; width:10%; text-align:right;font-weight:bold;margin-right:1%}
 .resultText {float:left; width:85%;}
 

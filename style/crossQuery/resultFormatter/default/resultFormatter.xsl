@@ -1284,6 +1284,10 @@
                         <xsl:otherwise>none</xsl:otherwise>
                      </xsl:choose>
                   </a>
+                  <xsl:if test="meta/*:type = 'dao'">
+                     <img src="/xtf/icons/default/dao.gif" alt="digital object"
+                        title="digital object"/>
+                  </xsl:if>
                   <!--
                   <xsl:variable name="type" select="meta/type"/>
                   <span class="typeIcon">
@@ -1622,6 +1626,10 @@
                               <xsl:otherwise>none</xsl:otherwise>
                            </xsl:choose>
                         </a>
+                        <xsl:if test="meta/*:type = 'dao'">
+                           <img src="/xtf/icons/default/dao.gif" alt="digital object"
+                              title="digital object"/>
+                        </xsl:if>
                         <!--
                         <xsl:variable name="type" select="meta/type"/>
                            <span class="typeIcon">
@@ -1829,6 +1837,10 @@
                            <xsl:otherwise>none</xsl:otherwise>
                         </xsl:choose>
                      </a>
+                     <xsl:if test="meta/*:type = 'dao'">
+                        <img src="/xtf/icons/default/dao.gif" alt="digital object"
+                           title="digital object"/>
+                     </xsl:if>
 
                      <!--
                         <xsl:variable name="type" select="meta/type"/>
@@ -2098,7 +2110,11 @@
                <xsl:otherwise>none</xsl:otherwise>
             </xsl:choose>
          </a>
-         <xsl:text>&#160;</xsl:text>
+         <xsl:if test="meta/*:type = 'dao'">
+            <img src="/xtf/icons/default/dao.gif" alt="digital object"
+               title="digital object"/>
+         </xsl:if>
+
          <!--
                <xsl:variable name="type" select="meta/type"/>
                   <span class="typeIcon">
