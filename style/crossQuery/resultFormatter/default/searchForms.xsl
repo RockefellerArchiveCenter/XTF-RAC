@@ -254,7 +254,8 @@
                      <div class="homeDialog" style="float:left;">
                         <h4>Why DIMES?</h4>
                         <img src="./icons/default/dimes.jpg" alt="John D. Rockefeller, Sr. handing out dimes" style="float:right; width:45%;"/>
-                        <p style="float:left; width:50%;">DIMES is an acronym for Digital Information Management Engine for Searching. It's also a reference to John D. Rockefeller Sr.'s ritual practice of dispensing dimes to reward services exceptionally rendered, deliver a brief sermon on the virtues of frugality, and engage with the public in a way that did not involve signing autographs (a practice he hated). "I think it is easier," he said "to remember a lesson when we have some token to recall it by, something we can look at which reminds us of the idea."</p>
+                        <p style="float:left; width:50%;">DIMES is an acronym for Digital Information Management Engine for Searching. It's also a reference to John D. Rockefeller Sr.'s ritual practice of dispensing dimes to reward services exceptionally rendered, deliver a brief sermon on the virtues of frugality, and engage with the public in a way that did not involve signing autographs (a practice he hated).</p>
+                        <p style="float:left; width:50%;">"I think it is easier," he said "to remember a lesson when we have some token to recall it by, something we can look at which reminds us of the idea."</p>
                      </div>
                   </div>
                   
