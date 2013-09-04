@@ -1104,7 +1104,7 @@
             <xsl:otherwise>
                   <div class="facetName">
                      <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                     <a href="{$selectLink}">
+                     <a onclick="_gaq.push(['_trackEvent', 'search', 'browse', 'facet']);" href="{$selectLink}">
                         <xsl:value-of select="$value"/>
                      </a>
                      <xsl:apply-templates select="." mode="afterGroupValue"/>
