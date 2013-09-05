@@ -525,14 +525,14 @@
                               </div>
                               </xsl:if>
                               <div id="sort">
-                                 <form method="get" action="{$xtfURL}{$crossqueryPath}"> Sort:
+                                 <form id="sortForm" method="get" action="{$xtfURL}{$crossqueryPath}"><b>Sort:</b>
                                        <xsl:call-template name="sort.options"/>
                                     <xsl:call-template name="hidden.query">
                                        <xsl:with-param name="queryString"
                                           select="editURL:remove($queryString, 'sort')"/>
                                     </xsl:call-template>
                                     <xsl:text>&#160;</xsl:text>
-                                    <input type="submit" value="Go!"/>
+                                    <noscript><input type="submit" value="Go!"/></noscript>
                                  </form>
                               </div>
                            </div>

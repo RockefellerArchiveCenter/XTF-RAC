@@ -542,7 +542,7 @@
    <!-- ====================================================================== -->
    
    <xsl:template name="sort.options">
-      <select size="1" name="sort">
+      <select name="sort" onchange="document.getElementById('sortForm').submit()">
          <xsl:choose>
             <xsl:when test="$smode='showBag'">
                <xsl:choose>
