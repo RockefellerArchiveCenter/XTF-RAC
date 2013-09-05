@@ -1,4 +1,6 @@
 $(document).ready(function() {
+var id = "#" + $(".dscSeries").attr("id");
+var menu = id + "Menu";
 if($("#headerlink").is(':visible')){
     $("#headerlinkMenu").addClass("active"); } 
 else if ($("#restrictlink").is(':visible')){
@@ -11,5 +13,11 @@ else if ($("#adminlink").is(':visible')){
     $("#adminlinkMenu").addClass("active"); } 
 else if ($("#physdesclink").is(':visible')){
     $("#physdesclinkMenu").addClass("active"); } 
-else {}   
+else if ($(id).is(':visible')){
+$(".tocRow").removeClass("on");
+$(".accordionContent").hide();
+$(menu).addClass("active");}
+if($(menu).hasClass('accordionButton')){
+    $(menu).addClass("on").next().show();}
+else {}
     });

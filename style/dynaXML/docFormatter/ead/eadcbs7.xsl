@@ -97,7 +97,7 @@
                   <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
                </xsl:when>
                <xsl:when test="$chunk.id = 'digitalLink'">
-                  <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
+                  <xsl:apply-templates select="/ead/archdesc/dsc/child::*[1][@level]"/>
                </xsl:when>
                <xsl:when test="$chunk.id = 'bioghist'">
                   <xsl:apply-templates select="/ead/archdesc/bioghist"/>
@@ -1112,30 +1112,97 @@
        <xsl:choose>
           <xsl:when test="$doc.view = 'dao'">
              <div class="containerList" style="width:100%;float:left;">
+                <div>
+                   <xsl:call-template name="anchor"/>
+                   <xsl:attribute name="class">
+                      <xsl:choose>
+                         <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
+                         <xsl:otherwise>dscSeries</xsl:otherwise>
+                      </xsl:choose>    
+                   </xsl:attribute>
                 <xsl:call-template name="clevel_dao"/>
-                <xsl:for-each select="c|c02">
+                   
+
+                      
+                   <xsl:for-each select="c|c02">
                    <div class="c02">
+                      <xsl:call-template name="anchor"/>
+                      <xsl:attribute name="class">
+                         <xsl:choose>
+                            <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
+                            <xsl:otherwise>dscSeries</xsl:otherwise>
+                         </xsl:choose>    
+                      </xsl:attribute>
                    <xsl:call-template name="clevel_dao"/>
                    <xsl:for-each select="c|c03">
                       <div class="c03">
+                         <xsl:call-template name="anchor"/>
+                         <xsl:attribute name="class">
+                            <xsl:choose>
+                               <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
+                               <xsl:otherwise>dscSeries</xsl:otherwise>
+                            </xsl:choose>    
+                         </xsl:attribute>
                       <xsl:call-template name="clevel_dao"/>
                       <xsl:for-each select="c|c04">
                          <div class="c04">
+                            <xsl:call-template name="anchor"/>
+                            <xsl:attribute name="class">
+                               <xsl:choose>
+                                  <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
+                                  <xsl:otherwise>dscSeries</xsl:otherwise>
+                               </xsl:choose>    
+                            </xsl:attribute>
                          <xsl:call-template name="clevel_dao"/>
                          <xsl:for-each select="c|c05">
                             <div class="c05">
+                               <xsl:call-template name="anchor"/>
+                               <xsl:attribute name="class">
+                                  <xsl:choose>
+                                     <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
+                                     <xsl:otherwise>dscSeries</xsl:otherwise>
+                                  </xsl:choose>    
+                               </xsl:attribute>
                             <xsl:call-template name="clevel_dao"/>
                             <xsl:for-each select="c|c06">
                                <div class="c06">
+                                  <xsl:call-template name="anchor"/>
+                                  <xsl:attribute name="class">
+                                     <xsl:choose>
+                                        <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
+                                        <xsl:otherwise>dscSeries</xsl:otherwise>
+                                     </xsl:choose>    
+                                  </xsl:attribute>
                                <xsl:call-template name="clevel_dao"/>
                                <xsl:for-each select="c|c07">
                                   <div class="c07">
+                                     <xsl:call-template name="anchor"/>
+                                     <xsl:attribute name="class">
+                                        <xsl:choose>
+                                           <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
+                                           <xsl:otherwise>dscSeries</xsl:otherwise>
+                                        </xsl:choose>    
+                                     </xsl:attribute>
                                   <xsl:call-template name="clevel_dao"/>
                                   <xsl:for-each select="c|c08">
                                      <div class="c08">
+                                        <xsl:call-template name="anchor"/>
+                                        <xsl:attribute name="class">
+                                           <xsl:choose>
+                                              <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
+                                              <xsl:otherwise>dscSeries</xsl:otherwise>
+                                           </xsl:choose>    
+                                        </xsl:attribute>
                                      <xsl:call-template name="clevel_dao"/>
                                      <xsl:for-each select="c|c09">
                                         <div class="c04">
+                                           <xsl:call-template name="anchor"/>
+                                           <xsl:attribute name="class">
+                                              <xsl:choose>
+                                                 <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
+                                                 <xsl:otherwise>dscSeries</xsl:otherwise>
+                                              </xsl:choose>    
+                                           </xsl:attribute>
                                           <xsl:call-template name="clevel_dao"/>
                                         </div>
                                      </xsl:for-each>
@@ -1153,6 +1220,8 @@
                    </xsl:for-each>
                   </div>
                 </xsl:for-each>
+                   
+             </div>
              </div>
           </xsl:when>
           <xsl:otherwise>
@@ -1617,15 +1686,16 @@
                    <xsl:when test="@level='subcollection' or @level='subgrp' or @level='series' 
                        or @level='subseries' or @level='collection'or @level='fonds' or 
                        @level='recordgrp' or @level='subfonds' or @level='class' or (@level='otherlevel' and not(child::did/container))">
-                      <div>                           
+                      <!--<div>
+                         <xsl:call-template name="anchor"/>
                          <xsl:attribute name="class">
                                <xsl:choose>
                                    <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
                                    <xsl:otherwise>dscSeries</xsl:otherwise>
                                </xsl:choose>    
                          </xsl:attribute>
-                         <div>
-                             <xsl:call-template name="anchor"/>
+                         <div>-->
+                             
                             <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
                              <!--<xsl:apply-templates select="did/unittitle" mode="dsc"/>-->
                              <!--<xsl:apply-templates select="did/origination" mode="dsc"/>
@@ -1662,8 +1732,8 @@
                              <xsl:apply-templates select="relatedmaterial"/>
                              <xsl:apply-templates select="separatedmaterial"/>
                              <xsl:apply-templates select="controlaccess"/> -->
-                         </div>
-                      </div>
+                         <!--</div>
+                      </div>-->
                    </xsl:when>      
                    <!-- Items/Files--> 
                    <xsl:when test="dao">

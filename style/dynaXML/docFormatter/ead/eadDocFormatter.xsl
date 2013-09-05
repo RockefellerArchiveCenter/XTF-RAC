@@ -892,7 +892,7 @@
             <xsl:value-of select="'true'"/>
          </xsl:if>
       </xsl:variable>
-      <div id="{@id}">
+      <div id="{@id}Menu">
          <xsl:attribute name="class">
             <xsl:value-of select="'tocRow '"/>
             <xsl:if test="$submenu = 'true'">
