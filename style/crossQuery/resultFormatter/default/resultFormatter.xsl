@@ -1740,12 +1740,17 @@
                            </div>
                         </div>
                      </xsl:if>
-                     <xsl:for-each select="current-group()[meta/level != 'collection']">
-                        <!--            <xsl:for-each select="current-group()[position() &lt; 5][meta/level != 'collection']">-->
-                        <div class="subdocument">
-                           <xsl:call-template name="subDocument"/>
-                        </div>
-                     </xsl:for-each>
+                  <xsl:if test="current-group()[meta/level != 'collection']">
+                     <div class="subdocuments">
+                        <xsl:for-each select="current-group()[meta/level != 'collection']">
+                           <!--            <xsl:for-each select="current-group()[position() &lt; 5][meta/level != 'collection']">-->
+                           <div class="subdocument">
+                              <xsl:call-template name="subDocument"/>
+                           </div>
+                        </xsl:for-each>
+                     </div>
+                  </xsl:if>
+
                      <!-- "more like this" -->
                      <div class="result">
                         <div class="resultLabel">
@@ -1893,12 +1898,16 @@
                         </div>
                      </div>
                   </xsl:if>
-                  <xsl:for-each select="current-group()[meta/level != 'collection']">
-                     <!--            <xsl:for-each select="current-group()[position() &lt; 5][meta/level != 'collection']">-->
-                     <div class="subdocument">
-                        <xsl:call-template name="subDocument"/>
+                  <xsl:if test="current-group()[meta/level != 'collection']">
+                     <div class="subdocuments">
+                        <xsl:for-each select="current-group()[meta/level != 'collection']">
+                           <!--            <xsl:for-each select="current-group()[position() &lt; 5][meta/level != 'collection']">-->
+                           <div class="subdocument">
+                              <xsl:call-template name="subDocument"/>
+                           </div>
+                        </xsl:for-each>
                      </div>
-                  </xsl:for-each>
+                  </xsl:if>
                   <!-- "more like this" -->
                   <div class="result">
                      <div class="resultLabel">
