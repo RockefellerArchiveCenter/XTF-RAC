@@ -1296,7 +1296,17 @@
                   -->
                </div>
             </div>
-
+            <!-- 9/5/2013 HA: adding collection for DAO browse -->
+            <xsl:if test="meta/type = 'dao' and meta/type = 'ead'">
+               <div class="result">
+                  <div class="resultLabel">
+                     <xsl:text>Collection</xsl:text>
+                  </div>
+                  <div class="resultText">
+                     <xsl:apply-templates select="meta/collectionTitle"/>
+                  </div>
+               </div>
+            </xsl:if>
             <div class="result">
                <div class="resultLabel">
                   <xsl:if test="$sort = 'creator'">
