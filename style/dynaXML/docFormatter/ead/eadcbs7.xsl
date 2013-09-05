@@ -1817,8 +1817,8 @@
                      <xsl:when test="daodesc">
                         <xsl:apply-templates select="daodesc"/>
                      </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:if test="../did/unittitle"><xsl:value-of select="../did/unittitle"/>&#160;</xsl:if>
+                     <xsl:otherwise>-->
+                 <xsl:if test="../did/unittitle"><xsl:value-of select="../did/unittitle"/>,&#160;</xsl:if>
                         <xsl:if test="../did/unitdate"><xsl:value-of select="../did/unitdate"/></xsl:if>                  
                      </xsl:otherwise>
                   </xsl:choose>
