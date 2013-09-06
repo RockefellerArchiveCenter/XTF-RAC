@@ -191,21 +191,20 @@ div.docHit .typeIcon {
 }
 
 .facetWrapper {width:98%;float:left;padding:1%}
-.facetWrapper:nth-child(even) {background-color:rgb(228, 228, 228);border-top:1px dashed #999; border-bottom:1px dashed #999}
 .facetName {float:left;}
 .totalDocs {float:right;}
-.clearLink {float:right;}
+.clearLink {float:right;font-weight:bold;}
 
 div.facetMore {
    margin-top: 0.5em;
    margin-left: 2em;
-   font-style:italic;
+   font-weight:bold;
 }
 
 div.facetLess {
    margin-left: 2em;
    margin-bottom: 0.5em;
-   font-style:italic;
+   font-weight:bold;
 }
 
 div.getAddress {

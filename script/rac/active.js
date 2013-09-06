@@ -17,7 +17,6 @@ else if ($(id).is(':visible')){
 $(".tocRow").removeClass("on");
 $(".accordionContent").hide();
 $(menu).addClass("active");}
-if($(menu).hasClass('accordionButton')){
-    $(menu).addClass("on").next().show();}
+
 else {}
     });
