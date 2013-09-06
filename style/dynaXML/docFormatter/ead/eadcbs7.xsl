@@ -1921,6 +1921,9 @@
                      <xsl:when test="did/unittitle != ''">
                         <xsl:value-of select="did/unittitle"/>
                      </xsl:when>
+                     <xsl:when test="did/unitdate !=''">
+                        <xsl:value-of select="did/unitdate"/>
+                     </xsl:when>
                      <xsl:otherwise>
                         <xsl:value-of select="'Unknown'"/>
                      </xsl:otherwise>
