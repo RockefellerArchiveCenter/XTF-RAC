@@ -424,7 +424,7 @@
                               <!-- 3/26/12 WS: Added some if statements to only show facets if facet data is available -->
                               <xsl:if
                                  test="facet[@field='facet-subject']/child::* or facet[@field='facet-subjectname']/child::* or facet[@field='facet-geogname']/child::*">
-                                 <h2>Filter Search Results</h2>
+                                 <h2>Narrow Search Results</h2>
                                  <xsl:if test="facet[@field='facet-subject']/child::*">
                                     <xsl:apply-templates select="facet[@field='facet-subject']"/>
                                  </xsl:if>
@@ -1477,6 +1477,13 @@
                                  <xsl:when test="meta/type = 'ead'">
                                     <a href="javascript:add_{@rank}()"
                                        onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);">
+                                       <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
+                                          title="Add to bookbag"/>
+                                    </a>
+                                 </xsl:when>
+                                 <xsl:when test="meta/type = 'ead' and meta/type = 'dao'">
+                                    <a href="javascript:add_{@rank}()"
+                                       onClick="_gaq.push(['_trackEvent', 'interaction', 'add-dao', 'bookbag']);">
                                        <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                                           title="Add to bookbag"/>
                                     </a>
