@@ -156,9 +156,9 @@
             <body>
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
+                  <a href="/xtf/search">
                   <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
                      alt="The Rockefeller Archive Center" border="0"/>
-                  <a href="/xtf/search">
                      <h1>dimes.rockarch.org</h1>
                      <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
                         Center</p>
@@ -237,8 +237,8 @@
                   <xsl:variable name="indexId" select="$identifier"/>
                   <xsl:choose>
                      <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                        <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
-                           title="Added to bookbag"/>
+                        <!--<img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
+                           title="Added to bookbag"/>-->
                         <span class="caption">Added</span>
                      </xsl:when>
                      <xsl:otherwise>
@@ -251,6 +251,7 @@
                                           {  success: function(o) { 
                                                 span.innerHTML = o.responseText;
                                                 ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                                span.previousSibling.style.display = 'none';
                                              },
                                              failure: function(o) { span.innerHTML = 'Failed to add!'; }
                                           }, null);

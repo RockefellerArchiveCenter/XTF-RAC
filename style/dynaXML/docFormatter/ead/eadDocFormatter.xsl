@@ -288,8 +288,8 @@
                   <span class="addToBag">
                      <xsl:choose>
                         <xsl:when test="session:getData('bag')/child::*/child::*[@id=$indexId]">
-                           <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
-                              title="Added to bookbag"/>
+                           <!--<img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
+                              title="Added to bookbag"/>-->
                            <span class="caption">Added</span>
                         </xsl:when>
                         <xsl:otherwise>
@@ -302,6 +302,8 @@
                                              {  success: function(o) { 
                                                    span.innerHTML = o.responseText;
                                                    ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                                   span.previousSibling.style.display = 'none';
+
                                                 },
                                                 failure: function(o) { span.innerHTML = 'Failed to add!'; }
                                              }, null);
