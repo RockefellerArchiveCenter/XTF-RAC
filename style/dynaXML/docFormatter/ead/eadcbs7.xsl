@@ -1493,7 +1493,7 @@
                      </td>
                      <!--2/11/12 WS:  add to bookbag function -->
                      <td style="text-align:center;">
-                        <span class="addToBag" style="float:right;width:75%;">
+                        <span class="addToBag" style="float:left;width:40%;padding-left:15%;">
                            <xsl:variable name="identifier" select="concat($rootID,'|',$levelID)"/>
                            <xsl:variable name="indexId" select="$identifier"/>
                            <xsl:choose>
@@ -1623,7 +1623,7 @@
                           </td>
                          <!--2/11/12 WS:  add to bookbag function -->
                          <td style="text-align:center;">
-                            <span class="addToBag" style="float:right;width:75%;">
+                            <span class="addToBag" style="float:left;width:40%;padding-left:15%;">
                             <xsl:variable name="identifier" select="concat($rootID,'|',@id)"/>
                             <xsl:variable name="indexId" select="$identifier"/>
                             <xsl:choose>
