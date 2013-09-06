@@ -1454,8 +1454,8 @@
                      <xsl:otherwise>
                         <xsl:choose>
                            <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                              <img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
-                                 title="Added to bookbag"/>
+                              <!--<img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
+                                 title="Added to bookbag"/>-->
                               <span class="caption">Added</span>
                            </xsl:when>
                            <xsl:otherwise>
@@ -1468,6 +1468,7 @@
                                           {  success: function(o) { 
                                                 span.innerHTML = o.responseText;
                                                 ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                                span.previousSibling.style.display = 'none';
                                              },
                                              failure: function(o) { span.innerHTML = 'Failed to add!'; }
                                           }, null);
@@ -1989,9 +1990,8 @@
                      <xsl:choose>
                         <xsl:when
                            test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                           <img src="/xtf/icons/default/addbag.gif"
-                              alt="Added to bookbag" title="Added to bookbag"/>
-                           <br/>
+                           <!--<img src="/xtf/icons/default/addbag.gif"
+                              alt="Added to bookbag" title="Added to bookbag"/>-->
                            <span class="caption">Added</span>
                         </xsl:when>
                         <xsl:otherwise>
@@ -2004,6 +2004,8 @@
                                           {  success: function(o) { 
                                                 span.innerHTML = o.responseText;
                                                 ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                                span.previousSibling.style.display = 'none';
+
                                              },
                                              failure: function(o) { span.innerHTML = 'Failed to add!'; }
                                           }, null);
@@ -2185,8 +2187,8 @@
                   <xsl:otherwise>
                      <xsl:choose>
                         <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                           <img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
-                              title="Added to bookbag"/>
+                           <!--<img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
+                              title="Added to bookbag"/>-->
                            <span class="caption">Added</span>
                         </xsl:when>
                         <xsl:otherwise>
@@ -2199,6 +2201,7 @@
                                           {  success: function(o) { 
                                                 span.innerHTML = o.responseText;
                                                 ++(YAHOO.util.Dom.get('bagCount').innerHTML);
+                                                span.previousSibling.style.display = 'none';
                                              },
                                              failure: function(o) { span.innerHTML = 'Failed to add!'; }
                                           }, null);
