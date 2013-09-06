@@ -1493,7 +1493,7 @@
                      </td>
                      <!--2/11/12 WS:  add to bookbag function -->
                      <td style="text-align:center;">
-                        <span class="addToBag">
+                        <span class="addToBag" style="float:right;width:75%;">
                            <xsl:variable name="identifier" select="concat($rootID,'|',$levelID)"/>
                            <xsl:variable name="indexId" select="$identifier"/>
                            <xsl:choose>
@@ -1524,7 +1524,6 @@
                                     <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                                        title="Add to bookbag"/>
                                  </a>
-                                 <br/>
                                  <span id="add_{@id}" class="caption">
                                     <a href="javascript:add_{@id}()"> Add </a>
                                  </span>
@@ -1624,7 +1623,7 @@
                           </td>
                          <!--2/11/12 WS:  add to bookbag function -->
                          <td style="text-align:center;">
-                            <span class="addToBag">
+                            <span class="addToBag" style="float:right;width:75%;">
                             <xsl:variable name="identifier" select="concat($rootID,'|',@id)"/>
                             <xsl:variable name="indexId" select="$identifier"/>
                             <xsl:choose>
@@ -1648,7 +1647,7 @@
                                           }, null);
                                     };
                                   </script>
-                                  <a href="javascript:add_{@id}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
+                                  <a href="javascript:add_{@id}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a>
                                   <span id="add_{@id}" class="caption">
                                      <a href="javascript:add_{@id}()">
                                         Add
