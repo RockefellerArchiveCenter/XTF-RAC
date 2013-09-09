@@ -537,9 +537,18 @@
                               </div>
                            </div>
                            
-                           <xsl:for-each-group select="docHit" group-by="@path">
-                              <xsl:call-template name="docHitColl"/>
-                           </xsl:for-each-group>
+                           <xsl:choose>
+                              <xsl:when test="$type = 'dao'">
+                                 <xsl:for-each select="docHit">
+                                    <xsl:apply-templates select="."/>
+                                 </xsl:for-each>
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <xsl:for-each-group select="docHit" group-by="@path">
+                                    <xsl:call-template name="docHitColl"/>
+                                 </xsl:for-each-group>
+                              </xsl:otherwise>
+                           </xsl:choose>
 
                            
                            <xsl:if test="@totalDocs > $docsPerPage">
