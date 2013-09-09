@@ -829,7 +829,14 @@
       <xsl:choose>
          <xsl:when test="@level">
             <date xtf:meta="true">
-               <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
+               <xsl:choose>
+                  <xsl:when test="did/unitdate[@type='inclusive']">
+                     <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="did/unitdate"/>
+                  </xsl:otherwise>
+               </xsl:choose>
             </date>
          </xsl:when>
          <xsl:when test="/ead/archdesc/did/unitdate[@type='inclusive']">
