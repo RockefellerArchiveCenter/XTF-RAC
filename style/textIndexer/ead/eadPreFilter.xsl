@@ -833,8 +833,11 @@
                   <xsl:when test="did/unitdate[@type='inclusive']">
                      <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
                   </xsl:when>
-                  <xsl:otherwise>
+                  <xsl:when test="did/unitdate">
                      <xsl:value-of select="did/unitdate"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                        <xsl:value-of select="'unknown'"/>
                   </xsl:otherwise>
                </xsl:choose>
             </date>

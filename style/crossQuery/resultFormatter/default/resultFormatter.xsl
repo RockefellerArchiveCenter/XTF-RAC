@@ -1306,7 +1306,7 @@
                </div>
             </div>
             <!-- 9/5/2013 HA: adding collection for DAO browse -->
-            <xsl:if test="meta/type = 'dao' and meta/type = 'ead'">
+            <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level !='collection'">
                <div class="result">
                   <div class="resultLabel">
                      <xsl:text>Collection</xsl:text>
