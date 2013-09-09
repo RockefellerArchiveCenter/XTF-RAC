@@ -2339,7 +2339,7 @@
       <li>
          <xsl:apply-templates select="meta/creator[1]"/>
          <xsl:text>. </xsl:text>
-         <a>
+         <a onClick="_gaq.push(['_trackEvent', 'interaction', 'similar items', 'item click']);">
             <xsl:attribute name="href">
                <xsl:choose>
                   <xsl:when test="matches(meta/display[1], 'dynaxml')">
