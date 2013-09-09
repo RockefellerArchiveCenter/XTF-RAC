@@ -384,9 +384,12 @@
                                 width: "850",
                                 height: "600",
                                 close: function () {
-                                    iframe.attr("src", "");
-                                    $('.daoCitation').remove();
-                                }
+                                    $('.ui-dialog').hide();
+                                  }
+                                //close: function () {
+                                //    iframe.attr("src", "");
+                                //    $('.daoCitation').remove();
+                                //}
                             });
                             
                             $(".daoLink a, .caption a").on("click", function (e) {
@@ -438,9 +441,12 @@
                                   width: "550",
                                   height: "300",
                                   close: function () {
-                                    iframe.attr("src", "");
-                                    $('.ui-dialog .dscDescription').remove();
+                                    $('.ui-dialog').hide();
                                   }
+                                  //close: function () {
+                                  //  iframe.attr("src", "");
+                                  //  $('.ui-dialog .dscDescription').remove();
+                                  //}
                                });
                                
                             $(".dialog_dsc a").on("click", function (e) {
