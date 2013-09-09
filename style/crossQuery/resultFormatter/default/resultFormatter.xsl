@@ -1184,18 +1184,17 @@
          <xsl:variable name="uri">
             <xsl:call-template name="dynaxml.url">
                <xsl:with-param name="path" select="$path"/>
-               <xsl:with-param name="chunk.id" select="'headerlink'"/>
             </xsl:call-template>
          </xsl:variable>
          <xsl:choose>
             <xsl:when test="$chunk.id != ''">
-               <xsl:value-of select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+               <xsl:value-of select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
 <!-- Link used to get sub-document out of context               
    <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
 -->
             </xsl:when>
             <xsl:otherwise>
-               <xsl:value-of select="$uri"/>
+               <xsl:value-of select="concat($uri,';chunk.id=headerLink')"/>
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
@@ -1230,7 +1229,7 @@
          </div>-->
          <div class="resultIcon">
             <xsl:choose>
-               <xsl:when test="meta/type = 'dao' and meta/type = 'ead'">
+               <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
                   <xsl:variable name="daoFile" select="substring-before(tokenize(meta/daoLink,'/')[position()=last()],'.')"/>
                   <xsl:variable name="daoImg" select="concat(string-join(tokenize(meta/daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/> 
                   <a href="{$docPath}"><img src="{$daoImg}" alt="Digital object thumbnail"/></a>
