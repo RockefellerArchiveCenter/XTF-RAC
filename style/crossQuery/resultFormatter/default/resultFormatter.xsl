@@ -1230,7 +1230,11 @@
          </div>-->
          <div class="resultIcon">
             <xsl:choose>
-               <xsl:when test="meta/type = 'dao' and meta/type = 'ead'"/>
+               <xsl:when test="meta/type = 'dao' and meta/type = 'ead'">
+                  <xsl:variable name="daoFile" select="substring-before(tokenize(meta/daoLink,'/')[position()=last()],'.')"/>
+                  <xsl:variable name="daoImg" select="concat(string-join(tokenize(meta/daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/> 
+                  <a href="{$docPath}"><img src="{$daoImg}" alt="Digital object thumbnail"/></a>
+               </xsl:when>
                <xsl:when test="meta/genre[contains(.,'DVD')]">
                   <img src="/xtf/icons/default/video.gif" alt="Moving Image"/>
                   <span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>
