@@ -313,7 +313,8 @@ ul.none {list-style:none;}
 /* Container list styles*/
 /*table.containerList {width:99%; position:relative}*/
 table.containerList tr td{padding-top:2px; padding-bottom:2px;}
-.dscSeries, .dscSubseries {float: left;width: 100%;}
+.dscSeries {float: left;width: 100%;}
+.dscSubseries {float:left; width:99%; padding-left:1%}
 tr.dscSeries, tr.dscSubseries {float:none}
 .seriesTitle {background-color:#ddd; padding:8px 4px; font-size:1.25em; margin:10px 0px; font-weight:bold;}
 td .seriesTitle {margin:10px -4px}
