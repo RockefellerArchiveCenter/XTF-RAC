@@ -831,6 +831,7 @@
                   <xsl:attribute name="style">display:block;</xsl:attribute>
                </xsl:if>
                <xsl:apply-templates select="child::*[@level='subgrp'] 
+                  | child::*[@level='series']
                   | child::*[@level='subseries'] 
                   | child::*[@level='otherlevel' and not(child::did/container)]" 
                   mode="dscTocSubseries">
