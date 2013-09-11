@@ -84,7 +84,7 @@
             <xsl:value-of select="90"/><!-- maximum amount allowed by google is 100 -->
          </xsl:when>
          <xsl:otherwise>
-            <xsl:value-of select="20"/>
+            <xsl:value-of select="40"/>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:param>

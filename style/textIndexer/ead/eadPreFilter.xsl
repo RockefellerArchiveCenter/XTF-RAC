@@ -2,6 +2,7 @@
    xmlns:xs="http://www.w3.org/2001/XMLSchema"
    xmlns:parse="http://cdlib.org/xtf/parse"
    xmlns:xtf="http://cdlib.org/xtf"
+   xmlns:ns2="http://www.w3.org/1999/xlink"
    exclude-result-prefixes="#all"
    xpath-default-namespace="urn:isbn:1-931666-22-9">
    
@@ -348,7 +349,8 @@
                <xsl:call-template name="get-ead-bioghist"/>
    -->
                <xsl:call-template name="get-ead-rights"/>
-               
+               <!-- 9/9/2013 HA: Adding template for dao links -->
+               <xsl:call-template name="get-ead-url"/>
                <!-- special values for OAI -->
                <xsl:call-template name="oai-datestamp"/>
                <xsl:call-template name="oai-set"/>
@@ -459,13 +461,15 @@
          <xsl:when test="@level">
             <xsl:variable name="seriesTitle">
                <xsl:choose>
-                  <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">                    
-                    <xsl:text>File: </xsl:text> 
+                  <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">
+                        <xsl:text>File: </xsl:text>
                      <xsl:choose>
                         <xsl:when test="string-length(normalize-space(did/unittitle)) &gt; 1">
                            <xsl:value-of select="did/unittitle"/>.       
                         </xsl:when>
-                        <xsl:when test="string-length(normalize-space(did/unitdate)) &gt; 1"></xsl:when>
+                        <xsl:when test="string-length(normalize-space(did/unitdate)) &gt; 1">
+                           <xsl:value-of select="did/unitdate"/>.
+                        </xsl:when>
                         <xsl:otherwise>Unknown.</xsl:otherwise>
                      </xsl:choose>
                      <xsl:if test="child::did/container">
@@ -475,6 +479,7 @@
                            </xsl:for-each>
                      </xsl:if>
                   </xsl:when>
+                  
                   <xsl:otherwise>
                      <xsl:choose>
                         <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
@@ -606,10 +611,10 @@
                      <collectionCreator xtf:meta="true">
                         <xsl:value-of select="normalize-space(.)"/>
                      </collectionCreator>
+                     <creator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </creator>
                   </xsl:for-each>
-                  <creator xtf:meta="true">
-                     <xsl:value-of select="'unknown'"/>
-                  </creator>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:when>
@@ -826,7 +831,17 @@
       <xsl:choose>
          <xsl:when test="@level">
             <date xtf:meta="true">
-               <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
+               <xsl:choose>
+                  <xsl:when test="did/unitdate[@type='inclusive']">
+                     <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
+                  </xsl:when>
+                  <xsl:when test="did/unitdate">
+                     <xsl:value-of select="did/unitdate"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                        <xsl:value-of select="'unknown'"/>
+                  </xsl:otherwise>
+               </xsl:choose>
             </date>
          </xsl:when>
          <xsl:when test="/ead/archdesc/did/unitdate[@type='inclusive']">
@@ -867,6 +882,7 @@
    <!-- format -->
    <xsl:template name="get-ead-format">
       <format xtf:meta="true">Collection</format>
+      <xsl:if test="descendant-or-self::dao"><format xtf:meta="true">Digital Material</format></xsl:if>
    </xsl:template>
    
    <!-- identifier --> 
@@ -892,8 +908,14 @@
       </xsl:variable>
       <xsl:choose>
          <xsl:when test="@level">
+            <xsl:variable name="id">
+               <xsl:choose>
+                  <xsl:when test="@id"><xsl:value-of select="@id"/></xsl:when>
+                  <xsl:otherwise><xsl:value-of select="generate-id(.)"/></xsl:otherwise>
+               </xsl:choose>
+            </xsl:variable>
             <identifier xtf:meta="true" xtf:tokenize="no">
-               <xsl:value-of select="concat($parentID,'|',@id)"/>
+               <xsl:value-of select="concat($parentID,'|',$id)"/>
             </identifier>
          </xsl:when>
          <xsl:otherwise>
@@ -957,6 +979,12 @@
    <!-- rights -->
    <xsl:template name="get-ead-rights">
       <rights xtf:meta="true">public</rights>
+   </xsl:template>
+   
+   <xsl:template name="get-ead-url">
+      <xsl:if test="descendant-or-self::dao">
+         <daoLink xtf:meta="true"><xsl:value-of select="dao/@ns2:href"/></daoLink>
+      </xsl:if>
    </xsl:template>
    
    <!-- OAI dateStamp -->

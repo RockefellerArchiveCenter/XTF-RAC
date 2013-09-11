@@ -294,6 +294,9 @@
          <xsl:when test="matches($parse-title, '^the ')">
             <xsl:value-of select="replace($parse-title, '^the (.+)', '$1')"/>
          </xsl:when>
+         <xsl:when test="matches($parse-title, '^file ')">
+            <xsl:value-of select="replace($parse-title, '^file (.+)', '$1')"/>
+         </xsl:when>
          <xsl:otherwise>
             <xsl:value-of select="$parse-title"/>
          </xsl:otherwise>

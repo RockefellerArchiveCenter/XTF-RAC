@@ -3,6 +3,7 @@
 <brand xmlns="http://www.w3.org/1999/xhtml">
    
    <links>
+      <meta name="viewport" content="width=device-width,initial-scale=1"/>
       <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
       <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
       <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
@@ -25,6 +26,11 @@
          src="http://www.rockarch.org/js/rollOver.js"/>
       <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/popUp.js"/>
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/rac.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/dropdown.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/jquery.cookie.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/active.js"/>
       <script type="text/javascript" language="JavaScript">
          <!--
          		if (isNS4) {
@@ -136,7 +142,7 @@
             // -->
       </script>
       <script type="text/javascript">
-                      $(document).ready(function() {
+         $(document).ready(function() {
                       $(function () {
                             var dialogTakedown = $('#takedown').dialog({
                                create: function(event, ui) {
@@ -157,66 +163,6 @@
                               dialogTakedown.dialog("option", "title", '').dialog("open");
                             });
                         });
-                       $(function () {
-                            var dialogArchivalMat = $('#archivalMat').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "600",
-                                  height: "500",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                            $("a.archivalMat").on("click", function (e) {
-                            e.preventDefault();
-                              dialogArchivalMat.dialog("option", "title", '').dialog("open");
-                            });
-                        });
-                         $(function () {
-                        var dialogDscDescription = $('#dscDescription').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "600",
-                                  height: "450",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                            $("a.dscDescription").on("click", function (e) {
-                            e.preventDefault();
-                              dialogDscDescription.dialog("option", "title", '').dialog("open");
-                            });
-                        });
-                         $(function () {
-                        var dialogDimes = $('#dimes').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "800",
-                                  height: "580",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                            $("a.dimes").on("click", function (e) {
-                            e.preventDefault();
-                              dialogDimes.dialog("option", "title", '').dialog("open");
-                            });
-                        });
                         $(function () {
                         var dialogFeedback = $('#feedback').dialog({
                                create: function(event, ui) {
@@ -232,32 +178,12 @@
                                     $('.ui-dialog').hide();
                                   }
                                });
-                            $(".feedback-tab").on("click", function (e) {
+                            $(".feedback").on("click", function (e) {
                             e.preventDefault();
                               dialogFeedback.dialog("option", "title", '').dialog("open");
                             });
                         });
-                        $(function () {
-                        var dialogSearchTips = $('#searchTips').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "950",
-                                  height: "568",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                            $(".searchTips").on("click", function (e) {
-                            e.preventDefault();
-                              dialogSearchTips.dialog("option", "title", '').dialog("open");
-                            });
                         });
-                    });
         </script>
       
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
@@ -269,9 +195,9 @@
     </links>
 
    <dynaxml.links>
+      <meta name="viewport" content="width=device-width,initial-scale=1"/>
       <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
       <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
-      <link rel="stylesheet" href="css/default/content.css" type="text/css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
       <link rel="stylesheet" href="/xtf/css/default/racustom.css" type="text/css"/>
       <link rel="shortcut icon" href="icons/default/favicon.png"/>
@@ -281,11 +207,15 @@
       <script id="twitter-wjs" src="http://platform.twitter.com/widgets.js"></script>
       <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
       <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-      
       <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/browserDetect.js"></script>
       <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/mapping.js"></script>
       <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/rollOver.js"></script>
       <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/popUp.js"></script>
+      <script type="text/javascript" src="/xtf/script/rac/dropdown.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/jquery.cookie.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/active.js"/>
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/rac.js"></script>   
 
       <script type="text/javascript" language="JavaScript">
@@ -454,27 +384,15 @@
                                 width: "850",
                                 height: "600",
                                 close: function () {
-                                    iframe.attr("src", "");
-                                    $('.daoCitation').remove();
-                                }
+                                    $('.ui-dialog').hide();
+                                  }
+                                //close: function () {
+                                //    iframe.attr("src", "");
+                                //    $('.daoCitation').remove();
+                                //}
                             });
                             
-                            var dialogDsc = $('<div class="dsc-container"></div>').appendTo('body').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "550",
-                                  height: "300",
-                                  close: function () {
-                                    $('.ui-dialog .dscDescription').remove();
-                                  }
-                               });
-                               
-                            $(".daoLink a").on("click", function (e) {
+                            $(".daoLink a, .caption a").on("click", function (e) {
                                 e.preventDefault();
                                 var src = $(this).attr("href");
                                 var title = $(this).attr("data-title");
@@ -488,12 +406,6 @@
                                     src: src
                                 });
                                 dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
-                            });
-                            
-                            $("a.dialog_dsc").on("click", function (e) {
-                              var id = $(this).attr("href");
-                              var content = $(id).html()
-                              dialogDsc.dialog("option", "title", '').dialog("open").append(content);
                             });
                             
                             //checks for hash tag jumps to location and opens appropriate diolog 
@@ -516,9 +428,51 @@
                             } 
                           
                         });
+                    $(function () {
+                    var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0"></iframe>');
+                    var dialogDsc = $('<div class="dsc-container"></div>').append(iframe).appendTo('body').dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "550",
+                                  height: "300",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                                  //close: function () {
+                                  //  iframe.attr("src", "");
+                                  //  $('.ui-dialog .dscDescription').remove();
+                                  //}
+                               });
+                               
+                            $(".dialog_dsc a").on("click", function (e) {
+                              e.preventDefault();
+                                var src = $(this).attr("href");
+                                var title = $(this).attr("data-title");
+                                var width = $(this).attr("data-width");
+                                var height = $(this).attr("data-height");
+                                iframe.attr({
+                                    width: +width,
+                                    height: +height,
+                                    src: src
+                                });
+                              dialogDsc.dialog("option", "title", '').dialog("open");
+                            });
+                    });
+                        
+                        
                     });
         </script>
-      
+      <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
+         'UA-10013579-1']); _gaq.push(['_trackPageview']); (function() { var ga =
+         document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src =
+         ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+         '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0];
+         s.parentNode.insertBefore(ga, s); })(); </script>
       <div><!--[if IE ]>
                   <div class="chromeframe"><p>You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, <a href="http://browsehappy.com/">use a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p></div>
                   <![endif]--></div>
@@ -4156,7 +4110,7 @@
 
       <!--  *** End section: Sub-navigation ***  -->
       <!--/htdig_noindex-->
-      <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+      <table id="menu" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
          <tr>
             <td height="80">
                <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -4165,10 +4119,10 @@
                         <img src="http://www.rockarch.org/images/spacer.gif" width="40" height="80" alt=""/>
                      </td>
                      <td width="120" rowspan="3">
-                        <a href="/">
+                        <!--<a href="/">
                            <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
                               alt="The Rockefeller Archive Center" border="0"/>
-                        </a>
+                        </a>-->
                      </td>
                      <td width="100%" height="34" align="right" class="comment" valign="top">
 
@@ -7948,7 +7902,7 @@
 
       <!--  *** End section: Sub-navigation ***  -->
       <!--/htdig_noindex-->
-      <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+      <table id="menu" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
          <tr>
             <td height="80">
                <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -7957,10 +7911,10 @@
                         <img src="http://www.rockarch.org/images/spacer.gif" width="40" height="80" alt=""/>
                      </td>
                      <td width="120" rowspan="3">
-                        <a href="/">
+                        <!--<a href="/">
                            <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
                               alt="The Rockefeller Archive Center" border="0"/>
-                        </a>
+                        </a>-->
                      </td>
                      <td width="100%" height="34" align="right" class="comment" valign="top">
 
@@ -8109,9 +8063,6 @@
    </dynaxml.header>
 
       <feedback>
-         <div class="feedback-tab">
-            <a href="#feedback-tab"><img src="/xtf/icons/default/feedback_tab.png" alt="feedback" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'feedback']);"/></a>
-         </div>
           <div class="overlay" id="feedback">
                <form class="feedback-form" action="/xtf/script/rac/formmail.php" method="post">
                   <input type="hidden" name="recipients" value="harnold_*_rockarch.org"/>
@@ -8163,7 +8114,7 @@
          </div>
       </div>
       <div class="footer">
-         <p>Copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a> <!--<a href="#takedown" class="takedown">Take-down policy</a>--></p>
+         <p>Copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a> | <a href="#takedown" class="takedown" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'takedown']);">Take-down policy</a> | <a href="#feedback" class="feedback" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'feedback']);">Feedback</a></p>
       </div>
    </footer>
 

@@ -2,11 +2,9 @@
 
 body {
    font-family: Arial, sans-serif;
-   /* 9/22/11 WS: Changed background color from silver to white for RA a */
    background-color: #fff;
    font-size: .85em;
    color: #333;
-   /* 9/22/11 WS: Changed for RA, added margin and padding */
    margin:0;
    padding:0;
 }
@@ -19,17 +17,7 @@ form {
 	clear: both;
 }
 
-/* 9/22/11 WS: Changed Header for RA
-div.header {
-	 border: 1px solid #666;
-	 width: 99%;
-	 border-bottom: 0;
-	 margin: 0 auto;
-	 background-color: #B1B8C6;
-}
-*/
-div.header {
-	 width: 100%;
+div.header {	 width: 100%;
 	 margin: 0 auto;
 	 background-color: #DDDDDD;
 	 height:35px;
@@ -46,187 +34,49 @@ img.RAC-logo {
 	padding-right: 8px;
 	}
 	
-/* 9/22/11 WS: Changed Header for RA
-div.header img.xtf-logo {
-	float: left;
-	margin: 21px 0 0 15px
-}
-*/
 div.header img.your-logo {
 	float: right;
 	margin: 10px 15px;
 }
 
-div.footer {
-   margin: 0 auto;
-	 width: 99%;
-	 text-align: left;
-	 padding: 10px 0;
-	 margin-bottom: 20px;
-}
-
 /* Forms */
 
 div.searchPage {
-   margin: 0 auto;
-	 background-color: #fff;
-	 width: 99%;
-	 border-right: 1px solid #666;
-	 border-left: 1px solid #666;
-	 border-top: 1px solid #999;
-	 border-bottom: 1px solid #666;
-}
-
-div.forms {
-    /* 9/21/11 WS: Removed min height */
-	/*min-height: 500px;*/
-}
-
-div.forms table {
-   width: 100%;
-}
-
-div.forms table,
-div.forms table td {
-	/*border: 1px solid #ccc;*/
-}
-
-div.forms table td.tab,
-div.forms table td.tab-select {
-	width: 20%;
-	text-align: center;
-	padding: 0.5em;
-	color: #B8411C;
-}
-
-div.forms table td.tab {
-   border: 1px solid #999;
-   /* 9/21/11 WS changed background color to DDDDDD from E8EBF1*/
-   background-color: #DDDDDD;
-}
-
-div.forms table td.tab-select {
-   border: 1px solid #999;
-   border-bottom: 0;
-}
-
-div.forms table td.tab a {
-	text-decoration: none;
-	color: #333;
-}
-
-div.forms table td.tab a:hover {
-	text-decoration: underline;
-}
-
-div.forms table td.tab-select a {
-/*	color: #424F8D;*/
+   margin-left: 1%;
+	 width: 98%;
 }
 
 div.form {
-   width: 99%;
-	 margin: 20px 0 10px 10px;
-	 text-align: center;
-}
-
-div.form table {
-	margin: 0 auto;
-}
-
-div.form table.top_table {
-	width: 85%;
-	margin: 0 auto;
-}
-
-div.form table.left_table {
-	border-right: 1px solid #ccc;
-	text-align: left;
-	margin-right: 40px;
-	width: 90%;
-}
-
-div.form table.right_table {
-	margin: 0 25px;
-}
-
-div.form table h4 {
-	margin: 0 0 10px 0;
-}
-
-div.form table,
-div.form table td {
-	/*border: 1px solid #ccc;*/
-}
-
-div.form table td {
-	vertical-align: top;
-	text-align: left;
-}
-
-div.form table td table td {
-	vertical-align: middle;
-}
-
-div.form table td.indent {
-   width: 2px;
-}
-
-table.sampleTable {
-	margin-top: 20px;
-}
-
-table.sampleTable td {
-	padding: 5px;
-}
-
-table td.sampleQuery {
-   font-family: courier, serif;
-   border-style: solid;
-   border-color: black;
-   border-width: 1px 1px 1px 1px;
-}
-
-table td.sampleDescrip {
-    font-style: italic;
+   width: 98%;
+   margin:1%;
+text-align: center;
 }
 
 /* Results */
 
 div.resultsHeader {
-   width: 99%;
+     width: 98%;
+     min-height:3.5em;
+     float:left;
 	 border-right: 1px solid #666;
 	 border-left: 1px solid #666;
 	 border-top: 1px solid #999;
 	 border-bottom: 1px solid #999;
-	 background-color: #dededf;
-	 margin-left: auto;
-	 margin-right: auto;
+	 background-color: #ddd;
+	 margin-left: 1%;
+	 margin-right: 1%;
+	 padding-top:1em;
+	 padding-bottom:1em;
+	 border-radius: 5px 5px 0 0;
 }
 
-div.resultsHeader table {
-   width: 100%;
-}
-
-div.resultsHeader table td {
-	padding: 2px 5px;
-}
-
-td.right {
-   text-align: right;
-}
-
-td.left {
-   text-align: left;
-}
-
-td.center {
-   text-align: center;
-	 padding: 10px;
+.resultsHeader input, .resultsHeader select {
+    font-size:1em;
 }
 
 div.query {
-   width: 350px;
-	 float: left;
+    width: 350px;
+    float: left;
 }
 
 div.label {
@@ -238,42 +88,62 @@ div.resultsHeader .subQuery {
 }
 
 div.results {
-   margin: 0 auto;
+   margin-left:1%;
+   margin-right:1%;
    background-color: white;
-	 width: 99%;
+	 width: 98%;
 	 border: 1px solid #666;
 	 border-top: 0;
+	 float:left;
+	 border-radius:0 0 5px 5px;
+	 padding-top:.5em;
 }
 
-div.results table {
-	margin: 0 10px;
-}
+.results>p {margin:1em;}
 
-div.results table td {
-   vertical-align: top;
-}
-
-div.results table td.facet{
+.facets{
    width: 25%;
+   margin-left: 1%;
+   margin-right: 1%;
+   float: left;
 }
 
 div.facetGroup {
 	font-size: 95%;	
 }
 
-div.results table td.docHit{
-}
-
 div.docHit {
 	background-color: #FAFAFB;
-	border: 1px solid #ccc;
-	margin: 10px 0 10px 0;
-	padding: 10px;
+	margin: 1%;
+	width:96%;
+	padding:1%;
+	float:left;
+	border-radius:5px;
 }
 
-div.docHit table td {
-	/* border: 1px solid red; */
-}
+.hitRank {float:left; width:2%;}
+.resultIcon {float:left; width:6%;}
+.resultContent {float:left; width:82%;}
+.result {float:left;width:100%;margin-bottom:.5em;}
+.result img, .title img {vertical-align:middle;}
+.resultLabel {float:left; width:10%; text-align:right;font-weight:bold;margin-right:1%}
+.resultText {float:left; width:85%;}
+
+#docHits {float:right; width:73%;padding-bottom:1%}
+#docHits .hitRank {width:3%}
+#docHits .resultIcon {width:6%;}
+#docHits .resultContent {width:82%;}
+#docHits .resultLabel {width:15%;}
+#docHits .resultText {width:80%;}
+
+.subdocument {float:left; padding-top:.5em;padding-bottom:.5em;padding-left:1%;padding-right:1%;min-height:3em;}
+#docHits .subdocument {width:114%;}
+.results .subdocument {width:103%;}
+.subdocument:nth-child(odd) {background: rgb(228, 228, 228);border-top: 1px dashed #999;border-bottom: 1px dashed #999;}
+.subdocument .title {width:80%; float:left;}
+.subdocument .matches {float:left;width:97%;margin-left:3%;font-size:.9em;margin-top:.5em;}
+.subdocument .result {font-size:.9em;}
+.subdocument .resultLabel {width:10% !important}
 
 div#main_2, div#main_4, div#main_6, div#main_8, div#main_10, div#main_12 {
 	
@@ -306,13 +176,13 @@ div.docHit .typeIcon {
 }
 
 .hit {
-   color: #FD8239;
+   color: #c45414;
    font-weight: bold;
 }
 
 
 .subhit {
-   color: #FD8239;
+   color: #c45414;
    font-weight: bold;
 	 margin-left: 5px;
 }
@@ -321,41 +191,21 @@ div.docHit .typeIcon {
    background-color: #D6DCE5;
 }
 
-div.facetName {
-  font-weight: bold;
-	margin: 10px 0;
-	font-size: 95%;
-}
-
-div.facet table {
-   border-style: none;
-}
-
-div.facet table td.col1 {
-   width: 12px;
-   text-align: center;
-   vertical-align: middle;
-   padding-right: 0.5em;
-	 color: #6699CC;
-}
-
-div.facet table td.col2 {
-   padding-bottom: 0.1em;
-   padding-top: 0.1em;
-}
-
-div.facet table td.col3 {
-   text-align: right;
-}
+.facetWrapper {width:98%;float:left;padding:1%}
+.facetName {float:left;}
+.totalDocs {float:right;}
+.clearLink {float:right;font-weight:bold;}
 
 div.facetMore {
    margin-top: 0.5em;
    margin-left: 2em;
+   font-weight:bold;
 }
 
 div.facetLess {
    margin-left: 2em;
    margin-bottom: 0.5em;
+   font-weight:bold;
 }
 
 div.getAddress {
@@ -371,3 +221,5 @@ div.getAddress h2 {
 	margin: 0 0 10px 0;
 	font-size: 120%;
 }
+.nohits, .spelling, .empty {margin: 1em;text-align: center;background: rgba(196, 84, 20, 0.1);padding: .5em;border: 1px solid #c45414;border-radius: 5px;}
+.empty img {vertical-align:middle}

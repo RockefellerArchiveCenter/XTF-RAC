@@ -233,7 +233,7 @@
             <xsl:value-of select="10000"/>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:value-of select="20"/>
+            <xsl:value-of select="40"/>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:param>
@@ -266,7 +266,7 @@
    <xsl:param name="facet"/>
    <xsl:param name="group"/>
    <xsl:param name="startGroup" as="xs:integer" select="1"/>
-   <xsl:param name="groupsPerPage" as="xs:integer" select="20"/>
+   <xsl:param name="groupsPerPage" as="xs:integer" select="40"/>
    <xsl:param name="sortGroupsBy"/>
    <xsl:param name="sortDocsBy"/>
    
@@ -319,7 +319,7 @@
       <xsl:variable name="total" as="xs:integer">
          <xsl:choose>
             <xsl:when test="matches($smode,'moreLike')">
-               <xsl:value-of select="'20'"/>
+               <xsl:value-of select="'40'"/>
             </xsl:when>
             <xsl:otherwise>
                <xsl:value-of select="/crossQueryResult/@totalDocs"/>
@@ -389,14 +389,14 @@
          <xsl:value-of select="editURL:remove($queryString, 'startDoc')"/>
       </xsl:variable>   
       
-      <xsl:choose>
+      <!--<xsl:choose>
          <xsl:when test="$nPages &gt; 2">
-            <xsl:text>Page: </xsl:text>
+            <div class="pageLabel">Page</div>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:text>Page: 1</xsl:text>
+            <div class="pageLabel">Page</div> <div class="pageNumber">1</div>
          </xsl:otherwise>
-      </xsl:choose>
+      </xsl:choose>-->
       
       <xsl:for-each select="(1 to $maxPages)">
          <!-- Figure out which block you need to be in -->
@@ -417,16 +417,21 @@
          <!-- Individual Paging -->
          <xsl:if test="($pageNum = 1) and ($pageStart != $start)">
             <xsl:variable name="prevPage" as="xs:integer" select="$start - $perPage"/>
-            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$prevPage}">Prev</a>
-            <xsl:text>&#160;&#160;</xsl:text>
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$prevPage}"><div class="pageButton">&lt;</div></a>
+         </xsl:if>
+         
+         <!-- 2013-08-02 HA: Adding First Page -->      
+         <xsl:variable name="prevBlock" as="xs:integer" select="(($blockStart - $blockSize) * $perPage) - ($perPage - 1)"/>
+         <xsl:if test="($pageNum = 1) and ($prevBlock &gt;= 1)">
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}=1"><div class="pageNumber">1</div></a>
+            <xsl:text>... </xsl:text>
          </xsl:if>
          
          <!-- Paging by Blocks -->
-         <xsl:variable name="prevBlock" as="xs:integer" select="(($blockStart - $blockSize) * $perPage) - ($perPage - 1)"/>
+         <!--<xsl:variable name="prevBlock" as="xs:integer" select="(($blockStart - $blockSize) * $perPage) - ($perPage - 1)"/>
          <xsl:if test="($pageNum = 1) and ($prevBlock &gt;= 1)">
-            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$prevBlock}">...</a>
-            <xsl:text>&#160;&#160;</xsl:text>
-         </xsl:if>
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$prevBlock}"><div class="pageButton">&lt;&lt;</div></a>
+         </xsl:if> -->
          
          <!-- If there are hits on the page, show it -->
          <xsl:if test="(($pageNum &gt;= $blockStart) and ($pageNum &lt;= ($blockStart + ($blockSize - 1)))) and
@@ -435,40 +440,38 @@
                <!-- Make a hyperlink if it's not the page we're currently on. -->
                <xsl:when test="($pageStart != $start)">
                   <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}">
-                     <xsl:value-of select="$pageNum"/>
+                     <div class="pageNumber"><xsl:value-of select="$pageNum"/></div>
                   </a>
-                  <xsl:if test="$pageNum &lt; $showPages">
+                  <!--<xsl:if test="$pageNum &lt; $showPages">
                      <xsl:text>&#160;</xsl:text>
-                  </xsl:if>
+                  </xsl:if>-->
                </xsl:when>
                <xsl:when test="($pageStart = $start)">
-                  <xsl:value-of select="$pageNum"/>
-                  <xsl:if test="$pageNum &lt; $showPages">
+                  <div class="pageNumber active"><xsl:value-of select="$pageNum"/></div>
+                  <!--<xsl:if test="$pageNum &lt; $showPages">
                      <xsl:text>&#160;</xsl:text>
-                  </xsl:if>
+                  </xsl:if>-->
                </xsl:when>
             </xsl:choose>
          </xsl:if>
          
-         <!-- Paging by Blocks -->   
+         <!-- 2013-04-22 HA: Adding Last Page -->      
          <xsl:variable name="nextBlock" as="xs:integer" select="(($blockStart + $blockSize) * $perPage) - ($perPage - 1)"/>
          <xsl:if test="($pageNum = $showPages) and (($showPages * $perPage) &gt; $nextBlock)">
-            <xsl:text>&#160;&#160;</xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$nextBlock}">...</a>
+            <xsl:variable name="lastPage" select="$nPages"/>
+            <xsl:text>... </xsl:text>
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}"><div class="pageNumber"><xsl:value-of select="($lastPage - 1)"/></div></a>
          </xsl:if>
          
-         <!-- 2013-04-22 HA: Adding Last Page -->      
-         <xsl:if test="($pageNum = $showPages) and (($showPages * $perPage) &gt; $nextBlock)">
-            <xsl:variable name="lastPage" select="$nPages"/>
-            <xsl:text>&#160;&#160;</xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}"><xsl:value-of select="($lastPage - 1)"/></a>
-         </xsl:if>
+         <!-- Paging by Blocks -->   
+         <!--<xsl:if test="($pageNum = $showPages) and (($showPages * $perPage) &gt; $nextBlock)">
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$nextBlock}"><div class="pageButton">&gt;&gt;</div></a>
+         </xsl:if> -->
          
          <!-- Individual Paging -->      
          <xsl:if test="($pageNum = $showPages) and ($pageStart != $start)">
             <xsl:variable name="nextPage" as="xs:integer" select="$start + $perPage"/>
-            <xsl:text>&#160;&#160;</xsl:text>
-            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$nextPage}">Next</a>
+            <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$nextPage}"><div class="pageButton">&gt;</div></a>
          </xsl:if>
          
       </xsl:for-each>
@@ -480,7 +483,7 @@
    <!-- ====================================================================== -->
    
    <xsl:template match="subject">
-      <a href="{$xtfURL}{$crossqueryPath}?subject={editURL:protectValue(.)};subject-join=exact;smode={$smode};rmode={$rmode};style={$style};brand={$brand}">
+      <a onClick="_gaq.push(['_trackEvent', 'interaction', 'subjects', 'find']);" href="{$xtfURL}{$crossqueryPath}?subject={editURL:protectValue(.)};subject-join=exact;rmode={$rmode};style={$style};brand={$brand}">
          <xsl:apply-templates/>
       </a>
 
@@ -539,62 +542,48 @@
    <!-- ====================================================================== -->
    
    <xsl:template name="sort.options">
-      <select size="1" name="sort">
+      <select name="sort" onchange="document.getElementById('sortForm').submit()">
          <xsl:choose>
             <xsl:when test="$smode='showBag'">
                <xsl:choose>
                   <xsl:when test="$sort = ''">
-                     <option value="collection" selected="selected">collection</option>
-                     <option value="title">title</option>
-                     <option value="creator">author</option>
+                     <option value="title" selected="selected">title</option>
+                     <option value="creator">creator</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
                      <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'title'">
-                     <option value="collection">collection</option>
                      <option value="title" selected="selected">title</option>
-                     <option value="creator">author</option>
+                     <option value="creator">creator</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
                      <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'creator'">
-                     <option value="collection">collection</option>
                      <option value="title">title</option>
-                     <option value="creator" selected="selected">author</option>
+                     <option value="creator" selected="selected">creator</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
                      <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'year'">
-                     <option value="collection">collection</option>
                      <option value="title">title</option>
-                     <option value="creator">author</option>
+                     <option value="creator">creator</option>
                      <option value="year" selected="selected">date</option>
                      <option value="reverse-year">reverse date</option>
                      <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'reverse-year'">
-                     <option value="collection">collection</option>
                      <option value="title">title</option>
-                     <option value="creator">author</option>
+                     <option value="creator">creator</option>
                      <option value="year">date</option>
                      <option value="reverse-year" selected="selected">reverse date</option>
                      <option value="dateStamp">updated</option>
                   </xsl:when>
-                  <xsl:when test="$sort = 'collection'">
-                     <option value="collection" selected="selected">collection</option>
-                     <option value="title">title</option>
-                     <option value="creator">author</option>
-                     <option value="year">date</option>
-                     <option value="reverse-year">reverse date</option>
-                     <option value="dateStamp">updated</option>
-                  </xsl:when>
                   <xsl:when test="$sort = 'dateStamp'">
-                     <option value="collection">collection</option>
                      <option value="title">title</option>
-                     <option value="creator">author</option>
+                     <option value="creator">creator</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
                      <option value="dateStamp" selected="selected">updated</option>
@@ -604,63 +593,49 @@
             <xsl:otherwise>
                <xsl:choose>
                   <xsl:when test="$sort = ''">
-                     <option value="collection">collection</option>
                      <option value="" selected="selected">relevance</option>
                      <option value="title">title</option>
-                     <option value="creator">author</option>
-                     <option value="year">date</option>
-                     <option value="reverse-year">reverse date</option>
-                     <option value="dateStamp">updated</option>
-                  </xsl:when>
-                  <xsl:when test="$sort = 'collection'">
-                     <option value="collection" selected="selected">collection</option>
-                     <option value="">relevance</option>
-                     <option value="title">title</option>
-                     <option value="creator">author</option>
+                     <option value="creator">creator</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
                      <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'title'">
-                     <option value="collection">collection</option>
                      <option value="">relevance</option>
                      <option value="title" selected="selected">title</option>
-                     <option value="creator">author</option>
+                     <option value="creator">creator</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
                      <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'creator'">
-                     <option value="collection">collection</option>
                      <option value="">relevance</option>
                      <option value="title">title</option>
-                     <option value="creator" selected="selected">author</option>
+                     <option value="creator" selected="selected">creator</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
                      <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'year'">
-                     <option value="collection">collection</option>
                      <option value="">relevance</option>
                      <option value="title">title</option>
-                     <option value="creator">author</option>
+                     <option value="creator">creator</option>
                      <option value="year" selected="selected">date</option>
                      <option value="reverse-year">reverse date</option>
                      <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'reverse-year'">
-                     <option value="collection">collection</option>
                      <option value="">relevance</option>
                      <option value="title">title</option>
-                     <option value="creator">author</option>
+                     <option value="creator">creator</option>
                      <option value="year">date</option>
                      <option value="reverse-year" selected="selected">reverse date</option>
                      <option value="dateStamp">updated</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'dateStamp'">
-                     <option value="collection">collection</option>
+                     <option value="">relevance</option>
                      <option value="title">title</option>
-                     <option value="creator">author</option>
+                     <option value="creator">creator</option>
                      <option value="year">date</option>
                      <option value="reverse-year">reverse date</option>
                      <option value="dateStamp" selected="selected">updated</option>
@@ -927,22 +902,22 @@
       
       <xsl:choose>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(descendant::group[docHit]) > 1]">
-             <span style="color: #FD8239"><xsl:value-of select="upper-case($alpha)"/></span>
+             <div class="alphaLink active"><xsl:value-of select="upper-case($alpha)"/></div>
          </xsl:when>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(docHit) > 0]">
-             <span style="color: #FD8239"><xsl:value-of select="upper-case($alpha)"/></span>
+             <div class="alphaLink active"><xsl:value-of select="upper-case($alpha)"/></div>
          </xsl:when>
           <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link]">
              <!-- 10/29/12 WS: Added type parameter for browsing  -->
-            <a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level=collection;type={$type};sort={$browse-name}"><xsl:value-of select="$alpha"/></a>
+             <a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level={$level};type={$type};sort={$browse-name}"><div class="alphaLink"><xsl:value-of select="$alpha"/></div></a>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:value-of select="upper-case($alpha)"/>
+            <div class="alphaLink"><xsl:value-of select="upper-case($alpha)"/></div>
          </xsl:otherwise>
       </xsl:choose>
       
       <xsl:if test="contains($alphaList,' ')">
-         <xsl:text> | </xsl:text>
+         <!--<xsl:text> | </xsl:text>-->
          <xsl:call-template name="alphaList">
             <xsl:with-param name="alphaList" select="replace($alphaList,'^[A-Z]+ ','')"/>
          </xsl:call-template>
@@ -1038,26 +1013,26 @@
     <xsl:template match="/crossQueryResult/facet[matches(@field,'^facet-')]" exclude-result-prefixes="#all">
       <xsl:variable name="field" select="replace(@field, 'facet-(.*)', '$1')"/>
       <xsl:variable name="needExpand" select="@totalGroups > count(group)"/>
-      <div class="facet">
-         <div class="facetName">
+      <div class="facet accordionButton category" id="{@field}">
+         <h3>
             <xsl:apply-templates select="." mode="facetName"/>
-         </div>
+         </h3>
+      </div>
+       <div class="facetGroup accordionContent">
          <xsl:if test="$expand=$field">
             <div class="facetLess">
-               <i><a href="{$xtfURL}{$crossqueryPath}?{editURL:remove($queryString,'expand')}">less</a></i>
+               <a href="{$xtfURL}{$crossqueryPath}?{editURL:remove($queryString,'expand')}">less</a>
             </div>
          </xsl:if>
-         <div class="facetGroup">
-            <table>
-               <xsl:apply-templates/>
-            </table>
-         </div>
+
+            <xsl:apply-templates/>
+         
          <xsl:if test="$needExpand and not($expand=$field)">
             <div class="facetMore">
-               <i><a href="{$xtfURL}{$crossqueryPath}?{editURL:set($queryString,'expand',$field)}">more</a></i>
+               <a href="{$xtfURL}{$crossqueryPath}?{editURL:set($queryString,'expand',$field)}">more</a>
             </div>
          </xsl:if>
-      </div>
+       </div>
    </xsl:template>
    
    <!-- Plain (non-hierarchical) group of a facet -->
@@ -1082,37 +1057,36 @@
       </xsl:variable>
       <!-- 11/14/12 WS: added to strip blank subjects facets -->
       <xsl:if test="string-length($value) &gt; 0">
-      <tr>
-         <td class="col1">&#8226;</td> <!-- bullet char -->
+      <li class="facetWrapper">
          <!-- Display the group name, with '[X]' box if it is selected. -->
          <xsl:choose>
             <xsl:when test="//param[matches(@name,concat('f[0-9]+-',$field))]/@value=$value">
-               <td class="col2">
+               <div class="facetName">
                   <xsl:apply-templates select="." mode="beforeGroupValue"/>
                   <!-- 1/17/12 WS -->
-                  <span class="facetMatch">
+                  <div class="facetMatch">
                      <xsl:value-of select="$value"/>
-                  </span>
+                  </div>
                   <xsl:apply-templates select="." mode="afterGroupValue"/>
-               </td>
-               <td class="col3">
+               </div>
+               <div class="clearLink">
                   <a href="{$clearLink}">[X]</a>
-               </td>
+               </div>
             </xsl:when>
             <xsl:otherwise>
-                  <td class="col2">
+                  <div class="facetName">
                      <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                     <a href="{$selectLink}" onclick="_gaq.push(['_trackEvent', 'search', 'browse', 'facet']);">
+                     <a onclick="_gaq.push(['_trackEvent', 'search', 'browse', 'facet']);" href="{$selectLink}">
                         <xsl:value-of select="$value"/>
                      </a>
                      <xsl:apply-templates select="." mode="afterGroupValue"/>
-                  </td>
-                  <td class="col3">
+                  </div>
+                  <div class="totalDocs">
                      (<xsl:value-of select="@totalDocs"/>)
-                  </td>                  
+                  </div>                  
             </xsl:otherwise>
          </xsl:choose>
-      </tr>
+      </li>
       </xsl:if>
    </xsl:template>
    
