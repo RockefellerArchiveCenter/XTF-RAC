@@ -1194,7 +1194,7 @@
 -->
             </xsl:when>
             <xsl:otherwise>
-               <xsl:value-of select="concat($uri,';chunk.id=headerLink')"/>
+               <xsl:value-of select="concat($uri,';chunk.id=headerlink')"/>
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
