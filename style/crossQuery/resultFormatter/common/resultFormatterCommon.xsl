@@ -483,7 +483,7 @@
    <!-- ====================================================================== -->
    
    <xsl:template match="subject">
-      <a onClick="_gaq.push(['_trackEvent', 'interaction', 'subjects', 'find']);" href="{$xtfURL}{$crossqueryPath}?subject={editURL:protectValue(.)};subject-join=exact;smode={$smode};rmode={$rmode};style={$style};brand={$brand}">
+      <a onClick="_gaq.push(['_trackEvent', 'interaction', 'subjects', 'find']);" href="{$xtfURL}{$crossqueryPath}?subject={editURL:protectValue(.)};subject-join=exact;rmode={$rmode};style={$style};brand={$brand}">
          <xsl:apply-templates/>
       </a>
 

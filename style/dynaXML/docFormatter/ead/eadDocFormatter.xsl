@@ -905,14 +905,21 @@
       <div id="{@id}Menu">
          <xsl:attribute name="class">
             <xsl:value-of select="'tocRow '"/>
-            <xsl:if test="$submenu = 'true'">
-               <xsl:value-of select="'accordionButton '"/>
-            </xsl:if>
-            <xsl:if test="$chunk.id = @id">
-               <xsl:attribute name="class">
-                  <xsl:value-of select="'active '"/>
-               </xsl:attribute>
-            </xsl:if>
+            <xsl:choose>
+               <xsl:when test="$submenu = 'true'">
+                  <xsl:value-of select="'accordionButton '"/>
+                  <xsl:if test="$chunk.id = @id">
+                     <xsl:attribute name="class">
+                        <xsl:value-of select="'active on'"/>
+                     </xsl:attribute>
+                  </xsl:if>
+               </xsl:when>
+               <xsl:when test="$chunk.id = @id">
+                  <xsl:attribute name="class">
+                     <xsl:value-of select="'active '"/>
+                  </xsl:attribute>
+               </xsl:when>
+            </xsl:choose>
          </xsl:attribute>
          
       <xsl:variable name="levelID">
