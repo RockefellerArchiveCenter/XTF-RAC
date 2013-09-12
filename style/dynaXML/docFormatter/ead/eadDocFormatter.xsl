@@ -1194,7 +1194,7 @@
                   </xsl:otherwise>
                </xsl:choose>
       <xsl:if test="$dao = 'true'">
-         <img src="/xtf/icons/default/dao.gif" alt="digital object" title="digital object"/>
+         <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
       </xsl:if>      
    </xsl:template>
    
