@@ -612,7 +612,6 @@
                   </xsl:otherwise>
                </xsl:choose>
             </div>
->>>>>>> dev
             
             <!-- feedback and footer -->
             <xsl:copy-of select="$brand.feedback"/>
