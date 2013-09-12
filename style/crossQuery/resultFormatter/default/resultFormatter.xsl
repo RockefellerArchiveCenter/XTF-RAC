@@ -223,42 +223,9 @@
                         /></span>)</span>
                </xsl:if>
             </div>
-            <!--<table class="searchNav">
-               <tr>
-                  <td colspan="2">
-                     <div class="searchLinks">
-                        <xsl:if test="$smode != 'showBag'">
-                           <a href="{$xtfURL}{$crossqueryPath}?{$modifyString}">
-                              <xsl:text>MODIFY SEARCH</xsl:text>
-                           </a>
-                           <xsl:text>&#160;|&#160;</xsl:text>
-                        </xsl:if>
-                        <a href="{$xtfURL}{$crossqueryPath}">
-                           <xsl:text>NEW SEARCH</xsl:text>
-                        </a>
-                        <xsl:if test="$smode = 'showBag'">
-                           <xsl:text>&#160;|&#160;</xsl:text>
-                           <a href="{session:getData('queryURL')}">
-                              <xsl:text>RETURN TO SEARCH RESULTS</xsl:text>
-                           </a>
-                        </xsl:if>
-                        <xsl:text>&#160;|&#160;</xsl:text>
-                        <a href="search?smode=browse">
-                           <xsl:text>BROWSE</xsl:text>
-                        </a>
-                        <xsl:text>&#160;|&#160;</xsl:text>
-                        <a href="#" rel="#searchTips"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on results page']);">
-                           <xsl:text>SEARCH TIPS</xsl:text>
-                        </a>
-                     </div>
-                  </td>
-               </tr>
-            </table>-->
-            
+                        
             <div class="resultsHeader">
                <form method="get" action="{$xtfURL}{$crossqueryPath}">
-
                   <xsl:if test="$smode='showBag'">
                      <h2>Your Bookbag: <xsl:variable name="items" select="@totalDocs"/>
                         <xsl:choose>
@@ -345,9 +312,21 @@
                                     <xsl:text>Type of materials: </xsl:text>
                                     <select name="type" id="type">
                                        <option value="">All Materials</option>
-                                       <option value="ead">Archival Collections</option>
-                                       <option value="dao">Digital Materials</option>
-                                       <option value="mods">Library Materials</option>
+                                       <option value="ead">
+                                          <xsl:if test="$type = 'ead'">
+                                             <xsl:attribute name="selected">selected</xsl:attribute>
+                                          </xsl:if>
+                                          Archival Collections</option>
+                                       <option value="dao">
+                                          <xsl:if test="$type = 'dao'">
+                                             <xsl:attribute name="selected">selected</xsl:attribute>
+                                          </xsl:if>
+                                          Digital Materials</option>
+                                       <option value="mods">
+                                          <xsl:if test="$type = 'mods'">
+                                             <xsl:attribute name="selected">selected</xsl:attribute>
+                                          </xsl:if>
+                                          Library Materials</option>
                                     </select>
                                     <!-- 6/21/2013 HA: adding advanced search to home page -->
                                     <select name="sectionType" id="library">
@@ -401,6 +380,7 @@
                                     <a href="#">close</a>
                                  </div>
                               </div>
+                              
                               <input class="searchbox" type="submit" value="Search"/>
                               <!--<input type="hidden" value="series" name="level"/>-->
                               <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
