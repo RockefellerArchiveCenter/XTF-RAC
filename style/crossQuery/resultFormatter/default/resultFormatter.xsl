@@ -1842,7 +1842,7 @@
                      };
                   </script>
                            <span id="moreLike_{@rank}">
-                              <a href="javascript:getMoreLike_{@rank}()">Find</a>
+                              <a href="javascript:getMoreLike_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'similar items', 'find']);">Find</a>
                            </span>
                         </div>
                      </div>
@@ -1999,7 +1999,7 @@
                      };
                   </script>
                         <span id="moreLike_{@rank}">
-                           <a href="javascript:getMoreLike_{@rank}()">Find</a>
+                           <a href="javascript:getMoreLike_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'similar items', 'find']);">Find</a>
                         </span>
                      </div>
                   </div>
