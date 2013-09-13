@@ -1347,16 +1347,21 @@
                      <a name="{$anchor}"/>
                   </xsl:if>
                   <!-- 9/26/11 WS: changed author to creator-->
-                  <xsl:text>Creator</xsl:text>
+                  <xsl:text>Creator(s)</xsl:text>
                </div>
-               <div class="resultText">
-                  <xsl:choose>
-                     <xsl:when test="meta/creator">
-                        <xsl:apply-templates select="meta/creator[1]"/>
-                     </xsl:when>
-                     <xsl:otherwise>none</xsl:otherwise>
-                  </xsl:choose>
-               </div>
+               <xsl:if test="meta/creator">
+                  <div class="resultText">
+                  <xsl:for-each select="meta/creator">
+                        <xsl:apply-templates select="."/><br/>
+                  </xsl:for-each>
+                  </div>
+               </xsl:if>
+               <xsl:if test="meta/creator = ''">
+                  <div class="resultText">
+                     <xsl:text>none</xsl:text>
+                  </div>
+               </xsl:if>
+                  
             </div>
 
             <div class="result">
