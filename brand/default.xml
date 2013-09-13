@@ -8114,7 +8114,7 @@
          </div>
       </div>
       <div class="footer">
-         <p>Copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a> | <a href="#takedown" class="takedown" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'takedown']);">Take-down policy</a> | <a href="#feedback" class="feedback" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'feedback']);">Feedback</a></p>
+         <p>Copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a> | <a href="#takedown" class="takedown" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'takedown']);">Take-down policy</a></p>
       </div>
    </footer>
 
