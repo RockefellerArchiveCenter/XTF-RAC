@@ -1227,7 +1227,7 @@
              </div>
           </xsl:when>
           <xsl:otherwise>
-             <table class="containerList" cellpadding="0" cellspacing="0" border="0" style="width:99%;position:relative;">
+             <div class="containerList" style="width:99%;float:left">
                 <xsl:call-template name="clevel">
                    <xsl:with-param name="level">01</xsl:with-param>
                 </xsl:call-template>
@@ -1271,15 +1271,7 @@
                       </xsl:for-each>
                    </xsl:for-each>
                 </xsl:for-each>
-                <tr>
-                   <td/>
-                   <td style="width: 15%;"/>
-                   <td style="width: 12%;"/>
-                   <td style="width: 12%"/>
-                   <td style="width: 18%"/>
-                   <td style="width: 8%"/>
-                </tr>
-             </table>
+             </div>
           </xsl:otherwise>
        </xsl:choose>
     </xsl:template>
@@ -1339,15 +1331,8 @@
                    <xsl:when test="@level='subcollection' or @level='subgrp' or @level='series' 
                        or @level='subseries' or @level='collection'or @level='fonds' or 
                        @level='recordgrp' or @level='subfonds' or @level='class' or (@level='otherlevel' and not(child::did/container))">
-                      <tr style="clear:both;height:30px;">                           
-                         <xsl:attribute name="class">
-                               <xsl:choose>
-                                   <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
-                                   <xsl:otherwise>dscSeries</xsl:otherwise>
-                               </xsl:choose>    
-                         </xsl:attribute>
-                         <td colspan="6" class="{$clevelMargin}">
-                             <xsl:call-template name="anchor"/>
+                      <div class="{$clevelMargin}">
+                            <xsl:call-template name="anchor"/>
                             <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
 <!--                             <xsl:apply-templates select="did/unittitle" mode="dsc"/>-->
                              <xsl:apply-templates select="did/origination" mode="dsc"/>
@@ -1384,210 +1369,72 @@
                              <xsl:apply-templates select="relatedmaterial"/>
                              <xsl:apply-templates select="separatedmaterial"/>
                              <xsl:apply-templates select="controlaccess"/>
-                          </td>
-                       </tr>
-                       
+                       </div>
                    <!-- ADDED 1/4/11: Adds container headings if series/subseries is followed by a file -->                                           
-                           
                       <xsl:if test="child::*[@level][1]/@level='file' or child::*[@level][1]/@level='item' or (child::*[@level][1]/@level='otherlevel'and child::*[@level][1]/child::did/container)">
-                         <tr>
-                            <td colspan="6" class="{$clevelChildMargin}">
-                               <div class="inventoryTitle">Inventory</div>
-                            </td>
-                         </tr>    
-                         <tr class="containerTypes"> 
-                            <td class="{$clevelChildMargin}">
-                               <div class="containerHeaderTitle"><xsl:text>Title</xsl:text></div>
-                            </td>
-                            <td>
-                               <div class="containerHeader">Format</div>  
-                            </td>
-                            <td>
-                               <div class="containerHeader">Containers</div>  
-                            </td>
-                            <td>
-                               <div class="containerHeader">&#160;</div>
-                            </td> 
-                            <td><div class="containerHeader">Notes</div></td>
-                            <td><div class="containerHeader">Bookbag</div></td>
-                         </tr>                                       
+                         <div class="{$clevelChildMargin} inventoryTitle">Inventory</div>
+                         <div class="inventoryHeader {$clevelChildMargin}">
+                            <span class="inventoryHeaderTitle">Title</span>
+                            <span class="inventoryHeaderFormat">Format</span>
+                            <span class="inventoryHeaderContainers">Containers</span>
+                            <span class="inventoryHeaderNotes">Notes</span>
+                            <span class="inventoryHeaderBookbag">Bookbag</span>
+                         </div>                                       
                       </xsl:if>                         
-                   </xsl:when>      
+                   </xsl:when>
+                  
                   <!--Items/Files with multiple formats linked using parent and id attributes -->
                   <!-- Have to put in rules to deal with multiple instances AND nested files -->
-                  <xsl:when test="count(child::*/container/@id) &gt; 1">
-                     <xsl:variable name="levelID" select="@id"></xsl:variable>
-                     <xsl:variable name="rowspan" select="count(child::*/container[@id])"/>
-                     <xsl:for-each select="child::*/container[@id]">                
-                        <!-- ADDED 3/14/10: Sorts containers alpha numerically -->
-<!--                        <xsl:sort select="."/>-->
-                        <xsl:variable name="id" select="@id"/>
-                        <xsl:variable name="containerSib" select="count(../container[@parent = $id] | ../container[@id = $id])"/>
-                        
-                        <!-- Item lists are printed here -->
-                  <tr class="file">
-                     <xsl:if test="parent::did/parent::*/@id">
-                        <xsl:attribute name="id">
-                           <xsl:value-of select="parent::did/parent::*/@id"/>
-                        </xsl:attribute>
-                     </xsl:if>
-                     <xsl:if test="position()=1">
-                        <td class="{$clevelMargin}" rowspan="{$rowspan}">
-                           <div class="borderDisplay">
-                              <xsl:apply-templates select="parent::did" mode="dsc"/>
-                           </div>
-                        </td>
-                     </xsl:if>
-                     <td class="container">
-                        <xsl:if
-                           test="@label != 'Mixed materials' and @lable !='mixed materials' and @label='Mixed Materials'">
-                           <xsl:value-of select="@label"/>
-                        </xsl:if>
-                     </td>
-                     <td class="container">
-                        <xsl:value-of select="@type"/> &#160; <xsl:apply-templates select="."/>
-                     </td>
-                     <td class="container">
-                        <xsl:value-of select="../container[@parent = $id]/@type"/>&#160;
-                           <xsl:value-of select="../container[@parent = $id]"/>
-                     </td>
-                     <td class="moreInfo">
-                        <xsl:variable name="didHitCount">
-                           <xsl:value-of select="count(descendant-or-self::xtf:hit)"/>
-                        </xsl:variable>
-                        <xsl:if
-                           test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
-                                 child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
-                                 child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
-                                 child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
-                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
-                                 child::separatedmaterial |  child::controlaccess">
-                           <a href="#" rel="#{../../@id}_dsc"
-                              onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Additional description']);"
-                              > Additional description </a>
-                           <!--
-                                 <div class="overlay_dao" id="{../../@id}_dsc">
-                                    <div class="dscDescription">
-                                       <xsl:apply-templates select="did/unittitle | did/origination | unitdate[not(@type)] | unitdate[@type != 'bulk']" mode="dsc"/>
-                                       <xsl:apply-templates select="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
-                                          child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
-                                          child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
-                                          child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
-                                          child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
-                                          child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
-                                          child::separatedmaterial |  child::controlaccess"/>
-                                    </div>
-                                 </div>
-                                 -->
-                           <xsl:if test="$didHitCount &gt; 0">
-                              <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
-                           </xsl:if>
-                        </xsl:if>
-                        <xsl:if
-                           test="child::accessrestrict[not(child::legalstatus)] |   child::userestrict">
-                           <a href="#" rel="#{../../@id}_dscrestrict"
-                              onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Restrictions']);"
-                              > Restrictions </a>
-                           <xsl:if test="$didHitCount &gt; 0">
-                              <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
-                           </xsl:if>
-                        </xsl:if>
-                     </td>
-                     <!--2/11/12 WS:  add to bookbag function -->
-                     <td style="text-align:center;">
-                        <span class="addToBag" style="float:left;width:40%;padding-left:15%;">
-                           <xsl:variable name="identifier" select="concat($rootID,'|',$levelID)"/>
-                           <xsl:variable name="indexId" select="$identifier"/>
-                           <xsl:choose>
-                              <xsl:when
-                                 test="session:getData('bag')/child::*/child::*[@id=$indexId]">
-                                 <!--<img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
-                                    title="Added to bookbag"/>-->
-                                 <span class="caption">Added</span>
-                              </xsl:when>
-                              <xsl:otherwise>
-                                 <script type="text/javascript">
-                                    add_<xsl:value-of select="@id"/> = function() {
-                                       var span = YAHOO.util.Dom.get('add_<xsl:value-of select="@id"/>');
-                                       span.innerHTML = "Adding...";
-                                       YAHOO.util.Connect.asyncRequest('GET', 
-                                          '<xsl:value-of select="concat($xtfURL, 'search?smode=addToBag;identifier=', $identifier)"/>',
-                                          {  success: function(o) { 
-                                                span.innerHTML = o.responseText;
-                                                ++(YAHOO.util.Dom.get('bagCount').innerHTML);
-                                              span.previousSibling.style.display = 'none';
-                                             },
-                                             failure: function(o) { span.innerHTML = 'Failed to add!'; }
-                                          }, null);
-                                    };
-                                    </script>
-                                 <a href="javascript:add_{@id}()"
-                                    onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);">
-                                    <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
-                                       title="Add to bookbag"/>
-                                 </a>
-                                 <span id="add_{@id}" class="caption">
-                                    <a href="javascript:add_{@id}()"> Add </a>
-                                 </span>
-                              </xsl:otherwise>
-                           </xsl:choose>
-                        </span>
-                     </td>
-                  </tr>
-                     </xsl:for-each> 
-                  </xsl:when>
-                  
-                   <!-- Items/Files--> 
-                   <!-- EDITIED 1/4/11: Changed container headings to suit Kellen Archives specifications -->
+                    <!-- Items/Files--> 
+                   <!-- EDITED 1/4/11: Changed container headings to suit Kellen Archives specifications -->
                    <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">
                        <!-- Tests to see if current container type is different from previous container type, if it is a new row with container type headings is outout -->
                       <xsl:if test="not(preceding-sibling::*) and parent::dsc">
-                         <tr>
-                            <td colspan="6" class="{$clevelMargin}">
-                               <div class="inventoryTitle">Inventory</div>
-                            </td>
-                         </tr>  
-                         <tr class="containerTypes">                          
-                            <td>
-                               <div class="containerHeaderTitle"><xsl:text>Title</xsl:text></div>
-                            </td>
-                            <td>
-                               <div class="containerHeader">Format</div>  
-                            </td>
-                            <td>
-                               <div class="containerHeader">Containers</div>  
-                            </td>
-                            <td>
-                               <div class="containerHeader">&#160;</div>
-                            </td> 
-                            <td><div class="containerHeader">Notes</div></td>
-                            <td><div class="containerHeader">Bookbag</div></td>
-                         </tr> 
+                         <div class="{$clevelChildMargin} inventoryTitle">Inventory</div>
+                         <div class="inventoryHeader {$clevelChildMargin}">
+                            <span class="inventoryHeaderTitle">Title</span>
+                            <span class="inventoryHeaderFormat">Format</span>
+                            <span class="inventoryHeaderContainers">Containers</span>
+                            <span class="inventoryHeaderNotes">Notes</span>
+                            <span class="inventoryHeaderBookbag">Bookbag</span>
+                         </div> 
                       </xsl:if>
-                      <tr class="file">
+                      <div class="file">
                          <xsl:if test="@id">
                             <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
                          </xsl:if>           
-                         <td class="{$clevelMargin}">
-                            <div class="borderDisplay">
                                <xsl:apply-templates select="did" mode="dsc"/>  
-                            </div>
-                          </td>
-                         <td class="container">
-                            <xsl:if test="did/container[@label != 'Mixed materials' and @label != 'Mixed Materials' and @label != 'mixed materials']">
-                               <xsl:value-of select="did/container/@label"/>                               
-                            </xsl:if>
-                         </td>
+                         <div class="instances">
+                            <xsl:for-each select="child::*/container[@id]">
+                               <div class="instance">
+                               <div class="format">
+                              <xsl:choose>
+                                 <xsl:when
+                                    test="@label != 'Mixed materials' and @label != 'Mixed Materials' and @label != 'mixed materials'">
+                                    <xsl:value-of select="@label"/>
+                                 </xsl:when>
+                                 <xsl:otherwise>&#160;</xsl:otherwise>
+                              </xsl:choose>
+                               </div>
                            <!--7/16/11 WS: Adjusted Containers -->    
-                         <td class="container">
-                            <xsl:value-of select="did/container[1]/@type"/>&#160;
-                            <xsl:value-of select="did/container[1]"/>
-                         </td>
-                         <td class="container">
-                            <xsl:value-of select="did/container[2]/@type"/>&#160;
-                            <xsl:value-of select="did/container[2]"/>
-                         </td>                                
-                          <td class="moreInfo">
+                               <!-- ADDED 3/14/10: Sorts containers alpha numerically -->
+                               <!--<xsl:sort select="."/>-->
+                               <xsl:variable name="id" select="@id"/>
+                               <xsl:variable name="containerSib"
+                                  select="count(../container[@parent = $id] | ../container[@id = $id])"/>
+                               <div class="containerWrapper">
+                                  <span class="container" style="padding-right: 1em;">
+                                     <xsl:value-of select="@type"/> &#160; <xsl:apply-templates select="."/>
+                                  </span>
+                                  <span class="container">
+                                     <xsl:value-of select="../container[@parent = $id]/@type"/>&#160;
+                                     <xsl:value-of select="../container[@parent = $id]"/>
+                                  </span>
+                               </div>
+                               </div>
+                            </xsl:for-each>
+                         </div>                               
+                          <span class="moreInfo">
                              <xsl:variable name="didHitCount">
                                 <xsl:value-of select="count(descendant-or-self::xtf:hit)"/>
                              </xsl:variable>
@@ -1597,34 +1444,34 @@
                                 child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
                                 child::separatedmaterial |  child::controlaccess">
-                                <div class="dialog_dsc"> 
+                                <span class="dialog_dsc"> 
                                    <xsl:call-template name="make-popup-link">
                                       <xsl:with-param name="name" select="'Additional description'"/>
                                       <xsl:with-param name="id" select="string(@id)"/>
                                       <xsl:with-param name="nodes" select="."/>
                                       <xsl:with-param name="doc.view" select="'dscDescription'"/>
                                    </xsl:call-template>
-                                </div>
+                                </span>
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                 </xsl:if>
                              </xsl:if>
                              <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
-                                <div class="dialog_dsc"> 
+                                <span class="dialog_dsc"> 
                                    <xsl:call-template name="make-popup-link">
                                       <xsl:with-param name="name" select="'Restrictions'"/>
                                       <xsl:with-param name="id" select="string(@id)"/>
                                       <xsl:with-param name="nodes" select="."/>
                                       <xsl:with-param name="doc.view" select="'restrictions'"/>
                                    </xsl:call-template>
-                                </div>
+                                </span>
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                 </xsl:if>
                              </xsl:if>
-                          </td>
+                          </span>
                          <!--2/11/12 WS:  add to bookbag function -->
-                         <td style="text-align:center;">
+                         <span class="inventoryBookbag">
                             <span class="addToBag" style="float:left;width:40%;padding-left:15%;">
                             <xsl:variable name="identifier" select="concat($rootID,'|',@id)"/>
                             <xsl:variable name="indexId" select="$identifier"/>
@@ -1658,12 +1505,11 @@
                                </xsl:otherwise>
                             </xsl:choose>
                            </span>                        
-                         </td> 
-                      </tr>  
+                         </span> 
+                      </div>  
                    </xsl:when>
                    <xsl:otherwise>
-                       <tr> 
-                           <td class="{$clevelMargin}" colspan="6">
+                           <div class="{$clevelMargin}" colspan="6">
                                <xsl:apply-templates select="did" mode="dsc"/>
                               <xsl:apply-templates select="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
                                  child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
@@ -1671,8 +1517,7 @@
                                  child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
                                  child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                  child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
-                                 child::separatedmaterial |  child::controlaccess"/></td>
-                       </tr>
+                                 child::separatedmaterial |  child::controlaccess"/></div>
                    </xsl:otherwise>
                </xsl:choose>
            </xsl:for-each>

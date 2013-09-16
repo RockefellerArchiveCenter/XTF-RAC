@@ -19,7 +19,7 @@ p{margin-top:0;margin-bottom:1em;}
 div.closeWindow {text-align:right !important; font-size:.85em !important; margin-top:1em;}
 div.closeWindow a{color: #C45414;}
 .getAddress{border-top:1px solid #999 !important; margin-top:24px !important;}
-.bookbag {width:3em; text-align:center;border:none; float:right;margin-bottom:-2em;}
+.bookbag {width:3em; text-align:center;border:none; float:right;}
 
 /* Formats header */
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
@@ -312,36 +312,47 @@ ul.none {list-style:none;}
 
 /* Container list styles*/
 /*table.containerList {width:99%; position:relative}*/
-table.containerList tr td{padding-top:2px; padding-bottom:2px;}
 .dscSeries {float: left;width: 100%;}
 .dscSubseries {float:left; width:99%; padding-left:1%}
-tr.dscSeries, tr.dscSubseries {float:none}
-.seriesTitle {background-color:#ddd; padding:8px 4px; font-size:1.25em; margin:10px 0px; font-weight:bold;}
-td .seriesTitle {margin:10px -4px}
-.container {margin-left:2em; text-align:left;}
-.instances {font-weight:bold;text-decoration:underline;}
-.containerHeader {font-weight:bold; padding-top:.5em; text-align:left;}
-.containerHeaderTitle {font-weight:bold; padding-top:.5em; text-align:left;}
+.seriesTitle {background-color:#ddd; padding:8px 4px; font-size:1.25em; margin:10px 0px; font-weight:bold;float:left;width:100%}
+.instances {width:35%;float:left;}
+.instance {width:100%; float:left;}
+.inventoryHeader {margin-bottom:.5em;float:left; width:100%;}
+.inventoryHeaderTitle {font-weight:bold; padding-top:.5em; text-align:left;width:40%;float:left;}
+.inventoryHeaderFormat, .inventoryHeaderContainers, .inventoryHeaderNotes, .inventoryHeaderBookbag {font-weight:bold; padding-top:.5em; text-align:left;}
+.inventoryHeaderFormat {width:10%;float:left}
+.inventoryHeaderContainers {width:25%;float:left}
+.inventoryHeaderNotes {width:15%;float:left}
+.inventoryHeaderBookbag {padding-right:1%; float:right}
 .moreLess a{text-decoration:none !important; font-weight:bold; color:#c45414 !important;}
-.containerTypes {margin-top:.5em;}
-.inventoryTitle {font-weight:bold; background-color:#000; color:#fff; padding:4px 2px; margin-bottom:.5em;}
-tr.odd{background-color:#eee !important;}
+.inventoryTitle {font-weight:bold; background-color:#000; color:#fff; padding:4px 2px; margin-bottom:.5em;float:left;width:100%}
+.file:nth-of-type(even) {background-color:#eee !important;}
 /*tr.file td {border-bottom: 1px dotted #ccc !important; margin-top:.5em;}*/
-tr.file td.noBorder {border:none!important;}
-/*.daoItemDisplay {float:left; padding:.5em; width:100%;}
+.file {float: left;width:100%; padding:.5em 0 .5em 0}
+/*tr.file td.noBorder {border:none!important;}
+.daoItemDisplay {float:left; padding:.5em; width:100%;}
 .daoItemDisplay .caption {float:left;padding: 3em 0 0 1em;width: 88%;font-size:1em;}
 .daoItemDisplay .daoLink {float:left; width:10%}*/
+.daoLink, .format, .containers, .moreInfo {float:left;display:inline-block;vertical-align:middle;}
+.daoLink {width:38%;padding:0 1% 0 1%;}
+.format {width:30%;}
+.containers {width:20%;}
+.moreInfo {width:17%;}
+.container {float:left;}
+.inventoryBookbag {width:3em; text-align:center;border:none; float:right;padding-right:2%;}
+
+
 
 /* --- Clevel Margins --- */
-table td.c {border-left: none; padding-left:4px;}
-table td.c01 {border-left: none !important; padding-left:4px;}
-table td.c02 {border-left: 10px solid white !important; padding-left:4px;}
-table td.c03 {border-left: 20px solid white !important; padding-left:4px;}
-table td.c04 {border-left: 30px solid white !important; padding-left:4px;}
-table td.c05 {border-left: 40px solid white !important; padding-left:4px;}
-table td.c06 {border-left: 50px solid white !important; padding-left:4px;}
-table td.c07 {border-left: 60px solid white !important; padding-left:4px;}
-table td.c08 {border-left: 70px solid white !important; padding-left:4px;}
+.c {}
+.c01 {}
+.c02 {width:100%}
+.c03 {width:100%}
+.c04 {width:98%}
+.c05 {width:97%}
+.c06 {width:96%}
+.c07 {width:95%}
+.c08 {width:94%}
 
 /* --- Formats library records --- */
 .modsInfo h3 {margin:0; padding:.25em .25em 1em .25em; background-color:#ccc !important; border:red;}
