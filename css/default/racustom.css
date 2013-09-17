@@ -344,7 +344,7 @@ ul.none {list-style:none;}
 
 
 /* --- Clevel Margins --- */
-.c {}
+/*.c {}
 .c01 {}
 .c02 {width:100%}
 .c03 {width:100%}
@@ -352,7 +352,7 @@ ul.none {list-style:none;}
 .c05 {width:97%}
 .c06 {width:96%}
 .c07 {width:95%}
-.c08 {width:94%}
+.c08 {width:94%}*/
 
 /* --- Formats library records --- */
 .modsInfo h3 {margin:0; padding:.25em .25em 1em .25em; background-color:#ccc !important; border:red;}

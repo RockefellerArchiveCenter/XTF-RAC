@@ -1111,169 +1111,139 @@
         It then recursively processes each child component of the c01 by 
         calling the clevel template. -->
     <xsl:template match="c|c01">
-       <xsl:choose>
-          <xsl:when test="$doc.view = 'dao'">
-             <div class="containerList" style="width:100%;float:left;">
-                <div>
-                   <xsl:call-template name="anchor"/>
-                   <xsl:attribute name="class">
-                      <xsl:choose>
-                         <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
-                         <xsl:otherwise>dscSeries</xsl:otherwise>
-                      </xsl:choose>    
-                   </xsl:attribute>
-                <xsl:call-template name="clevel_dao"/>
-                   
-
-                      
-                   <xsl:for-each select="c|c02">
-                   <div class="c02">
-                      <xsl:call-template name="anchor"/>
-                      <xsl:attribute name="class">
-                         <xsl:choose>
-                            <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
-                            <xsl:otherwise>dscSeries</xsl:otherwise>
-                         </xsl:choose>    
-                      </xsl:attribute>
-                   <xsl:call-template name="clevel_dao"/>
-                   <xsl:for-each select="c|c03">
-                      <div class="c03">
-                         <xsl:call-template name="anchor"/>
-                         <xsl:attribute name="class">
-                            <xsl:choose>
-                               <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
-                               <xsl:otherwise>dscSeries</xsl:otherwise>
-                            </xsl:choose>    
-                         </xsl:attribute>
-                      <xsl:call-template name="clevel_dao"/>
-                      <xsl:for-each select="c|c04">
-                         <div class="c04">
-                            <xsl:call-template name="anchor"/>
-                            <xsl:attribute name="class">
-                               <xsl:choose>
-                                  <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
-                                  <xsl:otherwise>dscSeries</xsl:otherwise>
-                               </xsl:choose>    
-                            </xsl:attribute>
-                         <xsl:call-template name="clevel_dao"/>
-                         <xsl:for-each select="c|c05">
-                            <div class="c05">
-                               <xsl:call-template name="anchor"/>
-                               <xsl:attribute name="class">
-                                  <xsl:choose>
-                                     <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
-                                     <xsl:otherwise>dscSeries</xsl:otherwise>
-                                  </xsl:choose>    
-                               </xsl:attribute>
-                            <xsl:call-template name="clevel_dao"/>
-                            <xsl:for-each select="c|c06">
-                               <div class="c06">
-                                  <xsl:call-template name="anchor"/>
-                                  <xsl:attribute name="class">
-                                     <xsl:choose>
-                                        <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
-                                        <xsl:otherwise>dscSeries</xsl:otherwise>
-                                     </xsl:choose>    
-                                  </xsl:attribute>
-                               <xsl:call-template name="clevel_dao"/>
-                               <xsl:for-each select="c|c07">
-                                  <div class="c07">
-                                     <xsl:call-template name="anchor"/>
-                                     <xsl:attribute name="class">
-                                        <xsl:choose>
-                                           <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
-                                           <xsl:otherwise>dscSeries</xsl:otherwise>
-                                        </xsl:choose>    
-                                     </xsl:attribute>
-                                  <xsl:call-template name="clevel_dao"/>
-                                  <xsl:for-each select="c|c08">
-                                     <div class="c08">
-                                        <xsl:call-template name="anchor"/>
-                                        <xsl:attribute name="class">
-                                           <xsl:choose>
-                                              <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
-                                              <xsl:otherwise>dscSeries</xsl:otherwise>
-                                           </xsl:choose>    
-                                        </xsl:attribute>
-                                     <xsl:call-template name="clevel_dao"/>
-                                     <xsl:for-each select="c|c09">
-                                        <div class="c04">
-                                           <xsl:call-template name="anchor"/>
-                                           <xsl:attribute name="class">
-                                              <xsl:choose>
-                                                 <xsl:when test="@level='subcollection' or @level='subgrp' or @level='subseries' or @level='subfonds'">dscSubseries</xsl:when>
-                                                 <xsl:otherwise>dscSeries</xsl:otherwise>
-                                              </xsl:choose>    
-                                           </xsl:attribute>
-                                          <xsl:call-template name="clevel_dao"/>
-                                        </div>
-                                     </xsl:for-each>
-                                     </div>
-                                  </xsl:for-each>
-                                  </div>
-                               </xsl:for-each>
-                               </div>
-                            </xsl:for-each>
-                            </div>
-                         </xsl:for-each>
-                         </div>
-                      </xsl:for-each>
-                      </div>
-                   </xsl:for-each>
+      <xsl:choose>
+         <xsl:when test="$doc.view = 'dao'">
+            <div class="{@level} c01" style="width:100%;float:left;">
+               <xsl:call-template name="anchor"/>
+               <xsl:call-template name="clevel_dao"/>
+               <xsl:for-each select="c|c02">
+                  <div class="{@level} c02" style="width:99%;float:right;">
+                     <xsl:call-template name="anchor"/>
+                     <xsl:call-template name="clevel_dao"/>
+                     <xsl:for-each select="c|c03">
+                        <div class="{@level} c03" style="width:99%;float:right;">
+                           <xsl:call-template name="anchor"/>
+                           <xsl:call-template name="clevel_dao"/>
+                           <xsl:for-each select="c|c04">
+                              <div class="{@level} c04" style="width:99%;float:right;">
+                                 <xsl:call-template name="anchor"/>
+                                 <xsl:call-template name="clevel_dao"/>
+                                 <xsl:for-each select="c|c05">
+                                    <div class="{@level} c05" style="width:99%;float:right;">
+                                       <xsl:call-template name="anchor"/>
+                                       <xsl:call-template name="clevel_dao"/>
+                                       <xsl:for-each select="c|c06">
+                                          <div class="{@level} c06" style="width:99%;float:right;">
+                                             <xsl:call-template name="anchor"/>
+                                             <xsl:call-template name="clevel_dao"/>
+                                             <xsl:for-each select="c|c07">
+                                                <div class="{@level} c07" style="width:99%;float:right;">
+                                                  <xsl:call-template name="anchor"/>
+                                                  <xsl:call-template name="clevel_dao"/>
+                                                  <xsl:for-each select="c|c08">
+                                                     <div class="{@level} c08" style="width:99%;float:right;">
+                                                  <xsl:call-template name="anchor"/>
+                                                  <xsl:call-template name="clevel_dao"/>
+                                                  <xsl:for-each select="c|c09">
+                                                     <div class="{@level} c09" style="width:99%;float:right;">
+                                                  <xsl:call-template name="anchor"/>
+                                                  <xsl:call-template name="clevel_dao"/>
+                                                  </div>
+                                                  </xsl:for-each>
+                                                  </div>
+                                                  </xsl:for-each>
+                                                </div>
+                                             </xsl:for-each>
+                                          </div>
+                                       </xsl:for-each>
+                                    </div>
+                                 </xsl:for-each>
+                              </div>
+                           </xsl:for-each>
+                        </div>
+                     </xsl:for-each>
                   </div>
-                </xsl:for-each>
-                   
-             </div>
-             </div>
-          </xsl:when>
-          <xsl:otherwise>
-             <div class="containerList" style="width:99%;float:left">
-                <xsl:call-template name="clevel">
-                   <xsl:with-param name="level">01</xsl:with-param>
-                </xsl:call-template>
-                <xsl:for-each select="c|c02">
-                   <xsl:call-template name="clevel">
-                      <xsl:with-param name="level">02</xsl:with-param>
-                   </xsl:call-template>
-                   <xsl:for-each select="c|c03">
-                      <xsl:call-template name="clevel">
-                         <xsl:with-param name="level">03</xsl:with-param>
-                      </xsl:call-template>    
-                      <xsl:for-each select="c|c04">
-                         <xsl:call-template name="clevel">
-                            <xsl:with-param name="level">04</xsl:with-param>
-                         </xsl:call-template>
-                         <xsl:for-each select="c|c05">
-                            <xsl:call-template name="clevel">
-                               <xsl:with-param name="level">05</xsl:with-param>
-                            </xsl:call-template>
-                            <xsl:for-each select="c|c06">
-                               <xsl:call-template name="clevel">
-                                  <xsl:with-param name="level">06</xsl:with-param>
-                               </xsl:call-template> 
-                               <xsl:for-each select="c|c07">
-                                  <xsl:call-template name="clevel">
-                                     <xsl:with-param name="level">07</xsl:with-param>
-                                  </xsl:call-template>
-                                  <xsl:for-each select="c|c08">
-                                     <xsl:call-template name="clevel">
-                                        <xsl:with-param name="level">08</xsl:with-param>
-                                     </xsl:call-template>
-                                     <xsl:for-each select="c|c09">
-                                        <xsl:call-template name="clevel">
-                                           <xsl:with-param name="level">09</xsl:with-param>
-                                        </xsl:call-template>    
-                                     </xsl:for-each>
-                                  </xsl:for-each>
-                               </xsl:for-each>
-                            </xsl:for-each>
-                         </xsl:for-each>
-                      </xsl:for-each>
-                   </xsl:for-each>
-                </xsl:for-each>
-             </div>
-          </xsl:otherwise>
-       </xsl:choose>
+               </xsl:for-each>
+            </div>
+
+         </xsl:when>
+         <xsl:otherwise>
+            <div class="{@level} c01" style="width:100%;float:left;">
+               <xsl:call-template name="anchor"/>
+               <xsl:call-template name="clevel">
+                  <xsl:with-param name="level">01</xsl:with-param>
+               </xsl:call-template>
+               <xsl:for-each select="c|c02">
+                  <div class="{@level} c02" style="width:99%;float:right;">
+                     <xsl:call-template name="anchor"/>
+                     <xsl:call-template name="clevel">
+                        <xsl:with-param name="level">02</xsl:with-param>
+                     </xsl:call-template>
+                     <xsl:for-each select="c|c03">
+                        <div class="{@level} c03" style="width:99%;float:right;">
+                           <xsl:call-template name="anchor"/>
+                           <xsl:call-template name="clevel">
+                              <xsl:with-param name="level">03</xsl:with-param>
+                           </xsl:call-template>
+                           <xsl:for-each select="c|c04">
+                              <div class="{@level} c04" style="width:99%;float:right;">
+                                 <xsl:call-template name="anchor"/>
+                                 <xsl:call-template name="clevel">
+                                    <xsl:with-param name="level">04</xsl:with-param>
+                                 </xsl:call-template>
+                                 <xsl:for-each select="c|c05">
+                                    <div class="{@level} c05" style="width:99%;float:right;">
+                                       <xsl:call-template name="anchor"/>
+                                       <xsl:call-template name="clevel">
+                                          <xsl:with-param name="level">05</xsl:with-param>
+                                       </xsl:call-template>
+                                       <xsl:for-each select="c|c06">
+                                          <div class="{@level} c06" style="width:99%;float:right;">
+                                             <xsl:call-template name="anchor"/>
+                                             <xsl:call-template name="clevel">
+                                                <xsl:with-param name="level">06</xsl:with-param>
+                                             </xsl:call-template>
+                                             <xsl:for-each select="c|c07">
+                                                <div class="{@level} c07"
+                                                   style="width:99%;float:right;">
+                                                  <xsl:call-template name="anchor"/>
+                                                  <xsl:call-template name="clevel">
+                                                  <xsl:with-param name="level">07</xsl:with-param>
+                                                  </xsl:call-template>
+                                                  <xsl:for-each select="c|c08">
+                                                  <div class="{@level} c08"
+                                                     style="width:99%;float:right;">
+                                                  <xsl:call-template name="anchor"/>
+                                                  <xsl:call-template name="clevel">
+                                                  <xsl:with-param name="level">08</xsl:with-param>
+                                                  </xsl:call-template>
+                                                  <xsl:for-each select="c|c09">
+                                                  <div class="{@level} c09"
+                                                     style="width:99%;float:right;">
+                                                  <xsl:call-template name="anchor"/>
+                                                  <xsl:call-template name="clevel">
+                                                  <xsl:with-param name="level">09</xsl:with-param>
+                                                  </xsl:call-template>
+                                                  </div>
+                                                  </xsl:for-each>
+                                                  </div>
+                                                  </xsl:for-each>
+                                                </div>
+                                             </xsl:for-each>
+                                          </div>
+                                       </xsl:for-each>
+                                    </div>
+                                 </xsl:for-each>
+                              </div>
+                           </xsl:for-each>
+                        </div>
+                     </xsl:for-each>
+                  </div>
+               </xsl:for-each>
+            </div>
+
+         </xsl:otherwise>
+      </xsl:choose>
     </xsl:template>
     <!--This is a named template that processes all c0* elements  -->
    <xsl:template name="clevel">
@@ -1331,8 +1301,7 @@
                    <xsl:when test="@level='subcollection' or @level='subgrp' or @level='series' 
                        or @level='subseries' or @level='collection'or @level='fonds' or 
                        @level='recordgrp' or @level='subfonds' or @level='class' or (@level='otherlevel' and not(child::did/container))">
-                      <div class="{$clevelMargin}">
-                            <xsl:call-template name="anchor"/>
+                      <div class="inventoryNotes">
                             <div class="seriesTitle"><xsl:apply-templates select="did" mode="dsc"/></div>
 <!--                             <xsl:apply-templates select="did/unittitle" mode="dsc"/>-->
                              <xsl:apply-templates select="did/origination" mode="dsc"/>
@@ -1372,7 +1341,7 @@
                        </div>
                    <!-- ADDED 1/4/11: Adds container headings if series/subseries is followed by a file -->                                           
                       <xsl:if test="child::*[@level][1]/@level='file' or child::*[@level][1]/@level='item' or (child::*[@level][1]/@level='otherlevel'and child::*[@level][1]/child::did/container)">
-                         <div class="{$clevelChildMargin} inventoryTitle">Inventory</div>
+                         <div class="inventoryTitle {$clevelChildMargin}">Inventory</div>
                          <div class="inventoryHeader {$clevelChildMargin}">
                             <span class="inventoryHeaderTitle">Title</span>
                             <span class="inventoryHeaderFormat">Format</span>
@@ -1433,6 +1402,7 @@
                                </div>
                                </div>
                             </xsl:for-each>
+                            <xsl:text>&#160;</xsl:text>
                          </div>                               
                           <span class="moreInfo">
                              <xsl:variable name="didHitCount">
@@ -1509,7 +1479,7 @@
                       </div>  
                    </xsl:when>
                    <xsl:otherwise>
-                           <div class="{$clevelMargin}" colspan="6">
+                           <div class="{$clevelMargin}">
                                <xsl:apply-templates select="did" mode="dsc"/>
                               <xsl:apply-templates select="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
                                  child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
