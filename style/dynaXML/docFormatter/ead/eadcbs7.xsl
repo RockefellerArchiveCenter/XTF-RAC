@@ -1359,7 +1359,7 @@
                    <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">
                        <!-- Tests to see if current container type is different from previous container type, if it is a new row with container type headings is outout -->
                       <xsl:if test="not(preceding-sibling::*) and parent::dsc">
-                         <div class="{$clevelChildMargin} inventoryTitle">Inventory</div>
+                         <div class="inventoryTitle {$clevelChildMargin}">Inventory</div>
                          <div class="inventoryHeader {$clevelChildMargin}">
                             <span class="inventoryHeaderTitle">Title</span>
                             <span class="inventoryHeaderFormat">Format</span>
@@ -1377,10 +1377,13 @@
                             <xsl:for-each select="child::*/container[@id]">
                                <div class="instance">
                                <div class="format">
+                                  <xsl:variable name="label">
+                                     <xsl:value-of select="substring-before(@label,' (')"/>
+                                  </xsl:variable>
                               <xsl:choose>
                                  <xsl:when
-                                    test="@label != 'Mixed materials' and @label != 'Mixed Materials' and @label != 'mixed materials'">
-                                    <xsl:value-of select="@label"/>
+                                    test="$label != 'Mixed materials' and $label != 'Mixed Materials' and $label != 'mixed materials'">
+                                    <xsl:value-of select="$label"/>
                                  </xsl:when>
                                  <xsl:otherwise>&#160;</xsl:otherwise>
                               </xsl:choose>
