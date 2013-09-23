@@ -217,7 +217,7 @@
       <script type="text/javascript" src="/xtf/script/rac/jquery.cookie.js"/>
       <script type="text/javascript" src="/xtf/script/rac/active.js"/>
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/rac.js"></script>   
-
+      <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/scroll.js"></script>
       <script type="text/javascript" language="JavaScript">
          	<!--
          		if (isNS4) {

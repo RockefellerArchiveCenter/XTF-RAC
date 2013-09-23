@@ -94,7 +94,7 @@
                   />
                </xsl:when>
                <xsl:when test="$chunk.id = 'contentsLink'">
-                  <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
+                  <xsl:apply-templates select="/ead/archdesc/dsc/child::*[1][@level]"/>
                </xsl:when>
                <xsl:when test="$chunk.id = 'digitalLink'">
                   <xsl:apply-templates select="/ead/archdesc/dsc/child::*[1][@level]"/>
@@ -1165,7 +1165,6 @@
                   </div>
                </xsl:for-each>
             </div>
-
          </xsl:when>
          <xsl:otherwise>
             <div class="{@level} c01" style="width:100%;float:left;">
@@ -1241,7 +1240,6 @@
                   </div>
                </xsl:for-each>
             </div>
-
          </xsl:otherwise>
       </xsl:choose>
     </xsl:template>
@@ -1380,13 +1378,11 @@
                                   <xsl:variable name="label">
                                      <xsl:value-of select="substring-before(@label,' (')"/>
                                   </xsl:variable>
-                              <xsl:choose>
-                                 <xsl:when
+                                 <xsl:if
                                     test="$label != 'Mixed materials' and $label != 'Mixed Materials' and $label != 'mixed materials'">
                                     <xsl:value-of select="$label"/>
-                                 </xsl:when>
-                                 <xsl:otherwise>&#160;</xsl:otherwise>
-                              </xsl:choose>
+                                 </xsl:if>
+                                 <xsl:text>&#160;</xsl:text>
                                </div>
                            <!--7/16/11 WS: Adjusted Containers -->    
                                <!-- ADDED 3/14/10: Sorts containers alpha numerically -->

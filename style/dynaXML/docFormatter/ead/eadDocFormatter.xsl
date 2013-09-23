@@ -765,7 +765,7 @@
                <xsl:value-of select="'true'"/>
             </xsl:if>
       </xsl:variable>
-      <div id="{@id}">
+      <div id="{@id}Menu">
          <xsl:attribute name="class">
             <xsl:value-of select="'tocRow '"/>
             <xsl:choose>
@@ -826,7 +826,7 @@
          </xsl:call-template>
       </div>
          <xsl:if test="$submenu = 'true'">
-            <div class="more accordionContent" id="{$submenuID}">
+            <div class="more accordionContent" id="{$submenuID}Menu">
                <xsl:if test="$parentID = $submenuID">
                   <xsl:attribute name="style">display:block;</xsl:attribute>
                </xsl:if>
