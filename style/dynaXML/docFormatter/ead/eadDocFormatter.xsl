@@ -376,11 +376,11 @@
                   <xsl:text>Clear Hits</xsl:text>
                </a>
                <xsl:text>]</xsl:text>
-               <xsl:choose>
-                  <xsl:when test="$docId"/>
-                  <xsl:otherwise> &#160;[ <a href="{session:getData('queryURL')}"> Back to Search
-                        Results </a> ] </xsl:otherwise>
-               </xsl:choose>
+               
+
+                  &#160;<xsl:text>[</xsl:text> <a href="{session:getData('queryURL')}">Back to Search
+                        Results</a> <xsl:text>]</xsl:text>
+
                </div>
             </xsl:if>
          </div>
