@@ -1544,7 +1544,7 @@
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:value-of
-                           select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString))"
+                           select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString, ';startDoc=', $startDoc))"
                         />
                      </xsl:otherwise>
                   </xsl:choose>
@@ -2075,7 +2075,7 @@
                         </xsl:otherwise>
                      </xsl:choose>
                      <xsl:value-of
-                        select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString))"
+                        select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString, ';startDoc=', $startDoc))"
                      />
                   </xsl:otherwise>
                </xsl:choose>
@@ -2257,7 +2257,7 @@
                         </xsl:otherwise>
                      </xsl:choose>
                      <xsl:value-of
-                        select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString))"
+                        select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString, ';startDoc=', $startDoc))"
                      />
                   </xsl:otherwise>
                </xsl:choose>
