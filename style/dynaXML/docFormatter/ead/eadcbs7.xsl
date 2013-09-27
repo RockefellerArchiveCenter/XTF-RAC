@@ -64,7 +64,7 @@
       <xsl:variable name="file">
          <xsl:value-of select="/ead/eadheader/eadid"/>
       </xsl:variable> 
-      <div id="content-wrapper">
+      <div id="content-wrapper" data-spy="scroll" data-target="#toc">
          <div id="{$chunk.id}">
             <xsl:choose>
                <xsl:when test="$chunk.id = 'headerlink'">
@@ -94,7 +94,7 @@
                   />
                </xsl:when>
                <xsl:when test="$chunk.id = 'contentsLink'">
-                  <xsl:apply-templates select="/ead/archdesc/dsc/child::*[1][@level]"/>
+                  <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
                </xsl:when>
                <xsl:when test="$chunk.id = 'digitalLink'">
                   <xsl:apply-templates select="/ead/archdesc/dsc/child::*[1][@level]"/>
