@@ -219,11 +219,11 @@
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/rac.js"></script>   
       <!--<script type="text/javascript" language="JavaScript" src="/xtf/script/rac/scroll.js"></script>-->
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/bootstrap-scrollspy.js"></script>
-      <script type="text/javascript" language="JavaScript">
+      <!--<script type="text/javascript">
          $(document).ready(function() {
-         $('#toc').scrollspy()
+         $('body').scrollspy({ target: '#toc' });
          });
-      </script>
+      </script>-->
       <script type="text/javascript" language="JavaScript">
          	<!--
          		if (isNS4) {

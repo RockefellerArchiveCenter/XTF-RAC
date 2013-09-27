@@ -64,7 +64,7 @@
       <xsl:variable name="file">
          <xsl:value-of select="/ead/eadheader/eadid"/>
       </xsl:variable> 
-      <div id="content-wrapper" data-spy="scroll" data-target="#toc">
+      <div id="content-wrapper" data-spy="scroll" data-target="#toc" data-offset="100">
          <div id="{$chunk.id}">
             <xsl:choose>
                <xsl:when test="$chunk.id = 'headerlink'">

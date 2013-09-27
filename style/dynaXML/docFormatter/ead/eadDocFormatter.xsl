@@ -1123,18 +1123,15 @@
       
             
       <xsl:choose>
-         <xsl:when test="$indent = 3">
+         <xsl:when test="$doc.view = ('collection' or 'digital')">
             <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$id}']);">
-               <!-- if basicchoice2 = "nomatch_for_id" then use the original -->
                <xsl:attribute name="href">
-                  <!--   <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>   (old had &amp;menu=more)-->
                   <xsl:choose>
                      <xsl:when test="$basicchoice2='nomatch_for_id'">
                         <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
                            />?<xsl:value-of select="$content.href"/>
                      </xsl:when>
                      <xsl:otherwise>
-                        <!-- 5/17/12 DG for RAC: rewrite -->
                         <xsl:value-of select="$href2"/>
                      </xsl:otherwise>
                   </xsl:choose>
@@ -1160,29 +1157,8 @@
             <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$id}']);">
                <!--<xsl:attribute name="onclick">showHide('<xsl:value-of select="$submenuID"/>');</xsl:attribute>-->
                <xsl:attribute name="href">
-                  <xsl:choose>
-                     <xsl:when test="$doc.view = 'collection'">
-                        <xsl:choose>
-                           <xsl:when test="($query != '0') and ($query != '')">
-                              <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
-                                 />?<xsl:value-of select="$content.href"/>
-                           </xsl:when>
-                           <xsl:when test="$basicchoice2='nomatch_for_id'">
-                              <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
-                                 />?<xsl:value-of select="$content.href"/>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <xsl:value-of select="$href2"/>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </xsl:when>
-                     <xsl:when test="$doc.view = 'contents'">
-                        <xsl:value-of select="concat('#',@id)"/>
-                     </xsl:when>
-                  </xsl:choose>
+                  <xsl:value-of select="concat('#',@id)"/>
                </xsl:attribute>
-
-
                <div class="tocItem">
                   <xsl:choose>
                      <xsl:when test="$indent = 2">
