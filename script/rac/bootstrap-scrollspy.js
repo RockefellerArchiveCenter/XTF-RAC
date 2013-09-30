@@ -34,7 +34,7 @@
     this.$scrollElement = $element.on('scroll.scroll-spy.data-api', process)
     this.selector = (this.options.target
       || ((href = $(element).attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
-      || '') + ' .tocRow > a'
+      || '') + ' a'
     this.$body = $('body')
     this.refresh()
     this.process()
@@ -98,19 +98,24 @@
         
         $(this.selector)
           .parent('.active')
-          .removeClass('active')
+          .removeClass('active on')
+          
+          $('.accordionContent').hide()
 
         selector = this.selector
           + '[data-target="' + target + '"],'
           + this.selector + '[href="' + target + '"]'
 
         active = $(selector)
-          .parent('.tocRow')
+          .parent('div')
           .addClass('active')
 
-        if (active.parent('.dropdown-menu').length)  {
-          active = active.closest('li.dropdown').addClass('active')
-        }
+        if ($(active).hasClass('accordionButton'))  {
+          active = active.addClass('on').next('.accordionContent').show()
+        } else if
+         ($(active).hasClass('tocSubrow')) {
+         active = active.parent().show().prev('.tocRow').addClass('on')
+         }
 
         active.trigger('activate')
       }
