@@ -225,13 +225,6 @@
                <xsl:copy-of select="$brand.feedback"/>
                <div class="fixedFooter"><xsl:copy-of select="$brand.footer"/></div>
           </body>
-            <!--<script type="text/javascript">
-                  $(document).ready(function(){
-                  if($(".contentsList .active").length) {
-                  $(".contentsList .active")[0].scrollIntoView();
-                  } else {}
-                  });
-               </script>-->
          </html>
       </xsl:result-document>
    </xsl:template>
