@@ -1,12 +1,12 @@
 $(document).ready(function() {
 //var open = "#" + $.cookie('openContent');
 
-$('.tocRow a').click(function() {
+$('.accordionButton').click(function() {
 //$.removeCookie('openContent');
 $('.accordionButton').removeClass('on');
 $('.accordionContent').slideUp('normal');
 
-if($(this).next().is('accordionContent',':hidden') == true) {
+if($(this).next().is(':hidden')) {
 $(this).addClass('on');
 $(this).next().slideDown('normal');}
 //$.removeCookie('openContent');

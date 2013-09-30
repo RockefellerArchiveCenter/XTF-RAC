@@ -100,7 +100,8 @@
           .parent('.active')
           .removeClass('active on')
           
-          $('.accordionContent').hide()
+          $('.accordionContent').hide();
+          $('.accordionButton').removeClass('on');
 
         selector = this.selector
           + '[data-target="' + target + '"],'
