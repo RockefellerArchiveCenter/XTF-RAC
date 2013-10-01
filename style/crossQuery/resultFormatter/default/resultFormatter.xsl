@@ -1243,7 +1243,7 @@
                <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
                   <xsl:variable name="daoFile" select="substring-before(tokenize(meta/daoLink,'/')[position()=last()],'.')"/>
                   <xsl:variable name="daoImg" select="concat(string-join(tokenize(meta/daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/> 
-                  <a href="{$docPath}"><img src="{$daoImg}" alt="Digital object thumbnail"/></a>
+                  <a href="{$docPath}" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);"><img src="{$daoImg}" alt="Digital object thumbnail"/></a>
                </xsl:when>
                <xsl:when test="meta/genre[contains(.,'DVD')]">
                   <img src="/xtf/icons/default/video.gif" alt="Moving Image"/>
@@ -1283,6 +1283,11 @@
                      <xsl:attribute name="href">
                         <xsl:value-of select="$docPath"/>
                      </xsl:attribute>
+                     <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
+                        <xsl:attribute name="onClick">
+                           <xsl:text>_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);</xsl:text>
+                        </xsl:attribute>
+                     </xsl:if>
                      <xsl:choose>
                         <xsl:when test="meta/title">
                            <xsl:choose>
