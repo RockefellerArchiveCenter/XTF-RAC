@@ -66,6 +66,7 @@
             self.offsets.push(this[0])
             self.targets.push(this[1])
           })
+
       }
 
     , process: function () {
@@ -76,11 +77,11 @@
           , targets = this.targets
           , activeTarget = this.activeTarget
           , i
-
+          
         if (scrollTop >= maxScroll) {
           return activeTarget != (i = targets.last()[0])
             && this.activate ( i )
-        }
+        } 
 
         for (i = offsets.length; i--;) {
           activeTarget != targets[i]
@@ -88,6 +89,7 @@
             && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
             && this.activate( targets[i] )
         }
+
       }
 
     , activate: function (target) {
@@ -117,9 +119,11 @@
          ($(active).hasClass('tocSubrow')) {
          active = active.parent().show().prev('.tocRow').addClass('on')
          }
-
         active.trigger('activate')
+
+
       }
+
 
   }
 
