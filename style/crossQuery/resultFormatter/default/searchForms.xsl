@@ -440,7 +440,7 @@
                         <a href="#">close</a>
                      </div>
                   </div>
-                  <input class="searchbox" type="submit" value="Search"/>
+                  <input class="searchbox" type="submit" value="Search" onClick="_gaq.push(['_trackEvent', 'search', 'keyword', 'home page']);"/>
                   <!--<input type="hidden" value="series" name="level"/>-->
                   <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
                   <!-- Uncomment and complete code when digital objects are included -->
@@ -453,21 +453,21 @@
                <h2>Browse</h2>
                <div class="accordionButton category"><h3><img src="/xtf/icons/default/collections.gif" alt="archival collections" height="25px"/>Archival Collections</h3></div>
                   <div class="accordionContent">
-                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">Browse All</a></li>
-                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead">By Title</a></li>
-                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead">By Creator</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival']);">Browse All</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-title']);">By Title</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-creator']);">By Creator</a></li>
                   </div>
                <div class="accordionButton category"><h3><img src="/xtf/icons/default/book.gif" alt="library materials" height="25px"/>Library Materials</h3></div>
                   <div class="accordionContent">
-                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods">Browse All</a></li>
-                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods">By Title</a></li>
-                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods">By Creator</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library']);">Browse All</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-title']);">By Title</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-creator']);">By Creator</a></li>
                   </div>
                <div class="accordionButton category"><h3><img src="/xtf/icons/default/dao_large.gif" alt="digital materials" height="25px"/>Digital Materials</h3></div>
                   <div class="accordionContent">
-                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=file;type=dao">Browse All</a></li>
-                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao">By Title</a></li>
-                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao">By Creator</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=file;type=dao" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital']);">Browse All</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital-title']);">By Title</a></li>
+                     <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital-creator']);">By Creator</a></li>
                   </div>
             </div>
             
