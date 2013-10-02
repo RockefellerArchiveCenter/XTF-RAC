@@ -193,8 +193,8 @@
                   <xsl:value-of select="eadheader/filedesc/titlestmt/subtitle"/>
                </title>
                </head>
-            <body prefix="schema: http:/schema.org/">
-               <div id="wrapper" typeof="schema:CollectionPage">
+            <body prefix="schema:http:/schema.org/">
+               <div typeof="schema:CollectionPage">
                
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
@@ -254,7 +254,7 @@
          </xsl:choose>
       </xsl:variable>
       <div class="bbar_custom">
-         <div class="documentTitle ead" property="schema:name">
+         <div class="documentTitle ead">
             <h1>
                <xsl:variable name="title">
                   <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>

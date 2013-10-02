@@ -658,7 +658,7 @@
       <!--The template tests to see if there is a label attribute for unittitle,
          inserting the contents if there is or adding one if there isn't. -->
             <h4>Title</h4>   
-            <div><xsl:apply-templates select="text() |* [not(self::unitdate)]"/></div>
+      <div property="schema:name"><xsl:apply-templates select="text() |* [not(self::unitdate)]"/></div>
    </xsl:template>
       
    <!--This template processes the note element.-->
