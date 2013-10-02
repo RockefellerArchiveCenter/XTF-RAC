@@ -121,9 +121,7 @@
          }
         active.trigger('activate')
 
-
       }
-
 
   }
 
