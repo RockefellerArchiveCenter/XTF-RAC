@@ -1116,7 +1116,7 @@
       
             
       <xsl:choose>
-         <xsl:when test="$doc.view='collection'">
+         <xsl:when test="$doc.view='collection' or $chunk.id='headerlink' or $chunk.id='restrictlink' or $chunk.id='arrangementlink' or $chunk.id='bioghist' or $chunk.id='adminlink' or $chunk.id='physdesclink'">
             <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$id}']);">
                <!-- if basicchoice2 = "nomatch_for_id" then use the original -->
                <xsl:attribute name="href">
