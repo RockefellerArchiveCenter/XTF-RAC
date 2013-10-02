@@ -1698,7 +1698,7 @@
                  <img src="{$daoImg}"/>
                </a>
             </div>
-            <div class="caption" style="float:left;padding: 3em 0 0 1em;width: 88%;font-size:1em;">
+            <div class="caption" style="float:left;padding: 3em 0 0 1em;width: 80%;font-size:1em;">
               <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                   <xsl:choose>
                      <xsl:when test="daodesc">
