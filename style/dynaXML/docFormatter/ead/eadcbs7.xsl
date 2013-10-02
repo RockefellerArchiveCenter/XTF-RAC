@@ -582,11 +582,11 @@
    <xsl:template name="creators">
       <xsl:if test="origination/child::*[starts-with(@role,'Author')]">
          <h4>Creator</h4>
-         <p>
+         <div>
             <xsl:for-each select="origination/child::*[starts-with(@role,'Author')]">
-               <xsl:apply-templates/><br/>
+               <div property="schema:creator"><xsl:apply-templates/></div>
             </xsl:for-each>
-         </p>
+         </div>
       </xsl:if>
 </xsl:template>
   
@@ -594,19 +594,19 @@
    <xsl:template name="contributors">
       <xsl:if test="origination/child::*[starts-with(@role,'Source')]">
          <h4>Source</h4>
-         <p>
+         <div>
             <xsl:for-each select="origination/child::*[starts-with(@role,'Source')]">
-               <xsl:apply-templates/><br/>
+               <div><xsl:apply-templates/></div>
             </xsl:for-each>
-         </p>
+         </div>
       </xsl:if>
       <xsl:if test="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')))]">
          <h4>Contributor(s)</h4>
-         <p>
+         <div>
             <xsl:for-each select="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')))]">
-               <xsl:apply-templates/><br/>
+               <div><xsl:apply-templates/></div>
             </xsl:for-each>
-         </p>
+         </div>
       </xsl:if>
    </xsl:template>
    <!--This template formats the repostory, origination, abstract,
@@ -632,16 +632,21 @@
                 <!--<xsl:otherwise><xsl:value-of select="@label"/></xsl:otherwise>-->
              </xsl:choose>
          </h4>
-         <p>      
+         <div>
+            <xsl:if test="self::abstract">
+               <xsl:attribute name="property">
+                  <xsl:text>schema:description</xsl:text>
+               </xsl:attribute>
+            </xsl:if>
             <xsl:apply-templates/>               
-         </p>        
+         </div>        
    </xsl:template>
    
    <xsl:template match="archdesc/did/unitdate">
       <xsl:choose>
          <xsl:when test="@type='inclusive'">
             <h4>Date</h4>   
-            <p><xsl:apply-templates/></p>           
+            <div><xsl:apply-templates/></div>           
          </xsl:when>
          <xsl:otherwise/>
       </xsl:choose>
@@ -653,7 +658,7 @@
       <!--The template tests to see if there is a label attribute for unittitle,
          inserting the contents if there is or adding one if there isn't. -->
             <h4>Title</h4>   
-            <p><xsl:apply-templates select="text() |* [not(self::unitdate)]"/></p>
+            <div><xsl:apply-templates select="text() |* [not(self::unitdate)]"/></div>
    </xsl:template>
       
    <!--This template processes the note element.-->
@@ -667,11 +672,11 @@
                <xsl:choose>
                   <xsl:when test="position()=1">
                      <h4><xsl:value-of select="@label"/></h4>
-                     <p><xsl:apply-templates/></p>
+                     <div><xsl:apply-templates/></div>
                   </xsl:when>
                   <xsl:otherwise>
                      <h4>Note</h4>      
-                     <p><xsl:apply-templates/></p>
+                     <div><xsl:apply-templates/></div>
                   </xsl:otherwise>
                </xsl:choose>
             </xsl:when>
@@ -682,10 +687,10 @@
                <xsl:choose>
                   <xsl:when test="position()=1">
                      <h4>Note</h4>      
-                     <p><xsl:apply-templates/></p>
+                     <div><xsl:apply-templates/></div>
                   </xsl:when>
                   <xsl:otherwise>      
-                     <p><xsl:apply-templates/></p>
+                     <div><xsl:apply-templates/></div>
                   </xsl:otherwise>
                </xsl:choose>
             </xsl:otherwise>
@@ -696,7 +701,7 @@
    
    <xsl:template match="scopecontent" mode="overview">
       <h4>Collection Description</h4>
-      <xsl:apply-templates select="child::*[not(name()='head')]"/>
+      <div property="schema:description"><xsl:apply-templates select="child::*[not(name()='head')]"/></div>
    </xsl:template>
    
    <!-- Access and Use -->
@@ -880,7 +885,10 @@
             </h4>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="child::*[name() != 'head']"/>
+      <div>
+         <xsl:if test="self::bioghist"><xsl:attribute name="property">schema:description</xsl:attribute></xsl:if>
+         <xsl:apply-templates select="child::*[name() != 'head']"/>
+      </div>
    </xsl:template>
    
    <!--This template rule formats the top-level related material
@@ -1695,7 +1703,7 @@
             <div class="daoLink" style="float:left; width:10%">   
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                  <xsl:call-template name="component-did-core"/>
-                 <img src="{$daoImg}"/>
+                 <img src="{$daoImg}" property="schema:thumbnailURL"/>
                </a>
             </div>
             <div class="caption" style="float:left;padding: 3em 0 0 1em;width: 80%;font-size:1em;">
