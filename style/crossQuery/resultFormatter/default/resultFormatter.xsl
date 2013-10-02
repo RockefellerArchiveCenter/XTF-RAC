@@ -2107,7 +2107,7 @@
                <xsl:value-of select="concat($uri,';chunk.id=contentsLink',';doc.view=contents','#',$chunk.id)"/>
             </xsl:when>
             <xsl:when test="$chunk.id != ''">
-               <xsl:value-of select="concat($uri,';chunk.id=',$chunk.id,';doc.view=contents')"/>
+               <xsl:value-of select="concat($uri,';chunk.id=contentsLink',';doc.view=contents','#',$chunk.id)"/>
                <!-- Link used to get sub-document out of context               
                   <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
                -->
