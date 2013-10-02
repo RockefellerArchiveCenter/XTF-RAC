@@ -191,11 +191,6 @@
                         });
                     });
         </script>
-            <script type="text/javascript">
-
-                        $.removeCookie('openContent');
-
-                  </script>
                </head>
                <body>
                   <xsl:copy-of select="$brand.header"/>

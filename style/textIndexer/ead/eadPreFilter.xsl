@@ -413,7 +413,8 @@
                <xsl:when test="@level = 'fonds'">Fonds</xsl:when>
                <xsl:when test="@level = 'subfonds'">Subfonds</xsl:when>
                <xsl:when test="@level = 'class'">Class</xsl:when>
-               <xsl:when test="@level = 'otherlevel'">otherlevel</xsl:when>
+               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"><xsl:value-of select="@otherlevel"/></xsl:when>
+               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">Other Level</xsl:when>
                <xsl:when test="@level = 'file'">File</xsl:when>
                <xsl:when test="@level = 'item'">Item</xsl:when>
             </xsl:choose>            
@@ -464,11 +465,14 @@
                   <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">
                         <xsl:text>File: </xsl:text>
                      <xsl:choose>
-                        <xsl:when test="string-length(normalize-space(did/unittitle)) &gt; 1">
-                           <xsl:value-of select="did/unittitle"/>, <xsl:value-of  select="did/unitdate"/>.       
-                        </xsl:when>
-                        <xsl:when test="string-length(normalize-space(did/unittitle)) &lt; 1">
-                           <xsl:value-of select="did/unitdate"/>.
+                        <xsl:when test="did/unitdate">
+                           <xsl:choose>
+                              <xsl:when test="string-length(normalize-space(did/unittitle)) &gt; 1">
+                                 <xsl:value-of select="did/unittitle"/>, <xsl:value-of
+                                    select="did/unitdate"/>. </xsl:when>
+                              <xsl:when test="string-length(normalize-space(did/unittitle)) &lt; 1">
+                                 <xsl:value-of select="did/unitdate"/>. </xsl:when>
+                           </xsl:choose>
                         </xsl:when>
                         <xsl:otherwise>Unknown.</xsl:otherwise>
                      </xsl:choose>

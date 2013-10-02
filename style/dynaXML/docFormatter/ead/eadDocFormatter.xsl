@@ -225,13 +225,6 @@
                <xsl:copy-of select="$brand.feedback"/>
                <div class="fixedFooter"><xsl:copy-of select="$brand.footer"/></div>
           </body>
-            <script type="text/javascript">
-                  $(document).ready(function(){
-                  if($(".contentsList .active").length) {
-                  $(".contentsList .active")[0].scrollIntoView();
-                  } else {}
-                  });
-               </script>
          </html>
       </xsl:result-document>
    </xsl:template>
@@ -765,23 +758,23 @@
                <xsl:value-of select="'true'"/>
             </xsl:if>
       </xsl:variable>
-      <div id="{@id}">
+      <div id="{@id}Menu">
          <xsl:attribute name="class">
             <xsl:value-of select="'tocRow '"/>
             <xsl:choose>
                <xsl:when test="$submenu = 'true'">
                   <xsl:value-of select="'accordionButton '"/>
-                  <xsl:if test="$chunk.id = @id">
+                  <!--<xsl:if test="$chunk.id = @id">
                      <xsl:attribute name="class">
                         <xsl:value-of select="'active on'"/>
                      </xsl:attribute>
-                  </xsl:if>
+                  </xsl:if>-->
                </xsl:when>
-               <xsl:when test="$chunk.id = @id">
+               <!--<xsl:when test="$chunk.id = @id">
                   <xsl:attribute name="class">
                      <xsl:value-of select="'active '"/>
                   </xsl:attribute>
-               </xsl:when>
+               </xsl:when>-->
             </xsl:choose>
          </xsl:attribute>
          
@@ -872,9 +865,9 @@
       <div>
          <xsl:attribute name="class">
             <xsl:value-of select="'tocSubrow '"/>
-            <xsl:if test="$chunk.id = @id">
+            <!--<xsl:if test="$chunk.id = @id">
                <xsl:value-of select="'active '"/>
-            </xsl:if>
+            </xsl:if>-->
          </xsl:attribute>
       <xsl:call-template name="make-toc-link">
             <xsl:with-param name="submenuID" select="$submenuID"/>
@@ -1122,77 +1115,80 @@
       </xsl:if>-->
       
             
-               <xsl:choose>
-                  <xsl:when test="$indent = 3">
-                     <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$id}']);">
-                  	<!-- if basicchoice2 = "nomatch_for_id" then use the original -->
-                   <xsl:attribute name="href">
-                        <!--   <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>   (old had &amp;menu=more)-->
-						<xsl:choose>
-							<xsl:when test="$basicchoice2='nomatch_for_id'">	
-								<xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-							</xsl:when>
-							<xsl:otherwise>
-								<!-- 5/17/12 DG for RAC: rewrite -->
-								<xsl:value-of select="$href2"/>
-							</xsl:otherwise>
-						</xsl:choose>
-                        </xsl:attribute>
-                        <div class="tocItem">
-                           <xsl:choose>
-                              <xsl:when test="$indent = 2">
-                                 <xsl:attribute name="class">inventory</xsl:attribute>
-                              </xsl:when>
-                              <xsl:when test="$indent = 3">
-                                 <xsl:attribute name="class">inventory2</xsl:attribute>
-                              </xsl:when>
-                              <xsl:otherwise/>
-                           </xsl:choose>
-                           <xsl:value-of select="$name"/>
-                           <div class="hit-count">
-                              <xsl:if test="$hit.count">
-                                 (<xsl:value-of select="$hit.count"/>)
-                              </xsl:if>  
-                           </div>
-                        </div>
-                     </a>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$id}']);">
-                        <!--<xsl:attribute name="onclick">showHide('<xsl:value-of select="$submenuID"/>');</xsl:attribute>-->
-                        <xsl:attribute name="href">
-                           <xsl:choose>
-                              <xsl:when test="($query != '0') and ($query != '')">
-                                 <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-                              </xsl:when>
-                                 <xsl:when test="$basicchoice2='nomatch_for_id'">	
-                                    <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-                                 </xsl:when>
-                              <xsl:otherwise>
-                                 <xsl:value-of select="$href2"/>
-                              </xsl:otherwise>
-                           </xsl:choose>
-                        </xsl:attribute>
-                        <div class="tocItem">
-                           <xsl:choose>
-                              <xsl:when test="$indent = 2">
-                                 <xsl:attribute name="class">inventory</xsl:attribute>
-                              </xsl:when>
-                              <xsl:when test="$indent = 3">
-                                 <xsl:attribute name="class">inventory2</xsl:attribute>
-                              </xsl:when>
-                              <xsl:otherwise/>
-                           </xsl:choose>
-                        <xsl:value-of select="$name"/>
-                           <div class="hit-count">
-                              <xsl:if test="$hit.count">
-                                 (<xsl:value-of select="$hit.count"/>)
-                              </xsl:if>  
-                           </div>
-                        </div>
-                     </a>
-                  </xsl:otherwise>
-               </xsl:choose>
+      <xsl:choose>
+         <xsl:when test="$doc.view='collection'">
+            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$id}']);">
+               <!-- if basicchoice2 = "nomatch_for_id" then use the original -->
+               <xsl:attribute name="href">
+                  <!--   <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>   (old had &amp;menu=more)-->
+                  <xsl:choose>
+                     <xsl:when test="($query != '0') and ($query != '')">
+                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
+                        />?<xsl:value-of select="$content.href"/>
+                     </xsl:when>
+                     <xsl:when test="$basicchoice2='nomatch_for_id'">
+                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
+                           />?<xsl:value-of select="$content.href"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <!-- 5/17/12 DG for RAC: rewrite -->
+                        <xsl:value-of select="$href2"/>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </xsl:attribute>
+               <div class="tocItem">
+                  <xsl:choose>
+                     <xsl:when test="$indent = 2">
+                        <xsl:attribute name="class">inventory</xsl:attribute>
+                     </xsl:when>
+                     <xsl:when test="$indent = 3">
+                        <xsl:attribute name="class">inventory2</xsl:attribute>
+                     </xsl:when>
+                     <xsl:otherwise/>
+                  </xsl:choose>
+                  <xsl:value-of select="$name"/>
+                  <div class="hit-count">
+                     <xsl:if test="$hit.count"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
+                  </div>
+               </div>
+            </a>
+         </xsl:when>
+         <xsl:otherwise>
+            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$id}']);">
+               <xsl:attribute name="href">
+                  <!--<xsl:choose>
+                     <xsl:when test="($query != '0') and ($query != '')">
+                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
+                           />?<xsl:value-of select="$content.href"/>
+                     </xsl:when>
+                     <xsl:when test="$basicchoice2='nomatch_for_id'">
+                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
+                           />?<xsl:value-of select="$content.href"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:value-of select="$href2"/>
+                     </xsl:otherwise>
+                  </xsl:choose>-->
+                  <xsl:value-of select="concat('#',@id)"/>
+               </xsl:attribute>
+               <div class="tocItem">
+                  <xsl:choose>
+                     <xsl:when test="$indent = 2">
+                        <xsl:attribute name="class">inventory</xsl:attribute>
+                     </xsl:when>
+                     <xsl:when test="$indent = 3">
+                        <xsl:attribute name="class">inventory2</xsl:attribute>
+                     </xsl:when>
+                     <xsl:otherwise/>
+                  </xsl:choose>
+                  <xsl:value-of select="$name"/>
+                  <div class="hit-count">
+                     <xsl:if test="$hit.count"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
+                  </div>
+               </div>
+            </a>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:if test="$dao = 'true'">
          <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
       </xsl:if>      
