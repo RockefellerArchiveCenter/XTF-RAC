@@ -658,7 +658,7 @@
       <!--The template tests to see if there is a label attribute for unittitle,
          inserting the contents if there is or adding one if there isn't. -->
             <h4>Title</h4>   
-      <div property="schema:name"><xsl:apply-templates select="text() |* [not(self::unitdate)]"/></div>
+      <div><xsl:apply-templates select="text() |* [not(self::unitdate)]"/></div>
    </xsl:template>
       
    <!--This template processes the note element.-->
@@ -1703,7 +1703,7 @@
             <div class="daoLink" style="float:left; width:10%">   
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                  <xsl:call-template name="component-did-core"/>
-                 <img src="{$daoImg}" property="schema:thumbnailURL"/>
+                 <img src="{$daoImg}"/>
                </a>
             </div>
             <div class="caption" style="float:left;padding: 3em 0 0 1em;width: 80%;font-size:1em;">

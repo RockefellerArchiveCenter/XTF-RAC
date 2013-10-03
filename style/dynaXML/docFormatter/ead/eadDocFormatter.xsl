@@ -255,7 +255,7 @@
       </xsl:variable>
       <div class="bbar_custom">
          <div class="documentTitle ead">
-            <h1>
+            <h1 property="schema:name">
                <xsl:variable name="title">
                   <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
                </xsl:variable>
