@@ -68,7 +68,7 @@ div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em;}
 #searchbox input:focus, #searchbox select:focus {box-shadow:0px 0px 5px #C45414; background-color: #ffffff; outline:none;}
 input.searchbox {font-size:1.4em;}
 input[type="text"].searchbox {box-shadow:0px 0px 5px #666;width:40%;margin:0;background-color:rgb(253, 253, 253);z-index:2;border: 1px inset #ddd;padding:.2em;position:absolute; left:26%;}
-input[type="submit"].searchbox {margin:0 0 0 1%;border: 1px outset #dddddd; background-color:#dddddd; position:absolute; top:0; left:67%;}
+input[type="submit"].searchbox {margin:0 0 0 1%;border: 1px outset #dddddd; background-color:#dddddd; position:absolute; top:0; left:67%;-webkit-appearance:none;}
 input[type="submit"].searchbox:hover {box-shadow:0px 0px 3px #C45414;color: #c45414;cursor:pointer;}
 input[type="submit"].searchbox:active {border: 1px inset #dddddd;color: #c45414;}
 .showAdvanced.closed {position: absolute; top: 2.5em; right: 34%;}
@@ -406,6 +406,7 @@ iframe {
 h2 {font-size:1.2em}
 h3 {font-size:1em}
 .home li, .resultsHeader li {font-size:1em;}
+#about {right:10%}
 #browse {min-height:11em;}
 .category h3 {vertical-align:middle}
 #docHits {font-size:.8em;}
@@ -419,19 +420,21 @@ h3 {font-size:1em}
 
 @media screen and (max-width:480px) {
 body {background-image:none !important}
-#header {width:75%;margin:2%;height:2em !important;}
-#header h1 {font-size:3em;margin-top:0}
+#header {width:100%;margin:2%;}
+#header h1 {font-size:2em;margin-top:0;text-align:center}
 #header img {display:none}
-.tagline {font-size:.9em}
-#bookbag {margin-top:.5em;}
+.tagline {display:none;}
+#bookbag {display:none;}
 #about {display:none}
-#searchbox {top:6em;}
+#searchTop {height:5em;}
+#searchbox {top:5em;}
 input[type="text"].searchbox {left:4%;width:72%}
 input[type="submit"].searchbox {left:80%}
 #advancedSearch {left:-22%;width:72%}
 .showAdvanced.closed {right:24%}
-.box {width:98%}
-#featured {width:98%}
+.box {width:96%; box-shadow:none;margin:2%}
+.box:hover {box-shadow:none;}
+#featured {width:96%}
 
 div[id^='navOption'] {display:none}
 #menu {display:none}
@@ -461,9 +464,7 @@ div[id^='navOption'] {display:none}
 
 @media screen and (max-width:320px) {
 .documentTitle {width:100%;}
-#header h1 {font-size:1.8em;height:0em !important}
-.tagline {display:none;}
-.searchTop {height:4.5em;}
+#searchTop {height:4.5em;}
 #searchbox {width:90%;top:4em;}
 .headerIcons {display:none}
 .tabs {font-size:.8em}
