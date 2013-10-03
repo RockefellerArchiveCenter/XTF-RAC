@@ -30,6 +30,7 @@
       <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
       <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
       <script type="text/javascript" src="/xtf/script/rac/active.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/jquery.cookie.js"/>
       <script type="text/javascript" language="JavaScript">
          <!--
          		if (isNS4) {
