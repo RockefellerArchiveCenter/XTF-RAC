@@ -195,6 +195,7 @@
                </head>
             <body prefix="schema:http:/schema.org/">
                <div typeof="schema:CollectionPage">
+                  <xsl:if test="$doc.view = 'digital'">
                
                <xsl:copy-of select="$brand.header"/>
                <div id="header">

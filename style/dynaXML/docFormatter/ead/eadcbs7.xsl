@@ -97,7 +97,7 @@
                   <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
                </xsl:when>
                <xsl:when test="$chunk.id = 'digitalLink'">
-                  <xsl:apply-templates select="/ead/archdesc/dsc/child::*[1][@level]"/>
+                  <div typeof="schema:ImageGallery"><xsl:apply-templates select="/ead/archdesc/dsc/child::*[1][@level]"/></div>
                </xsl:when>
                <xsl:when test="$chunk.id = 'bioghist'">
                   <xsl:apply-templates select="/ead/archdesc/bioghist"/>
@@ -596,7 +596,7 @@
          <h4>Source</h4>
          <div>
             <xsl:for-each select="origination/child::*[starts-with(@role,'Source')]">
-               <div><xsl:apply-templates/></div>
+               <div property="schema:contributor"><xsl:apply-templates/></div>
             </xsl:for-each>
          </div>
       </xsl:if>
@@ -632,21 +632,31 @@
                 <!--<xsl:otherwise><xsl:value-of select="@label"/></xsl:otherwise>-->
              </xsl:choose>
          </h4>
-         <div>
-            <xsl:if test="self::abstract">
-               <xsl:attribute name="property">
-                  <xsl:text>schema:description</xsl:text>
-               </xsl:attribute>
-            </xsl:if>
-            <xsl:apply-templates/>               
-         </div>        
+      <div>
+         <xsl:if test="self::abstract">
+            <xsl:attribute name="property">
+               <xsl:text>schema:description</xsl:text>
+            </xsl:attribute>
+         </xsl:if>
+         <xsl:if test="self::repository">
+            <xsl:attribute name="property">
+               <xsl:text>schema:contentLocation/Place/name</xsl:text>
+            </xsl:attribute>
+         </xsl:if>
+         <xsl:if test="self::langmaterial">
+            <xsl:attribute name="property">
+               <xsl:text>schema:inLanguage</xsl:text>
+            </xsl:attribute>
+         </xsl:if>
+         <xsl:apply-templates/>
+      </div>
    </xsl:template>
    
    <xsl:template match="archdesc/did/unitdate">
       <xsl:choose>
          <xsl:when test="@type='inclusive'">
             <h4>Date</h4>   
-            <div><xsl:apply-templates/></div>           
+            <div property="schema:dateCreated"><xsl:apply-templates/></div>           
          </xsl:when>
          <xsl:otherwise/>
       </xsl:choose>
@@ -1017,10 +1027,10 @@
    <!-- Templates for publication information  -->
    <xsl:template match="/ead/eadheader/filedesc/publicationstmt" mode="admin">
      <h4>Publication Information</h4>
-      <p>
-         <xsl:apply-templates select="publisher"/>
+      <div>
+         <div property="schema:publisher/organization/name"><xsl:apply-templates select="publisher"/></div>
          <xsl:if test="date">&#160;<xsl:apply-templates select="date"/></xsl:if>
-      </p>
+      </div>
    </xsl:template>
    
    <!-- Templates for revision description  -->
