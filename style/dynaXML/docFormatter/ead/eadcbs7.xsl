@@ -568,12 +568,14 @@
          </xsl:variable>
          <!-- 8/28/12 HA: Added condition to test for finding aids with no contents list and supress this tab -->
          <xsl:if test="/ead/archdesc/dsc/child::*">
-         <xsl:call-template name="make-tab-link">
-            <xsl:with-param name="name" select="'Go to Contents List'"/>
-            <xsl:with-param name="id" select="'contentsLink'"/> 
-            <xsl:with-param name="doc.view" select="'contents'"/>
-            <xsl:with-param name="nodes" select="$nodesLst"/>
-         </xsl:call-template>
+            <div style="margin-top:12px">
+               <xsl:call-template name="make-tab-link">
+                  <xsl:with-param name="name" select="'Go to Contents List'"/>
+                  <xsl:with-param name="id" select="'contentsLink'"/>
+                  <xsl:with-param name="doc.view" select="'contents'"/>
+                  <xsl:with-param name="nodes" select="$nodesLst"/>
+               </xsl:call-template>
+            </div>
          </xsl:if>
       </div>
    </xsl:template>
@@ -1692,13 +1694,13 @@
             </xsl:variable>     
             <xsl:variable name="daoFile" select="substring-before(tokenize($daoLink,'/')[position()=last()],'.')"/>
             <xsl:variable name="daoImg" select="concat(string-join(tokenize($daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/> 
-            <div class="daoLink" style="float:left; width:10%">   
+            <div class="daoLink" style="float:left; width:15%">   
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                  <xsl:call-template name="component-did-core"/>
                  <img src="{$daoImg}"/>
                </a>
             </div>
-            <div class="caption" style="float:left;padding: 3em 0 0 1em;width: 80%;font-size:1em;">
+            <div class="caption" style="float:left;padding: 3em 0 0 1em;width: 75%;font-size:1em;">
               <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
                   <xsl:choose>
                      <xsl:when test="daodesc">

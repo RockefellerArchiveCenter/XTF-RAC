@@ -200,12 +200,14 @@ div.facetMore {
    margin-top: 0.5em;
    margin-left: 2em;
    font-weight:bold;
+   float:left;
 }
 
 div.facetLess {
    margin-left: 2em;
    margin-bottom: 0.5em;
    font-weight:bold;
+   float:left;
 }
 
 div.getAddress {

@@ -388,10 +388,10 @@
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;brand=<xsl:value-of
             select="$brand"/><xsl:value-of select="$search"/></xsl:variable>
       <div class="tabs">
-         <div class="tab">
+         <div class="tab collectionTab">
             <xsl:choose>
                <xsl:when test="$doc.view = 'collection'">
-                  <xsl:attribute name="class">tab select</xsl:attribute>
+                  <xsl:attribute name="class">tab collectionTab select</xsl:attribute>
                </xsl:when>
                <xsl:when test="$doc.view = 'contents'"/>
                <xsl:when test="$doc.view = 'dao'"/>
@@ -406,9 +406,9 @@
                <xsl:with-param name="nodes" select="archdesc/did"/>
             </xsl:call-template>
          </div>
-         <div class="tab">
+         <div class="tab contentsTab">
             <xsl:if test="$doc.view='contents'">
-               <xsl:attribute name="class">tab select</xsl:attribute>
+               <xsl:attribute name="class">tab contentsTab select</xsl:attribute>
             </xsl:if>
             <xsl:variable name="idFile">
                <xsl:choose>
@@ -442,10 +442,10 @@
                </xsl:otherwise>
             </xsl:choose>
          </div>
-         <div class="tab">
+         <div class="tab digitalTab">
             <!-- Need to insure only shows up if digital material is available -->
             <xsl:if test="$doc.view='dao'">
-               <xsl:attribute name="class">tab select</xsl:attribute>
+               <xsl:attribute name="class">tab digitalTab select</xsl:attribute>
             </xsl:if>
             <xsl:variable name="idFile">
                <xsl:choose>
