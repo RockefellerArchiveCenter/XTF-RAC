@@ -622,7 +622,7 @@
                         <td colspan="2" style="text-align:right;">
                            <input type="reset" value="CLEAR"/>
                            <xsl:text>&#160;</xsl:text>
-                           <input type="submit" value="SUBMIT" onClick="_gaq.push(['_trackEvent', 'interaction', 'send', 'bookbag']);"/>
+                           <input type="submit" value="SUBMIT"/>
                            <input type="hidden" name="smode" value="emailFolder"/>
                            <input type="hidden" name="docsPerPage" value="{$bagCount}"/>
                         </td>
@@ -671,6 +671,11 @@
             <title>E-mail My Citations: Success</title>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <xsl:copy-of select="$brand.links"/>
+            <script type="text/javascript">
+               $(document).ready(function(){
+                  _gaq.push(['_trackEvent', 'interaction', 'send', 'bookbag']);
+               });
+            </script>
          </head>
          <body>
             <div class="getAddress" style="margin:.5em;">
