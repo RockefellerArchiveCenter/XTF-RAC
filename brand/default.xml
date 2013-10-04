@@ -30,6 +30,8 @@
       <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
       <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
       <script type="text/javascript" src="/xtf/script/rac/active.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/jquery.cookie.js"></script>
+      <script type="text/javascript" src="/xtf/script/rac/dialog.js"/>
       <script type="text/javascript" language="JavaScript">
          <!--
          		if (isNS4) {
@@ -140,8 +142,9 @@
             
             // -->
       </script>
-      <script type="text/javascript">
+      <!--<script type="text/javascript">
          $(document).ready(function() {
+         if(screen.width &gt; 600) {
                       $(function () {
                             var dialogTakedown = $('#takedown').dialog({
                                create: function(event, ui) {
@@ -182,8 +185,9 @@
                               dialogFeedback.dialog("option", "title", '').dialog("open");
                             });
                         });
+                        }
                         });
-        </script>
+        </script>-->
       
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
          'UA-10013579-1']); _gaq.push(['_trackPageview']); (function() { var ga =
@@ -217,6 +221,7 @@
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/rac.js"></script>   
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/bootstrap-scrollspy.js"></script>
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/scroll.js"></script>
+      <script type="text/javascript" src="/xtf/script/rac/dialog.js"/>
       <script type="text/javascript" language="JavaScript">
          	<!--
          		if (isNS4) {
@@ -328,7 +333,7 @@
             // -->
       </script>      
       
-      <script type="text/javascript">
+      <!--<script type="text/javascript">
                       $(document).ready(function() {
                       $(function () {
                             var dialogTakedown = $('#takedown').dialog({
@@ -467,7 +472,7 @@
                         
                         
                     });
-        </script>
+        </script>-->
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
          'UA-10013579-1']); _gaq.push(['_trackPageview']); (function() { var ga =
          document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src =

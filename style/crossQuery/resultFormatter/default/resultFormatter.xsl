@@ -979,6 +979,8 @@
                </div> -->
                
                <div id="alphaList">
+                  <div id="menuTitle"><a href="#">&#9776;</a></div>
+                  <div id="alphaLinks">
                   <xsl:call-template name="alphaList">
                      <xsl:with-param name="alphaList" select="$alphaList"/>
                      <!--<xsl:with-param name="level" select="'collection'"/>-->
@@ -993,6 +995,7 @@
                            >BROWSE ALL</a>
                      </xsl:when>
                   </xsl:choose>-->
+                  </div>
                </div>
             </div>
             
@@ -1271,7 +1274,7 @@
             </xsl:choose>
          </div>
          <div class="resultContent">
-            <div class="result">
+            <div class="result title">
                <div class="resultLabel">
                   <xsl:if test="$sort = 'title'">
                      <a name="{$anchor}"/>
@@ -1326,7 +1329,7 @@
             </div>
             <!-- 9/5/2013 HA: adding collection for DAO browse -->
             <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level !='collection'">
-               <div class="result">
+               <div class="result collection">
                   <div class="resultLabel">
                      <xsl:text>Collection</xsl:text>
                   </div>
@@ -1335,7 +1338,7 @@
                   </div>
                </div>
             </xsl:if>
-            <div class="result">
+            <div class="result creator">
                <div class="resultLabel">
                   <xsl:if test="$sort = 'creator'">
                      <a name="{$anchor}"/>
@@ -1358,7 +1361,7 @@
                   
             </div>
 
-            <div class="result">
+            <div class="result dates">
                <div class="resultLabel">
                   <!-- 9/26/11 WS: changed Published to Date -->
                   <xsl:text>Date(s)</xsl:text>
@@ -1384,7 +1387,7 @@
                </div>
             </div>
             <xsl:if test="meta/subject">
-               <div class="result">
+               <div class="result subjects">
                   <div class="resultLabel">
                      <xsl:text>Subjects</xsl:text>
                   </div>
@@ -1411,7 +1414,7 @@
                <xsl:otherwise>
                   <xsl:if test="descendant-or-self::snippet">
 
-                     <div class="result">
+                     <div class="result matches">
                         <div class="resultLabel">
                            <xsl:text>Matches</xsl:text>
                            <br/>
@@ -1429,7 +1432,7 @@
             </xsl:choose>
 
             <!-- "more like this" -->
-            <div class="result">
+            <div class="result similar">
                <div class="resultLabel">
                   <xsl:text>Similar Items</xsl:text>
                </div>
@@ -1691,7 +1694,7 @@
                      </div>
                      </div>
 
-                     <div class="result">
+                     <div class="result creator">
                         <div class="resultLabel">
                         <xsl:if test="$sort = 'creator'">
                            <a name="{$anchor}"/>
@@ -1709,7 +1712,7 @@
                      </div>
                      </div>
                      
-                        <div class="result">
+                        <div class="result publisher">
                         <div class="resultLabel">
                            <xsl:text>Publisher</xsl:text>
                         </div>
@@ -1718,7 +1721,7 @@
                         </div>
                         </div>
                      
-                     <div class="result">
+                     <div class="result dates">
                      <div class="resultLabel">
                         <!-- 9/26/11 WS: changed Published to Date -->
                         <xsl:text>Date(s)</xsl:text>
@@ -1739,7 +1742,7 @@
 
                      
                   <xsl:if test="meta/callNo">
-                     <div class="result">
+                     <div class="result callno">
                         <div class="resultLabel">
                            <xsl:text>Call number</xsl:text>
                         </div>
@@ -1755,7 +1758,7 @@
                      <xsl:when test="$browse-all"/>
                      <xsl:otherwise>
                         <xsl:if test="descendant-or-self::snippet">
-                              <div class="result">
+                              <div class="result matches">
                                  <div class="resultLabel">
                                  <xsl:text>Matches</xsl:text>
                                  <br/>
@@ -1771,7 +1774,7 @@
                      </xsl:otherwise>
                   </xsl:choose>
                      <xsl:if test="meta/subject">
-                        <div class="result">
+                        <div class="result subjects">
                            <div class="resultLabel">
                               <xsl:text>Subjects</xsl:text>
                            </div>
@@ -1804,7 +1807,7 @@
                   </xsl:if>
 
                      <!-- "more like this" -->
-                     <div class="result">
+                     <div class="result similar">
                         <div class="resultLabel">
                            <xsl:text>Similar Items</xsl:text>
                         </div>
@@ -1869,7 +1872,7 @@
                      </div>
 
                <div class="resultContent">
-                  <div class="result">
+                  <div class="result title">
                   <div class="resultLabel">
                      <xsl:if test="$sort = 'title'">
                         <a name="{$anchor}"/>
@@ -1908,7 +1911,7 @@
                   </div>
                </div>
                      
-               <div class="result">
+               <div class="result creator">
                   <div class="resultLabel">
                      <xsl:if test="$sort = 'creator'">
                         <a name="{$anchor}"/>
@@ -1929,7 +1932,7 @@
                   </div>
                </div>
                   <xsl:if test="meta/subject">
-                     <div class="result">
+                     <div class="result subjects">
                         <div class="resultLabel">
                            <xsl:text>Subjects</xsl:text>
                         </div>
@@ -1961,7 +1964,7 @@
                      </div>
                   </xsl:if>
                   <!-- "more like this" -->
-                  <div class="result">
+                  <div class="result similar">
                      <div class="resultLabel">
                         <xsl:text>Similar Items</xsl:text>
                      </div>
