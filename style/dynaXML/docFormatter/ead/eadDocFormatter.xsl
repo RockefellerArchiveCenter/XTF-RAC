@@ -193,8 +193,8 @@
                   <xsl:value-of select="eadheader/filedesc/titlestmt/subtitle"/>
                </title>
                </head>
-            <body>
-               
+            <body prefix="schema:http:/schema.org/">
+               <div typeof="schema:CollectionPage">               
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
                   <a href="/xtf/search">
@@ -224,6 +224,7 @@
                </div>
                <xsl:copy-of select="$brand.feedback"/>
                <div class="fixedFooter"><xsl:copy-of select="$brand.footer"/></div>
+               </div>
           </body>
          </html>
       </xsl:result-document>
@@ -253,7 +254,7 @@
       </xsl:variable>
       <div class="bbar_custom">
          <div class="documentTitle ead">
-            <h1>
+            <h1 property="schema:name">
                <xsl:variable name="title">
                   <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
                </xsl:variable>
@@ -708,21 +709,21 @@
                                  <xsl:for-each select="archdesc/controlaccess">
                                     <xsl:for-each select="subject | genreform | title | occupation">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}search?browse-all=yes;f1-subject={.}">
+                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}search?browse-all=yes;f1-subject={.}" property="schema:keywords">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
                                     </xsl:for-each>
                                     <xsl:for-each select="corpname | famname | persname">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}">
+                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}" property="schema:keywords">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
                                     </xsl:for-each> 
                                     <xsl:for-each select="geogname">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}">
+                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}" property="schema:keywords">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
