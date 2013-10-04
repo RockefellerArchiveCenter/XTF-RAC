@@ -194,9 +194,7 @@
                </title>
                </head>
             <body prefix="schema:http:/schema.org/">
-               <div typeof="schema:CollectionPage">
-                  <xsl:if test="$doc.view = 'digital'">
-               
+               <div typeof="schema:CollectionPage">               
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
                   <a href="/xtf/search">

@@ -197,6 +197,7 @@
                   <p>Some large collections, like those of the <strong>Ford Foundation</strong>, <strong>Population Council</strong>, and <strong>Rockefeller University</strong>, are only partially represented in the online system; other smaller collections, like the <strong>Trilateral Commission</strong>, the <strong>Near East Foundation</strong>, and some collections of personal papers are not yet represented at all (note: finding aids for Ford Foundation grant records are not yet available online). Please contact the archival staff at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further information about these collections.</p>
                </div>
             </div>
+            <div typeof="SearchResultsPage">
             <!-- header -->
             <xsl:copy-of select="$brand.header"/>
             
@@ -585,7 +586,7 @@
             <!-- feedback and footer -->
             <xsl:copy-of select="$brand.feedback"/>
             <xsl:copy-of select="$brand.footer"/>
-            
+            </div>
          </body>
       </html>
    </xsl:template>

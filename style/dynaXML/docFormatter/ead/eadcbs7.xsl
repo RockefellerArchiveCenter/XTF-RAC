@@ -640,7 +640,7 @@
          </xsl:if>
          <xsl:if test="self::repository">
             <xsl:attribute name="property">
-               <xsl:text>schema:contentLocation/Place/name</xsl:text>
+               <xsl:text>schema:contentLocation</xsl:text>
             </xsl:attribute>
          </xsl:if>
          <xsl:if test="self::langmaterial">
@@ -1028,7 +1028,11 @@
    <xsl:template match="/ead/eadheader/filedesc/publicationstmt" mode="admin">
      <h4>Publication Information</h4>
       <div>
-         <div property="schema:publisher/organization/name"><xsl:apply-templates select="publisher"/></div>
+         <div property="schema:publisher">
+            <div property="schema:organization">
+               <div property="schema:name"><xsl:apply-templates select="publisher"/></div>
+            </div>
+         </div>
          <xsl:if test="date">&#160;<xsl:apply-templates select="date"/></xsl:if>
       </div>
    </xsl:template>
