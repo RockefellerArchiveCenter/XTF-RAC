@@ -154,6 +154,56 @@
                <title><xsl:value-of select="mods:titleInfo/mods:title"/></title>
             </head>
             <body>
+               <div itemscope="" typeof="http:/schema.org/ItemPage">
+                  <xsl:if test="/mods:mods/mods:abstract">
+                     <meta itemprop="http:/schema.org/description">
+                        <xsl:attribute name="content">
+                           <xsl:value-of select="/mods:mods/mods:abstract"/>
+                        </xsl:attribute>
+                     </meta>
+                  </xsl:if>
+                  <meta itemprop="http:/schema.org/name">
+                     <xsl:attribute name="content">
+                        <xsl:value-of select="mods:titleInfo/mods:title"/>
+                     </xsl:attribute>
+                  </meta>
+                  <div itemprop="http:/schema.org/contentLocation" itemscope="" itemtype="http:/schema.org/Place">
+                     <meta itemprop="http:/schema.org/name" content="Rockefeller Archive Center"/>
+                     <meta itemprop="http:/schema.org/url" content="http://www.rockarch.org"/>
+                     <div itemprop="http:/schema.org/address" itemscop="" itemtype="http:/schema.org/PostalAddress">
+                        <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
+                        <meta itemprop="addressLocality" content="Sleepy Hollow"/>
+                        <meta itemprop="addressRegion" content="NY"/>
+                        <meta itemprop="postalCode" content="10591"/>
+                     </div>
+                     <div itemprop="http:/schema.org/geo" itemscope="" itemtype="http:/schema.org/GeoCoordinates">
+                        <meta itemprop="http:/schema.org/latitude" content="41.091845"/>
+                        <meta itemprop="http:/schema.org/longitude" content="-73.835265"/>
+                     </div>
+                     <meta itemprop="http:/schema.org/telephone" content="(914) 366-6300"/>
+                  </div>
+                  <xsl:for-each select="/mods:subject/mods:name[@encodinganalog=('700' or '710')]">
+                     <meta itemprop="http:/schema.org/contributor">
+                        <xsl:attribute name="content">
+                           <xsl:apply-templates/>
+                        </xsl:attribute>
+                     </meta>
+                  </xsl:for-each>
+                  <xsl:for-each select="/mods:mods/mods:name/mods:namePart">
+                     <meta itemprop="http:/schema.org/creator">
+                        <xsl:attribute name="content">
+                           <xsl:apply-templates/>
+                        </xsl:attribute>
+                     </meta>
+                  </xsl:for-each>
+                  <div itemprop="http:/schema.org/dateCreated" itemscope="" itemtype="Date">
+                     <meta itemprop="date">
+                        <xsl:attribute name="content">
+                           <xsl:value-of select="/mods:mods/mods:originInfo/mods:dateIssued"/>
+                        </xsl:attribute>
+                     </meta>
+                  </div>
+               </div>
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
                   <a href="/xtf/search">
