@@ -586,7 +586,7 @@
          <h4>Creator</h4>
          <div>
             <xsl:for-each select="origination/child::*[starts-with(@role,'Author')]">
-               <div property="schema:creator"><xsl:apply-templates/></div>
+               <div><xsl:apply-templates/></div>
             </xsl:for-each>
          </div>
       </xsl:if>
@@ -598,7 +598,7 @@
          <h4>Source</h4>
          <div>
             <xsl:for-each select="origination/child::*[starts-with(@role,'Source')]">
-               <div property="schema:contributor"><xsl:apply-templates/></div>
+               <div><xsl:apply-templates/></div>
             </xsl:for-each>
          </div>
       </xsl:if>
@@ -635,21 +635,6 @@
              </xsl:choose>
          </h4>
       <div>
-         <xsl:if test="self::abstract">
-            <xsl:attribute name="property">
-               <xsl:text>schema:description</xsl:text>
-            </xsl:attribute>
-         </xsl:if>
-         <xsl:if test="self::repository">
-            <xsl:attribute name="property">
-               <xsl:text>schema:contentLocation</xsl:text>
-            </xsl:attribute>
-         </xsl:if>
-         <xsl:if test="self::langmaterial">
-            <xsl:attribute name="property">
-               <xsl:text>schema:inLanguage</xsl:text>
-            </xsl:attribute>
-         </xsl:if>
          <xsl:apply-templates/>
       </div>
    </xsl:template>
@@ -658,7 +643,7 @@
       <xsl:choose>
          <xsl:when test="@type='inclusive'">
             <h4>Date</h4>   
-            <div property="schema:dateCreated"><xsl:apply-templates/></div>           
+            <div><xsl:apply-templates/></div>           
          </xsl:when>
          <xsl:otherwise/>
       </xsl:choose>
@@ -713,7 +698,7 @@
    
    <xsl:template match="scopecontent" mode="overview">
       <h4>Collection Description</h4>
-      <div property="schema:description"><xsl:apply-templates select="child::*[not(name()='head')]"/></div>
+      <div><xsl:apply-templates select="child::*[not(name()='head')]"/></div>
    </xsl:template>
    
    <!-- Access and Use -->
@@ -897,8 +882,7 @@
             </h4>
          </xsl:otherwise>
       </xsl:choose>
-      <div>
-         <xsl:if test="self::bioghist"><xsl:attribute name="property">schema:description</xsl:attribute></xsl:if>
+      <div>         
          <xsl:apply-templates select="child::*[name() != 'head']"/>
       </div>
    </xsl:template>
@@ -1030,10 +1014,8 @@
    <xsl:template match="/ead/eadheader/filedesc/publicationstmt" mode="admin">
      <h4>Publication Information</h4>
       <div>
-         <div property="schema:publisher">
-            <div property="schema:organization">
-               <div property="schema:name"><xsl:apply-templates select="publisher"/></div>
-            </div>
+         <div>
+            <xsl:apply-templates select="publisher"/>
          </div>
          <xsl:if test="date">&#160;<xsl:apply-templates select="date"/></xsl:if>
       </div>
