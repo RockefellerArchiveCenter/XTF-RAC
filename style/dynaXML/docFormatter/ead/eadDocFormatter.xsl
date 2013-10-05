@@ -771,21 +771,21 @@
                                  <xsl:for-each select="archdesc/controlaccess">
                                     <xsl:for-each select="subject | genreform | title | occupation">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}search?browse-all=yes;f1-subject={.}" property="schema:keywords">
+                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}search?browse-all=yes;f1-subject={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
                                     </xsl:for-each>
                                     <xsl:for-each select="corpname | famname | persname">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}" property="schema:keywords">
+                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
                                     </xsl:for-each> 
                                     <xsl:for-each select="geogname">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}" property="schema:keywords">
+                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
