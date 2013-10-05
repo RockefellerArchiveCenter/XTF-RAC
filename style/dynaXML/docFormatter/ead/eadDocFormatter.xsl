@@ -193,16 +193,79 @@
                   <xsl:value-of select="eadheader/filedesc/titlestmt/subtitle"/>
                </title>
                </head>
-            <body prefix="schema:http:/schema.org/">
-               <div typeof="schema:CollectionPage">               
+            <body prefix="schema: http:/schema.org/">
+               <!-- Schema.org metadata -->
+               <div itemscope="" typeof="schema:CollectionPage">
+                  <xsl:if test="ead/archdesc/abstract">
+                     <meta itemprop="schema:description">
+                        <xsl:attribute name="content">
+                           <xsl:value-of select="archdesc/abstract"/>
+                        </xsl:attribute>
+                     </meta>
+                  </xsl:if>
+                  <meta itemprop="schema:name">
+                     <xsl:attribute name="content">
+                        <xsl:value-of select="archdesc/did/unittitle"/>
+                     </xsl:attribute>
+                  </meta>
+                  <div itemprop="schema:contentLocation" itemscope="" itemtype="schema:Place">
+                     <meta itemprop="schema:name" content="Rockefeller Archive Center"/>
+                     <meta itemprop="schema:url" content="http://www.rockarch.org"/>
+                     <div itemprop="schema:address" itemscop="" itemtype="schema:PostalAddress">
+                        <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
+                        <meta itemprop="addressLocality" content="Sleepy Hollow"/>
+                        <meta itemprop="addressRegion" content="NY"/>
+                        <meta itemprop="postalCode" content="10591"/>
+                     </div>
+                     <div itemprop="schema:geo" itemscope="" itemtype="schema:GeoCoordinates">
+                        <meta itemprop="schema:latitude" content="41.091845"/>
+                        <meta itemprop="schema:longitude" content="-73.835265"/>
+                     </div>
+                     <meta itemprop="schema:telephone" content="(914) 366-6300"/>
+                  </div>
+                  <xsl:for-each select="archdesc/did/origination/child::*[starts-with(@role,'Contributor')]">
+                     <meta itemprop="schema:contributor">
+                        <xsl:attribute name="content">
+                           <xsl:apply-templates/>
+                        </xsl:attribute>
+                     </meta>
+                  </xsl:for-each>
+                  <xsl:for-each select="archdesc/did/origination/child::*[starts-with(@role,'Author')]">
+                     <meta itemprop="schema:creator">
+                        <xsl:attribute name="content">
+                           <xsl:apply-templates/>
+                        </xsl:attribute>
+                     </meta>
+                  </xsl:for-each>
+                  <div itemprop="schema:dateCreated" itemscope="" itemtype="Date">
+                     <meta itemprop="date">
+                        <xsl:attribute name="content">
+                           <xsl:value-of select="archdesc/did/unitdate[@type != 'bulk']"/>
+                        </xsl:attribute>
+                     </meta>
+                  </div>
+                  <meta itemprop="schema:inLanguage" content="en"/>
+                  <div itemprop="schema:publisher" itemscope="" itemtype="schema:organization">
+                     <meta itemprop="schema:name" content="Rockefeller Archive Center"/>
+                     <meta itemprop="schema:url" content="http://www.rockarch.org"/>
+                     <div itemprop="schema:address" itemscop="" itemtype="schema:PostalAddress">
+                        <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
+                        <meta itemprop="addressLocality" content="Sleepy Hollow"/>
+                        <meta itemprop="addressRegion" content="NY"/>
+                        <meta itemprop="postalCode" content="10591"/>
+                     </div>
+                     <meta itemprop="schema:telephone" content="(914) 366-6300"/>
+                  </div>
+               </div>
+               <!-- End Schema.org metadata -->
+                  
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
                   <a href="/xtf/search">
                      <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
                         alt="The Rockefeller Archive Center" border="0"/>
                      <h1>dimes.rockarch.org</h1>
-                     <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
-                        Center</p>
+                     <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
                   </a>
                </div>
                <div id="bookbag">
@@ -224,7 +287,6 @@
                </div>
                <xsl:copy-of select="$brand.feedback"/>
                <div class="fixedFooter"><xsl:copy-of select="$brand.footer"/></div>
-               </div>
           </body>
          </html>
       </xsl:result-document>
@@ -254,7 +316,7 @@
       </xsl:variable>
       <div class="bbar_custom">
          <div class="documentTitle ead">
-            <h1 property="schema:name">
+            <h1>
                <xsl:variable name="title">
                   <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
                </xsl:variable>
