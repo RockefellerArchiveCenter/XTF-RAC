@@ -142,7 +142,6 @@
       <link rel="stylesheet" href="css/default/racustom.css" type="text/css"/>
       <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
       <link rel="shortcut icon" href="icons/default/favicon.png"/>
-      <!-- 9/27/11 WS: RA links and javascript -->
       <link rel="stylesheet" rev="stylesheet" type="text/css"
         href="http://www.rockarch.org/css/globalStyle.css"/>
       <link rel="stylesheet" rev="stylesheet" type="text/css"
