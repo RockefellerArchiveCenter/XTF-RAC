@@ -63,7 +63,7 @@ $(function () {
                             //checks for hash tag jumps to location and opens appropriate diolog 
                             if(window.location.hash) {
                               var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
-                              if($("#" + hash + " .daoLink a[href]").length) {
+                              if($("#" + hash + " > .daoLink a[href]").length) {
                               $("#" + hash + " .daoLink a").each(function (e) {
                                  var src = $(this).attr("href");
                                  var title = $(this).attr("data-title");
