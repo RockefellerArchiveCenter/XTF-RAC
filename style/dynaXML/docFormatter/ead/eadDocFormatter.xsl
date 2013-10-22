@@ -407,7 +407,7 @@
                <input type="hidden" name="docId" value="{$docId}"/>
                <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
                <input type="hidden" name="doc.view" value="{$doc.view}"/>
-               <input type="submit" value="Search this Collection"/>
+               <input type="submit" value="Search this Collection" onclick="_gaq.push(['_trackEvent', 'finding aids', 'search', '{$chunk.id}']);"/>
             </form>
             <xsl:if test="($query != '0') and ($query != '')">
                <div class="headerResults">
