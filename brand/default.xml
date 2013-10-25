@@ -8119,8 +8119,52 @@
                address any outstanding rights issues. </p>
          </div>
       </div>
+      <div class="overlay" id="license">
+         <div class="searchtips">
+            <h3>Licensing for our descriptive metadata</h3>
+            <p>Our finding aids and library records are licensed under a Creative Commons Zero (CC0)
+               dedication. This means that you can copy, modify and distribute our descriptive
+               metadata in any way you want without asking us for permission. The CC0 license is
+               explained in full on the <a href="http://creativecommons.org/publicdomain/zero/1.0/"
+                  >Creative Commons website</a>. If you have questions about this data please
+               <a href="mailto:archive@rockarch.org?Subject=DIMES%20Metadata%20Licensing">contact us</a>.</p>
+            <h4>This license includes</h4>
+            <ul>
+               <li>Finding aids, which describe aggregations of unique archival material.</li>
+               <li>Library records, which describe individual books, DVDs, microfilm reels and other
+                  mass-produced items.</li>
+               <li>In either case, both the HTML representation of this data as well as the
+                  underlying EAD XML are released under a CC0 license.</li>
+            </ul>
+            <h4>This license does not include</h4>
+            <ul>
+               <li>Any images, documents or other digital content linked to this description.</li>
+            </ul>
+            <h4>What can you do with our description</h4>
+            <p>Anything! Please use this data for your own research or projects. We would love to be
+               surprised by what you create with this data. If you build or discover something
+               interesting, let us know.</p>
+            <p>However, we ask that you adhere to the following guidelines:</p>
+            <ul>
+               <li><b>Give attribution to Rockefeller Archive Center:</b> although you are not legally
+                  required to do so, attribution will help other people find the original data as
+                  well as unique archival materials. </li>
+               <li><b>Contribute back any modifications or improvements:</b> help us make our description
+                  better! </li>
+               <li><b>Do not mislead others or misrepresent the finding aids or their sources:</b> please
+                  don’t use this data in a way that suggests you have any official status or that we
+                  endorse you or your use of the metadata. </li>
+               <li><b>Be responsible:</b> conform to laws and other regulations in your jurisdiction,
+                  especially concerning defamation and copyright. </li>
+               <li><b>Be aware that you use the data at your own risk:</b> Our description is provided
+                  'as-is': not all of it has been reviewed for completeness or accuracy. That
+                  process is ongoing, and we welcome your assistance in drawing our attention to any
+                  particularly egregious omissions or inaccuracies.</li>
+            </ul>
+         </div>
+      </div>
       <div class="footer">
-         <p>Copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a> | <a href="#takedown" class="takedown" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'takedown']);">Take-down policy</a></p>
+         <p>Site design copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a> | <a href="#license" class="license" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'license']);">Licensing for our descriptive metadata</a> | <a href="#takedown" class="takedown" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'takedown']);">Take-down policy</a></p>
       </div>
    </footer>
 

@@ -219,6 +219,7 @@
                   <li><a href="#dimes" class="dimes"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">This
                      Website's Name</a></li>
+                     <li><a href="#license" class="license" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'license']);">Licensing for our Descriptive Metadata</a></li>
                      <li><a href="#takedown" class="takedown" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'takedown']);">Our Take-Down Policy</a></li>
                   </ul>
                </div>

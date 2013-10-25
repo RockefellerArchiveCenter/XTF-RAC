@@ -185,6 +185,27 @@ $(function () {
         dialogTakedown.dialog("option", "title", '').dialog("open");
     });
 });
+$(function () {
+    var dialogTakedown = $('#license').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        width: "800",
+        height: "550",
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    $("a.license").on("click", function (e) {
+        e.preventDefault();
+        dialogTakedown.dialog("option", "title", '').dialog("open");
+    });
+});
 } if($(window).width() > 500) {
 $(function () {
     var dialogHoldings = $('#holdings').dialog({
