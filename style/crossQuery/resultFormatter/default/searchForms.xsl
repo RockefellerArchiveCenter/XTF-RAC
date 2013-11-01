@@ -353,17 +353,19 @@
             <div id="news" class="box">
                <h2>News</h2>
                <ul>
+                  <li>Guides for many Rockefeller University collections are <a
+                        href="/xtf/search?text=rockefeller%20university;sectionType=title;smode=advanced;type=ead"
+                        >now available</a>.</li>
                   <li>Guides for selected Ford Foundation collections are <a
-                     href="/xtf/search?text=ford%20foundation;sectionType=title;smode=advanced;type=ead"
-                     >now available</a>.</li>
-                  <li>Check out our website celebrating the <a
-                        href="http://rockefeller100.org/">Rockefeller Foundation's Centennial</a>, with lots of
-                     digitized material!</li>
-                  <li>
-                     View <a
+                        href="/xtf/search?text=ford%20foundation;sectionType=title;smode=advanced;type=ead"
+                        >now available</a>.</li>
+                  <li>Check out our website celebrating the <a href="http://rockefeller100.org/"
+                        >Rockefeller Foundation's Centennial</a>, with lots of digitized
+                     material!</li>
+                  <li> View <a
                         href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
-                        >Recently Updated Collections</a>.
-                  </li>
+                        onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-updated']);"
+                        >Recently Updated Collections</a>. </li>
                </ul>
             </div>
             
