@@ -1,4 +1,5 @@
-# robots.txt for collectionguides.rockarch.org. Welcome!
+# robots.txt for dimes.rockarch.org.
 
 User-agent: *
-Disallow:
+Disallow: /xtf/search*
+Disallow: /xtf//*
