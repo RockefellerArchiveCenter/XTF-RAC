@@ -1812,7 +1812,7 @@
       <div>
          <xsl:apply-templates select="did/unittitle | did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
          <xsl:apply-templates select="did/physdesc"/>
-         <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict')]"/>
+         <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c')]"/>
       </div>
    </xsl:template>
    <xsl:template match="*" mode="restrictions">
