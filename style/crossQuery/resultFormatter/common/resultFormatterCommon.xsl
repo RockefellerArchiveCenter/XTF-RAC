@@ -1257,8 +1257,11 @@
    <xsl:template match="facet" mode="facetName" priority="-1">
       <xsl:variable name="rawName" select="replace(@field, '^facet-', '')"/>
       <xsl:choose>
-         <xsl:when test="@field='facet-subjectname'">Subject Name</xsl:when>
-         <xsl:when test="@field='facet-geogname'">Geographic Name</xsl:when>
+         <xsl:when test="@field='facet-subject'">Subjects</xsl:when>
+         <xsl:when test="@field='facet-subjectpers'">People</xsl:when>
+         <xsl:when test="@field='facet-subjectcorp'">Organizations</xsl:when>
+         <xsl:when test="@field='facet-geogname'">Places</xsl:when>
+         <xsl:when test="@field='facet-format'">Formats</xsl:when>
          <xsl:otherwise>
             <xsl:value-of select="concat(upper-case(substring($rawName, 1, 1)), substring($rawName, 2))"/>
          </xsl:otherwise>

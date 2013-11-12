@@ -414,14 +414,16 @@
                            <div id="facets">
                               <!-- 3/26/12 WS: Added some if statements to only show facets if facet data is available -->
                               <xsl:if
-                                 test="facet[@field='facet-subject']/child::* or facet[@field='facet-subjectname']/child::* or facet[@field='facet-geogname']/child::*">
+                                 test="facet[@field='facet-subject']/child::* or facet[@field='facet-subjectpers']/child::* or facet[@field='facet-subjectcorp']/child::* or facet[@field='facet-geogname']/child::*">
                                  <h2>Narrow Search Results</h2>
                                  <xsl:if test="facet[@field='facet-subject']/child::*">
                                     <xsl:apply-templates select="facet[@field='facet-subject']"/>
                                  </xsl:if>
-                                 <xsl:if test="facet[@field='facet-subjectname']/child::*">
-                                    <xsl:apply-templates select="facet[@field='facet-subjectname']"
-                                    />
+                                 <xsl:if test="facet[@field='facet-subjectpers']/child::*">
+                                    <xsl:apply-templates select="facet[@field='facet-subjectpers']"/>
+                                 </xsl:if>
+                                 <xsl:if test="facet[@field='facet-subjectcorp']/child::*">
+                                    <xsl:apply-templates select="facet[@field='facet-subjectcorp']"/>
                                  </xsl:if>
                                  <xsl:if test="facet[@field='facet-geogname']/child::*">
                                     <xsl:apply-templates select="facet[@field='facet-geogname']"/>

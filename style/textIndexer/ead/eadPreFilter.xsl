@@ -330,7 +330,8 @@
                <xsl:call-template name="get-ead-title"/>
                <xsl:call-template name="get-ead-creator"/>
                <xsl:call-template name="get-ead-subject"/>
-               <xsl:call-template name="get-ead-subjectname"/>
+               <xsl:call-template name="get-ead-subjectpers"/>
+               <xsl:call-template name="get-ead-subjectcorp"/>
                <xsl:call-template name="get-ead-geogname"/>
                <xsl:call-template name="get-ead-description"/>
                <xsl:call-template name="get-ead-publisher"/>
@@ -681,34 +682,67 @@
   
    <!-- subject name --> 
    <!-- Note: we use for-each-group below to remove duplicate entries. -->
-   <xsl:template name="get-ead-subjectname">
+   <xsl:template name="get-ead-subjectpers">
       <xsl:choose>
          <xsl:when test="@level">
             <xsl:if test="controlaccess">
-               <xsl:for-each-group select="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/corpname | /ead/archdesc//controlaccess/famname" group-by="string()">
-                  <subjectname xtf:meta="true">
+               <xsl:for-each-group select="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/famname" group-by="string()">
+                  <subjectpers xtf:meta="true">
                      <xsl:value-of select="."/>
-                  </subjectname>
+                  </subjectpers>
                </xsl:for-each-group>
-               <xsl:for-each-group select="controlaccess/persname | controlaccess/corpname | controlaccess/famname" group-by="string()">
-                  <subjectname xtf:meta="true">
+               <xsl:for-each-group select="controlaccess/persname | controlaccess/famname" group-by="string()">
+                  <subjectpers xtf:meta="true">
                      <xsl:value-of select="."/>
-                  </subjectname>
+                  </subjectpers>
                </xsl:for-each-group>
             </xsl:if>
          </xsl:when>
-         <xsl:when test="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/corpname | /ead/archdesc//controlaccess/famname">
-            <xsl:for-each-group select="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/corpname | /ead/archdesc//controlaccess/famname" group-by="string()">
-               <subjectname xtf:meta="true">
+         <xsl:when test="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/famname">
+            <xsl:for-each-group select="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/famname" group-by="string()">
+               <subjectpers xtf:meta="true">
                   <xsl:value-of select="."/>
-               </subjectname>
+               </subjectpers>
             </xsl:for-each-group>
          </xsl:when>
-         <xsl:when test="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/corpname | /ead/eadheader/filedesc/notestmt/famname">
-            <xsl:for-each-group select="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/corpname | /ead/eadheader/filedesc/notestmt/famname" group-by="string()">
-               <subjectname xtf:meta="true">
+         <xsl:when test="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname">
+            <xsl:for-each-group select="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname" group-by="string()">
+               <subjectpers xtf:meta="true">
                   <xsl:value-of select="."/>
-               </subjectname>
+               </subjectpers>
+            </xsl:for-each-group>
+         </xsl:when>
+      </xsl:choose>
+   </xsl:template>
+   
+   <xsl:template name="get-ead-subjectcorp">
+      <xsl:choose>
+         <xsl:when test="@level">
+            <xsl:if test="controlaccess">
+               <xsl:for-each-group select="/ead/archdesc//controlaccess/corpname" group-by="string()">
+                  <subjectcorp xtf:meta="true">
+                     <xsl:value-of select="."/>
+                  </subjectcorp>
+               </xsl:for-each-group>
+               <xsl:for-each-group select="controlaccess/corpname" group-by="string()">
+                  <subjectcorp xtf:meta="true">
+                     <xsl:value-of select="."/>
+                  </subjectcorp>
+               </xsl:for-each-group>
+            </xsl:if>
+         </xsl:when>
+         <xsl:when test="/ead/archdesc//controlaccess/corpname">
+            <xsl:for-each-group select="/ead/archdesc//controlaccess/corpname" group-by="string()">
+               <subjectcorp xtf:meta="true">
+                  <xsl:value-of select="."/>
+               </subjectcorp>
+            </xsl:for-each-group>
+         </xsl:when>
+         <xsl:when test="/ead/eadheader/filedesc/notestmt/corpname">
+            <xsl:for-each-group select="/ead/eadheader/filedesc/notestmt/corpname" group-by="string()">
+               <subjectcorp xtf:meta="true">
+                  <xsl:value-of select="."/>
+               </subjectcorp>
             </xsl:for-each-group>
          </xsl:when>
       </xsl:choose>

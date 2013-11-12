@@ -124,7 +124,8 @@
          <!-- Create facets -->
          <xsl:apply-templates select="$meta/*:date" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subject" mode="facet"/>
-         <xsl:apply-templates select="$meta/*:subjectname" mode="facet"/>
+         <xsl:apply-templates select="$meta/*:subjectpers" mode="facet"/>
+         <xsl:apply-templates select="$meta/*:subjectcorp" mode="facet"/>
          <xsl:apply-templates select="$meta/*:geogname" mode="facet"/>
          <xsl:apply-templates select="$meta/*:collection" mode="facet"/>
          <xsl:apply-templates select="$meta/*:format" mode="facet"/>
@@ -201,13 +202,22 @@
    
    <!-- 9/27/11 WS: Added additional facets -->
    
-   <!-- Generate facet-subjectname -->
-   <xsl:template match="*:subjectname" mode="facet">
-      <facet-subjectname>
+   <!-- Generate facet-subjectpers -->
+   <xsl:template match="*:subjectpers" mode="facet">
+      <facet-subjectpers>
          <xsl:attribute name="xtf:meta" select="'true'"/>
          <xsl:attribute name="xtf:facet" select="'yes'"/>
          <xsl:value-of select="normalize-unicode(string(.))"/>
-      </facet-subjectname>
+      </facet-subjectpers>
+   </xsl:template>
+   
+   <!-- Generate facet-subjectcorp -->
+   <xsl:template match="*:subjectcorp" mode="facet">
+      <facet-subjectcorp>
+         <xsl:attribute name="xtf:meta" select="'true'"/>
+         <xsl:attribute name="xtf:facet" select="'yes'"/>
+         <xsl:value-of select="normalize-unicode(string(.))"/>
+      </facet-subjectcorp>
    </xsl:template>
    
    <!-- Generate facet-geogname -->

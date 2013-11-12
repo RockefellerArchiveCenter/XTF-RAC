@@ -130,7 +130,12 @@
          
          <!-- 9/27/11 WS: Added additional facets -->
          <xsl:call-template name="facet">
-            <xsl:with-param name="field" select="'facet-subjectname'"/>
+            <xsl:with-param name="field" select="'facet-subjectpers'"/>
+            <xsl:with-param name="topGroups" select="'*[1-5]'"/>
+            <xsl:with-param name="sort" select="'totalDocs'"/>
+         </xsl:call-template>
+         <xsl:call-template name="facet">
+            <xsl:with-param name="field" select="'facet-subjectcorp'"/>
             <xsl:with-param name="topGroups" select="'*[1-5]'"/>
             <xsl:with-param name="sort" select="'totalDocs'"/>
          </xsl:call-template>
