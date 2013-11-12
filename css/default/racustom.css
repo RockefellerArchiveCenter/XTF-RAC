@@ -80,10 +80,10 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #boolean, #materialType, #date {padding:.5em;}
 #browse {padding:0;min-height:12em;}
 #browse h2 {background-color:#c45414; color: #fff}
-.category {float: left;width:100%}
-.category h3 {margin:.6em; vertical-align:bottom; float:left; padding-left:.4em;}
+.category {float: left;width:100%; background-color:#bbb}
+.category h3 {margin:.2em; vertical-align:bottom; text-align:center; padding-left:0;}
 .category img {vertical-align:middle; margin-right:.5em;}
-.accordionButton, .category {background: #BBBBBB;border-top: 1px solid #FFFFFF;cursor: pointer;}
+.accordionButton {background: #BBBBBB;border-top: 1px solid #FFFFFF;cursor: pointer;}
 .accordionButton:after {width: 0;height: 0;border-top: 8px solid transparent;border-bottom: 8px solid transparent;border-left: 8px solid #666666;content: " ";float: right;margin-left: 1em;margin-right: 1em;margin-top: 1em;}
 .accordionContent, .facetGroup {background:#EEEEEE;float:left;width:100%}
 .browseOption {padding-left:3em !important}
@@ -164,7 +164,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #sort {float:right;}
 
 .facets h2 {margin:0; padding:.5em;border-radius:5px 5px 0 0;background-color:#c45414; color:#fff;text-align:center;}
-.facets li {list-style: none;margin: 0px;padding: 1%;text-align:left;font-size:1em;}
+.facets li {list-style: none;margin: 0px;padding:0 1%;text-align:left;font-size:1em;}
 .facets #facets h2 {background-color:#174780}
 .facets .browse {float:left; width:100%;margin-top:3%; border-radius:5px 5px 0px 0px;}
 .facets #facets {float:left; width:100%;margin-top:3%; border-radius:5px 5px 0px 0px;}

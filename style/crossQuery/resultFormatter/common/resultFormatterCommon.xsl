@@ -1021,7 +1021,7 @@
        <div class="facetGroup">
          <xsl:if test="$expand=$field">
             <div class="facetLess">
-               <a href="{$xtfURL}{$crossqueryPath}?{editURL:remove($queryString,'expand')}">less</a>
+               <a href="{$xtfURL}{$crossqueryPath}?{editURL:remove($queryString,'expand')}">show less</a>
             </div>
          </xsl:if>
 
@@ -1029,7 +1029,7 @@
          
          <xsl:if test="$needExpand and not($expand=$field)">
             <div class="facetMore">
-               <a href="{$xtfURL}{$crossqueryPath}?{editURL:set($queryString,'expand',$field)}">more</a>
+               <a href="{$xtfURL}{$crossqueryPath}?{editURL:set($queryString,'expand',$field)}">show more</a>
             </div>
          </xsl:if>
        </div>
