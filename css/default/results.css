@@ -192,15 +192,15 @@ div.docHit .typeIcon {
 }
 
 .facetWrapper {width:98%;float:left;padding:1%}
-.facetName {float:left;}
+.facetName {float:left;max-width:94%;}
 .totalDocs {float:right;}
 .clearLink {float:right;font-weight:bold;}
 
 div.facetMore {
-   margin-top: 0.5em;
-   margin-left: 2em;
-   font-weight:bold;
-   float:left;
+    margin-top: 0;
+    margin-right: 3em;
+    font-weight: bold;
+    float: right;
 }
 
 div.facetLess {

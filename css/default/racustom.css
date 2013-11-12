@@ -83,9 +83,9 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .category {float: left;width:100%}
 .category h3 {margin:.6em; vertical-align:bottom; float:left; padding-left:.4em;}
 .category img {vertical-align:middle; margin-right:.5em;}
-.accordionButton {background: #BBBBBB;border-top: 1px solid #FFFFFF;cursor: pointer;}
+.accordionButton, .category {background: #BBBBBB;border-top: 1px solid #FFFFFF;cursor: pointer;}
 .accordionButton:after {width: 0;height: 0;border-top: 8px solid transparent;border-bottom: 8px solid transparent;border-left: 8px solid #666666;content: " ";float: right;margin-left: 1em;margin-right: 1em;margin-top: 1em;}
-.accordionContent {background:#EEEEEE;float:left;width:100%}
+.accordionContent, .facetGroup {background:#EEEEEE;float:left;width:100%}
 .browseOption {padding-left:3em !important}
 .accordionButton.on {background: #CCCCCC}
 .on:after {width: 0;height: 0;border-top: 8px solid #666666;border-right: 8px solid transparent;border-left: 8px solid transparent;content: " ";float: right;margin-left: .8em;margin-right: .6em;margin-top: 1.3em;}
