@@ -1438,7 +1438,7 @@
             </xsl:choose>
 
             <!-- "more like this" -->
-            <div class="result similar">
+            <!--<div class="result similar">
                <div class="resultLabel">
                   <xsl:text>Similar Items</xsl:text>
                </div>
@@ -1458,7 +1458,7 @@
                      <a href="javascript:getMoreLike_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'similar items', 'find']);">Find</a>
                   </span>
                </div>
-            </div>
+            </div>-->
          </div>
 
          <div class="bookbag">
@@ -1813,7 +1813,7 @@
                   </xsl:if>
 
                      <!-- "more like this" -->
-                     <div class="result similar">
+                     <!--<div class="result similar">
                         <div class="resultLabel">
                            <xsl:text>Similar Items</xsl:text>
                         </div>
@@ -1833,7 +1833,7 @@
                               <a href="javascript:getMoreLike_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'similar items', 'find']);">Find</a>
                            </span>
                         </div>
-                     </div>
+                     </div>-->
                   </div>
                </xsl:when>
                <xsl:otherwise>
@@ -1970,7 +1970,7 @@
                      </div>
                   </xsl:if>
                   <!-- "more like this" -->
-                  <div class="result similar">
+                  <!--<div class="result similar">
                      <div class="resultLabel">
                         <xsl:text>Similar Items</xsl:text>
                      </div>
@@ -1990,7 +1990,7 @@
                            <a href="javascript:getMoreLike_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'similar items', 'find']);">Find</a>
                         </span>
                      </div>
-                  </div>
+                  </div>-->
                </div>
 
                </xsl:otherwise>
@@ -2365,7 +2365,7 @@
       </xsl:choose>
    </xsl:template>
    
-   <!-- docHit -->
+   <!-- docHit 2013-11-12 HA: No longer in use -->
    <xsl:template match="docHit" mode="moreLike" exclude-result-prefixes="#all">
       
       <xsl:variable name="path" select="@path"/>
