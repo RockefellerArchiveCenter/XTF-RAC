@@ -1012,31 +1012,29 @@
    <!-- Facet -->
     <xsl:template match="/crossQueryResult/facet[matches(@field,'^facet-')]" exclude-result-prefixes="#all">
       <xsl:variable name="field" select="replace(@field, 'facet-(.*)', '$1')"/>
-      <xsl:variable name="needExpand" select="@totalGroups > count(group)"/>
+      <xsl:variable name="needExpand" select="@totalGroups > 5"/>
+       <xsl:variable name="i" select="0"/>
       <div class="facet category" id="{@field}">
          <h3>
             <xsl:apply-templates select="." mode="facetName"/>
          </h3>
       </div>
-       <div class="facetGroup">
-         <xsl:if test="$expand=$field">
-            <div class="facetLess">
-               <a href="{$xtfURL}{$crossqueryPath}?{editURL:remove($queryString,'expand')}">show less</a>
-            </div>
-         </xsl:if>
-
-            <xsl:apply-templates/>
-         
-         <xsl:if test="$needExpand and not($expand=$field)">
+      <div class="facetGroup">
+         <div class="facetLess">
+            <a href="#">show less</a>
+         </div>
+         <xsl:apply-templates/>
+         <xsl:if test="$needExpand">
             <div class="facetMore">
-               <a href="{$xtfURL}{$crossqueryPath}?{editURL:set($queryString,'expand',$field)}">show more</a>
+               <a href="#">show more</a>
             </div>
          </xsl:if>
-       </div>
+      </div>
+
    </xsl:template>
    
    <!-- Plain (non-hierarchical) group of a facet -->
-   <xsl:template match="group[not(parent::group) and @totalSubGroups = 0]" exclude-result-prefixes="#all">
+   <xsl:template name="facet" match="group[not(parent::group) and @totalSubGroups = 0]" exclude-result-prefixes="#all">
       <xsl:variable name="field" select="replace(ancestor::facet/@field, 'facet-(.*)', '$1')"/>
       <xsl:variable name="value" select="@value"/>
       <xsl:variable name="nextName" select="editURL:nextFacetParam($queryString, $field)"/>

@@ -124,24 +124,25 @@
          -->
          <xsl:call-template name="facet">
             <xsl:with-param name="field" select="'facet-subject'"/>
-            <xsl:with-param name="topGroups" select="'*[1-5]'"/>
+            <xsl:with-param name="topGroups" select="'*'"/>
             <xsl:with-param name="sort" select="'totalDocs'"/>
          </xsl:call-template>
          
          <!-- 9/27/11 WS: Added additional facets -->
          <xsl:call-template name="facet">
             <xsl:with-param name="field" select="'facet-subjectpers'"/>
-            <xsl:with-param name="topGroups" select="'*[1-5]'"/>
+            <xsl:with-param name="topGroups" select="'*'"/>
             <xsl:with-param name="sort" select="'totalDocs'"/>
          </xsl:call-template>
+
          <xsl:call-template name="facet">
             <xsl:with-param name="field" select="'facet-subjectcorp'"/>
-            <xsl:with-param name="topGroups" select="'*[1-5]'"/>
+            <xsl:with-param name="topGroups" select="'*'"/>
             <xsl:with-param name="sort" select="'totalDocs'"/>
          </xsl:call-template>
          <xsl:call-template name="facet">
             <xsl:with-param name="field" select="'facet-geogname'"/>
-            <xsl:with-param name="topGroups" select="'*[1-5]'"/>
+            <xsl:with-param name="topGroups" select="'*'"/>
             <xsl:with-param name="sort" select="'totalDocs'"/>
          </xsl:call-template>
          
@@ -287,7 +288,7 @@
       --> 
       <xsl:variable name="selection">
          <!-- First, select the top groups, or all at the top in expand mode -->
-         <xsl:value-of select="if ($expand = $plainName) then '*' else $topGroups"/>
+         <xsl:value-of select="$topGroups"/>
          <!-- For each chosen facet value -->
          <xsl:for-each select="//param[matches(@name, concat('f[0-9]+-',$plainName))]">
             <!-- Quote parts of the value that have special meaning in facet language -->
@@ -324,5 +325,5 @@
                              else $sort }">
       </facet>
    </xsl:template>
-   
+
 </xsl:stylesheet>

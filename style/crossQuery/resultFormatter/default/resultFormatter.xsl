@@ -178,6 +178,7 @@
             <!-- AJAX support -->
             <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
             <script src="script/yui/connection-min.js" type="text/javascript"/>
+            <script src="script/rac/facets.js" type="text/javascript"/>
          </head>
          <body>
             <div class="overlay" id="searchTips" style="width:1100px; top:20px !important;">
