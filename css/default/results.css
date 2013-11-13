@@ -193,22 +193,32 @@ div.docHit .typeIcon {
 
 .facetWrapper {width:98%;float:left;padding:1%}
 .facetName {float:left;max-width:94%;}
-.totalDocs {float:right;}
+.totalDocs {float:left;padding-left:.2em;}
 .clearLink {float:right;font-weight:bold;}
 
-div.facetMore {
-    margin-top: 0;
-    margin-right: .5em;
+div.facetMore, div.facetLess {
+    margin: .3em;
     font-weight: bold;
     float: right;
+    border: 2px outset #c45414;
+    padding: 1%;
+    background-color: #c45414;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 3.5em;
+    text-align: center;
 }
 
-div.facetLess {
-   margin-left: .5em;
-   margin-bottom: 0.5em;
-   font-weight:bold;
-   float:left;
-}
+div.facetLess a, div.facetMore a {color:#bbb !important;}
+div.facetLess a:hover, div.facetMore a:hover {color:#eee !important;text-decoration:none !important;}
+
+div.facetShow {float: right;
+    padding: .7em;
+    font-size: .9em;
+    font-style:italic;
+    display:none;}
+    
+div.facetShow p {margin:0}
 
 div.getAddress {
 	width: 95%;
