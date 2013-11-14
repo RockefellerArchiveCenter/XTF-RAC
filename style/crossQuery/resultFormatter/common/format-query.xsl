@@ -123,18 +123,21 @@
                   <xsl:otherwise>
                      <!-- mask facets -->
                      <xsl:choose>
-                        <xsl:when test="contains(@field,'subjectname')">
-                           <xsl:value-of select="replace(replace(replace(@field,'facet-',''),'subjectname','subject name'),'date','date')"/>
+                        <xsl:when test="contains(@field,'subjectpers')">
+                           <xsl:value-of select="'People'"/>
+                        </xsl:when>
+                        <xsl:when test="contains(@field,'subjectcorp')">
+                           <xsl:value-of select="'Organizations'"/>
                         </xsl:when>
                         <xsl:when test="contains(@field,'geogname')">
-                           <xsl:value-of select="replace(replace(replace(@field,'facet-',''),'geogname','geographic name'),'date','date')"/>
+                           <xsl:value-of select="'Places'"/>
                         </xsl:when>
-                        <xsl:when test="contains(@field,'geogname')">
-                           <xsl:value-of select="replace(replace(replace(@field,'facet-',''),'geogname','geographic name'),'date','date')"/>
+                        <xsl:when test="contains(@field,'subject')">
+                           <xsl:value-of select="'Subjects'"/>
                         </xsl:when>
-                        <xsl:otherwise>
-                           <xsl:value-of select="replace(replace(replace(@field,'facet-',''),'subject','subject'),'date','date')"/>
-                        </xsl:otherwise>
+                        <xsl:when test="contains(@field,'format')">
+                           <xsl:value-of select="'Formats'"/>
+                        </xsl:when>
                      </xsl:choose>
                   </xsl:otherwise>
                </xsl:choose>
