@@ -1421,7 +1421,7 @@
             <xsl:choose>
                <xsl:when test="$browse-all"/>
                <xsl:otherwise>
-                  <xsl:if test="descendant-or-self::snippet">
+                  <xsl:if test="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']">
 
                      <div class="result matches">
                         <div class="resultLabel">
@@ -1433,7 +1433,7 @@
                            />-->
                            </div>
                         <div class="resultText">
-                           <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
+                           <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']" mode="text"/>
                         </div>
                      </div>
                   </xsl:if>
@@ -1766,7 +1766,7 @@
                   <xsl:choose>
                      <xsl:when test="$browse-all"/>
                      <xsl:otherwise>
-                        <xsl:if test="descendant-or-self::snippet">
+                        <xsl:if test="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']">
                               <div class="result matches">
                                  <div class="resultLabel">
                                  <xsl:text>Matches</xsl:text>
@@ -1775,7 +1775,7 @@
                                  <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/> -->
                               </div>
                               <div class="resultText">
-                                 <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
+                                 <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']" mode="text"/>
                               </div>
                               </div>
                            
@@ -2275,7 +2275,7 @@
          <xsl:choose>
             <xsl:when test="$browse-all"/>
             <xsl:otherwise>
-               <xsl:if test="descendant-or-self::snippet">
+               <xsl:if test="descendant-or-self::snippet[@sectionType = 'file']">
                      <div class="result">
                         <div class="resultLabel">
                         <xsl:text>Matches</xsl:text>
@@ -2284,7 +2284,7 @@
                            <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>)-->
                         </div>
                         <div class="resultText">
-                        <xsl:apply-templates select="descendant-or-self::snippet" mode="text"/>
+                           <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'file']" mode="text"/>
                         </div>
                      </div>
                </xsl:if>
