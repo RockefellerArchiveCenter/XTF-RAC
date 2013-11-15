@@ -191,26 +191,33 @@ div.docHit .typeIcon {
    background-color: #D6DCE5;
 }
 
-.facetWrapper {width:98%;float:left;padding:1%}
+.facetWrapper {width:98%;float:left;}
 .facetName {float:left;max-width:94%;}
-.totalDocs {float:left;padding-left:.2em;}
+.totalDocs {float:left;padding-left:.2em;color:#888;}
 .clearLink {float:right;font-weight:bold;}
 
 div.facetMore, div.facetLess {
     margin: .3em;
-    font-weight: bold;
     float: right;
-    border: 2px outset #c45414;
+    border-left: 1px inset #cccccc;
     padding: 1%;
-    background-color: #c45414;
-    border-radius: 4px;
     box-sizing: border-box;
-    width: 3.5em;
+    width: 5em;
     text-align: center;
+    font-size:.8em;
+    line-height:1.7em;
 }
 
-div.facetLess a, div.facetMore a {color:#bbb !important;}
-div.facetLess a:hover, div.facetMore a:hover {color:#eee !important;text-decoration:none !important;}
+div.facetMore:hover:after {width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 6px solid #c45414;content: " ";float: right;margin-top: .6em;} 
+div.facetLess:hover:after {width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-bottom: 6px solid #c45414;content: " ";float: right;margin-top: .6em;}
+
+div.facetMore:after {width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 6px solid #666666;content: " ";float: right;margin-top: .6em;}
+div.facetLess:after {width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-bottom: 6px solid #666666;content: " ";float: right;margin-top: .6em;}
+
+div.facetLess, div.facetMore {color:#666666 !important;}
+div.facetLess:hover, div.facetMore:hover {color: #c45414 !important}
+.facets a {color:#333 !important; text-decoration:none !important;}
+.facets a:hover {color: #c45414 !important; text-decoration:underline !important;}
 
 div.facetShow {float: right;
     padding: .7em;

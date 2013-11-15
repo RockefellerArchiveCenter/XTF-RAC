@@ -116,8 +116,8 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #about .aboutContent {background:#fff; display:none;box-shadow:0px 3px 3px #666;width:11em;text-align:left;float:left;border:1px solid #666; border-top:0;border-radius:0 0 5px 5px;}
 #disclaimer {width:100%; float:left; border-top: 1px solid #999;color:#666;text-align:justify;margin-top:2em;}
 #disclaimer p { margin:1%; }
-.home a, #about a, .resultsHeader a, .facets a {text-decoration: none !important; color: #c45414 !important;}
-.home a:hover, #about a:hover, .resultsHeader a:hover, .facets a:hover {color:#c45414 !important; text-decoration:underline !important; }
+.home a, #about a, .resultsHeader a {text-decoration: none !important; color: #c45414 !important;}
+.home a:hover, #about a:hover, .resultsHeader a:hover {color:#c45414 !important; text-decoration:underline !important; }
 .home li, .resultsHeader li {list-style: none;margin: 0px;padding: .5em 1em .5em 1em;text-align:left;font-size:1.2em;}
 .home li:nth-child(even), .resultsHeader li:nth-child(even) {background-color: rgb(228, 228, 228);border-bottom:1px dashed #999; border-top:1px dashed #999;}
 .home ul, .resultsHeader ul, .facets ul {padding-left: 0em;padding-right:0em;margin-top:.5em; margin-bottom:.5em;}
@@ -165,7 +165,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #sort {float:right;}
 
 .facets h2 {margin:0; padding:.5em;border-radius:5px 5px 0 0;background-color:#c45414; color:#fff;text-align:center;}
-.facets li {list-style: none;margin: 0px;padding:0 1%;text-align:left;font-size:1em;}
+.facets li {list-style: none;margin: 0px;padding:1%;text-align:left;font-size:1em;display:none;}
 .facets li:nth-child(even) {background-color: rgb(228, 228, 228);}
 .facets #facets h2 {background-color:#174780}
 .facets .browse {float:left; width:100%;margin-top:3%; border-radius:5px 5px 0px 0px;}

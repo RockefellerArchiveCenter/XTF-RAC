@@ -1018,17 +1018,17 @@
          <h3>
             <xsl:apply-templates select="." mode="facetName"/>
          </h3>
+         <a href="#">
          <div class="facetLess">
-            <a href="#">less</a>
+            less
          </div>
+         </a>
          <xsl:if test="$needExpand">
+            <a href="#">
             <div class="facetMore">
-               <a href="#">more</a>
-            </div>
+               more
+            </div></a>
          </xsl:if>
-         <div class="facetShow">
-            <p>showing x of x</p>
-         </div>
       </div>
       <div class="facetGroup">
          <xsl:apply-templates/>
