@@ -11,21 +11,12 @@
       <link rel="stylesheet" href="css/default/racustom.css" type="text/css"/>
       <link rel="shortcut icon" href="icons/default/favicon.png"/>
       <!-- 9/27/11 WS: RA links and javascript -->
-      <link rel="stylesheet" rev="stylesheet" type="text/css"
-         href="http://www.rockarch.org/css/globalStyle.css"/>
-      <link rel="stylesheet" rev="stylesheet" type="text/css"
-         href="http://www.rockarch.org/css/more.css"/>
+      <link rel="stylesheet" type="text/css" href="http://www.rockarch.org/css/bootstrap.css"/>
       <script id="twitter-wjs" src="http://platform.twitter.com/widgets.js"></script>
       <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
       <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-      <script type="text/javascript" language="JavaScript"
-         src="http://www.rockarch.org/js/browserDetect.js"/>
-      <script type="text/javascript" language="JavaScript"
-         src="http://www.rockarch.org/js/mapping.js"/>
-      <script type="text/javascript" language="JavaScript"
-         src="http://www.rockarch.org/js/rollOver.js"/>
-      <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/popUp.js"/>
-      <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/rac.js"/>
+      <script type="text/javascript" src="http://www.rockarch.org/js/bootstrap.js"></script>
+      <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/browserDetect.js"/>
       <script type="text/javascript" src="/xtf/script/rac/dropdown.js"/>
       <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
       <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
@@ -205,20 +196,16 @@
       <link rel="stylesheet" href="/xtf/css/default/racustom.css" type="text/css"/>
       <link rel="shortcut icon" href="icons/default/favicon.png"/>
       <!-- 9/27/11 WS: RA links and javascript -->
-      <link rel="stylesheet" rev="stylesheet" type="text/css" href="http://www.rockarch.org/css/globalStyle.css"/>
-      <link rel="stylesheet" rev="stylesheet" type="text/css" href="http://www.rockarch.org/css/more.css"/>
+      <link rel="stylesheet" rev="stylesheet" type="text/css" href="http://www.rockarch.org/css/bootstrap.css"/>
       <script id="twitter-wjs" src="http://platform.twitter.com/widgets.js"></script>
       <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
       <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
       <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/browserDetect.js"></script>
-      <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/mapping.js"></script>
-      <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/rollOver.js"></script>
-      <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/popUp.js"></script>
+      <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/boostrap.js"></script>
       <script type="text/javascript" src="/xtf/script/rac/dropdown.js"/>
       <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
       <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
-      <script type="text/javascript" src="/xtf/script/rac/active.js"/>
-      <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/rac.js"></script>   
+      <script type="text/javascript" src="/xtf/script/rac/active.js"/>   
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/bootstrap-scrollspy.js"></script>
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/scroll.js"></script>
       <script type="text/javascript" src="/xtf/script/rac/dialog.js"/>

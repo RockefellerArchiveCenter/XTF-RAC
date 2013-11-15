@@ -126,8 +126,13 @@ div.docHit {
 .resultContent {float:left; width:82%;}
 .result {float:left;width:100%;margin-bottom:.5em;}
 .result img, .title img {vertical-align:middle;}
-.resultLabel {float:left; width:10%; text-align:right;font-weight:bold;margin-right:1%}
-.resultText {float:left; width:85%;}
+.result.title a {color:#333; text-decoration:none;}
+.result.title a:hover {color:#c45414}
+.result.title a:visited {color:#555}
+.resultContent>.result.title {font-size:1.3em;margin:0}
+.subdocument>.result.title {font-size:.9em;font-weight:bold}
+
+.result.creator {color:#555}
 
 #docHits {float:right; width:73%;padding-bottom:1%}
 #docHits .hitRank {width:3%}
@@ -136,12 +141,11 @@ div.docHit {
 #docHits .resultLabel {width:15%;}
 #docHits .resultText {width:80%;}
 
-.subdocument {float:left; padding-top:.5em;padding-bottom:.5em;padding-left:1%;padding-right:1%;min-height:3em;}
-#docHits .subdocument {width:114%;}
-.results .subdocument {width:103%;}
-.subdocument:nth-child(odd) {background: rgb(228, 228, 228);border-top: 1px dashed #999;border-bottom: 1px dashed #999;}
+.subdocuments {width: 94%;float: left;}
+.subdocument {float:left; padding-top:.5em;padding-bottom:.5em;padding-left:1%;padding-right:1%;min-height:3em;width:98%}
+.subdocument:nth-child(odd) {background: rgb(228, 228, 228);}
 .subdocument .title {width:80%; float:left;}
-.subdocument .matches {float:left;width:97%;margin-left:3%;font-size:.9em;margin-top:.5em;}
+.subdocument .matches {float:left;width:80%;margin-left:3%;font-size:.9em;margin-top:.5em;}
 .subdocument .result {font-size:.9em;}
 .subdocument .resultLabel {width:10% !important}
 
@@ -216,7 +220,7 @@ div.facetLess:after {width: 0;height: 0;border-left: 6px solid transparent;borde
 
 div.facetLess, div.facetMore {color:#666666 !important;}
 div.facetLess:hover, div.facetMore:hover {color: #c45414 !important}
-.facets a {color:#333 !important; text-decoration:none !important;}
+.facets a {color:#174780 !important; text-decoration:none !important;}
 .facets a:hover {color: #c45414 !important; text-decoration:underline !important;}
 
 div.facetShow {float: right;

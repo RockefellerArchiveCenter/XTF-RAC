@@ -461,7 +461,7 @@
    <xsl:template name="get-ead-title">
       <xsl:choose>
          <xsl:when test="@level">
-            <xsl:variable name="seriesTitle">
+            <!--<xsl:variable name="seriesTitle">
                <xsl:choose>
                   <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">
                         <xsl:text>File: </xsl:text>
@@ -509,7 +509,7 @@
                      </xsl:choose>
                   </xsl:otherwise>
                </xsl:choose>         
-            </xsl:variable>
+            </xsl:variable>-->
             <xsl:variable name="collTitle">
                <xsl:choose>
                   <xsl:when test="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']">
@@ -526,7 +526,7 @@
                      <xsl:value-of select="$collTitle"/>
                   </collectionTitle>
                   <title xtf:meta="true">
-                     <xsl:value-of select="$seriesTitle"/>
+                     <xsl:value-of select="did/unittitle"/>
                   </title>
                </xsl:when>
                <xsl:otherwise>
@@ -534,7 +534,7 @@
                      <xsl:value-of select="$collTitle"/>
                   </collectionTitle>
                   <title xtf:meta="true">
-                     <xsl:value-of select="'unknown'"/>
+                     <xsl:value-of select="'Unknown'"/>
                   </title>
                </xsl:otherwise>
             </xsl:choose>
@@ -588,7 +588,7 @@
          </xsl:when>
          <xsl:otherwise>
             <title xtf:meta="true">
-               <xsl:value-of select="'unknown'"/>
+               <xsl:value-of select="'Unknown'"/>
             </title>
          </xsl:otherwise>
       </xsl:choose>

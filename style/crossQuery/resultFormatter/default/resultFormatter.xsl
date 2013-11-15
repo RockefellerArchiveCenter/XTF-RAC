@@ -1233,23 +1233,9 @@
          </xsl:choose>
       </xsl:variable>
       <div id="main_{@rank}" class="docHit">
+         <!-- 11/15/2013 HA: streamlining display, removing labels, similar items and subjects -->
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
-            <!-- 9/26/11 WS: Moved title above Author -->
-         <!--<div class="hitRank">
-            <xsl:choose>
-               <xsl:when test="$sort = ''">
-                  <b>
-                     <xsl:value-of select="@rank"/>
-                  </b>
-               </xsl:when>
-               <xsl:otherwise>
-                  <b>
-                     <xsl:value-of select="@rank"/>
-                  </b>
-                  <xsl:text>&#160;</xsl:text>
-               </xsl:otherwise>
-            </xsl:choose>
-         </div>-->
+         <!-- 9/26/11 WS: Moved title above Author -->
          <div class="resultIcon">
             <xsl:choose>
                <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
@@ -1282,60 +1268,56 @@
                </xsl:otherwise>
             </xsl:choose>
          </div>
+         
          <div class="resultContent">
             <div class="result title">
-               <div class="resultLabel">
-                  <xsl:if test="$sort = 'title'">
-                     <a name="{$anchor}"/>
-                  </xsl:if>
-                  <xsl:text>Title</xsl:text>
-               </div>
-               <div class="resultText">
-                  <a>
-                     <xsl:attribute name="href">
-                        <xsl:value-of select="$docPath"/>
+               <a>
+                  <xsl:attribute name="href">
+                     <xsl:value-of select="$docPath"/>
+                  </xsl:attribute>
+                  <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
+                     <xsl:attribute name="onClick">
+                        <xsl:text>_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);</xsl:text>
                      </xsl:attribute>
-                     <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
-                        <xsl:attribute name="onClick">
-                           <xsl:text>_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);</xsl:text>
-                        </xsl:attribute>
-                     </xsl:if>
-                     <xsl:choose>
-                        <xsl:when test="meta/title">
-                           <xsl:choose>
-                              <xsl:when test="count(meta/title) &gt; 1">
-                                 <xsl:apply-templates select="meta/title[2]"/>
-                              </xsl:when>
-                              <xsl:otherwise>
-                                 <xsl:apply-templates select="meta/title[1]"/>
-                              </xsl:otherwise>
-                           </xsl:choose>
-                        </xsl:when>
-                        <xsl:when test="meta/subtitle">
-                           <xsl:choose>
-                              <xsl:when test="count(meta/subtitle) &gt; 1">
-                                 <xsl:apply-templates select="meta/subtitle[2]"/>
-                              </xsl:when>
-                              <xsl:otherwise>
-                                 <xsl:apply-templates select="meta/subtitle[1]"/>
-                              </xsl:otherwise>
-                           </xsl:choose>
-                        </xsl:when>
-                        <xsl:otherwise>none</xsl:otherwise>
-                     </xsl:choose>
-                  </a>
-                  <xsl:if test="meta/*:type = 'dao'">
-                     <img src="/xtf/icons/default/dao.gif" alt="digital object"
-                        title="digital object"/>
                   </xsl:if>
-                  <!--
-                  <xsl:variable name="type" select="meta/type"/>
-                  <span class="typeIcon">
-                     <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
-                  </span>
-                  -->
-               </div>
+                  <xsl:choose>
+                     <xsl:when test="meta/title">
+                        <xsl:choose>
+                           <xsl:when test="count(meta/title) &gt; 1">
+                              <xsl:apply-templates select="meta/title[2]"/>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <xsl:apply-templates select="meta/title[1]"/>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </xsl:when>
+                     <xsl:when test="meta/subtitle">
+                        <xsl:choose>
+                           <xsl:when test="count(meta/subtitle) &gt; 1">
+                              <xsl:apply-templates select="meta/subtitle[2]"/>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <xsl:apply-templates select="meta/subtitle[1]"/>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </xsl:when>
+                     <xsl:otherwise>none</xsl:otherwise>
+                  </xsl:choose>
+                  
+                  <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
+                  <xsl:if test="meta/date">
+                        <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+                        <xsl:text>, </xsl:text>
+                        <xsl:apply-templates select="meta/date"/>
+                  </xsl:if>
+               </a>
+               
+               <xsl:if test="meta/*:type = 'dao'">
+                  <img src="/xtf/icons/default/dao.gif" alt="digital object" title="digital object"
+                  />
+               </xsl:if>
             </div>
+                        
             <!-- 9/5/2013 HA: adding collection for DAO browse -->
             <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level !='collection'">
                <div class="result collection">
@@ -1347,121 +1329,30 @@
                   </div>
                </div>
             </xsl:if>
-            <div class="result creator">
-               <div class="resultLabel">
-                  <xsl:if test="$sort = 'creator'">
-                     <a name="{$anchor}"/>
-                  </xsl:if>
-                  <!-- 9/26/11 WS: changed author to creator-->
-                  <xsl:text>Creator(s)</xsl:text>
-               </div>
-               <xsl:if test="meta/creator">
-                  <div class="resultText">
+            
+            <!-- 11/15/2013 HA: removing label and changing logic -->
+            <xsl:if test="meta/creator">
+               <div class="result creator">
                   <xsl:for-each select="meta/creator">
-                        <xsl:apply-templates select="."/><br/>
+                     <xsl:apply-templates select="."/>
+                     <br/>
                   </xsl:for-each>
-                  </div>
-               </xsl:if>
-               <xsl:if test="meta/creator = ''">
-                  <div class="resultText">
-                     <xsl:text>none</xsl:text>
-                  </div>
-               </xsl:if>
-                  
-            </div>
-
-            <div class="result dates">
-               <div class="resultLabel">
-                  <!-- 9/26/11 WS: changed Published to Date -->
-                  <xsl:text>Date(s)</xsl:text>
-               </div>
-               <div class="resultText">
-                  <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
-                  <xsl:choose>
-                     <xsl:when test="meta/date">
-                        <xsl:apply-templates select="meta/date"/>
-                     </xsl:when>
-                     <xsl:otherwise> unknown </xsl:otherwise>
-                  </xsl:choose>
-                  <!--  
-                  <xsl:choose>
-                     <xsl:when test="meta/year">
-                        <xsl:value-of select="replace(meta/year[1],'^.+ ','')"/>
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:apply-templates select="meta/date"/>
-                     </xsl:otherwise>
-                  </xsl:choose>
-                  -->
-               </div>
-            </div>
-            <xsl:if test="meta/subject">
-               <div class="result subjects">
-                  <div class="resultLabel">
-                     <xsl:text>Subjects</xsl:text>
-                  </div>
-                  <div class="resultText">
-                     <!-- 4/16/2013 HA: added logic to limit number of subjects that display -->
-                     <xsl:for-each select="meta/subject">
-                        <xsl:if test="position() = 1">
-                           <xsl:apply-templates select="."/>
-                        </xsl:if>
-                        <xsl:if test="position() &gt;= 2 and position() &lt;= 4">
-                           <xsl:text>&#160;|&#160;</xsl:text>
-                           <xsl:apply-templates select="."/>
-                        </xsl:if>
-                     </xsl:for-each>
-                     <xsl:if test="position() = 5">
-                        <xsl:text>&#160;...more</xsl:text>
-                     </xsl:if>
-                  </div>
                </div>
             </xsl:if>
+            
+            <!-- 11/15/2013 HA: removing label -->
+            <!-- 11/14/2013 HA: changing logic to only display snippets for hits not already visible -->
             <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
             <xsl:choose>
                <xsl:when test="$browse-all"/>
                <xsl:otherwise>
                   <xsl:if test="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']">
-
                      <div class="result matches">
-                        <div class="resultLabel">
-                           <xsl:text>Matches</xsl:text>
-                           <br/>
-                           <!-- 8/2/2013 HA: commenting out hit counts -->
-                           <!--<xsl:value-of select="@totalHits"/>
-                           <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"
-                           />-->
-                           </div>
-                        <div class="resultText">
-                           <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']" mode="text"/>
-                        </div>
+                        <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']" mode="text"/>
                      </div>
                   </xsl:if>
                </xsl:otherwise>
             </xsl:choose>
-
-            <!-- "more like this" -->
-            <!--<div class="result similar">
-               <div class="resultLabel">
-                  <xsl:text>Similar Items</xsl:text>
-               </div>
-               <div class="resultText">
-                  <script type="text/javascript">
-                     getMoreLike_<xsl:value-of select="@rank"/> = function() {
-                        var span = YAHOO.util.Dom.get('moreLike_<xsl:value-of select="@rank"/>');
-                        span.innerHTML = "Fetching...";
-                        YAHOO.util.Connect.asyncRequest('GET', 
-                           '<xsl:value-of select="concat('search?smode=moreLike;docsPerPage=5;identifier=', $identifier)"/>',
-                           { success: function(o) { span.innerHTML = o.responseText; },
-                             failure: function(o) { span.innerHTML = "Failed!" } 
-                           }, null);
-                     };
-                  </script>
-                  <span id="moreLike_{@rank}">
-                     <a href="javascript:getMoreLike_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'similar items', 'find']);">Find</a>
-                  </span>
-               </div>
-            </div>-->
          </div>
 
          <div class="bookbag">
@@ -1559,6 +1450,9 @@
          </div>
          
       </div>
+      <div id="moreInfo_{@rank}" class="moreInfo">
+         <xsl:apply-templates mode="moreInfo"/>
+      </div>
    </xsl:template>
    
    <xsl:template name="docHitColl" exclude-result-prefixes="#all">
@@ -1610,24 +1504,13 @@
       </xsl:variable>
 
       <div id="main_{@rank}" class="docHit">
+         <!-- 11/15/2013 HA: streamlining display, removing subjects, labels and find similar -->
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
             <!-- Deals with collections vrs. series/files -->
             <xsl:choose>
                <xsl:when test="meta/level = 'collection'">
-                     <!--<div class="hitRank">
-                        <xsl:choose>
-                           <xsl:when test="$sort = ''">
-                              <strong><xsl:value-of select="@rank"/></strong>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <strong><xsl:value-of select="@rank"/></strong>
-                              <xsl:text>&#160;</xsl:text>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </div> -->
                      <div class="resultIcon">
                         <xsl:choose>
-                           
                            <xsl:when test="meta/genre[contains(.,'DVD')]">
                               <img src="/xtf/icons/default/video.gif" alt="Moving Image"/>
                               <span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>
@@ -1653,205 +1536,89 @@
                            </xsl:otherwise>
                         </xsl:choose>
                      </div>
-                  <div class="resultContent">
-                     <div class="result">
-                        <div class="resultLabel">
-                        <xsl:if test="$sort = 'title'">
-                           <a name="{$anchor}"/>
-                        </xsl:if>
-                        <xsl:text>Title</xsl:text>
-                     </div>
-                     <div class="resultText">
-                        <a>
-                           <xsl:attribute name="href">
-                              <xsl:value-of select="$docPath"/>
-                           </xsl:attribute>
-                           <xsl:choose>
-                              <xsl:when test="meta/title">
-                                 <xsl:choose>
-                                    <xsl:when test="count(meta/title) &gt; 1">
-                                       <xsl:apply-templates select="meta/title[2]"/>      
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                       <xsl:apply-templates select="meta/title[1]"/>
-                                    </xsl:otherwise>
-                                 </xsl:choose>
-                              </xsl:when>
-                              <xsl:when test="meta/subtitle">
-                                 <xsl:choose>
-                                    <xsl:when test="count(meta/subtitle) &gt; 1">
-                                       <xsl:apply-templates select="meta/subtitle[2]"/>      
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                       <xsl:apply-templates select="meta/subtitle[1]"/>
-                                    </xsl:otherwise>
-                                 </xsl:choose>
-                              </xsl:when>
-                              <xsl:otherwise>none</xsl:otherwise>
-                           </xsl:choose>
-                        </a>
-                        <xsl:if test="meta/*:type = 'dao'">
-                           <img src="/xtf/icons/default/dao.gif" alt="digital object"
-                              title="digital object"/>
-                        </xsl:if>
-                        <!--
-                        <xsl:variable name="type" select="meta/type"/>
-                           <span class="typeIcon">
-                           <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
-                           </span>
-                        -->
-                     </div>
-                     </div>
-
-                     <div class="result creator">
-                        <div class="resultLabel">
-                        <xsl:if test="$sort = 'creator'">
-                           <a name="{$anchor}"/>
-                        </xsl:if>
-                        <!-- 9/26/11 WS: changed author to creator-->
-                        <xsl:text>Creator</xsl:text>
-                     </div>
-                     <div class="resultText">
+                  
+               <div class="resultContent">
+                  <div class="result title">
+                     <a>
+                        <xsl:attribute name="href">
+                           <xsl:value-of select="$docPath"/>
+                        </xsl:attribute>
                         <xsl:choose>
-                           <xsl:when test="meta/creator">
-                              <xsl:apply-templates select="meta/creator[1]"/>
+                           <xsl:when test="meta/title">
+                              <xsl:choose>
+                                 <xsl:when test="count(meta/title) &gt; 1">
+                                    <xsl:apply-templates select="meta/title[2]"/>
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <xsl:apply-templates select="meta/title[1]"/>
+                                 </xsl:otherwise>
+                              </xsl:choose>
+                           </xsl:when>
+                           <xsl:when test="meta/subtitle">
+                              <xsl:choose>
+                                 <xsl:when test="count(meta/subtitle) &gt; 1">
+                                    <xsl:apply-templates select="meta/subtitle[2]"/>
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <xsl:apply-templates select="meta/subtitle[1]"/>
+                                 </xsl:otherwise>
+                              </xsl:choose>
                            </xsl:when>
                            <xsl:otherwise>none</xsl:otherwise>
                         </xsl:choose>
-                     </div>
-                     </div>
-                     
-                        <div class="result publisher">
-                        <div class="resultLabel">
-                           <xsl:text>Publisher</xsl:text>
-                        </div>
-                        <div class="resultText">
-                           <xsl:apply-templates select="meta/publisher"/>
-                        </div>
-                        </div>
-                     
-                     <div class="result dates">
-                     <div class="resultLabel">
-                        <!-- 9/26/11 WS: changed Published to Date -->
-                        <xsl:text>Date(s)</xsl:text>
-                     </div>
-                     <div class="resultText">
-                        <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
-                        <xsl:choose>
-                           <xsl:when test="meta/date">
-                              <xsl:apply-templates select="meta/date"/>      
-                           </xsl:when>
-                           <xsl:otherwise>
-                              unknown
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </div>
-                     </div>
-
-
-                     
-                  <xsl:if test="meta/callNo">
-                     <div class="result callno">
-                        <div class="resultLabel">
-                           <xsl:text>Call number</xsl:text>
-                        </div>
-                        <div class="resultText">
-                           <xsl:apply-templates select="meta/callNo"/>
-                        </div>
-                     </div>
-                  </xsl:if>
-
-                     
-                <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
-                  <xsl:choose>
-                     <xsl:when test="$browse-all"/>
-                     <xsl:otherwise>
-                        <xsl:if test="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']">
-                              <div class="result matches">
-                                 <div class="resultLabel">
-                                 <xsl:text>Matches</xsl:text>
-                                 <br/>
-                                 <!--<xsl:value-of select="@totalHits"/> 
-                                 <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/> -->
-                              </div>
-                              <div class="resultText">
-                                 <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']" mode="text"/>
-                              </div>
-                              </div>
-                           
+                        <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
+                        <xsl:if test="meta/date">
+                           <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+                           <xsl:text>, </xsl:text>
+                           <xsl:apply-templates select="meta/date"/>
                         </xsl:if>
-                     </xsl:otherwise>
-                  </xsl:choose>
-                     <xsl:if test="meta/subject">
-                        <div class="result subjects">
-                           <div class="resultLabel">
-                              <xsl:text>Subjects</xsl:text>
-                           </div>
-                           <div class="resultText">
-                              <!-- 4/16/2013 HA: added logic to limit number of subjects that display -->
-                              <xsl:for-each select="meta/subject">
-                                 <xsl:if test="position() = 1">
-                                    <xsl:apply-templates select="."/>
-                                 </xsl:if>
-                                 <xsl:if test="position() &gt;= 2 and position() &lt;= 4">
-                                    <xsl:text>&#160;|&#160;</xsl:text>
-                                    <xsl:apply-templates select="."/>
-                                 </xsl:if>
-                                 <xsl:if test="position() = 5">
-                                    <xsl:text>&#160;...more</xsl:text>
-                                 </xsl:if>
-                              </xsl:for-each>
-                           </div>
-                        </div>
+                     </a>
+                     <xsl:if test="meta/*:type = 'dao'">
+                        <img src="/xtf/icons/default/dao.gif" alt="digital object"
+                           title="digital object"/>
                      </xsl:if>
-                  <xsl:if test="current-group()[meta/level != 'collection']">
-                     <div class="subdocuments">
-                        <xsl:for-each select="current-group()[meta/level != 'collection']">
-                           <!--            <xsl:for-each select="current-group()[position() &lt; 5][meta/level != 'collection']">-->
-                           <div class="subdocument">
-                              <xsl:call-template name="subDocument"/>
-                           </div>
+                  </div>
+
+                  <!-- 11/15/2013 HA: removing label and changing logic -->
+                  <xsl:if test="meta/creator">
+                     <div class="result creator">
+                        <xsl:for-each select="meta/creator">
+                           <xsl:apply-templates select="."/>
+                           <br/>
                         </xsl:for-each>
                      </div>
                   </xsl:if>
 
-                     <!-- "more like this" -->
-                     <!--<div class="result similar">
-                        <div class="resultLabel">
-                           <xsl:text>Similar Items</xsl:text>
-                        </div>
-                        <div class="resultText">
-                           <script type="text/javascript">
-                     getMoreLike_<xsl:value-of select="@rank"/> = function() {
-                        var span = YAHOO.util.Dom.get('moreLike_<xsl:value-of select="@rank"/>');
-                        span.innerHTML = "Fetching...";
-                        YAHOO.util.Connect.asyncRequest('GET', 
-                           '<xsl:value-of select="concat('search?smode=moreLike;docsPerPage=5;identifier=', $identifier)"/>',
-                           { success: function(o) { span.innerHTML = o.responseText; },
-                             failure: function(o) { span.innerHTML = "Failed!" } 
-                           }, null);
-                     };
-                  </script>
-                           <span id="moreLike_{@rank}">
-                              <a href="javascript:getMoreLike_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'similar items', 'find']);">Find</a>
-                           </span>
-                        </div>
-                     </div>-->
-                  </div>
+                  <!-- 11/14/2013 HA: changing logic to only display snippets not already visible -->
+                  <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
+                  <xsl:choose>
+                     <xsl:when test="$browse-all"/>
+                     <xsl:otherwise>
+                        <xsl:if test="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']">
+                           <div class="result matches">
+                              <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']" mode="text"/>
+                           </div>
+                        </xsl:if>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </div>
+                  
+                  <xsl:if test="current-group()[meta/level != 'collection']">
+                     <div class="subdocuments">
+                        <xsl:for-each select="current-group()[meta/level != 'collection']">
+                           <div class="subdocument">
+                              <xsl:call-template name="subDocument"/>
+                           </div>
+                           <div id="moreInfo_{@rank}" class="subdocument moreInfo">
+                              <xsl:apply-templates mode="moreInfo"/>
+                           </div>
+                        </xsl:for-each>
+                     </div>
+                  </xsl:if>                  
+               
                </xsl:when>
                <xsl:otherwise>
                   <xsl:variable name="collectionId" select="substring-before(meta/identifier[1],'|')"/>
-                     <!--<div class="hitRank">
-                        <xsl:choose>
-                           <xsl:when test="$sort = ''">
-                              <strong><xsl:value-of select="@rank"/></strong>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <strong><xsl:value-of select="@rank"/></strong>
-                              <xsl:text>&#160;</xsl:text>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </div>-->
                      <div class="resultIcon">
                         <xsl:choose>
                            <xsl:when test="meta/genre[contains(.,'DVD')]">
@@ -1882,13 +1649,6 @@
 
                <div class="resultContent">
                   <div class="result title">
-                  <div class="resultLabel">
-                     <xsl:if test="$sort = 'title'">
-                        <a name="{$anchor}"/>
-                     </xsl:if>
-                     <xsl:text>Title</xsl:text>
-                  </div>
-                  <div class="resultText">
                      <a>
                         <xsl:attribute name="href">
                            <xsl:value-of select="$collPath"/>
@@ -1905,97 +1665,41 @@
                            </xsl:when>
                            <xsl:otherwise>none</xsl:otherwise>
                         </xsl:choose>
+                        <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
+                        <xsl:if test="meta/date">
+                           <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+                           <xsl:text>, </xsl:text>
+                           <xsl:apply-templates select="meta/date"/>
+                        </xsl:if>
                      </a>
                      <xsl:if test="meta/*:type = 'dao'">
                         <img src="/xtf/icons/default/dao.gif" alt="digital object"
                            title="digital object"/>
                      </xsl:if>
-
-                     <!--
-                        <xsl:variable name="type" select="meta/type"/>
-                           <span class="typeIcon">
-                           <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
-                           </span>
-                        -->
-                  </div>
                </div>
                      
-               <div class="result creator">
-                  <div class="resultLabel">
-                     <xsl:if test="$sort = 'creator'">
-                        <a name="{$anchor}"/>
-                     </xsl:if>
-                     <!-- 9/26/11 WS: changed author to creator-->
-                     <xsl:text>Creator</xsl:text>
-                  </div>
-                  <div class="resultText">
-                     <xsl:choose>
-                        <xsl:when test="meta/collectionCreator">
-                           <xsl:apply-templates select="meta/collectionCreator[1]"/>
-                        </xsl:when>
-                        <xsl:when test="meta/creator">
-                           <xsl:apply-templates select="meta/creator[1]"/>
-                        </xsl:when>
-                        <xsl:otherwise>none</xsl:otherwise>
-                     </xsl:choose>
-                  </div>
-               </div>
-                  <xsl:if test="meta/subject">
-                     <div class="result subjects">
-                        <div class="resultLabel">
-                           <xsl:text>Subjects</xsl:text>
-                        </div>
-                        <div class="resultText">
-                           <!-- 4/16/2013 HA: added logic to limit number of subjects that display -->
-                           <xsl:for-each select="meta/subject">
-                              <xsl:if test="position() = 1">
-                                 <xsl:apply-templates select="."/>
-                              </xsl:if>
-                              <xsl:if test="position() &gt;= 2 and position() &lt;= 4">
-                                 <xsl:text>&#160;|&#160;</xsl:text>
-                                 <xsl:apply-templates select="."/>
-                              </xsl:if>
-                              <xsl:if test="position() = 5">
-                                 <xsl:text>&#160;...more</xsl:text>
-                              </xsl:if>
-                           </xsl:for-each>
-                        </div>
+                  <!-- 11/15/2013 HA: removing label and changing logic -->
+                  <xsl:if test="meta/creator">
+                     <div class="result creator">
+                        <xsl:for-each select="meta/creator">
+                           <xsl:apply-templates select="."/>
+                           <br/>
+                        </xsl:for-each>
                      </div>
                   </xsl:if>
+               </div>
                   <xsl:if test="current-group()[meta/level != 'collection']">
                      <div class="subdocuments">
                         <xsl:for-each select="current-group()[meta/level != 'collection']">
-                           <!--            <xsl:for-each select="current-group()[position() &lt; 5][meta/level != 'collection']">-->
                            <div class="subdocument">
                               <xsl:call-template name="subDocument"/>
+                           </div>
+                           <div id="moreInfo_{@rank}" class="subdocument moreInfo">
+                              <xsl:apply-templates mode="moreInfo"/>
                            </div>
                         </xsl:for-each>
                      </div>
                   </xsl:if>
-                  <!-- "more like this" -->
-                  <!--<div class="result similar">
-                     <div class="resultLabel">
-                        <xsl:text>Similar Items</xsl:text>
-                     </div>
-                     <div class="resultText">
-                        <script type="text/javascript">
-                     getMoreLike_<xsl:value-of select="@rank"/> = function() {
-                        var span = YAHOO.util.Dom.get('moreLike_<xsl:value-of select="@rank"/>');
-                        span.innerHTML = "Fetching...";
-                        YAHOO.util.Connect.asyncRequest('GET', 
-                           '<xsl:value-of select="concat('search?smode=moreLike;docsPerPage=5;identifier=', $identifier)"/>',
-                           { success: function(o) { span.innerHTML = o.responseText; },
-                             failure: function(o) { span.innerHTML = "Failed!" } 
-                           }, null);
-                     };
-                  </script>
-                        <span id="moreLike_{@rank}">
-                           <a href="javascript:getMoreLike_{@rank}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'similar items', 'find']);">Find</a>
-                        </span>
-                     </div>
-                  </div>-->
-               </div>
-
                </xsl:otherwise>
             </xsl:choose>
          
@@ -2089,14 +1793,9 @@
          </span>
       </div>
       </div>
-         <!-- 
-        <xsl:for-each select="current-group()[position() &lt; 5]">
-        <div>
-        <xsl:apply-templates select="docHit" mode="subDoc"/>
-        </div>
-        </xsl:for-each>
-        
-     --> 
+      <div id="moreInfo_{@rank}" class="moreInfo">
+         <xsl:apply-templates mode="moreInfo"/>
+      </div>
    </xsl:template>
       
    <xsl:template name="subDocument">
@@ -2141,22 +1840,7 @@
          </xsl:choose>
       </xsl:variable>
 
-      <!--<div class="hitRank">
-         <div style="height:18px; overflow:hidden;">
-                  <xsl:if test="meta/type = 'dao'">
-                     <img src="/xtf/icons/default/dao.gif" alt="digital object" title="digital object" style="float:right; padding-right:.75em;"/>
-                  </xsl:if>
-                  <xsl:choose>
-                     <xsl:when test="$sort = ''">
-                       <strong><xsl:value-of select="string(@rank)"/></strong>
-                     </xsl:when>
-                     <xsl:otherwise>
-                       <strong><xsl:value-of select="string(@rank)"/></strong>&#160;
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </div>
-            </div>-->
-      <div class="title">
+      <div class="result title">
          <a>
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
@@ -2184,18 +1868,17 @@
                </xsl:when>
                <xsl:otherwise>none</xsl:otherwise>
             </xsl:choose>
+            <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
+            <xsl:if test="meta/date">
+               <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+               <xsl:text>, </xsl:text>
+               <xsl:apply-templates select="meta/date"/>
+            </xsl:if>
          </a>
          <xsl:if test="meta/*:type = 'dao'">
             <img src="/xtf/icons/default/dao.gif" alt="digital object"
                title="digital object"/>
          </xsl:if>
-
-         <!--
-               <xsl:variable name="type" select="meta/type"/>
-                  <span class="typeIcon">
-                  <img src="{$icon.path}i_{$type}.gif" class="typeIcon"/>
-                  </span>
-               -->
       </div>
             
       <div class="bookbag">
@@ -2262,8 +1945,7 @@
                            </span>
                         </xsl:otherwise>
                      </xsl:choose>
-                     <xsl:value-of
-                        select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString, ';startDoc=', $startDoc))"
+                     <xsl:value-of select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString, ';startDoc=', $startDoc))"
                      />
                   </xsl:otherwise>
                </xsl:choose>
@@ -2271,26 +1953,18 @@
          </span>
       </div>
 
+         <!-- 11/14/2013 HA: added logic to display only snippets not already visible -->
          <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
          <xsl:choose>
             <xsl:when test="$browse-all"/>
             <xsl:otherwise>
                <xsl:if test="descendant-or-self::snippet[@sectionType = 'file']">
-                     <div class="result">
-                        <div class="resultLabel">
-                        <xsl:text>Matches</xsl:text>
-                           <br/>
-                        <!--(<xsl:value-of select="@totalHits"/>
-                           <xsl:value-of select="if (@totalHits = 1) then ' hit' else ' hits'"/>)-->
-                        </div>
-                        <div class="resultText">
-                           <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'file']" mode="text"/>
-                        </div>
+                     <div class="result matches">
+                         <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'file']" mode="text"/>
                      </div>
                </xsl:if>
             </xsl:otherwise>
          </xsl:choose>    
-
    </xsl:template>
 
    <!-- ====================================================================== -->
@@ -2399,6 +2073,20 @@
          <xsl:text>. </xsl:text>
       </li>
       
+   </xsl:template>
+   
+   <!-- ====================================================================== -->
+   <!-- Detailed Component Information Template                                                -->
+   <!-- ====================================================================== -->
+   <xsl:template match="docHit" mode="moreInfo" exclude-result-prefixes="#all">
+      <xsl:value-of select="meta/title"/>
+      <xsl:value-of select="meta/containers"/>
+      <h3>Located in</h3>
+      <xsl:value-of select="meta/parent"/>
+      <h3>Additional Information</h3>
+      <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c')]"/>
+      <h3>Restrictions</h3>
+      <xsl:apply-templates select="../*[(name() = 'accessrestrict' or name() = 'userestrict')]"/>
    </xsl:template>
    
 </xsl:stylesheet>
