@@ -1450,8 +1450,8 @@
          </div>
          
       </div>
-      <div id="moreInfo_{@rank}" class="moreInfo">
-         <xsl:apply-templates mode="moreInfo"/>
+      <div id="componentInfo_{@rank}" class="componentInfo">
+         <xsl:apply-templates mode="componentInfo"/>
       </div>
    </xsl:template>
    
@@ -1609,8 +1609,8 @@
                            <div class="subdocument">
                               <xsl:call-template name="subDocument"/>
                            </div>
-                           <div id="moreInfo_{@rank}" class="subdocument moreInfo">
-                              <xsl:apply-templates mode="moreInfo"/>
+                           <div id="componentInfo_{@rank}" class="subdocument componentInfo">
+                              <xsl:call-template name="componentInfo"/>
                            </div>
                         </xsl:for-each>
                      </div>
@@ -1694,8 +1694,8 @@
                            <div class="subdocument">
                               <xsl:call-template name="subDocument"/>
                            </div>
-                           <div id="moreInfo_{@rank}" class="subdocument moreInfo">
-                              <xsl:apply-templates mode="moreInfo"/>
+                           <div id="componentInfo_{@rank}" class="subdocument componentInfo">
+                              <xsl:call-template name="componentInfo"/>
                            </div>
                         </xsl:for-each>
                      </div>
@@ -1793,8 +1793,8 @@
          </span>
       </div>
       </div>
-      <div id="moreInfo_{@rank}" class="moreInfo">
-         <xsl:apply-templates mode="moreInfo"/>
+      <div id="componentInfo_{@rank}" class="componentInfo">
+         <xsl:call-template name="componentInfo"/>
       </div>
    </xsl:template>
       
@@ -2076,17 +2076,33 @@
    </xsl:template>
    
    <!-- ====================================================================== -->
-   <!-- Detailed Component Information Template                                                -->
+   <!-- Detailed Component Information Template                                -->
    <!-- ====================================================================== -->
-   <xsl:template match="docHit" mode="moreInfo" exclude-result-prefixes="#all">
-      <xsl:value-of select="meta/title"/>
-      <xsl:value-of select="meta/containers"/>
-      <h3>Located in</h3>
-      <xsl:value-of select="meta/parent"/>
-      <h3>Additional Information</h3>
-      <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c')]"/>
-      <h3>Restrictions</h3>
-      <xsl:apply-templates select="../*[(name() = 'accessrestrict' or name() = 'userestrict')]"/>
+   <xsl:template name="componentInfo" match="docHit" exclude-result-prefixes="#all">
+      <div class="componentInfo title">
+         <xsl:apply-templates select="meta/title"/>
+      </div>
+      <div class="componentInfo containers">
+         <xsl:value-of select="meta/containers"/>
+      </div>
+      <div class="parents">
+         <xsl:for-each select="meta/parent">
+            <div class="parent" style="padding-left:{(position() -1)}em">
+               <xsl:value-of select="."/>
+               <xsl:if test="position() != last()">
+                  <xsl:text> &gt; </xsl:text>
+               </xsl:if>
+            </div>
+         </xsl:for-each>
+      </div>
+      <div class="notes">
+         <h3>Additional Information</h3>
+         <xsl:apply-templates select="snippet[@sectionType='file']"/>
+      </div>
+      <div class="restrictions">
+         <h3>Restrictions</h3>
+         <xsl:apply-templates select="snippet[@sectionType='file']"/>
+      </div>
    </xsl:template>
    
 </xsl:stylesheet>
