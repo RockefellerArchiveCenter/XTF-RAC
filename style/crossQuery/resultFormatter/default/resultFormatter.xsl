@@ -176,6 +176,7 @@
             <xsl:copy-of select="$brand.links"/>
 
             <!-- AJAX support -->
+            <script src="script/rac/componentInfo.js" type="text/javascript"/>
             <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
             <script src="script/yui/connection-min.js" type="text/javascript"/>
             <script src="script/rac/facets.js" type="text/javascript"/>
@@ -437,7 +438,7 @@
                                     -->
                               </xsl:if>
                            </div>
-                           <div class="browse">
+                           <!--<div class="browse">
                               <h2>Browse</h2>
                               <div class="accordionButton category"><h3><img src="/xtf/icons/default/collections.gif" alt="archival collections" height="25px"/>Archival Collections</h3></div>
                               <div class="accordionContent">
@@ -457,7 +458,7 @@
                                  <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao" onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital-title']);">By Title</a></li>
                                  <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao" onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital-creator']);">By Creator</a></li>
                               </div>
-                           </div>
+                           </div>-->
                            
                         </div>
                         <div id="docHits">
@@ -544,13 +545,17 @@
                               </xsl:otherwise>
                            </xsl:choose>
 
-                           
                            <xsl:if test="@totalDocs > $docsPerPage">
                               <div class="pages">
                                  <xsl:call-template name="pages"/>
                               </div>
                            </xsl:if>
                         </div>
+                        
+                        <div class="componentDefault">
+                           <h3>Select a result to see more information</h3>
+                        </div>
+                        
                      </xsl:if>
 
                      <xsl:if test="($smode='showBag')">
@@ -1601,20 +1606,7 @@
                         </xsl:if>
                      </xsl:otherwise>
                   </xsl:choose>
-               </div>
-                  
-                  <xsl:if test="current-group()[meta/level != 'collection']">
-                     <div class="subdocuments">
-                        <xsl:for-each select="current-group()[meta/level != 'collection']">
-                           <div class="subdocument">
-                              <xsl:call-template name="subDocument"/>
-                           </div>
-                           <div id="componentInfo_{@rank}" class="subdocument componentInfo">
-                              <xsl:call-template name="componentInfo"/>
-                           </div>
-                        </xsl:for-each>
-                     </div>
-                  </xsl:if>                  
+               </div>                 
                
                </xsl:when>
                <xsl:otherwise>
@@ -1688,18 +1680,6 @@
                      </div>
                   </xsl:if>
                </div>
-                  <xsl:if test="current-group()[meta/level != 'collection']">
-                     <div class="subdocuments">
-                        <xsl:for-each select="current-group()[meta/level != 'collection']">
-                           <div class="subdocument">
-                              <xsl:call-template name="subDocument"/>
-                           </div>
-                           <div id="componentInfo_{@rank}" class="subdocument componentInfo">
-                              <xsl:call-template name="componentInfo"/>
-                           </div>
-                        </xsl:for-each>
-                     </div>
-                  </xsl:if>
                </xsl:otherwise>
             </xsl:choose>
          
@@ -1792,10 +1772,27 @@
             </xsl:if>
          </span>
       </div>
+         
+         <xsl:if test="current-group()[meta/level != 'collection']">
+            <div class="subdocuments">
+               <xsl:for-each select="current-group()[meta/level != 'collection']">
+                  <div class="subdocument">
+                     <xsl:if test="position() mod 2 = 1">
+                        <xsl:attribute name="class">subdocument odd</xsl:attribute>
+                     </xsl:if>
+                     <xsl:call-template name="subDocument"/>
+                  </div>
+                  <div id="componentInfo_{@rank}" class="componentInfo">
+                     <xsl:call-template name="componentInfo"/>
+                  </div>
+               </xsl:for-each>
+            </div>
+         </xsl:if> 
+         
       </div>
-      <div id="componentInfo_{@rank}" class="componentInfo">
+      <!--<div id="componentInfo_{@rank}" class="componentInfo">
          <xsl:call-template name="componentInfo"/>
-      </div>
+      </div>-->
    </xsl:template>
       
    <xsl:template name="subDocument">
@@ -1881,6 +1878,13 @@
          </xsl:if>
       </div>
             
+      <div class="showMore">
+         <a href="#">&gt;</a>
+      </div>
+      <div class="showLess">
+         <a href="#">&lt;</a>
+      </div>
+      
       <div class="bookbag">
          <!-- Add/remove logic for the session bag (only if session tracking enabled) -->
          <span class="addToBag">
@@ -1937,7 +1941,7 @@
                                     };
                                  </script>
                            <a href="javascript:add_{@rank}()">
-                              <img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
+                              <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                                  title="Added to bookbag"/>
                            </a>
                            <span id="add_{@rank}" class="caption">
@@ -2079,10 +2083,14 @@
    <!-- Detailed Component Information Template                                -->
    <!-- ====================================================================== -->
    <xsl:template name="componentInfo" match="docHit" exclude-result-prefixes="#all">
-      <div class="componentInfo title">
+      <div class="title">
          <xsl:apply-templates select="meta/title"/>
+         <xsl:if test="meta/date">
+            <xsl:text>, </xsl:text>
+            <xsl:apply-templates select="meta/date"/>
+         </xsl:if>
       </div>
-      <div class="componentInfo containers">
+      <div class="containers">
          <xsl:value-of select="meta/containers"/>
       </div>
       <div class="parents">

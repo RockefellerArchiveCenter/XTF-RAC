@@ -19,7 +19,8 @@ p{margin-top:0;margin-bottom:1em;}
 div.closeWindow {text-align:right !important; font-size:.85em !important; margin-top:1em;}
 div.closeWindow a{color: #C45414;}
 .getAddress{border-top:1px solid #999 !important; margin-top:24px !important;}
-.bookbag {width:3em; text-align:center;border:none; float:right;}
+.bookbag {width:3em; text-align:center;border:none; float:right;font-size:.7em;}
+.bookbag a {color:#c45414;text-decoration:none;}
 
 /* Formats header */
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
@@ -125,7 +126,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .homeDialog {border:1px solid #ccc; margin:1em; padding:1em;}
 
 /* Formats search results (number and type) */
-#results, #facets, .browse, .docHit {box-shadow: 0px 0px 10px #666;}
+#results, #facets, .browse, .docHit, .componentInfo, .componentDefault {box-shadow: 0px 0px 10px #666;}
 #results:hover, #facets:hover, .browse:hover, .docHit:hover {box-shadow: 0px 0px 5px #666;}
 .ra-query {float:none !important; display:inline !important;}
 .subQuery {float:none !important; display:inline !important;}
@@ -168,8 +169,8 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .facets li {list-style: none;margin: 0px;padding:1%;text-align:left;font-size:1em;display:none;}
 .facets li:nth-child(even) {background-color: rgb(228, 228, 228);}
 .facets #facets h2 {background-color:#174780}
-.facets .browse {float:left; width:100%;margin-top:3%; border-radius:5px 5px 0px 0px;}
-.facets #facets {float:left; width:100%;margin-top:3%; border-radius:5px 5px 0px 0px;}
+.facets .browse {float:left; width:100%;margin-top:.5em; border-radius:5px 5px 0px 0px;}
+.facets #facets {float:left; width:100%;margin-top:.5em; border-radius:5px 5px 0px 0px;}
 .facetMatch {font-weight:bold; color:#c45414;}
 .facetGroup .col3 {font-weight:bold; color:#c45414;}
 

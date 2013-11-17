@@ -134,50 +134,45 @@ div.docHit {
 
 .result.creator {color:#555}
 
-#docHits {float:right; width:73%;padding-bottom:1%}
+#docHits {float:left; width:48%;padding-bottom:1%}
 #docHits .hitRank {width:3%}
-#docHits .resultIcon {width:6%;}
+#docHits .resultIcon {width:9%;}
 #docHits .resultContent {width:82%;}
 #docHits .resultLabel {width:15%;}
 #docHits .resultText {width:80%;}
 
-.subdocuments {width: 94%;float: left;}
+.subdocuments {width: 91%;float: right;}
 .subdocument {float:left; padding-top:.5em;padding-bottom:.5em;padding-left:1%;padding-right:1%;min-height:3em;width:98%}
-.subdocument:nth-child(odd) {background: rgb(228, 228, 228);}
+.subdocument.odd {background: rgb(228, 228, 228);}
 .subdocument .title {width:80%; float:left;}
 .subdocument .matches {float:left;width:80%;margin-left:3%;font-size:.9em;margin-top:.5em;}
 .subdocument .result {font-size:.9em;}
 .subdocument .resultLabel {width:10% !important}
+.subdocument.active {background:rgba(196, 84, 20, 0.4);}
 
-div#main_2, div#main_4, div#main_6, div#main_8, div#main_10, div#main_12 {
-	
-}
+.showMore, .showLess {float:right;font-size: 2em;margin-left: 2%;padding: 0 1%;border-radius: 5px;}
+.showMore a, .showLess a {text-decoration:none; color: #666;text-shadow: 0px 1px 2px #333;}
+.showLess {display:none;background-color: rgb(228, 228, 228);border: 1px solid #999;}
 
-div.docHit table td.col1{
-   width: 4%;
-   text-align: left;
+.componentInfo, .componentDefault {
+    display:none;
+    width:21%;
+    position: fixed;
+    top: 17em;
+    right: 1%;
+    margin:.5em 1% 0 1%;
+    border-radius:5px;
+    background-color:#FAFAFB;
+    min-height:20em;
+    padding:1%
 }
+.componentDefault {display:block;}
+.componentDefault h3 {margin: 0;color: #666;}
 
-div.docHit table td.col2{
-   width: 10%;
-   text-align: right;
-}
-
-div.docHit table td.col3{
-   width: auto;
-   text-align: left;
-   min-width: 560px;
-}
-
-div.docHit table td.col4{
-   width: 10%;
-   text-align: right;
-}
-
-div.docHit .typeIcon {
-	vertical-align: text-top;
-	margin-left: 1px;
-}
+.componentInfo h3 {font-size:1em;color:#333}
+.componentInfo .title {font-weight:bold;font-size:1.3em;}
+.componentInfo .containers {width:100%; font-size:.8em}
+.componentInfo .parents {font-size:.8em}
 
 .hit {
    color: #c45414;
