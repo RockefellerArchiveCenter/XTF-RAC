@@ -1455,7 +1455,7 @@
          
       </div>
       <div id="componentInfo_{@rank}" class="componentInfo">
-         <xsl:apply-templates mode="componentInfo"/>
+         <xsl:call-template name="componentInfo"/>
       </div>
    </xsl:template>
    
