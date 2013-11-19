@@ -114,7 +114,8 @@
          </display>
          
          <!-- Parse the date field to create a year (or range of years) -->
-         <xsl:apply-templates select="$meta/*:date" mode="year"/>
+         <!-- 11/19/2013 HA: commenting out -->
+         <!-- <xsl:apply-templates select="$meta/*:date" mode="year"/> -->
          
          <!-- Create sort fields -->
          <xsl:apply-templates select="$meta/*:title[1]" mode="sort"/>         
@@ -135,12 +136,14 @@
          <xsl:apply-templates select="$meta/*:creator" mode="browse"/>
          
          <!-- 9/26/11 WS: added subject browse -->
-         <xsl:apply-templates select="$meta/*:subject" mode="browse"/>
+         <!-- 11/19/2013 HA: commenting out -->
+         <!--<xsl:apply-templates select="$meta/*:subject" mode="browse"/>-->
          
       </xtf:meta>
    </xsl:template>
    
    <!-- Parse the date to determine the year (or range of years) -->
+   <!-- 11/19/2013 HA: commenting out -->
    <xsl:template match="*:date" mode="year">
       <year xtf:meta="yes">
          <xsl:copy-of select="parse:year(string(.))"/>

@@ -356,7 +356,8 @@
                <xsl:call-template name="get-ead-url"/>
                <!-- special values for OAI -->
                <xsl:call-template name="oai-datestamp"/>
-               <xsl:call-template name="oai-set"/>
+               <!-- 11/19/2013 HA: commenting out -->
+               <!--<xsl:call-template name="oai-set"/>-->
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
