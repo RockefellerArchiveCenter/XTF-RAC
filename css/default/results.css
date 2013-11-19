@@ -115,10 +115,10 @@ div.facetGroup {
 div.docHit {
 	background-color: #FAFAFB;
 	margin: 1%;
-	width:96%;
 	padding:1%;
 	float:left;
 	border-radius:5px;
+	width:53%
 }
 
 .hitRank {float:left; width:2%;}
@@ -126,53 +126,81 @@ div.docHit {
 .resultContent {float:left; width:82%;}
 .result {float:left;width:100%;margin-bottom:.5em;}
 .result img, .title img {vertical-align:middle;}
-.result.title a {color:#333; text-decoration:none;}
-.result.title a:hover {color:#c45414}
-.result.title a:visited {color:#555}
+.result.title a, .componentInfo .title a {color:#333; text-decoration:none;}
+.result.title a:visited, .componentInfo .title a:visited {color:#555;}
+.result.title a:hover, .componentInfo .title a:hover {color:#c45414;text-decoration:underline}
 .resultContent>.result.title {font-size:1.3em;margin:0}
-.subdocument>.result.title {font-size:.9em;font-weight:bold}
+.subdocument>.result.title {width:84%;font-size:1em;font-weight:bold;margin:.5em 0}
 
 .result.creator {color:#555}
 
-#docHits {float:left; width:48%;padding-bottom:1%}
+#docHits {float:left; width:73%;padding-bottom:1%}
 #docHits .hitRank {width:3%}
-#docHits .resultIcon {width:9%;}
-#docHits .resultContent {width:82%;}
+#docHits .resultIcon {width:10%;}
+#docHits .resultContent {width:80%;}
 #docHits .resultLabel {width:15%;}
 #docHits .resultText {width:80%;}
 
-.subdocuments {width: 91%;float: right;}
-.subdocument {float:left; padding-top:.5em;padding-bottom:.5em;padding-left:1%;padding-right:1%;min-height:3em;width:98%}
+#docHits .dao .resultIcon {width:18%;}
+#docHits .dao .resultContent {width:72%;}
+
+.top-level {width: 100%;float: left;}
+.top-level>.bookbag {text-align:right;}
+
+.subdocuments {float: left;cursor:pointer;width:175%;padding-left:10%;}
+.subdocument {float:left; padding: .5em 1%;width:50%;}
 .subdocument.odd {background: rgb(228, 228, 228);}
-.subdocument .title {width:80%; float:left;}
-.subdocument .matches {float:left;width:80%;margin-left:3%;font-size:.9em;margin-top:.5em;}
+.subdocument .title {width:84%; float:left;}
+.subdocument .matches {float:left;width:100%;margin-left:3%;font-size:.9em;}
 .subdocument .result {font-size:.9em;}
 .subdocument .resultLabel {width:10% !important}
 .subdocument.active {background:rgba(196, 84, 20, 0.4);}
+.subdocument.active {background-color: #999 !important;border-left: .5em solid #c45414;width:52%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-left:1%; position:relative;z-index:2;
+transition: margin 0.2s;
+-webkit-transition: margin 0.2s;
+-moz-transition: margin 0.2s;
+-o-transition: margin 0.2s;}
+.subdocument.active .title, .subdocument.active .result {color:#fff}
+.subdocument.active .hit {color: #fff !important;}
 
-.showMore, .showLess {float:right;font-size: 2em;margin-left: 2%;padding: 0 1%;border-radius: 5px;}
-.showMore a, .showLess a {text-decoration:none; color: #666;text-shadow: 0px 1px 2px #333;}
-.showLess {display:none;background-color: rgb(228, 228, 228);border: 1px solid #999;}
+.showMore {width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #999;
+    content: " ";
+    float: left;
+    margin-top: 1%;
+    margin-left:2%}
+.showLess {width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #999;
+    content: " ";
+    float: right;
+    margin-right: -4%;
+    margin-top: 1%;}
+.showLess {display:none;}
 
 .componentInfo, .componentDefault {
     display:none;
-    width:21%;
-    position: fixed;
-    top: 17em;
-    right: 1%;
-    margin:.5em 1% 0 1%;
+    width:28%;
+    position: relative;
+    margin:0 1%;
     border-radius:5px;
     background-color:#FAFAFB;
-    min-height:20em;
-    padding:1%
+    padding:1%;
+    float:right;
+    min-height:6em;
 }
-.componentDefault {display:block;}
+.componentDefault {display:block;position:absolute; top: 17.8em; right: 1%;min-height:20em;}
 .componentDefault h3 {margin: 0;color: #666;}
-
 .componentInfo h3 {font-size:1em;color:#333}
 .componentInfo .title {font-weight:bold;font-size:1.3em;}
-.componentInfo .containers {width:100%; font-size:.8em}
+.componentInfo .containers {width:100%; font-size:1em; padding-bottom:.5em;}
 .componentInfo .parents {font-size:.8em}
+.componentInfo .notes, .componentInfo .restrictions {font-size:.9em;}
 
 .hit {
    color: #c45414;
@@ -216,6 +244,7 @@ div.facetLess:after {width: 0;height: 0;border-left: 6px solid transparent;borde
 div.facetLess, div.facetMore {color:#666666 !important;}
 div.facetLess:hover, div.facetMore:hover {color: #c45414 !important}
 .facets a {color:#174780 !important; text-decoration:none !important;}
+.browse a {color:#c45414 !important; text-decoration:none !important;}
 .facets a:hover {color: #c45414 !important; text-decoration:underline !important;}
 
 div.facetShow {float: right;

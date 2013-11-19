@@ -19,7 +19,7 @@ p{margin-top:0;margin-bottom:1em;}
 div.closeWindow {text-align:right !important; font-size:.85em !important; margin-top:1em;}
 div.closeWindow a{color: #C45414;}
 .getAddress{border-top:1px solid #999 !important; margin-top:24px !important;}
-.bookbag {width:3em; text-align:center;border:none; float:right;font-size:.7em;}
+.bookbag {width:10%; text-align:center;border:none; float:left;font-size:.7em;}
 .bookbag a {color:#c45414;text-decoration:none;}
 
 /* Formats header */
@@ -159,7 +159,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .pages .pageNumber {display:inline;vertical-align:middle;width: 1em;padding: .2em .3em .2em .3em;}
 #results .pageNumber {padding:.2em .4em .2em .4em;}
 
-#results {width:96%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:#eee;border-radius:5px;font-size:1em;}
+#results {width:53%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:#eee;border-radius:5px;font-size:1em;}
 #results select, #results input {font-size:1em;margin-top:0; margin-bottom:0;}
 #rss {float:left;margin-right:.5em;}
 #hits {float:left;margin-bottom:1%;width:32%}
@@ -168,6 +168,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .facets h2 {margin:0; padding:.5em;border-radius:5px 5px 0 0;background-color:#c45414; color:#fff;text-align:center;}
 .facets li {list-style: none;margin: 0px;padding:1%;text-align:left;font-size:1em;display:none;}
 .facets li:nth-child(even) {background-color: rgb(228, 228, 228);}
+.browse li {display:block}
 .facets #facets h2 {background-color:#174780}
 .facets .browse {float:left; width:100%;margin-top:.5em; border-radius:5px 5px 0px 0px;}
 .facets #facets {float:left; width:100%;margin-top:.5em; border-radius:5px 5px 0px 0px;}
@@ -185,7 +186,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 a.hit {background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !important;font-weight: bold;}
 .hit-count{background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !important;font-weight: bold;display:inline;}
 .subhit{background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !important;font-weight: bold;}
-.hit{color: #c45414 !important;font-weight: bold;}
+.hit{color: #c45414;font-weight: bold;}
 
 /*Formats document headers*/
 .bbar_custom {float:left;width:96%;border-right: 1px solid #666;border-left: 1px solid #666;border-top: 1px solid #999;border-bottom: 1px solid #999;background-color: #ddd;margin-left: 1%;margin-right: 1%;padding: 10px 1% 0 1%;border-radius: 5px 5px 0 0;height:100px;}

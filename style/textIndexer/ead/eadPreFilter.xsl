@@ -328,6 +328,7 @@
                <xsl:call-template name="get-ead-identifier"/>
                <xsl:call-template name="get-ead-level"/>
                <xsl:call-template name="get-ead-title"/>
+               <xsl:call-template name="get-ead-containers"/>
                <xsl:call-template name="get-ead-creator"/>
                <xsl:call-template name="get-ead-subject"/>
                <xsl:call-template name="get-ead-subjectpers"/>
@@ -349,6 +350,7 @@
                <xsl:call-template name="get-ead-scopecontent"/>
                <xsl:call-template name="get-ead-bioghist"/>
    -->
+               <xsl:call-template name="get-ead-restrictions"/>
                <xsl:call-template name="get-ead-rights"/>
                <!-- 9/9/2013 HA: Adding template for dao links -->
                <xsl:call-template name="get-ead-url"/>
@@ -443,13 +445,11 @@
             <level xtf:meta="true" xtf:tokenize="no">
                <xsl:value-of select="@level"/>
             </level>
-            <xsl:choose>
-               <xsl:when test="@level = 'item' or @level = 'file'">
-                  <seriesID xtf:meta="true" xtf:tokenize="no">
-                     <xsl:value-of select="ancestor::*[@level][1]/@id"/>
-                  </seriesID>
-               </xsl:when>
-            </xsl:choose>
+            <xsl:if test="@level != 'file' or @level != 'item'">
+               <componentID xtf:meta="true" xtf:tokenize="no">
+                  <xsl:value-of select="did/unitid"/>
+               </componentID>
+            </xsl:if>
          </xsl:when>
          <xsl:otherwise>
             <level xtf:meta="true" xtf:tokenize="no">collection</level>
@@ -592,6 +592,18 @@
             </title>
          </xsl:otherwise>
       </xsl:choose>
+   </xsl:template>
+   
+   <!-- containers -->
+   <xsl:template name="get-ead-containers">
+      <xsl:if test="child::did/container">
+         <containers xtf:meta="true">
+         <xsl:for-each select="did/container">
+            <xsl:value-of select="concat(' ',@type,' ',.)"/>
+            <xsl:if test="position()!=last()">, </xsl:if>
+         </xsl:for-each>
+         </containers>
+      </xsl:if>
    </xsl:template>
 
    <!-- creator -->
@@ -784,11 +796,16 @@
    <!-- description --> 
    <xsl:template name="get-ead-description">
       <xsl:choose>
-         <xsl:when test="@level">
-            <xsl:if test="did/abstract">
-               <description xtf:meta="true">
-                  <xsl:value-of select="string(did/abstract[1])"/>
-               </description>
+         <xsl:when test="@level != 'collection'">
+            <xsl:if test="did/physdesc/extent">
+               <extent xtf:meta="true">
+                  <xsl:value-of select="did/physdesc/extent"/>
+               </extent>
+            </xsl:if>
+            <xsl:if test="scopecontent">
+               <scopecontent xtf:meta="true">
+                  <xsl:value-of select="scopecontent/p"/>
+               </scopecontent>
             </xsl:if>
          </xsl:when>
          <xsl:when test="/ead/archdesc/did/abstract">
@@ -800,6 +817,48 @@
             <description xtf:meta="true">
                <xsl:value-of select="string(/ead/eadheader/filedesc/notestmt/note[1])"/>
             </description>
+         </xsl:when>
+      </xsl:choose>
+   </xsl:template>
+   
+   <!--restrictions-->
+   <xsl:template name="get-ead-restrictions">
+      <xsl:choose>
+         <xsl:when test="@level">
+            <xsl:choose>
+               <xsl:when test="accessrestrict">
+                  <accessrestrict xtf:meta="true">
+                     <xsl:value-of select="accessrestrict/p"/>
+                  </accessrestrict>
+               </xsl:when>
+               <xsl:when test="ancestor::*/child::accessrestrict">
+                  <accessrestrict xtf:meta="true">
+                     <xsl:value-of select="ancestor::*/child::accessrestrict/p"/>
+                  </accessrestrict>
+               </xsl:when>
+               <xsl:otherwise>
+                  <accessrestrict xtf:meta="true">
+                     <xsl:value-of select="/ead/archdesc/accessrestrict/p"/>
+                  </accessrestrict>
+               </xsl:otherwise>
+            </xsl:choose>
+            <xsl:choose>
+               <xsl:when test="userestrict">
+                  <userestrict xtf:meta="true">
+                     <xsl:value-of select="userestrict/p"/>
+                  </userestrict>
+               </xsl:when>
+               <xsl:when test="ancestor::*/child::userestrict">
+                  <userestrict xtf:meta="true">
+                     <xsl:value-of select="ancestor::*/child::userestrict/p"/>
+                  </userestrict>
+               </xsl:when>
+               <xsl:otherwise>
+                  <userestrict xtf:meta="true">
+                     <xsl:value-of select="/ead/archdesc/userestrict/p"/>
+                  </userestrict>
+               </xsl:otherwise>
+            </xsl:choose>
          </xsl:when>
       </xsl:choose>
    </xsl:template>
@@ -876,22 +935,22 @@
                   <xsl:when test="did/unitdate">
                      <xsl:value-of select="did/unitdate"/>
                   </xsl:when>
-                  <xsl:otherwise>
-                        <xsl:value-of select="'unknown'"/>
-                  </xsl:otherwise>
                </xsl:choose>
             </date>
+            <xsl:if test="/ead/archdesc/did/unitdate[@type='inclusive']">
+               <collectionDate xtf:meta="true">
+                  <xsl:value-of select="/ead/archdesc/did/unitdate[@type='inclusive']"/>
+               </collectionDate>
+            </xsl:if>
          </xsl:when>
          <xsl:when test="/ead/archdesc/did/unitdate[@type='inclusive']">
             <date xtf:meta="true">
                <xsl:value-of select="replace(string(/ead/archdesc/did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
             </date>
+            <collectionDate xtf:meta="true">
+               <xsl:value-of select="/ead/archdesc/did/unitdate[@type='inclusive']"/>
+            </collectionDate>
          </xsl:when>
-         <xsl:otherwise>
-            <date xtf:meta="true">
-               <xsl:value-of select="'unknown'"/>
-            </date>
-         </xsl:otherwise>
       </xsl:choose>
       <!--
       <xsl:choose>

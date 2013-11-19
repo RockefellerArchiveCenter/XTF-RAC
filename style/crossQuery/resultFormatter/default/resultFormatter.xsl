@@ -535,7 +535,7 @@
                            <xsl:choose>
                               <xsl:when test="$type = 'dao'">
                                  <xsl:for-each select="docHit">
-                                    <xsl:apply-templates select="."/>
+                                    <xsl:apply-templates select="." mode="docHit"/>
                                  </xsl:for-each>
                               </xsl:when>
                               <xsl:otherwise>
@@ -1042,27 +1042,27 @@
                <div id="docHits">
                <xsl:choose>
                   <xsl:when test="$browse-title">
-                     <xsl:apply-templates select="facet[@field='browse-title']/group/docHit"/>
+                     <xsl:apply-templates select="facet[@field='browse-title']/group/docHit" mode="docHit"/>
                   </xsl:when>
                   <xsl:when test="$browse-creator">
-                     <xsl:apply-templates select="facet[@field='browse-creator']/group/docHit"/>
+                     <xsl:apply-templates select="facet[@field='browse-creator']/group/docHit" mode="docHit"/>
                   </xsl:when>
                   <!-- 2/28/2013 HA: added browse option -->
                   <xsl:when test="$browse-updated">
-                     <xsl:apply-templates select="facet[@field='browse-updated']/group/docHit"/>
+                     <xsl:apply-templates select="facet[@field='browse-updated']/group/docHit" mode="docHit"/>
                   </xsl:when>
                   <!-- 9/26/11 WS: Added browse options -->
                   <xsl:when test="$browse-subject">
-                     <xsl:apply-templates select="facet[@field='browse-subject']/group/docHit"/>
+                     <xsl:apply-templates select="facet[@field='browse-subject']/group/docHit" mode="docHit"/>
                   </xsl:when>
                   <xsl:when test="$browse-subjectname">
-                     <xsl:apply-templates select="facet[@field='browse-subjectname']/group/docHit"/>
+                     <xsl:apply-templates select="facet[@field='browse-subjectname']/group/docHit" mode="docHit"/>
                   </xsl:when>
                   <xsl:when test="$browse-geogname">
-                     <xsl:apply-templates select="facet[@field='browse-geogname']/group/docHit"/>
+                     <xsl:apply-templates select="facet[@field='browse-geogname']/group/docHit" mode="docHit"/>
                   </xsl:when>
                   <xsl:otherwise>
-                     <xsl:apply-templates select="facet[@field='browse-creator']/group/docHit"/>
+                     <xsl:apply-templates select="facet[@field='browse-creator']/group/docHit" mode="docHit"/>
                   </xsl:otherwise>
                </xsl:choose>
                </div>
@@ -1200,7 +1200,7 @@
    <!-- Document Hit Template                                                  -->
    <!-- ====================================================================== -->
    
-   <xsl:template match="docHit" exclude-result-prefixes="#all">
+   <xsl:template mode="docHit" match="docHit" exclude-result-prefixes="#all">
       <xsl:variable name="chunk.id" select="@subDocument"/>         
       <xsl:variable name="level" select="meta/level"/>
       <xsl:variable name="path" select="@path"/>
@@ -1238,6 +1238,9 @@
          </xsl:choose>
       </xsl:variable>
       <div id="main_{@rank}" class="docHit">
+         <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
+            <xsl:attribute name="class">docHit dao</xsl:attribute>
+         </xsl:if>
          <!-- 11/15/2013 HA: streamlining display, removing labels, similar items and subjects -->
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
          <!-- 9/26/11 WS: Moved title above Author -->
@@ -1246,27 +1249,27 @@
                <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
                   <xsl:variable name="daoFile" select="substring-before(tokenize(meta/daoLink,'/')[position()=last()],'.')"/>
                   <xsl:variable name="daoImg" select="concat(string-join(tokenize(meta/daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/> 
-                  <a href="{$docPath}" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);"><img src="{$daoImg}" alt="Digital object thumbnail"/></a>
+                  <a href="{$docPath}" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);"><img src="{$daoImg}" alt="Digital object thumbnail" title="Digital object thumbnail"/></a>
                </xsl:when>
                <xsl:when test="meta/genre[contains(.,'DVD')]">
-                  <img src="/xtf/icons/default/video.gif" alt="Moving Image"/>
-                  <span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>
+                  <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
+                  <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>-->
                </xsl:when>
                <xsl:when test="meta/genre[contains(.,'Videocassette')]">
-                  <img src="/xtf/icons/default/video.gif" alt="Moving Image"/>
-                  <span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>
+                  <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
+                  <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>-->
                </xsl:when>
                <xsl:when test="meta/genre[contains(.,'Reel')]">
-                  <img src="/xtf/icons/default/microfilm.gif" alt="microfilm"/>
-                  <span style="font-size:.75em;color:#C45428;display:block;">Microfilm</span>
+                  <img src="/xtf/icons/default/microfilm.gif" alt="Microfilm" title="Microfilm"/>
+                  <!--<span style="font-size:.75em;color:#C45428;display:block;">Microfilm</span>-->
                </xsl:when>
                <xsl:when test="meta/genre[contains(.,'Volume')]">
-                  <img src="/xtf/icons/default/book.gif" alt="Book"/>
-                  <span style="font-size:.75em;color:#C45428;display:block;">Book</span>
+                  <img src="/xtf/icons/default/book.gif" alt="Book" title="Book"/>
+                  <!--<span style="font-size:.75em;color:#C45428;display:block;">Book</span>-->
                </xsl:when>
                <xsl:when test="meta/type = 'ead' and meta/type != 'dao'">
-                  <img src="/xtf/icons/default/collections.gif" alt="Collection"/>
-                  <span style="font-size:.75em;color:#C45428;display:block;">Collection</span>
+                  <img src="/xtf/icons/default/collections.gif" alt="Archival collection" title="Archival collection"/>
+                  <!--<span style="font-size:.75em;color:#C45428;display:block;">Collection</span>-->
                </xsl:when>
                <xsl:otherwise>
                   <xsl:value-of select="meta/genre"/>
@@ -1312,7 +1315,7 @@
                   <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
                   <xsl:if test="meta/date">
                         <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
-                        <xsl:text>, </xsl:text>
+                        <xsl:if test="meta/title != ''"><xsl:text>, </xsl:text></xsl:if>
                         <xsl:apply-templates select="meta/date"/>
                   </xsl:if>
                </a>
@@ -1323,18 +1326,6 @@
                </xsl:if>
             </div>
                         
-            <!-- 9/5/2013 HA: adding collection for DAO browse -->
-            <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level !='collection'">
-               <div class="result collection">
-                  <div class="resultLabel">
-                     <xsl:text>Collection</xsl:text>
-                  </div>
-                  <div class="resultText">
-                     <xsl:apply-templates select="meta/collectionTitle"/>
-                  </div>
-               </div>
-            </xsl:if>
-            
             <!-- 11/15/2013 HA: removing label and changing logic -->
             <xsl:if test="meta/creator">
                <div class="result creator">
@@ -1344,6 +1335,14 @@
                   </xsl:for-each>
                </div>
             </xsl:if>
+            
+            <!-- 9/5/2013 HA: adding collection for DAO browse -->
+            <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level !='collection'">
+               <div class="collection">
+                  <xsl:apply-templates select="meta/collectionTitle"/>
+               </div>
+            </xsl:if>
+
             
             <!-- 11/15/2013 HA: removing label -->
             <!-- 11/14/2013 HA: changing logic to only display snippets for hits not already visible -->
@@ -1439,9 +1438,9 @@
                                  </xsl:otherwise>
                               </xsl:choose>
                               <span id="add_{@rank}" class="caption">
-                                 <span class="caption">
+                                 <!--<span class="caption">
                                     <a href="javascript:add_{@rank}()">Add</a>
-                                 </span>
+                                 </span>-->
                               </span>
                            </xsl:otherwise>
                         </xsl:choose>
@@ -1461,7 +1460,7 @@
    </xsl:template>
    
    <xsl:template name="docHitColl" exclude-result-prefixes="#all">
-      <xsl:variable name="chunk.id" select="@subDocument"/>         
+      <xsl:variable name="chunk.id" select="@subDocument"/>
       <xsl:variable name="level" select="meta/level"/>
       <xsl:variable name="path" select="@path"/>
       <xsl:variable name="identifier" select="meta/identifier[1]"/>
@@ -1477,7 +1476,8 @@
          </xsl:variable>
          <xsl:choose>
             <xsl:when test="$chunk.id != ''">
-               <xsl:value-of select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+               <xsl:value-of
+                  select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
                <!-- Link used to get sub-document out of context               
                   <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
                -->
@@ -1511,185 +1511,198 @@
       <div id="main_{@rank}" class="docHit">
          <!-- 11/15/2013 HA: streamlining display, removing subjects, labels and find similar -->
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
-            <!-- Deals with collections vrs. series/files -->
+         <!-- Deals with collections vrs. series/files -->
+         <div class="top-level">
             <xsl:choose>
                <xsl:when test="meta/level = 'collection'">
-                     <div class="resultIcon">
-                        <xsl:choose>
-                           <xsl:when test="meta/genre[contains(.,'DVD')]">
-                              <img src="/xtf/icons/default/video.gif" alt="Moving Image"/>
-                              <span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>
-                           </xsl:when>
-                           <xsl:when test="meta/genre[contains(.,'Videocassette')]">
-                              <img src="/xtf/icons/default/video.gif" alt="Moving Image"/> 
-                              <span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>
-                           </xsl:when>
-                           <xsl:when test="meta/genre[contains(.,'Reel')]">
-                              <img src="/xtf/icons/default/microfilm.gif" alt="microfilm"/> 
-                              <span style="font-size:.75em;color:#C45428;display:block;">Microfilm</span>
-                           </xsl:when>                     
-                           <xsl:when test="meta/genre[contains(.,'Volume')]">
-                              <img src="/xtf/icons/default/book.gif" alt="Book"/>   
-                              <span style="font-size:.75em;color:#C45428;display:block;">Book</span>                        
-                           </xsl:when>
-                           <xsl:when test="meta/type = 'ead' and meta/type != 'dao'">
-                              <img src="/xtf/icons/default/collections.gif" alt="Collection"/>
-                              <span style="font-size:.75em;color:#C45428;display:block;">Collection</span>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <xsl:value-of select="meta/genre"/>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </div>
-                  
-               <div class="resultContent">
-                  <div class="result title">
-                     <a>
-                        <xsl:attribute name="href">
-                           <xsl:value-of select="$docPath"/>
-                        </xsl:attribute>
-                        <xsl:choose>
-                           <xsl:when test="meta/title">
-                              <xsl:choose>
-                                 <xsl:when test="count(meta/title) &gt; 1">
-                                    <xsl:apply-templates select="meta/title[2]"/>
-                                 </xsl:when>
-                                 <xsl:otherwise>
-                                    <xsl:apply-templates select="meta/title[1]"/>
-                                 </xsl:otherwise>
-                              </xsl:choose>
-                           </xsl:when>
-                           <xsl:when test="meta/subtitle">
-                              <xsl:choose>
-                                 <xsl:when test="count(meta/subtitle) &gt; 1">
-                                    <xsl:apply-templates select="meta/subtitle[2]"/>
-                                 </xsl:when>
-                                 <xsl:otherwise>
-                                    <xsl:apply-templates select="meta/subtitle[1]"/>
-                                 </xsl:otherwise>
-                              </xsl:choose>
-                           </xsl:when>
-                           <xsl:otherwise>none</xsl:otherwise>
-                        </xsl:choose>
-                        <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
-                        <xsl:if test="meta/date">
-                           <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
-                           <xsl:text>, </xsl:text>
-                           <xsl:apply-templates select="meta/date"/>
-                        </xsl:if>
-                     </a>
-                     <xsl:if test="meta/*:type = 'dao'">
-                        <img src="/xtf/icons/default/dao.gif" alt="digital object"
-                           title="digital object"/>
-                     </xsl:if>
+                  <div class="resultIcon">
+                     <xsl:choose>
+                        <xsl:when test="meta/genre[contains(.,'DVD')]">
+                           <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
+                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving
+                              Image</span>-->
+                        </xsl:when>
+                        <xsl:when test="meta/genre[contains(.,'Videocassette')]">
+                           <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
+                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving
+                              Image</span>-->
+                        </xsl:when>
+                        <xsl:when test="meta/genre[contains(.,'Reel')]">
+                           <img src="/xtf/icons/default/microfilm.gif" alt="Microfilm" title="Microfilm"/>
+                           <!--<span style="font-size:.75em;color:#C45428;display:block;"
+                              >Microfilm</span>-->
+                        </xsl:when>
+                        <xsl:when test="meta/genre[contains(.,'Volume')]">
+                           <img src="/xtf/icons/default/book.gif" alt="Book" title="Book"/>
+                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Book</span>-->
+                        </xsl:when>
+                        <xsl:when test="meta/type = 'ead' and meta/type != 'dao'">
+                           <img src="/xtf/icons/default/collections.gif" alt="Archival collection" title="Archival collection"/>
+                           <!--<span style="font-size:.75em;color:#C45428;display:block;"
+                              >Collection</span>-->
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:value-of select="meta/genre"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
                   </div>
 
-                  <!-- 11/15/2013 HA: removing label and changing logic -->
-                  <xsl:if test="meta/creator">
-                     <div class="result creator">
-                        <xsl:for-each select="meta/creator">
-                           <xsl:apply-templates select="."/>
-                           <br/>
-                        </xsl:for-each>
-                     </div>
-                  </xsl:if>
-
-                  <!-- 11/14/2013 HA: changing logic to only display snippets not already visible -->
-                  <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
-                  <xsl:choose>
-                     <xsl:when test="$browse-all"/>
-                     <xsl:otherwise>
-                        <xsl:if test="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']">
-                           <div class="result matches">
-                              <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']" mode="text"/>
-                           </div>
+                  <div class="resultContent">
+                     <div class="result title">
+                        <a>
+                           <xsl:attribute name="href">
+                              <xsl:value-of select="$docPath"/>
+                           </xsl:attribute>
+                           <xsl:choose>
+                              <xsl:when test="meta/title">
+                                 <xsl:choose>
+                                    <xsl:when test="count(meta/title) &gt; 1">
+                                       <xsl:apply-templates select="meta/title[2]"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                       <xsl:apply-templates select="meta/title[1]"/>
+                                    </xsl:otherwise>
+                                 </xsl:choose>
+                              </xsl:when>
+                              <xsl:when test="meta/subtitle">
+                                 <xsl:choose>
+                                    <xsl:when test="count(meta/subtitle) &gt; 1">
+                                       <xsl:apply-templates select="meta/subtitle[2]"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                       <xsl:apply-templates select="meta/subtitle[1]"/>
+                                    </xsl:otherwise>
+                                 </xsl:choose>
+                              </xsl:when>
+                              <xsl:otherwise>none</xsl:otherwise>
+                           </xsl:choose>
+                           <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
+                           <xsl:if test="meta/date">
+                              <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+                              <xsl:text>, </xsl:text>
+                              <xsl:apply-templates select="meta/date"/>
+                           </xsl:if>
+                        </a>
+                        <xsl:if test="meta/*:type = 'dao'">
+                           <img src="/xtf/icons/default/dao.gif" alt="digital object"
+                              title="digital object"/>
                         </xsl:if>
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </div>                 
-               
+                     </div>
+
+                     <!-- 11/15/2013 HA: removing label and changing logic -->
+                     <xsl:if test="meta/creator">
+                        <div class="result creator">
+                           <xsl:for-each select="meta/creator">
+                              <xsl:apply-templates select="."/>
+                              <br/>
+                           </xsl:for-each>
+                        </div>
+                     </xsl:if>
+
+                     <!-- 11/14/2013 HA: changing logic to only display snippets not already visible -->
+                     <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
+                     <xsl:choose>
+                        <xsl:when test="$browse-all"/>
+                        <xsl:otherwise>
+                           <xsl:if
+                              test="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']">
+                              <div class="result matches">
+                                 <xsl:apply-templates
+                                    select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']"
+                                    mode="text"/>
+                              </div>
+                           </xsl:if>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </div>
+
                </xsl:when>
                <xsl:otherwise>
-                  <xsl:variable name="collectionId" select="substring-before(meta/identifier[1],'|')"/>
-                     <div class="resultIcon">
-                        <xsl:choose>
-                           <xsl:when test="meta/genre[contains(.,'DVD')]">
-                              <img src="/xtf/icons/default/video.gif" alt="Moving Image"/>
-                              <span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>
-                           </xsl:when>
-                           <xsl:when test="meta/genre[contains(.,'Videocassette')]">
-                              <img src="/xtf/icons/default/video.gif" alt="Moving Image"/> 
-                              <span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>
-                           </xsl:when>
-                           <xsl:when test="meta/genre[contains(.,'Reel')]">
-                              <img src="/xtf/icons/default/microfilm.gif" alt="microfilm"/> 
-                              <span style="font-size:.75em;color:#C45428;display:block;">Microfilm</span>
-                           </xsl:when>                     
-                           <xsl:when test="meta/genre[contains(.,'Volume')]">
-                              <img src="/xtf/icons/default/book.gif" alt="Book"/>   
-                              <span style="font-size:.75em;color:#C45428;display:block;">Book</span>                        
-                           </xsl:when>
-                           <xsl:when test="meta/type = 'ead'">
-                              <img src="/xtf/icons/default/collections.gif" alt="Collection"/>
-                              <span style="font-size:.75em;color:#C45428;display:block;">Collection</span>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <xsl:value-of select="meta/genre"/>
-                           </xsl:otherwise>
-                        </xsl:choose>
+                  <xsl:variable name="collectionId"
+                     select="substring-before(meta/identifier[1],'|')"/>
+                  <div class="resultIcon">
+                     <xsl:choose>
+                        <xsl:when test="meta/genre[contains(.,'DVD')]">
+                           <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
+                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving
+                              Image</span>-->
+                        </xsl:when>
+                        <xsl:when test="meta/genre[contains(.,'Videocassette')]">
+                           <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
+                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving
+                              Image</span>-->
+                        </xsl:when>
+                        <xsl:when test="meta/genre[contains(.,'Reel')]">
+                           <img src="/xtf/icons/default/microfilm.gif" alt="Microfilm" title="Microfilm"/>
+                           <!--<span style="font-size:.75em;color:#C45428;display:block;"
+                              >Microfilm</span>-->
+                        </xsl:when>
+                        <xsl:when test="meta/genre[contains(.,'Volume')]">
+                           <img src="/xtf/icons/default/book.gif" alt="Book" title="Book"/>
+                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Book</span>-->
+                        </xsl:when>
+                        <xsl:when test="meta/type = 'ead'">
+                           <img src="/xtf/icons/default/collections.gif" alt="Archival collection" title="Archival collection"/>
+                           <!--<span style="font-size:.75em;color:#C45428;display:block;"
+                              >Collection</span>-->
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:value-of select="meta/genre"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </div>
+
+                  <div class="resultContent">
+                     <div class="result title">
+                        <a>
+                           <xsl:attribute name="href">
+                              <xsl:value-of select="$collPath"/>
+                           </xsl:attribute>
+                           <xsl:choose>
+                              <xsl:when test="meta/collectionTitle">
+                                 <xsl:apply-templates select="meta/collectionTitle"/>
+                              </xsl:when>
+                              <xsl:when test="meta/subtitle">
+                                 <xsl:apply-templates select="meta/subtitle"/>
+                              </xsl:when>
+                              <xsl:when test="meta/title">
+                                 <xsl:apply-templates select="meta/title"/>
+                              </xsl:when>
+                              <xsl:otherwise>none</xsl:otherwise>
+                           </xsl:choose>
+                           <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
+                           <xsl:if test="meta/collectionDate">
+                              <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+                              <xsl:text>, </xsl:text>
+                              <xsl:apply-templates select="meta/collectionDate"/>
+                           </xsl:if>
+                        </a>
+                        <xsl:if test="meta/*:type = 'dao'">
+                           <img src="/xtf/icons/default/dao.gif" alt="digital object"
+                              title="digital object"/>
+                        </xsl:if>
                      </div>
 
-               <div class="resultContent">
-                  <div class="result title">
-                     <a>
-                        <xsl:attribute name="href">
-                           <xsl:value-of select="$collPath"/>
-                        </xsl:attribute>
-                        <xsl:choose>
-                           <xsl:when test="meta/collectionTitle">
-                              <xsl:apply-templates select="meta/collectionTitle"/>
-                           </xsl:when>
-                           <xsl:when test="meta/subtitle">
-                              <xsl:apply-templates select="meta/subtitle"/>
-                           </xsl:when>
-                           <xsl:when test="meta/title">
-                              <xsl:apply-templates select="meta/title"/>
-                           </xsl:when>
-                           <xsl:otherwise>none</xsl:otherwise>
-                        </xsl:choose>
-                        <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
-                        <xsl:if test="meta/date">
-                           <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
-                           <xsl:text>, </xsl:text>
-                           <xsl:apply-templates select="meta/date"/>
-                        </xsl:if>
-                     </a>
-                     <xsl:if test="meta/*:type = 'dao'">
-                        <img src="/xtf/icons/default/dao.gif" alt="digital object"
-                           title="digital object"/>
+                     <!-- 11/15/2013 HA: removing label and changing logic -->
+                     <xsl:if test="meta/creator">
+                        <div class="result creator">
+                           <xsl:for-each select="meta/creator">
+                              <xsl:apply-templates select="."/>
+                              <br/>
+                           </xsl:for-each>
+                        </div>
                      </xsl:if>
-               </div>
-                     
-                  <!-- 11/15/2013 HA: removing label and changing logic -->
-                  <xsl:if test="meta/creator">
-                     <div class="result creator">
-                        <xsl:for-each select="meta/creator">
-                           <xsl:apply-templates select="."/>
-                           <br/>
-                        </xsl:for-each>
-                     </div>
-                  </xsl:if>
-               </div>
+                  </div>
                </xsl:otherwise>
             </xsl:choose>
-         
-      <div class="bookbag">
-         <!-- Add/remove logic for the session bag (only if session tracking enabled) -->
-         <span class="addToBag">
-            <xsl:if test="session:isEnabled()">
-               <xsl:choose>
-                  <xsl:when test="$smode = 'showBag'">
-                     <script type="text/javascript">
+
+            <div class="bookbag">
+               <!-- Add/remove logic for the session bag (only if session tracking enabled) -->
+               <span class="addToBag">
+                  <xsl:if test="session:isEnabled()">
+                     <xsl:choose>
+                        <xsl:when test="$smode = 'showBag'">
+                           <script type="text/javascript">
                               remove_<xsl:value-of select="@rank"/> = function() {
                                  var span = YAHOO.util.Dom.get('remove_<xsl:value-of select="@rank"/>');
                                  span.innerHTML = "Deleting...";
@@ -1704,27 +1717,26 @@
                                     }, null);
                               };
                            </script>
-                     <span id="remove_{@rank}">
-                        <a href="javascript:remove_{@rank}()">Delete</a>
-                     </span>
-                  </xsl:when>
-                  <xsl:when test="session:noCookie()">
-                     <span>
-                        <a
-                           href="javascript:alert('To use the bag, you must enable cookies in your web browser.')"
-                           >Requires cookie*</a>
-                     </span>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     <xsl:choose>
-                        <xsl:when
-                           test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                           <!--<img src="/xtf/icons/default/addbag.gif"
-                              alt="Added to bookbag" title="Added to bookbag"/>-->
-                           <span class="caption">Added</span>
+                           <span id="remove_{@rank}">
+                              <a href="javascript:remove_{@rank}()">Delete</a>
+                           </span>
+                        </xsl:when>
+                        <xsl:when test="session:noCookie()">
+                           <span>
+                              <a
+                                 href="javascript:alert('To use the bag, you must enable cookies in your web browser.')"
+                                 >Requires cookie*</a>
+                           </span>
                         </xsl:when>
                         <xsl:otherwise>
-                           <script type="text/javascript">
+                           <xsl:choose>
+                              <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
+                                 <!--<img src="/xtf/icons/default/addbag.gif"
+                              alt="Added to bookbag" title="Added to bookbag"/>-->
+                                 <span class="caption">Added</span>
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <script type="text/javascript">
                                     add_<xsl:value-of select="@rank"/> = function() {
                                        var span = YAHOO.util.Dom.get('add_<xsl:value-of select="@rank"/>');
                                        span.innerHTML = "Adding...";
@@ -1740,43 +1752,45 @@
                                           }, null);
                                     };
                                             </script>
-                           <xsl:choose>
-                              <xsl:when test="meta/type = 'ead'">
-                                 <a href="javascript:add_{@rank}()"
-                                    onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);">
-                                    <img src="/xtf/icons/default/addbag.gif"
-                                       alt="Add to bookbag" title="Add to bookbag"/>
-                                 </a>
+                                 <xsl:choose>
+                                    <xsl:when test="meta/type = 'ead'">
+                                       <a href="javascript:add_{@rank}()"
+                                          onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);">
+                                          <img src="/xtf/icons/default/addbag.gif"
+                                             alt="Add to bookbag" title="Add to bookbag"/>
+                                       </a>
 
-                              </xsl:when>
-                              <xsl:otherwise>
-                                 <a href="javascript:add_{@rank}()"
-                                    onClick="_gaq.push(['_trackEvent', 'interaction', 'add-library', 'bookbag']);">
-                                    <img src="/xtf/icons/default/addbag.gif"
-                                       alt="Add to bookbag" title="Add to bookbag"/>
-                                 </a>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                       <a href="javascript:add_{@rank}()"
+                                          onClick="_gaq.push(['_trackEvent', 'interaction', 'add-library', 'bookbag']);">
+                                          <img src="/xtf/icons/default/addbag.gif"
+                                             alt="Add to bookbag" title="Add to bookbag"/>
+                                       </a>
 
+                                    </xsl:otherwise>
+                                 </xsl:choose>
+
+                                 <!--<span id="add_{@rank}" class="caption">
+                                    <a href="javascript:add_{@rank}()">Add</a>
+                                 </span>-->
                               </xsl:otherwise>
                            </xsl:choose>
-
-                           <span id="add_{@rank}" class="caption">
-                              <a href="javascript:add_{@rank}()">Add</a>
-                           </span>
+                           <xsl:value-of
+                              select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString, ';startDoc=', $startDoc))"
+                           />
                         </xsl:otherwise>
                      </xsl:choose>
-                     <xsl:value-of
-                        select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString, ';startDoc=', $startDoc))"
-                     />
-                  </xsl:otherwise>
-               </xsl:choose>
-            </xsl:if>
-         </span>
-      </div>
-         
+                  </xsl:if>
+               </span>
+            </div>
+         </div>
+
          <xsl:if test="current-group()[meta/level != 'collection']">
             <div class="subdocuments">
                <xsl:for-each select="current-group()[meta/level != 'collection']">
-                  <div class="subdocument">
+                  <div class="subdocumentWrap">
+                  <div id="subdocument_{@rank}" class="subdocument">
                      <xsl:if test="position() mod 2 = 1">
                         <xsl:attribute name="class">subdocument odd</xsl:attribute>
                      </xsl:if>
@@ -1785,14 +1799,11 @@
                   <div id="componentInfo_{@rank}" class="componentInfo">
                      <xsl:call-template name="componentInfo"/>
                   </div>
+                  </div>
                </xsl:for-each>
             </div>
-         </xsl:if> 
-         
+         </xsl:if>
       </div>
-      <!--<div id="componentInfo_{@rank}" class="componentInfo">
-         <xsl:call-template name="componentInfo"/>
-      </div>-->
    </xsl:template>
       
    <xsl:template name="subDocument">
@@ -1836,13 +1847,20 @@
             </xsl:when>
          </xsl:choose>
       </xsl:variable>
-
+      
       <div class="result title">
-         <a>
-            <xsl:attribute name="href">
-               <xsl:value-of select="$docPath"/>
-            </xsl:attribute>
-            <xsl:choose>
+         <xsl:choose>
+            <xsl:when test="meta/level = 'series'">Series </xsl:when>
+            <xsl:when test="meta/level = 'subseries'">Subseries </xsl:when>
+            <xsl:when test="meta/level = 'recordgrp'">Record Group </xsl:when>
+            <xsl:when test="meta/level = 'subgrp'">Subgroup </xsl:when>
+            <xsl:otherwise/>
+         </xsl:choose>
+         <xsl:if test="meta/componentID != ''">
+            <xsl:apply-templates select="meta/componentID"/>
+            <xsl:text>: </xsl:text>
+         </xsl:if>
+           <xsl:choose>
                <xsl:when test="meta/title">
                   <xsl:choose>
                      <xsl:when test="count(meta/title) &gt; 1">
@@ -1866,25 +1884,17 @@
                <xsl:otherwise>none</xsl:otherwise>
             </xsl:choose>
             <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
-            <xsl:if test="meta/date">
+            <xsl:if test="meta/date != ''">
                <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
                <xsl:text>, </xsl:text>
                <xsl:apply-templates select="meta/date"/>
             </xsl:if>
-         </a>
          <xsl:if test="meta/*:type = 'dao'">
             <img src="/xtf/icons/default/dao.gif" alt="digital object"
                title="digital object"/>
          </xsl:if>
       </div>
             
-      <div class="showMore">
-         <a href="#">&gt;</a>
-      </div>
-      <div class="showLess">
-         <a href="#">&lt;</a>
-      </div>
-      
       <div class="bookbag">
          <!-- Add/remove logic for the session bag (only if session tracking enabled) -->
          <span class="addToBag">
@@ -1942,11 +1952,11 @@
                                  </script>
                            <a href="javascript:add_{@rank}()">
                               <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
-                                 title="Added to bookbag"/>
+                                 title="Add to bookbag"/>
                            </a>
-                           <span id="add_{@rank}" class="caption">
+                           <!--<span id="add_{@rank}" class="caption">
                               <a href="javascript:add_{@rank}()">Add</a>
-                           </span>
+                           </span>-->
                         </xsl:otherwise>
                      </xsl:choose>
                      <xsl:value-of select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString, ';startDoc=', $startDoc))"
@@ -1956,15 +1966,19 @@
             </xsl:if>
          </span>
       </div>
+      
+      <div class="showMore"></div>
+      <div class="showLess"></div>
+
 
          <!-- 11/14/2013 HA: added logic to display only snippets not already visible -->
          <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
          <xsl:choose>
             <xsl:when test="$browse-all"/>
             <xsl:otherwise>
-               <xsl:if test="descendant-or-self::snippet[@sectionType = 'file']">
+               <xsl:if test="descendant-or-self::snippet[(@sectionType = 'file' or @sectionType = 'series' or @sectionType = 'subseries' or @sectionType = 'otherlevel' or @sectionType = 'collection')]">
                      <div class="result matches">
-                         <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'file']" mode="text"/>
+                        <xsl:apply-templates select="descendant-or-self::snippet[(@sectionType = 'file' or @sectionType = 'series' or @sectionType = 'subseries' or @sectionType = 'otherlevel' or @sectionType = 'collection')]" mode="text"/>
                      </div>
                </xsl:if>
             </xsl:otherwise>
@@ -2083,34 +2097,86 @@
    <!-- Detailed Component Information Template                                -->
    <!-- ====================================================================== -->
    <xsl:template name="componentInfo" match="docHit" exclude-result-prefixes="#all">
+      <xsl:variable name="chunk.id" select="@subDocument"/>
+      <xsl:variable name="path" select="@path"/>
+      <xsl:variable name="docPath">
+         <xsl:variable name="uri">
+            <xsl:call-template name="dynaxml.url">
+               <xsl:with-param name="path" select="$path"/>
+               <xsl:with-param name="chunk.id" select="'headerlink'"/>
+            </xsl:call-template>
+         </xsl:variable>
+         <xsl:choose>
+            <xsl:when test="$chunk.id != ''">
+               <xsl:value-of select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="$uri"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
       <div class="title">
-         <xsl:apply-templates select="meta/title"/>
-         <xsl:if test="meta/date">
-            <xsl:text>, </xsl:text>
-            <xsl:apply-templates select="meta/date"/>
-         </xsl:if>
+         <a>
+            <xsl:attribute name="href">
+               <xsl:value-of select="$docPath"/>
+            </xsl:attribute>
+            <xsl:choose>
+               <xsl:when test="meta/level = 'series'">Series </xsl:when>
+               <xsl:when test="meta/level = 'subseries'">Subseries </xsl:when>
+               <xsl:when test="meta/level = 'recordgrp'">Record Group </xsl:when>
+               <xsl:when test="meta/level = 'subgrp'">Subgroup </xsl:when>
+               <xsl:otherwise/>
+            </xsl:choose>
+            <xsl:if test="meta/componentID != ''">
+               <xsl:apply-templates select="meta/componentID"/>
+               <xsl:text>: </xsl:text>
+            </xsl:if>
+            <xsl:apply-templates select="meta/title"/>
+            <xsl:if test="meta/date">
+               <xsl:text>, </xsl:text>
+               <xsl:apply-templates select="meta/date"/>
+            </xsl:if>
+         </a>
       </div>
-      <div class="containers">
-         <xsl:value-of select="meta/containers"/>
-      </div>
+      <xsl:if test="meta/level = 'file'">
+         <div class="containers">
+            <xsl:value-of select="meta/containers"/>
+         </div>
+      </xsl:if>
       <div class="parents">
          <xsl:for-each select="meta/parent">
             <div class="parent" style="padding-left:{(position() -1)}em">
                <xsl:value-of select="."/>
-               <xsl:if test="position() != last()">
+               <!--<xsl:if test="position() != last()">
                   <xsl:text> &gt; </xsl:text>
-               </xsl:if>
+               </xsl:if>-->
             </div>
          </xsl:for-each>
       </div>
-      <div class="notes">
-         <h3>Additional Information</h3>
-         <xsl:apply-templates select="snippet[@sectionType='file']"/>
-      </div>
-      <div class="restrictions">
-         <h3>Restrictions</h3>
-         <xsl:apply-templates select="snippet[@sectionType='file']"/>
-      </div>
+      <xsl:if test="meta/extent != ''">
+         <div class="notes">
+            <h4>Extent</h4>
+            <xsl:apply-templates select="meta/extent"/>
+         </div>
+      </xsl:if>
+      <xsl:if test="meta/scopecontent != ''">
+         <div class="notes">
+            <h4>Additional Description</h4>
+            <xsl:apply-templates select="meta/scopecontent"/>
+         </div>
+      </xsl:if>
+      <xsl:if test="meta/accessrestrict != ''">
+         <div class="restrictions">
+            <h4>Access Restrictions</h4>
+            <xsl:apply-templates select="meta/accessrestrict"/>
+         </div>
+      </xsl:if>
+      <xsl:if test="meta/userestrict != ''">
+         <div class="restrictions">
+            <h4>Use Restrictions</h4>
+            <xsl:apply-templates select="meta/userestrict"/>
+         </div>
+      </xsl:if>
    </xsl:template>
    
 </xsl:stylesheet>

@@ -23,116 +23,7 @@
       <script type="text/javascript" src="/xtf/script/rac/active.js"/>
       <script type="text/javascript" src="/xtf/script/rac/jquery.cookie.js"></script>
       <script type="text/javascript" src="/xtf/script/rac/dialog.js"/>
-      <script type="text/javascript" language="JavaScript">
-         <!--
-         		if (isNS4) {
-         			document.write("<link rel='stylesheet' type='text/css' href='/css/globalStyleNS4.css'>")
-         		}
-         		
-         		
-         		function dhtmlShow(submenu, num) {
-         
-         			var uselayers = false;
-         			if((navigator.appName == "Netscape")&&(parseInt(navigator.appVersion)<5)) uselayers = true;
-         
-         			if (uselayers)
-         			{
-         				if(window.document.layers[submenu])
-         				{
-         					window.document.layers[submenu].visibility = 'show';
-         					var menu = submenu.substr(0,13);
-         					window.document.layers[menu].visibility = 'show';
-         					for(i=1; i <= num; i++) {
-         						var usel = menu + "_" + i;
-         						if (usel == submenu) {
-         							continue;
-         						}
-         						window.document.layers[usel].visibility = 'hide';
-         					}
-         				} 
-         			} else 
-         			{
-         				if(document.getElementById(submenu))
-         				{
-         					div = document.getElementById(submenu);
-         					div.style.visibility = "visible";
-         					var menu = submenu.substr(0,13);
-         					var divp = document.getElementById(menu);
-         					divp.style.visibility = "visible";
-         					for(i=1; i <= num; i++) {
-         						var usediv = menu + "_" + i;
-         						if (usediv == submenu) {
-         							continue;
-         						}
-         						var usedivi = document.getElementById(usediv);
-         						usedivi.style.visibility = 'hidden';
-         					}
-         				}
-         			}
-         		}
-         
-         
-         		function dhtmlHide(submenu) {
-         
-         			var uselayers = false;
-         			if((navigator.appName == "Netscape")&&(parseInt(navigator.appVersion)<5)) uselayers = true;
-         
-         			if (uselayers)
-         			{
-         				if(window.document.layers[submenu])
-         				{
-         					window.document.layers[submenu].visibility = 'hide';
-         				} 
-         			} else 
-         			{
-         				if(document.getElementById(submenu))
-         				{
-         					div = document.getElementById(submenu);
-         					div.style.visibility = "hidden";
-         				}
-         			}
-         		}			
-         		
-         	// -->
-      </script>
-      <script type="text/javascript" language="JavaScript">
-         <!--
-            
-            function newImage(arg) {
-            if (document.images) {
-            rslt = new Image();
-            rslt.src = arg;
-            return rslt;
-            }
-            }
-            
-            function changeImages() {
-            if (document.images && (preloadFlag == true)) {
-            for (var i=0; i<changeImages.arguments.length; i+=2) {
-            document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
-            }
-            }
-            }
-            
-            var preloadFlag = false;
-            function preloadImages() {
-            if (document.images) {
-            
-            
-            navOption0_over = newImage("/images/nav2_about.gif");
-            navOption2_over = newImage("/images/nav2_grants.gif");
-            navOption3_over = newImage("/images/nav2_collections.gif");
-            navOption4_over = newImage("/images/nav2_programs.gif");
-            navOption5_over = newImage("/images/nav2_rockefellers.gif");
-            navOption1_over = newImage("/images/nav2_researchers.gif");
-            navOption6_over = newImage("/images/nav2_search.gif");
-            
-            preloadFlag = true;
-            }
-            }
-            
-            // -->
-      </script>
+      
       <!--<script type="text/javascript">
          $(document).ready(function() {
          if(screen.width &gt; 600) {
@@ -209,116 +100,7 @@
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/bootstrap-scrollspy.js"></script>
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/scroll.js"></script>
       <script type="text/javascript" src="/xtf/script/rac/dialog.js"/>
-      <script type="text/javascript" language="JavaScript">
-         	<!--
-         		if (isNS4) {
-         			document.write("<link rel='stylesheet' type='text/css' href='/css/globalStyleNS4.css'>")
-         		}
-         		
-         		
-         		function dhtmlShow(submenu, num) {
          
-         			var uselayers = false;
-         			if((navigator.appName == "Netscape")&&(parseInt(navigator.appVersion)<5)) uselayers = true;
-         
-         			if (uselayers)
-         			{
-         				if(window.document.layers[submenu])
-         				{
-         					window.document.layers[submenu].visibility = 'show';
-         					var menu = submenu.substr(0,13);
-         					window.document.layers[menu].visibility = 'show';
-         					for(i=1; i <= num; i++) {
-         						var usel = menu + "_" + i;
-         						if (usel == submenu) {
-         							continue;
-         						}
-         						window.document.layers[usel].visibility = 'hide';
-         					}
-         				} 
-         			} else 
-         			{
-         				if(document.getElementById(submenu))
-         				{
-         					div = document.getElementById(submenu);
-         					div.style.visibility = "visible";
-         					var menu = submenu.substr(0,13);
-         					var divp = document.getElementById(menu);
-         					divp.style.visibility = "visible";
-         					for(i=1; i <= num; i++) {
-         						var usediv = menu + "_" + i;
-         						if (usediv == submenu) {
-         							continue;
-         						}
-         						var usedivi = document.getElementById(usediv);
-         						usedivi.style.visibility = 'hidden';
-         					}
-         				}
-         			}
-         		}
-         
-         
-         		function dhtmlHide(submenu) {
-         
-         			var uselayers = false;
-         			if((navigator.appName == "Netscape")&&(parseInt(navigator.appVersion)<5)) uselayers = true;
-         
-         			if (uselayers)
-         			{
-         				if(window.document.layers[submenu])
-         				{
-         					window.document.layers[submenu].visibility = 'hide';
-         				} 
-         			} else 
-         			{
-         				if(document.getElementById(submenu))
-         				{
-         					div = document.getElementById(submenu);
-         					div.style.visibility = "hidden";
-         				}
-         			}
-         		}			
-         		
-         	// -->
-      </script>
-      <script type="text/javascript" language="JavaScript">
-         <!--
-            
-            function newImage(arg) {
-            if (document.images) {
-            rslt = new Image();
-            rslt.src = arg;
-            return rslt;
-            }
-            }
-            
-            function changeImages() {
-            if (document.images && (preloadFlag == true)) {
-            for (var i=0; i<changeImages.arguments.length; i+=2) {
-            document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
-            }
-            }
-            }
-            
-            var preloadFlag = false;
-            function preloadImages() {
-            if (document.images) {
-            
-            
-            navOption0_over = newImage("/images/nav2_about.gif");
-            navOption2_over = newImage("/images/nav2_grants.gif");
-            navOption3_over = newImage("/images/nav2_collections.gif");
-            navOption4_over = newImage("/images/nav2_programs.gif");
-            navOption5_over = newImage("/images/nav2_rockefellers.gif");
-            navOption1_over = newImage("/images/nav2_researchers.gif");
-            navOption6_over = newImage("/images/nav2_search.gif");
-            
-            preloadFlag = true;
-            }
-            }
-            
-            // -->
-      </script>      
       
       <!--<script type="text/javascript">
                       $(document).ready(function() {
@@ -4216,8 +3998,8 @@
                               </td>
                            </tr>
                         </table>
-                        <script type="text/javascript" language="JavaScript">
-                           <!--
+                        <!--<script type="text/javascript" language="JavaScript">
+                           
 					if (!uselayers) {
 						for (i=0; i<document.getElementsByTagName('div').length; i++) {
 							if (document.getElementsByTagName('div')[i].id.length>5) {
@@ -4225,8 +4007,8 @@
 							}
 						}
 					}
-				//  -->
-                        </script>
+				// 
+                        </script> -->
                      </td>
                      <td width="5" rowspan="3">
                         <img src="http://www.rockarch.org/images/spacer.gif" width="5" height="1" alt=""/>
