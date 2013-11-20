@@ -115,7 +115,7 @@
          
          <!-- Parse the date field to create a year (or range of years) -->
          <!-- 11/19/2013 HA: commenting out -->
-         <!-- <xsl:apply-templates select="$meta/*:date" mode="year"/> -->
+         <xsl:apply-templates select="$meta/*:date" mode="year"/>
          
          <!-- Create sort fields -->
          <xsl:apply-templates select="$meta/*:title[1]" mode="sort"/>         
@@ -123,7 +123,8 @@
          <xsl:apply-templates select="$meta/*:date[1]" mode="sort"/>
          
          <!-- Create facets -->
-         <xsl:apply-templates select="$meta/*:date" mode="facet"/>
+         <!-- 11/20/2013 HA: commenting out -->
+         <!-- <xsl:apply-templates select="$meta/*:date" mode="facet"/> -->
          <xsl:apply-templates select="$meta/*:subject" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subjectpers" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subjectcorp" mode="facet"/>
@@ -143,7 +144,6 @@
    </xsl:template>
    
    <!-- Parse the date to determine the year (or range of years) -->
-   <!-- 11/19/2013 HA: commenting out -->
    <xsl:template match="*:date" mode="year">
       <year xtf:meta="yes">
          <xsl:copy-of select="parse:year(string(.))"/>
