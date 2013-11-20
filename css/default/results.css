@@ -154,6 +154,7 @@ div.docHit {
 .subdocument .matches {float:left;width:100%;margin-left:3%;font-size:.9em;}
 .subdocument .result {font-size:.9em;}
 .subdocument .resultLabel {width:10% !important}
+.subdocument:hover {background: #bbb;}
 .subdocument.active {background:rgba(196, 84, 20, 0.4);}
 .subdocument.active {background-color: #999 !important;border-left: .5em solid #cc3300;width:52%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-left:1%; position:relative;z-index:2;
 transition: margin 0.2s;
