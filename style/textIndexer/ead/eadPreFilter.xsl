@@ -1032,16 +1032,46 @@
    <!-- language -->
    <xsl:template name="get-ead-language">
       <xsl:choose>
-         <xsl:when test="@level"/>
-         <xsl:when test="/ead/eadheader/profiledesc/langusage/language">
-            <language xtf:meta="true">
-               <xsl:value-of select="string(/ead/eadheader/profiledesc/langusage/language[1])"/>
-            </language>
-         </xsl:when>
+         <xsl:when test="did/langmaterial/language">
+               <language xtf:meta="true">
+                  <xsl:choose>
+                     <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'bur'">Burmese</xsl:when>
+                     <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'chi'">Chinese</xsl:when>
+                     <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'dut'">Dutch</xsl:when>
+                     <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'eng'">English</xsl:when>
+                     <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'fre'">French</xsl:when>
+                     <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'gre'">Modern Greek</xsl:when>
+                     <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'mul'">Multiple languages</xsl:when>
+                     <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'por'">Portuguese</xsl:when>
+                     <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'spa'">Spanish</xsl:when>
+                     <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'tha'">Thai</xsl:when>
+                  </xsl:choose>
+               </language>
+            </xsl:when>
          <xsl:otherwise>
-            <language xtf:meta="true">
-               <xsl:value-of select="'english'"/>
-            </language>
+            <xsl:choose>
+               <xsl:when test="/ead/archdesc/did/langmaterial/language[@langcode]">
+                  <language xtf:meta="true">
+                     <xsl:choose>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'bur'">Burmese</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'chi'">Chinese</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'dut'">Dutch</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'eng'">English</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'fre'">French</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'gre'">Modern Greek</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'mul'">Multiple languages</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'por'">Portuguese</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'spa'">Spanish</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'tha'">Thai</xsl:when>
+                     </xsl:choose>
+                  </language>
+               </xsl:when>
+               <xsl:otherwise>
+                  <language xtf:meta="true">
+                     <xsl:value-of select="'English'"/>
+                  </language>
+               </xsl:otherwise>
+            </xsl:choose>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>  

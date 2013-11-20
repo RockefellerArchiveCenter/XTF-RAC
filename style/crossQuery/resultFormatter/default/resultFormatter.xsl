@@ -2132,7 +2132,7 @@
                <xsl:text>: </xsl:text>
             </xsl:if>
             <xsl:apply-templates select="meta/title"/>
-            <xsl:if test="meta/date">
+            <xsl:if test="meta/date != ''">
                <xsl:text>, </xsl:text>
                <xsl:apply-templates select="meta/date"/>
             </xsl:if>
@@ -2157,6 +2157,14 @@
          <div class="notes">
             <h4>Extent</h4>
             <xsl:apply-templates select="meta/extent"/>
+         </div>
+      </xsl:if>
+      <xsl:if test="meta/language != ''">
+         <div class="notes">
+            <h4>Languages</h4>
+            <xsl:text>Materials are in </xsl:text>
+            <xsl:apply-templates select="meta/language"/>
+            <xsl:text>.</xsl:text>
          </div>
       </xsl:if>
       <xsl:if test="meta/scopecontent != ''">
