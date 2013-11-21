@@ -797,19 +797,40 @@
    <!-- description --> 
    <xsl:template name="get-ead-description">
       <xsl:choose>
-         <xsl:when test="@level != 'collection'">
-            <xsl:if test="did/physdesc/extent">
-               <extent xtf:meta="true">
-                  <xsl:value-of select="did/physdesc/extent"/>
-               </extent>
-            </xsl:if>
+         <xsl:when test="@level">
+            <xsl:choose>
+               <xsl:when test="did/physdesc/extent">
+                  <extent xtf:meta="true">
+                     <xsl:value-of select="did/physdesc/extent"/>
+                  </extent>
+                  <collectionExtent xtf:meta="true">
+                     <xsl:value-of select="/ead/archdesc/did/physdesc/extent"/>
+                  </collectionExtent>
+               </xsl:when>
+            </xsl:choose>
+         </xsl:when>
+         <xsl:otherwise>
+            <collectionExtent xtf:meta="true">
+               <xsl:value-of select="/ead/archdesc/did/physdesc/extent"/>
+            </collectionExtent>
+         </xsl:otherwise>
+      </xsl:choose>
+      
+      <xsl:choose>
+         <xsl:when test="@level">
             <xsl:if test="scopecontent">
                <scopecontent xtf:meta="true">
                   <xsl:value-of select="scopecontent/p"/>
                </scopecontent>
             </xsl:if>
          </xsl:when>
-         <xsl:when test="/ead/archdesc/did/abstract">
+         <xsl:otherwise>
+            <collectionScopecontent xtf:meta="true">
+               <xsl:value-of select="/ead/archdesc/scopecontent/p"/>
+            </collectionScopecontent>
+         </xsl:otherwise>
+      </xsl:choose>
+         <!-- <xsl:when test="/ead/archdesc/did/abstract">
             <description xtf:meta="true">
                <xsl:value-of select="string(/ead/archdesc/did/abstract[1])"/>
             </description>
@@ -818,50 +839,49 @@
             <description xtf:meta="true">
                <xsl:value-of select="string(/ead/eadheader/filedesc/notestmt/note[1])"/>
             </description>
-         </xsl:when>
-      </xsl:choose>
+         </xsl:when>-->
+
    </xsl:template>
    
    <!--restrictions-->
    <xsl:template name="get-ead-restrictions">
+      
       <xsl:choose>
-         <xsl:when test="@level">
-            <xsl:choose>
-               <xsl:when test="accessrestrict">
-                  <accessrestrict xtf:meta="true">
-                     <xsl:value-of select="accessrestrict/p"/>
-                  </accessrestrict>
-               </xsl:when>
-               <xsl:when test="ancestor::*/child::accessrestrict">
-                  <accessrestrict xtf:meta="true">
-                     <xsl:value-of select="ancestor::*/child::accessrestrict/p"/>
-                  </accessrestrict>
-               </xsl:when>
-               <xsl:otherwise>
-                  <accessrestrict xtf:meta="true">
-                     <xsl:value-of select="/ead/archdesc/accessrestrict/p"/>
-                  </accessrestrict>
-               </xsl:otherwise>
-            </xsl:choose>
-            <xsl:choose>
-               <xsl:when test="userestrict">
-                  <userestrict xtf:meta="true">
-                     <xsl:value-of select="userestrict/p"/>
-                  </userestrict>
-               </xsl:when>
-               <xsl:when test="ancestor::*/child::userestrict">
-                  <userestrict xtf:meta="true">
-                     <xsl:value-of select="ancestor::*/child::userestrict/p"/>
-                  </userestrict>
-               </xsl:when>
-               <xsl:otherwise>
-                  <userestrict xtf:meta="true">
-                     <xsl:value-of select="/ead/archdesc/userestrict/p"/>
-                  </userestrict>
-               </xsl:otherwise>
-            </xsl:choose>
+         <xsl:when test="accessrestrict">
+            <accessrestrict xtf:meta="true">
+               <xsl:value-of select="accessrestrict/p"/>
+            </accessrestrict>
          </xsl:when>
+         <xsl:when test="ancestor::*/child::accessrestrict">
+            <accessrestrict xtf:meta="true">
+               <xsl:value-of select="ancestor::*/child::accessrestrict/p"/>
+            </accessrestrict>
+         </xsl:when>
+         <xsl:otherwise>
+            <accessrestrict xtf:meta="true">
+               <xsl:value-of select="/ead/archdesc/accessrestrict/p"/>
+            </accessrestrict>
+         </xsl:otherwise>
       </xsl:choose>
+
+      <xsl:choose>
+         <xsl:when test="userestrict">
+            <userestrict xtf:meta="true">
+               <xsl:value-of select="userestrict/p"/>
+            </userestrict>
+         </xsl:when>
+         <xsl:when test="ancestor::*/child::userestrict">
+            <userestrict xtf:meta="true">
+               <xsl:value-of select="ancestor::*/child::userestrict/p"/>
+            </userestrict>
+         </xsl:when>
+         <xsl:otherwise>
+            <userestrict xtf:meta="true">
+               <xsl:value-of select="/ead/archdesc/userestrict/p"/>
+            </userestrict>
+         </xsl:otherwise>
+      </xsl:choose>
+
    </xsl:template>
   
    <!-- publisher -->

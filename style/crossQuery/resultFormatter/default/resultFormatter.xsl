@@ -176,10 +176,10 @@
             <xsl:copy-of select="$brand.links"/>
 
             <!-- AJAX support -->
-            <script src="script/rac/componentInfo.js" type="text/javascript"/>
             <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
             <script src="script/yui/connection-min.js" type="text/javascript"/>
             <script src="script/rac/facets.js" type="text/javascript"/>
+            
          </head>
          <body>
             <div class="overlay" id="searchTips" style="width:1100px; top:20px !important;">
@@ -1241,6 +1241,7 @@
          <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
             <xsl:attribute name="class">docHit dao</xsl:attribute>
          </xsl:if>
+         <div id="top-level_{@rank}" class="top-level component">
          <!-- 11/15/2013 HA: streamlining display, removing labels, similar items and subjects -->
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
          <!-- 9/26/11 WS: Moved title above Author -->
@@ -1279,10 +1280,10 @@
          
          <div class="resultContent">
             <div class="result title">
-               <a>
+               <!--<a>
                   <xsl:attribute name="href">
                      <xsl:value-of select="$docPath"/>
-                  </xsl:attribute>
+                  </xsl:attribute>-->
                   <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
                      <xsl:attribute name="onClick">
                         <xsl:text>_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);</xsl:text>
@@ -1318,7 +1319,7 @@
                         <xsl:if test="meta/title != ''"><xsl:text>, </xsl:text></xsl:if>
                         <xsl:apply-templates select="meta/date"/>
                   </xsl:if>
-               </a>
+               <!--</a>-->
                
                <xsl:if test="meta/*:type = 'dao'">
                   <img src="/xtf/icons/default/dao.gif" alt="digital object" title="digital object"
@@ -1452,10 +1453,12 @@
                </xsl:if>
             </span>
          </div>
+            <div class="activeArrow"></div>
+         </div>
          
       </div>
       <div id="componentInfo_{@rank}" class="componentInfo">
-         <xsl:call-template name="componentInfo"/>
+         <xsl:apply-templates select="." mode="collection"/>
       </div>
    </xsl:template>
    
@@ -1512,7 +1515,7 @@
          <!-- 11/15/2013 HA: streamlining display, removing subjects, labels and find similar -->
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
          <!-- Deals with collections vrs. series/files -->
-         <div class="top-level">
+         <div id="top-level_{@rank}-collection" class="top-level component">
             <xsl:choose>
                <xsl:when test="meta/level = 'collection'">
                   <div class="resultIcon">
@@ -1549,10 +1552,10 @@
 
                   <div class="resultContent">
                      <div class="result title">
-                        <a>
+                        <!-- <a>
                            <xsl:attribute name="href">
                               <xsl:value-of select="$docPath"/>
-                           </xsl:attribute>
+                           </xsl:attribute> -->
                            <xsl:choose>
                               <xsl:when test="meta/title">
                                  <xsl:choose>
@@ -1582,7 +1585,7 @@
                               <xsl:text>, </xsl:text>
                               <xsl:apply-templates select="meta/date"/>
                            </xsl:if>
-                        </a>
+                        <!-- </a> -->
                         <xsl:if test="meta/*:type = 'dao'">
                            <img src="/xtf/icons/default/dao.gif" alt="digital object"
                               title="digital object"/>
@@ -1654,10 +1657,10 @@
 
                   <div class="resultContent">
                      <div class="result title">
-                        <a>
+                        <!--<a>
                            <xsl:attribute name="href">
                               <xsl:value-of select="$collPath"/>
-                           </xsl:attribute>
+                           </xsl:attribute>-->
                            <xsl:choose>
                               <xsl:when test="meta/collectionTitle">
                                  <xsl:apply-templates select="meta/collectionTitle"/>
@@ -1676,7 +1679,7 @@
                               <xsl:text>, </xsl:text>
                               <xsl:apply-templates select="meta/collectionDate"/>
                            </xsl:if>
-                        </a>
+                        <!-- </a> -->
                         <xsl:if test="meta/*:type = 'dao'">
                            <img src="/xtf/icons/default/dao.gif" alt="digital object"
                               title="digital object"/>
@@ -1784,20 +1787,24 @@
                   </xsl:if>
                </span>
             </div>
+            <div class="activeArrow"></div>
+         </div>
+         <div id="componentInfo_{@rank}-collection" class="componentInfo">
+            <xsl:apply-templates select="." mode="collection"/>
          </div>
 
          <xsl:if test="current-group()[meta/level != 'collection']">
             <div class="subdocuments">
                <xsl:for-each select="current-group()[meta/level != 'collection']">
                   <div class="subdocumentWrap">
-                  <div id="subdocument_{@rank}" class="subdocument">
+                  <div id="subdocument_{@rank}" class="subdocument component">
                      <xsl:if test="position() mod 2 = 1">
-                        <xsl:attribute name="class">subdocument odd</xsl:attribute>
+                        <xsl:attribute name="class">subdocument component odd</xsl:attribute>
                      </xsl:if>
                      <xsl:call-template name="subDocument"/>
                   </div>
                   <div id="componentInfo_{@rank}" class="componentInfo">
-                     <xsl:call-template name="componentInfo"/>
+                     <xsl:apply-templates select="." mode="subdocument"/>
                   </div>
                   </div>
                </xsl:for-each>
@@ -1967,8 +1974,7 @@
          </span>
       </div>
       
-      <div class="showMore"></div>
-      <div class="showLess"></div>
+      <div class="activeArrow"></div>
 
 
          <!-- 11/14/2013 HA: added logic to display only snippets not already visible -->
@@ -2096,7 +2102,7 @@
    <!-- ====================================================================== -->
    <!-- Detailed Component Information Template                                -->
    <!-- ====================================================================== -->
-   <xsl:template name="componentInfo" match="docHit" exclude-result-prefixes="#all">
+   <xsl:template match="docHit" mode="subdocument" exclude-result-prefixes="#all">
       <xsl:variable name="chunk.id" select="@subDocument"/>
       <xsl:variable name="path" select="@path"/>
       <xsl:variable name="docPath">
@@ -2141,6 +2147,14 @@
       <xsl:if test="meta/level = 'file'">
          <div class="containers">
             <xsl:value-of select="meta/containers"/>
+            <xsl:if test="meta/extent != ''">
+               <xsl:text>, </xsl:text>
+            </xsl:if>
+         </div>
+      </xsl:if>
+      <xsl:if test="meta/extent != ''">
+         <div class="extent">
+            <xsl:apply-templates select="meta/extent"/>
          </div>
       </xsl:if>
       <div class="parents">
@@ -2153,36 +2167,116 @@
             </div>
          </xsl:for-each>
       </div>
-      <xsl:if test="meta/extent != ''">
-         <div class="notes">
-            <h4>Extent</h4>
-            <xsl:apply-templates select="meta/extent"/>
-         </div>
-      </xsl:if>
       <xsl:if test="meta/language != ''">
-         <div class="notes">
+         <div class="language">
             <h4>Languages</h4>
-            <xsl:text>Materials are in </xsl:text>
+            <p><xsl:text>Materials are in </xsl:text>
             <xsl:apply-templates select="meta/language"/>
-            <xsl:text>.</xsl:text>
+            <xsl:text>.</xsl:text></p>
          </div>
       </xsl:if>
       <xsl:if test="meta/scopecontent != ''">
          <div class="notes">
             <h4>Additional Description</h4>
-            <xsl:apply-templates select="meta/scopecontent"/>
+            <p><xsl:apply-templates select="meta/scopecontent"/></p>
          </div>
       </xsl:if>
       <xsl:if test="meta/accessrestrict != ''">
-         <div class="restrictions">
+         <div class="restrictions notes">
             <h4>Access Restrictions</h4>
-            <xsl:apply-templates select="meta/accessrestrict"/>
+            <p><xsl:apply-templates select="meta/accessrestrict"/></p>
          </div>
       </xsl:if>
       <xsl:if test="meta/userestrict != ''">
-         <div class="restrictions">
+         <div class="restrictions notes">
             <h4>Use Restrictions</h4>
-            <xsl:apply-templates select="meta/userestrict"/>
+            <p><xsl:apply-templates select="meta/userestrict"/></p>
+         </div>
+      </xsl:if>
+   </xsl:template>
+   
+   
+   <xsl:template match="docHit" mode="collection" exclude-result-prefixes="#all">
+      <xsl:variable name="chunk.id" select="@subDocument"/>
+      <xsl:variable name="path" select="@path"/>
+      <xsl:variable name="docPath">
+         <xsl:variable name="uri">
+            <xsl:call-template name="dynaxml.url">
+               <xsl:with-param name="path" select="$path"/>
+               <xsl:with-param name="chunk.id" select="'headerlink'"/>
+            </xsl:call-template>
+         </xsl:variable>
+         <xsl:choose>
+            <xsl:when test="$chunk.id != ''">
+               <xsl:value-of select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="$uri"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <div class="title">
+         <a>
+            <xsl:attribute name="href">
+               <xsl:value-of select="$docPath"/>
+            </xsl:attribute>
+            <xsl:choose>
+               <xsl:when test="meta/collectionTitle">
+                  <xsl:apply-templates select="meta/collectionTitle"/>
+               </xsl:when>
+               <xsl:otherwise><xsl:apply-templates select="meta/title"/></xsl:otherwise>
+            </xsl:choose>
+            <xsl:if test="meta/collectionDate != ''">
+               <xsl:text>, </xsl:text>
+               <xsl:apply-templates select="meta/collectionDate"/>
+            </xsl:if>
+         </a>
+      </div>
+      <xsl:if test="meta/extent != ''">
+         <div class="extent">
+            <xsl:apply-templates select="meta/collectionExtent"/>
+         </div>
+      </xsl:if>
+      <xsl:if test="meta/publisher">
+         <div class="publisher">
+            <p><xsl:apply-templates select="meta/publisher"/></p>
+         </div>
+      </xsl:if>
+      <xsl:if test="meta/callNo">
+         <div class="callNo">
+            <xsl:apply-templates select="meta/callNo"/>
+         </div>
+      </xsl:if>
+      <xsl:if test="meta/language != ''">
+         <div class="language">
+            <h4>Languages</h4>
+            <p><xsl:text>Materials are in </xsl:text>
+               <xsl:apply-templates select="meta/language"/>
+               <xsl:text>.</xsl:text></p>
+         </div>
+      </xsl:if>
+      <xsl:if test="meta/collectionScopecontent != ''">
+         <div class="notes">
+            <h4>Additional Description</h4>
+            <p><xsl:apply-templates select="meta/collectionScopecontent"/></p>
+         </div>
+      </xsl:if>
+      <xsl:if test="meta/notes">
+         <div class="notes">
+            <p><xsl:apply-templates select="meta/notes"/></p>
+         </div>
+      </xsl:if>
+
+      <xsl:if test="meta/accessrestrict != ''">
+         <div class="restrictions notes">
+            <h4>Access Restrictions</h4>
+            <p><xsl:apply-templates select="meta/accessrestrict"/></p>
+         </div>
+      </xsl:if>
+      <xsl:if test="meta/userestrict != ''">
+         <div class="restrictions notes">
+            <h4>Use Restrictions</h4>
+            <p><xsl:apply-templates select="meta/userestrict"/></p>
          </div>
       </xsl:if>
    </xsl:template>

@@ -115,7 +115,6 @@ div.facetGroup {
 div.docHit {
 	background-color: #FAFAFB;
 	margin: 1%;
-	padding:1%;
 	float:left;
 	border-radius:5px;
 	width:53%
@@ -128,9 +127,8 @@ div.docHit {
 .result img, .title img {vertical-align:middle;}
 .result.title a, .componentInfo .title a {color:#333; text-decoration:none;}
 .result.title a:visited, .componentInfo .title a:visited {color:#555;}
-.result.title a:hover, .componentInfo .title a:hover {color:#cc3300;text-decoration:underline}
+.result.title a:hover, .componentInfo .title a:hover {color:#c45414;text-decoration:underline}
 .resultContent>.result.title {font-size:1.3em;margin:0}
-.subdocument>.result.title {width:84%;font-size:1em;font-weight:bold;margin:.5em 0}
 
 .result.creator {color:#555}
 
@@ -144,24 +142,42 @@ div.docHit {
 #docHits .dao .resultIcon {width:18%;}
 #docHits .dao .resultContent {width:72%;}
 
-.top-level {width: 100%;float: left;}
+.top-level {width: 98%;float: left;padding:1%}
 .top-level>.bookbag {text-align:right;}
 
 .subdocuments {float: left;cursor:pointer;width:175%;padding-left:10%;}
-.subdocument {float:left; padding: .5em 1%;width:50%;}
+.subdocument {float:left; padding: .5em 1%;width:49%;}
 .subdocument.odd {background: rgb(228, 228, 228);}
-.subdocument .title {width:84%; float:left;}
-.subdocument .matches {float:left;width:100%;margin-left:3%;font-size:.9em;}
-.subdocument .result {font-size:.9em;}
+.subdocument .title {width:90%; float:left;font-size:1em;font-weight:bold;margin:.5em 0}
+.subdocument .matches {float:left;width:87%;margin-left:3%;font-size:.9em;}
 .subdocument .resultLabel {width:10% !important}
 .subdocument:hover {background: #bbb;}
-.subdocument.active {background:rgba(196, 84, 20, 0.4);}
-.subdocument.active {background-color: #999 !important;border-left: .5em solid #cc3300;width:52%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-left:1%; position:relative;z-index:2;
-transition: margin 0.2s;
--webkit-transition: margin 0.2s;
--moz-transition: margin 0.2s;
--o-transition: margin 0.2s;}
-.subdocument.active .title, .subdocument.active .result {color:#fff}
+.subdocument.active {background-color: #999 !important;border-left: .5em solid #c45414;width:52%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-left:1%; position:relative;z-index:2;
+    transition: margin 0.2s;
+    -webkit-transition: margin 0.2s;
+    -moz-transition: margin 0.2s;
+    -o-transition: margin 0.2s;}
+.top-level.active {background-color: #999 !important;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width:102%; position:relative;z-index:2;border-radius:5px;
+    transition: width 0.2s;
+    -webkit-transition: width 0.2s;
+    -moz-transition: width 0.2s;
+    -o-transition: width 0.2s;
+}
+
+.activeArrow {
+    display:none;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #999;
+    content: " ";
+    float: right;
+    margin-right: -14%;
+    margin-top: 1%;}
+.top-level .activeArrow {margin-right: -13%;margin-top: 3%;}
+    
+.docHit .active .title, .docHit .active .result {color:#fff}
 .subdocument.active .hit {color: #fff !important;}
 
 .showMore {width: 0;
@@ -186,7 +202,7 @@ transition: margin 0.2s;
 
 .componentInfo, .componentDefault {
     display:none;
-    width:28%;
+    width:29%;
     position: relative;
     margin:0 1%;
     border-radius:5px;
@@ -195,22 +211,35 @@ transition: margin 0.2s;
     float:right;
     min-height:6em;
 }
-.componentDefault {display:block;position:absolute; top: 17.8em; right: 1%;min-height:20em;}
+.componentDefault {display:block;position:absolute; top: 24.3em; right: 1%;min-height:20em;}
 .componentDefault h3 {margin: 0;color: #666;}
 .componentInfo h3 {font-size:1em;color:#333}
 .componentInfo .title {font-weight:bold;font-size:1.3em;}
-.componentInfo .containers {width:100%; font-size:1em; padding-bottom:.5em;}
+.componentInfo .containers, .componentInfo .callNo {width:100%; font-size:1em; padding-bottom:.5em;}
 .componentInfo .parents {font-size:.8em}
 .componentInfo .notes, .componentInfo .restrictions {font-size:.9em;}
 
+.notesMore, .notesLess {
+background: #ccc;
+padding: 0em .5em;
+font-size: .7em;
+border-radius: 2px;
+border: 1px solid #999;
+margin-left:1em;
+}
+.notesMore a, .notesLess a {color:#666; text-decoration:none;}
+.notesMore a:hover, .notesLess a:hover {color:#c45414;}
+.notesLess {display:none;}
+.notesHide {display:none;}
+
 .hit {
-   color: #cc3300;
+   color: #c45414;
    font-weight: bold;
 }
 
 
 .subhit {
-   color: #cc3300;
+   color: #c45414;
    font-weight: bold;
 	 margin-left: 5px;
 }
@@ -236,17 +265,17 @@ div.facetMore, div.facetLess {
     line-height:1.7em;
 }
 
-div.facetMore:hover:after {width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 6px solid #cc3300;content: " ";float: right;margin-top: .6em;} 
-div.facetLess:hover:after {width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-bottom: 6px solid #cc3300;content: " ";float: right;margin-top: .6em;}
+div.facetMore:hover:after {width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 6px solid #c45414;content: " ";float: right;margin-top: .6em;} 
+div.facetLess:hover:after {width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-bottom: 6px solid #c45414;content: " ";float: right;margin-top: .6em;}
 
 div.facetMore:after {width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 6px solid #666666;content: " ";float: right;margin-top: .6em;}
 div.facetLess:after {width: 0;height: 0;border-left: 6px solid transparent;border-right: 6px solid transparent;border-bottom: 6px solid #666666;content: " ";float: right;margin-top: .6em;}
 
 div.facetLess, div.facetMore {color:#666666 !important;}
-div.facetLess:hover, div.facetMore:hover {color: #cc3300 !important}
+div.facetLess:hover, div.facetMore:hover {color: #c45414 !important}
 .facets a {color:#174780 !important; text-decoration:none !important;}
-.browse a {color:#cc3300 !important; text-decoration:none !important;}
-.facets a:hover {color: #cc3300 !important; text-decoration:underline !important;}
+.browse a {color:#c45414 !important; text-decoration:none !important;}
+.facets a:hover {color: #c45414 !important; text-decoration:underline !important;}
 
 div.facetShow {float: right;
     padding: .7em;
@@ -269,5 +298,5 @@ div.getAddress h2 {
 	margin: 0 0 10px 0;
 	font-size: 120%;
 }
-.nohits, .spelling, .empty {margin: 1em;text-align: center;background: rgba(196, 84, 20, 0.1);padding: .5em;border: 1px solid #cc3300;border-radius: 5px;}
+.nohits, .spelling, .empty {margin: 1em;text-align: center;background: rgba(196, 84, 20, 0.1);padding: .5em;border: 1px solid #c45414;border-radius: 5px;}
 .empty img {vertical-align:middle}
