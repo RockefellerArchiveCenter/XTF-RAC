@@ -109,7 +109,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #about ul {margin:0}
 #about li {font-size:1em;padding:.2em}
 #about h3 {padding:.5em;margin:0;cursor:pointer}
-#about .aboutButton {box-shadow:0px 3px 3px #666;border-radius:2px 2px 5px 5px;border: 1px solid #999;margin-left:11em;margin-right: -2px;background:#ddd;float:right;text-align:center}
+#about .aboutButton {box-shadow:0px 3px 3px #666;border-radius:2px 2px 5px 5px;border: 1px solid #999;margin-left:11em;margin-right: -2px;background:#ddd;float:right;text-align:center;border-top: 5px solid #c45414;}
 #about .aboutButton:after {content: none;}
 #about .on:after {content:none}
 #about .over {box-shadow: 0px 2px 2px #666}

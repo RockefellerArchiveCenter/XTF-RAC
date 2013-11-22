@@ -1,32 +1,34 @@
 $(document).ready(function() {
-    $('span.notesHide').hide();
+    //$('.notesHide').hide();
+    $('div.notesMore').hide();
     $('div.notes > p').each(function() {
             var $elem = $(this); 		// The element or elements with the text to hide
     		var $limit = 300;		// The number of characters to show
     		var $str = $elem.html();	// Getting the text
-    		var $strtemp = jQuery.trim($str).substring(0,$limit).split(" ").slice(0, -1).join(" ") + "...";;	// Get the visible part of the string
-    		$strNew = '<span class="notesShow">' + $strtemp + '</span>' + '<span class="notesHide">' + $str + '</span><span class="notesLess"><a href="#">less</a></span>';	// Recompose the string with the span tag wrapped around the hidden part of it
+    		//var $strtemp = jQuery.trim($str).substring(0,$limit).split(" ").slice(0, -1).join(" ") + "...";;	// Get the visible part of the string
+    		//$strNew = '<span class="notesShow">' + $strtemp + '</span>' + '<span class="notesHide">' + $str + '</span>';	// Recompose the string with the span tag wrapped around the hidden part of it
     		if ($str.length > $limit) {   // Write the string to the DOM 
-    		$elem.html($strNew + '<span class="notesMore"><a href="#">more</a></span>');
+    		$elem.parent().next('.notesMore').show();
     		} else {
-    		$elem.html($str);
-    		}
-    				
-     })
+    		$elem.parent().next('.notesMore').hide();
+    	}		
+     });
      
     $(".notesMore").click(function(event){
         event.preventDefault();
-        $(this).prev().prev().prev('span.notesShow').hide();
-        $(this).prev().prev('span.notesHide').show();
-        $(this).prev('span.notesLess').show();
+        //$(this).prev().prev().prev('span.notesShow').hide();
+        //$(this).prev().prev('span.notesHide').show();
+        $(this).prev('div.notes').css("max-height", "none")
+        $(this).next('div.notesLess').show();
         $(this).hide();
       });
 
     $(".notesLess").click(function(event){
         event.preventDefault();
-        $(this).prev('span.notesHide').hide();
-        $(this).prev().prev('span.notesShow').show();
-        $(this).next('span.notesMore').show();
+        //$(this).prev('span.notesHide').hide();
+        //$(this).prev().prev('span.notesShow').show();
+        $(this).prev().prev('div.notes').css("max-height", "7.5em")
+        $(this).prev('div.notesMore').show();
         $(this).hide();
         });
 

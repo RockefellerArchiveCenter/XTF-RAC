@@ -438,7 +438,7 @@
                                     -->
                               </xsl:if>
                            </div>
-                           <!--<div class="browse">
+                           <div class="browse">
                               <h2>Browse</h2>
                               <div class="accordionButton category"><h3><img src="/xtf/icons/default/collections.gif" alt="archival collections" height="25px"/>Archival Collections</h3></div>
                               <div class="accordionContent">
@@ -458,7 +458,7 @@
                                  <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao" onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital-title']);">By Title</a></li>
                                  <li class="browseOption"><a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao" onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital-creator']);">By Creator</a></li>
                               </div>
-                           </div>-->
+                           </div>
                            
                         </div>
                         <div id="docHits">
@@ -1065,6 +1065,9 @@
                      <xsl:apply-templates select="facet[@field='browse-creator']/group/docHit" mode="docHit"/>
                   </xsl:otherwise>
                </xsl:choose>
+               </div>
+               <div class="componentDefault" style="top:19.3em; min-height:10em;">
+                  <h3>Select a result to see more information</h3>
                </div>
             </div>
             
@@ -2167,30 +2170,35 @@
             </div>
          </xsl:for-each>
       </div>
-      <xsl:if test="meta/language != ''">
-         <div class="language">
-            <h4>Languages</h4>
-            <p><xsl:text>Materials are in </xsl:text>
-            <xsl:apply-templates select="meta/language"/>
-            <xsl:text>.</xsl:text></p>
-         </div>
-      </xsl:if>
       <xsl:if test="meta/scopecontent != ''">
          <div class="notes">
             <h4>Additional Description</h4>
             <p><xsl:apply-templates select="meta/scopecontent"/></p>
          </div>
+         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/accessrestrict != ''">
          <div class="restrictions notes">
             <h4>Access Restrictions</h4>
             <p><xsl:apply-templates select="meta/accessrestrict"/></p>
          </div>
+         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/userestrict != ''">
          <div class="restrictions notes">
             <h4>Use Restrictions</h4>
             <p><xsl:apply-templates select="meta/userestrict"/></p>
+         </div>
+         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
+      </xsl:if>
+      <xsl:if test="meta/language != ''">
+         <div class="language">
+            <p><xsl:text>Materials are in </xsl:text>
+               <xsl:apply-templates select="meta/language"/>
+               <xsl:text>.</xsl:text></p>
          </div>
       </xsl:if>
    </xsl:template>
@@ -2247,24 +2255,20 @@
             <xsl:apply-templates select="meta/callNo"/>
          </div>
       </xsl:if>
-      <xsl:if test="meta/language != ''">
-         <div class="language">
-            <h4>Languages</h4>
-            <p><xsl:text>Materials are in </xsl:text>
-               <xsl:apply-templates select="meta/language"/>
-               <xsl:text>.</xsl:text></p>
-         </div>
-      </xsl:if>
       <xsl:if test="meta/collectionScopecontent != ''">
          <div class="notes">
             <h4>Additional Description</h4>
             <p><xsl:apply-templates select="meta/collectionScopecontent"/></p>
          </div>
+         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/notes">
          <div class="notes">
             <p><xsl:apply-templates select="meta/notes"/></p>
          </div>
+         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
       </xsl:if>
 
       <xsl:if test="meta/accessrestrict != ''">
@@ -2272,11 +2276,22 @@
             <h4>Access Restrictions</h4>
             <p><xsl:apply-templates select="meta/accessrestrict"/></p>
          </div>
+         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/userestrict != ''">
          <div class="restrictions notes">
             <h4>Use Restrictions</h4>
             <p><xsl:apply-templates select="meta/userestrict"/></p>
+         </div>
+         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
+      </xsl:if>
+      <xsl:if test="meta/language != ''">
+         <div class="language">
+            <p><xsl:text>Materials are in </xsl:text>
+               <xsl:apply-templates select="meta/language"/>
+               <xsl:text>.</xsl:text></p>
          </div>
       </xsl:if>
    </xsl:template>
