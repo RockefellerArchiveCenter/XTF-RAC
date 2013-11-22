@@ -1293,15 +1293,8 @@
                      </xsl:attribute>
                   </xsl:if>
                   <xsl:choose>
-                     <xsl:when test="meta/title">
-                        <xsl:choose>
-                           <xsl:when test="count(meta/title) &gt; 1">
-                              <xsl:apply-templates select="meta/title[2]"/>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <xsl:apply-templates select="meta/title[1]"/>
-                           </xsl:otherwise>
-                        </xsl:choose>
+                     <xsl:when test="meta/title != ''">
+                         <xsl:apply-templates select="meta/title"/>
                      </xsl:when>
                      <xsl:when test="meta/subtitle">
                         <xsl:choose>
@@ -1313,7 +1306,6 @@
                            </xsl:otherwise>
                         </xsl:choose>
                      </xsl:when>
-                     <xsl:otherwise>none</xsl:otherwise>
                   </xsl:choose>
                   
                   <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
@@ -1560,15 +1552,8 @@
                               <xsl:value-of select="$docPath"/>
                            </xsl:attribute> -->
                            <xsl:choose>
-                              <xsl:when test="meta/title">
-                                 <xsl:choose>
-                                    <xsl:when test="count(meta/title) &gt; 1">
-                                       <xsl:apply-templates select="meta/title[2]"/>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                       <xsl:apply-templates select="meta/title[1]"/>
-                                    </xsl:otherwise>
-                                 </xsl:choose>
+                              <xsl:when test="meta/filingTitle">
+                                 <xsl:apply-templates select="meta/filingTitle"/>
                               </xsl:when>
                               <xsl:when test="meta/subtitle">
                                  <xsl:choose>
@@ -1671,17 +1656,19 @@
                               <xsl:when test="meta/subtitle">
                                  <xsl:apply-templates select="meta/subtitle"/>
                               </xsl:when>
-                              <xsl:when test="meta/title">
+                              <xsl:when test="meta/title != ''">
                                  <xsl:apply-templates select="meta/title"/>
                               </xsl:when>
                               <xsl:otherwise>none</xsl:otherwise>
                            </xsl:choose>
                            <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
-                           <xsl:if test="meta/collectionDate">
-                              <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
-                              <xsl:text>, </xsl:text>
+                        <xsl:if test="meta/collectionDate">
+                           <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+                           <xsl:text>, </xsl:text>
+                           <xsl:if test="meta/title != ''">
                               <xsl:apply-templates select="meta/collectionDate"/>
                            </xsl:if>
+                        </xsl:if>
                         <!-- </a> -->
                         <xsl:if test="meta/*:type = 'dao'">
                            <img src="/xtf/icons/default/dao.gif" alt="digital object"
