@@ -86,11 +86,11 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .category img {vertical-align:middle; margin-right:.5em;}
 .accordionButton {background: #BBBBBB;border-top: 1px solid #FFFFFF;cursor: pointer;}
 .accordionButton h3 {margin:.6em; float:left;padding-left:.4em;}
-.accordionButton:after {width: 0;height: 0;border-top: 8px solid transparent;border-bottom: 8px solid transparent;border-left: 8px solid #666666;content: " ";float: right;margin-left: 1em;margin-right: 1em;margin-top: 1em;}
+.accordionButton:after {width: 0;height: 0;border-left: 8px solid transparent;border-right: 8px solid transparent;border-top: 8px solid #666666;content: " ";float: right;margin-left: 1em;margin-right: 1em;margin-top: 1em;}
 .accordionContent, .facetGroup {background:#EEEEEE;float:left;width:100%}
 .browseOption {padding-left:3em !important}
 .accordionButton.on {background: #CCCCCC}
-.on:after {width: 0;height: 0;border-top: 8px solid #666666;border-right: 8px solid transparent;border-left: 8px solid transparent;content: " ";float: right;margin-left: .8em;margin-right: .6em;margin-top: 1.3em;}
+.on:after {width: 0;height: 0;border-bottom: 8px solid #666666;border-right: 8px solid transparent;border-left: 8px solid transparent;border-top:0;content: " ";float: right;margin-left: 1em;margin-right: 1em;margin-top: 1em;}
 .over {background: #CCCCCC;}
 #type, #library, #collections, #dao {font-size:1em;}
 #date input {font-size:1em !important; position: relative !important; top:0 !important; left:0 !important; float:none !important;margin-bottom:1em !important;border: 1px inset #ddd; padding:.2em}
@@ -409,7 +409,7 @@ iframe {
 /* ------------- RESPONSIVE STYLES ------------- */
 /* --------------------------------------------- */
 @media screen and (max-width:1024px) {
-    .resultIcon img {max-height:60px;}
+    .resultIcon img {max-height:33px;}
 }
 
 
@@ -422,13 +422,11 @@ h3 {font-size:1em}
 .category h3 {vertical-align:middle}
 #results {font-size:.8em;}
 #results .pages, #results .hits {width:31%}
-#docHits .resultIcon {width:10%}
-#doctHits .resultIcon img {max-height:40px;}
-#docHits .resultContent {width:78%}
+#docHits .resultIcon {width:13%}
+#docHits .resultContent {width:75%}
 #docHits .resultLabel {width:22%}
 #docHits .resultText {width:77%}
 .results .subjects, .similar, .matches {display:none}
-.subdocument .result {display:none;}
 .headerSearch {font-size:.8em;width:38%}
 .accordionContent {font-size:1em;}
 .accordionButton h3 {font-size:.9em;}
@@ -447,6 +445,16 @@ h3 {font-size:1em}
 .inventoryHeaderTitle {width:30%}
 .inventoryHeaderFormat {width:15%}
 .inventoryHeaderContainers {width:23%}
+
+.resultContent>.result.title {font-size: 1em;}
+.subdocument .title {width: 88%;}
+#docHits .dao .resultContent {width: 77%}
+#docHits .dao .resultIcon {width: 12%;}
+#docHits .creator, #docHits .collection {font-size:.8em;}
+
+.bookbag {width:11%}
+.activeArrow {margin-right:-16%;}
+
 }
 
 @media screen and (max-width:480px) {

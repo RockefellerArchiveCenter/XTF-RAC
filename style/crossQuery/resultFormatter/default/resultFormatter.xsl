@@ -399,6 +399,9 @@
             
             <!-- results -->
             <div class="results">
+               <xsl:if test="$smode='showBag'">
+                  <xsl:attribute name="class">results bookbagView</xsl:attribute>
+               </xsl:if>
                <xsl:if test="//spelling">
                   <div class="spelling">
                      <xsl:call-template name="did-you-mean">
@@ -1565,7 +1568,9 @@
                                     </xsl:otherwise>
                                  </xsl:choose>
                               </xsl:when>
-                              <xsl:otherwise>none</xsl:otherwise>
+                           <xsl:otherwise>
+                              <xsl:apply-templates select="meta/title"/> 
+                           </xsl:otherwise>
                            </xsl:choose>
                            <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
                            <xsl:if test="meta/date">
@@ -1764,9 +1769,9 @@
                                     </xsl:otherwise>
                                  </xsl:choose>
 
-                                 <!--<span id="add_{@rank}" class="caption">
-                                    <a href="javascript:add_{@rank}()">Add</a>
-                                 </span>-->
+                                 <span id="add_{@rank}" class="caption">
+                                    <!--<a href="javascript:add_{@rank}()">Add</a>-->
+                                 </span>
                               </xsl:otherwise>
                            </xsl:choose>
                            <xsl:value-of
