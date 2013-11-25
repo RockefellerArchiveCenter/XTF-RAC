@@ -120,8 +120,13 @@ div.docHit {
 	width:53%
 }
 
+.bookbagView div.docHit {
+	width:60%
+}
+
 .hitRank {float:left; width:2%;}
 .resultIcon {float:left; width:6%;}
+.bookbagView .resultIcon {width:8%;}
 .resultContent {float:left; width:82%;}
 .result {float:left;width:100%;margin-bottom:.5em;}
 .result img, .title img {vertical-align:middle;}
@@ -145,6 +150,8 @@ div.docHit {
 .top-level {width: 98%;float: left;padding:1%}
 .top-level>.bookbag {text-align:right;}
 
+.bookbagText {margin-top: .7em;margin-bottom: -.7em;}
+
 .subdocuments {float: left;width:175%;padding-left:10%;}
 .subdocument {float:left; padding: .5em 1%;width:49%;}
 .subdocument.odd {background: rgb(228, 228, 228);}
@@ -157,7 +164,7 @@ div.docHit {
     -webkit-transition: margin 0.2s;
     -moz-transition: margin 0.2s;
     -o-transition: margin 0.2s;}
-.top-level.active {background-color: #999 !important;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width:102%; position:relative;z-index:2;border-radius:5px;
+.top-level.active {background-color: #999 !important;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width:102%; position:relative;z-index:2;border-radius:5px 5px 0 0;
     transition: width 0.2s;
     -webkit-transition: width 0.2s;
     -moz-transition: width 0.2s;
@@ -176,6 +183,8 @@ div.docHit {
     margin-right: -14%;
     margin-top: 1%;}
 .top-level .activeArrow {margin-right: -13%;margin-top: 3%;}
+.bookbagView .activeArrow {margin-right:-13%;}
+.bookbagView .top-level .activeArrow {margin-right:-12%;}
     
 .docHit .active .title, .docHit .active .result {color:#fff}
 .subdocument.active .hit {color: #fff !important;}
@@ -210,6 +219,9 @@ div.docHit {
     padding:1%;
     float:right;
     min-height:6em;
+}
+.bookbagView .componentInfo, .bookbagView .componentDefault {
+    width:34%;
 }
 .componentDefault {display:block;position:absolute; top: 24.3em; right: 1%;min-height:20em;}
 .componentDefault h3 {margin: 0;color: #666;}

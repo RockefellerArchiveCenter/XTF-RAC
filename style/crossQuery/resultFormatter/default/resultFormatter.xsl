@@ -1379,23 +1379,23 @@
                                     }, null);
                               };
                            </script>
-                        <span id="remove_{@rank}">
+                        <div class="bookbagText" id="remove_{@rank}">
                            <a href="javascript:remove_{@rank}()">Delete</a>
-                        </span>
+                        </div>
                      </xsl:when>
                      <xsl:when test="session:noCookie()">
-                        <span>
+                        <div class="bookbagText">
                            <a
                               href="javascript:alert('To use the bag, you must enable cookies in your web browser.')"
                               >Requires cookie*</a>
-                        </span>
+                        </div>
                      </xsl:when>
                      <xsl:otherwise>
                         <xsl:choose>
                            <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
                               <!--<img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
                                  title="Added to bookbag"/>-->
-                              <span class="caption">Added</span>
+                              <div class="bookbagText">Added</div>
                            </xsl:when>
                            <xsl:otherwise>
                               <script type="text/javascript">
@@ -1436,11 +1436,11 @@
                                     </a>
                                  </xsl:otherwise>
                               </xsl:choose>
-                              <span id="add_{@rank}" class="caption">
+                              <div id="add_{@rank}" class="bookbagText">
                                  <!--<span class="caption">
                                     <a href="javascript:add_{@rank}()">Add</a>
                                  </span>-->
-                              </span>
+                              </div>
                            </xsl:otherwise>
                         </xsl:choose>
                         <xsl:value-of
@@ -1696,18 +1696,18 @@
 
             <div class="bookbag">
                <!-- Add/remove logic for the session bag (only if session tracking enabled) -->
-               <span class="addToBag">
+               <div class="addToBag">
                   <xsl:if test="session:isEnabled()">
                      <xsl:choose>
                         <xsl:when test="$smode = 'showBag'">
                            <script type="text/javascript">
-                              remove_<xsl:value-of select="@rank"/> = function() {
-                                 var span = YAHOO.util.Dom.get('remove_<xsl:value-of select="@rank"/>');
+                              remove_<xsl:value-of select="concat(@rank,'collection')"/> = function() {
+                                 var span = YAHOO.util.Dom.get('remove_<xsl:value-of select="concat(@rank,'collection')"/>');
                                  span.innerHTML = "Deleting...";
                                  YAHOO.util.Connect.asyncRequest('GET', 
                                     '<xsl:value-of select="concat($xtfURL, $crossqueryPath, '?smode=removeFromBag;identifier=', $identifier)"/>',
                                     {  success: function(o) { 
-                                          var main = YAHOO.util.Dom.get('main_<xsl:value-of select="@rank"/>');
+                                          var main = YAHOO.util.Dom.get('main_<xsl:value-of select="concat(@rank,'collection')"/>');
                                           main.parentNode.removeChild(main);
                                           --(YAHOO.util.Dom.get('itemCount').innerHTML);
                                        },
@@ -1715,28 +1715,28 @@
                                     }, null);
                               };
                            </script>
-                           <span id="remove_{@rank}">
-                              <a href="javascript:remove_{@rank}()">Delete</a>
-                           </span>
+                           <div class="bookbagText" id="remove_{concat(@rank,'collection')}">
+                              <a href="javascript:remove_{concat(@rank,'collection')}()">Delete</a>
+                           </div>
                         </xsl:when>
                         <xsl:when test="session:noCookie()">
-                           <span>
+                           <div class="bookbagText">
                               <a
                                  href="javascript:alert('To use the bag, you must enable cookies in your web browser.')"
                                  >Requires cookie*</a>
-                           </span>
+                           </div>
                         </xsl:when>
                         <xsl:otherwise>
                            <xsl:choose>
                               <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
                                  <!--<img src="/xtf/icons/default/addbag.gif"
                               alt="Added to bookbag" title="Added to bookbag"/>-->
-                                 <span class="caption">Added</span>
+                                 <div class="bookbagText">Added</div>
                               </xsl:when>
                               <xsl:otherwise>
                                  <script type="text/javascript">
-                                    add_<xsl:value-of select="@rank"/> = function() {
-                                       var span = YAHOO.util.Dom.get('add_<xsl:value-of select="@rank"/>');
+                                    add_<xsl:value-of select="concat(@rank,'collection')"/> = function() {
+                                       var span = YAHOO.util.Dom.get('add_<xsl:value-of select="concat(@rank,'collection')"/>');
                                        span.innerHTML = "Adding...";
                                        YAHOO.util.Connect.asyncRequest('GET', 
                                           '<xsl:value-of select="concat($xtfURL, $crossqueryPath, '?smode=addToBag;identifier=', $identifier)"/>',
@@ -1752,7 +1752,7 @@
                                             </script>
                                  <xsl:choose>
                                     <xsl:when test="meta/type = 'ead'">
-                                       <a href="javascript:add_{@rank}()"
+                                       <a href="javascript:add_{concat(@rank,'collection')}()"
                                           onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);">
                                           <img src="/xtf/icons/default/addbag.gif"
                                              alt="Add to bookbag" title="Add to bookbag"/>
@@ -1760,7 +1760,7 @@
 
                                     </xsl:when>
                                     <xsl:otherwise>
-                                       <a href="javascript:add_{@rank}()"
+                                       <a href="javascript:add_{concat(@rank,'collection')}()"
                                           onClick="_gaq.push(['_trackEvent', 'interaction', 'add-library', 'bookbag']);">
                                           <img src="/xtf/icons/default/addbag.gif"
                                              alt="Add to bookbag" title="Add to bookbag"/>
@@ -1769,9 +1769,9 @@
                                     </xsl:otherwise>
                                  </xsl:choose>
 
-                                 <span id="add_{@rank}" class="caption">
+                                 <div id="add_{concat(@rank,'collection')}" class="bookbagText">
                                     <!--<a href="javascript:add_{@rank}()">Add</a>-->
-                                 </span>
+                                 </div>
                               </xsl:otherwise>
                            </xsl:choose>
                            <xsl:value-of
@@ -1780,7 +1780,7 @@
                         </xsl:otherwise>
                      </xsl:choose>
                   </xsl:if>
-               </span>
+               </div>
             </div>
             <div class="activeArrow"></div>
          </div>
@@ -1899,7 +1899,7 @@
             
       <div class="bookbag">
          <!-- Add/remove logic for the session bag (only if session tracking enabled) -->
-         <span class="addToBag">
+         <div class="addToBag">
             <xsl:if test="session:isEnabled()">
                <xsl:choose>
                   <xsl:when test="$smode = 'showBag'">
@@ -1918,23 +1918,23 @@
                                     }, null);
                               };
                            </script>
-                     <span id="remove_{@rank}">
+                     <div class="bookbagText" id="remove_{@rank}">
                         <a href="javascript:remove_{@rank}()">Delete</a>
-                     </span>
+                     </div>
                   </xsl:when>
                   <xsl:when test="session:noCookie()">
-                     <span>
+                     <div class="bookbagText">
                         <a
                            href="javascript:alert('To use the bag, you must enable cookies in your web browser.')"
                            >Requires cookie*</a>
-                     </span>
+                     </div>
                   </xsl:when>
                   <xsl:otherwise>
                      <xsl:choose>
                         <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
                            <!--<img src="/xtf/icons/default/addbag.gif" alt="Added to bookbag"
                               title="Added to bookbag"/>-->
-                           <span class="caption">Added</span>
+                           <div class="bookbagText">Added</div>
                         </xsl:when>
                         <xsl:otherwise>
                            <script type="text/javascript">
@@ -1956,9 +1956,9 @@
                               <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                                  title="Add to bookbag"/>
                            </a>
-                           <!--<span id="add_{@rank}" class="caption">
-                              <a href="javascript:add_{@rank}()">Add</a>
-                           </span>-->
+                           <div id="add_{@rank}" class="bookbagText">
+                              <!--<a href="javascript:add_{@rank}()">Add</a>-->
+                           </div>
                         </xsl:otherwise>
                      </xsl:choose>
                      <xsl:value-of select="session:setData('queryURL', concat($xtfURL, $crossqueryPath, '?', $queryString, ';startDoc=', $startDoc))"
@@ -1966,7 +1966,7 @@
                   </xsl:otherwise>
                </xsl:choose>
             </xsl:if>
-         </span>
+         </div>
       </div>
       
       <div class="activeArrow"></div>
