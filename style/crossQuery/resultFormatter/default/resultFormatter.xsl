@@ -2237,7 +2237,7 @@
             <xsl:apply-templates select="meta/collectionExtent"/>
          </div>
       </xsl:if>
-      <xsl:if test="meta/publisher">
+      <xsl:if test="meta/publisher and meta/type = 'mods'">
          <div class="publisher">
             <p><xsl:apply-templates select="meta/publisher"/></p>
          </div>
