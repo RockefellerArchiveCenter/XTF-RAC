@@ -47,9 +47,12 @@ $(document).ready(function() {
     $('div.component').removeClass('active');
     $('div.componentInfo').hide();
     $(this).addClass('active');
-    $(this).children('div.activeArrow').show();
-    $(componentid).show().css({top: setheight, right: '1%', position:'absolute'});
+    if($(window).width() > 485) {
+        $(this).children('div.activeArrow').show();
+        $(componentid).show().css({top: setheight, right: '1%', position:'absolute'});
+    } else {
+    $(componentid).show()
+    }
     });
-    
 
 })
