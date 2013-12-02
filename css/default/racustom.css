@@ -518,9 +518,14 @@ div[id^='navOption'] {display:none}
 div.docHit {width:96%}
 .subdocuments {width:90%}
 .subdocument, .subdocument.active {width:98%;margin:0;}
+.subdocument:before {width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 5px solid #666666;content: " ";float: left;margin-right: 2%;margin-top: 3%;}
+.subdocument.active:before {width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-bottom: 5px solid #666666;border-top:none;content: " ";float: left;margin-right: 2%;margin-top: 3%;}
+.subdocument.active{border-left:none;width:100%;}
+.subdocument .title {width: 82%;}
 .activeArrow {display:none;}
 .componentInfo {box-shadow:none;background:#eee;width:95%;float:left;}
 .componentDefault {display:none;}
+.top-level.active {width:100%;}
 }
 
 @media screen and (max-width:320px) {
@@ -540,4 +545,6 @@ div.docHit {width:96%}
 
 #alphaList {width:8%}
 #alphaLinks {width:10%;top:6.5em;}
+
+.subdocument:before, .subdocument.active:before{margin-top:4%;}
 }

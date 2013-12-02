@@ -42,16 +42,24 @@ $(document).ready(function() {
     var offset = position.top - scrolltop
     var fraction = (windowheight / offset);
     var setheight = position.top - (infoheight / fraction);
-    $('div.componentDefault').hide();
-    $('div.activeArrow').hide();
-    $('div.component').removeClass('active');
-    $('div.componentInfo').hide();
-    $(this).addClass('active');
-    if($(window).width() > 485) {
-        $(this).children('div.activeArrow').show();
-        $(componentid).show().css({top: setheight, right: '1%', position:'absolute'});
+
+    if($(this).hasClass("active")) {
+        $(this).removeClass("active");
+        $(componentid).hide();
+        $('div.activeArrow').hide();
+    
     } else {
-    $(componentid).show()
+        $('div.component').removeClass("active");
+        $('div.componentDefault').hide();
+        $('div.componentInfo').hide();
+        $('div.activeArrow').hide();
+        $(this).addClass('active');
+        if($(window).width() > 485) {
+            $(this).children('div.activeArrow').show();
+            $(componentid).fadeIn().css({top: setheight, right: '1%', position:'absolute'});
+        } else {
+            $(componentid).fadeIn();
+    }
     }
     });
 

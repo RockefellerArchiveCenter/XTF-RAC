@@ -180,9 +180,9 @@ div.docHit {
     border-left: 10px solid #999;
     content: " ";
     float: right;
-    margin-right: -14%;
+    margin-right: -13.5%;
     margin-top: 1%;}
-.top-level .activeArrow {margin-right: -13%;margin-top: 3%;}
+.top-level .activeArrow {margin-right: -12.5%;margin-top: 3%;}
 .bookbagView .activeArrow {margin-right:-13%;}
 .bookbagView .top-level .activeArrow {margin-right:-12%;}
     
