@@ -1451,8 +1451,8 @@
                </xsl:if>
             </span>
          </div>
-            <div class="activeArrow"></div>
          </div>
+         <div class="activeArrow"></div>
          
       </div>
       <div id="componentInfo_{@rank}" class="componentInfo">
@@ -1782,8 +1782,8 @@
                   </xsl:if>
                </div>
             </div>
-            <div class="activeArrow"></div>
          </div>
+         <div class="activeArrow"></div>
          <div id="componentInfo_{@rank}-collection" class="componentInfo">
             <xsl:apply-templates select="." mode="collection"/>
          </div>
@@ -1798,6 +1798,7 @@
                      </xsl:if>
                      <xsl:call-template name="subDocument"/>
                   </div>
+                     <div class="activeArrow"></div>
                   <div id="componentInfo_{@rank}" class="componentInfo">
                      <xsl:apply-templates select="." mode="subdocument"/>
                   </div>
@@ -1968,8 +1969,6 @@
             </xsl:if>
          </div>
       </div>
-      
-      <div class="activeArrow"></div>
 
 
          <!-- 11/14/2013 HA: added logic to display only snippets not already visible -->
