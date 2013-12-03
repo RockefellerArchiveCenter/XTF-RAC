@@ -142,7 +142,7 @@
             <div id="bookbag">
                   <xsl:variable name="bag" select="session:getData('bag')"/>
                   <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
-                     onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);">
+                     onClick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'home page']);">
                      <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
                         style="vertical-align:bottom;"/>
                   </a>
@@ -219,8 +219,8 @@
                   <li><a href="#dimes" class="dimes"
                      onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);">This
                      Website's Name</a></li>
-                     <li><a href="#license" class="license" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'license']);">Licensing for our Descriptive Metadata</a></li>
-                     <li><a href="#takedown" class="takedown" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'takedown']);">Our Take-Down Policy</a></li>
+                     <li><a href="#license" class="license" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'license']);">Licensing for our Descriptive Metadata</a></li>
+                     <li><a href="#takedown" class="takedown" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'takedown']);">Our Take-Down Policy</a></li>
                   </ul>
                </div>
                
@@ -230,7 +230,7 @@
                   <ul>
                      <li>Want help? See these
                         <a href="#searchTips" class="searchTips"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
+                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on home page']);"
                            >search tips</a>.
                      </li>
                   </ul>
@@ -317,7 +317,7 @@
                   <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
                   <!-- Uncomment and complete code when digital objects are included -->
                   <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
-                  <a href="#" class="showAdvanced closed">show more search options</a>
+                  <a href="#" class="showAdvanced closed" onClick="_gaq.push(['_trackEvent', 'search', 'advanced', 'home page']);">show more search options</a>
                </div>
             </div>
             
@@ -495,7 +495,7 @@
             <tr>
                <td>&#160;</td>
                <td colspan="2">
-                  <input type="submit" value="Search" onClick="_gaq.push(['_trackEvent', 'search', 'keyword', 'advanced']);"/>
+                  <input type="submit" value="Search"/>
                   <input type="hidden" name="smode" value="advanced" id="start"/>
                   <input type="reset" OnClick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/>
                </td>
@@ -503,7 +503,7 @@
             <tr>
                <td>&#160;</td>
                <td class="searchtiplink">
-                  <a href="#" rel="#searchTips" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);">Search Tips and Tricks</a>
+                  <a href="#" rel="#searchTips">Search Tips and Tricks</a>
             </td>
             </tr>            
          </table>  

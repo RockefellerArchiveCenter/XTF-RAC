@@ -1471,7 +1471,7 @@
                                           }, null);
                                     };
                                   </script>
-                                  <a href="javascript:add_{@id}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a>
+                                  <a href="javascript:add_{@id}()" onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-archival', 'ead']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a>
                                   <span id="add_{@id}" class="caption">
                                      <a href="javascript:add_{@id}()">
                                         Add
@@ -1586,39 +1586,6 @@
                     </xsl:if>
                     <xsl:apply-templates select="unittitle"/>
                    <xsl:if test="unitdate[not(@type)] or unitdate[@type != 'bulk']">, <xsl:apply-templates select="unitdate[not(@type)] | unitdate[@type != 'bulk']"/></xsl:if>
-                <!-- 
-                   &#160;&#160;&#160;&#160;
-                   <span class="addToBag" style="font-size:.8em!important; float:right; clear:right;">
-                   <xsl:variable name="identifier" select="concat($rootID,'|',../@id)"/>
-                   <xsl:variable name="indexId" select="$identifier"/>
-                   <xsl:choose>
-                      <xsl:when test="session:getData('bag')/child::*/child::*[@id=$indexId]">
-                         <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Added to bookbag"/>
-                         <span class="caption">Added</span>
-                      </xsl:when>
-                      <xsl:otherwise>
-                         <script type="text/javascript">
-                                    add_<xsl:value-of select="../@id"/> = function() {
-                                       var span = YAHOO.util.Dom.get('add_<xsl:value-of select="../@id"/>');
-                                       span.innerHTML = "Adding...";
-                                       YAHOO.util.Connect.asyncRequest('GET', 
-                                          '<xsl:value-of select="concat($xtfURL, 'search?smode=addToBag;identifier=', $identifier)"/>',
-                                          {  success: function(o) { 
-                                                span.innerHTML = o.responseText;
-                                                ++(YAHOO.util.Dom.get('bagCount').innerHTML);
-                                             },
-                                             failure: function(o) { span.innerHTML = 'Failed to add!'; }
-                                          }, null);
-                                    };
-                         </script>
-                         <a href="javascript:add_{../@id}()" onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a><br/>
-                         <span id="add_{../@id}" class="caption">
-                            <a href="javascript:add_{../@id}()">Add</a>
-                         </span>
-                      </xsl:otherwise>
-                   </xsl:choose>
-                   </span>
-                   -->
                 </div>
             </xsl:when>
             <!--Otherwise render the text in its normal font.-->
@@ -1640,7 +1607,7 @@
                                   <a href="{$daoLink}" 
                                      data-citation="{$citation}" data-title="{$daoTitle}" 
                                      data-width="512" data-height="384" 
-                                     onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+                                     onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);">
                                      <xsl:if test="count(../dao) &gt; 1">
                                         <xsl:attribute name="style">margin-left:1em;</xsl:attribute>
                                      </xsl:if>
@@ -1672,12 +1639,6 @@
                             </xsl:choose>
                          </xsl:for-each>
                          
-                         <!--
-                         <a href="#" rel="#{../@id}_dao" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
-                            <xsl:call-template name="component-did-core"/><img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>                    
-                         </a>
-                         <xsl:apply-templates select="../dao" mode="popout"/>
-                         -->
                       </xsl:when>
                       <xsl:otherwise>
                          <xsl:call-template name="component-did-core"/>                         
@@ -1699,13 +1660,13 @@
             <xsl:variable name="daoFile" select="substring-before(tokenize($daoLink,'/')[position()=last()],'.')"/>
             <xsl:variable name="daoImg" select="concat(string-join(tokenize($daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/> 
             <div class="daoLink" style="float:left; width:15%">   
-               <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+               <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);">
                  <xsl:call-template name="component-did-core"/>
                  <img src="{$daoImg}"/>
                </a>
             </div>
             <div class="caption" style="float:left;padding: 3em 0 0 1em;width: 75%;font-size:1em;">
-              <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);">
+               <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);">
                   <xsl:choose>
                      <xsl:when test="daodesc">
                         <xsl:apply-templates select="daodesc"/>
@@ -1858,7 +1819,7 @@
       <xsl:param name="doc.view"/>
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of 
          select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>
-      <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}" data-citation="" data-title="{$name}" data-width="400" data-height="200" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'Additional Information']);">
+      <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}" data-citation="" data-title="{$name}" data-width="400" data-height="200" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'additional information']);">
          <xsl:value-of select="$name"/>
       </a>
    </xsl:template>

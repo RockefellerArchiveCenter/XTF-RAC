@@ -218,7 +218,7 @@
                <div id="bookbag">
                   <xsl:variable name="bag" select="session:getData('bag')"/>
                   <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
-                     onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);">
+                     onClick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'mods']);">
                      <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
                         style="vertical-align:bottom;"/>
                   </a>
@@ -308,7 +308,7 @@
                                     };
                                  </script>
                         <a href="javascript:add_1()"
-                           onClick="_gaq.push(['_trackEvent', 'interaction', 'add-library', 'bookbag']);">
+                           onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-library', 'mods']);">
                            <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                               title="Add to bookbag"/>
                         </a>

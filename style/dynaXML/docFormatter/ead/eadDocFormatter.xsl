@@ -271,7 +271,7 @@
                <div id="bookbag">
                      <xsl:variable name="bag" select="session:getData('bag')"/>
                      <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
-                        onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);">
+                        onClick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'ead']);">
                         <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
                            style="vertical-align:bottom;"/>
                      </a>
@@ -366,13 +366,13 @@
                                        };
                                  </script>
                            <a href="javascript:add_1()"
-                              onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);">
+                              onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-archival', 'ead']);">
                               <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                                  title="Add to bookbag"/>
                            </a>
-                           <span id="add_1" class="caption">
-                              <a href="javascript:add_1()">Add</a>
-                           </span>
+                           <div id="add_1" class="bookbagText">
+                              <!--a href="javascript:add_1()">Add</a>-->
+                           </div>
                         </xsl:otherwise>
                      </xsl:choose>
                   </span>
@@ -393,7 +393,7 @@
                   <li>
                      <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
                      <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf"
-                        onClick="_gaq.push(['_trackEvent', 'finding aids', 'view', 'pdf']);">
+                        onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
                         <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
                      </a>
                   </li>
@@ -407,7 +407,7 @@
                <input type="hidden" name="docId" value="{$docId}"/>
                <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
                <input type="hidden" name="doc.view" value="{$doc.view}"/>
-               <input type="submit" value="Search this Collection" onclick="_gaq.push(['_trackEvent', 'finding aids', 'search', '{$chunk.id}']);"/>
+               <input type="submit" value="Search this Collection" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$chunk.id}']);"/>
             </form>
             <xsl:if test="($query != '0') and ($query != '')">
                <div class="headerResults">
@@ -771,21 +771,21 @@
                                  <xsl:for-each select="archdesc/controlaccess">
                                     <xsl:for-each select="subject | genreform | title | occupation">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}search?browse-all=yes;f1-subject={.}">
+                                          <a onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);" href="{$xtfURL}search?browse-all=yes;f1-subject={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
                                     </xsl:for-each>
                                     <xsl:for-each select="corpname | famname | persname">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}">
+                                          <a onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);" href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
                                     </xsl:for-each> 
                                     <xsl:for-each select="geogname">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'subject', 'search']);" href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}">
+                                          <a onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);" href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
@@ -1217,7 +1217,7 @@
             </a>
          </xsl:when>
          <xsl:otherwise>
-            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$id}']);">
+            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', 'level {$indent}']);">
                <xsl:attribute name="href">
                   <!--<xsl:choose>
                      <xsl:when test="($query != '0') and ($query != '')">

@@ -218,7 +218,7 @@
                <xsl:if test="$smode != 'showBag'">
                   <xsl:variable name="bag" select="session:getData('bag')"/>
                   <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
-                     onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);">
+                     onClick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'results page']);">
                      <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
                         style="vertical-align:bottom;"/>
                   </a>
@@ -247,8 +247,7 @@
                         <xsl:variable name="bag" select="session:getData('bag')"/>
                         <xsl:variable name="bagCount" select="count($bag/bag/savedDoc)"/>
                         <a href="javascript://"
-                           onclick="javascript:window.open('{$xtfURL}{$crossqueryPath}?smode=getAddress;docsPerPage={$bagCount}','popup','width=650,height=400,resizable=no,scrollbars=no')"
-                           onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag email preview']);"
+                           onclick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'email preview']); javascript:window.open('{$xtfURL}{$crossqueryPath}?smode=getAddress;docsPerPage={$bagCount}','popup','width=650,height=400,resizable=no,scrollbars=no')"
                            >E-mail My Bookbag</a>
 
                         <xsl:text> | </xsl:text>
@@ -276,7 +275,7 @@
                            <div id="searchtip" class="box">
                               <ul>
                                  <li>Want help? See these <a href="#searchTips" class="searchTips"
-                                       onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on keyword search page']);"
+                                       onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on results page']);"
                                        >search tips</a>. </li>
                               </ul>
                            </div>
@@ -389,7 +388,7 @@
                               <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
                               <!-- Uncomment and complete code when digital objects are included -->
                               <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
-                              <a href="#" class="showAdvanced closed">show more search options</a>
+                              <a href="#" class="showAdvanced closed" onClick="_gaq.push(['_trackEvent', 'search', 'advanced', 'results page']);">show more search options</a>
                            </div>
                         </div>
                      </div>
@@ -470,7 +469,7 @@
                                  <xsl:if test="docHit">
                                     <xsl:variable name="cleanString"
                                        select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
-                                    <a href="search?{$cleanString};rmode=rss;sort=rss">
+                                    <a href="search?{$cleanString};rmode=rss;sort=rss" onClick="_gaq.push(['_trackEvent', 'results', 'rss', {$cleanString}]);">
                                        <img src="{$icon.path}/i_rss.png" alt="rss icon"
                                           style="vertical-align:bottom;"/>
                                     </a>
@@ -529,8 +528,7 @@
                                        <xsl:with-param name="queryString"
                                           select="editURL:remove($queryString, 'sort')"/>
                                     </xsl:call-template>
-                                    <xsl:text>&#160;</xsl:text>
-                                    <noscript><input type="submit" value="Go!"/></noscript>
+                                    <noscript><input type="submit" value="Go!" onClick="_gaq.push(['_trackEvent', 'results', 'sort', '{$sort}']);"/></noscript>
                                  </form>
                               </div>
                            </div>
@@ -607,6 +605,7 @@
    <!-- ====================================================================== -->
    
    <xsl:template name="getAddress" exclude-result-prefixes="#all">
+      <xsl:variable name="totalDocs" select="@totalDocs"/>
       <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
       <html xml:lang="en" lang="en">
          <head>
@@ -642,11 +641,16 @@
                   </table>
                </form>
                <div style="margin:2em;">
-                  <a  onclick="showHide('preview');return false;" class="showLink" id="preview-show" href="#">+ Show preview</a>
+                  <a class="showLink" id="preview-show" href="#">+ Show preview</a>
                   <div id="preview" class="more" style=" width: 550px; height: 450px; overflow-y: scroll; display:none; border:1px solid #ccc; margin:.5em; padding: .5em; word-wrap: break-word;">
                    <xsl:call-template name="savedDoc"/>  
 <!--                     <xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>-->
                   </div>
+                  <script type="text/javascript">
+                     $('#preview-show').click(function() {
+                        $('#preview').toggle();
+                     });
+                  </script>
                </div>
                <div class="closeWindow">
                   <a>
@@ -685,7 +689,7 @@
             <xsl:copy-of select="$brand.links"/>
             <script type="text/javascript">
                $(document).ready(function(){
-                  _gaq.push(['_trackEvent', 'interaction', 'send', 'bookbag']);
+                  _gaq.push(['_trackEvent', 'bookbag', 'send', <xsl:value-of select="@totalDocs"/>]);
                });
             </script>
          </head>
@@ -921,7 +925,7 @@
                <xsl:if test="$smode != 'showBag'">
                   <xsl:variable name="bag" select="session:getData('bag')"/>
                   <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
-                     onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);">
+                     onClick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'results page']);">
                      <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
                         style="vertical-align:bottom;"/>
                   </a>
@@ -929,72 +933,13 @@
                   /></span>)</span>
                </xsl:if>
             </div>
-               <!--<div class="searchNav">
-                  <div>
-                        <div class="searchLinks">
-                           <a href="{$xtfURL}{$crossqueryPath}">
-                              <xsl:text>NEW SEARCH</xsl:text>
-                           </a>
-                           <xsl:if test="$smode = 'showBag'">
-                              <xsl:text>&#160;|&#160;</xsl:text>
-                              <a href="{session:getData('queryURL')}">
-                                 <xsl:text>RETURN TO SEARCH RESULTS</xsl:text>
-                              </a>
-                           </xsl:if>
-                           <xsl:text>&#160;|&#160;</xsl:text>
-                           <a href="search?browse-all=yes">
-                              <xsl:text>BROWSE</xsl:text>
-                              </a>
-                           <a href="search?smode=browse">
-                              <xsl:text>BROWSE</xsl:text>
-                           </a>
-                           <xsl:text>&#160;|&#160;</xsl:text>
-                           <a href="#" rel="#searchTips"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on results page']);">
-                           <xsl:text>SEARCH TIPS</xsl:text></a>
-                        </div>
-                     </div>
-               </div>-->
+               
             <div class="resultsHeader">
                <div id="currentBrowse">
                   <strong>Browsing:&#160;</strong>
                   <xsl:call-template name="currentBrowse"/>
                </div>
-                     <!--<strong>Results:&#160;</strong>
-                        <xsl:variable name="items" select="facet/group[docHit]/@totalDocs"/>
-                        <xsl:choose>
-                           <xsl:when test="$items &gt; 1">
-                              <xsl:value-of select="$items"/>
-                              <xsl:text> Items</xsl:text>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <xsl:value-of select="$items"/>
-                              <xsl:text> Item</xsl:text>
-                           </xsl:otherwise>
-                        </xsl:choose>-->
-
-               <!--<div class="right">
-                  <xsl:variable name="bag" select="session:getData('bag')"/>
-                  <div class="bookbag">
-                     <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
-                        onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'bookbag']);">
-                        <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
-                           style="vertical-align:middle;"/>
-                     </a>
-                     <span>(<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"
-                           /></span>)</span>
-                  </div>
-
-                  <div>
-                     <xsl:if test="$smode = 'showBag'">
-                        <xsl:text>&#160;|&#160;</xsl:text>
-                        <a href="{session:getData('queryURL')}">
-                           <xsl:text>Return to Search Results</xsl:text>
-                        </a>
-                     </xsl:if>
-                  </div>
-               </div> -->
-               
+                                    
                <div id="alphaList">
                   <div id="menuTitle"><a href="#">&#9776;</a></div>
                   <div id="alphaLinks">
@@ -1247,7 +1192,7 @@
          <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
             <xsl:attribute name="class">docHit dao</xsl:attribute>
          </xsl:if>
-         <div id="top-level_{@rank}" class="top-level component">
+         <div id="top-level_{@rank}" class="top-level component" onClick="_gaq.push(['_trackEvent', 'component info', 'view', 'results page']);">
          <!-- 11/15/2013 HA: streamlining display, removing labels, similar items and subjects -->
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
          <!-- 9/26/11 WS: Moved title above Author -->
@@ -1256,7 +1201,7 @@
                <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
                   <xsl:variable name="daoFile" select="substring-before(tokenize(meta/daoLink,'/')[position()=last()],'.')"/>
                   <xsl:variable name="daoImg" select="concat(string-join(tokenize(meta/daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/> 
-                  <a href="{$docPath}" onClick="_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);"><img src="{$daoImg}" alt="Digital object thumbnail" title="Digital object thumbnail"/></a>
+                  <img src="{$daoImg}" alt="Digital object thumbnail" title="Digital object thumbnail"/>
                </xsl:when>
                <xsl:when test="meta/genre[contains(.,'DVD')]">
                   <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
@@ -1292,7 +1237,7 @@
                   </xsl:attribute>-->
                   <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
                      <xsl:attribute name="onClick">
-                        <xsl:text>_gaq.push(['_trackEvent', 'interaction', 'view', 'digital object']);</xsl:text>
+                        <xsl:text>_gaq.push(['_trackEvent', 'digital object', 'view', 'results page']);</xsl:text>
                      </xsl:attribute>
                   </xsl:if>
                   <xsl:choose>
@@ -1416,21 +1361,21 @@
                               <xsl:choose>
                                  <xsl:when test="meta/type = 'ead'">
                                     <a href="javascript:add_{@rank}()"
-                                       onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);">
+                                       onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-archival', 'results page']);">
                                        <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                                           title="Add to bookbag"/>
                                     </a>
                                  </xsl:when>
                                  <xsl:when test="meta/type = 'ead' and meta/type = 'dao'">
                                     <a href="javascript:add_{@rank}()"
-                                       onClick="_gaq.push(['_trackEvent', 'interaction', 'add-dao', 'bookbag']);">
+                                       onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-dao', 'results page']);">
                                        <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                                           title="Add to bookbag"/>
                                     </a>
                                  </xsl:when>
                                  <xsl:otherwise>
                                     <a href="javascript:add_{@rank}()"
-                                       onClick="_gaq.push(['_trackEvent', 'interaction', 'add-library', 'bookbag']);">
+                                       onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-library', 'results page']);">
                                        <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                                           title="Add to bookbag"/>
                                     </a>
@@ -1513,7 +1458,7 @@
          <!-- 11/15/2013 HA: streamlining display, removing subjects, labels and find similar -->
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
          <!-- Deals with collections vrs. series/files -->
-         <div id="top-level_{@rank}-collection" class="top-level component">
+         <div id="top-level_{@rank}-collection" class="top-level component" onClick="_gaq.push(['_trackEvent', 'component info', 'view', 'results page']);">
             <xsl:choose>
                <xsl:when test="meta/level = 'collection'">
                   <div class="resultIcon">
@@ -1753,7 +1698,7 @@
                                  <xsl:choose>
                                     <xsl:when test="meta/type = 'ead'">
                                        <a href="javascript:add_{concat(@rank,'collection')}()"
-                                          onClick="_gaq.push(['_trackEvent', 'interaction', 'add-archival', 'bookbag']);">
+                                          onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-archival', 'results page']);">
                                           <img src="/xtf/icons/default/addbag.gif"
                                              alt="Add to bookbag" title="Add to bookbag"/>
                                        </a>
@@ -1761,7 +1706,7 @@
                                     </xsl:when>
                                     <xsl:otherwise>
                                        <a href="javascript:add_{concat(@rank,'collection')}()"
-                                          onClick="_gaq.push(['_trackEvent', 'interaction', 'add-library', 'bookbag']);">
+                                          onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-library', 'results page']);">
                                           <img src="/xtf/icons/default/addbag.gif"
                                              alt="Add to bookbag" title="Add to bookbag"/>
                                        </a>
@@ -1792,7 +1737,7 @@
             <div class="subdocuments">
                <xsl:for-each select="current-group()[meta/level != 'collection']">
                   <div class="subdocumentWrap">
-                  <div id="subdocument_{@rank}" class="subdocument component">
+                     <div id="subdocument_{@rank}" class="subdocument component" onClick="_gaq.push(['_trackEvent', 'component info', 'view', 'results page']);">
                      <xsl:if test="position() mod 2 = 1">
                         <xsl:attribute name="class">subdocument component odd</xsl:attribute>
                      </xsl:if>
@@ -1953,7 +1898,7 @@
                                           }, null);
                                     };
                                  </script>
-                           <a href="javascript:add_{@rank}()">
+                           <a href="javascript:add_{@rank}()" onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-archival', 'results page']);">
                               <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
                                  title="Add to bookbag"/>
                            </a>
@@ -2068,7 +2013,7 @@
       <li>
          <xsl:apply-templates select="meta/creator[1]"/>
          <xsl:text>. </xsl:text>
-         <a onClick="_gaq.push(['_trackEvent', 'interaction', 'similar items', 'item click']);">
+         <a>
             <xsl:attribute name="href">
                <xsl:choose>
                   <xsl:when test="matches(meta/display[1], 'dynaxml')">
@@ -2116,10 +2061,15 @@
          </xsl:choose>
       </xsl:variable>
       <div class="title">
-         <a>
+         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'subdocument title']);">
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
             </xsl:attribute>
+            <xsl:if test="meta/*:type = 'dao'">
+               <xsl:attribute name="onClick">
+                  <xsl:text>_gaq.push(['_trackEvent', 'digital object', 'view', 'results page']);</xsl:text>
+               </xsl:attribute>
+            </xsl:if>
             <xsl:choose>
                <xsl:when test="meta/level = 'series'">Series </xsl:when>
                <xsl:when test="meta/level = 'subseries'">Subseries </xsl:when>
@@ -2135,6 +2085,10 @@
             <xsl:if test="meta/date != ''">
                <xsl:text>, </xsl:text>
                <xsl:apply-templates select="meta/date"/>
+            </xsl:if>
+            <xsl:if test="meta/*:type = 'dao'">
+               <img src="/xtf/icons/default/dao.gif" alt="digital object"
+                  title="digital object"/>
             </xsl:if>
          </a>
       </div>
@@ -2166,24 +2120,24 @@
             <h4>Additional Description</h4>
             <p><xsl:apply-templates select="meta/scopecontent"/></p>
          </div>
-         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
-         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
+         <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/accessrestrict != ''">
          <div class="restrictions notes">
             <h4>Access Restrictions</h4>
             <p><xsl:apply-templates select="meta/accessrestrict"/></p>
          </div>
-         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
-         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
+         <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/userestrict != ''">
          <div class="restrictions notes">
             <h4>Use Restrictions</h4>
             <p><xsl:apply-templates select="meta/userestrict"/></p>
          </div>
-         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
-         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
+         <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/language != ''">
          <div class="language">
@@ -2215,10 +2169,15 @@
          </xsl:choose>
       </xsl:variable>
       <div class="title">
-         <a>
+         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);">
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
             </xsl:attribute>
+            <xsl:if test="meta/*:type = 'dao'">
+               <xsl:attribute name="onClick">
+                  <xsl:text>_gaq.push(['_trackEvent', 'digital object', 'view', 'results page']);</xsl:text>
+               </xsl:attribute>
+            </xsl:if>
             <xsl:choose>
                <xsl:when test="meta/collectionTitle">
                   <xsl:apply-templates select="meta/collectionTitle"/>
@@ -2228,6 +2187,10 @@
             <xsl:if test="meta/collectionDate != ''">
                <xsl:text>, </xsl:text>
                <xsl:apply-templates select="meta/collectionDate"/>
+            </xsl:if>
+            <xsl:if test="meta/*:type = 'dao'">
+               <img src="/xtf/icons/default/dao.gif" alt="digital object"
+                  title="digital object"/>
             </xsl:if>
          </a>
       </div>
@@ -2251,15 +2214,15 @@
             <h4>Additional Description</h4>
             <p><xsl:apply-templates select="meta/collectionScopecontent"/></p>
          </div>
-         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
-         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
+         <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/notes">
          <div class="notes">
             <p><xsl:apply-templates select="meta/notes"/></p>
          </div>
-         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
-         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
+         <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
       </xsl:if>
 
       <xsl:if test="meta/accessrestrict != ''">
@@ -2267,16 +2230,16 @@
             <h4>Access Restrictions</h4>
             <p><xsl:apply-templates select="meta/accessrestrict"/></p>
          </div>
-         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
-         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
+         <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/userestrict != ''">
          <div class="restrictions notes">
             <h4>Use Restrictions</h4>
             <p><xsl:apply-templates select="meta/userestrict"/></p>
          </div>
-         <div class="notesMore"><div class="button"><a href="#">more</a></div></div>
-         <div class="notesLess"><div class="button"><a href="#">less</a></div></div>
+         <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
+         <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/language != ''">
          <div class="language">

@@ -187,7 +187,7 @@ div.docHit {
 .bookbagView .activeArrow {margin-right:-13%;}
 .bookbagView .top-level .activeArrow {margin-right:-12%;}
     
-.docHit .active .title, .docHit .active .result {color:#fff}
+.docHit .active .title, .docHit .active .result, .docHit .active .collection {color:#fff}
 .subdocument.active .hit {color: #fff !important;}
 
 .showMore {width: 0;
@@ -240,6 +240,8 @@ border-top: 1px solid #999;
 width:100%;
 float:left;
 }
+.notesLess {margin-top:.5em;}
+
 div.notesMore div.button, div.notesLess div.button {
     background: #ccc;
     padding: 0em .5em;

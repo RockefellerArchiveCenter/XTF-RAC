@@ -439,7 +439,7 @@
             <xsl:choose>
                <!-- Make a hyperlink if it's not the page we're currently on. -->
                <xsl:when test="($pageStart != $start)">
-                  <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}">
+                  <a href="{$xtfURL}{$crossqueryPath}?{$pageQueryString};{$startName}={$pageStart}" onClick="_gaq.push(['_trackEvent', 'results', 'page', '{$pageNum}']);">
                      <div class="pageNumber"><xsl:value-of select="$pageNum"/></div>
                   </a>
                   <!--<xsl:if test="$pageNum &lt; $showPages">
@@ -483,7 +483,7 @@
    <!-- ====================================================================== -->
    
    <xsl:template match="subject">
-      <a onClick="_gaq.push(['_trackEvent', 'interaction', 'subjects', 'find']);" href="{$xtfURL}{$crossqueryPath}?subject={editURL:protectValue(.)};subject-join=exact;rmode={$rmode};style={$style};brand={$brand}">
+      <a onClick="_gaq.push(['_trackEvent', 'search', 'subjects', 'results page']);" href="{$xtfURL}{$crossqueryPath}?subject={editURL:protectValue(.)};subject-join=exact;rmode={$rmode};style={$style};brand={$brand}">
          <xsl:apply-templates/>
       </a>
 
@@ -1018,13 +1018,13 @@
          <h3>
             <xsl:apply-templates select="." mode="facetName"/>
          </h3>
-         <a href="#">
+         <a href="#" onClick="_gaq.push(['_trackEvent', 'facet', 'less', '{$field}']);">
          <div class="facetLess">
             less
          </div>
          </a>
          <xsl:if test="$needExpand">
-            <a href="#">
+            <a href="#" onClick="_gaq.push(['_trackEvent', 'facet', 'more', '{$field}']);">
             <div class="facetMore">
                more
             </div></a>
@@ -1077,7 +1077,7 @@
             <xsl:otherwise>
                   <div class="facetName">
                      <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                     <a onclick="_gaq.push(['_trackEvent', 'search', 'browse', 'facet']);" href="{$selectLink}">
+                     <a onclick="_gaq.push(['_trackEvent', 'facet', 'search', '{$field}']);" href="{$selectLink}">
                         <xsl:value-of select="$value"/>
                      </a>
                      <xsl:apply-templates select="." mode="afterGroupValue"/>
@@ -1173,7 +1173,7 @@
                <td class="col1">&#8226;</td> <!-- bullet char -->
                <td class="col2">
                   <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                  <a href="{$selectLink}" onclick="_gaq.push(['_trackEvent', 'search', 'browse', 'facet']);">
+                  <a href="{$selectLink}" onclick="_gaq.push(['_trackEvent', 'facet', 'search', '{$field}']);">
                      <xsl:value-of select="@value"/>
                   </a>
                   <xsl:apply-templates select="." mode="afterGroupValue"/>
@@ -1186,13 +1186,13 @@
             <!-- closed node: click to expand -->
             <xsl:when test="count(group) = 0">
                <td class="col1">
-                  <a href="{$selectLink}" onclick="_gaq.push(['_trackEvent', 'search', 'browse', 'facet']);">
+                  <a href="{$selectLink}" onclick="_gaq.push(['_trackEvent', 'facet', 'search', '{$field}']);">
                      <img src="{$icon.path}/i_expand.gif" border="0" alt="expand"/>
                   </a>
                </td>
                <td class="col2">
                   <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                  <a href="{$selectLink}" onclick="_gaq.push(['_trackEvent', 'search', 'browse', 'facet']);">
+                  <a href="{$selectLink}" onclick="_gaq.push(['_trackEvent', 'facet', 'search', '{$field}']);">
                      <xsl:value-of select="@value"/>
                   </a>
                   <xsl:apply-templates select="." mode="afterGroupValue"/>
