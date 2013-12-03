@@ -1,16 +1,16 @@
 $(document).ready(function(){
-if ($('#toc > .contentsList').length) {
+if ($('div#toc > div.contentsList').length) {
     setTimeout(function() {
-    checkIfInView($('.active'));}, 500);
+    checkIfInView($('div.active'));}, 500);
     }
 });
 
 function checkIfInView(element){
-    var offset = element.offset().top - $('#tocWrapper').innerHeight();
+    var offset = element.offset().top - $('div#tocWrapper').innerHeight();
 
     if(offset > 0){
         // Not in view
-        $('#tocWrapper').animate({scrollTop: offset}, 700);
+        $('div#tocWrapper').animate({scrollTop: offset}, 700);
         return false;
     } 
    return true;

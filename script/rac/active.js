@@ -13,12 +13,9 @@ else if ($("#adminlink").is(':visible')){
     $("#adminlinkMenu").addClass("active"); } 
 else if ($("#physdesclink").is(':visible')){
     $("#physdesclinkMenu").addClass("active"); } 
-//else if ($(id).is(':visible')){
-//$(".accordionContent").hide();
-//$(".tocRow").removeClass("on");
-//$(menu).addClass("active");
-//if ($(menu).hasClass("accordionButton")){
-//    $(menu).addClass("on");}
-//$(menu).next().show();}
 else {}
+if(window.location.hash){
+    var activeid = window.location.hash;
+    $(activeid).addClass("active");
+}
     });

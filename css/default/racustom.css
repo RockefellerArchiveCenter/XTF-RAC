@@ -286,7 +286,7 @@ ul.none {list-style:none;}
 #content-wrapper { /* required to avoid jumping */
     position: fixed !important;
     position: absolute;
-    top: 257px;
+    top: 261px;
     right:1%;
     left:31%;
     bottom:1.6em;
@@ -333,12 +333,9 @@ ul.none {list-style:none;}
 .moreLess a{text-decoration:none !important; font-weight:bold; color:#c45414 !important;}
 .inventoryTitle {font-weight:bold; background-color:#000; color:#fff; padding:4px 2px; margin-bottom:.5em;float:left;width:100%}
 .file:nth-of-type(even) {background-color:#eee !important;}
-/*tr.file td {border-bottom: 1px dotted #ccc !important; margin-top:.5em;}*/
 .file {float: left;width:100%; padding:.5em 0 .5em 0}
-/*tr.file td.noBorder {border:none!important;}
-.daoItemDisplay {float:left; padding:.5em; width:100%;}
-.daoItemDisplay .caption {float:left;padding: 3em 0 0 1em;width: 88%;font-size:1em;}
-.daoItemDisplay .daoLink {float:left; width:10%}*/
+.file.active {color:#fff;background-color: #999 !important;border-left: .5em solid #c45414;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position:relative;z-index:2;}
+.file.active .subhit {color:#fff !important;}
 .daoLink, .format, .containers, .moreInfo {float:left;display:inline-block;vertical-align:middle;}
 .daoLink {width:38%;padding:0 1% 0 1%;}
 .format {width:30%;}
