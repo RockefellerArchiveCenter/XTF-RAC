@@ -550,7 +550,7 @@
          <xsl:apply-templates select="note"/>
          <xsl:call-template name="contributors"/>
          <!-- Added link to Contents list -->
-         <xsl:variable name="idFile">
+         <!--<xsl:variable name="idFile">
             <xsl:choose>
                <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file']">
                   <xsl:value-of select="'contentsLink'"/>
@@ -559,7 +559,7 @@
                   <xsl:value-of select="/ead/archdesc/dsc/child::*[1]/@id"/>
                </xsl:otherwise>
             </xsl:choose>
-         </xsl:variable>
+         </xsl:variable>-->
          <xsl:variable name="nodesLst">
             <xsl:choose>
                <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file']">archdesc/dsc/child::*</xsl:when>
