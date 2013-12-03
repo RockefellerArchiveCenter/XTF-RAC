@@ -179,10 +179,11 @@ div.docHit {
     border-bottom: 10px solid transparent;
     border-left: 10px solid #999;
     content: " ";
-    float: right;
-    margin-right: -13.5%;
-    margin-top: 1%;}
-.top-level .activeArrow {margin-right: -12.5%;margin-top: 3%;}
+    float: left;
+    margin-top: 1%;
+    position:relative;
+    z-index:2;}
+.docHit > .activeArrow {margin-right: -12.5%;margin-top: 3%;}
 .bookbagView .activeArrow {margin-right:-13%;}
 .bookbagView .top-level .activeArrow {margin-right:-12%;}
     

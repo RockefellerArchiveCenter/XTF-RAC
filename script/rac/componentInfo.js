@@ -55,7 +55,7 @@ $(document).ready(function() {
         $('div.activeArrow').hide();
         $(this).addClass('active');
         if($(window).width() > 485) {
-            $(this).children('div.activeArrow').show();
+            $(this).next('div.activeArrow').show();
             $(componentid).fadeIn().css({top: setheight, right: '1%', position:'absolute'});
         } else {
             $(componentid).fadeIn();
