@@ -2179,15 +2179,25 @@
                </xsl:attribute>
             </xsl:if>
             <xsl:choose>
-               <xsl:when test="meta/collectionTitle">
+               <xsl:when test="meta/collectionTitle and meta/level != 'file'">
                   <xsl:apply-templates select="meta/collectionTitle"/>
                </xsl:when>
                <xsl:otherwise><xsl:apply-templates select="meta/title"/></xsl:otherwise>
             </xsl:choose>
-            <xsl:if test="meta/collectionDate != ''">
-               <xsl:text>, </xsl:text>
-               <xsl:apply-templates select="meta/collectionDate"/>
-            </xsl:if>
+            <xsl:choose>
+               <xsl:when test="meta/level = 'file'">
+                  <xsl:if test="meta/title !='' and meta/date !=''">
+                     <xsl:text>, </xsl:text>
+                  </xsl:if>
+                  <xsl:apply-templates select="meta/date"/>
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:if test="meta/collectionDate != ''">
+                  <xsl:text>, </xsl:text>
+                  <xsl:apply-templates select="meta/collectionDate"/>
+               </xsl:if></xsl:otherwise>
+            </xsl:choose>
+            
             <xsl:if test="meta/*:type = 'dao'">
                <img src="/xtf/icons/default/dao.gif" alt="digital object"
                   title="digital object"/>
