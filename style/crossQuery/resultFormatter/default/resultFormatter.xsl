@@ -1615,9 +1615,7 @@
                         <xsl:if test="meta/collectionDate">
                            <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
                            <xsl:text>, </xsl:text>
-                           <xsl:if test="meta/title != ''">
-                              <xsl:apply-templates select="meta/collectionDate"/>
-                           </xsl:if>
+                           <xsl:apply-templates select="meta/collectionDate"/>
                         </xsl:if>
                         <!-- </a> -->
                         <xsl:if test="meta/*:type = 'dao'">
@@ -1832,11 +1830,13 @@
                <xsl:otherwise>none</xsl:otherwise>
             </xsl:choose>
             <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
-            <xsl:if test="meta/date != ''">
-               <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+         <xsl:if test="meta/date != ''">
+            <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+            <xsl:if test="meta/title != ''">
                <xsl:text>, </xsl:text>
-               <xsl:apply-templates select="meta/date"/>
             </xsl:if>
+            <xsl:apply-templates select="meta/date"/>
+         </xsl:if>
          <xsl:if test="meta/*:type = 'dao'">
             <img src="/xtf/icons/default/dao.gif" alt="digital object"
                title="digital object"/>
@@ -2083,7 +2083,9 @@
             </xsl:if>
             <xsl:apply-templates select="meta/title"/>
             <xsl:if test="meta/date != ''">
-               <xsl:text>, </xsl:text>
+               <xsl:if test="meta/title != ''">
+                  <xsl:text>, </xsl:text>
+               </xsl:if>
                <xsl:apply-templates select="meta/date"/>
             </xsl:if>
             <xsl:if test="meta/*:type = 'dao'">
@@ -2117,24 +2119,36 @@
       </div>
       <xsl:if test="meta/scopecontent != ''">
          <div class="notes">
-            <h4>Additional Description</h4>
-            <p><xsl:apply-templates select="meta/scopecontent"/></p>
+            <div>
+               <h4>Additional Description</h4>
+               <p>
+                  <xsl:apply-templates select="meta/scopecontent"/>
+               </p>
+            </div>
          </div>
          <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
          <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/accessrestrict != ''">
          <div class="restrictions notes">
-            <h4>Access Restrictions</h4>
-            <p><xsl:apply-templates select="meta/accessrestrict"/></p>
+            <div>
+               <h4>Access Restrictions</h4>
+               <p>
+                  <xsl:apply-templates select="meta/accessrestrict"/>
+               </p>
+            </div>
          </div>
          <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
          <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/userestrict != ''">
          <div class="restrictions notes">
-            <h4>Use Restrictions</h4>
-            <p><xsl:apply-templates select="meta/userestrict"/></p>
+            <div>
+               <h4>Use Restrictions</h4>
+               <p>
+                  <xsl:apply-templates select="meta/userestrict"/>
+               </p>
+            </div>
          </div>
          <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
          <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
@@ -2179,25 +2193,23 @@
                </xsl:attribute>
             </xsl:if>
             <xsl:choose>
-               <xsl:when test="meta/collectionTitle and meta/level != 'file'">
-                  <xsl:apply-templates select="meta/collectionTitle"/>
-               </xsl:when>
-               <xsl:otherwise><xsl:apply-templates select="meta/title"/></xsl:otherwise>
-            </xsl:choose>
-            <xsl:choose>
-               <xsl:when test="meta/level = 'file'">
-                  <xsl:if test="meta/title !='' and meta/date !=''">
-                     <xsl:text>, </xsl:text>
+               <xsl:when test="$type='dao'">
+                  <xsl:apply-templates select="meta/title"/>
+                  <xsl:if test="meta/date != ''">
+                     <xsl:if test="meta/title !=''">
+                        <xsl:text>, </xsl:text>
+                     </xsl:if>
+                     <xsl:apply-templates select="meta/date"/>
                   </xsl:if>
-                  <xsl:apply-templates select="meta/date"/>
                </xsl:when>
                <xsl:otherwise>
+                  <xsl:apply-templates select="meta/collectionTitle"/>
                   <xsl:if test="meta/collectionDate != ''">
-                  <xsl:text>, </xsl:text>
-                  <xsl:apply-templates select="meta/collectionDate"/>
-               </xsl:if></xsl:otherwise>
+                     <xsl:text>, </xsl:text>
+                     <xsl:apply-templates select="meta/collectionDate"/>
+                  </xsl:if>
+               </xsl:otherwise>
             </xsl:choose>
-            
             <xsl:if test="meta/*:type = 'dao'">
                <img src="/xtf/icons/default/dao.gif" alt="digital object"
                   title="digital object"/>
@@ -2221,15 +2233,21 @@
       </xsl:if>
       <xsl:if test="meta/collectionScopecontent != ''">
          <div class="notes">
+            <div>
             <h4>Additional Description</h4>
             <p><xsl:apply-templates select="meta/collectionScopecontent"/></p>
+            </div>
          </div>
          <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
          <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/notes">
          <div class="notes">
-            <p><xsl:apply-templates select="meta/notes"/></p>
+            <div>
+               <p>
+                  <xsl:apply-templates select="meta/notes"/>
+               </p>
+            </div>
          </div>
          <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
          <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
@@ -2237,16 +2255,24 @@
 
       <xsl:if test="meta/accessrestrict != ''">
          <div class="restrictions notes">
-            <h4>Access Restrictions</h4>
-            <p><xsl:apply-templates select="meta/accessrestrict"/></p>
+            <div>
+               <h4>Access Restrictions</h4>
+               <p>
+                  <xsl:apply-templates select="meta/accessrestrict"/>
+               </p>
+            </div>
          </div>
          <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
          <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>
       </xsl:if>
       <xsl:if test="meta/userestrict != ''">
          <div class="restrictions notes">
-            <h4>Use Restrictions</h4>
-            <p><xsl:apply-templates select="meta/userestrict"/></p>
+            <div>
+               <h4>Use Restrictions</h4>
+               <p>
+                  <xsl:apply-templates select="meta/userestrict"/>
+               </p>
+            </div>
          </div>
          <div class="notesMore"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a></div></div>
          <div class="notesLess"><div class="button"><a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a></div></div>

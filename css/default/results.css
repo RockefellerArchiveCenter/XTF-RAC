@@ -211,9 +211,10 @@ div.docHit {
 .showLess {display:none;}
 
 .componentInfo, .componentDefault {
-    display:none;
+    display:block;
+    visibility:hidden;
     width:29%;
-    position: relative;
+    position: absolute;
     margin:0 1%;
     border-radius:5px;
     background-color:#FAFAFB;

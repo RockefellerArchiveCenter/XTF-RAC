@@ -1,16 +1,19 @@
-$(document).ready(function() {
+$(window).load(function() {
     //$('.notesHide').hide();
     $('div.notesMore').hide();
-    $('div.notes > p').each(function() {
-            var $elem = $(this); 		// The element or elements with the text to hide
-    		var $limit = 300;		// The number of characters to show
-    		var $str = $elem.html();	// Getting the text
+    $('.notes > div').each(function() {
+            var height = $(this).height(); 		// The element or elements with the text to hide
+    		var parentHeight = $(this).parent().height();
+    		//var $limit = 300;		// The number of characters to show
+    		//var $str = $elem.html();	// Getting the text
     		//var $strtemp = jQuery.trim($str).substring(0,$limit).split(" ").slice(0, -1).join(" ") + "...";;	// Get the visible part of the string
     		//$strNew = '<span class="notesShow">' + $strtemp + '</span>' + '<span class="notesHide">' + $str + '</span>';	// Recompose the string with the span tag wrapped around the hidden part of it
-    		if ($str.length > $limit) {   // Write the string to the DOM 
-    		$elem.parent().next('.notesMore').show();
+    		//alert(height);
+    		
+    		if (height > parentHeight) {   // Write the string to the DOM 
+    		$(this).parent().next('.notesMore').show();
     		} else {
-    		$elem.parent().next('.notesMore').hide();
+    		$(this).parent().next('.notesMore').hide();
     	}		
      });
      
@@ -45,20 +48,20 @@ $(document).ready(function() {
 
     if($(this).hasClass("active")) {
         $(this).removeClass("active");
-        $(componentid).hide();
+        $(componentid).css('visibility','hidden');
         $('div.activeArrow').hide();
     
     } else {
         $('div.component').removeClass("active");
         $('div.componentDefault').hide();
-        $('div.componentInfo').hide();
+        $('div.componentInfo').css('visibility','hidden');
         $('div.activeArrow').hide();
         $(this).addClass('active');
         if($(window).width() > 485) {
             $(this).next('div.activeArrow').show();
-            $(componentid).fadeIn().css({top: setheight, right: '1%', position:'absolute'});
+            $(componentid).fadeIn().css({top: setheight, right: '1%', position:'absolute', visibility:'visible'});
         } else {
-            $(componentid).fadeIn();
+            $(componentid).css('position', 'relative').show();
     }
     }
     });
