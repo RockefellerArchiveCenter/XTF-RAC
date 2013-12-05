@@ -2,15 +2,9 @@ $(window).load(function() {
     //$('.notesHide').hide();
     $('div.notesMore').hide();
     $('.notes > div').each(function() {
-            var height = $(this).height(); 		// The element or elements with the text to hide
-    		var parentHeight = $(this).parent().height();
-    		//var $limit = 300;		// The number of characters to show
-    		//var $str = $elem.html();	// Getting the text
-    		//var $strtemp = jQuery.trim($str).substring(0,$limit).split(" ").slice(0, -1).join(" ") + "...";;	// Get the visible part of the string
-    		//$strNew = '<span class="notesShow">' + $strtemp + '</span>' + '<span class="notesHide">' + $str + '</span>';	// Recompose the string with the span tag wrapped around the hidden part of it
-    		//alert(height);
-    		
-    		if (height > parentHeight) {   // Write the string to the DOM 
+            var height = $(this).height();
+    		var parentHeight = $(this).parent().height();	
+    		if (height > parentHeight) { 
     		$(this).parent().next('.notesMore').show();
     		} else {
     		$(this).parent().next('.notesMore').hide();
@@ -19,8 +13,6 @@ $(window).load(function() {
      
     $(".notesMore").click(function(event){
         event.preventDefault();
-        //$(this).prev().prev().prev('span.notesShow').hide();
-        //$(this).prev().prev('span.notesHide').show();
         $(this).prev('div.notes').css("max-height", "none")
         $(this).next('div.notesLess').show();
         $(this).hide();
@@ -28,8 +20,6 @@ $(window).load(function() {
 
     $(".notesLess").click(function(event){
         event.preventDefault();
-        //$(this).prev('span.notesHide').hide();
-        //$(this).prev().prev('span.notesShow').show();
         $(this).prev().prev('div.notes').css("max-height", "7.5em")
         $(this).prev('div.notesMore').show();
         $(this).hide();
@@ -42,7 +32,7 @@ $(window).load(function() {
     var infoheight = $(componentid).height();
     var windowheight = $(window).height();
     var scrolltop = $(window).scrollTop();
-    var offset = position.top - scrolltop
+    var offset = position.top - (scrolltop + 200);
     var fraction = (windowheight / offset);
     var setheight = position.top - (infoheight / fraction);
 
