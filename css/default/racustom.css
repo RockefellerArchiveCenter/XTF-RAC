@@ -299,6 +299,7 @@ ul.none {list-style:none;}
 }
 
 #content-wrapper a {text-decoration:none; color:#c45414;}
+#content-wrapper .active a {color: #fff;}
 #content-wrapper a:hover {text-decoration:underline;}
 
 #content-wrapper h2 {padding-top:1em;}
