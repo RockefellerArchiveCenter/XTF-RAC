@@ -225,7 +225,7 @@ div.docHit {
 .bookbagView .componentInfo, .bookbagView .componentDefault {
     width:34%;
 }
-.componentDefault {display:block;position:absolute; top: 24.3em; right: 1%;min-height:20em;}
+.componentDefault {visibility:visible;position:absolute; top: 24.3em; right: 1%;min-height:20em;}
 .componentDefault h3 {margin: 0;color: #666;}
 .componentInfo .parents, .componentInfo .language, .componentInfo .notes, .componentInfo .extent {margin-top:.5em;float:left;width:100%}
 .componentInfo h4, .componentInfo p {margin:0;}

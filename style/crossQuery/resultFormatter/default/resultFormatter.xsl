@@ -2203,7 +2203,14 @@
                   </xsl:if>
                </xsl:when>
                <xsl:otherwise>
-                  <xsl:apply-templates select="meta/collectionTitle"/>
+                  <xsl:choose>
+                     <xsl:when test="meta/collectionTitle">
+                        <xsl:apply-templates select="meta/collectionTitle"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:apply-templates select="meta/title"/>
+                     </xsl:otherwise>
+                  </xsl:choose>
                   <xsl:if test="meta/collectionDate != ''">
                      <xsl:text>, </xsl:text>
                      <xsl:apply-templates select="meta/collectionDate"/>
