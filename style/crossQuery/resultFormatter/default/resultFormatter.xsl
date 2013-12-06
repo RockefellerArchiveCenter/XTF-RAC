@@ -1517,6 +1517,7 @@
                               <xsl:apply-templates select="meta/title"/> 
                            </xsl:otherwise>
                            </xsl:choose>
+                        
                            <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
                            <xsl:if test="meta/date">
                               <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
@@ -1528,6 +1529,18 @@
                            <img src="/xtf/icons/default/dao.gif" alt="digital object"
                               title="digital object"/>
                         </xsl:if>
+                        <span class="identifier">
+                           <xsl:text> (</xsl:text>
+                           <xsl:choose>
+                              <xsl:when test="contains(meta/identifier, '|')">
+                                 <xsl:value-of select="substring-before(meta/identifier, '|')"/>
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <xsl:value-of select="meta/identifier"/>
+                              </xsl:otherwise>
+                           </xsl:choose>
+                           <xsl:text>)</xsl:text>
+                        </span>
                      </div>
 
                      <!-- 11/15/2013 HA: removing label and changing logic -->
@@ -1611,6 +1624,7 @@
                               </xsl:when>
                               <xsl:otherwise>none</xsl:otherwise>
                            </xsl:choose>
+                        
                            <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
                         <xsl:if test="meta/collectionDate">
                            <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
@@ -1622,6 +1636,18 @@
                            <img src="/xtf/icons/default/dao.gif" alt="digital object"
                               title="digital object"/>
                         </xsl:if>
+                        <span class="identifier">
+                           <xsl:text> (</xsl:text>
+                           <xsl:choose>
+                              <xsl:when test="contains(meta/identifier, '|')">
+                                 <xsl:value-of select="substring-before(meta/identifier, '|')"/>
+                              </xsl:when>
+                              <xsl:otherwise>
+                                 <xsl:value-of select="meta/identifier"/>
+                              </xsl:otherwise>
+                           </xsl:choose>
+                           <xsl:text>)</xsl:text>
+                        </span>
                      </div>
 
                      <!-- 11/15/2013 HA: removing label and changing logic -->
@@ -2223,7 +2249,7 @@
             </xsl:if>
          </a>
       </div>
-      <xsl:if test="meta/extent != ''">
+      <xsl:if test="meta/collectionExtent != ''">
          <div class="extent">
             <xsl:apply-templates select="meta/collectionExtent"/>
          </div>

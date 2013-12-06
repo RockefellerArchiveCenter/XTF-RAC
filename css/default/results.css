@@ -134,6 +134,7 @@ div.docHit {
 .result.title a:visited, .componentInfo .title a:visited {color:#555;}
 .result.title a:hover, .componentInfo .title a:hover {color:#c45414;text-decoration:underline}
 .resultContent>.result.title {font-size:1.3em;margin:0}
+.result .identifier {color:#888}
 
 .result.creator {color:#555}
 
@@ -187,7 +188,7 @@ div.docHit {
 .bookbagView .activeArrow {margin-right:-13%;}
 .bookbagView .top-level .activeArrow {margin-right:-12%;}
     
-.docHit .active .title, .docHit .active .result, .docHit .active .collection, .docHit .active .hit {color:#fff}
+.docHit .active .title, .docHit .active .result, .docHit .active .collection, .docHit .active .hit, .docHit .active .identifier {color:#fff}
 .subdocument.active .hit {color: #fff !important;}
 
 .showMore {width: 0;
