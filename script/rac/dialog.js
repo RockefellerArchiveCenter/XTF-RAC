@@ -119,6 +119,29 @@ $(function () {
                               dialogDsc.dialog("option", "title", '').dialog("open");
                             });
                            });
+                           
+                           $(function () {
+                      var componentDetails = $(this).attr("id") + '_restrictions'
+                      var dialogDscRestrictions = $(componentDetails).dialog({
+                               create: function(event, ui) {
+                                    var widget = $(this).dialog("widget");
+                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                                  },
+                                  autoOpen: false,
+                                  modal: true,
+                                  resizable: true,
+                                  width: "550",
+                                  height: "300",
+                                  close: function () {
+                                    $('.ui-dialog').hide();
+                                  }
+                               });
+                               
+                            $(".restrict_dsc a").on("click", function (e) {
+                              e.preventDefault();
+                              dialogDscRestrictions.dialog("option", "title", '').dialog("open");
+                            });
+                           });
 
 
 

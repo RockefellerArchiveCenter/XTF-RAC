@@ -1426,29 +1426,37 @@
                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
                                 child::separatedmaterial |  child::controlaccess">
                                 <span class="dialog_dsc"> 
-                                   <xsl:call-template name="make-popup-link">
+                                   <!--<xsl:call-template name="make-popup-link">
                                       <xsl:with-param name="name" select="'Additional description'"/>
                                       <xsl:with-param name="id" select="string(@id)"/>
                                       <xsl:with-param name="nodes" select="."/>
                                       <xsl:with-param name="doc.view" select="'dscDescription'"/>
-                                   </xsl:call-template>
+                                   </xsl:call-template>-->
+                                   <a href="#">Additional description</a>
                                 </span>
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                 </xsl:if>
+                        <div id="{@id}_details">
+                           <xsl:apply-templates mode="moreInfo"/>
+                        </div>
                              </xsl:if>
                              <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
-                                <span class="dialog_dsc"> 
-                                   <xsl:call-template name="make-popup-link">
+                                <span class="restrict_dsc"> 
+                                   <!--<xsl:call-template name="make-popup-link">
                                       <xsl:with-param name="name" select="'Restrictions'"/>
                                       <xsl:with-param name="id" select="string(@id)"/>
                                       <xsl:with-param name="nodes" select="."/>
                                       <xsl:with-param name="doc.view" select="'restrictions'"/>
-                                   </xsl:call-template>
+                                   </xsl:call-template>-->
+                                   <a href="#">Restrictions</a>
                                 </span>
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                 </xsl:if>
+                        <div id="{@id}_restrictions">
+                           <xsl:apply-templates mode="restrictions"/>
+                        </div>
                              </xsl:if>
                           </span>
                          <!--2/11/12 WS:  add to bookbag function -->
@@ -1486,10 +1494,7 @@
                                </xsl:otherwise>
                             </xsl:choose>
                            </span>                        
-                         </span> 
-                         <div class="{@id}_details">
-                            <div>Call info and restrictions templates here</div>
-                         </div>
+                         </span>
                       </div>  
                    </xsl:when>
                    <xsl:otherwise>
@@ -1778,22 +1783,18 @@
    </xsl:template>
    <xsl:template match="xtf:meta"/>
    <xsl:template match="dao" mode="moreInfo"/>
-   <xsl:template match="*" mode="moreInfo">
-      <div>
-         <xsl:apply-templates select="did/unittitle | did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
-         <xsl:apply-templates select="did/physdesc"/>
-         <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c')]"/>
-      </div>
+   <xsl:template match="c" mode="moreInfo">
+      <xsl:apply-templates select="did/unittitle | did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
+      <xsl:apply-templates select="did/physdesc"/>
+      <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c')]"/>
    </xsl:template>
-   <xsl:template match="*" mode="restrictions">
-      <div>
-         <xsl:apply-templates select="../did/unittitle | ../did/origination | ../did/unitdate[not(@type)] | ../did/unitdate[@type != 'bulk']" mode="dsc"/>
-         <xsl:apply-templates select="../did/physdesc"/>
-         <xsl:apply-templates select="../*[(name() = 'accessrestrict' or name() = 'userestrict')]"/>
-      </div>
+   <xsl:template match="c" mode="restrictions">
+      <xsl:apply-templates select="did/unittitle | did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
+      <xsl:apply-templates select="did/physdesc"/>
+      <xsl:apply-templates select="*[(name() = 'accessrestrict' or name() = 'userestrict')]"/>
    </xsl:template>
 
-   <xsl:template name="dscDescription">
+   <!--<xsl:template name="dscDescription">
       <html xml:lang="en" lang="en">
          <head>
             <title/>
@@ -1819,7 +1820,7 @@
             </div>
          </body>
       </html>
-   </xsl:template>
+   </xsl:template>-->
    
    <xsl:template name="make-popup-link">
       <xsl:param name="name"/>
