@@ -1487,6 +1487,9 @@
                             </xsl:choose>
                            </span>                        
                          </span> 
+                         <div class="{@id}_details">
+                            <div>Call info and restrictions templates here</div>
+                         </div>
                       </div>  
                    </xsl:when>
                    <xsl:otherwise>
