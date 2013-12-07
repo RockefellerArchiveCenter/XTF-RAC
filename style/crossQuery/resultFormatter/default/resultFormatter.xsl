@@ -1263,11 +1263,22 @@
                         <xsl:apply-templates select="meta/date"/>
                   </xsl:if>
                <!--</a>-->
-               
                <xsl:if test="meta/*:type = 'dao'">
                   <img src="/xtf/icons/default/dao.gif" alt="digital object" title="digital object"
                   />
                </xsl:if>
+               <span class="identifier">
+                  <xsl:text> (</xsl:text>
+                  <xsl:choose>
+                     <xsl:when test="contains(meta/identifier, '|')">
+                        <xsl:value-of select="substring-before(meta/identifier, '|')"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:value-of select="meta/identifier"/>
+                     </xsl:otherwise>
+                  </xsl:choose>
+                  <xsl:text>)</xsl:text>
+               </span>
             </div>
                         
             <!-- 11/15/2013 HA: removing label and changing logic -->

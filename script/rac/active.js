@@ -14,8 +14,8 @@ else if ($("#adminlink").is(':visible')){
 else if ($("#physdesclink").is(':visible')){
     $("#physdesclinkMenu").addClass("active"); } 
 else {}
-if(window.location.hash){
-    var activeid = window.location.hash;
-    $(activeid).addClass("active");
-}
+//if(window.location.hash){
+//    var activeid = window.location.hash;
+//    $(activeid).addClass("active");
+//}
     });
