@@ -1372,10 +1372,10 @@
                             <span class="inventoryHeaderBookbag">Bookbag</span>
                          </div> 
                       </xsl:if>
-                      <div class="file">
-                         <xsl:if test="@id">
+                      <!--<div class="file">-->
+                         <!--<xsl:if test="@id">
                             <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
-                         </xsl:if>           
+                         </xsl:if>-->           
                                <xsl:apply-templates select="did" mode="dsc"/>  
                          <div class="instances">
                             <xsl:for-each select="child::*/container[@id]">
@@ -1425,38 +1425,26 @@
                                 child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
                                 child::separatedmaterial |  child::controlaccess">
-                                <span class="dialog_dsc"> 
-                                   <!--<xsl:call-template name="make-popup-link">
-                                      <xsl:with-param name="name" select="'Additional description'"/>
-                                      <xsl:with-param name="id" select="string(@id)"/>
-                                      <xsl:with-param name="nodes" select="."/>
-                                      <xsl:with-param name="doc.view" select="'dscDescription'"/>
-                                   </xsl:call-template>-->
+                                <span class="dialog_dsc">
                                    <a href="#">Additional description</a>
                                 </span>
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                 </xsl:if>
-                        <div id="{@id}_details" class="overlay">
+                        <div id="{@id}_details" class="overlay" rel="{child::did/unittitle}">
                            <div class="details">
                            <xsl:apply-templates select="." mode="moreInfo"/>
                            </div>
                         </div>
                              </xsl:if>
                              <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
-                                <span class="restrict_dsc"> 
-                                   <!--<xsl:call-template name="make-popup-link">
-                                      <xsl:with-param name="name" select="'Restrictions'"/>
-                                      <xsl:with-param name="id" select="string(@id)"/>
-                                      <xsl:with-param name="nodes" select="."/>
-                                      <xsl:with-param name="doc.view" select="'restrictions'"/>
-                                   </xsl:call-template>-->
+                                <span class="restrict_dsc">
                                    <a href="#">Restrictions</a>
                                 </span>
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                 </xsl:if>
-                        <div id="{@id}_restrictions" class="overlay">
+                        <div id="{@id}_restrictions" class="overlay" rel="{child::did/unittitle}">
                            <div class="restrictions">
                            <xsl:apply-templates select="." mode="restrictions"/>
                            </div>
@@ -1499,7 +1487,7 @@
                             </xsl:choose>
                            </span>                        
                          </span>
-                      </div>  
+                      <!--</div> --> 
                    </xsl:when>
                    <xsl:otherwise>
                            <div class="{$clevelMargin}">
@@ -1788,12 +1776,12 @@
    <xsl:template match="xtf:meta"/>
    <xsl:template match="dao" mode="moreInfo"/>
    <xsl:template match="*" mode="moreInfo">
-      <xsl:apply-templates select="did/unittitle | did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
+      <xsl:apply-templates select="did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
       <xsl:apply-templates select="did/physdesc"/>
       <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c')]"/>
    </xsl:template>
    <xsl:template match="*" mode="restrictions">
-      <xsl:apply-templates select="did/unittitle | did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
+      <xsl:apply-templates select="did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
       <xsl:apply-templates select="did/physdesc"/>
       <xsl:apply-templates select="*[(name() = 'accessrestrict' or name() = 'userestrict')]"/>
    </xsl:template>

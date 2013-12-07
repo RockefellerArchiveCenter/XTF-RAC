@@ -392,6 +392,8 @@ ul.none {list-style:none;}
                   overflow: visible;
                  }
                  
+.dsc.ui-dialog .ui-dialog-title {font-size:1.2em !important;}
+                 
 iframe {
                     background-image: url("images/ajax-loader.gif");   
                        background-repeat: no-repeat;

@@ -35,7 +35,7 @@ $(document).ready(function() {
     var infoheight = $(componentid).height();
     var windowheight = $(window).height();
     var scrolltop = $(window).scrollTop();
-    var offset = position.top - (scrolltop + 200);
+    var offset = position.top - (scrolltop);
     var fraction = (windowheight / offset);
     var setheight = position.top - (infoheight / fraction);
 

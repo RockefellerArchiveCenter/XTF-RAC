@@ -26,7 +26,7 @@ $(function () {
         var dialog = $('<div class="dao-container"></div>').append(iframe).appendTo('body').dialog({
             create: function(event, ui) {
                 var widget = $(this).dialog("widget");
-                $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+                $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton dao");
                 },
             autoOpen: false,
             modal: true,
@@ -106,6 +106,7 @@ $(function () {
 } if($(window).width() > 600) {
     $(function () {                      
         var dscOptions = {
+            dialogClass: 'dsc',
             autoOpen: false,
             modal: true,
             resizable: true,
@@ -118,12 +119,12 @@ $(function () {
         $(".dialog_dsc").click(function (e) {
             e.preventDefault();
             var id = '#' + $(this).parents('div.file').attr('id') + '_details';
-            $(id).dialog(dscOptions).dialog("open");
+            $(id).dialog(dscOptions).dialog("option", "title", $(id).attr('rel')).dialog("open");
         });
         $(".restrict_dsc").click(function (e) {
             e.preventDefault();
             var id = '#' + $(this).parents('div.file').attr('id') + '_restrictions';
-            $(id).dialog(dscOptions).dialog("open");
+            $(id).dialog(dscOptions).dialog("option", "title", $(id).attr('rel')).dialog("open");
         });
     });
 $(function () {
