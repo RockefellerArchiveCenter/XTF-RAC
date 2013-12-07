@@ -1382,10 +1382,16 @@
                                <div class="instance">
                                <div class="format">
                                   <xsl:variable name="label">
-                                     <xsl:value-of select="substring-before(@label,' (')"/>
+                                 <xsl:choose>
+                                    <xsl:when test="contains(@label, ' (')">
+                                       <xsl:value-of select="substring-before(@label,' (')"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                       <xsl:value-of select="@label"/>
+                                    </xsl:otherwise>
+                                 </xsl:choose>
                                   </xsl:variable>
-                                 <xsl:if
-                                    test="$label != 'Mixed materials' and $label != 'Mixed Materials' and $label != 'mixed materials'">
+                                 <xsl:if test="$label != 'Mixed materials' | 'Mixed Materials' | 'mixed materials'">
                                     <xsl:value-of select="$label"/>
                                  </xsl:if>
                                  <xsl:text>&#160;</xsl:text>
