@@ -1391,7 +1391,7 @@
                                     </xsl:otherwise>
                                  </xsl:choose>
                                   </xsl:variable>
-                                 <xsl:if test="$label != 'Mixed materials' | 'Mixed Materials' | 'mixed materials'">
+                                 <xsl:if test="$label != 'Mixed materials' or $label != 'Mixed Materials' or $label != 'mixed materials'">
                                     <xsl:value-of select="$label"/>
                                  </xsl:if>
                                  <xsl:text>&#160;</xsl:text>
@@ -1437,8 +1437,10 @@
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                 </xsl:if>
-                        <div id="{@id}_details">
-                           <xsl:apply-templates mode="moreInfo"/>
+                        <div id="{@id}_details" class="overlay">
+                           <div class="details">
+                           <xsl:apply-templates select="." mode="moreInfo"/>
+                           </div>
                         </div>
                              </xsl:if>
                              <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
@@ -1454,8 +1456,10 @@
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                 </xsl:if>
-                        <div id="{@id}_restrictions">
-                           <xsl:apply-templates mode="restrictions"/>
+                        <div id="{@id}_restrictions" class="overlay">
+                           <div class="restrictions">
+                           <xsl:apply-templates select="." mode="restrictions"/>
+                           </div>
                         </div>
                              </xsl:if>
                           </span>
@@ -1487,9 +1491,9 @@
                                   </script>
                                   <a href="javascript:add_{@id}()" onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-archival', 'ead']);"><img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag" title="Add to bookbag"/></a>
                                   <span id="add_{@id}" class="caption">
-                                     <a href="javascript:add_{@id}()">
+                                     <!--<a href="javascript:add_{@id}()">
                                         Add
-                                     </a>
+                                     </a>-->
                                   </span>
                                </xsl:otherwise>
                             </xsl:choose>
@@ -1783,12 +1787,12 @@
    </xsl:template>
    <xsl:template match="xtf:meta"/>
    <xsl:template match="dao" mode="moreInfo"/>
-   <xsl:template match="c" mode="moreInfo">
+   <xsl:template match="*" mode="moreInfo">
       <xsl:apply-templates select="did/unittitle | did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
       <xsl:apply-templates select="did/physdesc"/>
       <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c')]"/>
    </xsl:template>
-   <xsl:template match="c" mode="restrictions">
+   <xsl:template match="*" mode="restrictions">
       <xsl:apply-templates select="did/unittitle | did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
       <xsl:apply-templates select="did/physdesc"/>
       <xsl:apply-templates select="*[(name() = 'accessrestrict' or name() = 'userestrict')]"/>

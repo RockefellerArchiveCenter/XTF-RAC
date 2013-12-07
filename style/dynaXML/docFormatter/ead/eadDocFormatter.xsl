@@ -148,12 +148,12 @@
             <xsl:call-template name="print"/>
          </xsl:when>
          <!-- popup for file level descriptions -->
-         <xsl:when test="$doc.view='dscDescription'">
+         <!--<xsl:when test="$doc.view='dscDescription'">
             <xsl:call-template name="dscDescription"/>
          </xsl:when>
          <xsl:when test="$doc.view='restrictions'">
             <xsl:call-template name="restrictions"/>
-         </xsl:when>
+         </xsl:when>-->
          <!--XML view for debugging -->
          <xsl:when test="$doc.view='xml'">
             <xsl:copy-of select="."/>

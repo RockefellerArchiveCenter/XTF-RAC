@@ -10,7 +10,6 @@ $(function () {
         modal: true,
         resizable: true,
         width: "950",
-        height: "568",
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -82,70 +81,7 @@ $(function () {
                             } 
                           }
                         });
-                    $(function () {
-                    //var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0"></iframe>');
-                    //var dialogDsc = $('<div class="dsc-container"></div>').append(iframe).appendTo('body').dialog({
-                      var componentDetails = $(this).attr("id") + '_details'
-                      var dialogDsc = $(componentDetails).dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "550",
-                                  height: "300",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                                  //close: function () {
-                                  //  iframe.attr("src", "");
-                                  //  $('.ui-dialog .dscDescription').remove();
-                                  //}
-                               });
-                               
-                            $(".dialog_dsc a").on("click", function (e) {
-                              e.preventDefault();
-                                //var src = $(this).attr("href");
-                                //var title = $(this).attr("data-title");
-                                //var width = $(this).attr("data-width");
-                                //var height = $(this).attr("data-height");
-                                //iframe.attr({
-                                //    width: +width,
-                                //    height: +height,
-                                //    src: src
-                                //});
-                              dialogDsc.dialog("option", "title", '').dialog("open");
-                            });
-                           });
-                           
-                           $(function () {
-                      var componentDetails = $(this).attr("id") + '_restrictions'
-                      var dialogDscRestrictions = $(componentDetails).dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "550",
-                                  height: "300",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                               
-                            $(".restrict_dsc a").on("click", function (e) {
-                              e.preventDefault();
-                              dialogDscRestrictions.dialog("option", "title", '').dialog("open");
-                            });
-                           });
-
-
-
-
+                    
 } if($(window).width() > 800) {
 $(function () {
     var dialogDimes = $('#dimes').dialog({
@@ -157,7 +93,6 @@ $(function () {
         modal: true,
         resizable: true,
         width: "800",
-        height: "580",
         close: function () {
             $('.ui-dialog').hide();
                 }
@@ -169,27 +104,28 @@ $(function () {
     });
 });
 } if($(window).width() > 600) {
-$(function () {
-    var dialogDscDescription = $('#dscDescription').dialog({
-        create: function(event, ui) {
-            var widget = $(this).dialog("widget");
-            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-            },
-        autoOpen: false,
-        modal: true,
-        resizable: true,
-        width: "600",
-        height: "450",
-        close: function () {
-            $('.ui-dialog').hide();
+    $(function () {                      
+        var dscOptions = {
+            autoOpen: false,
+            modal: true,
+            resizable: true,
+            width: "550",
+            close: function () {
+                $('.ui-dialog').hide();
+            }
         }
+                         
+        $(".dialog_dsc").click(function (e) {
+            e.preventDefault();
+            var id = '#' + $(this).parents('div.file').attr('id') + '_details';
+            $(id).dialog(dscOptions).dialog("open");
+        });
+        $(".restrict_dsc").click(function (e) {
+            e.preventDefault();
+            var id = '#' + $(this).parents('div.file').attr('id') + '_restrictions';
+            $(id).dialog(dscOptions).dialog("open");
+        });
     });
-
-    $("a.dscDescription").on("click", function (e) {
-        e.preventDefault();
-        dialogDscDescription.dialog("option", "title", '').dialog("open");
-    });
-});
 $(function () {
     var dialogTakedown = $('#takedown').dialog({
         create: function(event, ui) {
@@ -200,7 +136,6 @@ $(function () {
         modal: true,
         resizable: true,
         width: "600",
-        height: "300",
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -221,7 +156,6 @@ $(function () {
         modal: true,
         resizable: true,
         width: "800",
-        height: "550",
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -243,7 +177,6 @@ $(function () {
         modal: true,
         resizable: true,
         width: "500",
-        height: "400",
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -265,7 +198,6 @@ $(function () {
         modal: true,
         resizable: true,
         width: "400",
-        height: "400",
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -286,7 +218,6 @@ $(function () {
         modal: true,
         resizable: true,
         width: "400",
-        height: "430",
         close: function () {
             $('.ui-dialog').hide();
         }
