@@ -17,7 +17,7 @@ $(function () {
 
     $(".searchTips").on("click", function (e) {
         e.preventDefault();
-        dialogSearchTips.dialog("option", "title", '').dialog("open");
+        dialogSearchTips.dialog("option", "title", 'Searching Tips and Tricks').dialog("open");
     });
 });
 } if($(window).width() > 850) {
@@ -45,6 +45,7 @@ $(function () {
                             
         $(".daoLink a, .caption a").on("click", function (e) {
             e.preventDefault();
+            var dialogClass = 'dao';
             var src = $(this).attr("href");
             var title = $(this).attr("data-title");
             var width = $(this).attr("data-width");
@@ -65,6 +66,7 @@ $(function () {
                               $(hash).addClass("active");
                               if($(hash + " > .daoLink a[href]").length) {
                               $(hash + " .daoLink a").each(function (e) {
+                                 var dialogClass = 'dao';
                                  var src = $(this).attr("href");
                                  var title = $(this).attr("data-title");
                                  var citation = $(this).attr("data-citation");
@@ -100,13 +102,12 @@ $(function () {
        
     $("a.dimes").on("click", function (e) {
         e.preventDefault();
-        dialogDimes.dialog("option", "title", '').dialog("open");
+        dialogDimes.dialog("option", "title", 'Why DIMES?').dialog("open");
     });
 });
 } if($(window).width() > 600) {
     $(function () {                      
         var dscOptions = {
-            dialogClass: 'dsc',
             autoOpen: false,
             modal: true,
             resizable: true,
@@ -118,12 +119,12 @@ $(function () {
                          
         $(".dialog_dsc").click(function (e) {
             e.preventDefault();
-            var id = '#' + $(this).parents('div.file').attr('id') + '_details';
+            var id = '#' + $(this).parent().parent('div').attr('id') + '_details';
             $(id).dialog(dscOptions).dialog("option", "title", $(id).attr('rel')).dialog("open");
         });
         $(".restrict_dsc").click(function (e) {
             e.preventDefault();
-            var id = '#' + $(this).parents('div.file').attr('id') + '_restrictions';
+            var id = '#' + $(this).parent().parent('div').attr('id') + '_restrictions';
             $(id).dialog(dscOptions).dialog("option", "title", $(id).attr('rel')).dialog("open");
         });
     });
@@ -144,7 +145,27 @@ $(function () {
 
     $("a.takedown").on("click", function (e) {
         e.preventDefault();
-        dialogTakedown.dialog("option", "title", '').dialog("open");
+        dialogTakedown.dialog("option", "title", 'Take-Down Policy').dialog("open");
+    });
+});
+$(function () {
+    var dialogDscDescription = $('#dscDescription').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        width: "500",
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    $("a.dscDescription").on("click", function (e) {
+        e.preventDefault();
+        dialogDscDescription.dialog("option", "title", 'About Collection Guides').dialog("open");
     });
 });
 $(function () {
@@ -164,7 +185,7 @@ $(function () {
 
     $("a.license").on("click", function (e) {
         e.preventDefault();
-        dialogTakedown.dialog("option", "title", '').dialog("open");
+        dialogTakedown.dialog("option", "title", 'Licensing for our descriptive metadata').dialog("open");
     });
 });
 } if($(window).width() > 500) {
@@ -185,7 +206,7 @@ $(function () {
 
     $("a.holdings").on("click", function (e) {
         e.preventDefault();
-        dialogHoldings.dialog("option", "title", '').dialog("open");
+        dialogHoldings.dialog("option", "title", 'Rockefeller Archive Center Holdings').dialog("open");
         });
     });
 } if($(window).width() > 400) {
@@ -206,7 +227,7 @@ $(function () {
 
     $("a.archivalMat").on("click", function (e) {
         e.preventDefault();
-        dialogArchivalMat.dialog("option", "title", '').dialog("open");
+        dialogArchivalMat.dialog("option", "title", 'Archival Materials').dialog("open");
         });
 });
 $(function () {
@@ -226,7 +247,7 @@ $(function () {
 
     $(".feedback-tab").on("click", function (e) {
         e.preventDefault();
-        dialogFeedback.dialog("option", "title", '').dialog("open");
+        dialogFeedback.dialog("option", "title", "Site Feedback").dialog("open");
         });
     });
 }

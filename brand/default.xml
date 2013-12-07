@@ -7847,7 +7847,6 @@
                   <input type="hidden" name="subject" value="XTF Feedback" />
                   <input type="hidden" name="mail_options" value="FromAddr=XTF-Feedback"/>
                   <input type="hidden" name="good_url" value="thankyou.html"/>
-                  <h3>Site Feedback</h3>
                     <label>Name</label>
                     <input type="text" name="realname"/><br/>
                     <label>Email</label>
@@ -7881,7 +7880,6 @@
    <footer>
       <div class="overlay" id="takedown">
          <div class="homeDialog">
-            <h4>Take-Down policy</h4>
             <p>These digitized collections are presented for purposes of education and research. We
                have indicated what we know about copyright. Due to the nature of archival
                collections, we are not always able to identify this information. Upon <a
@@ -7892,7 +7890,6 @@
       </div>
       <div class="overlay" id="license">
          <div class="searchtips">
-            <h3>Licensing for our descriptive metadata</h3>
             <p>Our finding aids and library records are licensed under a Creative Commons Zero (CC0)
                dedication. This means that you can copy, modify and distribute our descriptive
                metadata in any way you want without asking us for permission. The CC0 license is

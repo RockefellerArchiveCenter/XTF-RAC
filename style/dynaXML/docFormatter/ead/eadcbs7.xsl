@@ -1391,7 +1391,7 @@
                                     </xsl:otherwise>
                                  </xsl:choose>
                                   </xsl:variable>
-                                 <xsl:if test="$label != 'Mixed materials' or $label != 'Mixed Materials' or $label != 'mixed materials'">
+                                 <xsl:if test="$label != 'Mixed materials' and $label != 'Mixed Materials' and $label != 'mixed materials'">
                                     <xsl:value-of select="$label"/>
                                  </xsl:if>
                                  <xsl:text>&#160;</xsl:text>
