@@ -34,14 +34,15 @@ $(document).ready(function() {
     var position = $(this).position();
     var infoheight = $(componentid).height();
     var windowheight = $(window).height();
+    var windowheightnoscroll = $(window).height() + $('#main_1 > .top-level').position().top;
     var scrolltop = $(window).scrollTop();
-    var scrolltopnoscroll = 300 - $(window).scrollTop();
+    var scrolltopnoscroll = $('#main_1 > .top-level').position().top - $(window).scrollTop();
     var offset = position.top - (scrolltop);
     var offsetnoscroll = position.top - (scrolltopnoscroll);
     var fraction = (windowheight / offset);
-    var fractionnoscroll = (windowheight / offsetnoscroll);
+    var fractionnoscroll = (windowheight - $('#main_1 > .top-level').position().top) / offsetnoscroll;
     var setheight = position.top - (infoheight / fraction);
-    var setheightnoscroll = $('#main_1 > .top-level').position().top
+    var setheightnoscroll = position.top - (infoheight / fractionnoscroll);
 
     if($(this).hasClass("active")) {
         $(this).removeClass("active");

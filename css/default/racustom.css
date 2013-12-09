@@ -13,9 +13,11 @@ body {
 h2 {margin-top:.5em; padding:0;}
 h4{margin-bottom:0; padding-bottom:0;}
 p{margin-top:0;margin-bottom:1em;}
-.footer {margin-left: 1%;text-align: left;float:left;margin-bottom:.5em;margin-top:.5em;}
-.fixedFooter {position:absolute;bottom:0;left:0;margin:0;padding:0;width:100%;height:1.6em;background: rgba(0, 0, 0, 0.05);box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);-moz-box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);-webkit-box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);}
+.footer {margin-left: 1%;text-align: left;float:left;margin-bottom:.5em;margin-top:.5em;font-size:.8em}
+.fixedFooter {position:absolute;bottom:0;left:0;margin:0;padding:0;width:100%;height:1.7em;}
 .footer p {margin:0}
+.footer a {color:#c45414; text-decoration:none;}
+.footer a:hover {text-decoration:underline;}
 div.closeWindow {text-align:right !important; font-size:.85em !important; margin-top:1em;}
 div.closeWindow a{color: #c45414;}
 .getAddress{border-top:1px solid #999 !important; margin-top:24px !important;}
@@ -160,6 +162,8 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #results .pageNumber {padding:.2em .4em .2em .4em;}
 
 #results {width:95%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:#eee;border-radius:5px;font-size:1em;}
+#results a {color:#c45414; text-decoration:none;}
+#results a:hover {font-weight:bold}
 #results select, #results input {font-size:1em;margin-top:0; margin-bottom:0;}
 #rss {float:left;margin-right:.5em;}
 #hits {float:left;margin-bottom:1%;width:32%}
@@ -206,6 +210,8 @@ a.hit {background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !import
 .ead {background: url(/xtf/icons/default/collections.gif) left no-repeat; min-height: 50px;}
 .headerSearch {float:right;text-align:right;width:40%}
 .headerResults {float:right;width:100%;padding-top:.5em;}
+.headerResults a {color:#c45414; text-decoration:none;}
+.headerResults a:hover {text-decoration:underline;}
 
 /* Formats tabs for finding aids*/
 .tabs {float:left; margin-top:10px;}
@@ -246,6 +252,7 @@ a.hit {background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !import
     padding-left:1%;
     overflow:auto;
     border-left:1px solid #666;
+    border-bottom:1px solid #666;
    }
      
 #toc {display:block;margin-top:1em;width:100%}
@@ -288,14 +295,15 @@ ul.none {list-style:none;}
     position: absolute;
     top: 261px;
     right:1%;
-    left:31%;
+    left:30%;
     bottom:1.6em;
 /*    margin-left:240px;*/
     margin:0;
     margin-right:-2px;
-    padding:0 1% 0 0;
+    padding:0 1% 1% 1%;
     overflow:auto;
     border-right:1px solid #666;
+    border-bottom:1px solid #666;
 }
 
 #content-wrapper a {text-decoration:none; color:#c45414;}
