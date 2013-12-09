@@ -35,9 +35,13 @@ $(document).ready(function() {
     var infoheight = $(componentid).height();
     var windowheight = $(window).height();
     var scrolltop = $(window).scrollTop();
+    var scrolltopnoscroll = 300 - $(window).scrollTop();
     var offset = position.top - (scrolltop);
+    var offsetnoscroll = position.top - (scrolltopnoscroll);
     var fraction = (windowheight / offset);
+    var fractionnoscroll = (windowheight / offsetnoscroll);
     var setheight = position.top - (infoheight / fraction);
+    var setheightnoscroll = $('#main_1 > .top-level').position().top
 
     if($(this).hasClass("active")) {
         $(this).removeClass("active");
@@ -52,7 +56,11 @@ $(document).ready(function() {
         $(this).addClass('active');
         if($(window).width() > 485) {
             $(this).next('div.activeArrow').show();
-            $(componentid).fadeIn().css({top: setheight, right: '1%', position:'absolute', visibility:'visible'});
+            if (scrolltop < 261) {
+                $(componentid).fadeIn().css({top: setheightnoscroll, right: '1%', position:'absolute', visibility:'visible'});}
+            else {
+                $(componentid).fadeIn().css({top: setheight, right: '1%', position:'absolute', visibility:'visible'});
+            }
         } else {
             $(componentid).css('position', 'relative').show();
     }
