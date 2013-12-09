@@ -45,7 +45,7 @@ div.closeWindow a{color: #c45414;}
 .feedback-form .button { width: auto; float: right;}
 .feedback-form ul li {list-style: none;}
 
-.overlay {display:none;z-index:10000;background-color:#fff;width: 410px;min-height:200px;border:1px solid #666;padding: 20px;box-shadow:0px 0px 90px #000;-moz-box-shadow:0 0 90px 5px #000;-webkit-box-shadow: 0 0 90px #000;}
+.overlay {display:none;z-index:10000;background-color:#fff;width: 410px;min-height:200px;border:1px solid #666;padding: 20px;}
 .overlay .close {background-image:url(/xtf/icons/default/close.png); position:absolute; right:-15px; top:-15px; cursor:pointer; height:35px; width:35px;}
 .overlay h3 {border-bottom: 1px dotted;}
 
@@ -382,8 +382,8 @@ ul.none {list-style:none;}
                      float:right;
                      clear:left;
                      margin-top:-.2em;
-                     width:25px;
-                     height:25px;
+                     width:27px;
+                     height:27px;
                      background-image: url(images/close.png);
                  }
 .dao.ui-dialog .ui-dialog-title {
