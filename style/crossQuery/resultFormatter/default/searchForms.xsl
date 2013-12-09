@@ -352,7 +352,7 @@
                         href="/xtf/search?text=rockefeller%20university;sectionType=title;smode=advanced;type=ead"
                         >now available</a>.</li>
                   <li>Guides for selected Ford Foundation collections are <a
-                        href="/xtf/search?text=ford%20foundation;sectionType=title;smode=advanced;type=ead"
+                        href="/xtf/search?text=ford%20foundation;sectionType=title;type=ead"
                         >now available</a>.</li>
                   <li>Check out our website celebrating the <a href="http://rockefeller100.org/"
                         >Rockefeller Foundation's Centennial</a>, with lots of digitized

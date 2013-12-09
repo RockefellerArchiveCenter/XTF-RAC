@@ -238,7 +238,7 @@ a.hit {background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !import
 #tocWrapper { /* required to avoid jumping */
     position: fixed !important;
     position: absolute;
-    top: 257px;
+    top: 261px;
     left: 1%;
     bottom:1.6em;
     width:27%;
