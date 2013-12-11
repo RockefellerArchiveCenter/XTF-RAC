@@ -40,7 +40,7 @@ $(document).ready(function() {
     var offset = position.top - (scrolltop);
     var offsetnoscroll = position.top - (scrolltopnoscroll);
     var fraction = (windowheight / offset);
-    var fractionnoscroll = (windowheight - $('#main_1 > .top-level').position().top) / offsetnoscroll;
+    var fractionnoscroll = (windowheight + $('#main_1 > .top-level').position().top) / offsetnoscroll;
     var setheight = position.top - (infoheight / fraction);
     var setheightnoscroll = position.top - (infoheight / fractionnoscroll);
 
