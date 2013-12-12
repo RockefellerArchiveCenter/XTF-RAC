@@ -1218,6 +1218,7 @@
          </xsl:when>
          <xsl:otherwise>
             <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', 'level {$indent}']);">
+               <xsl:attribute name="rel"><xsl:value-of select="concat('#',@id)"/></xsl:attribute>
                <xsl:attribute name="href">
                   <xsl:choose>
                      <xsl:when test="($query != '0') and ($query != '')">

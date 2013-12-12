@@ -33,7 +33,7 @@
     this.options = $.extend({}, $.fn.scrollspy.defaults, options)
     this.$scrollElement = $element.on('scroll.scroll-spy.data-api', process)
     this.selector = (this.options.target
-      || ((href = $(element).attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
+      || ((href = $(element).attr('rel')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
       || '') + ' a'
     this.$body = $('body')
     this.refresh()
@@ -55,7 +55,7 @@
           .find(this.selector)
           .map(function () {
             var $el = $(this)
-              , href = $el.data('target') || $el.attr('href')
+              , href = $el.data('target') || $el.attr('rel')
               , $href = /^#\w/.test(href) && $(href)
             return ( $href
               && $href.length
@@ -107,8 +107,8 @@
 
         selector = this.selector
           + '[data-target="' + target + '"],'
-          + this.selector + '[href="' + target + '"]'
-
+          + this.selector + '[rel="' + target + '"]'
+          
         active = $(selector)
           .parent('div')
           .addClass('active')
