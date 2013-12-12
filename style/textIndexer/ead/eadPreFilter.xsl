@@ -447,9 +447,9 @@
                <xsl:value-of select="@level"/>
             </level>
             <xsl:if test="@level != 'file' or @level != 'item'">
-               <componentID xtf:meta="true" xtf:tokenize="no">
-                  <xsl:value-of select="did/unitid"/>
-               </componentID>
+               <seriesID xtf:meta="true" xtf:tokenize="no">
+                  <xsl:value-of select="ancestor::*[@level][1]/@id"/>
+               </seriesID>
             </xsl:if>
          </xsl:when>
          <xsl:otherwise>

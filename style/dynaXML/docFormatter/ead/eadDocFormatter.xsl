@@ -1169,7 +1169,7 @@
    <!--  end new  DG: created $href2 -->   
 
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of 
-         select="$id"/>;brand=<xsl:value-of select="$brand"/>&amp;parentID=<xsl:value-of select="$submenuID"/><xsl:value-of 
+         select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of 
             select="$search"/>&amp;doc.view=<xsl:value-of 
                select="$doc.view"/></xsl:variable>
       
@@ -1219,7 +1219,7 @@
          <xsl:otherwise>
             <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', 'level {$indent}']);">
                <xsl:attribute name="href">
-                  <!--<xsl:choose>
+                  <xsl:choose>
                      <xsl:when test="($query != '0') and ($query != '')">
                         <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
                            />?<xsl:value-of select="$content.href"/>
@@ -1231,8 +1231,8 @@
                      <xsl:otherwise>
                         <xsl:value-of select="$href2"/>
                      </xsl:otherwise>
-                  </xsl:choose>-->
-                  <xsl:value-of select="concat('#',@id)"/>
+                  </xsl:choose>
+                  <!--<xsl:value-of select="concat('#',@id)"/>-->
                </xsl:attribute>
                <div class="tocItem">
                   <xsl:choose>
