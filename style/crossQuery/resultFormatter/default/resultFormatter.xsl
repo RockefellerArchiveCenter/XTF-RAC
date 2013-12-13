@@ -1231,10 +1231,10 @@
          
          <div class="resultContent">
             <div class="result title">
-               <!--<a>
+               <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);" title="Go to finding aid">
                   <xsl:attribute name="href">
                      <xsl:value-of select="$docPath"/>
-                  </xsl:attribute>-->
+                  </xsl:attribute>
                   <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
                      <xsl:attribute name="onClick">
                         <xsl:text>_gaq.push(['_trackEvent', 'digital object', 'view', 'results page']);</xsl:text>
@@ -1267,6 +1267,7 @@
                   <img src="/xtf/icons/default/dao.gif" alt="digital object" title="digital object"
                   />
                </xsl:if>
+                  <xsl:if test="meta/type = 'ead' and meta/level='collection'">
                <span class="identifier">
                   <xsl:text> (</xsl:text>
                   <xsl:choose>
@@ -1279,6 +1280,8 @@
                   </xsl:choose>
                   <xsl:text>)</xsl:text>
                </span>
+                  </xsl:if>
+               </a>
             </div>
                         
             <!-- 11/15/2013 HA: removing label and changing logic -->
@@ -1506,10 +1509,10 @@
 
                   <div class="resultContent">
                      <div class="result title">
-                        <!-- <a>
+                        <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);" title="Go to finding aid">
                            <xsl:attribute name="href">
-                              <xsl:value-of select="$docPath"/>
-                           </xsl:attribute> -->
+                              <xsl:value-of select="$collPath"/>
+                           </xsl:attribute>
                            <xsl:choose>
                               <xsl:when test="meta/filingTitle">
                                  <xsl:apply-templates select="meta/filingTitle"/>
@@ -1540,6 +1543,7 @@
                            <img src="/xtf/icons/default/dao.gif" alt="digital object"
                               title="digital object"/>
                         </xsl:if>
+                           <xsl:if test="meta/type = 'ead' and meta/level='collection'">
                         <span class="identifier">
                            <xsl:text> (</xsl:text>
                            <xsl:choose>
@@ -1552,6 +1556,8 @@
                            </xsl:choose>
                            <xsl:text>)</xsl:text>
                         </span>
+                           </xsl:if>
+                        </a>
                      </div>
 
                      <!-- 11/15/2013 HA: removing label and changing logic -->
@@ -1619,10 +1625,10 @@
 
                   <div class="resultContent">
                      <div class="result title">
-                        <!--<a>
+                        <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);" title="Go to finding aid">
                            <xsl:attribute name="href">
                               <xsl:value-of select="$collPath"/>
-                           </xsl:attribute>-->
+                           </xsl:attribute>
                            <xsl:choose>
                               <xsl:when test="meta/collectionTitle">
                                  <xsl:apply-templates select="meta/collectionTitle"/>
@@ -1647,6 +1653,7 @@
                            <img src="/xtf/icons/default/dao.gif" alt="digital object"
                               title="digital object"/>
                         </xsl:if>
+                           <xsl:if test="meta/type = 'ead' and meta/level='collection'">
                         <span class="identifier">
                            <xsl:text> (</xsl:text>
                            <xsl:choose>
@@ -1659,6 +1666,8 @@
                            </xsl:choose>
                            <xsl:text>)</xsl:text>
                         </span>
+                           </xsl:if>
+                        </a>
                      </div>
 
                      <!-- 11/15/2013 HA: removing label and changing logic -->
@@ -1832,6 +1841,10 @@
       </xsl:variable>
       
       <div class="result title">
+         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);" title="Go to finding aid">
+            <xsl:attribute name="href">
+               <xsl:value-of select="$docPath"/>
+            </xsl:attribute>
          <xsl:choose>
             <xsl:when test="meta/level = 'series'">Series </xsl:when>
             <xsl:when test="meta/level = 'subseries'">Subseries </xsl:when>
@@ -1878,6 +1891,7 @@
             <img src="/xtf/icons/default/dao.gif" alt="digital object"
                title="digital object"/>
          </xsl:if>
+         </a>
       </div>
             
       <div class="bookbag">
@@ -2098,7 +2112,7 @@
          </xsl:choose>
       </xsl:variable>
       <div class="title">
-         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'subdocument title']);">
+         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'subdocument title']);" title="Go to finding aid">
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
             </xsl:attribute>
@@ -2198,8 +2212,6 @@
          </div>
       </xsl:if>
    </xsl:template>
-   
-   
    <xsl:template match="docHit" mode="collection" exclude-result-prefixes="#all">
       <xsl:variable name="chunk.id" select="@subDocument"/>
       <xsl:variable name="path" select="@path"/>
@@ -2207,22 +2219,32 @@
          <xsl:variable name="uri">
             <xsl:call-template name="dynaxml.url">
                <xsl:with-param name="path" select="$path"/>
-               <xsl:with-param name="chunk.id" select="'headerlink'"/>
             </xsl:call-template>
          </xsl:variable>
          <xsl:choose>
             <xsl:when test="$chunk.id != ''">
-               <xsl:value-of select="concat($uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+               <xsl:value-of select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
             </xsl:when>
             <xsl:otherwise>
                <xsl:value-of select="$uri"/>
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
+      <xsl:variable name="collPath">
+         <xsl:variable name="uri">
+            <xsl:call-template name="dynaxml.url">
+               <xsl:with-param name="path" select="$path"/>
+               <xsl:with-param name="chunk.id" select="'headerlink'"/>
+            </xsl:call-template>
+         </xsl:variable>
+         <xsl:value-of select="$uri"/>
+      </xsl:variable>
       <div class="title">
-         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);">
+         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);" title="Go to finding aid">
             <xsl:attribute name="href">
-               <xsl:value-of select="$docPath"/>
+               <xsl:choose><xsl:when test="meta/level='collection'"><xsl:value-of select="$collPath"/></xsl:when>
+                  <xsl:otherwise><xsl:value-of select="$docPath"/></xsl:otherwise></xsl:choose>
+               
             </xsl:attribute>
             <xsl:if test="meta/*:type = 'dao'">
                <xsl:attribute name="onClick">

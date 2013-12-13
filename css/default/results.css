@@ -130,11 +130,12 @@ div.docHit {
 .resultContent {float:left; width:82%;}
 .result {float:left;width:100%;margin-bottom:.5em;}
 .result img, .title img {vertical-align:middle;}
+.result.title .identifier {color:#888}
 .result.title a, .componentInfo .title a {color:#333; text-decoration:none;}
 .result.title a:visited, .componentInfo .title a:visited {color:#555;}
 .result.title a:hover, .componentInfo .title a:hover {color:#c45414;text-decoration:underline}
 .resultContent>.result.title {font-size:1.3em;margin:0}
-.result .identifier {color:#888}
+
 
 .result.creator {color:#555}
 
@@ -159,17 +160,16 @@ div.docHit {
 .subdocument .title {width:90%; float:left;font-size:1em;font-weight:bold;margin:.5em 0}
 .subdocument .matches {float:left;width:87%;margin-left:3%;font-size:.9em;}
 .subdocument .resultLabel {width:10% !important}
-.component:hover {background: #bbb;cursor:pointer;}
-.subdocument.active {background-color: #999 !important;border-left: .5em solid #c45414;width:52%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-left:1%; position:relative;z-index:2;
-    transition: margin 0.2s;
-    -webkit-transition: margin 0.2s;
-    -moz-transition: margin 0.2s;
-    -o-transition: margin 0.2s;}
-.top-level.active {background-color: #999 !important;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width:102%; position:relative;z-index:2;border-radius:5px 5px 0 0;
-    transition: width 0.2s;
-    -webkit-transition: width 0.2s;
-    -moz-transition: width 0.2s;
-    -o-transition: width 0.2s;
+.subdocument.active {background-color: #bbb !important;width:51%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position:relative;z-index:2;
+    transition: background-color 0.2s;
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;}
+.top-level.active {background-color: #bbb !important;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width:100%; position:relative;z-index:2;border-radius:5px 5px 0 0;
+    transition: background-color 0.2s;
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
 }
 
 .activeArrow {
@@ -178,7 +178,7 @@ div.docHit {
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 10px solid #999;
+    border-left: 10px solid #bbb;
     content: " ";
     float: left;
     margin-top: 1%;
@@ -188,8 +188,7 @@ div.docHit {
 .bookbagView .activeArrow {margin-right:-13%;}
 .bookbagView .top-level .activeArrow {margin-right:-12%;}
     
-.docHit .active .title, .docHit .active .result, .docHit .active .collection, .docHit .active .hit, .docHit .active .identifier {color:#fff}
-.subdocument.active .hit {color: #fff !important;}
+.docHit .active .result, .docHit .active .collection {color:#fff}
 
 .showMore {width: 0;
     height: 0;

@@ -63,7 +63,15 @@ $(function () {
                             //checks for hash tag jumps to location and opens appropriate diolog 
                             if(window.location.hash) {
                               var hash = window.location.hash; //Puts hash in variable, and removes the # character
+                              var offset = $(hash).position().top - 50;
                               $(hash).addClass("active");
+                              setTimeout(function() {
+                                    scrollActive($(hash));}, 100);
+                                        
+                               function scrollActive(element){
+                                    $('div#content-wrapper').animate({scrollTop: offset}, 500); 
+                                    }
+                                    
                               if($(hash + " > .daoLink a[href]").length) {
                               $(hash + " .daoLink a").each(function (e) {
                                  var dialogClass = 'dao';

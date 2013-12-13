@@ -28,7 +28,7 @@ $(document).ready(function() {
         $(this).hide();
         });
 
-    $('div.component').click(function() {
+    $('div.component').mouseenter(function() {
     var id = $(this).attr("id").split('_')[1]
     var componentid = "#componentInfo_" + id;
     var position = $(this).position();
@@ -45,22 +45,23 @@ $(document).ready(function() {
     var setheightnoscroll = position.top - (infoheight / fractionnoscroll);
 
     if($(this).hasClass("active")) {
-        $(this).removeClass("active");
-        $(componentid).css('visibility','hidden');
-        $('div.activeArrow').hide();
+    //    $(this).removeClass("active");
+    //    $(componentid).css('visibility','hidden');
+    //    $('div.activeArrow').hide();
     
     } else {
         $('div.component').removeClass("active");
-        $('div.componentDefault').hide();
+        $('div.componentDefault').fadeOut();
+        $('div.componentInfo').fadeOut(400);
         $('div.componentInfo').css('visibility','hidden');
         $('div.activeArrow').hide();
         $(this).addClass('active');
         if($(window).width() > 485) {
             $(this).next('div.activeArrow').show();
             if (scrolltop < 261) {
-                $(componentid).fadeIn().css({top: setheightnoscroll, right: '1%', position:'absolute', visibility:'visible'});}
+                $(componentid).fadeIn(400).css({top: setheightnoscroll, right: '1%', position:'absolute', visibility:'visible'});}
             else {
-                $(componentid).fadeIn().css({top: setheight, right: '1%', position:'absolute', visibility:'visible'});
+                $(componentid).fadeIn(400).css({top: setheight, right: '1%', position:'absolute', visibility:'visible'});
             }
         } else {
             $(componentid).css('position', 'relative').show();

@@ -785,7 +785,7 @@
          </xsl:when>
          <xsl:otherwise>
             <collectionExtent xtf:meta="true">
-               <xsl:value-of select="/ead/archdesc/did/physdesc/extent"/>
+               <xsl:value-of select="/ead/archdesc/did/physdesc/extent"/><xsl:text>test</xsl:text>
             </collectionExtent>
          </xsl:otherwise>
       </xsl:choose>
