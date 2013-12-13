@@ -1201,7 +1201,7 @@
                <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
                   <xsl:variable name="daoFile" select="substring-before(tokenize(meta/daoLink,'/')[position()=last()],'.')"/>
                   <xsl:variable name="daoImg" select="concat(string-join(tokenize(meta/daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/> 
-                  <img src="{$daoImg}" alt="Digital object thumbnail" title="Digital object thumbnail"/>
+                  <img src="{$daoImg}" alt="Digital object thumbnail"/>
                </xsl:when>
                <xsl:when test="meta/genre[contains(.,'DVD')]">
                   <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
@@ -1264,7 +1264,7 @@
                   </xsl:if>
                <!--</a>-->
                <xsl:if test="meta/*:type = 'dao'">
-                  <img src="/xtf/icons/default/dao.gif" alt="digital object" title="digital object"
+                  <img src="/xtf/icons/default/dao.gif" alt="digital object" title="Digital object"
                   />
                </xsl:if>
                   <xsl:if test="meta/type = 'ead' and meta/level='collection'">
@@ -1541,7 +1541,7 @@
                         <!-- </a> -->
                         <xsl:if test="meta/*:type = 'dao'">
                            <img src="/xtf/icons/default/dao.gif" alt="digital object"
-                              title="digital object"/>
+                              title="Digital object"/>
                         </xsl:if>
                            <xsl:if test="meta/type = 'ead' and meta/level='collection'">
                         <span class="identifier">
@@ -1651,7 +1651,7 @@
                         <!-- </a> -->
                         <xsl:if test="meta/*:type = 'dao'">
                            <img src="/xtf/icons/default/dao.gif" alt="digital object"
-                              title="digital object"/>
+                              title="Digital object"/>
                         </xsl:if>
                            <xsl:if test="meta/type = 'ead' and meta/level='collection'">
                         <span class="identifier">
@@ -1889,7 +1889,7 @@
          </xsl:if>
          <xsl:if test="meta/*:type = 'dao'">
             <img src="/xtf/icons/default/dao.gif" alt="digital object"
-               title="digital object"/>
+               title="Digital object"/>
          </xsl:if>
          </a>
       </div>
@@ -2141,7 +2141,7 @@
             </xsl:if>
             <xsl:if test="meta/*:type = 'dao'">
                <img src="/xtf/icons/default/dao.gif" alt="digital object"
-                  title="digital object"/>
+                  title="Digital object"/>
             </xsl:if>
          </a>
       </div>
@@ -2278,7 +2278,7 @@
             </xsl:choose>
             <xsl:if test="meta/*:type = 'dao'">
                <img src="/xtf/icons/default/dao.gif" alt="digital object"
-                  title="digital object"/>
+                  title="Digital object"/>
             </xsl:if>
          </a>
       </div>

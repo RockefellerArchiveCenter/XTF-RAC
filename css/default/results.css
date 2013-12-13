@@ -154,7 +154,7 @@ div.docHit {
 
 .bookbagText {margin-top: .7em;margin-bottom: -.7em;}
 
-.subdocuments {float: left;width:175%;padding-left:10%;}
+.subdocuments {float: left;width:177%;padding-left:10%;}
 .subdocument {float:left; padding: .5em 1%;width:49%;}
 .subdocument.odd {background: rgb(228, 228, 228);}
 .subdocument .title {width:90%; float:left;font-size:1em;font-weight:bold;margin:.5em 0}
@@ -234,7 +234,7 @@ div.docHit {
 .componentInfo .containers, .componentInfo .callNo {width:100%; font-size:1em;}
 .componentInfo .parents {font-size:.8em}
 .componentInfo .language {font-size:.9em;}
-.componentInfo .notes, .componentInfo .restrictions {font-size:.9em;max-height: 7.5em;overflow: hidden;float: left;width: 100%;}
+.componentInfo .notes, .componentInfo .restrictions {font-size:.9em;max-height: 9em;overflow: hidden;float: left;width: 100%;}
 
 .notesMore, .notesLess {
 border-top: 1px solid #999;

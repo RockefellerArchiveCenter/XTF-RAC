@@ -1485,7 +1485,8 @@
                                   </span>
                                </xsl:otherwise>
                             </xsl:choose>
-                           </span>                        
+                           </span>
+                            
                          </span>
                       <!--</div> --> 
                    </xsl:when>
@@ -1613,7 +1614,7 @@
                                   <a href="{$daoLink}" 
                                      data-citation="{$citation}" data-title="{$daoTitle}" 
                                      data-width="512" data-height="384" 
-                                     onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);">
+                                     onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);" title="Digital object">
                                      <xsl:if test="count(../dao) &gt; 1">
                                         <xsl:attribute name="style">margin-left:1em;</xsl:attribute>
                                      </xsl:if>
