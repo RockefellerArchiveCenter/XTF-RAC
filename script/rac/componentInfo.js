@@ -44,15 +44,9 @@ $(document).ready(function() {
     var setheight = position.top - (infoheight / fraction);
     var setheightnoscroll = position.top - (infoheight / fractionnoscroll);
 
-    if($(this).hasClass("active")) {
-    //    $(this).removeClass("active");
-    //    $(componentid).css('visibility','hidden');
-    //    $('div.activeArrow').hide();
-    
+    if($(this).hasClass("active")) {   
     } else {
         $('div.component').removeClass("active");
-        //$('div.componentDefault').fadeOut();
-        $('div.componentInfo').fadeOut(400);
         $('div.componentInfo').css('visibility','hidden');
         $('div.activeArrow').css('visibility','hidden');
         $(this).addClass('active');
