@@ -114,28 +114,7 @@ $(function () {
     });
 });
 } if($(window).width() > 600) {
-    $(function () {                      
-        var dscOptions = {
-            autoOpen: false,
-            modal: true,
-            resizable: true,
-            width: "550",
-            close: function () {
-                $('.ui-dialog').hide();
-            }
-        }
-                         
-        $(".dialog_dsc").click(function (e) {
-            e.preventDefault();
-            var id = '#' + $(this).parent().parent('div').attr('id') + '_details';
-            $(id).dialog(dscOptions).dialog("option", "title", $(id).attr('rel')).dialog("open");
-        });
-        $(".restrict_dsc").click(function (e) {
-            e.preventDefault();
-            var id = '#' + $(this).parent().parent('div').attr('id') + '_restrictions';
-            $(id).dialog(dscOptions).dialog("option", "title", $(id).attr('rel')).dialog("open");
-        });
-    });
+    
 $(function () {
     var dialogTakedown = $('#takedown').dialog({
         create: function(event, ui) {
@@ -218,6 +197,28 @@ $(function () {
         });
     });
 } if($(window).width() > 400) {
+$(function () {                      
+        var dscOptions = {
+            autoOpen: false,
+            modal: true,
+            resizable: true,
+            width: "400",
+            close: function () {
+                $('.ui-dialog').hide();
+            }
+        }
+                         
+        $(".dialog_dsc").click(function (e) {
+            e.preventDefault();
+            var id = '#' + $(this).parent().parent('div').attr('id') + '_details';
+            $(id).dialog(dscOptions).dialog("option", "title", $(id).attr('rel')).dialog("open");
+        });
+        $(".restrict_dsc").click(function (e) {
+            e.preventDefault();
+            var id = '#' + $(this).parent().parent('div').attr('id') + '_restrictions';
+            $(id).dialog(dscOptions).dialog("option", "title", $(id).attr('rel')).dialog("open");
+        });
+    });
 $(function () {
     var dialogArchivalMat = $('#archivalMat').dialog({
         create: function(event, ui) {

@@ -1444,7 +1444,7 @@
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                                 </xsl:if>
-                        <div id="{@id}_restrictions" class="overlay" rel="{child::did/unittitle}">
+                                <div id="{@id}_restrictions" class="overlay" rel="{child::did/unittitle}">
                            <div class="restrictions">
                            <xsl:apply-templates select="." mode="restrictions"/>
                            </div>
