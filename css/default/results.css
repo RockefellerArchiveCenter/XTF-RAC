@@ -3,7 +3,6 @@
 body {
    font-family: Arial, sans-serif;
    background-color: #fff;
-   font-size: .85em;
    color: #333;
    margin:0;
    padding:0;
@@ -173,7 +172,8 @@ div.docHit {
 }
 
 .activeArrow {
-    display:none;
+    display:block;
+    visibility:hidden;
     width: 0;
     height: 0;
     border-top: 10px solid transparent;

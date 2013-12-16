@@ -268,7 +268,7 @@
                      <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
                   </a>
                </div>
-               <div id="bookbag">
+               <div id="bookbag" style="margin-top:1.2em;">
                      <xsl:variable name="bag" select="session:getData('bag')"/>
                      <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
                         onClick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'ead']);">

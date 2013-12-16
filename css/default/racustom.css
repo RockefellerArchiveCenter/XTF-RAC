@@ -9,10 +9,13 @@ body {
 }
 
 /* general markup styles*/
+.navbar {font-size:13px;}
 .nomark{list-style:none;}
 h2 {margin-top:.5em; padding:0;}
 h4{margin-bottom:0; padding-bottom:0;}
 p{margin-top:0;margin-bottom:1em;}
+.comment {float:right;padding-top:1%;text-align:right;line-height:3em;font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10px;margin-right:1%;width:14%;}
 .footer {margin-left: 1%;text-align: left;float:left;margin-bottom:.5em;margin-top:.5em;font-size:.8em}
 .fixedFooter {position:absolute;bottom:0;left:0;margin:0;padding:0;width:100%;height:1.7em;}
 .footer p {margin:0}
@@ -26,7 +29,7 @@ div.closeWindow a{color: #c45414;}
 
 /* Formats header */
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
-#header {margin-top:-80px; margin-left:2%; font-family: 'Questrial', sans;-webkit-text-stroke: 1px;width:70%;float:left;}
+#header {margin-top:-2em; margin-left:2%; font-family: 'Questrial', sans;-webkit-text-stroke: 1px;width:80%;float:left;}
 #header img {float:left;margin-right:2em;}
 #header a, #header a:hover {text-decoration:none;}
 #header h1 {font-size: 3em; margin: 0; text-decoration:none;color: #000000;font-family: 'Questrial', sans;margin-top:42px;}
@@ -65,18 +68,17 @@ div.dscDescription {border:1px solid #ccc; margin:1em; padding:1em;}
 .box:hover {box-shadow: 0px 0px 5px #666;}
 .box h2 {border-radius: 5px 5px 0 0; padding:.5em; margin:0;}
 #searchTop {width:100%; float:left;margin: 1em 0 1% 1%;height:6em;}
-#searchbox {position:absolute; top:13em; left:0;width:100%}
+#searchbox {position:absolute; top:14em; left:0;width:100%;}
 #searchbox input, #searchbox select {border-radius:5px;padding:.2em;}
 #searchbox select {border: 1px inset #ddd;}
-#searchbox input:focus, #searchbox select:focus {box-shadow:0px 0px 5px #c45414; background-color: #ffffff; outline:none;}
-input.searchbox {font-size:1.4em;}
-input[type="text"].searchbox {box-shadow:0px 0px 5px #666;width:40%;margin:0;background-color:rgb(253, 253, 253);z-index:2;border: 1px inset #ddd;padding:.2em;position:absolute; left:26%;}
-input[type="submit"].searchbox {margin:0 0 0 1%;border: 1px outset #dddddd; background-color:#dddddd; position:absolute; top:0; left:67%;-webkit-appearance:none;}
+#searchbox input:focus, #searchbox select:focus {box-shadow:0px 0px 5px #c45414; background-color: #ffffff; outline:none;border-color:#bbb;}
+input[type="text"].searchbox {box-shadow:0px 0px 5px #666;width:40%;margin:0;background-color:rgb(253, 253, 253);z-index:2;border: 1px inset #ddd;padding:.2em;position:absolute; left:26%;font-size: 1.4em;color:#000;height:auto;font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;}
+input[type="submit"].searchbox {margin:0 0 0 1%;border: 1px outset #dddddd; background-color:#dddddd; position:absolute; top:0; left:67%;-webkit-appearance:none;font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;font-size:1.4em;line-height:1.3em}
 input[type="submit"].searchbox:hover {box-shadow:0px 0px 3px #c45414;color: #c45414;cursor:pointer;}
 input[type="submit"].searchbox:active {border: 1px inset #dddddd;color: #c45414;}
 .showAdvanced.closed {position: absolute; top: 2.5em; right: 34%;}
 .showAdvanced.open {text-align:right; float:right;width:100%}
-#advancedSearch {z-index:1; position:absolute; top:2.2em; left:0em; margin-left:26%; font-size:1em; display:none;text-align:left;width:40%;padding:4px;border-bottom: 1px solid #999;
+#advancedSearch {z-index:1; position:absolute; top:1.8em; left:0em; margin-left:26%; font-size:1em; display:none;text-align:left;width:40%;padding:4px;border-bottom: 1px solid #999;
 border-left: 1px solid #999;
 border-right: 1px solid #999;
 background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
@@ -99,7 +101,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #searchtip, #searchtipDate {display:none; box-shadow: 0px 0px 5px #c45414;background: #eeeeee; border-radius:5px}
 #searchtipDate:hover, #searchtip:hover {box-shadow: 0px 0px 10px #c45414;}
 #searchtip li, #searchtipDate li {padding:0em; text-align:center;}
-#searchtip {display:none;width:20%; position: absolute;top: 13em;left: 3%;font-size:1em;margin:0}
+#searchtip {display:none;width:20%; position: absolute;top: 14em;left: 3%;font-size:1em;margin:0}
 #searchtipDate {width: 40%;float:right;margin-top:0;margin-right:4em;padding:.2em;font-size: .7em;font-size:.7em}
 .searchtips {font-size:.9em;}
 #featured h2 {background-color: #bbbbbb;}
@@ -107,7 +109,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #featured img {max-height:100%; width: 94%;margin:3%;}
 #caption {width:94%; margin:0 3% 3% 3%; text-align:left;}
 #news h2 {background-color:#174780; color: #fff;}
-#about {position: absolute;top: 140px;right: 8%;width:11em;z-index:1}
+#about {position: absolute;top: 11em;right: 8%;width:11em;z-index:1}
 #about ul {margin:0}
 #about li {font-size:1em;padding:.2em}
 #about h3 {padding:.5em;margin:0;cursor:pointer}
@@ -134,12 +136,12 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .subQuery {float:none !important; display:inline !important;}
 .clear {clear:both;}
 
-#bookbag {float:right;margin-right:1%;margin-top:2em;height:2em;}
+#bookbag {float:right;margin-right:1%;margin-top:.5em;height:2em;}
 
 .resultsHeader h2 {text-align:center; margin:0 0 .5em 0;}
 .resultsHeader .actions {text-align:center;width:90%; float:left; margin-left:5%}
 .resultsHeader #searchTop {height:0;}
-.resultsHeader #searchbox {top:12em;left:5%;width:90%;}
+.resultsHeader #searchbox {top:12.5em;left:5%;width:90%;}
 .resultsHeader input[type="submit"].searchbox {border: 1px outset #eee; background-color:rgb(253, 253, 253)}
 .resultsHeader #browse ul {margin:0}
 .resultsHeader #browse li {font-size:1em;padding:.2em}
@@ -150,7 +152,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .resultsHeader #browse .dropdownContent {background:#fff; display:none;box-shadow:0px 3px 3px #666;width:10em;text-align:left;float:left;border:1px solid #666; border-top:0;border-radius:0 0 5px 5px;margin-left:-2px;margin-top:-2px;}
 .resultsHeader #browse .on:after {width: 0;height: 0;border-top: 8px solid #666666;border-right: 8px solid transparent;border-left: 8px solid transparent;content: " ";float: right;margin-left: .8em;margin-right: .8em;margin-top: .9em;}
 .resultsHeader #browse .over {box-shadow:0px 0px 3px #c45414;color: #c45414;cursor:pointer}
-.resultsHeader #searchtip {top:12em;width:23%;font-size:1em;}
+.resultsHeader #searchtip {top:12.5em;width:23%;font-size:1em;}
 
 .pages {width:98%;padding:1% 0 1% 0;float:left; margin-left:1%;border-radius:5px;font-size:1em;text-align:center;font-weight:bold;background:#eee}
 #results .pages {width:32%;float:left;font-size:.8em;padding:.8em;border-left:2px groove #fff; border-right:2px groove #fff;background:0;border-radius:0}
@@ -209,6 +211,7 @@ a.hit {background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !import
 .documentTitle h1 {color:#333; margin:0; margin-left:50px; padding:0; font-size:1.75em;}
 .ead {background: url(/xtf/icons/default/collections.gif) left no-repeat; min-height: 50px;}
 .headerSearch {float:right;text-align:right;width:40%}
+.headerSearch form {margin:0}
 .headerResults {float:right;width:100%;padding-top:.5em;}
 .headerResults a {color:#c45414; text-decoration:none;}
 .headerResults a:hover {text-decoration:underline;}
@@ -244,7 +247,7 @@ a.hit {background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !import
 #tocWrapper { /* required to avoid jumping */
     position: fixed !important;
     position: absolute;
-    top: 261px;
+    top: 267px;
     left: 1%;
     bottom:1.6em;
     width:27%;
@@ -293,7 +296,7 @@ ul.none {list-style:none;}
 #content-wrapper { /* required to avoid jumping */
     position: fixed !important;
     position: absolute;
-    top: 261px;
+    top: 267px;
     right:1%;
     left:30%;
     bottom:1.6em;
@@ -350,7 +353,6 @@ ul.none {list-style:none;}
 .format {width:30%;}
 .containers {width:20%;}
 .moreInfo {width:14%;}
-.container {float:left;}
 .containerWrapper {float: left;width:59%;}
 .inventoryBookbag {width:3em; text-align:center;border:none; float:right;padding-right:2%;}
 

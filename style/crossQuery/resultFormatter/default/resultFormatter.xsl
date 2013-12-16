@@ -553,9 +553,9 @@
                            </xsl:if>
                         </div>
                         
-                        <div class="componentDefault">
+                        <!-- <div class="componentDefault">
                            <h3>Select a result to see more information</h3>
-                        </div>
+                        </div> -->
                         
                      </xsl:if>
 
@@ -1014,9 +1014,9 @@
                   </xsl:otherwise>
                </xsl:choose>
                </div>
-               <div class="componentDefault" style="top:19.3em; min-height:10em;">
+               <!--<div class="componentDefault" style="top:19.3em; min-height:10em;">
                   <h3>Select a result to see more information</h3>
-               </div>
+               </div> -->
             </div>
             
             
