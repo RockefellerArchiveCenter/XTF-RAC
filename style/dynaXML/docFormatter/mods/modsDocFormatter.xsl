@@ -313,7 +313,7 @@
                               title="Add to bookbag"/>
                         </a>
                         <span id="add_1" class="caption">
-                           <a href="javascript:add_1()">Add</a>
+                           
                         </span>
                      </xsl:otherwise>
                   </xsl:choose>

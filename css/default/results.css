@@ -164,7 +164,7 @@ div.docHit {
     -webkit-transition: background-color 0.2s;
     -moz-transition: background-color 0.2s;
     -o-transition: background-color 0.2s;}
-.top-level.active {background-color: #bbb !important;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width:100%; position:relative;z-index:2;border-radius:5px 5px 0 0;
+.top-level.active {background-color: #bbb !important;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width:100%; position:relative;border-radius:5px 5px 0 0;
     transition: background-color 0.2s;
     -webkit-transition: background-color 0.2s;
     -moz-transition: background-color 0.2s;
