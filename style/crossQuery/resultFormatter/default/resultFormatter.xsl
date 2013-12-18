@@ -1192,7 +1192,7 @@
          <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
             <xsl:attribute name="class">docHit dao</xsl:attribute>
          </xsl:if>
-         <div id="top-level_{@rank}" class="top-level component" onClick="_gaq.push(['_trackEvent', 'component info', 'view', 'results page']);">
+         <div id="top-level_{@rank}" class="top-level component">
          <!-- 11/15/2013 HA: streamlining display, removing labels, similar items and subjects -->
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
          <!-- 9/26/11 WS: Moved title above Author -->
@@ -1231,7 +1231,7 @@
          
          <div class="resultContent">
             <div class="result title">
-               <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);" title="Go to finding aid">
+               <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);" title="Go to finding aid">
                   <xsl:attribute name="href">
                      <xsl:value-of select="$docPath"/>
                   </xsl:attribute>
@@ -1472,7 +1472,7 @@
          <!-- 11/15/2013 HA: streamlining display, removing subjects, labels and find similar -->
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
          <!-- Deals with collections vrs. series/files -->
-         <div id="top-level_{@rank}-collection" class="top-level component" onClick="_gaq.push(['_trackEvent', 'component info', 'view', 'results page']);">
+         <div id="top-level_{@rank}-collection" class="top-level component">
             <xsl:choose>
                <xsl:when test="meta/level = 'collection'">
                   <div class="resultIcon">
@@ -1509,7 +1509,7 @@
 
                   <div class="resultContent">
                      <div class="result title">
-                        <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);" title="Go to finding aid">
+                        <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);" title="Go to finding aid">
                            <xsl:attribute name="href">
                               <xsl:value-of select="$collPath"/>
                            </xsl:attribute>
@@ -1625,7 +1625,7 @@
 
                   <div class="resultContent">
                      <div class="result title">
-                        <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);" title="Go to finding aid">
+                        <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);" title="Go to finding aid">
                            <xsl:attribute name="href">
                               <xsl:value-of select="$collPath"/>
                            </xsl:attribute>
@@ -1781,7 +1781,7 @@
             <div class="subdocuments">
                <xsl:for-each select="current-group()[meta/level != 'collection']">
                   <div class="subdocumentWrap">
-                     <div id="subdocument_{@rank}" class="subdocument component" onClick="_gaq.push(['_trackEvent', 'component info', 'view', 'results page']);">
+                     <div id="subdocument_{@rank}" class="subdocument component">
                      <xsl:if test="position() mod 2 = 1">
                         <xsl:attribute name="class">subdocument component odd</xsl:attribute>
                      </xsl:if>
@@ -1841,7 +1841,7 @@
       </xsl:variable>
       
       <div class="result title">
-         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);" title="Go to finding aid">
+         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main subdocument']);" title="Go to finding aid">
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
             </xsl:attribute>
@@ -2112,7 +2112,7 @@
          </xsl:choose>
       </xsl:variable>
       <div class="title">
-         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'subdocument title']);" title="Go to finding aid">
+         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results details subdocument']);" title="Go to finding aid">
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
             </xsl:attribute>
@@ -2240,7 +2240,7 @@
          <xsl:value-of select="$uri"/>
       </xsl:variable>
       <div class="title">
-         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'collection title']);" title="Go to finding aid">
+         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results details collection']);" title="Go to finding aid">
             <xsl:attribute name="href">
                <xsl:choose><xsl:when test="meta/level='collection'"><xsl:value-of select="$collPath"/></xsl:when>
                   <xsl:otherwise><xsl:value-of select="$docPath"/></xsl:otherwise></xsl:choose>
