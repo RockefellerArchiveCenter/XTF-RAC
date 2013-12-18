@@ -37,11 +37,11 @@
    
    <xsl:template match="xtf:hit">
       
-      <a name="{@hitNum}"/>
+      <!--<a name="{@hitNum}"/>
       
       <xsl:if test="@hitNum = key('chunk-id', $chunk.id)/@xtf:firstHit">
          <a name="X"/>
-      </xsl:if>
+      </xsl:if>-->
       
 <!--      <xsl:call-template name="prev.hit"/>-->
       
