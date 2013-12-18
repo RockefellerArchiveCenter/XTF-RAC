@@ -32,7 +32,7 @@ $(function () {
             modal: true,
             resizable: true,
             width: "850",
-            height: "600",
+            height: "550",
             close: function () {
                 $('.ui-dialog').hide();
                 $('.daoCitation').remove();
@@ -49,7 +49,7 @@ $(function () {
             var src = $(this).attr("href");
             var title = $(this).attr("data-title");
             var width = $(this).attr("data-width");
-            var height = $(this).attr("data-height");
+            var height = "550";
             var citation = $(this).attr("data-citation");
             var buildCitation = $('<div class="daoCitation" style="margin-left:1em; font-size:.9em;"></div>').append(citation)
             iframe.attr({
@@ -79,7 +79,7 @@ $(function () {
                                  var title = $(this).attr("data-title");
                                  var citation = $(this).attr("data-citation");
                                  var width = $(this).attr("data-width");
-                                 var height = $(this).attr("data-height");
+                                 var height = "550";
                                  var buildCitation = $('<div class="daoCitation"></div>').append(citation)
                                     iframe.attr({
                                     width: +width,
