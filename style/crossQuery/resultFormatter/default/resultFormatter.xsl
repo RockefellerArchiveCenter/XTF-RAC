@@ -729,7 +729,7 @@
          </xsl:variable>
          <xsl:choose>
             <xsl:when test="$chunk.id != ''">
-               <xsl:value-of select="concat($xtfURL,$uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+               <xsl:value-of select="concat($xtfURL,$uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
                <!-- Link used to get sub-document out of context               
                   <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
                -->
@@ -781,9 +781,9 @@
                         <xsl:value-of select="."/><xsl:text>&#xA;</xsl:text>
                      </xsl:for-each>
                   </xsl:if>
-                  <xsl:if test="meta/level"></xsl:if><xsl:value-of select="normalize-space(meta/title)"/> 
-                  <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
-                  <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>
+                  <xsl:if test="meta/level"></xsl:if><xsl:value-of select="normalize-space(meta/title)"/><xsl:if test="meta/date"><xsl:text>, </xsl:text><xsl:value-of select="meta/date"/></xsl:if>
+                  <xsl:if test="meta/containers"><xsl:text>&#xA;</xsl:text><xsl:value-of select="meta/containers"/></xsl:if>
+                  <xsl:text>&#xA;</xsl:text><xsl:value-of select="$url"/>
                   <xsl:text>&#xA;</xsl:text>  
                   <xsl:text>&#xA;</xsl:text>
                 </pre>            
@@ -808,7 +808,7 @@
             </xsl:variable>
             <xsl:choose>
                <xsl:when test="$chunk.id != ''">
-                  <xsl:value-of select="concat($xtfURL,$uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+                  <xsl:value-of select="concat($xtfURL,$uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
                   <!-- Link used to get sub-document out of context               
                      <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
                   -->
@@ -860,9 +860,9 @@
                         <xsl:value-of select="."/><xsl:text>&#xA;</xsl:text>
                      </xsl:for-each>
                   </xsl:if>
-                  <xsl:if test="meta/level"></xsl:if><xsl:value-of select="normalize-space(meta/title)"/> 
-                  <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
-                  <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>
+                  <xsl:if test="meta/level"></xsl:if><xsl:value-of select="normalize-space(meta/title)"/><xsl:if test="meta/date"><xsl:text> ,</xsl:text><xsl:value-of select="meta/date"/></xsl:if>
+                  <xsl:if test="meta/containers"><xsl:text>&#xA;</xsl:text><xsl:value-of select="meta/containers"/></xsl:if>
+                  <xsl:text>&#xA;</xsl:text><xsl:value-of select="$url"/>
                   <xsl:text>&#xA;</xsl:text>  
                   <xsl:text>&#xA;</xsl:text>
                 </pre>            
