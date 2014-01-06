@@ -168,6 +168,8 @@
       <!-- modify query URL -->
       <xsl:variable name="modify" select="if(matches($smode,'simple')) then 'simple-modify' else 'advanced-modify'"/>
       <xsl:variable name="modifyString" select="editURL:set($queryString, 'smode', $modify)"/>
+      <xsl:variable name="from"><xsl:value-of select="facet[@field='facet-date']/group[last()]/@value"/></xsl:variable>
+      <xsl:variable name="to"><xsl:value-of select="facet[@field='facet-date']/group[@rank='1']/@value"/></xsl:variable>
       
       <html xml:lang="en" lang="en">
          <head>
@@ -179,6 +181,24 @@
             <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
             <script src="script/yui/connection-min.js" type="text/javascript"/>
             <script src="script/rac/facets.js" type="text/javascript"/>
+            <script>
+               $(function() {
+                  $( "#slider-range" ).slider({
+                     range: true,
+                     min: <xsl:value-of select="$from"/>,
+                     max: <xsl:value-of select="$to"/>,
+                     values: [ <xsl:value-of select="$from"/>, 
+                               <xsl:value-of select="$to"/> ],
+                     slide: function( event, ui ) {
+                       $( "#from" ).val( ui.values[ 0 ] );
+                       $( "#to" ).val( ui.values[ 1 ] );
+                     }
+                });
+               $( "#from" ).val($( "#slider-range" ).slider( "values", 0 ));
+               $( "#to" ).val($( "#slider-range" ).slider( "values", 1 ));
+               $( "#range" ).val($( "#slider-range" ).slider( "values", 0 ) + '-' + $( "#slider-range" ).slider( "values", 1 ));
+               });
+            </script>
             
          </head>
          <body>
@@ -420,6 +440,19 @@
                               <xsl:if
                                  test="facet[@field='facet-subject']/child::* or facet[@field='facet-subjectpers']/child::* or facet[@field='facet-subjectcorp']/child::* or facet[@field='facet-geogname']/child::*">
                                  <h2>Narrow Search Results</h2>
+                                 <div class="facet category"><h3>Dates</h3></div>
+                                
+                                 <xsl:variable name="queryURL" select="$queryString">
+                                 </xsl:variable>
+                                    <div class="facetGroup">
+                                       <input type="text" id="from" size="4"/>
+                                       <input type="text" id="to" size="4"/>
+                                       <form method="get" action="{$xtfURL}{$crossqueryPath}">
+                                          <input type="hidden" value="{$queryURL}"/>
+                                          <input type="hidden" name="year" id="range"/>
+                                          <input type="submit"/></form>
+                                       <div id="slider-range"/>
+                                    </div>
                                  <xsl:if test="facet[@field='facet-subject']/child::*">
                                     <xsl:apply-templates select="facet[@field='facet-subject']"/>
                                  </xsl:if>

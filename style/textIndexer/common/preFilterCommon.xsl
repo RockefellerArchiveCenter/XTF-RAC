@@ -123,8 +123,7 @@
          <xsl:apply-templates select="$meta/*:date[1]" mode="sort"/>
          
          <!-- Create facets -->
-         <!-- 11/20/2013 HA: commenting out -->
-         <!-- <xsl:apply-templates select="$meta/*:date" mode="facet"/> -->
+         <xsl:apply-templates select="$meta/*:date" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subject" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subjectpers" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subjectcorp" mode="facet"/>
@@ -186,9 +185,11 @@
          </xsl:when>
          <xsl:otherwise>
             <xsl:for-each select="parse:year(string(.))">
+               <xsl:if test="parse:year(string(.)) !=' '">
                <facet-date xtf:meta="true" xtf:facet="yes">
                   <xsl:value-of select="concat(.,'::01::01')"/>
                </facet-date>
+               </xsl:if>
             </xsl:for-each>
          </xsl:otherwise>
       </xsl:choose>
