@@ -444,13 +444,22 @@
                                 
                                  <xsl:variable name="queryURL" select="$queryString">
                                  </xsl:variable>
-                                    <div class="facetGroup">
-                                       <input type="text" id="from" size="4"/>
-                                       <input type="text" id="to" size="4"/>
+                                    <div class="facetGroup">                                       
                                        <form method="get" action="{$xtfURL}{$crossqueryPath}">
-                                          <input type="hidden" value="{$queryURL}"/>
-                                          <input type="hidden" name="year" id="range"/>
-                                          <input type="submit"/></form>
+                                          <xsl:if test="parameters/param">
+                                             <xsl:for-each select="parameters/param">
+                                                <xsl:if test="@name !='year' and @name !='year-max'">
+                                                <input type="hidden" name="{@name}" value="{@value}"/>
+                                                </xsl:if>
+                                             </xsl:for-each>
+                                          </xsl:if>
+                                          
+                                          <input type="text" name="year" id="from" size="4"/>
+                                          <input type="text" name="year-max" id="to" size="4"/>
+                                          <!--<input type="hidden" name="year" id="range"/>-->
+                                          <!--<a href="{$xtfURL}{$crossqueryPath}?">Filter >></a>-->
+                                          <input type="submit"/>
+                                       </form>
                                        <div id="slider-range"/>
                                     </div>
                                  <xsl:if test="facet[@field='facet-subject']/child::*">
