@@ -119,8 +119,13 @@ margin: 2%;
 text-align: center;
 }
 
+#histogram canvas{
+    width: 94% !important;
+    margin-left: 3%;
+}
+
 #slider-range {
-    margin:3%;
+    margin:2% 3% 5% 3%;
 }
 
 div.docHit {

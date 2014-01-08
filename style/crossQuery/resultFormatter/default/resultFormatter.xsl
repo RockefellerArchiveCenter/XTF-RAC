@@ -168,8 +168,20 @@
       <!-- modify query URL -->
       <xsl:variable name="modify" select="if(matches($smode,'simple')) then 'simple-modify' else 'advanced-modify'"/>
       <xsl:variable name="modifyString" select="editURL:set($queryString, 'smode', $modify)"/>
-      <xsl:variable name="from"><xsl:value-of select="facet[@field='facet-date']/group[last()]/@value"/></xsl:variable>
-      <xsl:variable name="to"><xsl:value-of select="facet[@field='facet-date']/group[@rank='1']/@value"/></xsl:variable>
+      <xsl:variable name="min"><xsl:value-of select="facet[@field='facet-date']/group[last()]/@value"/></xsl:variable>
+      <xsl:variable name="max"><xsl:value-of select="facet[@field='facet-date']/group[@rank='1']/@value"/></xsl:variable>
+      <xsl:variable name="sliderMin">
+         <xsl:choose>
+            <xsl:when test="parameters/param[@name = 'year']"><xsl:value-of select="parameters/param[@name='year']/@value"/></xsl:when>
+            <xsl:otherwise><xsl:value-of select="$min"/></xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:variable name="sliderMax">
+         <xsl:choose>
+            <xsl:when test="parameters/param[@name = 'year-max']"><xsl:value-of select="parameters/param[@name='year-max']/@value"/></xsl:when>
+            <xsl:otherwise><xsl:value-of select="$max"/></xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
       
       <html xml:lang="en" lang="en">
          <head>
@@ -181,14 +193,15 @@
             <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
             <script src="script/yui/connection-min.js" type="text/javascript"/>
             <script src="script/rac/facets.js" type="text/javascript"/>
+            <script src="script/rac/jquery.sparkline.min.js" type="text/javascript"/>
             <script>
                $(function() {
                   $( "#slider-range" ).slider({
                      range: true,
-                     min: <xsl:value-of select="$from"/>,
-                     max: <xsl:value-of select="$to"/>,
-                     values: [ <xsl:value-of select="$from"/>, 
-                               <xsl:value-of select="$to"/> ],
+                     min: <xsl:value-of select="$min"/>,
+                     max: <xsl:value-of select="$max"/>,
+                     values: [ <xsl:value-of select="$sliderMin"/>, 
+                               <xsl:value-of select="$sliderMax"/> ],
                      slide: function( event, ui ) {
                        $( "#from" ).val( ui.values[ 0 ] );
                        $( "#to" ).val( ui.values[ 1 ] );
@@ -198,6 +211,14 @@
                $( "#to" ).val($( "#slider-range" ).slider( "values", 1 ));
                $( "#range" ).val($( "#slider-range" ).slider( "values", 0 ) + '-' + $( "#slider-range" ).slider( "values", 1 ));
                });
+            </script>
+            <script type="text/javascript">
+               $(function() {
+                    var myvalues = [<xsl:for-each select="facet[@field='facet-date']/group">
+                     <xsl:value-of select="@totalDocs"/><xsl:text>, </xsl:text>
+                     </xsl:for-each>];
+                  $('#histogram').sparkline(myvalues, {type: 'bar', barColor: '#c45414', width:'94%', height:'10', disableTooltips:true, disableHighlight:true});
+                  });
             </script>
             
          </head>
@@ -440,6 +461,7 @@
                               <xsl:if
                                  test="facet[@field='facet-subject']/child::* or facet[@field='facet-subjectpers']/child::* or facet[@field='facet-subjectcorp']/child::* or facet[@field='facet-geogname']/child::*">
                                  <h2>Narrow Search Results</h2>
+                                 <xsl:if test="facet[@field='facet-date']/@totalGroups > 1">
                                  <div class="facet category"><h3>Dates</h3></div>
                                 
                                  <xsl:variable name="queryURL" select="$queryString">
@@ -458,10 +480,12 @@
                                           <input type="text" name="year-max" id="to" size="4"/>
                                           <!--<input type="hidden" name="year" id="range"/>-->
                                           <!--<a href="{$xtfURL}{$crossqueryPath}?">Filter >></a>-->
-                                          <input type="submit"/>
+                                          <input type="submit" value="Filter"/>
                                        </form>
+                                       <div id="histogram"></div>
                                        <div id="slider-range"/>
                                     </div>
+                                 </xsl:if>
                                  <xsl:if test="facet[@field='facet-subject']/child::*">
                                     <xsl:apply-templates select="facet[@field='facet-subject']"/>
                                  </xsl:if>

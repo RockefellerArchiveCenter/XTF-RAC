@@ -117,6 +117,9 @@
                   <xsl:when test="@field = 'text'">
                      <xsl:text> the full text </xsl:text>
                   </xsl:when>
+                  <xsl:when test="@field = 'year'">
+                     <xsl:text> dates</xsl:text>
+                  </xsl:when>
                   <xsl:when test="not(@field) and not[@field]">
                      <xsl:value-of select="not/@field"/>
                   </xsl:when>
