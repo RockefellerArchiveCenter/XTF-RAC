@@ -235,9 +235,6 @@
                   <p>On every search results screen you will see a box titled "Refine Search." It contains categories called facets, and you can discover relevant resources by browsing the contents of the facets. By selecting one or more facets (1) you can further narrow your initial search. In order to remove a facet and expand your search click on the [x] next to the search term (2) in the navigation bar. When you see a facet under "Refine Search" that is of interest to you, you can also dig in deeper by clicking the "more" link (3) to see additional terms.</p>
                   <h4>Get notified when we update the site</h4>
                   <p>When you see this icon <img src="./icons/default/i_rss.png" alt="rss feed"/> it means there is an RSS feed for this search. You can click on it to subscribe to see the most recent changes and additions in that search in your favorite feed reader.</p>
-                  <h4>Not everything is up yet!</h4>
-                  <p>We’re still in the process of adding information to this system. </p>
-                  <p>Some large collections, like those of the <strong>Ford Foundation</strong>, <strong>Population Council</strong>, and <strong>Rockefeller University</strong>, are only partially represented in the online system; other smaller collections, like the <strong>Trilateral Commission</strong>, the <strong>Near East Foundation</strong>, and some collections of personal papers are not yet represented at all (note: finding aids for Ford Foundation grant records are not yet available online). Please contact the archival staff at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further information about these collections.</p>
                </div>
             </div>
             <div typeof="SearchResultsPage">
