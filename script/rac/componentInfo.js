@@ -1,8 +1,5 @@
 $(document).ready(function() {
-    //if ($('#docHits').length) {
-    //var defaultHeight = $('#main_1 .top-level').position().top;
-    //$('div.componentDefault').css("top", defaultHeight);
-    //}
+
     $('div.notesMore').hide();
     $('.notes > div').each(function() {
             var height = $(this).height();
@@ -27,6 +24,8 @@ $(document).ready(function() {
         $(this).prev('div.notesMore').show();
         $(this).hide();
         });
+
+if($(window).width() > 768) {
 
     $('div.component').mouseenter(function() {
     var id = $(this).attr("id").split('_')[1]
@@ -58,5 +57,5 @@ $(document).ready(function() {
             }
     }
     });
-
+}
 })
