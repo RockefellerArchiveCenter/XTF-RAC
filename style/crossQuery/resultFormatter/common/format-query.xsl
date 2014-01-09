@@ -81,7 +81,18 @@
       </xsl:variable>
       <!-- query removal url -->
       <xsl:variable name="v1" select="editURL:remove($queryString, concat('(smode|expand|', $field, ')'))"/>
-      <xsl:variable name="v2" select="if (matches($field,'text|query')) then editURL:remove($v1, 'sectionType') else $v1"/>
+      <xsl:variable name="v2">
+         <xsl:choose>
+            <xsl:when test="@field = 'text|query'">
+               <xsl:value-of select="editURL:remove($v1, 'sectionType')"/>
+            </xsl:when>
+            <xsl:when test="@field = 'year'">
+               <xsl:value-of select="editURL:remove($v1, 'year-max')"/>
+            </xsl:when>
+            <xsl:otherwise><xsl:value-of select="$v1"/></xsl:otherwise>
+         </xsl:choose>
+
+      </xsl:variable>
       <xsl:variable name="v3" select="editURL:remove($v2, concat(replace($field, 'facet-', 'f[0-9]+-'),'=',$terms))"/>
       <xsl:variable name="removeString" select="editURL:replaceEmpty($v3, 'browse-all=yes')"/>
       
