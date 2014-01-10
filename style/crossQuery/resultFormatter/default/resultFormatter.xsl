@@ -1689,6 +1689,7 @@
                   <xsl:if test="session:isEnabled()">
                      <xsl:choose>
                         <xsl:when test="$smode = 'showBag'">
+                           <xsl:if test="meta/type!='ead'">
                            <script type="text/javascript">
                               remove_<xsl:value-of select="concat(@rank,'collection')"/> = function() {
                                  var span = YAHOO.util.Dom.get('remove_<xsl:value-of select="concat(@rank,'collection')"/>');
@@ -1707,6 +1708,7 @@
                            <div class="bookbagText" id="remove_{concat(@rank,'collection')}">
                               <a href="javascript:remove_{concat(@rank,'collection')}()">Delete</a>
                            </div>
+                           </xsl:if>
                         </xsl:when>
                         <xsl:when test="session:noCookie()">
                            <div class="bookbagText">
@@ -1907,9 +1909,14 @@
                                  YAHOO.util.Connect.asyncRequest('GET', 
                                     '<xsl:value-of select="concat($xtfURL, $crossqueryPath, '?smode=removeFromBag;identifier=', $identifier)"/>',
                                     {  success: function(o) { 
-                                          var main = YAHOO.util.Dom.get('subdocument_<xsl:value-of select="@rank"/>');
-                                          main.parentNode.removeChild(main);
+                                          var subdocument = YAHOO.util.Dom.get('subdocument_<xsl:value-of select="@rank"/>');
+                                          var main = subdocument.parentNode.parentNode.parentNode;
+                                          var subdocuments = subdocument.parentNode.parentNode;
+                                          var subdocs = main.getElementsByClassName('subdocumentWrap');
+                                          subdocument.parentNode.remove();
                                           --(YAHOO.util.Dom.get('bookbagCount').innerHTML);
+                                          if (subdocs.length == '0')
+                                             {main.remove();}
                                        },
                                        failure: function(o) { span.innerHTML = 'Failed to delete!'; }
                                     }, null);
@@ -1965,7 +1972,6 @@
             </xsl:if>
          </div>
       </div>
-
 
          <!-- 11/14/2013 HA: added logic to display only snippets not already visible -->
          <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
