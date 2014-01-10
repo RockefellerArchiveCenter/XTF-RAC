@@ -1696,9 +1696,9 @@
                                  YAHOO.util.Connect.asyncRequest('GET', 
                                     '<xsl:value-of select="concat($xtfURL, $crossqueryPath, '?smode=removeFromBag;identifier=', $identifier)"/>',
                                     {  success: function(o) { 
-                                          var main = YAHOO.util.Dom.get('main_<xsl:value-of select="concat(@rank,'collection')"/>');
+                                          var main = YAHOO.util.Dom.get('main_<xsl:value-of select="@rank"/>');
                                           main.parentNode.removeChild(main);
-                                          --(YAHOO.util.Dom.get('itemCount').innerHTML);
+                                          --(YAHOO.util.Dom.get('bookbagCount').innerHTML);
                                        },
                                        failure: function(o) { span.innerHTML = 'Failed to delete!'; }
                                     }, null);
@@ -1907,9 +1907,9 @@
                                  YAHOO.util.Connect.asyncRequest('GET', 
                                     '<xsl:value-of select="concat($xtfURL, $crossqueryPath, '?smode=removeFromBag;identifier=', $identifier)"/>',
                                     {  success: function(o) { 
-                                          var main = YAHOO.util.Dom.get('main_<xsl:value-of select="@rank"/>');
+                                          var main = YAHOO.util.Dom.get('subdocument_<xsl:value-of select="@rank"/>');
                                           main.parentNode.removeChild(main);
-                                          --(YAHOO.util.Dom.get('itemCount').innerHTML);
+                                          --(YAHOO.util.Dom.get('bookbagCount').innerHTML);
                                        },
                                        failure: function(o) { span.innerHTML = 'Failed to delete!'; }
                                     }, null);
