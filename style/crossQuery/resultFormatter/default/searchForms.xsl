@@ -291,14 +291,16 @@
                         </select>
                      </div>
                      <div id="date">
-                        <xsl:text>Years: </xsl:text>
-                        <input class="date" type="text" name="year" size="20" value="{$year}"/>
+                        <label for="year">From: </label>
+                        <input class="date" type="text" name="year"/>
+                        <label for="year">To: </label>
+                        <input class="date" type="text" name="year-max"/>
                         <div id="searchtipDate" class="box">
                            <ul>
-                              <li>Enter a single year or range of years, for example 1997 or 1892-1942.</li>
+                              <li>Enter the date as a single year, for example 1942 or 1973.</li>
                            </ul>
                         </div>
-                     </div>         
+                     </div>    
                      <!--<input type="hidden" name="smode" value="advanced" id="start"/>-->
                      <div class="showAdvanced open">
                         <a href="#">close</a>
