@@ -168,6 +168,20 @@
       <!-- modify query URL -->
       <xsl:variable name="modify" select="if(matches($smode,'simple')) then 'simple-modify' else 'advanced-modify'"/>
       <xsl:variable name="modifyString" select="editURL:set($queryString, 'smode', $modify)"/>
+      <xsl:variable name="min"><xsl:value-of select="facet[@field='facet-date']/group[last()]/@value"/></xsl:variable>
+      <xsl:variable name="max"><xsl:value-of select="facet[@field='facet-date']/group[@rank='1']/@value"/></xsl:variable>
+      <xsl:variable name="sliderMin">
+         <xsl:choose>
+            <xsl:when test="parameters/param[@name = 'year']"><xsl:value-of select="parameters/param[@name='year']/@value"/></xsl:when>
+            <xsl:otherwise><xsl:value-of select="$min"/></xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:variable name="sliderMax">
+         <xsl:choose>
+            <xsl:when test="parameters/param[@name = 'year-max']"><xsl:value-of select="parameters/param[@name='year-max']/@value"/></xsl:when>
+            <xsl:otherwise><xsl:value-of select="$max"/></xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
       
       <html xml:lang="en" lang="en">
          <head>
@@ -179,6 +193,33 @@
             <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
             <script src="script/yui/connection-min.js" type="text/javascript"/>
             <script src="script/rac/facets.js" type="text/javascript"/>
+            <script src="script/rac/jquery.sparkline.min.js" type="text/javascript"/>
+            <script>
+               $(function() {
+                  $( "#slider-range" ).slider({
+                     range: true,
+                     min: <xsl:value-of select="$min"/>,
+                     max: <xsl:value-of select="$max"/>,
+                     values: [ <xsl:value-of select="$sliderMin"/>, 
+                               <xsl:value-of select="$sliderMax"/> ],
+                     slide: function( event, ui ) {
+                       $( "#from" ).val( ui.values[ 0 ] );
+                       $( "#to" ).val( ui.values[ 1 ] );
+                     }
+                });
+               $( "#from" ).val($( "#slider-range" ).slider( "values", 0 ));
+               $( "#to" ).val($( "#slider-range" ).slider( "values", 1 ));
+               $( "#range" ).val($( "#slider-range" ).slider( "values", 0 ) + '-' + $( "#slider-range" ).slider( "values", 1 ));
+               });
+            </script>
+            <script type="text/javascript">
+               $(function() {
+                    var myvalues = [<xsl:for-each select="facet[@field='facet-date']/group">
+                     <xsl:value-of select="@totalDocs"/><xsl:text>, </xsl:text>
+                     </xsl:for-each>];
+                  $('#histogram').sparkline(myvalues, {type: 'bar', barColor: '#c45414', width:'94%', height:'10', disableTooltips:true, disableHighlight:true});
+                  });
+            </script>
             
          </head>
          <body>
@@ -194,9 +235,6 @@
                   <p>On every search results screen you will see a box titled "Refine Search." It contains categories called facets, and you can discover relevant resources by browsing the contents of the facets. By selecting one or more facets (1) you can further narrow your initial search. In order to remove a facet and expand your search click on the [x] next to the search term (2) in the navigation bar. When you see a facet under "Refine Search" that is of interest to you, you can also dig in deeper by clicking the "more" link (3) to see additional terms.</p>
                   <h4>Get notified when we update the site</h4>
                   <p>When you see this icon <img src="./icons/default/i_rss.png" alt="rss feed"/> it means there is an RSS feed for this search. You can click on it to subscribe to see the most recent changes and additions in that search in your favorite feed reader.</p>
-                  <h4>Not everything is up yet!</h4>
-                  <p>We’re still in the process of adding information to this system. </p>
-                  <p>Some large collections, like those of the <strong>Ford Foundation</strong>, <strong>Population Council</strong>, and <strong>Rockefeller University</strong>, are only partially represented in the online system; other smaller collections, like the <strong>Trilateral Commission</strong>, the <strong>Near East Foundation</strong>, and some collections of personal papers are not yet represented at all (note: finding aids for Ford Foundation grant records are not yet available online). Please contact the archival staff at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further information about these collections.</p>
                </div>
             </div>
             <div typeof="SearchResultsPage">
@@ -367,13 +405,13 @@
                                     </select>
                                  </div>
                                  <div id="date">
-                                    <xsl:text>Years: </xsl:text>
-                                    <input class="date" type="text" name="year" size="20"
-                                       value="{$year}"/>
+                                    <label for="year">From: </label>
+                                    <input class="date" type="text" name="year"/>
+                                    <label for="year">To: </label>
+                                    <input class="date" type="text" name="year-max"/>
                                     <div id="searchtipDate" class="box">
                                        <ul>
-                                          <li>Enter a single year or range of years, for example
-                                             1997 or 1892-1942.</li>
+                                          <li>Enter the date as a single year, for example 1942 or 1973.</li>
                                        </ul>
                                     </div>
                                  </div>
@@ -420,6 +458,31 @@
                               <xsl:if
                                  test="facet[@field='facet-subject']/child::* or facet[@field='facet-subjectpers']/child::* or facet[@field='facet-subjectcorp']/child::* or facet[@field='facet-geogname']/child::*">
                                  <h2>Narrow Search Results</h2>
+                                 <xsl:if test="facet[@field='facet-date']/@totalGroups > 1">
+                                 <div class="facet category"><h3>Dates</h3></div>
+                                
+                                 <xsl:variable name="queryURL" select="$queryString">
+                                 </xsl:variable>
+                                    <div class="facetGroup">                                       
+                                       <form method="get" action="{$xtfURL}{$crossqueryPath}">
+                                          <xsl:if test="parameters/param">
+                                             <xsl:for-each select="parameters/param">
+                                                <xsl:if test="@name !='year' and @name !='year-max'">
+                                                <input type="hidden" name="{@name}" value="{@value}"/>
+                                                </xsl:if>
+                                             </xsl:for-each>
+                                          </xsl:if>
+                                          
+                                          <input type="text" name="year" id="from" size="4"/>
+                                          <input type="text" name="year-max" id="to" size="4"/>
+                                          <!--<input type="hidden" name="year" id="range"/>-->
+                                          <!--<a href="{$xtfURL}{$crossqueryPath}?">Filter >></a>-->
+                                          <input type="submit" value="Filter"/>
+                                       </form>
+                                       <div id="histogram"></div>
+                                       <div id="slider-range"/>
+                                    </div>
+                                 </xsl:if>
                                  <xsl:if test="facet[@field='facet-subject']/child::*">
                                     <xsl:apply-templates select="facet[@field='facet-subject']"/>
                                  </xsl:if>

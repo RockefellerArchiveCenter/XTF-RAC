@@ -922,6 +922,7 @@
       <!-- 9/27/11 WS: Changed date to grab from archdesc/did/unitdate/@type="inclusive" -->
       <xsl:choose>
          <xsl:when test="@level">
+            <xsl:if test="did/unitdate[@type='inclusive'] !='' or did/unitdate !=''">
             <date xtf:meta="true">
                <xsl:choose>
                   <xsl:when test="did/unitdate[@type='inclusive']">
@@ -932,6 +933,7 @@
                   </xsl:when>
                </xsl:choose>
             </date>
+            </xsl:if>
             <xsl:if test="/ead/archdesc/did/unitdate[@type='inclusive']">
                <collectionDate xtf:meta="true">
                   <xsl:value-of select="/ead/archdesc/did/unitdate[@type='inclusive']"/>

@@ -16,7 +16,7 @@ h2 {margin-top:.5em; padding:0;}
 h4{margin-bottom:0; padding-bottom:0;}
 p{margin-top:0;margin-bottom:1em;}
 .comment {float:right;padding-top:1%;text-align:right;line-height:3em;font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-font-size: 10px;margin-right:1%;width:14%;}
+font-size: 10px;margin-right:1%;width:21%;}
 .footer {margin-left: 1%;text-align: left;float:left;margin-bottom:.5em;margin-top:.5em;font-size:.8em;width: auto;border-top: none;padding: 0;}
 .fixedFooter {position:absolute;bottom:0;left:0;margin:0;padding:0;width:100%;height:1.7em;}
 .footer p {margin:0}
@@ -27,10 +27,12 @@ div.closeWindow a{color: #c45414;}
 .getAddress{border-top:1px solid #999 !important; margin-top:24px !important;}
 .bookbag {width:10%; text-align:right;border:none; float:right;font-size:.7em;}
 .bookbag a {color:#c45414;text-decoration:none;}
+input[type="text"], select {vertical-align:0}
+label {display:inline-block; margin-right:.2em;}
 
 /* Formats header */
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
-#header {margin-top:-2em; margin-left:2%; font-family: 'Questrial', sans;-webkit-text-stroke: 1px;width:80%;float:left;}
+#header {margin-top:-2em; margin-left:2%; font-family: 'Questrial', sans;-webkit-text-stroke: 1px;width:75%;float:left;}
 #header img {float:left;margin-right:2em;}
 #header a, #header a:hover {text-decoration:none;}
 #header h1 {font-size: 3em; margin: 0; text-decoration:none;color: #000000;font-family: 'Questrial', sans;margin-top:42px;}
@@ -98,12 +100,12 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .on:after {width: 0;height: 0;border-bottom: 8px solid #666666;border-right: 8px solid transparent;border-left: 8px solid transparent;border-top:0;content: " ";float: right;margin-left: 1em;margin-right: 1em;margin-top: 1em;}
 .over {background: #CCCCCC;}
 #type, #library, #collections, #dao {font-size:1em;}
-#date input {font-size:1em !important; position: relative !important; top:0 !important; left:0 !important; float:none !important;margin-bottom:1em !important;border: 1px inset #ddd; padding:.2em}
+#date input {font-size:1em !important; position: relative !important; top:0 !important; left:0 !important; float:none !important;margin-bottom:1em !important;margin-right:1em;border: 1px inset #ddd; padding:.2em; width:3em;text-align:center}
 #searchtip, #searchtipDate {display:none; box-shadow: 0px 0px 5px #c45414;background: #eeeeee; border-radius:5px}
 #searchtipDate:hover, #searchtip:hover {box-shadow: 0px 0px 10px #c45414;}
 #searchtip li, #searchtipDate li {padding:0em; text-align:center;}
 #searchtip {display:none;width:20%; position: absolute;top: 14em;left: 3%;font-size:1em;margin:0}
-#searchtipDate {width: 40%;float:right;margin-top:0;margin-right:4em;padding:.2em;font-size: .7em;font-size:.7em}
+#searchtipDate {width: 40%;float:right;margin-top:0;margin-right:6em;padding:.2em;font-size: .7em;}
 .searchtips {font-size:.9em;}
 #featured h2 {background-color: #bbbbbb;}
 #featured {width:32%}
@@ -167,7 +169,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #results {width:95%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:#eee;border-radius:5px;font-size:1em;}
 #results a {color:#c45414; text-decoration:none;}
 #results a:hover {font-weight:bold}
-#results select, #results input {font-size:1em;margin-top:0; margin-bottom:0;}
+#results select, #results input {font-size:1em;margin-top:0; margin-bottom:0;padding:0;height: auto;line-height: 0;width: auto;}
 #rss {float:left;margin-right:.5em;}
 #hits {float:left;margin-bottom:1%;width:32%}
 #sort {float:right;}
@@ -421,6 +423,9 @@ iframe {
 /* --------------------------------------------- */
 @media screen and (max-width:1024px) {
     .resultIcon img {max-height:33px;}
+    .comment {display:none;}
+    #header {width:90%}
+    #bookbag {padding-top:5em;}
 }
 
 
@@ -428,7 +433,8 @@ iframe {
 h2 {font-size:1.2em}
 h3 {font-size:1em}
 .home li, .resultsHeader li {font-size:1em;}
-#about {right:10%}
+#bookbag {padding-top:0;}
+#about {right:10%;top:11.5em;}
 #browse {min-height:9em;}
 .category h3 {vertical-align:middle}
 #results {font-size:.8em;}
@@ -475,8 +481,8 @@ body {background-image:none !important}
 .tagline {display:none;}
 #bookbag {width:11%; margin:2%;}
 #about {display:none}
-#searchTop {height:5em;}
-#searchbox {top:5em;}
+#searchTop {height:8em;}
+#searchbox {top:8em;}
 input[type="text"].searchbox {left:4%;width:72%}
 input[type="submit"].searchbox {left:80%}
 #advancedSearch {left:-22%;width:72%}
@@ -494,7 +500,7 @@ div[id^='navOption'] {display:none}
 .resultLabel {width: 19%;}
 .resultText {width: 80%;}
 .subdocument {margin-left:3%;}
-.resultsHeader #searchbox {left: 0%; width:90%; top:4em;}
+.resultsHeader #searchbox {left: 0%; width:90%; top:7em;}
 .resultsHeader input[type="text"].searchbox {left:5%; width:70%}
 .resultsHeader input[type="submit"].searchbox {left:79%}
 .resultsHeader #advancedSearch {left:-21%;width:70%}
@@ -529,8 +535,6 @@ div[id^='navOption'] {display:none}
 div.docHit {width:96%}
 .subdocuments {width:90%}
 .subdocument, .subdocument.active {width:98%;margin:0;}
-.subdocument:before {width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 5px solid #666666;content: " ";float: left;margin-right: 2%;margin-top: 3%;}
-.subdocument.active:before {width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-bottom: 5px solid #666666;border-top:none;content: " ";float: left;margin-right: 2%;margin-top: 3%;}
 .subdocument.active{border-left:none;width:100%;}
 .subdocument .title {width: 82%;}
 .activeArrow {display:none;}
@@ -545,7 +549,7 @@ div.docHit {width:96%}
 #bookbag {width:16%}
 .documentTitle {width:100%;}
 #searchTop {height:4.5em;}
-#searchbox {width:90%;top:4em;}
+#searchbox {width:90%;top:7em;}
 .headerIcons {display:none}
 .tab {padding:5px;height:30px;text-align:center;}
 

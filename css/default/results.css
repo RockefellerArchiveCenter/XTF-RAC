@@ -111,6 +111,23 @@ div.facetGroup {
 	font-size: 95%;	
 }
 
+#to, #from {
+width: 3em;
+font-size: 1em;
+padding: 1%;
+margin: 2%;
+text-align: center;
+}
+
+#histogram canvas{
+    width: 94% !important;
+    margin-left: 3%;
+}
+
+#slider-range {
+    margin:2% 3% 5% 3%;
+}
+
 div.docHit {
 	background-color: #FAFAFB;
 	margin: 1%;
