@@ -349,8 +349,8 @@ ul.none {list-style:none;}
 .inventoryTitle {font-weight:bold; background-color:#000; color:#fff; padding:4px 2px; margin-bottom:.5em;float:left;width:100%}
 .file:nth-of-type(even), .item:nth-of-type(even) {background-color:#eee !important;}
 .file, .item {float: left;width:100%; padding:.5em 0 .5em 0}
-.file.active {color:#fff;background-color: #999 !important;border-left: .5em solid #c45414;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position:relative;z-index:2;}
-.file.active .subhit {color:#fff !important;}
+.file.active, .item.active {color:#fff;background-color: #999 !important;border-left: .5em solid #c45414;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position:relative;z-index:2;}
+.file.active .subhit, .item.active .subhit {color:#fff !important;}
 .daoLink, .format, .containers, .moreInfo {float:left;display:inline-block;vertical-align:middle;}
 .daoLink {width:38%;padding:0 1% 0 1%;}
 .format {width:30%;}
