@@ -28,18 +28,19 @@ $(document).ready(function() {
 if($(window).width() > 768) {
 
     $('div.component').mouseenter(function() {
+    var firstcomponent = '#' + $('.docHit').attr('id') + '> .top-level';
     var id = $(this).attr("id").split('_')[1]
     var componentid = "#componentInfo_" + id;
     var position = $(this).position();
     var infoheight = $(componentid).height();
     var windowheight = $(window).height();
-    var windowheightnoscroll = $(window).height() + $('#main_1 > .top-level').position().top;
+    var windowheightnoscroll = $(window).height() + $(firstcomponent).position().top;
     var scrolltop = $(window).scrollTop();
-    var scrolltopnoscroll = $('#main_1 > .top-level').position().top - $(window).scrollTop();
+    var scrolltopnoscroll = $(firstcomponent).position().top - $(window).scrollTop();
     var offset = position.top - (scrolltop);
     var offsetnoscroll = position.top - (scrolltopnoscroll);
     var fraction = (windowheight / offset);
-    var fractionnoscroll = (windowheight + $('#main_1 > .top-level').position().top) / offsetnoscroll;
+    var fractionnoscroll = (windowheight + $(firstcomponent).position().top) / offsetnoscroll;
     var setheight = position.top - (infoheight / fraction);
     var setheightnoscroll = position.top - (infoheight / fractionnoscroll);
 
