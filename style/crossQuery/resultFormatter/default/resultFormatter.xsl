@@ -696,7 +696,7 @@
                         <td colspan="2" style="text-align:right;">
                            <input type="reset" value="CLEAR"/>
                            <xsl:text>&#160;</xsl:text>
-                           <input type="submit" value="SUBMIT"/>
+                           <input type="submit" value="SUBMIT" onClick="_gaq.push(['_trackEvent', 'bookbag', 'send', '{@totalDocs}'])"/>
                            <input type="hidden" name="smode" value="emailFolder"/>
                            <input type="hidden" name="docsPerPage" value="{$bagCount}"/>
                         </td>
