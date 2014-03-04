@@ -97,7 +97,7 @@
                   <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
                </xsl:when>
                <xsl:when test="$chunk.id = 'digitalLink'">
-                  <div typeof="schema:ImageGallery"><xsl:apply-templates select="/ead/archdesc/dsc/child::*[1][@level]"/></div>
+                  <div typeof="schema:ImageGallery"><xsl:apply-templates select="/ead/archdesc/dsc/child::*[xtf:meta/*:type = 'dao'][@level]"/></div>
                </xsl:when>
                <xsl:when test="$chunk.id = 'bioghist'">
                   <xsl:apply-templates select="/ead/archdesc/bioghist"/>
