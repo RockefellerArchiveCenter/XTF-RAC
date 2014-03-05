@@ -473,11 +473,11 @@
                                              </xsl:for-each>
                                           </xsl:if>
                                           
-                                          <input type="text" name="year" id="from" size="4"/>
-                                          <input type="text" name="year-max" id="to" size="4"/>
+                                          <input type="text" name="year" id="from" size="4" onClick="_gaq.push(['_trackEvent', 'results', 'date', 'set from date']);"/>
+                                          <input type="text" name="year-max" id="to" size="4" onClick="_gaq.push(['_trackEvent', 'results', 'date', 'set to date']);"/>
                                           <!--<input type="hidden" name="year" id="range"/>-->
                                           <!--<a href="{$xtfURL}{$crossqueryPath}?">Filter >></a>-->
-                                          <input type="submit" value="Filter"/>
+                                          <input type="submit" value="Filter" onClick="_gaq.push(['_trackEvent', 'results', 'date', 'filter dates']);"/>
                                        </form>
                                        <div id="histogram"></div>
                                        <div id="slider-range"/>
