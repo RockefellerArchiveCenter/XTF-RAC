@@ -1599,54 +1599,56 @@
             <xsl:otherwise>
                 <div class="daoLink">
                    <xsl:choose>
-                      <xsl:when test="../dao">
-                         <xsl:if test="count(../dao) &gt; 1">
-                            <xsl:call-template name="component-did-core"/><br/> 
-                         </xsl:if>
-                         <xsl:for-each select="../dao">
-                            <xsl:variable name="daoLink" select="@ns2:href"/>
-                            <xsl:variable name="daoTitle" select="@ns2:title"/>
-                            <xsl:variable name="citation">
-                               <xsl:call-template name="daoCitation"/>
-                            </xsl:variable>  
-                            <xsl:choose>
-                               <xsl:when test="@ns2:actuate and @ns2:actuate != 'none'">
-                                  <a href="{$daoLink}" 
-                                     data-citation="{$citation}" data-title="{$daoTitle}" 
-                                     data-width="512" data-height="384" 
-                                     onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);" title="Digital object">
-                                     <xsl:if test="count(../dao) &gt; 1">
-                                        <xsl:attribute name="style">margin-left:1em;</xsl:attribute>
-                                     </xsl:if>
-                                     <xsl:choose>
-                                        <xsl:when test="count(../dao) &gt; 1">
-                                           <xsl:value-of select="$daoTitle"/>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                           <xsl:for-each select="../did">
-                                              <xsl:call-template name="component-did-core"/>                                        
-                                           </xsl:for-each>
-                                        </xsl:otherwise>
-                                     </xsl:choose>
-                                     <img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>
-                                  </a>
-                               </xsl:when>
-                               <xsl:otherwise>
-                                  <xsl:choose>
-                                     <xsl:when test="count(../dao) &gt; 1">
-                                        <xsl:value-of select="$daoTitle"/>
-                                     </xsl:when>
-                                     <xsl:otherwise>
-                                        <xsl:for-each select="../did">
-                                           <xsl:call-template name="component-did-core"/>                                        
-                                        </xsl:for-each>
-                                     </xsl:otherwise>
-                                  </xsl:choose>
-                               </xsl:otherwise>
-                            </xsl:choose>
-                         </xsl:for-each>
-                         
-                      </xsl:when>
+                  <xsl:when test="../dao">
+                     <xsl:if test="count(../dao) &gt; 1">
+                        <xsl:call-template name="component-did-core"/>
+                        <br/>
+                     </xsl:if>
+                     <xsl:for-each select="../dao">
+                        <xsl:variable name="daoLink" select="@ns2:href"/>
+                        <xsl:variable name="daoTitle" select="@ns2:title"/>
+                           <xsl:variable name="citation">
+                           <xsl:call-template name="daoCitation"/>
+                        </xsl:variable>
+                        <xsl:choose>
+                           <xsl:when test="@ns2:actuate and @ns2:actuate != 'none'">
+                              <a href="{$daoLink}" data-citation="{$citation}"
+                                 data-title="{$daoTitle}" data-width="512" data-height="384"
+                                 onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);"
+                                 title="Digital object">
+                                 <xsl:if test="count(../dao) &gt; 1">
+                                    <xsl:attribute name="style">margin-left:1em;</xsl:attribute>
+                                 </xsl:if>
+                                 <xsl:choose>
+                                    <xsl:when test="count(../dao) &gt; 1">
+                                       <xsl:value-of select="$daoTitle"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                       <xsl:for-each select="../did">
+                                          <xsl:call-template name="component-did-core"/>
+                                       </xsl:for-each>
+                                    </xsl:otherwise>
+                                 </xsl:choose>
+                                 <img src="/xtf/icons/default/dao.gif" alt="digital materials"
+                                    align="top"/>
+                              </a>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <xsl:choose>
+                                 <xsl:when test="count(../dao) &gt; 1">
+                                    <xsl:value-of select="$daoTitle"/>
+                                 </xsl:when>
+                                 <xsl:otherwise>
+                                    <xsl:for-each select="../did">
+                                       <xsl:call-template name="component-did-core"/>
+                                    </xsl:for-each>
+                                 </xsl:otherwise>
+                              </xsl:choose>
+                           </xsl:otherwise>
+                        </xsl:choose>
+                     </xsl:for-each>
+
+                  </xsl:when>
                       <xsl:otherwise>
                          <xsl:call-template name="component-did-core"/>                         
                       </xsl:otherwise>
@@ -1673,16 +1675,14 @@
                </a>
             </div>
             <div class="caption" style="float:left;padding: 3em 0 0 1em;width: 75%;font-size:1em;">
-               <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384" onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);">
-                  <xsl:choose>
-                     <xsl:when test="daodesc">
-                        <xsl:apply-templates select="daodesc"/>
-                     </xsl:when>
-                     <xsl:otherwise>
-                 <xsl:if test="../did/unittitle"><xsl:value-of select="../did/unittitle"/>,&#160;</xsl:if>
-                        <xsl:if test="../did/unitdate"><xsl:value-of select="../did/unitdate"/></xsl:if>                  
-                     </xsl:otherwise>
-                  </xsl:choose>
+               <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}"
+                  data-width="512" data-height="384"
+                  onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);">
+                  <xsl:if test="../did/unittitle != ''"><xsl:value-of select="../did/unittitle"
+                     />,&#160;</xsl:if>
+                  <xsl:if test="../did/unitdate">
+                     <xsl:value-of select="../did/unitdate"/>
+                  </xsl:if>
                </a>
             </div>   
          </div>
