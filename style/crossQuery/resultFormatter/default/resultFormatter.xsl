@@ -792,7 +792,15 @@
          </xsl:variable>
          <xsl:choose>
             <xsl:when test="$chunk.id != ''">
-               <xsl:value-of select="concat($xtfURL,$uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
+               <xsl:choose>
+                  <xsl:when test="meta/seriesID != ''">
+                     <xsl:value-of select="concat($xtfURL,$uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="concat($xtfURL,$uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"/>
+                  </xsl:otherwise>
+               </xsl:choose>
+              
                <!-- Link used to get sub-document out of context               
                   <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
                -->
