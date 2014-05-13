@@ -1779,6 +1779,7 @@
    <xsl:template match="*" mode="moreInfo">
       <xsl:apply-templates select="did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
       <xsl:apply-templates select="did/physdesc"/>
+      <xsl:apply-templates select="did/materialspec"/>
       <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c')]"/>
    </xsl:template>
    <xsl:template match="*" mode="restrictions">
