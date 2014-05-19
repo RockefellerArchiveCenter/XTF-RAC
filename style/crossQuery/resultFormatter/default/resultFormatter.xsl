@@ -266,7 +266,7 @@
             </div>
                         
             <div class="resultsHeader">
-               <form method="get" action="{$xtfURL}{$crossqueryPath}">
+               <form id="searchResults" method="get" action="{$xtfURL}{$crossqueryPath}">
                   <xsl:if test="$smode='showBag'">
                      <h2>Your Bookbag: <xsl:variable name="items" select="@totalDocs"/>
                         <xsl:choose>
@@ -422,6 +422,13 @@
                               </div>
                               
                               <input class="searchbox" type="submit" value="Search" onClick="_gaq.push(['_trackEvent', 'search', 'keyword', 'results page']);"/>
+                              <script type="text/javascript">
+                                    $("#searchResults").submit(function() {
+                                    $('input[value=]',this).remove();
+                                    $('select[value=]',this).remove();
+                                    return true;
+                                    });
+                              </script>
                               <!--<input type="hidden" value="series" name="level"/>-->
                               <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
                               <!-- Uncomment and complete code when digital objects are included -->
