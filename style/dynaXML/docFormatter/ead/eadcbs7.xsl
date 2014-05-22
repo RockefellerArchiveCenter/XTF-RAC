@@ -1780,7 +1780,16 @@
       <xsl:apply-templates select="did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
       <xsl:apply-templates select="did/physdesc"/>
       <xsl:apply-templates select="did/materialspec"/>
-      <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c')]"/>
+      <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c' or name()='dao' or name()='controlaccess')]"/>
+      <xsl:if test="string(controlaccess)">
+         <h4>Subjects</h4>
+         <xsl:for-each select="controlaccess/subject | controlaccess/corpname | controlaccess/famname | controlaccess/persname | controlaccess/genreform | controlaccess/title | controlaccess/geogname | controlaccess/occupation">
+            <xsl:sort select="." data-type="text" order="ascending"/>
+            <div>
+               <xsl:apply-templates/>
+            </div>
+         </xsl:for-each>
+      </xsl:if>
    </xsl:template>
    <xsl:template match="*" mode="restrictions">
       <xsl:apply-templates select="did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
