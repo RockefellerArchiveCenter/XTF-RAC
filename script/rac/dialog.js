@@ -35,7 +35,9 @@ $(function () {
             height: "550",
             close: function () {
                 $('.ui-dialog').hide();
+                $('.dao-container > iframe').attr("src", "");
                 $('.daoCitation').remove();
+                
                 }
             //close: function () {
             //    iframe.attr("src", "");
