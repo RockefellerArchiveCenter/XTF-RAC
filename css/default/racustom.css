@@ -427,6 +427,8 @@ iframe {
     .comment {display:none;}
     #header {width:90%}
     #bookbag {padding-top:5em;}
+    #tocWrapper {top:299px;}
+    #content-wrapper {top:299px}
 }
 
 
@@ -440,19 +442,23 @@ h3 {font-size:1em}
 .category h3 {vertical-align:middle}
 #results {font-size:.8em;}
 #results .pages, #results .hits {width:31%}
+.facets {width:33%}
+#docHits {width:65%}
 #docHits .resultIcon {width:13%}
 #docHits .resultContent {width:75%}
 #docHits .resultLabel {width:22%}
 #docHits .resultText {width:77%}
+div.docHit {width:97%}
 .headerSearch {font-size:.8em;width:38%}
+.headerSearch input {width:45%}
 .accordionContent {font-size:1em;}
 .accordionButton h3 {font-size:.9em;}
 .accordionButton:after {width: 0;height: 0;border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-left: 5px solid #666666;content: " ";float: right;margin-left: .8em;margin-right: .8em;margin-top: .8em;}
 .on:after {width: 0;height: 0;border-top: 5px solid #666666;border-right: 5px solid transparent;border-left: 5px solid transparent;content: " ";float: right;margin-left: 0.6em;margin-right: .4em;margin-top: 1.1em;}
 .category img {display:none;}
 
-#tocWrapper {width:35%; top:262px;}
-#content-wrapper {left:39%; top:262px;}
+#tocWrapper {width:35%; top:272px;}
+#content-wrapper {left:39%; top:272px;}
 #contentsLink {width:99%}
 
 .daoLink {width:28%}
