@@ -828,7 +828,7 @@
          </xsl:when>
          <xsl:when test="ancestor::*/child::accessrestrict">
             <accessrestrict xtf:meta="true">
-               <xsl:value-of select="ancestor::*/child::accessrestrict/p"/>
+               <xsl:value-of select="(ancestor::*/child::accessrestrict/p) [last()]"/>
             </accessrestrict>
          </xsl:when>
          <xsl:otherwise>
@@ -846,7 +846,7 @@
          </xsl:when>
          <xsl:when test="ancestor::*/child::userestrict">
             <userestrict xtf:meta="true">
-               <xsl:value-of select="ancestor::*/child::userestrict/p"/>
+               <xsl:value-of select="(ancestor::*/child::userestrict/p) [last()]"/>
             </userestrict>
          </xsl:when>
          <xsl:otherwise>
