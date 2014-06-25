@@ -1972,6 +1972,13 @@
                title="Digital object"/>
          </xsl:if>
          </a>
+         <div class="parents">
+            <xsl:for-each select="meta/parent[position()&gt;1]">
+               <div class="parent" style="padding-left:{(position() -1)}em">
+                  <xsl:value-of select="."/>
+               </div>
+            </xsl:for-each>
+         </div>
       </div>
             
       <div class="bookbag">
