@@ -401,13 +401,26 @@
             </ul>
          </div>
          <xsl:call-template name="tabs"/>
+         <xsl:variable name="searchPage">
+            <xsl:choose>
+               <xsl:when test="$doc.view='dao'">
+                  <xsl:value-of select="'Digital Materials'"/>
+               </xsl:when>
+               <xsl:when test="$doc.view='contents'">
+                  <xsl:value-of select="'Contents List'"/>
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:value-of select="'Collection Description'"/>
+               </xsl:otherwise>
+            </xsl:choose>
+         </xsl:variable>
          <div class="headerSearch">
             <form action="{$xtfURL}{$dynaxmlPath}" method="get" class="bbform">
                <input name="query" type="text"/>
                <input type="hidden" name="docId" value="{$docId}"/>
                <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
                <input type="hidden" name="doc.view" value="{$doc.view}"/>
-               <input type="submit" value="Search this Collection" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$chunk.id}']);"/>
+               <input type="submit" value="Search this Collection" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
             </form>
             <xsl:if test="($query != '0') and ($query != '')">
                <div class="headerResults">
