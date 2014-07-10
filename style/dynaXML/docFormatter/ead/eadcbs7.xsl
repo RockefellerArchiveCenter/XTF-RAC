@@ -1426,7 +1426,7 @@
                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
                                 child::separatedmaterial |  child::controlaccess">
                                 <span class="dialog_dsc">
-                                   <a href="#">Additional description</a>
+                                   <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Additional Description']);">Additional description</a>
                                 </span>
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
@@ -1439,7 +1439,7 @@
                              </xsl:if>
                              <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
                                 <span class="restrict_dsc">
-                                   <a href="#">Restrictions</a>
+                                   <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Restrictions']);">Restrictions</a>
                                 </span>
                                 <xsl:if test="$didHitCount &gt; 0">
                                    <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
