@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0">
+
+	<channel>
+		<title>AIP finding aids</title>
+		<link>http://dimes.rockarch.org/xtf/aipRSS.xml</link>
+		<description>Finding aids to be crawled by the American Institute of Physics</description>
+		<item>
+			<title>Commonwealth Fund records, Harkness Fellowships, SG 1, Series 20</title>
+			<link>http://dimes.rockarch.org/xtf/data/ead/FA292/FA292.xml</link>
+		</item>
+	</channel>
+</rss>
