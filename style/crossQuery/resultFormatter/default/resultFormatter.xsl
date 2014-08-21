@@ -355,8 +355,8 @@
                                        <option value="ead">
                                           <xsl:if test="$type = 'ead'">
                                              <xsl:attribute name="selected">selected</xsl:attribute>
-                                          </xsl:if>
-                                          Archival Collections</option>
+                                          </xsl:if>Archival Collections
+                                          </option>
                                        <option value="dao">
                                           <xsl:if test="$type = 'dao'">
                                              <xsl:attribute name="selected">selected</xsl:attribute>
@@ -370,7 +370,7 @@
                                     </select>
                                     <!-- 6/21/2013 HA: adding advanced search to home page -->
                                     <select name="sectionType" id="library">
-                                       <option value="">All Library Materials</option>
+                                       <option value="">All Fields</option>
                                        <option value="title">Title</option>
                                        <option value="creator">Author</option>
                                        <option value="callNumber">Call Number</option>
@@ -378,7 +378,7 @@
                                        <option value="lccn">LCCN</option>
                                     </select>
                                     <select name="sectionType" id="collections">
-                                       <option value="">All Archival Collections</option>
+                                       <option value="">All Fields</option>
                                        <option value="title">Title</option>
                                        <option value="creator">Creator</option>
                                        <option value="bioghist">Biographical or Historical
@@ -391,7 +391,7 @@
                                        <option value="controlaccess">Subject Headings</option>
                                     </select>
                                     <select name="sectionType" id="dao">
-                                       <option value="">All Digital Materials</option>
+                                       <option value="">All Fields</option>
                                        <option value="title">Title</option>
                                        <option value="creator">Creator</option>
                                        <option value="bioghist">Biographical or Historical

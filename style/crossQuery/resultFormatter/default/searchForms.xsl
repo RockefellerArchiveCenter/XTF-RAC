@@ -315,7 +315,7 @@
                         </select>
                         <!-- 6/21/2013 HA: adding advanced search to home page -->
                         <select name="sectionType" id="library">
-                           <option value="">All Library Materials</option>
+                           <option value="">All Fields</option>
                            <option value="title">Title</option>
                            <option value="creator">Author</option>
                            <option value="callNumber">Call Number</option>
@@ -323,7 +323,7 @@
                            <option value="lccn">LCCN</option>
                         </select>
                         <select name="sectionType" id="collections">
-                           <option value="">All Archival Collections</option>
+                           <option value="">All Fields</option>
                            <option value="title">Title</option>
                            <option value="creator">Creator</option>
                            <option value="bioghist">Biographical or Historical Note</option>
@@ -335,7 +335,7 @@
                            <option value="controlaccess">Subject Headings</option>
                         </select>
                         <select name="sectionType" id="dao">
-                           <option value="">All Digital Materials</option>
+                           <option value="">All Fields</option>
                            <option value="title">Title</option>
                            <option value="creator">Creator</option>
                            <option value="bioghist">Biographical or Historical Note</option>
@@ -543,14 +543,16 @@
                   <strong>Search full text:</strong>
                </td>
                <td>
-                  <input type="text" name="text" size="60" value="{$text}"/>&#160; <select
+                  <input type="text" name="text" size="60" value="{$text}"/>&#160; 
+                  <select
                      name="type" id="type">
                      <option value="">All Materials</option>
                      <option value="ead">Archival Collections</option>
                      <option value="dao">Digital Materials</option>
                      <option value="mods">Library Materials</option>
-                  </select> &#160; <select name="sectionType" id="library">
-                     <option value="">All Library Materials</option>
+                  </select> &#160; 
+                  <select name="sectionType" id="library">
+                     <option value="">All Fields</option>
                      <option value="title">Title</option>
                      <option value="creator">Author</option>
                      <option value="callNumber">Call Number</option>
@@ -558,7 +560,7 @@
                      <option value="lccn">LCCN</option>
                   </select>
                   <select name="sectionType" id="collections">
-                     <option value="">All Archival Collections</option>
+                     <option value="">All Fields</option>
                      <option value="title">Title</option>
                      <option value="creator">Creator</option>
                      <option value="bioghist">Biographical or Historical Note</option>
@@ -570,7 +572,7 @@
                      <option value="controlaccess">Subject Headings</option>
                   </select>
                   <select name="sectionType" id="dao">
-                     <option value="">All Digital Materials</option>
+                     <option value="">All Fields</option>
                      <option value="title">Title</option>
                      <option value="creator">Creator</option>
                      <option value="bioghist">Biographical or Historical Note</option>

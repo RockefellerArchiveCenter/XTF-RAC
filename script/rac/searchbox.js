@@ -3,19 +3,19 @@
                     $('#library').hide();
                     $('#dao').hide();
                     $('#type').change(function () {
-                        if ($('#type option:selected').text() == "Archival Collections"){
+                        if ($('#type option:selected').text().trim() == 'Archival Collections'){
                             $('#collections').show();
                             $('#dao').hide();
                             $('#library').hide();
                             $('input[type="text"].searchbox').attr('name','text');
                                 }
-                        else if ($('#type option:selected').text() == "Library Materials"){
+                        else if ($('#type option:selected').text().trim() == "Library Materials"){
                             $('#library').show();
                             $('#dao').hide();
                             $('#collections').hide();
                             $('input[type="text"].searchbox').attr('name','text');
                                 }
-                        else if ($('#type option:selected').text() == "Digital Materials"){
+                        else if ($('#type option:selected').text().trim() == "Digital Materials"){
                             $('#dao').show();
                             $('#collections').hide();
                             $('#library').hide();
