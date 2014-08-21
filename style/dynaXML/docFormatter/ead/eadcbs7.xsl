@@ -1678,8 +1678,10 @@
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}"
                   data-width="512" data-height="384"
                   onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);">
-                  <xsl:if test="../did/unittitle != ''"><xsl:value-of select="../did/unittitle"
-                     />,&#160;</xsl:if>
+                  <xsl:if test="../did/unittitle != ''"><xsl:value-of select="../did/unittitle"/>
+                     <xsl:if test="../did/unitdate"><xsl:text>,&#160;</xsl:text>
+                     </xsl:if>
+                  </xsl:if>
                   <xsl:if test="../did/unitdate">
                      <xsl:value-of select="../did/unitdate"/>
                   </xsl:if>
