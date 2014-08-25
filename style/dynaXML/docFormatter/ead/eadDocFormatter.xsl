@@ -577,8 +577,15 @@
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
+      <xsl:variable name="tracking-id">
+         <xsl:choose>
+            <xsl:when test="$id='contentsLink'"><xsl:value-of select="'Contents List'"/></xsl:when>
+            <xsl:when test="$id='digitalLink'"><xsl:value-of select="'Digital Materials'"/></xsl:when>
+            <xsl:otherwise><xsl:value-of select="'Collection Description'"/></xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>   
-      <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'tab', '{$id}']);">
+      <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'tab', '{$tracking-id}']);">
 
       <!-- 5/17/2012 DG: create variables for the new href: documentname2, basicchoice2, xtfURL2, href2. Just use chunk.id and doc name for now-->
       	<xsl:variable name="documentname2">
@@ -1193,7 +1200,17 @@
             
       <xsl:choose>
          <xsl:when test="$doc.view='collection' or $chunk.id='headerlink' or $chunk.id='restrictlink' or $chunk.id='arrangementlink' or $chunk.id='bioghist' or $chunk.id='adminlink' or $chunk.id='physdesclink'">
-            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$id}']);">
+            <xsl:variable name="tracking-id">
+               <xsl:choose>
+                  <xsl:when test="$id = 'restrictlink'"><xsl:value-of select="'Access and Use'"/></xsl:when>
+                  <xsl:when test="$id = 'bioghist'"><xsl:value-of select="'Biographical/Historial Note'"/></xsl:when>
+                  <xsl:when test="$id = 'arrangementlink'"><xsl:value-of select="'Arrangement'"/></xsl:when>
+                  <xsl:when test="$id = 'adminlink'"><xsl:value-of select="'Administrative Information'"/></xsl:when>
+                  <xsl:when test="$id = 'headerlink'"><xsl:value-of select="'Overview'"/></xsl:when>
+                  <xsl:when test="$id = 'physdesclink'"><xsl:value-of select="'Physical Description'"/></xsl:when>   
+               </xsl:choose>
+            </xsl:variable>
+            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$tracking-id}']);">
                <!-- if basicchoice2 = "nomatch_for_id" then use the original -->
                <xsl:attribute name="href">
                   <!--   <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>   (old had &amp;menu=more)-->
@@ -1230,7 +1247,7 @@
             </a>
          </xsl:when>
          <xsl:otherwise>
-            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', 'level {$indent}']);">
+            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', 'level {$indent} component']);">
                <xsl:attribute name="rel"><xsl:value-of select="concat('#',@id)"/></xsl:attribute>
                <xsl:attribute name="href">
                   <xsl:choose>
