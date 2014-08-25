@@ -1123,52 +1123,68 @@
                <xsl:call-template name="anchor"/>
                <xsl:call-template name="clevel_dao"/>
                <xsl:for-each select="c|c02">
+                  <xsl:if test="dao">
                   <div class="{@level} c02" style="width:99%;float:right;">
                      <xsl:call-template name="anchor"/>
                      <xsl:call-template name="clevel_dao"/>
                      <xsl:for-each select="c|c03">
+                        <xsl:if test="dao">
                         <div class="{@level} c03" style="width:99%;float:right;">
                            <xsl:call-template name="anchor"/>
                            <xsl:call-template name="clevel_dao"/>
                            <xsl:for-each select="c|c04">
+                              <xsl:if test="dao">
                               <div class="{@level} c04" style="width:99%;float:right;">
                                  <xsl:call-template name="anchor"/>
                                  <xsl:call-template name="clevel_dao"/>
                                  <xsl:for-each select="c|c05">
+                                    <xsl:if test="dao">
                                     <div class="{@level} c05" style="width:99%;float:right;">
                                        <xsl:call-template name="anchor"/>
                                        <xsl:call-template name="clevel_dao"/>
                                        <xsl:for-each select="c|c06">
+                                          <xsl:if test="dao">
                                           <div class="{@level} c06" style="width:99%;float:right;">
                                              <xsl:call-template name="anchor"/>
                                              <xsl:call-template name="clevel_dao"/>
                                              <xsl:for-each select="c|c07">
+                                                <xsl:if test="dao">
                                                 <div class="{@level} c07" style="width:99%;float:right;">
                                                   <xsl:call-template name="anchor"/>
                                                   <xsl:call-template name="clevel_dao"/>
                                                   <xsl:for-each select="c|c08">
+                                                     <xsl:if test="dao">
                                                      <div class="{@level} c08" style="width:99%;float:right;">
                                                   <xsl:call-template name="anchor"/>
                                                   <xsl:call-template name="clevel_dao"/>
                                                   <xsl:for-each select="c|c09">
+                                                     <xsl:if test="dao">
                                                      <div class="{@level} c09" style="width:99%;float:right;">
                                                   <xsl:call-template name="anchor"/>
                                                   <xsl:call-template name="clevel_dao"/>
                                                   </div>
+                                                     </xsl:if>
                                                   </xsl:for-each>
                                                   </div>
+                                                     </xsl:if>
                                                   </xsl:for-each>
                                                 </div>
+                                                </xsl:if>
                                              </xsl:for-each>
                                           </div>
+                                          </xsl:if>
                                        </xsl:for-each>
                                     </div>
+                                    </xsl:if>
                                  </xsl:for-each>
                               </div>
+                              </xsl:if>
                            </xsl:for-each>
                         </div>
+                        </xsl:if>
                      </xsl:for-each>
                   </div>
+                  </xsl:if>
                </xsl:for-each>
             </div>
          </xsl:when>
