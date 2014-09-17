@@ -1039,7 +1039,7 @@
                </xsl:choose>
             </xsl:variable>
             <identifier xtf:meta="true" xtf:tokenize="no">
-               <xsl:value-of select="concat($parentID,'|',$id)"/>
+               <xsl:value-of select="concat($parentID,'-',$id)"/>
             </identifier>
          </xsl:when>
          <xsl:otherwise>

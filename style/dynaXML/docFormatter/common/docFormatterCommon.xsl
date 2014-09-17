@@ -272,6 +272,40 @@
    </xsl:template>
    
    <!-- ====================================================================== -->
+   <!-- My List Template                                                         -->
+   <!-- ====================================================================== -->
+   
+   <xsl:template name="myListNav">
+      <div class="pull-right" id="myListNav">
+         <xsl:variable name="bag" select="session:getData('bag')"/>
+         <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> My
+               List (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"
+               /></span>)<span class="caret"/>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+               <li>
+                  <a href="{$xtfURL}{$crossqueryPath}?smode=showBag">View</a>
+               </li>
+               <li>
+                  <a href="#" class="myListEmail">Email</a>
+               </li>
+               <li>
+                  <a href="#" class="myListPrint">Print</a>
+               </li>
+               <li>
+                  <a href="#" class="myListRequest">Request in Reading Room</a>
+               </li>
+               <li>
+                  <a href="#" class="myListCopies">Request copies</a>
+               </li>
+            </ul>
+         </div>
+         <a href="http://raccess.rockarch.org" class="btn btn-default">Login</a>
+      </div>
+   </xsl:template>
+   
+   <!-- ====================================================================== -->
    <!-- Robot Template                                                         -->
    <!-- ====================================================================== -->
    

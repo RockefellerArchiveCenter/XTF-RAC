@@ -283,53 +283,20 @@
          <div class="headerIcons">
             <ul>
                <li>
-                  <xsl:variable name="identifier" select="/mods:mods/mods:identifier[1]"/>
-                  <xsl:variable name="indexId" select="$identifier"/>
-                  <xsl:choose>
-                     <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$indexId]">
-                        <!--<img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
-                           title="Added to bookbag"/>-->
-                        <span class="caption">Added</span>
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <script type="text/javascript">
-                                    add_1 = function() {
-                                       var span = YAHOO.util.Dom.get('add_1');
-                                       span.innerHTML = "Adding...";
-                                       YAHOO.util.Connect.asyncRequest('GET', 
-                                          '<xsl:value-of select="concat($xtfURL, 'search?smode=addToBag;identifier=', $identifier)"/>',
-                                          {  success: function(o) { 
-                                                span.innerHTML = o.responseText;
-                                                ++(YAHOO.util.Dom.get('bagCount').innerHTML);
-                                                span.previousSibling.style.display = 'none';
-                                             },
-                                             failure: function(o) { span.innerHTML = 'Failed to add!'; }
-                                          }, null);
-                                    };
-                                 </script>
-                        <a href="javascript:add_1()"
-                           onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-library', 'mods']);">
-                           <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
-                              title="Add to bookbag"/>
-                        </a>
-                        <span id="add_1" class="caption">
-                           
-                        </span>
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </li>
-               <!-- Commented out citation until digital objects are added-->
-               <!--
-                           <a>
-                           <xsl:attribute name="href">javascript://</xsl:attribute>
-                           <xsl:attribute name="onclick">
-                           <xsl:text>javascript:window.open('</xsl:text><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/><xsl:text>?docId=</xsl:text><xsl:value-of
-                           select="$docId"/><xsl:text>;doc.view=citation</xsl:text><xsl:text>','popup','width=500,height=200,resizable=yes,scrollbars=no')</xsl:text>
-                           </xsl:attribute>
-                           <xsl:text>Citation</xsl:text>
+                  <span class="bookbag">
+                     <xsl:variable name="identifier" select="/mods:mods/mods:identifier[1]"/>
+                     <xsl:choose>
+                        <xsl:when test="session:getData('bag')/child::*/child::*[@id=$identifier]">
+                           <span>Added</span>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <a href="#" class="bookbag" data-identifier="{$identifier}">
+                              <xsl:text>Add</xsl:text>
                            </a>
-                           <xsl:text> | </xsl:text>
-                        -->
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </span>
+               </li>
             </ul>
          </div>
          <div class="headerSearch">

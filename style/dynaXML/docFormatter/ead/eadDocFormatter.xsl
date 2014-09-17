@@ -183,10 +183,8 @@
          <html xml:lang="en" lang="en">
             <head>
                <link rel="alternate" type="application/xml" href="{$xtfURL}data/{$docId}" />
-               <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
-               <script src="script/yui/connection-min.js" type="text/javascript"/>
                <xsl:copy-of select="$brand.links"/>
-              
+               <script src="{$xtfURL}script/bookbag.js" type="text/javascript"/> 
                <title>
                   <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
                   <xsl:text>  </xsl:text>
@@ -268,16 +266,8 @@
                      <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
                   </a>
                </div>
-               <div id="bookbag" style="margin-top:1.2em;">
-                     <xsl:variable name="bag" select="session:getData('bag')"/>
-                     <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
-                        onClick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'ead']);">
-                        <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
-                           style="vertical-align:bottom;"/>
-                     </a>
-                  <span>(<span id="bagCount"><xsl:value-of
-                     select="count(session:getData('bag')/child::*/child::*)"/></span>)</span>
-               </div>
+               
+               <xsl:call-template name="myListNav"/>
 
                <xsl:call-template name="bbar_custom"/>
                
@@ -339,44 +329,6 @@
          <xsl:variable name="indexId" select="$identifier"/>
          <div class="headerIcons">
             <ul>
-               <li>
-                  <!-- 7/24/12 WS: added add to bag for whole finding aid -->
-                  <span class="addToBag">
-                     <xsl:choose>
-                        <xsl:when test="session:getData('bag')/child::*/child::*[@id=$indexId]">
-                           <!--<img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
-                              title="Added to bookbag"/>-->
-                           <span class="caption">Added</span>
-                        </xsl:when>
-                        <xsl:otherwise>
-                           <script type="text/javascript">
-                                       add_1 = function() {
-                                          var span = YAHOO.util.Dom.get('add_1');
-                                          span.innerHTML = "Adding...";
-                                          YAHOO.util.Connect.asyncRequest('GET', 
-                                             '<xsl:value-of select="concat($xtfURL, 'search?smode=addToBag;identifier=', $identifier)"/>',
-                                             {  success: function(o) { 
-                                                   span.innerHTML = o.responseText;
-                                                   ++(YAHOO.util.Dom.get('bagCount').innerHTML);
-                                                   span.previousSibling.style.display = 'none';
-
-                                                },
-                                                failure: function(o) { span.innerHTML = 'Failed to add!'; }
-                                             }, null);
-                                       };
-                                 </script>
-                           <a href="javascript:add_1()"
-                              onClick="_gaq.push(['_trackEvent', 'bookbag', 'add-archival', 'ead']);">
-                              <img src="/xtf/icons/default/addbag.gif" alt="Add to bookbag"
-                                 title="Add to bookbag"/>
-                           </a>
-                           <div id="add_1" class="bookbagText">
-                              <!--a href="javascript:add_1()">Add</a>-->
-                           </div>
-                        </xsl:otherwise>
-                     </xsl:choose>
-                  </span>
-               </li>
                <!-- Commented out citation until digital objects are added-->
                <!--
                      <a>

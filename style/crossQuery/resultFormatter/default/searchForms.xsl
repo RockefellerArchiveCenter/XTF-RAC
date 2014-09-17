@@ -170,15 +170,23 @@
                      Center</p>
                </a>
             </div>
-            <div id="bookbag">
+            <div class="pull-right" id="myListNav">
                <xsl:variable name="bag" select="session:getData('bag')"/>
-               <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
-                  onClick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'home page']);">
-                  <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
-                     style="vertical-align:bottom;"/>
-               </a>
-               <span>(<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"
-                  /></span>)</span>
+               <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                     My List (<span class="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"
+                     /></span>)<span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu pull-right" role="menu">
+                     <li><a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
+                        onClick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'home page']);">View</a></li>
+                     <li><a href="#">Email</a></li>
+                     <li><a href="#">Print</a></li>
+                     <li><a href="#">Request in Reading Room</a></li>
+                     <li><a href="#">Request copies</a></li>
+                  </ul>
+               </div>
+               <a href="http://raccess.rockarch.org" class="btn btn-default">Login</a>
             </div>
 
             <div class="searchPage">

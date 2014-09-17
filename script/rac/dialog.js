@@ -1,5 +1,7 @@
 $(document).ready(function() {
-if($(window).width() > 950) {
+var windowWidth = $(window).width();
+var windowHeight = $(window).height();
+
 $(function () {
     var dialogSearchTips = $('#searchTips').dialog({
         create: function(event, ui) {
@@ -9,7 +11,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        width: "950",
+        width: windowWidth/1.5,
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -20,7 +22,7 @@ $(function () {
         dialogSearchTips.dialog("option", "title", 'Searching Tips and Tricks').dialog("open");
     });
 });
-} if($(window).width() > 850) {
+
 $(function () {
         var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0"></iframe>');
         var dialog = $('<div class="dao-container"></div>').append(iframe).appendTo('body').dialog({
@@ -31,7 +33,7 @@ $(function () {
             autoOpen: false,
             modal: true,
             resizable: true,
-            width: "850",
+            width: windowWidth/1.2,
             height: "550",
             close: function () {
                 $('.ui-dialog').hide();
@@ -94,7 +96,6 @@ $(function () {
                           }
                         });
                     
-} if($(window).width() > 800) {
 $(function () {
     var dialogDimes = $('#dimes').dialog({
         create: function(event, ui) {
@@ -104,7 +105,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        width: "800",
+        width: windowWidth/2,
         close: function () {
             $('.ui-dialog').hide();
                 }
@@ -115,7 +116,6 @@ $(function () {
         dialogDimes.dialog("option", "title", 'Why DIMES?').dialog("open");
     });
 });
-} if($(window).width() > 600) {
     
 $(function () {
     var dialogTakedown = $('#takedown').dialog({
@@ -126,7 +126,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        width: "600",
+        width: windowWidth/3,
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -146,7 +146,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        width: "500",
+        width: windowWidth/3,
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -166,7 +166,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        width: "800",
+        width: windowWidth/1.5,
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -177,7 +177,7 @@ $(function () {
         dialogTakedown.dialog("option", "title", 'Licensing for our descriptive metadata').dialog("open");
     });
 });
-} if($(window).width() > 500) {
+
 $(function () {
     var dialogHoldings = $('#holdings').dialog({
         create: function(event, ui) {
@@ -187,7 +187,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        width: "500",
+        width: windowWidth/3,
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -198,13 +198,13 @@ $(function () {
         dialogHoldings.dialog("option", "title", 'Rockefeller Archive Center Holdings').dialog("open");
         });
     });
-} if($(window).width() > 400) {
+
 $(function () {                      
         var dscOptions = {
             autoOpen: false,
             modal: true,
             resizable: true,
-            width: "400",
+            width: windowWidth/3,
             close: function () {
                 $('.ui-dialog').hide();
             }
@@ -230,7 +230,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        width: "400",
+        width: windowWidth/3,
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -250,7 +250,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        width: "400",
+        width: windowWidth/2,
         close: function () {
             $('.ui-dialog').hide();
         }
@@ -261,5 +261,84 @@ $(function () {
         dialogFeedback.dialog("option", "title", "Site Feedback").dialog("open");
         });
     });
-}
+$(function () {
+    var dialogMyListEmail = $('#myListEmail').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        width: windowWidth/1.2,
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    $(".myListEmail").on("click", function (e) {
+        e.preventDefault();
+        dialogMyListEmail.dialog("option", "title", "Email My List").dialog("open");
+        });
+    });
+$(function () {
+    var dialogMyListPrint = $('#myListPrint').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        width: windowWidth/1.2,
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    $(".myListPrint").on("click", function (e) {
+        e.preventDefault();
+        dialogMyListPrint.dialog("option", "title", "Print My List").dialog("open");
+        });
+    });
+$(function () {
+    var dialogMyListRequest = $('#myListRequest').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        width: windowWidth/1.2,
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    $(".myListRequest").on("click", function (e) {
+        e.preventDefault();
+        dialogMyListRequest.dialog("option", "title", "Request in Reading Room").dialog("open");
+        });
+    });
+    $(function () {
+    var dialogMyListCopies = $('#myListCopies').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        width: windowWidth/1.2,
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    $(".myListCopies").on("click", function (e) {
+        e.preventDefault();
+        dialogMyListCopies.dialog("option", "title", "Print My List").dialog("open");
+        });
+    });
 });

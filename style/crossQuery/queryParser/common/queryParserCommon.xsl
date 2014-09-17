@@ -360,7 +360,7 @@
       <xsl:if test="$bag/bag/savedDoc">
          <or>
             <xsl:for-each select="$bag/bag/savedDoc">
-               <term field="identifier"><xsl:value-of select="@id"/></term>
+               <term field="identifier"><xsl:value-of select="@id[1]"/></term>
             </xsl:for-each>
          </or>
       </xsl:if>

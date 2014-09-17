@@ -136,6 +136,17 @@ div.docHit {
 	width:53%
 }
 
+/*My List (aka Bookbag)*/
+
+.myListContents {
+height: 500px; 
+overflow-y: scroll; 
+border:1px solid #ccc; 
+margin:.5em; 
+padding: .5em;
+word-wrap: break-word;
+}
+
 .bookbagView div.docHit {
 	width:60%
 }
