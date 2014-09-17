@@ -257,6 +257,9 @@
             <xsl:otherwise>occurrence</xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
+      <xsl:variable name="title">
+         <xsl:value-of select="/mods:mods/mods:titleInfo[not(@type)]/mods:title"/>
+      </xsl:variable>
       <div class="bbar_custom">  
          <div class="documentTitle">
             <xsl:attribute name="style">
@@ -290,7 +293,7 @@
                            <span>Added</span>
                         </xsl:when>
                         <xsl:otherwise>
-                           <a href="#" class="bookbag" data-identifier="{$identifier}">
+                           <a href="#" class="bookbag" data-identifier="{$identifier}" data-title="{$title}">
                               <xsl:text>Add</xsl:text>
                            </a>
                         </xsl:otherwise>

@@ -1621,12 +1621,32 @@
                <!--2/11/12 WS:  add to bookbag function -->
                <span class="inventoryBookbag bookbag">
                   <xsl:variable name="identifier" select="concat($rootID,'-',@id)"/>
+                  <xsl:variable name="title">
+                     <xsl:choose>
+                        <!--This code processes the elements when unitdate is a child of unittitle.-->
+                        <xsl:when test="child::did/unittitle/unitdate">
+                           <xsl:apply-templates select="child::did/unittitle"/>
+                           <xsl:text>&#160;</xsl:text>
+                        </xsl:when>
+                        <!--This code process the elements when unitdate is not a child of untititle-->
+                        <xsl:otherwise>
+                           <xsl:apply-templates select="child::did/unittitle"/>
+                           <xsl:if test="child::did/unitdate">
+                              <xsl:if test="string-length(child::did/unittitle) &gt; 0">, </xsl:if>
+                           </xsl:if>
+                           <xsl:for-each select="child::did/unitdate">
+                              <xsl:apply-templates/>
+                              <xsl:text>&#160;</xsl:text>
+                           </xsl:for-each>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </xsl:variable>
                   <xsl:choose>
                      <xsl:when test="session:getData('bag')/child::*/child::*[@id=$identifier]">
                         <span>Added</span>
                      </xsl:when>
                      <xsl:otherwise>
-                        <a href="#" class="bookbag" data-identifier="{$identifier}">
+                        <a href="#" class="bookbag" data-identifier="{$identifier}" data-title="{$title}">
                            <xsl:text>Add</xsl:text>
                         </a>
                      </xsl:otherwise>

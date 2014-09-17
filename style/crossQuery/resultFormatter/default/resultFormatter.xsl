@@ -282,163 +282,146 @@
 
                <div class="resultsHeader">
                   <form id="searchResults" method="get" action="{$xtfURL}{$crossqueryPath}">
-                     <xsl:if test="$smode='showBag'">
-                        <h2>My List: <xsl:variable name="items" select="@totalDocs"/>
-                           <xsl:choose>
-                              <xsl:when test="$items = 1"><span id="bookbagCount">1</span>
-                                 <xsl:text> Item</xsl:text>
-                              </xsl:when>
-                              <xsl:otherwise>
-                                 <span id="bookbagCount"><xsl:value-of select="$items"/></span>
-                                 <xsl:text> Items</xsl:text>
-                              </xsl:otherwise>
-                           </xsl:choose></h2>
-
-                        <div class="actions">
-                           <xsl:variable name="bag" select="session:getData('bag')"/>
-                           <xsl:variable name="bagCount" select="count($bag/bag/savedDoc)"/>
-                           <a class="btn btn-default myListEmail">E-mail My Bookbag</a>
-                           <a class="btn btn-default myListPrint">Print</a>
-                           <a class="btn btn-default myListRequest">Request in Reading Room</a>
-                           <a class="btn btn-default myListCopies">Request Copies</a>
-
-                           <a class="btn btn-default">Remove All Items</a>
-                        </div>
-                     </xsl:if>
-
-                     <xsl:if test="$smode != 'showBag'">
-                        <div id="searchForm">
-                           <div id="searchTop">
-                              <div id="searchtip" class="box">
-                                 <ul>
-                                    <li>Want help? See these <a href="#searchTips"
-                                          class="searchTips"
-                                          onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on results page']);"
-                                          >search tips</a>. </li>
-                                 </ul>
-                              </div>
-                              <div id="searchbox">
-                                 <input class="searchbox" type="text" name="keyword">
-                                    <xsl:attribute name="value">
-                                       <xsl:if test="$keyword">
-                                          <xsl:value-of select="$keyword"/>
-                                       </xsl:if>
-                                       <xsl:if test="$text">
-                                          <xsl:value-of select="$text"/>
-                                       </xsl:if>
-                                    </xsl:attribute>
-                                 </input>
-                                 <div id="advancedSearch">
-                                    <div id="boolean">
-                                       <xsl:choose>
-                                          <xsl:when test="$text-join = 'or'">
-                                             <input type="radio" name="text-join" value=""/>
-                                             <xsl:text> all of </xsl:text>
-                                             <input type="radio" name="text-join" value="or"
-                                                checked="checked"/>
-                                             <xsl:text> any of </xsl:text>
-                                          </xsl:when>
-                                          <xsl:otherwise>
-                                             <input type="radio" name="text-join" value=""
-                                                checked="checked"/>
-                                             <xsl:text> all of </xsl:text>
-                                             <input type="radio" name="text-join" value="or"/>
-                                             <xsl:text> any of </xsl:text>
-                                          </xsl:otherwise>
-                                       </xsl:choose>
-                                       <xsl:text>these words</xsl:text>
-                                    </div>
-                                    <div id="materialType">
-                                       <xsl:text>Type of materials: </xsl:text>
-                                       <select name="type" id="type">
-                                          <option value="">All Materials</option>
-                                          <option value="ead">
-                                             <xsl:if test="$type = 'ead'">
-                                                <xsl:attribute name="selected"
+                     <xsl:choose>
+                        <xsl:when test="$smode='showBag'">
+                           <xsl:call-template name="myListHeader"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <div id="searchForm">
+                              <div id="searchTop">
+                                 <div id="searchtip" class="box">
+                                    <ul>
+                                       <li>Want help? See these <a href="#searchTips"
+                                             class="searchTips"
+                                             onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on results page']);"
+                                             >search tips</a>. </li>
+                                    </ul>
+                                 </div>
+                                 <div id="searchbox">
+                                    <input class="searchbox" type="text" name="keyword">
+                                       <xsl:attribute name="value">
+                                          <xsl:if test="$keyword">
+                                             <xsl:value-of select="$keyword"/>
+                                          </xsl:if>
+                                          <xsl:if test="$text">
+                                             <xsl:value-of select="$text"/>
+                                          </xsl:if>
+                                       </xsl:attribute>
+                                    </input>
+                                    <div id="advancedSearch">
+                                       <div id="boolean">
+                                          <xsl:choose>
+                                             <xsl:when test="$text-join = 'or'">
+                                                <input type="radio" name="text-join" value=""/>
+                                                <xsl:text> all of </xsl:text>
+                                                <input type="radio" name="text-join" value="or"
+                                                  checked="checked"/>
+                                                <xsl:text> any of </xsl:text>
+                                             </xsl:when>
+                                             <xsl:otherwise>
+                                                <input type="radio" name="text-join" value=""
+                                                  checked="checked"/>
+                                                <xsl:text> all of </xsl:text>
+                                                <input type="radio" name="text-join" value="or"/>
+                                                <xsl:text> any of </xsl:text>
+                                             </xsl:otherwise>
+                                          </xsl:choose>
+                                          <xsl:text>these words</xsl:text>
+                                       </div>
+                                       <div id="materialType">
+                                          <xsl:text>Type of materials: </xsl:text>
+                                          <select name="type" id="type">
+                                             <option value="">All Materials</option>
+                                             <option value="ead">
+                                                <xsl:if test="$type = 'ead'">
+                                                  <xsl:attribute name="selected"
                                                   >selected</xsl:attribute>
-                                             </xsl:if>Archival Collections </option>
-                                          <option value="dao">
-                                             <xsl:if test="$type = 'dao'">
-                                                <xsl:attribute name="selected"
+                                                </xsl:if>Archival Collections </option>
+                                             <option value="dao">
+                                                <xsl:if test="$type = 'dao'">
+                                                  <xsl:attribute name="selected"
                                                   >selected</xsl:attribute>
-                                             </xsl:if> Digital Materials</option>
-                                          <option value="mods">
-                                             <xsl:if test="$type = 'mods'">
-                                                <xsl:attribute name="selected"
+                                                </xsl:if> Digital Materials</option>
+                                             <option value="mods">
+                                                <xsl:if test="$type = 'mods'">
+                                                  <xsl:attribute name="selected"
                                                   >selected</xsl:attribute>
-                                             </xsl:if> Library Materials</option>
-                                       </select>
-                                       <!-- 6/21/2013 HA: adding advanced search to home page -->
-                                       <select name="sectionType" id="library">
-                                          <option value="">All Fields</option>
-                                          <option value="title">Title</option>
-                                          <option value="creator">Author</option>
-                                          <option value="callNumber">Call Number</option>
-                                          <option value="isbn">ISBN/ISSN</option>
-                                          <option value="lccn">LCCN</option>
-                                       </select>
-                                       <select name="sectionType" id="collections">
-                                          <option value="">All Fields</option>
-                                          <option value="title">Title</option>
-                                          <option value="creator">Creator</option>
-                                          <option value="bioghist">Biographical or Historical
-                                             Note</option>
-                                          <option value="scopecontent">Scope and Content
-                                             Note</option>
-                                          <option value="file">Folder Title</option>
-                                          <option value="item">Item</option>
-                                          <option value="series">Series Description</option>
-                                          <option value="subseries">Subseries Description</option>
-                                          <option value="controlaccess">Subject Headings</option>
-                                       </select>
-                                       <select name="sectionType" id="dao">
-                                          <option value="">All Fields</option>
-                                          <option value="title">Title</option>
-                                          <option value="creator">Creator</option>
-                                          <option value="bioghist">Biographical or Historical
-                                             Note</option>
-                                          <option value="scopecontent">Scope and Content
-                                             Note</option>
-                                          <option value="file">Folder Title</option>
-                                          <option value="item">Item</option>
-                                          <option value="series">Series Description</option>
-                                          <option value="subseries">Subseries Description</option>
-                                          <option value="controlaccess">Subject Headings</option>
-                                       </select>
-                                    </div>
-                                    <div id="date">
-                                       <label for="year">From: </label>
-                                       <input class="date" type="text" name="year"/>
-                                       <label for="year">To: </label>
-                                       <input class="date" type="text" name="year-max"/>
-                                       <div id="searchtipDate" class="box">
-                                          <ul>
-                                             <li>Enter the date as a single year, for example 1942
-                                                or 1973.</li>
-                                          </ul>
+                                                </xsl:if> Library Materials</option>
+                                          </select>
+                                          <!-- 6/21/2013 HA: adding advanced search to home page -->
+                                          <select name="sectionType" id="library">
+                                             <option value="">All Fields</option>
+                                             <option value="title">Title</option>
+                                             <option value="creator">Author</option>
+                                             <option value="callNumber">Call Number</option>
+                                             <option value="isbn">ISBN/ISSN</option>
+                                             <option value="lccn">LCCN</option>
+                                          </select>
+                                          <select name="sectionType" id="collections">
+                                             <option value="">All Fields</option>
+                                             <option value="title">Title</option>
+                                             <option value="creator">Creator</option>
+                                             <option value="bioghist">Biographical or Historical
+                                                Note</option>
+                                             <option value="scopecontent">Scope and Content
+                                                Note</option>
+                                             <option value="file">Folder Title</option>
+                                             <option value="item">Item</option>
+                                             <option value="series">Series Description</option>
+                                             <option value="subseries">Subseries
+                                                Description</option>
+                                             <option value="controlaccess">Subject Headings</option>
+                                          </select>
+                                          <select name="sectionType" id="dao">
+                                             <option value="">All Fields</option>
+                                             <option value="title">Title</option>
+                                             <option value="creator">Creator</option>
+                                             <option value="bioghist">Biographical or Historical
+                                                Note</option>
+                                             <option value="scopecontent">Scope and Content
+                                                Note</option>
+                                             <option value="file">Folder Title</option>
+                                             <option value="item">Item</option>
+                                             <option value="series">Series Description</option>
+                                             <option value="subseries">Subseries
+                                                Description</option>
+                                             <option value="controlaccess">Subject Headings</option>
+                                          </select>
+                                       </div>
+                                       <div id="date">
+                                          <label for="year">From: </label>
+                                          <input class="date" type="text" name="year"/>
+                                          <label for="year">To: </label>
+                                          <input class="date" type="text" name="year-max"/>
+                                          <div id="searchtipDate" class="box">
+                                             <ul>
+                                                <li>Enter the date as a single year, for example
+                                                  1942 or 1973.</li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                       <div class="showAdvanced open">
+                                          <a href="#">close</a>
                                        </div>
                                     </div>
-                                    <div class="showAdvanced open">
-                                       <a href="#">close</a>
-                                    </div>
-                                 </div>
 
-                                 <input class="searchbox" type="submit" value="Search"
-                                    onClick="_gaq.push(['_trackEvent', 'search', 'keyword', 'results page']);"/>
-                                 <script type="text/javascript">
+                                    <input class="searchbox" type="submit" value="Search"
+                                       onClick="_gaq.push(['_trackEvent', 'search', 'keyword', 'results page']);"/>
+                                    <script type="text/javascript">
                                     $("#searchResults").submit(function() {
                                     $('input[value=]',this).remove();
                                     $('select[value=]',this).remove();
                                     return true;
                                     });
                               </script>
-                                 <a href="#" class="showAdvanced closed"
-                                    onClick="_gaq.push(['_trackEvent', 'search', 'advanced', 'results page']);"
-                                    >show more search options</a>
+                                    <a href="#" class="showAdvanced closed"
+                                       onClick="_gaq.push(['_trackEvent', 'search', 'advanced', 'results page']);"
+                                       >show more search options</a>
+                                 </div>
                               </div>
                            </div>
-                        </div>
-                     </xsl:if>
+                        </xsl:otherwise>
+                     </xsl:choose>
                   </form>
                </div>
 
@@ -709,11 +692,11 @@
                      <xsl:otherwise>
                         <xsl:choose>
                            <xsl:when test="$smode = 'showBag'">
-                              <div class="empty">Your Bookbag is empty! Click on the icon that looks
+                              <div class="empty">There's nothing here! Click on the icon that looks
                                  like this <img alt="bookbag icon"
                                     src="/xtf/icons/default/addbag.gif"/> next to one or more items
                                  in your <a href="{session:getData('queryURL')}">Search Results</a>
-                                 to add it to your bookbag.</div>
+                                 to add it to your list.</div>
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nohits">Oops, I couldn't find anything! Do you want to try
@@ -746,9 +729,53 @@
          <xsl:variable name="identifier">
             <xsl:value-of select="meta/identifier"/>
          </xsl:variable>
+         <xsl:variable name="title">
+            <xsl:choose>
+               <xsl:when test="meta/level = 'series'">Series </xsl:when>
+               <xsl:when test="meta/level = 'subseries'">Subseries </xsl:when>
+               <xsl:when test="meta/level = 'recordgrp'">Record Group </xsl:when>
+               <xsl:when test="meta/level = 'subgrp'">Subgroup </xsl:when>
+               <xsl:otherwise/>
+            </xsl:choose>
+            <xsl:if test="meta/componentID != ''">
+               <xsl:apply-templates select="meta/componentID"/>
+               <xsl:text>: </xsl:text>
+            </xsl:if>
+            <xsl:choose>
+               <xsl:when test="meta/title">
+                  <xsl:choose>
+                     <xsl:when test="count(meta/title) &gt; 1">
+                        <xsl:apply-templates select="meta/title[2]"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:apply-templates select="meta/title[1]"/>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </xsl:when>
+               <xsl:when test="meta/subtitle">
+                  <xsl:choose>
+                     <xsl:when test="count(meta/subtitle) &gt; 1">
+                        <xsl:apply-templates select="meta/subtitle[2]"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:apply-templates select="meta/subtitle[1]"/>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </xsl:when>
+               <xsl:otherwise>none</xsl:otherwise>
+            </xsl:choose>
+            <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
+            <xsl:if test="meta/date != ''">
+               <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+               <xsl:if test="meta/title != ''">
+                  <xsl:text>, </xsl:text>
+               </xsl:if>
+               <xsl:apply-templates select="meta/date"/>
+            </xsl:if>
+         </xsl:variable>
          <xsl:choose>
             <xsl:when test="$smode = 'showBag'">
-               <a href="#" class="bookbag" data-identifier="{$identifier}">
+               <a href="#" class="bookbag" data-identifier="{$identifier}" data-title="{$title}">
                   <xsl:text>Delete</xsl:text>
                </a>
             </xsl:when>
@@ -758,7 +785,7 @@
                      <span>Added</span>
                   </xsl:when>
                   <xsl:otherwise>
-                     <a href="#" class="bookbag" data-identifier="{$identifier}">
+                     <a href="#" class="bookbag" data-identifier="{$identifier}" data-title="{$title}">
                         <xsl:text>Add</xsl:text>
                      </a>
                   </xsl:otherwise>
@@ -795,6 +822,29 @@
             </ul>
          </div>
          <a href="http://raccess.rockarch.org" class="btn btn-default">Login</a>
+      </div>
+   </xsl:template>
+
+   <xsl:template name="myListHeader">
+      <h2>My List: <xsl:variable name="items" select="@totalDocs"/>
+         <xsl:choose>
+            <xsl:when test="$items = 1"><span id="bookbagCount">1</span>
+               <xsl:text> Item</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+               <span id="bookbagCount"><xsl:value-of select="$items"/></span>
+               <xsl:text> Items</xsl:text>
+            </xsl:otherwise>
+         </xsl:choose></h2>
+
+      <div class="actions">
+         <xsl:variable name="bag" select="session:getData('bag')"/>
+         <xsl:variable name="bagCount" select="count($bag/bag/savedDoc)"/>
+         <a class="btn btn-default myListEmail">E-mail My Bookbag</a>
+         <a class="btn btn-default myListPrint">Print</a>
+         <a class="btn btn-default myListRequest">Request in Reading Room</a>
+         <a class="btn btn-default myListCopies">Request Copies</a>
+         <a class="btn btn-default">Remove All Items</a>
       </div>
    </xsl:template>
 
@@ -950,105 +1000,37 @@
    </xsl:template>
 
    <xsl:template name="savedDoc">
-      <xsl:for-each select="$docHits">
-         <xsl:variable name="path" select="@path"/>
-         <xsl:variable name="chunk.id" select="@subDocument"/>
-         <!-- 1/12/12 WS: Added docPath variable to enable scrolling to sub-document hits -->
-         <xsl:variable name="docPath">
-            <xsl:variable name="uri">
-               <xsl:call-template name="dynaxml.url">
-                  <xsl:with-param name="path" select="$path"/>
-               </xsl:call-template>
-            </xsl:variable>
-            <xsl:choose>
-               <xsl:when test="$chunk.id != ''">
-                  <xsl:choose>
-                     <xsl:when test="meta/seriesID != ''">
-                        <xsl:value-of
-                           select="concat($xtfURL,$uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"
-                        />
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:value-of
-                           select="concat($xtfURL,$uri,';chunk.id=contentsLink;doc.view=contents','#',$chunk.id)"
-                        />
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </xsl:when>
-               <xsl:when test="starts-with($uri,'view')">
-                  <xsl:value-of select="concat($xtfURL,$uri)"/>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:value-of select="$uri"/>
-               </xsl:otherwise>
-            </xsl:choose>
-         </xsl:variable>
-         <!-- Need to add choose statement to get correct url when subdocument -->
-         <xsl:variable name="url">
-            <xsl:value-of select="$docPath"/>
-         </xsl:variable>
-         <xsl:variable name="level">
-            <xsl:choose>
-               <xsl:when test="meta/level = 'collection'">Collection</xsl:when>
-               <xsl:when test="meta/level = 'series'">Series</xsl:when>
-               <xsl:when test="meta/level = 'subseries'">Subseries</xsl:when>
-               <xsl:when test="meta/level = 'recordgrp'">Record Group</xsl:when>
-               <xsl:when test="meta/level = 'subgrp'">Subgroup</xsl:when>
-               <xsl:when test="meta/level = 'fonds'">Fonds</xsl:when>
-               <xsl:when test="meta/level = 'subfonds'">Subfonds</xsl:when>
-               <xsl:when test="meta/level = 'class'">Class</xsl:when>
-               <xsl:when test="meta/level = 'otherlevel'">otherlevel</xsl:when>
-               <xsl:when test="meta/level = 'file'">File</xsl:when>
-               <xsl:when test="meta/level = 'item'">Item</xsl:when>
-            </xsl:choose>
-         </xsl:variable>
-         <!-- 1/30/13 WS: bookbag modifications -->
-         <xsl:choose>
-            <xsl:when test="meta/type='mods'">
-               <h2>
-                  <a href="$url">
-                     <xsl:value-of select="normalize-space(meta/title)"/>
-                  </a>
-               </h2>
-               <h4>
-                  <xsl:value-of select="meta/creator"/>
-               </h4>
-               <xsl:if test="meta/date">
-                  <p>
-                     <xsl:value-of select="meta/date"/>
-                  </p>
-               </xsl:if>
-               <xsl:if test="meta/callNo">
-                  <p>Call Number: <xsl:value-of select="meta/callNo"/></p>
-               </xsl:if>
-               <xsl:text>&#xA;</xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-               <h2>
-                  <a href="$url">
-                     <xsl:value-of select="normalize-space(meta/title)"/>
-                     <xsl:if test="meta/date">
-                        <xsl:text>, </xsl:text>
-                        <xsl:value-of select="meta/date"/>
-                     </xsl:if>
-                  </a>
-               </h2>
-               <h4>
-                  <xsl:value-of select="meta/creator[1]"/>
-               </h4>
-               <xsl:if test="meta/containers">
-                  <p>
-                     <xsl:value-of select="meta/containers"/>
-                  </p>
-               </xsl:if>
-               <xsl:for-each select="meta/parent">
-                  <p style="padding-left:{(position() -1)}em">
-                     <xsl:value-of select="."/>
-                  </p>
-               </xsl:for-each>
-               <xsl:text>&#xA;</xsl:text>
-            </xsl:otherwise>
-         </xsl:choose>
+      <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
+      <xsl:for-each select="$bookbagContents/savedDoc">
+         <h2>
+            <a href="{url}">
+               <xsl:value-of select="title"/>
+            </a>
+         </h2>
+         <h4>
+            <xsl:value-of select="creator"/>
+         </h4>
+         <xsl:if test="containers">
+            <p>
+               <xsl:value-of select="containers"/>
+            </p>
+         </xsl:if>
+         <xsl:if test="parents">
+            <xsl:for-each select="parent">
+               <p style="padding-left:{(position() -1)}em">
+                  <xsl:value-of select="."/>
+               </p>
+            </xsl:for-each>
+         </xsl:if>
+         <xsl:if test="date">
+            <p>
+               <xsl:value-of select="date"/>
+            </p>
+         </xsl:if>
+         <xsl:if test="callNo">
+            <p>Call Number: <xsl:value-of select="callNo"/></p>
+         </xsl:if>
+         <xsl:text>&#xA;</xsl:text>
       </xsl:for-each>
    </xsl:template>
 
@@ -1973,6 +1955,7 @@
                            <xsl:attribute name="href">
                               <xsl:value-of select="$collPath"/>
                            </xsl:attribute>
+
                            <xsl:choose>
                               <xsl:when test="meta/filingTitle">
                                  <xsl:apply-templates select="meta/filingTitle"/>
@@ -2221,6 +2204,50 @@
             </xsl:when>
          </xsl:choose>
       </xsl:variable>
+      <xsl:variable name="title">
+         <xsl:choose>
+            <xsl:when test="meta/level = 'series'">Series </xsl:when>
+            <xsl:when test="meta/level = 'subseries'">Subseries </xsl:when>
+            <xsl:when test="meta/level = 'recordgrp'">Record Group </xsl:when>
+            <xsl:when test="meta/level = 'subgrp'">Subgroup </xsl:when>
+            <xsl:otherwise/>
+         </xsl:choose>
+         <xsl:if test="meta/componentID != ''">
+            <xsl:apply-templates select="meta/componentID"/>
+            <xsl:text>: </xsl:text>
+         </xsl:if>
+         <xsl:choose>
+            <xsl:when test="meta/title">
+               <xsl:choose>
+                  <xsl:when test="count(meta/title) &gt; 1">
+                     <xsl:apply-templates select="meta/title[2]"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:apply-templates select="meta/title[1]"/>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </xsl:when>
+            <xsl:when test="meta/subtitle">
+               <xsl:choose>
+                  <xsl:when test="count(meta/subtitle) &gt; 1">
+                     <xsl:apply-templates select="meta/subtitle[2]"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:apply-templates select="meta/subtitle[1]"/>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>none</xsl:otherwise>
+         </xsl:choose>
+         <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
+         <xsl:if test="meta/date != ''">
+            <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+            <xsl:if test="meta/title != ''">
+               <xsl:text>, </xsl:text>
+            </xsl:if>
+            <xsl:apply-templates select="meta/date"/>
+         </xsl:if>
+      </xsl:variable>
 
       <div class="result title">
          <a
@@ -2229,7 +2256,7 @@
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
             </xsl:attribute>
-            <xsl:choose>
+            <!--<xsl:choose>
                <xsl:when test="meta/level = 'series'">Series </xsl:when>
                <xsl:when test="meta/level = 'subseries'">Subseries </xsl:when>
                <xsl:when test="meta/level = 'recordgrp'">Record Group </xsl:when>
@@ -2263,13 +2290,14 @@
                </xsl:when>
             </xsl:choose>
             <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
-            <xsl:if test="meta/date != ''">
+            <!--<xsl:if test="meta/date != ''">-->
                <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
-               <xsl:if test="meta/title != ''">
+               <!--<xsl:if test="meta/title != ''">
                   <xsl:text>, </xsl:text>
                </xsl:if>
                <xsl:apply-templates select="meta/date"/>
-            </xsl:if>
+            </xsl:if>-->
+            <xsl:value-of select="$title"/>
             <xsl:if test="meta/*:type = 'dao'">
                <img src="/xtf/icons/default/dao.gif" alt="digital object" title="Digital object"/>
             </xsl:if>

@@ -15,6 +15,7 @@ $(document).ready(function () {
     var bookbag = '.bookbag';
     var bagCount = '#bagCount';
     var identifier = 'data-identifier';
+    var title = 'data-title';
     
     // Removes link and changes text displayed if cookies are not enabled
     if (! navigator.cookieEnabled) {
@@ -28,7 +29,7 @@ $(document).ready(function () {
             // Add document to bookbag
             console.log('Adding component ' + $(a).attr(identifier))
             a.text('Adding...');
-            $.ajax('/xtf/search?smode=addToBag;identifier=' + $(a).attr(identifier)).success(function () {
+            $.ajax('/xtf/search?smode=addToBag;identifier=' + $(a).attr(identifier) + ';title=' + $(a).attr(title)).success(function () {
                 // If add is successful, increase bookbag item count and change text
                 var count = $(bagCount).text();
                 $(bagCount).text(++ count);
