@@ -15,7 +15,12 @@ $(document).ready(function () {
     var bookbag = '.bookbag';
     var bagCount = '#bagCount';
     var identifier = 'data-identifier';
+    var url = 'data-url';
     var title = 'data-title';
+    var creator = 'data-creator';
+    var callNo = 'data-callNo';
+    var containers = 'data-containers';
+    var parents = 'data-parents';
     
     // Removes link and changes text displayed if cookies are not enabled
     if (! navigator.cookieEnabled) {
@@ -27,9 +32,18 @@ $(document).ready(function () {
         var a = $(this);
         if (a.text() === 'Add') {
             // Add document to bookbag
-            console.log('Adding component ' + $(a).attr(identifier))
+            console.log('Adding component ' + $(a).attr(identifier) + ' ' + $(a).attr(url))
             a.text('Adding...');
-            $.ajax('/xtf/search?smode=addToBag;identifier=' + $(a).attr(identifier) + ';title=' + $(a).attr(title)).success(function () {
+            var rawurl = '/xtf/search?smode=addToBag;identifier=' + $(a).attr(identifier)
+                + ';url=' + encodeURIComponent($(a).attr(url))
+                + ';title=' + $(a).attr(title)
+                + ';creator=' + $(a).attr(creator)
+                + ';callNo=' + $(a).attr(callNo)
+                + ';containers=' + $(a).attr(containers)
+                + ';parents=' + $(a).attr(parents);
+            var requesturl = encodeURI(rawurl);
+            console.log(requesturl);
+            $.ajax(requesturl).success(function () {
                 // If add is successful, increase bookbag item count and change text
                 var count = $(bagCount).text();
                 $(bagCount).text(++ count);

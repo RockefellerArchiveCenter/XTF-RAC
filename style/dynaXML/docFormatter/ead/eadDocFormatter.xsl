@@ -59,6 +59,7 @@
    <!-- ====================================================================== -->
    
    <xsl:import href="../common/docFormatterCommon.xsl"/>
+   <xsl:include href="../../../myList/myListFormatter.xsl"/>
    
    <!-- ====================================================================== -->
    <!-- Output Format                                                          -->
@@ -276,6 +277,10 @@
                   <xsl:call-template name="body"/>  
                </div>
                <xsl:copy-of select="$brand.feedback"/>
+               <xsl:call-template name="myListCopies"/>
+               <xsl:call-template name="myListEmail"/>
+               <xsl:call-template name="myListPrint"/>
+               <xsl:call-template name="myListRequest"/>
                <div class="fixedFooter"><xsl:copy-of select="$brand.footer"/></div>
           </body>
          </html>

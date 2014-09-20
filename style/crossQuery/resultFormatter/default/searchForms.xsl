@@ -40,7 +40,7 @@
    <!-- ====================================================================== -->
    <!-- Global parameters                                                      -->
    <!-- ====================================================================== -->
-
+   
    <xsl:param name="freeformQuery"/>
 
    <!-- ====================================================================== -->
@@ -66,7 +66,7 @@
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <xsl:copy-of select="$brand.links"/>
 
-            <script type="text/javascript" src="/xtf/script/rac/featured.js"/>
+            <!--<script type="text/javascript" src="/xtf/script/rac/featured.js"/>-->
          </head>
          <body>
             <xsl:copy-of select="$brand.header"/>
@@ -170,24 +170,8 @@
                      Center</p>
                </a>
             </div>
-            <div class="pull-right" id="myListNav">
-               <xsl:variable name="bag" select="session:getData('bag')"/>
-               <div class="btn-group">
-                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                     My List (<span class="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"
-                     /></span>)<span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu pull-right" role="menu">
-                     <li><a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
-                        onClick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'home page']);">View</a></li>
-                     <li><a href="#">Email</a></li>
-                     <li><a href="#">Print</a></li>
-                     <li><a href="#">Request in Reading Room</a></li>
-                     <li><a href="#">Request copies</a></li>
-                  </ul>
-               </div>
-               <a href="http://raccess.rockarch.org" class="btn btn-default">Login</a>
-            </div>
+            
+               <xsl:call-template name="myListNav"/>
 
             <div class="searchPage">
                <!--<div class="tabs">
@@ -234,6 +218,10 @@
             </div>
             <xsl:copy-of select="$brand.feedback"/>
             <xsl:copy-of select="$brand.footer"/>
+            <xsl:call-template name="myListCopies"/>
+            <xsl:call-template name="myListEmail"/>
+            <xsl:call-template name="myListPrint"/>
+            <xsl:call-template name="myListRequest"/>
          </body>
       </html>
       <!--</xsl:otherwise>

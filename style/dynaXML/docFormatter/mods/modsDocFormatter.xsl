@@ -54,6 +54,7 @@
    <!-- ====================================================================== -->
    
    <xsl:import href="../common/docFormatterCommon.xsl"/>
+   <xsl:import href="../../../myList/myListFormatter.xsl"/>
    
    <!-- ====================================================================== -->
    <!-- Output Format                                                          -->
@@ -216,14 +217,7 @@
                </div>
                
                <div id="bookbag">
-                  <xsl:variable name="bag" select="session:getData('bag')"/>
-                  <a href="{$xtfURL}{$crossqueryPath}?smode=showBag"
-                     onClick="_gaq.push(['_trackEvent', 'bookbag', 'view', 'mods']);">
-                     <img src="/xtf/icons/default/bookbag.gif" alt="Bookbag"
-                        style="vertical-align:bottom;"/>
-                  </a>
-                  <span>(<span id="bagCount"><xsl:value-of
-                     select="count(session:getData('bag')/child::*/child::*)"/></span>)</span>
+                  <xsl:call-template name="myListNav"/>
                </div>
                
                   <xsl:call-template name="bbar_custom"/>
@@ -287,17 +281,7 @@
             <ul>
                <li>
                   <span class="bookbag">
-                     <xsl:variable name="identifier" select="/mods:mods/mods:identifier[1]"/>
-                     <xsl:choose>
-                        <xsl:when test="session:getData('bag')/child::*/child::*[@id=$identifier]">
-                           <span>Added</span>
-                        </xsl:when>
-                        <xsl:otherwise>
-                           <a href="#" class="bookbag" data-identifier="{$identifier}" data-title="{$title}">
-                              <xsl:text>Add</xsl:text>
-                           </a>
-                        </xsl:otherwise>
-                     </xsl:choose>
+                     <xsl:call-template name="myListMods"/>
                   </span>
                </li>
             </ul>

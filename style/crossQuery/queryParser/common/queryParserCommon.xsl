@@ -315,18 +315,18 @@
    
    <xsl:template name="addToBag">
       <xsl:variable name="identifier" select="string(//param[@name='identifier']/@value)"/>
-      <xsl:variable name="url" select="'url'"/>
-      <xsl:variable name="title" select="string(//param[@name='title']/@value)"/>
-      <xsl:variable name="creator" select="'creator'"/>
-      <xsl:variable name="callNo" select="'call number'"/>
-      <xsl:variable name="containers" select="'containers'"/>
-      <xsl:variable name="parents" select="'parents'"/>
+      <xsl:variable name="url" select="string(//param[@name='url']/@value)"/>
+      <xsl:variable name="title" select="string(//param[@name='title']/@value"/>
+      <xsl:variable name="creator" select="string(//param[@name='creator']/@value)"/>
+      <xsl:variable name="callNo" select="string(//param[@name='callNo']/@value)"/>
+      <xsl:variable name="containers" select="string(//param[@name='containers']/@value)"/>
+      <xsl:variable name="parents" select="string(//param[@name='parents']/@value)"/>
       <xsl:variable name="newBag">
          <bag>
             <xsl:copy-of select="session:getData('bag')/bag/savedDoc"/>
             <savedDoc id="{$identifier}">
                <url><xsl:value-of select="$url"/></url>
-               <title><xsl:value-of select="string($title)"/></title>
+               <title><xsl:value-of select="$title"/></title>
                <creator><xsl:value-of select="$creator"/></creator>
                <callNo><xsl:value-of select="$callNo"/></callNo>
                <containers><xsl:value-of select="$containers"/></containers>
