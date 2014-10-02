@@ -1267,7 +1267,7 @@
          </xsl:choose>
       </xsl:variable>
       <div id="main_{@rank}" class="docHit">
-         <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
+         <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file' and meta/daoLink != ''">
             <xsl:attribute name="class">docHit dao</xsl:attribute>
          </xsl:if>
          <div id="top-level_{@rank}" class="top-level component">
@@ -1276,7 +1276,7 @@
          <!-- 9/26/11 WS: Moved title above Author -->
          <div class="resultIcon">
             <xsl:choose>
-               <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
+               <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file' and meta/daoLink != ''">
                   <xsl:variable name="daoFile" select="substring-before(tokenize(meta/daoLink,'/')[position()=last()],'.')"/>
                   <xsl:variable name="daoImg" select="concat(string-join(tokenize(meta/daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/> 
                   <img src="{$daoImg}" alt="Digital object thumbnail"/>
@@ -1313,7 +1313,7 @@
                   <xsl:attribute name="href">
                      <xsl:value-of select="$docPath"/>
                   </xsl:attribute>
-                  <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
+                  <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'and meta/daoLink != ''">
                      <xsl:attribute name="onClick">
                         <xsl:text>_gaq.push(['_trackEvent', 'digital object', 'view', 'results page']);</xsl:text>
                      </xsl:attribute>
