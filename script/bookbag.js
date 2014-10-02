@@ -6,66 +6,114 @@ identifies a document. It also assumes that the element displaying the number of
 has a unique CSS selector. These values are controlled by variables:
 
 bookbag - the CSS selector for all bookbag links.
-identifier - an attribute of the bookbag link that uniquely identifies a document.
 bagCount - the element which displays the number of items in the bookbag.
 ================================================================================================ */
 
 $(document).ready(function () {
     // Sets global variables
-    var bookbag = '.bookbag';
+    var bookbagAdd = '.bookbag';
+    var bookbagDelete = '.bookbag .delete';
     var bagCount = '#bagCount';
+    //data variables
     var identifier = 'data-identifier';
     var url = 'data-url';
     var title = 'data-title';
+    var collectionTitle = 'data-collectionTitle';
     var creator = 'data-creator';
-    var callNo = 'data-callNo';
-    var containers = 'data-containers';
     var parents = 'data-parents';
+    var containers = 'data-containers';
+    var accessRestrict = 'data-accessRestrict';
+    var callNumber = 'data-callNumber';
+    var url = 'data-url';
     
     // Removes link and changes text displayed if cookies are not enabled
     if (! navigator.cookieEnabled) {
         $(bookbag).text('Cookies not enabled');
-    }
+    };
+
+    function getList() {
+        JSON.parse(localStorage.getItem("myList"));
+    };
+    function saveList(collection) {
+        localStorage.setItem("myList",JSON.stringify(collection));
+    };
+
+    //update list on bookbag page and in dialogs
+    function updateDisplay() {
+        var myList = getList();
+        console.log(myList);
+        for(var i =0; i <= myList.length -1; i++) {
+            item = myList.getItem(i);
+            console.log(item);
+            $('.myListContents').append('<div>
+                <div>' + item.title + ', ' + item.get('date') + '</div>
+                <div>' + item.parents + '</div>
+                <div>' + item.collectionTitle + '</div>
+                <div>' + item.creator + '</div>
+                <div>' + item.containers + '</div>
+                <div>' + item.accessRestrict + '</div>
+                <div>' + item.callNumber + '</div>
+                <div>' + item.dateAdded + '</div>
+                </div>');
+        };
+    };
+
+    //Might need some functions to sort by various fields, maybe title, collection, creator, date added
+    //function sortList(param) {}
     
     // Main function to add and delete documents from bookbag
-    $(bookbag).click(function (e) {
+    //may want to change this up so it's less based on text and more on classes?
+    $(bookbagAdd).click(function (e) {
         var a = $(this);
-        if (a.text() === 'Add') {
-            // Add document to bookbag
-            console.log('Adding component ' + $(a).attr(identifier) + ' ' + $(a).attr(url))
             a.text('Adding...');
-            var rawurl = '/xtf/search?smode=addToBag;identifier=' + $(a).attr(identifier)
-                + ';url=' + encodeURIComponent($(a).attr(url))
-                + ';title=' + $(a).attr(title)
-                + ';creator=' + $(a).attr(creator)
-                + ';callNo=' + $(a).attr(callNo)
-                + ';containers=' + $(a).attr(containers)
-                + ';parents=' + $(a).attr(parents);
-            var requesturl = encodeURI(rawurl);
-            console.log(requesturl);
-            $.ajax(requesturl).success(function () {
-                // If add is successful, increase bookbag item count and change text
-                var count = $(bagCount).text();
-                $(bagCount).text(++ count);
-                a.replaceWith('<span>Added</span>');
-            }).fail(function () {
-                // If add fails, change text and remove link
-                a.replaceWith('<span>Failed to add</span>');
-            });
-        } else if (a.text() === 'Delete') {
-            // Remove document from bookbag
-            console.log('Deleting component ' + $(a).attr(identifier))
-            a.text('Deleting...');
-            $.ajax('/xtf/search?smode=removeFromBag;identifier=' + $(a).attr(identifier)).success(function () {
-                //If delete is successful, decrease bookbag item count and hide document
-                var count = $(bagCount).text();
-                $(bagCount).text(-- count);
-                a.closest('.docHit').hide();
-            }).fail(function () {
-                // If delete fails, change text and remove link
-                a.replaceWith('<span class="bookbag">Failed to delete</span>');
-            })
+
+            // Add document to myList in localStorage
+            var myList = getList();
+            console.log(myList);
+            var doc = {
+                'identifier': $(a).attr(identifier),
+                'title': $(a).attr(title),
+                'collectionTitle': $(a).attr(collectionTitle),
+                'creator': $(a).attr(creator),
+                'date': $(a).attr(date),
+                'parents': $(a).attr(parents),
+                'containers': $(a).attr(containers),
+                'accessRestrict': $(a).attr(accessRestrict),
+                'callNumber': $(a).attr(callNumber),
+                'URL': $(a).attr(url)
+                'dateAdded': new Date();
+            }
+            console.log(doc);
+            var newList = myList.push(doc);
+            console.log(newList);
+            saveList(newList);
+            updateDisplay();
+            
+            // Increase bookbag item count and change text
+            var count = $(bagCount).text();
+            $(bagCount).text(++ count);
+            a.replaceWith('<span>Added</span>');
+
         }
         e.preventDefault();
     });
+
+    $(bookbagDelete).click(function(e) {
+        var a = $(this);
+        // Remove document from bookbag
+            console.log('Deleting component ' + $(a).attr(identifier))
+            a.text('Deleting...');
+            var myList  = getList();
+
+            for(var i=0; i <= myList.length -1; i++) {
+                var item = myList.getItem(i);
+                if (item.identifier === $(a).attr(identifier)) {
+                    myList.splice(i, 1)
+                }
+            }
+            
+            saveList(newList);
+            updateDisplay();
+    })
+
 });

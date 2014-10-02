@@ -8,11 +8,11 @@
     <!-- My List stylesheet                                                     -->
     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-    <!-- Written by Hillel Arnold, Rockefeller Archive Center -->
+    <!-- Written by Hillel Arnold, Rockefeller Archive Center, October 2014 -->
 
-
-    <!-- this stylesheet   -->
-
+    <!-- This stylesheet formats the appearance of My List page and dialog      -->
+    <!-- windows. Changes made in this stylesheet will impact functionality of  -->
+    <!-- script/bookbag.js, since it relies on DOM structure generated here.    -->
 
     <!-- ====================================================================== -->
     <!-- My List Templates                                                      -->
@@ -46,16 +46,13 @@
                 <xsl:for-each select="meta/parent[position()&gt;1]">
                     <xsl:value-of select="."/>
                     <xsl:if test="position() != last()">
-                        <xsl:text>|</xsl:text>
+                        <xsl:text>></xsl:text>
                     </xsl:if>
                 </xsl:for-each>
             </xsl:variable>
             <xsl:choose>
                 <xsl:when test="$smode = 'showBag'">
-                    <!-- This stuff may not all be necessary, may just need the identifier-->
-                    <a href="#" class="bookbag" data-identifier="{$identifier}" data-title="$title"
-                        data-url="{$url}" data-creator="{$creator}" data-callNo="{$callNo}"
-                        data-containers="{$containers}" data-parents="{$parents}">
+                    <a href="#" class="bookbag delete" data-identifier="{$identifier}">
                         <xsl:text>Delete</xsl:text>
                     </a>
                 </xsl:when>
@@ -350,35 +347,39 @@
         </div>
 
     </xsl:template>-->
+    
+    <xsl:template match="title">
+        <xsl:value-of select="replace(., '%20', ' ')"/>
+    </xsl:template>
 
     <xsl:template name="savedDoc">
         <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <xsl:for-each select="$bookbagContents/savedDoc">
             <h2>
                 <a href="{url}">
-                    <xsl:value-of select="string(title)"/>
+                    <xsl:apply-templates select="title"/>
                 </a>
             </h2>
             <h4>
-                <xsl:value-of select="creator"/>
+                <xsl:value-of select="creator" disable-output-escaping="yes"/>
             </h4>
             <xsl:if test="string(containers)">
                 <p>
-                    <xsl:value-of select="containers"/>
+                    <xsl:value-of select="containers" disable-output-escaping="yes"/>
                 </p>
             </xsl:if>
             <xsl:if test="string(parents)">
                 <p>
-                    <xsl:value-of select="parents"/>
+                    <xsl:value-of select="parents" disable-output-escaping="yes"/>
                 </p>
             </xsl:if>
             <xsl:if test="string(date)">
                 <p>
-                    <xsl:value-of select="date"/>
+                    <xsl:value-of select="date" disable-output-escaping="yes"/>
                 </p>
             </xsl:if>
             <xsl:if test="string(callNo)">
-                <p>Call Number: <xsl:value-of select="callNo"/></p>
+                <p>Call Number: <xsl:value-of select="callNo" disable-output-escaping="yes"/></p>
             </xsl:if>
             <xsl:text>&#xA;</xsl:text>
         </xsl:for-each>
