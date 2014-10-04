@@ -46,7 +46,7 @@
                 <xsl:for-each select="meta/parent[position()&gt;1]">
                     <xsl:value-of select="."/>
                     <xsl:if test="position() != last()">
-                        <xsl:text>></xsl:text>
+                        <xsl:text>|</xsl:text>
                     </xsl:if>
                 </xsl:for-each>
             </xsl:variable>
@@ -62,11 +62,12 @@
                             <span>Added</span>
                         </xsl:when>
                         <xsl:otherwise>
+                            <!-- Need to add collectionTitle, accessRestrict. Look at variables in bookbag.js -->
                             <a href="#" class="bookbag" data-identifier="{$identifier}"
                                 data-title="{$title}" data-url="{$url}" data-creator="{$creator}"
                                 data-callNo="{$callNo}" data-containers="{$containers}"
                                 data-parents="{$parents}">
-                                <xsl:text>Add</xsl:text>
+                                <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
                             </a>
                         </xsl:otherwise>
                     </xsl:choose>
@@ -123,7 +124,7 @@
                 <a href="#" class="bookbag" data-identifier="{$identifier}" data-title="{$title}"
                     data-url="{$url}" data-creator="{$creator}" data-containers="{$containers}" 
                     data-parents="{$parents}">
-                    <xsl:text>Add</xsl:text>
+                    <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
                 </a>
             </xsl:otherwise>
         </xsl:choose>
@@ -139,7 +140,7 @@
             </xsl:when>
             <xsl:otherwise>
                 <a href="#" class="bookbag" data-identifier="{$identifier}" data-title="{$title}">
-                    <xsl:text>Add</xsl:text>
+                    <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
                 </a>
             </xsl:otherwise>
         </xsl:choose>
@@ -203,7 +204,7 @@
         <div class="overlay" id="myListEmail">
             <div class="dscDescription">
                 <div class="myListContents">
-                    <xsl:call-template name="savedDoc"/>
+                    <xsl:call-template name="emptyList"/>
                 </div>
                 <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
                 <form action="{$xtfURL}{$crossqueryPath}" method="get">
@@ -226,7 +227,7 @@
         <div class="overlay" id="myListPrint">
             <div class="dscDescription">
                 <div class="myListContents">
-                    <xsl:call-template name="savedDoc"/>
+                    <xsl:call-template name="emptyList"/>
                 </div>
                 <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
                 <form action="{$xtfURL}{$crossqueryPath}" method="get">
@@ -241,7 +242,7 @@
         <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <div class="overlay" id="myListRequest">
             <div class="myListContents">
-                <xsl:call-template name="savedDoc"/>
+                <xsl:call-template name="emptyList"/>
             </div>
             <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
             <form action="{$xtfURL}{$crossqueryPath}" method="get">
@@ -255,7 +256,7 @@
         <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <div class="overlay" id="myListCopies">
             <div class="myListContents">
-                <xsl:call-template name="savedDoc"/>
+                <xsl:call-template name="emptyList"/>
             </div>
             <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
             <form action="{$xtfURL}{$crossqueryPath}" method="get">
@@ -310,7 +311,7 @@
                         <a class="showLink" id="preview-show" href="#">+ Show preview</a>
                         <div id="preview" class="more"
                             style=" width: 550px; height: 450px; overflow-y: scroll; display:none; border:1px solid #ccc; margin:.5em; padding: .5em; word-wrap: break-word;">
-                            <xsl:call-template name="savedDoc"/>
+                            <xsl:call-template name="emptyList"/>
                             <!--                     <xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>-->
                         </div>
                         <script type="text/javascript">
@@ -348,11 +349,11 @@
 
     </xsl:template>-->
     
-    <xsl:template match="title">
-        <xsl:value-of select="replace(., '%20', ' ')"/>
+    <xsl:template name="emptyList">
+        <div class="empty">Your Bookbag is empty! Click on the icon that looks like this <img alt="bookbag icon" src="/xtf/icons/default/addbag.gif" /> next to one or more items in your <a href="">Search Results</a> to add it to your bookbag.</div>
     </xsl:template>
 
-    <xsl:template name="savedDoc">
+    <!-- <xsl:template name="savedDoc">
         <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <xsl:for-each select="$bookbagContents/savedDoc">
             <h2>
@@ -383,7 +384,7 @@
             </xsl:if>
             <xsl:text>&#xA;</xsl:text>
         </xsl:for-each>
-    </xsl:template>
+    </xsl:template> -->
 
     <!--<xsl:template match="savedDoc" mode="myListEmail" exclude-result-prefixes="#all">
         <xsl:variable name="num" select="position()"/>

@@ -9,52 +9,44 @@ bookbag - the CSS selector for all bookbag links.
 bagCount - the element which displays the number of items in the bookbag.
 ================================================================================================ */
 
-$(document).ready(function () {
+$(function () {
     // Sets global variables
     var bookbagAdd = '.bookbag';
     var bookbagDelete = '.bookbag .delete';
     var bagCount = '#bagCount';
-    //data variables
-    var identifier = 'data-identifier';
-    var url = 'data-url';
-    var title = 'data-title';
-    var collectionTitle = 'data-collectionTitle';
-    var creator = 'data-creator';
-    var parents = 'data-parents';
-    var containers = 'data-containers';
-    var accessRestrict = 'data-accessRestrict';
-    var callNumber = 'data-callNumber';
-    var url = 'data-url';
     
     // Removes link and changes text displayed if cookies are not enabled
     if (! navigator.cookieEnabled) {
         $(bookbag).text('Cookies not enabled');
     };
 
+    //gets list items from localStorage
     function getList() {
         JSON.parse(localStorage.getItem("myList"));
     };
+
+    //saves list items to localStorage
     function saveList(collection) {
-        localStorage.setItem("myList",JSON.stringify(collection));
+        localStorage.setItem("myList", JSON.stringify(collection));
+        console.log("list saved");
     };
 
     //update list on bookbag page and in dialogs
     function updateDisplay() {
         var myList = getList();
-        console.log(myList);
+        console.log("myList: " + myList);
         for(var i =0; i <= myList.length -1; i++) {
             item = myList.getItem(i);
-            console.log(item);
-            $('.myListContents').append('<div>
-                <div>' + item.title + ', ' + item.get('date') + '</div>
-                <div>' + item.parents + '</div>
-                <div>' + item.collectionTitle + '</div>
-                <div>' + item.creator + '</div>
-                <div>' + item.containers + '</div>
-                <div>' + item.accessRestrict + '</div>
-                <div>' + item.callNumber + '</div>
-                <div>' + item.dateAdded + '</div>
-                </div>');
+            console.log("item: " + item);
+            $('.myListContents').append('<div><div>' + 
+                item.title + ', ' + item.get('date') + '</div><div>' + 
+                item.parents + '</div><div>' + 
+                item.collectionTitle + '</div><div>' + 
+                item.creator + '</div><div>' + 
+                item.containers + '</div><div>' + 
+                item.accessRestrict + '</div><div>' + 
+                item.callNumber + '</div><div>' + 
+                item.dateAdded + '</div></div>');
         };
     };
 
@@ -62,40 +54,71 @@ $(document).ready(function () {
     //function sortList(param) {}
     
     // Main function to add and delete documents from bookbag
-    //may want to change this up so it's less based on text and more on classes?
-    $(bookbagAdd).click(function (e) {
-        var a = $(this);
+    $(bookbagAdd).on('click', function (e) {
+
+            var a = $(this);
+
+            //data variables
+            var identifier = $(a).attr('data-identifier');
+            var url = $(a).attr('data-url');
+            var title = $(a).attr('data-title');
+            var collectionTitle = $(a).attr('data-collectionTitle');
+            var creator = $(a).attr('data-creator');
+            var parents = $(a).attr('data-parents');
+            var containers = $(a).attr('data-containers');
+            var accessRestrict = $(a).attr('data-accessRestrict');
+            var callNumber = $(a).attr('data-callNumber');
+            var url = $(a).attr('data-url');
+
+            //Let the user know something is happpening
             a.text('Adding...');
 
             // Add document to myList in localStorage
-            var myList = getList();
+            var myList = new Array();
+            var localStorage = getList();
+            if (localStorage) {
+                console.log("localStorage is not undefined")
+                var myList = myList.push(localStorage);
+            };
+            var dateAdded = Date.now();
             console.log(myList);
+            //may need to find a way to yank out attributes with undefined values
+            // function replaceUndefined(variable) {
+            //     if (variable === undefined) {
+            //         return '';
+            //     } else {
+            //         return variable;
+            //     };
+            // };
             var doc = {
-                'identifier': $(a).attr(identifier),
-                'title': $(a).attr(title),
-                'collectionTitle': $(a).attr(collectionTitle),
-                'creator': $(a).attr(creator),
-                'date': $(a).attr(date),
-                'parents': $(a).attr(parents),
-                'containers': $(a).attr(containers),
-                'accessRestrict': $(a).attr(accessRestrict),
-                'callNumber': $(a).attr(callNumber),
-                'URL': $(a).attr(url)
-                'dateAdded': new Date();
+                'identifier': identifier,
+                'title': title,
+                'collectionTitle': collectionTitle,
+                'creator': creator,
+                'parents': parents,
+                'containers': containers,
+                'accessRestrict': accessRestrict,
+                'callNumber': callNumber,
+                'URL': url,
+                // 'dateAdded': dateAdded
             }
             console.log(doc);
-            var newList = myList.push(doc);
-            console.log(newList);
-            saveList(newList);
-            updateDisplay();
+            myList.push(doc);
+            console.log(myList);
+            saveList(myList);
+
+            // update display
+            // updateDisplay();
             
             // Increase bookbag item count and change text
             var count = $(bagCount).text();
             $(bagCount).text(++ count);
-            a.replaceWith('<span>Added</span>');
-
-        }
+            a.text('Added');
+   
         e.preventDefault();
+
+        //need this so function doesn't run twice
+        return false;   
     });
 
     $(bookbagDelete).click(function(e) {

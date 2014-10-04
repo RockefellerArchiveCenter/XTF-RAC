@@ -199,7 +199,6 @@
             <title>DIMES: Search Results</title>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <xsl:copy-of select="$brand.links"/>
-            <script src="{$xtfURL}script/bookbag.js" type="text/javascript"/>
             <script src="script/rac/facets.js" type="text/javascript"/>
             <script src="script/rac/jquery.sparkline.min.js" type="text/javascript"/>
             <script>

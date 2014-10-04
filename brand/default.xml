@@ -22,56 +22,9 @@
       <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
       <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
       <script type="text/javascript" src="/xtf/script/rac/active.js"/>
-      <script type="text/javascript" src="/xtf/script/rac/jquery.cookie.js"></script>
       <script type="text/javascript" src="/xtf/script/rac/dialog.js"/>
       <script src="script/rac/componentInfo.js" type="text/javascript"/>
-      
-      <!--<script type="text/javascript">
-         $(document).ready(function() {
-         if(screen.width &gt; 600) {
-                      $(function () {
-                            var dialogTakedown = $('#takedown').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "600",
-                                  height: "300",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                            $("a.takedown").on("click", function (e) {
-                            e.preventDefault();
-                              dialogTakedown.dialog("option", "title", '').dialog("open");
-                            });
-                        });
-                        $(function () {
-                        var dialogFeedback = $('#feedback').dialog({
-                               create: function(event, ui) {
-                                    var widget = $(this).dialog("widget");
-                                    $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-                                  },
-                                  autoOpen: false,
-                                  modal: true,
-                                  resizable: true,
-                                  width: "400",
-                                  height: "430",
-                                  close: function () {
-                                    $('.ui-dialog').hide();
-                                  }
-                               });
-                            $(".feedback").on("click", function (e) {
-                            e.preventDefault();
-                              dialogFeedback.dialog("option", "title", '').dialog("open");
-                            });
-                        });
-                        }
-                        });
-        </script>-->
+      <script type="text/javascript" src="/xtf/script/bookbag.js"/>
       
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
          'UA-10013579-1']); _gaq.push(['_trackPageview']); (function() { var ga =
@@ -102,6 +55,7 @@
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/bootstrap-scrollspy.js"></script>
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/scroll.js"></script>
       <script type="text/javascript" src="/xtf/script/rac/dialog.js"/>
+      <script type="text/javascript" src="/xtf/script/bookbag.js"/>
       <script src="script/rac/componentInfo.js" type="text/javascript"/>
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
          'UA-10013579-1']); _gaq.push(['_trackPageview']); (function() { var ga =
