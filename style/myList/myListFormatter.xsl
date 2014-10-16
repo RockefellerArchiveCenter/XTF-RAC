@@ -1,6 +1,5 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:session="java:org.cdlib.xtf.xslt.Session" 
-    xmlns:mods="http://www.loc.gov/mods/v3"
+    xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:mods="http://www.loc.gov/mods/v3"
     xmlns:xtf="http://cdlib.org/xtf" xmlns="http://www.w3.org/1999/xhtml"
     extension-element-prefixes="session" exclude-result-prefixes="#all" version="2.0">
 
@@ -21,58 +20,71 @@
 
     <!--Creates links to add items to bookbag on search results pages-->
     <xsl:template name="myList">
-        <xsl:param name="title"/>
         <xsl:param name="chunk.id"/>
         <xsl:param name="path"/>
         <xsl:param name="docPath"/>
-        <xsl:param name="callNo"/>
-        <xsl:variable name="url">
-            <xsl:value-of select="concat($xtfURL, $docPath)"/>
-        </xsl:variable>
-        <xsl:variable name="creator">
-            <xsl:value-of select="meta/creator[1]"/>
-        </xsl:variable>
         <xsl:if test="meta/level='file' or meta/level='item'">
+            <xsl:variable name="title">
+                <xsl:value-of select="meta/title"/>
+            </xsl:variable>
+            <xsl:variable name="url">
+                <xsl:value-of select="concat($xtfURL, $docPath)"/>
+            </xsl:variable>
+            <xsl:variable name="creator">
+                <xsl:value-of select="meta/creator[1]"/>
+            </xsl:variable>
+            <xsl:variable name="callNo">
+                <xsl:choose>
+                    <xsl:when test="meta/type='mods'">
+                        <xsl:value-of select="meta/identifier"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="substring-before(meta/identifier, '-')"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:variable name="date">
+                <xsl:value-of select="meta/date"/>
+            </xsl:variable>
+            <xsl:variable name="collectionTitle">
+                <xsl:value-of select="meta/collectionTitle"/>
+            </xsl:variable>
+            <xsl:variable name="restrictions">
+                <xsl:value-of select="meta/accessrestrict"/>
+            </xsl:variable>
             <xsl:variable name="identifier">
                 <xsl:value-of select="meta/identifier"/>
             </xsl:variable>
-            <xsl:variable name="containers">
-                <xsl:value-of select="normalize-space(meta/containers)"/>
-                <xsl:if test="meta/extent != ''">
-                    <xsl:text>, </xsl:text>
+            <xsl:variable name="container1">
+                <xsl:choose>
+                    <xsl:when test="contains(meta/containers, ',')">
+                        <xsl:value-of select="normalize-space(substring-before(meta/containers, ', '))"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="normalize-space(meta/containers)"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:variable name="container2">
+                <xsl:if test="contains(meta/containers, ',')">
+                    <xsl:value-of select="normalize-space(substring-after(meta/containers, ', '))"/>
                 </xsl:if>
             </xsl:variable>
             <xsl:variable name="parents">
                 <xsl:for-each select="meta/parent[position()&gt;1]">
                     <xsl:value-of select="."/>
                     <xsl:if test="position() != last()">
-                        <xsl:text>|</xsl:text>
+                        <xsl:text>; </xsl:text>
                     </xsl:if>
                 </xsl:for-each>
             </xsl:variable>
-            <xsl:choose>
-                <xsl:when test="$smode = 'showBag'">
-                    <a href="#" class="bookbag delete" data-identifier="{$identifier}">
-                        <xsl:text>Delete</xsl:text>
-                    </a>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:choose>
-                        <xsl:when test="session:getData('bag')/bag/savedDoc[@id=$identifier]">
-                            <span>Added</span>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <!-- Need to add collectionTitle, accessRestrict. Look at variables in bookbag.js -->
-                            <a href="#" class="bookbag" data-identifier="{$identifier}"
-                                data-title="{$title}" data-url="{$url}" data-creator="{$creator}"
-                                data-callNo="{$callNo}" data-containers="{$containers}"
-                                data-parents="{$parents}">
-                                <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
-                            </a>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:otherwise>
-            </xsl:choose>
+            <a href="#" class="bookbag" data-identifier="{$identifier}" data-ItemTitle="{$collectionTitle}"
+                data-ItemSubtitle="{$parents}" data-ItemAuthor="{$creator}" data-ItemDate="{$date}"
+                data-CallNo="{$callNo}" data-ItemVolume="{$container1}"
+                data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
+                data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}">
+                <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
+            </a>
         </xsl:if>
     </xsl:template>
 
@@ -83,6 +95,15 @@
         <xsl:variable name="title">
             <xsl:value-of select="xtf:meta/title"/>
         </xsl:variable>
+        <xsl:variable name="collectionTitle">
+            <xsl:value-of select="xtf:meta/collectionTitle"/>
+        </xsl:variable>
+        <xsl:variable name="restrictions">
+            <xsl:value-of select="xtf:meta/accessrestrict"/>
+        </xsl:variable>
+        <xsl:variable name="date">
+            <xsl:value-of select="xtf:meta/date"/>
+        </xsl:variable>
         <xsl:variable name="url">
             <xsl:variable name="docID">
                 <xsl:value-of select="concat('?docId=ead/', $rootID, '/', $rootID, '.xml')"/>
@@ -92,7 +113,9 @@
             </xsl:variable>
             <xsl:choose>
                 <xsl:when test="string(xtf:meta/seriesID)">
-                    <xsl:value-of select="concat($uri, ';chunk.id=', xtf:meta/seriesID, ';doc.view=contents;#', @id)"/>
+                    <xsl:value-of
+                        select="concat($uri, ';chunk.id=', xtf:meta/seriesID, ';doc.view=contents;#', @id)"
+                    />
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="concat($uri, ';doc.view=contents;#', @id)"/>
@@ -106,7 +129,7 @@
             <xsl:for-each select="xtf:meta/parent[position()&gt;1]">
                 <xsl:value-of select="."/>
                 <xsl:if test="position() != last()">
-                    <xsl:text>|</xsl:text>
+                    <xsl:text>; </xsl:text>
                 </xsl:if>
             </xsl:for-each>
         </xsl:variable>
@@ -116,30 +139,42 @@
                 <xsl:text>, </xsl:text>
             </xsl:if>
         </xsl:variable>
-        <xsl:choose>
-            <xsl:when test="session:getData('bag')/child::*/child::*[@id=$identifier]">
-                <span>Added</span>
-            </xsl:when>
-            <xsl:otherwise>
-                <a href="#" class="bookbag" data-identifier="{$identifier}" data-title="{$title}"
-                    data-url="{$url}" data-creator="{$creator}" data-containers="{$containers}" 
-                    data-parents="{$parents}">
-                    <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
-                </a>
-            </xsl:otherwise>
-        </xsl:choose>
+        <a href="#" class="bookbag" data-identifier="{$identifier}"
+            data-ItemTitle="{$collectionTitle}" data-ItemSubtitle="{$parents}"
+            data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNo="{$rootID}"
+            data-ItemVolume="{$containers}" data-ItemIssue="{$containers}" data-ItemInfo1="{$title}"
+            data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}">
+            <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
+        </a>
     </xsl:template>
 
     <!--Creates links to add items to bookbag on library materials pages-->
     <xsl:template name="myListMods">
-        <xsl:variable name="identifier" select="/mods:mods/mods:identifier[1]"/>
-        <xsl:variable name="title" select="mods:titleInfo/mods:title"/>
+        <xsl:param name="url"/>
+        <xsl:variable name="identifier">
+            <xsl:value-of select="xtf:meta/identifier"/>
+        </xsl:variable>
+        <xsl:variable name="title">
+            <xsl:value-of select="xtf:meta/title"/>
+        </xsl:variable>
+        <xsl:variable name="creator">
+            <xsl:value-of select="xtf:meta/creator"/>
+        </xsl:variable>
+        <xsl:variable name="date">
+            <xsl:value-of select="xtf:meta/date"/>
+        </xsl:variable>
+        <xsl:variable name="callno">
+            <xsl:value-of select="xtf:meta/callNo"/>
+        </xsl:variable>
+
         <xsl:choose>
             <xsl:when test="session:getData('bag')/child::*/child::*[@id=$identifier]">
                 <span>Added</span>
             </xsl:when>
             <xsl:otherwise>
-                <a href="#" class="bookbag" data-identifier="{$identifier}" data-title="{$title}">
+                <a href="#" class="bookbag" data-identifier="{$identifier}"
+                    data-ItemTitle="{$title}" data-ItemAuthor="{$creator}" data-ItemDate="{$date}"
+                    data-CallNo="{$callno}" data-ItemInfo3="{$url}">
                     <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
                 </a>
             </xsl:otherwise>
@@ -151,7 +186,7 @@
             <xsl:variable name="bag" select="session:getData('bag')"/>
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                    > My List (<span id="bagCount"><xsl:value-of select="count($bag/bag/savedDoc)"
+                    > My List (<span class="listCount"><xsl:value-of select="count($bag/bag/savedDoc)"
                         /></span>)<span class="caret"/>
                 </button>
                 <ul class="dropdown-menu pull-right" role="menu">
@@ -179,11 +214,11 @@
     <xsl:template name="myListHeader">
         <h2>My List: <xsl:variable name="items" select="@totalDocs"/>
             <xsl:choose>
-                <xsl:when test="$items = 1"><span id="bookbagCount">1</span>
+                <xsl:when test="$items = 1"><span class="listCount">1</span>
                     <xsl:text> Item</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
-                    <span id="bookbagCount"><xsl:value-of select="$items"/></span>
+                    <span class="listCount"><xsl:value-of select="$items"/></span>
                     <xsl:text> Items</xsl:text>
                 </xsl:otherwise>
             </xsl:choose></h2>
@@ -202,39 +237,50 @@
     <xsl:template name="myListEmail">
         <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <div class="overlay" id="myListEmail">
-            <div class="dscDescription">
-                <div class="myListContents">
-                    <xsl:call-template name="emptyList"/>
+            <div class="myListContents">
+                <xsl:call-template name="emptyList"/>
+            </div>
+            <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
+            <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
+                <div class="left">
+                    <div class="form-group">
+                        <label class="control-label" for="email">Address</label>
+                        <input class="form-control" type="text" name="email"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="subject">Subject</label>
+                        <input class="form-control" type="text" name="subject"/>
+                    </div>
                 </div>
-                <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
-                <form action="{$xtfURL}{$crossqueryPath}" method="get">
-                    <label>Address:</label>
-                    <input type="text" name="email"/>
-                    <label>Subject:</label>
-                    <input type="text" name="subject"/>
-                    <input type="textarea" name="message"/>
+                <div class="right">
+                    <div class="form-group">
+                        <label class="control-label" for="message">Message</label>
+                        <textarea class="form-control" type="textarea" name="message" rows="4"/>
+                    </div>
+                </div>
+                <div class="buttons">
                     <input class="btn btn-default" type="reset" value="Cancel"/>
                     <input class="btn btn-primary" type="submit" value="Send"/>
-                    <input type="hidden" name="smode" value="emailFolder"/>
-                    <input type="hidden" name="docsPerPage" value="{$bagCount}"/>
-                </form>
-            </div>
+                </div>
+                <input type="hidden" name="smode" value="emailFolder"/>
+                <input type="hidden" name="docsPerPage" value="{$bagCount}"/>
+            </form>
         </div>
     </xsl:template>
 
     <xsl:template name="myListPrint">
         <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <div class="overlay" id="myListPrint">
-            <div class="dscDescription">
-                <div class="myListContents">
-                    <xsl:call-template name="emptyList"/>
-                </div>
-                <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
-                <form action="{$xtfURL}{$crossqueryPath}" method="get">
+            <div class="myListContents">
+                <xsl:call-template name="emptyList"/>
+            </div>
+            <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
+            <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
+                <div class="buttons">
                     <input class="btn btn-default" type="reset" value="Cancel"/>
                     <input class="btn btn-primary" type="submit" value="Print"/>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </xsl:template>
 
@@ -245,9 +291,11 @@
                 <xsl:call-template name="emptyList"/>
             </div>
             <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
-            <form action="{$xtfURL}{$crossqueryPath}" method="get">
-                <input class="btn btn-default" type="reset" value="Cancel"/>
-                <input class="btn btn-primary" type="submit" value="Request in Reading Room"/>
+            <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
+                <div class="buttons">
+                    <input class="btn btn-default" type="reset" value="Cancel"/>
+                    <input class="btn btn-primary" type="submit" value="Request in Reading Room"/>
+                </div>
             </form>
         </div>
     </xsl:template>
@@ -259,9 +307,11 @@
                 <xsl:call-template name="emptyList"/>
             </div>
             <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
-            <form action="{$xtfURL}{$crossqueryPath}" method="get">
-                <input class="btn btn-default" type="reset" value="Cancel"/>
-                <input class="btn btn-primary" type="submit" value="Request Copies"/>
+            <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
+                <div class="buttons">
+                    <input class="btn btn-default" type="reset" value="Cancel"/>
+                    <input class="btn btn-primary" type="submit" value="Request Copies"/>
+                </div>
             </form>
         </div>
     </xsl:template>
@@ -348,9 +398,11 @@
         </div>
 
     </xsl:template>-->
-    
+
     <xsl:template name="emptyList">
-        <div class="empty">Your Bookbag is empty! Click on the icon that looks like this <img alt="bookbag icon" src="/xtf/icons/default/addbag.gif" /> next to one or more items in your <a href="">Search Results</a> to add it to your bookbag.</div>
+        <div class="empty">Your Bookbag is empty! Click on the icon that looks like this <img
+                alt="bookbag icon" src="/xtf/icons/default/addbag.gif"/> next to one or more items
+            in your <a href="">Search Results</a> to add it to your bookbag.</div>
     </xsl:template>
 
     <!-- <xsl:template name="savedDoc">

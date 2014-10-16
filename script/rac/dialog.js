@@ -266,6 +266,7 @@ $(function () {
         create: function(event, ui) {
             var widget = $(this).dialog("widget");
             $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            $(".ui-dialog-content").addClass("myList");
             },
         autoOpen: false,
         modal: true,
@@ -286,6 +287,7 @@ $(function () {
         create: function(event, ui) {
             var widget = $(this).dialog("widget");
             $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            $(".ui-dialog-content").addClass("myList");
             },
         autoOpen: false,
         modal: true,
@@ -306,6 +308,7 @@ $(function () {
         create: function(event, ui) {
             var widget = $(this).dialog("widget");
             $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            $(".ui-dialog-content").addClass("myList");
             },
         autoOpen: false,
         modal: true,
@@ -326,6 +329,7 @@ $(function () {
         create: function(event, ui) {
             var widget = $(this).dialog("widget");
             $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            $(".ui-dialog-content").addClass("myList");
             },
         autoOpen: false,
         modal: true,

@@ -281,7 +281,9 @@
             <ul>
                <li>
                   <span class="bookbag">
-                     <xsl:call-template name="myListMods"/>
+                     <xsl:call-template name="myListMods">
+                        <xsl:with-param name="url" select="$doc.path"></xsl:with-param>
+                     </xsl:call-template>
                   </span>
                </li>
             </ul>

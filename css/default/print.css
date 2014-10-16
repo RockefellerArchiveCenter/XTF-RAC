@@ -1,0 +1,5 @@
+/* Print CSS */
+
+.navbar, .comment, #myListNav, .resultsHeader, .results, #header img, .ui-dialog-titlebar, .myList .buttons {display: none;}
+
+.ui-dialog {width: 100% !important;left: 0 !important;top: 7em !important;}

@@ -26,7 +26,7 @@ div.closeWindow {text-align:right !important; font-size:.85em !important; margin
 div.closeWindow a{color: #c45414;}
 .getAddress{border-top:1px solid #999 !important; margin-top:24px !important;}
 .bookbag {width:10%; text-align:right;border:none; float:right;font-size:.7em;}
-.bookbag a {color:#c45414;text-decoration:none;}
+.bookbag a {color:#c45414;text-decoration:none;float:left;margin-left:2em;}
 input[type="text"], select {vertical-align:0}
 label {display:inline-block; margin-right:.2em;}
 

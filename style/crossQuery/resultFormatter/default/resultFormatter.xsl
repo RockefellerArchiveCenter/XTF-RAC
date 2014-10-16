@@ -682,21 +682,13 @@
                            </div>
                         </xsl:if>
 
-                        <xsl:if test="($smode='showBag')">
-                           <xsl:for-each-group select="docHit" group-by="@path">
-                              <xsl:call-template name="docHitColl"/>
-                           </xsl:for-each-group>
-                        </xsl:if>
-
                      </xsl:when>
                      <xsl:otherwise>
                         <xsl:choose>
                            <xsl:when test="$smode = 'showBag'">
-                              <div class="empty">There's nothing here! Click on the icon that looks
-                                 like this <img alt="bookbag icon"
-                                    src="/xtf/icons/default/addbag.gif"/> next to one or more items
-                                 in your <a href="{session:getData('queryURL')}">Search Results</a>
-                                 to add it to your list.</div>
+                              <div class="myListContents">
+                                 <xsl:call-template name="emptyList"/>
+                              </div>
                            </xsl:when>
                            <xsl:otherwise>
                               <div class="nohits">Oops, I couldn't find anything! Do you want to try
@@ -1449,7 +1441,6 @@
 
             <div class="bookbag">
                <xsl:call-template name="myList">
-                  <xsl:with-param name="title" select="$title"/>
                   <xsl:with-param name="chunk.id" select="$chunk.id"/>
                   <xsl:with-param name="path" select="$path"/>
                   <xsl:with-param name="docPath" select="$docPath"/>
@@ -1924,7 +1915,6 @@
 
       <div class="bookbag">
          <xsl:call-template name="myList">
-            <xsl:with-param name="title" select="$title"/>
             <xsl:with-param name="chunk.id" select="$chunk.id"/>
             <xsl:with-param name="path" select="$path"/>
             <xsl:with-param name="docPath" select="$docPath"/>
