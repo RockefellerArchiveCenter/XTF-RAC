@@ -145,9 +145,9 @@ div.docHit {
 }
 
 .myListContents .row {
-    width:100%;
+    width:98%;
     float:left;
-    padding: .2em;
+    padding: .2em 1%;
 }
 
 .myListContents .row:nth-of-type(odd) {

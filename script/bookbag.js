@@ -205,16 +205,9 @@ $(document).ready(function () {
             e.preventDefault();
     })
 
-    $('body').on('click', '.myList input[type="reset"]', function(e){
-        $(this).closest('.ui-dialog').dialog('close');
-        e.preventDefault();
-
-    });
-
-        $('body').on('click', '.myList input[value="Print"]', function(e){
+    $('.myListPrint').on('click', function(e) {
+        // e.preventDefault();
         window.print();
-        e.preventDefault();
-
     });
 
     //update display

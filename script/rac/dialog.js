@@ -271,6 +271,10 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
+        buttons: [ 
+            { text: "Send Email"},
+            { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
+            ],
         width: windowWidth/1.2,
         close: function () {
             $('.ui-dialog').hide();
@@ -282,27 +286,31 @@ $(function () {
         dialogMyListEmail.dialog("option", "title", "Email My List").dialog("open");
         });
     });
-$(function () {
-    var dialogMyListPrint = $('#myListPrint').dialog({
-        create: function(event, ui) {
-            var widget = $(this).dialog("widget");
-            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-            $(".ui-dialog-content").addClass("myList");
-            },
-        autoOpen: false,
-        modal: true,
-        resizable: true,
-        width: windowWidth/1.2,
-        close: function () {
-            $('.ui-dialog').hide();
-        }
-    });
+// $(function () {
+//     var dialogMyListPrint = $('#myListPrint').dialog({
+//         create: function(event, ui) {
+//             var widget = $(this).dialog("widget");
+//             $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+//             $(".ui-dialog-content").addClass("myList");
+//             },
+//         autoOpen: false,
+//         modal: true,
+//         resizable: true,
+//         buttons: [ 
+//             { text: "Print", click: function(){window.print();}},
+//             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
+//             ],
+//         width: windowWidth/1.2,
+//         close: function () {
+//             $('.ui-dialog').hide();
+//         }
+//     });
 
-    $(".myListPrint").on("click", function (e) {
-        e.preventDefault();
-        dialogMyListPrint.dialog("option", "title", "Print My List").dialog("open");
-        });
-    });
+//     $(".myListPrint").on("click", function (e) {
+//         e.preventDefault();
+//         dialogMyListPrint.dialog("option", "title", "Print My List").dialog("open");
+//         });
+//     });
 $(function () {
     var dialogMyListRequest = $('#myListRequest').dialog({
         create: function(event, ui) {
@@ -313,6 +321,10 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
+        buttons: [ 
+            { text: "Request Materials"},
+            { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
+            ],
         width: windowWidth/1.2,
         close: function () {
             $('.ui-dialog').hide();
@@ -334,6 +346,10 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
+        buttons: [ 
+            { text: "Request Copies"},
+            { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
+            ],
         width: windowWidth/1.2,
         close: function () {
             $('.ui-dialog').hide();

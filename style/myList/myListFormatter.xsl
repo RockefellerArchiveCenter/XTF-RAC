@@ -58,7 +58,8 @@
             <xsl:variable name="container1">
                 <xsl:choose>
                     <xsl:when test="contains(meta/containers, ',')">
-                        <xsl:value-of select="normalize-space(substring-before(meta/containers, ', '))"/>
+                        <xsl:value-of
+                            select="normalize-space(substring-before(meta/containers, ', '))"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="normalize-space(meta/containers)"/>
@@ -78,11 +79,11 @@
                     </xsl:if>
                 </xsl:for-each>
             </xsl:variable>
-            <a href="#" class="bookbag" data-identifier="{$identifier}" data-ItemTitle="{$collectionTitle}"
-                data-ItemSubtitle="{$parents}" data-ItemAuthor="{$creator}" data-ItemDate="{$date}"
-                data-CallNo="{$callNo}" data-ItemVolume="{$container1}"
-                data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
-                data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}">
+            <a href="#" class="bookbag" data-identifier="{$identifier}"
+                data-ItemTitle="{$collectionTitle}" data-ItemSubtitle="{$parents}"
+                data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNo="{$callNo}"
+                data-ItemVolume="{$container1}" data-ItemIssue="{$container2}"
+                data-ItemInfo1="{$title}" data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}">
                 <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
             </a>
         </xsl:if>
@@ -186,8 +187,8 @@
             <xsl:variable name="bag" select="session:getData('bag')"/>
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                    > My List (<span class="listCount"><xsl:value-of select="count($bag/bag/savedDoc)"
-                        /></span>)<span class="caret"/>
+                    > My List (<span class="listCount"><xsl:value-of
+                            select="count($bag/bag/savedDoc)"/></span>)<span class="caret"/>
                 </button>
                 <ul class="dropdown-menu pull-right" role="menu">
                     <li>
@@ -258,10 +259,6 @@
                         <textarea class="form-control" type="textarea" name="message" rows="4"/>
                     </div>
                 </div>
-                <div class="buttons">
-                    <input class="btn btn-default" type="reset" value="Cancel"/>
-                    <input class="btn btn-primary" type="submit" value="Send"/>
-                </div>
                 <input type="hidden" name="smode" value="emailFolder"/>
                 <input type="hidden" name="docsPerPage" value="{$bagCount}"/>
             </form>
@@ -271,14 +268,9 @@
     <xsl:template name="myListPrint">
         <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <div class="overlay" id="myListPrint">
-            <div class="myListContents">
-                <xsl:call-template name="emptyList"/>
-            </div>
-            <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
             <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
-                <div class="buttons">
-                    <input class="btn btn-default" type="reset" value="Cancel"/>
-                    <input class="btn btn-primary" type="submit" value="Print"/>
+                <div class="myListContents">
+                    <xsl:call-template name="emptyList"/>
                 </div>
             </form>
         </div>
@@ -287,14 +279,9 @@
     <xsl:template name="myListRequest">
         <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <div class="overlay" id="myListRequest">
-            <div class="myListContents">
-                <xsl:call-template name="emptyList"/>
-            </div>
-            <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
             <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
-                <div class="buttons">
-                    <input class="btn btn-default" type="reset" value="Cancel"/>
-                    <input class="btn btn-primary" type="submit" value="Request in Reading Room"/>
+                <div class="myListContents">
+                    <xsl:call-template name="emptyList"/>
                 </div>
             </form>
         </div>
@@ -303,14 +290,9 @@
     <xsl:template name="myListCopies">
         <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <div class="overlay" id="myListCopies">
-            <div class="myListContents">
-                <xsl:call-template name="emptyList"/>
-            </div>
-            <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
             <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
-                <div class="buttons">
-                    <input class="btn btn-default" type="reset" value="Cancel"/>
-                    <input class="btn btn-primary" type="submit" value="Request Copies"/>
+                <div class="myListContents">
+                    <xsl:call-template name="emptyList"/>
                 </div>
             </form>
         </div>
