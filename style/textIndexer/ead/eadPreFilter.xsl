@@ -423,8 +423,7 @@
                <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)">
                   <xsl:value-of select="@otherlevel"/>
                </xsl:when>
-               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">Other
-                  Level</xsl:when>
+               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">Other Level</xsl:when>
                <xsl:when test="@level = 'file'">File</xsl:when>
                <xsl:when test="@level = 'item'">Item</xsl:when>
             </xsl:choose>
