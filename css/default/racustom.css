@@ -419,6 +419,61 @@ iframe {
 
 .daoCitation .repository {position: absolute; bottom: 0; left: 0; width: 98%; padding-left: 2%;}
 
+/*My List (aka Bookbag)*/
+
+.myListContents {
+    max-height: 450px; 
+    overflow-y: scroll;
+    word-wrap: break-word;
+}
+
+.myListContents .row {
+    width:98%;
+    float:left;
+    padding: .2em 1%;
+}
+
+.myListContents .row:nth-of-type(odd) {
+    background-color: rgb(243, 243, 243);
+}
+
+.myListContents .checkbox {float:left; width:2%;}
+
+.myListContents .title {float:left; width:30%;}
+
+.myListContents .date {float:left; width:10%;}
+
+.myListContents .collectionTitle {float:left; width:25%;}
+
+.myListContents .containers {width:15%;}
+
+.myListContents .dateAdded {float:left;width:10%}
+
+.myListContents .creator {}
+
+.myListContents .bookbag-delete {margin-top:.5em;}
+
+.myList .left, .dscDescription .right {
+    width:50%;
+    float:left;
+}
+
+.myList .form-group {
+    padding-left:5%
+}
+
+.myList .form-control {
+    width:90%;
+}
+
+.myList .buttons {
+    float:right;
+}
+
+.myList .buttons .btn {
+  margin: 0 4px;
+}
+
 /* --------------------------------------------- */
 /* ------------- RESPONSIVE STYLES ------------- */
 /* --------------------------------------------- */

@@ -79,9 +79,10 @@
                     </xsl:if>
                 </xsl:for-each>
             </xsl:variable>
-            <a href="#" class="bookbag" data-identifier="{$identifier}"
+            <xsl:variable name="barcode"/>
+            <a href="#" class="list-add" data-identifier="{$identifier}" data-ItemNumber="{$barcode}"
                 data-ItemTitle="{$collectionTitle}" data-ItemSubtitle="{$parents}"
-                data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNo="{$callNo}"
+                data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNumber="{$callNo}"
                 data-ItemVolume="{$container1}" data-ItemIssue="{$container2}"
                 data-ItemInfo1="{$title}" data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}">
                 <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
@@ -134,16 +135,27 @@
                 </xsl:if>
             </xsl:for-each>
         </xsl:variable>
-        <xsl:variable name="containers">
-            <xsl:value-of select="normalize-space(xtf:meta/containers)"/>
-            <xsl:if test="xtf:meta/extent != ''">
-                <xsl:text>, </xsl:text>
+        <xsl:variable name="container1">
+            <xsl:choose>
+                <xsl:when test="contains(xtf:meta/containers, ',')">
+                    <xsl:value-of
+                        select="normalize-space(substring-before(xtf:meta/containers, ', '))"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="normalize-space(xtf:meta/containers)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="container2">
+            <xsl:if test="contains(xtf:meta/containers, ',')">
+                <xsl:value-of select="normalize-space(substring-after(xtf:meta/containers, ', '))"/>
             </xsl:if>
         </xsl:variable>
-        <a href="#" class="bookbag" data-identifier="{$identifier}"
+        <xsl:variable name="barcode"/>
+        <a href="#" class="list-add" data-identifier="{$identifier}" data-ItemNumber="{$barcode}"
             data-ItemTitle="{$collectionTitle}" data-ItemSubtitle="{$parents}"
-            data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNo="{$rootID}"
-            data-ItemVolume="{$containers}" data-ItemIssue="{$containers}" data-ItemInfo1="{$title}"
+            data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNumber="{$rootID}"
+            data-ItemVolume="{$container1}" data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
             data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}">
             <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
         </a>
@@ -167,21 +179,23 @@
         <xsl:variable name="callno">
             <xsl:value-of select="xtf:meta/callNo"/>
         </xsl:variable>
+        <xsl:variable name="barcode"></xsl:variable>
 
         <xsl:choose>
             <xsl:when test="session:getData('bag')/child::*/child::*[@id=$identifier]">
                 <span>Added</span>
             </xsl:when>
             <xsl:otherwise>
-                <a href="#" class="bookbag" data-identifier="{$identifier}"
+                <a href="#" class="list-add" data-identifier="{$identifier}" data-ItemNumber="{$barcode}"
                     data-ItemTitle="{$title}" data-ItemAuthor="{$creator}" data-ItemDate="{$date}"
-                    data-CallNo="{$callno}" data-ItemInfo3="{$url}">
+                    data-CallNumber="{$callno}" data-ItemInfo3="{$url}">
                     <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
                 </a>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
+    <!-- navigation buttons for My List -->
     <xsl:template name="myListNav">
         <div class="pull-right" id="myListNav">
             <xsl:variable name="bag" select="session:getData('bag')"/>
@@ -208,10 +222,11 @@
                     </li>
                 </ul>
             </div>
-            <a href="http://raccess.rockarch.org" class="btn btn-default">Login</a>
+            <a href="http://raccess.rockarch.org/aeon.dll" class="btn btn-default">Login</a>
         </div>
     </xsl:template>
 
+    <!-- Header for My List page -->
     <xsl:template name="myListHeader">
         <h2>My List: <xsl:variable name="items" select="@totalDocs"/>
             <xsl:choose>
@@ -231,17 +246,18 @@
             <a class="btn btn-default myListPrint">Print</a>
             <a class="btn btn-default myListRequest">Request in Reading Room</a>
             <a class="btn btn-default myListCopies">Request Copies</a>
-            <a class="btn btn-default">Remove All Items</a>
+            <a class="btn btn-default myListRemoveAll">Remove All Items</a>
         </div>
     </xsl:template>
 
+    <!-- Emails items in My List to specified address -->
     <xsl:template name="myListEmail">
-        <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
+        <!--<xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>-->
         <div class="overlay" id="myListEmail">
             <div class="myListContents">
                 <xsl:call-template name="emptyList"/>
             </div>
-            <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
+            <!--<xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>-->
             <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
                 <div class="left">
                     <div class="form-group">
@@ -259,42 +275,37 @@
                         <textarea class="form-control" type="textarea" name="message" rows="4"/>
                     </div>
                 </div>
-                <input type="hidden" name="smode" value="emailFolder"/>
-                <input type="hidden" name="docsPerPage" value="{$bagCount}"/>
+                <!--<input type="hidden" name="smode" value="emailFolder"/>
+                <input type="hidden" name="docsPerPage" value="{$bagCount}"/>-->
             </form>
         </div>
     </xsl:template>
 
+    <!-- Prints My List -->
     <xsl:template name="myListPrint">
         <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <div class="overlay" id="myListPrint">
-            <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
-                <div class="myListContents">
-                    <xsl:call-template name="emptyList"/>
-                </div>
-            </form>
+            <div class="myListContents">
+                <xsl:call-template name="emptyList"/>
+            </div>
         </div>
     </xsl:template>
 
+    <!-- Submits an Aeon materials request for items in My List -->
     <xsl:template name="myListRequest">
-        <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <div class="overlay" id="myListRequest">
-            <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
-                <div class="myListContents">
-                    <xsl:call-template name="emptyList"/>
-                </div>
-            </form>
+            <div class="myListContents">
+                <xsl:call-template name="emptyList"/>
+            </div>
         </div>
     </xsl:template>
 
+    <!-- Submits an Aeon duplication request for items in My List -->
     <xsl:template name="myListCopies">
-        <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <div class="overlay" id="myListCopies">
-            <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
-                <div class="myListContents">
-                    <xsl:call-template name="emptyList"/>
-                </div>
-            </form>
+            <div class="myListContents">
+                <xsl:call-template name="emptyList"/>
+            </div>
         </div>
     </xsl:template>
 
@@ -364,23 +375,7 @@
         </html>
     </xsl:template>
 
-    <!--<xsl:template match="crossQueryResult" mode="myListEmail" exclude-result-prefixes="#all">
-        <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
-
-        <mail:send xmlns:mail="java:/org.cdlib.xtf.saxonExt.Mail"
-            xsl:extension-element-prefixes="mail" smtpHost="" useSSL="no"
-            from="archive@rockarch.org" to="{$email}" subject="{$subject}">
-            <xsl:value-of select="$message"/>
-            <xsl:call-template name="savedDoc"/>
-        </mail:send>
-
-        <div class="getAddress">
-            <h1>E-mail My List</h1>
-            <strong>Your items have been sent.</strong>
-        </div>
-
-    </xsl:template>-->
-
+    <!-- Creates placeholder display when My List is empty -->
     <xsl:template name="emptyList">
         <div class="empty">Your Bookbag is empty! Click on the icon that looks like this <img
                 alt="bookbag icon" src="/xtf/icons/default/addbag.gif"/> next to one or more items

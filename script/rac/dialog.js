@@ -2,6 +2,79 @@ $(document).ready(function() {
 var windowWidth = $(window).width();
 var windowHeight = $(window).height();
 
+function sendRequest(e) {
+    var form = $('.myList .inputs')
+        // Stop the browser from submitting the form.
+        e.preventDefault();
+
+        // Serialize the form data.
+        var formData = $(form).serialize();
+
+        // Submit the form using AJAX.
+        $.ajax({
+            type: 'POST',
+            url: 'https://raccess.rockarch.org/aeon.dll',
+            data: formData
+        })
+        .done(function(response) {
+            // Show success message
+
+            // Clear the form.
+            $('#name').val('');
+            $('#email').val('');
+            $('#message').val('');
+        })
+        .fail(function(data) {
+            // Show fail message
+
+        });
+
+    };
+
+function sendEmail(e) {
+    var address = $('input[name="email"]');
+    var subject = $('input[name="subject"]');
+    var text = $('textarea[name="message"]');
+    var items = function(){
+        var array = [];
+        $('.myList .row .inputs').each(function(){
+        if($('input[type="checkbox"]').is(':checked')) {
+            var item = $(this).children('input');
+            array.push(item);
+            }
+        });
+        return array;
+    }
+    var message = text + items;
+
+        // Stop the browser from submitting the form.
+        // e.preventDefault();
+
+        // Submit the form using AJAX.
+        $.ajax({
+            type: 'POST',
+            url: 'address',
+            email: address,
+            subject: subject,
+            data: message
+        })
+        .done(function(response) {
+            // Show success message
+            console.log('Your messages have been sent to' + address);
+
+            // Clear the form.
+            $('input[name="email"]').val('');
+            $('input[name="subject"]').val('');
+            $('input[name="message"]').val('');
+        })
+        .fail(function(data) {
+            // Show fail message
+            console.log('Message failed to send')
+
+        });
+
+    };
+
 $(function () {
     var dialogSearchTips = $('#searchTips').dialog({
         create: function(event, ui) {
@@ -272,7 +345,10 @@ $(function () {
         modal: true,
         resizable: true,
         buttons: [ 
-            { text: "Send Email"},
+            { text: "Send Email", click: function() {
+                console.log('send email');
+                sendEmail();
+            } },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/1.2,
@@ -286,31 +362,31 @@ $(function () {
         dialogMyListEmail.dialog("option", "title", "Email My List").dialog("open");
         });
     });
-// $(function () {
-//     var dialogMyListPrint = $('#myListPrint').dialog({
-//         create: function(event, ui) {
-//             var widget = $(this).dialog("widget");
-//             $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-//             $(".ui-dialog-content").addClass("myList");
-//             },
-//         autoOpen: false,
-//         modal: true,
-//         resizable: true,
-//         buttons: [ 
-//             { text: "Print", click: function(){window.print();}},
-//             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
-//             ],
-//         width: windowWidth/1.2,
-//         close: function () {
-//             $('.ui-dialog').hide();
-//         }
-//     });
+$(function () {
+    var dialogMyListPrint = $('#myListPrint').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            $(".ui-dialog-content").addClass("myList");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        buttons: [ 
+            { text: "Print", click: function(){window.print(); return false;}},
+            { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
+            ],
+        width: windowWidth/1.2,
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
 
-//     $(".myListPrint").on("click", function (e) {
-//         e.preventDefault();
-//         dialogMyListPrint.dialog("option", "title", "Print My List").dialog("open");
-//         });
-//     });
+    $(".myListPrint").on("click", function (e) {
+        e.preventDefault();
+        dialogMyListPrint.dialog("option", "title", "Print My List").dialog("open");
+        });
+    });
 $(function () {
     var dialogMyListRequest = $('#myListRequest').dialog({
         create: function(event, ui) {
@@ -322,7 +398,7 @@ $(function () {
         modal: true,
         resizable: true,
         buttons: [ 
-            { text: "Request Materials"},
+            { text: "Request Materials", click: function() {console.log('request materials')} },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/1.2,
@@ -347,7 +423,7 @@ $(function () {
         modal: true,
         resizable: true,
         buttons: [ 
-            { text: "Request Copies"},
+            { text: "Request Copies", click: function() {console.log('request copies')} },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/1.2,
@@ -358,7 +434,7 @@ $(function () {
 
     $(".myListCopies").on("click", function (e) {
         e.preventDefault();
-        dialogMyListCopies.dialog("option", "title", "Print My List").dialog("open");
+        dialogMyListCopies.dialog("option", "title", "Request Copies").dialog("open");
         });
     });
 });

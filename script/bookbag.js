@@ -11,8 +11,8 @@ bagCount - the element which displays the number of items in the bookbag.
 
 $(document).ready(function () {
     // Sets global selector variables
-    var listAdd = '.bookbag';
-    var listDelete = '.bookbag-delete';
+    var listAdd = '.list-add';
+    var listDelete = '.list-delete';
     var listCount = '.listCount';
     
     // Removes link and changes text displayed if cookies are not enabled
@@ -36,7 +36,17 @@ $(document).ready(function () {
         var myList = getList();
         if (myList) {
             $('.myListContents').empty();
-            $('.myListContents .empty').remove();
+            if (myList.length > 0) {
+            $('.myListContents').append(
+                '<div class="row header-row">' + 
+                    '<div class="checkbox">Include</div>' + 
+                    '<div class="title">Title</div>' + 
+                    '<div class="date">Date</div>' + 
+                    '<div class="collectionTitle">Collection</div>' +
+                    '<div class="containers"><p>Containers</p></div>' +
+                    '<div class="dateAdded"><p>Date Added</p></div>' +
+                '</div>');
+            }
         for(var i =0; i <= myList.length -1; i++) {
             item = myList[i];
             //create variables
@@ -62,19 +72,37 @@ $(document).ready(function () {
                 }
             };
 
+            function containerJoin(container1, container2) {
+                if (container1) {
+                if (container2) {
+                    return container1 + ', ' + container2;
+                } else {
+                    return container1
+                    }
+                } else {
+                    return undefined;
+                }
+                e.preventDefault();
+            };
+
             var title = sanitize(item.title);
             var date = sanitize(item.date);
             var collectionTitle = sanitize(item.collectionTitle);
             var creator = sanitize(item.creator);
             var dateAdded = dateConvert(item.dateAdded);
             var identifier = sanitize(item.identifier);
-            var containers = sanitize(item.containers);
-            var url = sanitize(item.url)
+            var url = sanitize(item.url);
+            var parents = sanitize(item.parents);
+            var container1 = sanitize(item.container1);
+            var container2 = sanitize(item.container2);
+            var containers = containerJoin(container1, container2);
+            var callNumber = sanitize(item.callNumber);
+            var accessRestrict = sanitize(item.accessRestrict);
 
             $('.myListContents').append(
                 '<div class="row">' + 
                     '<div class="checkbox"><input type="checkbox" checked="checked" name="include"/></div>' + 
-                    '<div class="title"><h4><a href=' + url + '>' + title + '</a></h4></div>' + 
+                    '<div class="title"><p><a href=' + url + '>' + title + '</a></p></div>' + 
                     '<div class="date"><p>' + date + '</p></div>' + 
                     //'<div class="parents">' + item.parents + '</div>' +
                     '<div class="collectionTitle"><p>' + collectionTitle + '</p>' +
@@ -83,8 +111,20 @@ $(document).ready(function () {
                     '<div class="containers"><p>' + containers + '</p></div>' +
                     //'<div class="restrictions">' + item.accessRestrict + '</div>' +
                     //'<div class="callNumber">' + item.callNumber + '</div>' +
-                    '<div class="dateAdded"><p>' + dateAdded + '</p></div>' +
-                    '<button class="bookbag-delete btn btn-danger" href="#" data-identifier="'+ identifier + '">Delete</button>' +
+                    '<div class="dateAdded"><p>' + dateAdded + '</p></div>' + 
+                    '<div class="inputs">' +
+                        '<input type="hidden" name="ItemInfo1" value="' + title + '"/>' +
+                        '<input type="hidden" name="ItemDate" value="' + date + '"/>' +
+                        '<input type="hidden" name="ItemTitle" value="' + collectionTitle + '"/>' +
+                        '<input type="hidden" name="ItemAuthor" value="' + creator + '"/>' +
+                        '<input type="hidden" name="ItemSubtitle" value="' + parents + '"/>' +
+                        '<input type="hidden" name="ItemVolume" value="' + container1 + '"/>' +
+                        '<input type="hidden" name="ItemIssue" value="' + container2 + '"/>' +
+                        '<input type="hidden" name="ItemInfo2" value="' + accessRestrict + '"/>' +
+                        '<input type="hidden" name="CallNumber" value="' + callNumber + '"/>' +
+                        '<input type="hidden" name="ItemInfo3" value="' + url + '"/>' +
+                    '</div>' +
+                    '<button class="list-delete btn btn-danger" href="#" data-identifier="'+ identifier + '">Delete</button>' +
                 '</div>');
 
             // change text for components already in bookbag
@@ -104,6 +144,8 @@ $(document).ready(function () {
         $(listCount).text('0');
     }
 
+    return false;
+
     };
 
     //Might need some functions to sort by various fields, maybe title, collection, creator, date added
@@ -113,21 +155,6 @@ $(document).ready(function () {
     $(listAdd).on('click', function (e) {
 
         var a = $(this);
-        function containers() {
-            var container1 = $(a).attr('data-itemvolume');
-            var container2 = $(a).attr('data-itemissue');
-            console.log(container1);
-            console.log(container2);
-            if (container1) {
-                if (container2) {
-                    return container1 + ', ' + container2;
-                } else {
-                    return container1
-                }
-            } else {
-                return undefined;
-            }
-        }
 
         //data variables
         var identifier = $(a).attr('data-identifier');
@@ -136,9 +163,10 @@ $(document).ready(function () {
         var collectionTitle = $(a).attr('data-itemtitle');
         var creator = $(a).attr('data-itemauthor');
         var parents = $(a).attr('data-itemsubtitle');
-        var containers = containers();
-        var accessRestrict = $(a).attr('data-iteminfo3');
-        var callNumber = $(a).attr('data-callno');
+        var container1 = $(a).attr('data-itemvolume');
+        var container2 = $(a).attr('data-itemissue');
+        var accessRestrict = $(a).attr('data-iteminfo2');
+        var callNumber = $(a).attr('data-callnumber');
         var url = $(a).attr('data-iteminfo3');
 
         //Let the user know something is happpening
@@ -154,7 +182,6 @@ $(document).ready(function () {
 
             //create a new object to add to the array    
             var dateAdded = Date.now();
-            console.log(dateAdded);
             var doc = {
                 'identifier': identifier,
                 'title': title,
@@ -162,7 +189,8 @@ $(document).ready(function () {
                 'collectionTitle': collectionTitle,
                 'creator': creator,
                 'parents': parents,
-                'containers': containers,
+                'container1': container1,
+                'container2': container2,
                 'accessRestrict': accessRestrict,
                 'callNumber': callNumber,
                 'URL': url,
@@ -199,18 +227,24 @@ $(document).ready(function () {
                 }
             }
             
+            // save new list in localStorage
             saveList(myList);
+
+            // update display
             updateDisplay();
 
             e.preventDefault();
     })
 
-    $('.myListPrint').on('click', function(e) {
-        // e.preventDefault();
-        window.print();
+    // Remove all items from bookbag
+    $('.myListRemoveAll').on('click', function(e){
+        var myList = [];
+        saveList(myList);
+        updateDisplay();
     });
 
-    //update display
+
+    // update display
     updateDisplay();
 
 });
