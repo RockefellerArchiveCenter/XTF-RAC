@@ -5,7 +5,9 @@
 
 <xsl:stylesheet version="2.0"
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:xtf="http://cdlib.org/xtf" xmlns:ns2="http://www.w3.org/1999/xlink"
+   xmlns:xtf="http://cdlib.org/xtf" 
+   xmlns:ns2="http://www.w3.org/1999/xlink"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/1999/xhtml"
    xmlns:session="java:org.cdlib.xtf.xslt.Session"
    extension-element-prefixes="session"
@@ -304,8 +306,8 @@
       <xsl:choose>
          <xsl:when test="parent::p">
             <xsl:choose>
-               <xsl:when test="@ns2:href">
-                  <a href="{@ns2:href}"><xsl:apply-templates/></a>
+               <xsl:when test="@ns2:href | @xlink:href">
+                  <a href="{@ns2:href | @xlink:href}"><xsl:apply-templates/></a>
                </xsl:when>
                <xsl:otherwise>
                   <xsl:apply-templates/>
@@ -315,8 +317,8 @@
          <xsl:otherwise>
             <p>
                <xsl:choose>
-                  <xsl:when test="@ns2:href">
-                     <a href="{@ns2:href}"><xsl:apply-templates/></a>
+                  <xsl:when test="@ns2:href | @xlink:href">
+                     <a href="{@ns2:href | @xlink:href}"><xsl:apply-templates/></a>
                   </xsl:when>
                   <xsl:otherwise>
                      <xsl:apply-templates/>
@@ -914,7 +916,7 @@
          <xsl:when test="@href">
             <a href="{@href}"><xsl:value-of select="."/></a>
          </xsl:when>
-         <xsl:when test="@ns2:href"><a href="{@ns2:href}"><xsl:value-of select="."/></a></xsl:when>
+         <xsl:when test="@ns2:href | @xlink:href"><a href="{@ns2:href | @xlink:href}"><xsl:value-of select="."/></a></xsl:when>
          <xsl:otherwise><xsl:value-of select="."/></xsl:otherwise>
       </xsl:choose> 
    </xsl:template>
@@ -1123,42 +1125,42 @@
                <xsl:call-template name="anchor"/>
                <xsl:call-template name="clevel_dao"/>
                <xsl:for-each select="c|c02">
-                  <xsl:if test="dao">
+                  <xsl:if test="did/dao">
                   <div class="{@level} c02" style="width:99%;float:right;">
                      <xsl:call-template name="anchor"/>
                      <xsl:call-template name="clevel_dao"/>
                      <xsl:for-each select="c|c03">
-                        <xsl:if test="dao">
+                        <xsl:if test="did/dao">
                         <div class="{@level} c03" style="width:99%;float:right;">
                            <xsl:call-template name="anchor"/>
                            <xsl:call-template name="clevel_dao"/>
                            <xsl:for-each select="c|c04">
-                              <xsl:if test="dao">
+                              <xsl:if test="dao | did/dao">
                               <div class="{@level} c04" style="width:99%;float:right;">
                                  <xsl:call-template name="anchor"/>
                                  <xsl:call-template name="clevel_dao"/>
                                  <xsl:for-each select="c|c05">
-                                    <xsl:if test="dao">
+                                    <xsl:if test="dao | did/dao">
                                     <div class="{@level} c05" style="width:99%;float:right;">
                                        <xsl:call-template name="anchor"/>
                                        <xsl:call-template name="clevel_dao"/>
                                        <xsl:for-each select="c|c06">
-                                          <xsl:if test="dao">
+                                          <xsl:if test="dao | did/dao">
                                           <div class="{@level} c06" style="width:99%;float:right;">
                                              <xsl:call-template name="anchor"/>
                                              <xsl:call-template name="clevel_dao"/>
                                              <xsl:for-each select="c|c07">
-                                                <xsl:if test="dao">
+                                                <xsl:if test="dao | did/dao">
                                                 <div class="{@level} c07" style="width:99%;float:right;">
                                                   <xsl:call-template name="anchor"/>
                                                   <xsl:call-template name="clevel_dao"/>
                                                   <xsl:for-each select="c|c08">
-                                                     <xsl:if test="dao">
+                                                     <xsl:if test="dao | did/dao">
                                                      <div class="{@level} c08" style="width:99%;float:right;">
                                                   <xsl:call-template name="anchor"/>
                                                   <xsl:call-template name="clevel_dao"/>
                                                   <xsl:for-each select="c|c09">
-                                                     <xsl:if test="dao">
+                                                     <xsl:if test="dao | did/dao">
                                                      <div class="{@level} c09" style="width:99%;float:right;">
                                                   <xsl:call-template name="anchor"/>
                                                   <xsl:call-template name="clevel_dao"/>
@@ -1394,7 +1396,7 @@
                          </xsl:if>-->           
                                <xsl:apply-templates select="did" mode="dsc"/>  
                          <div class="instances">
-                            <xsl:for-each select="child::*/container[@id]">
+                            <xsl:for-each select="child::*/container">
                                <div class="instance">
                                <div class="format">
                                   <xsl:variable name="label">
@@ -1420,11 +1422,10 @@
                                   select="count(../container[@parent = $id] | ../container[@id = $id])"/>
                                <div class="containerWrapper">
                                   <span class="container" style="padding-right: 1em;">
-                                     <xsl:value-of select="@type"/> &#160; <xsl:apply-templates select="."/>
+                                     <xsl:value-of select="@type"/>&#160;<xsl:apply-templates select="."/>
                                   </span>
                                   <span class="container">
-                                     <xsl:value-of select="../container[@parent = $id]/@type"/>&#160;
-                                     <xsl:value-of select="../container[@parent = $id]"/>
+                                     <xsl:value-of select="../container[@parent = $id]/@type"/>&#160;<xsl:value-of select="../container[@parent = $id]"/>
                                   </span>
                                </div>
                                </div>
@@ -1585,6 +1586,9 @@
                    <xsl:when test="dao">
                       <xsl:apply-templates select="dao" mode="popout"/>
                    </xsl:when>
+                  <xsl:when test="did/dao">
+                     <xsl:apply-templates select="did/dao" mode="popout"/>
+                  </xsl:when>
                </xsl:choose>
            </xsl:for-each>
       </xsl:template>
@@ -1615,32 +1619,32 @@
             <xsl:otherwise>
                 <div class="daoLink">
                    <xsl:choose>
-                  <xsl:when test="../dao">
-                     <xsl:if test="count(../dao) &gt; 1">
+                  <xsl:when test="../dao | dao">
+                     <xsl:if test="count(../dao | dao) &gt; 1">
                         <xsl:call-template name="component-did-core"/>
                         <br/>
                      </xsl:if>
-                     <xsl:for-each select="../dao">
-                        <xsl:variable name="daoLink" select="@ns2:href"/>
-                        <xsl:variable name="daoTitle" select="@ns2:title"/>
+                     <xsl:for-each select="../dao | dao ">
+                        <xsl:variable name="daoLink" select="@ns2:href | @xlink:href"/>
+                        <xsl:variable name="daoTitle" select="@ns2:title | @xlink:title"/>
                            <xsl:variable name="citation">
                            <xsl:call-template name="daoCitation"/>
                         </xsl:variable>
                         <xsl:choose>
-                           <xsl:when test="@ns2:actuate and @ns2:actuate != 'none'">
+                           <xsl:when test="(@ns2:actuate | @xlink:actuate) and (@ns2:actuate | @xlink:actuate) != 'none'">
                               <a href="{$daoLink}" data-citation="{$citation}"
                                  data-title="{$daoTitle}" data-width="512" data-height="384"
                                  onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);"
                                  title="Digital object">
-                                 <xsl:if test="count(../dao) &gt; 1">
+                                 <xsl:if test="count(../dao | dao) &gt; 1">
                                     <xsl:attribute name="style">margin-left:1em;</xsl:attribute>
                                  </xsl:if>
                                  <xsl:choose>
-                                    <xsl:when test="count(../dao) &gt; 1">
+                                    <xsl:when test="count(../dao | dao) &gt; 1">
                                        <xsl:value-of select="$daoTitle"/>
                                     </xsl:when>
                                     <xsl:otherwise>
-                                       <xsl:for-each select="../did">
+                                       <xsl:for-each select="../did | ../.">
                                           <xsl:call-template name="component-did-core"/>
                                        </xsl:for-each>
                                     </xsl:otherwise>
@@ -1651,7 +1655,7 @@
                            </xsl:when>
                            <xsl:otherwise>
                               <xsl:choose>
-                                 <xsl:when test="count(../dao) &gt; 1">
+                                 <xsl:when test="count(../dao | dao) &gt; 1">
                                     <xsl:value-of select="$daoTitle"/>
                                  </xsl:when>
                                  <xsl:otherwise>
@@ -1677,8 +1681,8 @@
    <xsl:template match="dao" mode="popout">
       <xsl:if test="$doc.view = 'dao'">
          <div class="daoItemDisplay" style="float:left; padding:.5em; width:100%;">
-            <xsl:variable name="daoLink" select="@ns2:href"/>
-            <xsl:variable name="daoTitle" select="@ns2:title"/>
+            <xsl:variable name="daoLink" select="@ns2:href | @xlink:href"/>
+            <xsl:variable name="daoTitle" select="@ns2:title | @xlink:title"/>
             <xsl:variable name="citation">
                <xsl:call-template name="daoCitation"/>
             </xsl:variable>     
@@ -1698,8 +1702,15 @@
                      <xsl:if test="../did/unitdate"><xsl:text>,&#160;</xsl:text>
                      </xsl:if>
                   </xsl:if>
+                  <xsl:if test="../unittitle != ''"><xsl:value-of select="../unittitle"/>
+                     <xsl:if test="../unitdate"><xsl:text>,&#160;</xsl:text>
+                     </xsl:if>
+                  </xsl:if>
                   <xsl:if test="../did/unitdate">
                      <xsl:value-of select="../did/unitdate"/>
+                  </xsl:if>
+                  <xsl:if test="../unitdate">
+                     <xsl:value-of select="../unitdate"/>
                   </xsl:if>
                </a>
             </div>   
