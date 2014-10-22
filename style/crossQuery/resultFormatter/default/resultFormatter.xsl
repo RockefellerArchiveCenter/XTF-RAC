@@ -725,7 +725,6 @@
             <title>DIMES: Search Results</title>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <xsl:copy-of select="$brand.links"/>
-            <script src="{$xtfURL}script/bookbag.js" type="text/javascript"/>
          </head>
          <body>
             <div class="overlay" id="searchTips" style="width:1100px; top:20px !important;">
@@ -1735,6 +1734,16 @@
                   </div>
                </xsl:otherwise>
             </xsl:choose>
+            
+            <xsl:if test="meta/type='mods'">
+               <div class="bookbag">
+               <xsl:call-template name="myList">
+                  <xsl:with-param name="chunk.id" select="$chunk.id"/>
+                  <xsl:with-param name="path" select="$path"/>
+                  <xsl:with-param name="docPath" select="$docPath"/>
+               </xsl:call-template>
+               </div>
+            </xsl:if>
 
          </div>
          <div class="activeArrow"/>

@@ -1,23 +1,19 @@
-<xsl:stylesheet version="2.0" 
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:xtf="http://cdlib.org/xtf"
-   xmlns:html="http://www.w3.org/1999/xhtml"
-   xmlns:mods="http://www.loc.gov/mods/v3"
-   xmlns="http://www.w3.org/1999/xhtml"
-   xmlns:session="java:org.cdlib.xtf.xslt.Session"
-   extension-element-prefixes="session"
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+   xmlns:xtf="http://cdlib.org/xtf" xmlns:html="http://www.w3.org/1999/xhtml"
+   xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:session="java:org.cdlib.xtf.xslt.Session" extension-element-prefixes="session"
    exclude-result-prefixes="#all">
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    <!-- MODS dynaXML Stylesheet                                                -->
    <!-- Author: Winona Salesky wsalesky@gmail.com                              -->
    <!-- Date:   10/10/12                                                       -->
    <!--         Created for  for Rockefeller Archives Center                   -->
-	<!-- 
+   <!-- 
 	   This files goes in  /var/lib/tomcat6/webapps/xtf/style/dynaXML/docFormatter/mods/
-	-->   
-  
+	-->
+
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-   
+
    <!--
       Copyright (c) 2008, Regents of the University of California
       All rights reserved.
@@ -47,32 +43,30 @@
       ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
       POSSIBILITY OF SUCH DAMAGE.
    -->
- 
-   
+
+
    <!-- ====================================================================== -->
    <!-- Import Common Templates                                                -->
    <!-- ====================================================================== -->
-   
+
    <xsl:import href="../common/docFormatterCommon.xsl"/>
    <xsl:import href="../../../myList/myListFormatter.xsl"/>
-   
+
    <!-- ====================================================================== -->
    <!-- Output Format                                                          -->
    <!-- ====================================================================== -->
-   
-   <xsl:output method="xhtml" indent="yes" 
-      encoding="UTF-8" media-type="text/html; charset=UTF-8" 
-      doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" 
+
+   <xsl:output method="xhtml" indent="yes" encoding="UTF-8" media-type="text/html; charset=UTF-8"
+      doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
       doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
-      exclude-result-prefixes="#all"
-      omit-xml-declaration="yes"/>
-   
+      exclude-result-prefixes="#all" omit-xml-declaration="yes"/>
+
    <!-- ====================================================================== -->
    <!-- Strip Space                                                            -->
    <!-- ====================================================================== -->
-   
+
    <xsl:strip-space elements="*"/>
-   
+
    <!-- ====================================================================== -->
    <!-- Included Stylesheets                                                   -->
    <!-- ====================================================================== -->
@@ -80,13 +74,13 @@
    <xsl:include href="parameter.xsl"/>
    <xsl:include href="search.xsl"/>
    <xsl:include href="modsToHTML.xsl"/>
-   
+
    <!-- ====================================================================== -->
    <!-- Define Keys                                                            -->
    <!-- ====================================================================== -->
-   
+
    <xsl:key name="chunk-id" match="*[parent::mods:mods]" use="@id"/>
-   
+
    <!-- ====================================================================== -->
    <!-- MODS-specific parameters                                                -->
    <!-- ====================================================================== -->
@@ -95,7 +89,7 @@
         (in document order) 
    -->
    <xsl:param name="hit.num" select="'0'"/>
-   
+
    <xsl:param name="hit.rank">
       <xsl:choose>
          <xsl:when test="$hit.num != '0'">
@@ -109,12 +103,12 @@
          </xsl:otherwise>
       </xsl:choose>
    </xsl:param>
-   
-   <xsl:param name="parentID"/>  
+
+   <xsl:param name="parentID"/>
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
-   
+
    <xsl:template match="/mods:mods">
       <xsl:choose>
          <!-- robot solution -->
@@ -135,24 +129,30 @@
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
-   
+
    <!-- ====================================================================== -->
    <!-- Main Template                                                      -->
    <!-- ====================================================================== -->
-   
+
    <xsl:template name="contents">
-      <xsl:variable name="bbar.href"><xsl:value-of select="$query.string"/>;doc.view=bbar;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/></xsl:variable> 
-      <xsl:variable name="toc.href"><xsl:value-of select="$query.string"/>;doc.view=toc;brand=<xsl:value-of select="$brand"/>;chunk.id=<xsl:value-of select="$chunk.id"/>;<xsl:value-of select="$search"/>#X</xsl:variable>
-      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;doc.view=content;brand=<xsl:value-of select="$brand"/>;chunk.id=<xsl:value-of select="$chunk.id"/><xsl:value-of select="$search"/></xsl:variable>
-      
+      <xsl:variable name="bbar.href"><xsl:value-of select="$query.string"
+            />;doc.view=bbar;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"
+         /></xsl:variable>
+      <xsl:variable name="toc.href"><xsl:value-of select="$query.string"
+            />;doc.view=toc;brand=<xsl:value-of select="$brand"/>;chunk.id=<xsl:value-of
+            select="$chunk.id"/>;<xsl:value-of select="$search"/>#X</xsl:variable>
+      <xsl:variable name="content.href"><xsl:value-of select="$query.string"
+            />;doc.view=content;brand=<xsl:value-of select="$brand"/>;chunk.id=<xsl:value-of
+            select="$chunk.id"/><xsl:value-of select="$search"/></xsl:variable>
+
       <xsl:result-document exclude-result-prefixes="#all">
-   
+
          <html xml:lang="en" lang="en">
             <head>
-               <script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
-               <script src="script/yui/connection-min.js" type="text/javascript"/> 
                <xsl:copy-of select="$brand.links"/>
-               <title><xsl:value-of select="mods:titleInfo/mods:title"/></title>
+               <title>
+                  <xsl:value-of select="mods:titleInfo/mods:title"/>
+               </title>
             </head>
             <body>
                <div itemscope="" typeof="http:/schema.org/ItemPage">
@@ -168,16 +168,19 @@
                         <xsl:value-of select="mods:titleInfo/mods:title"/>
                      </xsl:attribute>
                   </meta>
-                  <div itemprop="http:/schema.org/contentLocation" itemscope="" itemtype="http:/schema.org/Place">
+                  <div itemprop="http:/schema.org/contentLocation" itemscope=""
+                     itemtype="http:/schema.org/Place">
                      <meta itemprop="http:/schema.org/name" content="Rockefeller Archive Center"/>
                      <meta itemprop="http:/schema.org/url" content="http://www.rockarch.org"/>
-                     <div itemprop="http:/schema.org/address" itemscop="" itemtype="http:/schema.org/PostalAddress">
+                     <div itemprop="http:/schema.org/address" itemscop=""
+                        itemtype="http:/schema.org/PostalAddress">
                         <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
                         <meta itemprop="addressLocality" content="Sleepy Hollow"/>
                         <meta itemprop="addressRegion" content="NY"/>
                         <meta itemprop="postalCode" content="10591"/>
                      </div>
-                     <div itemprop="http:/schema.org/geo" itemscope="" itemtype="http:/schema.org/GeoCoordinates">
+                     <div itemprop="http:/schema.org/geo" itemscope=""
+                        itemtype="http:/schema.org/GeoCoordinates">
                         <meta itemprop="http:/schema.org/latitude" content="41.091845"/>
                         <meta itemprop="http:/schema.org/longitude" content="-73.835265"/>
                      </div>
@@ -208,31 +211,33 @@
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
                   <a href="/xtf/search">
-                  <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
-                     alt="The Rockefeller Archive Center" border="0"/>
+                     <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
+                        alt="The Rockefeller Archive Center" border="0"/>
                      <h1>dimes.rockarch.org</h1>
                      <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
                         Center</p>
                   </a>
                </div>
-               
+
                <div id="bookbag">
                   <xsl:call-template name="myListNav"/>
                </div>
-               
-                  <xsl:call-template name="bbar_custom"/>
-               
+
+               <xsl:call-template name="bbar_custom"/>
+
                <div class="main">
                   <xsl:call-template name="toc"/>
                   <xsl:call-template name="body"/>
                </div>
                <xsl:copy-of select="$brand.feedback"/>
-               <div class="fixedFooter"><xsl:copy-of select="$brand.footer"/></div>
-          </body>
+               <div class="fixedFooter">
+                  <xsl:copy-of select="$brand.footer"/>
+               </div>
+            </body>
          </html>
       </xsl:result-document>
    </xsl:template>
-   
+
    <!-- ====================================================================== -->
    <!-- 9/27/11 WS: Internal navbar ammended from docFormatterCommon           -->
    <!-- ====================================================================== -->
@@ -254,7 +259,7 @@
       <xsl:variable name="title">
          <xsl:value-of select="/mods:mods/mods:titleInfo[not(@type)]/mods:title"/>
       </xsl:variable>
-      <div class="bbar_custom">  
+      <div class="bbar_custom">
          <div class="documentTitle">
             <xsl:attribute name="style">
                <xsl:choose>
@@ -278,76 +283,86 @@
             </h1>
          </div>
          <div class="headerIcons">
-            <ul>
-               <li>
-                  <span class="bookbag">
-                     <xsl:call-template name="myListMods">
-                        <xsl:with-param name="url" select="$doc.path"></xsl:with-param>
-                     </xsl:call-template>
-                  </span>
-               </li>
-            </ul>
+            <xsl:call-template name="myListMods">
+               <xsl:with-param name="url" select="$doc.path"/>
+            </xsl:call-template>
          </div>
          <div class="headerSearch">
-         <xsl:if test="($query != '0') and ($query != '')">
-            <div class="headerResults">
-            <strong>
-               <span class="hit-count">
-                  <xsl:value-of select="$sum"/>
-               </span>
-               <xsl:text> </xsl:text>
-               <xsl:value-of select="$occur"/>
-               <xsl:text> of </xsl:text>
-               <span class="hit-count">
-                  <xsl:value-of select="$query"/>
-               </span>
-            </strong>
-            <xsl:text> [</xsl:text>
-            <a>
-               <xsl:attribute name="href">
-                  <xsl:value-of select="$doc.path"/>;brand=<xsl:value-of select="$brand"/>
-               </xsl:attribute>
-               <xsl:text>Clear Hits</xsl:text>
-            </a>
-            <xsl:text>]</xsl:text>
-            <xsl:choose>
-               <xsl:when test="$docId"/>
-               <xsl:otherwise> &#160;[ <a href="{session:getData('queryURL')}"> Back to Search
-                     Results </a> ] </xsl:otherwise>
-            </xsl:choose>
-            </div>
-         </xsl:if>
-      </div>
-         <xsl:call-template name="tabs"/> 
+            <xsl:if test="($query != '0') and ($query != '')">
+               <div class="headerResults">
+                  <strong>
+                     <span class="hit-count">
+                        <xsl:value-of select="$sum"/>
+                     </span>
+                     <xsl:text> </xsl:text>
+                     <xsl:value-of select="$occur"/>
+                     <xsl:text> of </xsl:text>
+                     <span class="hit-count">
+                        <xsl:value-of select="$query"/>
+                     </span>
+                  </strong>
+                  <xsl:text> [</xsl:text>
+                  <a>
+                     <xsl:attribute name="href">
+                        <xsl:value-of select="$doc.path"/>;brand=<xsl:value-of select="$brand"/>
+                     </xsl:attribute>
+                     <xsl:text>Clear Hits</xsl:text>
+                  </a>
+                  <xsl:text>]</xsl:text>
+                  <xsl:choose>
+                     <xsl:when test="$docId"/>
+                     <xsl:otherwise> &#160;[ <a href="{session:getData('queryURL')}"> Back to Search
+                           Results </a> ] </xsl:otherwise>
+                  </xsl:choose>
+               </div>
+            </xsl:if>
+         </div>
+         <xsl:call-template name="tabs"/>
       </div>
    </xsl:template>
-   <xsl:template match="mods:titleproper/mods:num"><br/><xsl:value-of select="."/></xsl:template>
+   <xsl:template match="mods:titleproper/mods:num">
+      <br/>
+      <xsl:value-of select="."/>
+   </xsl:template>
    <!-- ====================================================================== -->
    <!-- Tabs Templates                                                          -->
    <!-- ====================================================================== -->
-   
+
    <xsl:template name="tabs">
-         <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/></xsl:variable>
-         <div class="tabs">
-            <div class="tab select">Item Description</div>
-         </div>
-      
+      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;brand=<xsl:value-of
+            select="$brand"/><xsl:value-of select="$search"/></xsl:variable>
+      <div class="tabs">
+         <div class="tab select">Item Description</div>
+      </div>
+
    </xsl:template>
 
    <!-- ====================================================================== -->
    <!-- TOC Templates                                                          -->
    <!-- ====================================================================== -->
-   
+
    <xsl:template name="toc">
       <xsl:call-template name="translate">
-         <xsl:with-param name="resultTree"> 
+         <xsl:with-param name="resultTree">
             <div id="tocWrapper">
                <div id="toc">
                   <div class="contents">
-                  <h4>Contents</h4>
-                  <div class="tocRow"><a href="#overview"><div class="tocItem">Overview</div></a></div>
-                     <div class="tocRow"><a href="#location"><div class="tocItem">Location</div></a></div>
-                     <div class="tocRow"><a href="#details"><div class="tocItem">Details</div></a></div>
+                     <h4>Contents</h4>
+                     <div class="tocRow">
+                        <a href="#overview">
+                           <div class="tocItem">Overview</div>
+                        </a>
+                     </div>
+                     <div class="tocRow">
+                        <a href="#location">
+                           <div class="tocItem">Location</div>
+                        </a>
+                     </div>
+                     <div class="tocRow">
+                        <a href="#details">
+                           <div class="tocItem">Details</div>
+                        </a>
+                     </div>
                   </div>
                   <div class="subjects">
                      <xsl:if test="mods:subject">
@@ -363,20 +378,21 @@
                               </xsl:for-each>
                               <xsl:for-each select="mods:name">
                                  <li>
-                                    <a href="{$xtfURL}/search?browse-all=yes;f1-subjectname={child::*}">
+                                    <a
+                                       href="{$xtfURL}/search?browse-all=yes;f1-subjectname={child::*}">
                                        <xsl:for-each select="child::*">
-                                          <xsl:apply-templates select="."/> 
+                                          <xsl:apply-templates select="."/>
                                        </xsl:for-each>
                                     </a>
                                  </li>
-                              </xsl:for-each> 
+                              </xsl:for-each>
                               <xsl:for-each select="mods:geographic">
                                  <li>
                                     <a href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}">
                                        <xsl:apply-templates select="."/>
                                     </a>
                                  </li>
-                              </xsl:for-each>                                             
+                              </xsl:for-each>
                            </xsl:for-each>
                         </ul>
                      </xsl:if>
@@ -386,7 +402,7 @@
          </xsl:with-param>
       </xsl:call-template>
    </xsl:template>
-   
+
    <xsl:template match="node()" mode="tocLink">
       <xsl:call-template name="make-toc-link">
          <xsl:with-param name="name" select="string(.)"/>
@@ -394,7 +410,7 @@
          <xsl:with-param name="nodes" select="parent::*"/>
       </xsl:call-template>
    </xsl:template>
-   
+
    <xsl:template name="make-toc-link">
       <xsl:param name="submenuID"/>
       <xsl:param name="name"/>
@@ -402,69 +418,71 @@
       <xsl:param name="nodes"/>
       <xsl:param name="indent" select="1"/>
       <xsl:variable name="hit.count" select="sum($nodes/@xtf:hitCount)"/>
-     <!-- 5/17/2012 DG:  a new variable for the new href.
+      <!-- 5/17/2012 DG:  a new variable for the new href.
       Just use chunk.id and doc name for now
         -->
       <xsl:variable name="documentname2">
- 					 <xsl:analyze-string select="$query.string" regex="(.*)ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
+         <xsl:analyze-string select="$query.string" regex="(.*)ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml"
+            flags="i">
 
-					 <!--   "/xtf/view\?docId=ead/([a-z0-9^/]+)/([a-z0-9^/]+).xml;query=;brand=default" -->
-					
-					    <xsl:matching-substring>
-					     <xsl:value-of select="regex-group(2)" />
-					    </xsl:matching-substring>
+            <!--   "/xtf/view\?docId=ead/([a-z0-9^/]+)/([a-z0-9^/]+).xml;query=;brand=default" -->
 
-					    <xsl:non-matching-substring>
-					    	<xsl:text>no_match_docname</xsl:text>
-					    </xsl:non-matching-substring>
-					  </xsl:analyze-string>         	     	
+            <xsl:matching-substring>
+               <xsl:value-of select="regex-group(2)"/>
+            </xsl:matching-substring>
+
+            <xsl:non-matching-substring>
+               <xsl:text>no_match_docname</xsl:text>
+            </xsl:non-matching-substring>
+         </xsl:analyze-string>
       </xsl:variable>
-      
+
       <xsl:variable name="basicchoice2">
          <xsl:choose>
-					<xsl:when test="$id='headerlink'">
-						<xsl:text>overview</xsl:text>
-					</xsl:when>
-					<xsl:when test="$id='restrictlink'">
-						<xsl:text>access</xsl:text>
-					</xsl:when>
-					<xsl:when test="$id='arrangementlink'">
-						<xsl:text>arrangement</xsl:text>
-					</xsl:when>
-					<xsl:when test="$id='bioghist'">
-						<xsl:text>biohist</xsl:text>
-					</xsl:when>
-					<xsl:when test="$id='adminlink'">
-						<xsl:text>admin</xsl:text>
-					</xsl:when>
-					<xsl:when test="$id='physdesclink'">
-						<xsl:text>physdesc</xsl:text>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:text>nomatch_for_id</xsl:text>
-					</xsl:otherwise> 
+            <xsl:when test="$id='headerlink'">
+               <xsl:text>overview</xsl:text>
+            </xsl:when>
+            <xsl:when test="$id='restrictlink'">
+               <xsl:text>access</xsl:text>
+            </xsl:when>
+            <xsl:when test="$id='arrangementlink'">
+               <xsl:text>arrangement</xsl:text>
+            </xsl:when>
+            <xsl:when test="$id='bioghist'">
+               <xsl:text>biohist</xsl:text>
+            </xsl:when>
+            <xsl:when test="$id='adminlink'">
+               <xsl:text>admin</xsl:text>
+            </xsl:when>
+            <xsl:when test="$id='physdesclink'">
+               <xsl:text>physdesc</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:text>nomatch_for_id</xsl:text>
+            </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
-      <xsl:variable name="xtfURL2"> <!-- remove xtf/ from end, if there.  -->
- 					 <xsl:analyze-string select="$xtfURL" regex="(.*)xtf/">
-					    <xsl:matching-substring>
-					      <xsl:value-of select="regex-group(1)" />
-					    </xsl:matching-substring>
-					    <xsl:non-matching-substring>
-					      <xsl:value-of select="$xtfURL"/>
-					    </xsl:non-matching-substring>
-					  </xsl:analyze-string>
+      <xsl:variable name="xtfURL2">
+         <!-- remove xtf/ from end, if there.  -->
+         <xsl:analyze-string select="$xtfURL" regex="(.*)xtf/">
+            <xsl:matching-substring>
+               <xsl:value-of select="regex-group(1)"/>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+               <xsl:value-of select="$xtfURL"/>
+            </xsl:non-matching-substring>
+         </xsl:analyze-string>
       </xsl:variable>
       <xsl:variable name="href2">
          <xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2)"/>
       </xsl:variable>
-   <!--  end new  DG: Just created $href2 -->   
+      <!--  end new  DG: Just created $href2 -->
 
-      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of 
-         select="$id"/>;brand=<xsl:value-of select="$brand"/>&amp;parentID=<xsl:value-of select="$submenuID"/><xsl:value-of 
-            select="$search"/>&amp;doc.view=<xsl:value-of 
-               select="$doc.view"/></xsl:variable>
-      
+      <xsl:variable name="content.href"><xsl:value-of select="$query.string"
+            />;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"
+            />&amp;parentID=<xsl:value-of select="$submenuID"/><xsl:value-of select="$search"
+            />&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>
+
       <xsl:if test="@id = $chunk.id">
          <a name="X"/>
       </xsl:if>
@@ -553,9 +571,9 @@
             </span>
          </div>
       </div>
-      
+
    </xsl:template>
-   
+
    <!-- ====================================================================== -->
    <!-- Print Template                                                         -->
    <!-- ====================================================================== -->

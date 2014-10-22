@@ -23,7 +23,7 @@
         <xsl:param name="chunk.id"/>
         <xsl:param name="path"/>
         <xsl:param name="docPath"/>
-        <xsl:if test="meta/level='file' or meta/level='item'">
+        <xsl:if test="meta/level='file' or meta/level='item' or meta/type='mods'">
             <xsl:variable name="title">
                 <xsl:value-of select="meta/title"/>
             </xsl:variable>
@@ -165,19 +165,19 @@
     <xsl:template name="myListMods">
         <xsl:param name="url"/>
         <xsl:variable name="identifier">
-            <xsl:value-of select="xtf:meta/identifier"/>
+            <xsl:value-of select="/mods:mods/mods:identifier"/>
         </xsl:variable>
         <xsl:variable name="title">
-            <xsl:value-of select="xtf:meta/title"/>
+            <xsl:value-of select="mods:titleInfo/mods:title"/>
         </xsl:variable>
         <xsl:variable name="creator">
-            <xsl:value-of select="xtf:meta/creator"/>
+            <xsl:value-of select="mods:name[mods:role/mods:roleTerm != 'Publisher']"/>
         </xsl:variable>
         <xsl:variable name="date">
-            <xsl:value-of select="xtf:meta/date"/>
+            <xsl:value-of select="mods:originInfo/mods:dateIssued"/>
         </xsl:variable>
         <xsl:variable name="callno">
-            <xsl:value-of select="xtf:meta/callNo"/>
+            <xsl:value-of select="/mods:mods/mods:classification"/>
         </xsl:variable>
         <xsl:variable name="barcode"></xsl:variable>
 

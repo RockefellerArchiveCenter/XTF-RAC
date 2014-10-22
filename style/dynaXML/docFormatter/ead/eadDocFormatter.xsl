@@ -185,7 +185,6 @@
             <head>
                <link rel="alternate" type="application/xml" href="{$xtfURL}data/{$docId}" />
                <xsl:copy-of select="$brand.links"/>
-               <script src="{$xtfURL}script/bookbag.js" type="text/javascript"/> 
                <title>
                   <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
                   <xsl:text>  </xsl:text>

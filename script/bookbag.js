@@ -34,17 +34,18 @@ $(document).ready(function () {
     //update list on bookbag page and in dialogs
     function updateDisplay() {
         var myList = getList();
+        console.log(myList);
         if (myList) {
             $('.myListContents').empty();
             if (myList.length > 0) {
             $('.myListContents').append(
                 '<div class="row header-row">' + 
-                    '<div class="checkbox">Include</div>' + 
+                    '<div class="checkbox">&nbsp;</div>' + 
                     '<div class="title">Title</div>' + 
                     '<div class="date">Date</div>' + 
                     '<div class="collectionTitle">Collection</div>' +
-                    '<div class="containers"><p>Containers</p></div>' +
-                    '<div class="dateAdded"><p>Date Added</p></div>' +
+                    '<div class="containers">Containers</div>' +
+                    '<div class="dateAdded">Date Added</div>' +
                 '</div>');
             }
         for(var i =0; i <= myList.length -1; i++) {
@@ -80,7 +81,7 @@ $(document).ready(function () {
                     return container1
                     }
                 } else {
-                    return undefined;
+                    return '&nbsp;';
                 }
                 e.preventDefault();
             };
@@ -91,10 +92,10 @@ $(document).ready(function () {
             var creator = sanitize(item.creator);
             var dateAdded = dateConvert(item.dateAdded);
             var identifier = sanitize(item.identifier);
-            var url = sanitize(item.url);
+            var url = sanitize(item.URL);
             var parents = sanitize(item.parents);
-            var container1 = sanitize(item.container1);
-            var container2 = sanitize(item.container2);
+            var container1 = item.container1;
+            var container2 = item.container2;
             var containers = containerJoin(container1, container2);
             var callNumber = sanitize(item.callNumber);
             var accessRestrict = sanitize(item.accessRestrict);
@@ -102,7 +103,7 @@ $(document).ready(function () {
             $('.myListContents').append(
                 '<div class="row">' + 
                     '<div class="checkbox"><input type="checkbox" checked="checked" name="include"/></div>' + 
-                    '<div class="title"><p><a href=' + url + '>' + title + '</a></p></div>' + 
+                    '<div class="title"><p><a href="' + url + '">' + title + '</a></p></div>' + 
                     '<div class="date"><p>' + date + '</p></div>' + 
                     //'<div class="parents">' + item.parents + '</div>' +
                     '<div class="collectionTitle"><p>' + collectionTitle + '</p>' +
@@ -128,7 +129,7 @@ $(document).ready(function () {
                 '</div>');
 
             // change text for components already in bookbag
-            $('.bookbag[data-identifier*=' + item.identifier + ']').replaceWith('<span>Added</span>');
+            $('.list-add[data-identifier*=' + item.identifier + ']').replaceWith('<span>Added</span>');
 
         };
 
@@ -246,5 +247,7 @@ $(document).ready(function () {
 
     // update display
     updateDisplay();
+
+    return false;
 
 });
