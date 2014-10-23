@@ -201,6 +201,7 @@
             <xsl:copy-of select="$brand.links"/>
             <script src="script/rac/facets.js" type="text/javascript"/>
             <script src="script/rac/jquery.sparkline.min.js" type="text/javascript"/>
+            <xsl:if test="($min | $max) != ''">
             <script>
                $(function() {
                   $( "#slider-range" ).slider({
@@ -219,6 +220,7 @@
                $( "#range" ).val($( "#slider-range" ).slider( "values", 0 ) + '-' + $( "#slider-range" ).slider( "values", 1 ));
                });
             </script>
+            </xsl:if>
             <script type="text/javascript">
                $(function() {
                     var myvalues = [<xsl:for-each select="facet[@field='facet-date']/group">

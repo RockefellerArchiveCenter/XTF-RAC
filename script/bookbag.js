@@ -34,13 +34,12 @@ $(document).ready(function () {
     //update list on bookbag page and in dialogs
     function updateDisplay() {
         var myList = getList();
-        console.log(myList);
         if (myList) {
             $('.myListContents').empty();
             if (myList.length > 0) {
             $('.myListContents').append(
                 '<div class="row header-row">' + 
-                    '<div class="checkbox">&nbsp;</div>' + 
+                    '<div class="requestInputs">&nbsp;</div>' + 
                     '<div class="title">Title</div>' + 
                     '<div class="date">Date</div>' + 
                     '<div class="collectionTitle">Collection</div>' +
@@ -102,7 +101,19 @@ $(document).ready(function () {
 
             $('.myListContents').append(
                 '<div class="row">' + 
-                    '<div class="checkbox"><input type="checkbox" checked="checked" name="include"/></div>' + 
+                    '<div class="requestInputs">' +
+                        '<input type="checkbox" checked="checked" name="Request" value="' + identifier + '"/>' +
+                        '<input type="hidden" name="ItemInfo1_' + identifier + '" value="' + title + '"/>' +
+                        '<input type="hidden" name="ItemDate_' + identifier + '" value="' + date + '"/>' +
+                        '<input type="hidden" name="ItemTitle_' + identifier + '" value="' + collectionTitle + '"/>' +
+                        '<input type="hidden" name="ItemAuthor_' + identifier + '" value="' + creator + '"/>' +
+                        '<input type="hidden" name="ItemSubtitle_' + identifier + '" value="' + parents + '"/>' +
+                        '<input type="hidden" name="ItemVolume_' + identifier + '" value="' + container1 + '"/>' +
+                        '<input type="hidden" name="ItemIssue_' + identifier + '" value="' + container2 + '"/>' +
+                        '<input type="hidden" name="ItemInfo2_' + identifier + '" value="' + accessRestrict + '"/>' +
+                        '<input type="hidden" name="CallNumber_' + identifier + '" value="' + callNumber + '"/>' +
+                        '<input type="hidden" name="ItemInfo3_' + identifier + '" value="' + url + '"/>' +
+                    '</div>' + 
                     '<div class="title"><p><a href="' + url + '">' + title + '</a></p></div>' + 
                     '<div class="date"><p>' + date + '</p></div>' + 
                     //'<div class="parents">' + item.parents + '</div>' +
@@ -113,18 +124,6 @@ $(document).ready(function () {
                     //'<div class="restrictions">' + item.accessRestrict + '</div>' +
                     //'<div class="callNumber">' + item.callNumber + '</div>' +
                     '<div class="dateAdded"><p>' + dateAdded + '</p></div>' + 
-                    '<div class="inputs">' +
-                        '<input type="hidden" name="ItemInfo1" value="' + title + '"/>' +
-                        '<input type="hidden" name="ItemDate" value="' + date + '"/>' +
-                        '<input type="hidden" name="ItemTitle" value="' + collectionTitle + '"/>' +
-                        '<input type="hidden" name="ItemAuthor" value="' + creator + '"/>' +
-                        '<input type="hidden" name="ItemSubtitle" value="' + parents + '"/>' +
-                        '<input type="hidden" name="ItemVolume" value="' + container1 + '"/>' +
-                        '<input type="hidden" name="ItemIssue" value="' + container2 + '"/>' +
-                        '<input type="hidden" name="ItemInfo2" value="' + accessRestrict + '"/>' +
-                        '<input type="hidden" name="CallNumber" value="' + callNumber + '"/>' +
-                        '<input type="hidden" name="ItemInfo3" value="' + url + '"/>' +
-                    '</div>' +
                     '<button class="list-delete btn btn-danger" href="#" data-identifier="'+ identifier + '">Delete</button>' +
                 '</div>');
 

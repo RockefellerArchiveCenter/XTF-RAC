@@ -2,33 +2,15 @@ $(document).ready(function() {
 var windowWidth = $(window).width();
 var windowHeight = $(window).height();
 
-function sendRequest(e) {
-    var form = $('.myList .inputs')
-        // Stop the browser from submitting the form.
-        e.preventDefault();
+function sendRequest() {
+        $('#requestForm').submit();
+        console.log($('#requestForm').serialize());
+        // Close the dialog
+        // open the confirm dialog
+    };
 
-        // Serialize the form data.
-        var formData = $(form).serialize();
-
-        // Submit the form using AJAX.
-        $.ajax({
-            type: 'POST',
-            url: 'https://raccess.rockarch.org/aeon.dll',
-            data: formData
-        })
-        .done(function(response) {
-            // Show success message
-
-            // Clear the form.
-            $('#name').val('');
-            $('#email').val('');
-            $('#message').val('');
-        })
-        .fail(function(data) {
-            // Show fail message
-
-        });
-
+function sendDuplicationRequest() {
+        $('#duplicationForm').submit();
     };
 
 function sendEmail(e) {
@@ -373,7 +355,10 @@ $(function () {
         modal: true,
         resizable: true,
         buttons: [ 
-            { text: "Print", click: function(){window.print(); return false;}},
+            { text: "Print", click: function() {
+                window.print(); 
+                return false;}
+            },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/1.2,
@@ -398,7 +383,10 @@ $(function () {
         modal: true,
         resizable: true,
         buttons: [ 
-            { text: "Request Materials", click: function() {console.log('request materials')} },
+            { text: "Request Materials", click: function() {
+                console.log('request materials'); 
+                sendRequest();} 
+            },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/1.2,
@@ -423,7 +411,10 @@ $(function () {
         modal: true,
         resizable: true,
         buttons: [ 
-            { text: "Request Copies", click: function() {console.log('request copies')} },
+            { text: "Request Copies", click: function() {
+                console.log('request copies'); 
+                sendDuplicationRequest();} 
+            },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/1.2,

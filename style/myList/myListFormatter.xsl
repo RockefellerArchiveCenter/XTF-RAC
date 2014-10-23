@@ -80,11 +80,12 @@
                 </xsl:for-each>
             </xsl:variable>
             <xsl:variable name="barcode"/>
-            <a href="#" class="list-add" data-identifier="{$identifier}" data-ItemNumber="{$barcode}"
-                data-ItemTitle="{$collectionTitle}" data-ItemSubtitle="{$parents}"
-                data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNumber="{$callNo}"
-                data-ItemVolume="{$container1}" data-ItemIssue="{$container2}"
-                data-ItemInfo1="{$title}" data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}">
+            <a href="#" class="list-add" data-identifier="{$identifier}"
+                data-ItemNumber="{$barcode}" data-ItemTitle="{$collectionTitle}"
+                data-ItemSubtitle="{$parents}" data-ItemAuthor="{$creator}" data-ItemDate="{$date}"
+                data-CallNumber="{$callNo}" data-ItemVolume="{$container1}"
+                data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
+                data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}">
                 <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
             </a>
         </xsl:if>
@@ -179,16 +180,17 @@
         <xsl:variable name="callno">
             <xsl:value-of select="/mods:mods/mods:classification"/>
         </xsl:variable>
-        <xsl:variable name="barcode"></xsl:variable>
+        <xsl:variable name="barcode"/>
 
         <xsl:choose>
             <xsl:when test="session:getData('bag')/child::*/child::*[@id=$identifier]">
                 <span>Added</span>
             </xsl:when>
             <xsl:otherwise>
-                <a href="#" class="list-add" data-identifier="{$identifier}" data-ItemNumber="{$barcode}"
-                    data-ItemTitle="{$title}" data-ItemAuthor="{$creator}" data-ItemDate="{$date}"
-                    data-CallNumber="{$callno}" data-ItemInfo3="{$url}">
+                <a href="#" class="list-add" data-identifier="{$identifier}"
+                    data-ItemNumber="{$barcode}" data-ItemTitle="{$title}"
+                    data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNumber="{$callno}"
+                    data-ItemInfo3="{$url}">
                     <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
                 </a>
             </xsl:otherwise>
@@ -294,18 +296,35 @@
     <!-- Submits an Aeon materials request for items in My List -->
     <xsl:template name="myListRequest">
         <div class="overlay" id="myListRequest">
-            <div class="myListContents">
-                <xsl:call-template name="emptyList"/>
-            </div>
+            <form id="requestForm" method="post" target="new" action="https://raccess.rockarch.org/aeon.dll">
+                <input name="AeonForm" value="EADRequest" type="hidden"/>
+                <input name="RequestType" value="Loan" type="hidden"/>
+                <input name="DocumentType" value="Default" type="hidden"/>
+                <div class="myListContents">
+                    <xsl:call-template name="emptyList"/>
+                </div>
+                <div class="scheduledDate">
+                    <label for="scheduledDate">Scheduled Date</label>
+                    <input name="ScheduledDate" type="text" value="12/20/2015"/>
+                    <input type="hidden" name="UserReview" value="No"/>
+                </div>
+                <div class="notes">
+                    <textarea rows="4" name="Notes"></textarea>
+                </div>
+            </form>
         </div>
     </xsl:template>
 
     <!-- Submits an Aeon duplication request for items in My List -->
     <xsl:template name="myListCopies">
         <div class="overlay" id="myListCopies">
-            <div class="myListContents">
-                <xsl:call-template name="emptyList"/>
-            </div>
+            <form id="duplicationForm" method="post" target="new" action="https://raccess.rockarch.org/aeon.dll">
+                <input name="AeonForm" value="EADRequest" type="hidden"/>
+                <input name="RequestType" value="Copy" type="hidden"/>
+                <div class="myListContents">
+                    <xsl:call-template name="emptyList"/>
+                </div>
+            </form>
         </div>
     </xsl:template>
 
