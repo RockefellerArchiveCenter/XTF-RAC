@@ -259,16 +259,17 @@
             <div class="myListContents">
                 <xsl:call-template name="emptyList"/>
             </div>
-            <!--<xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>-->
-            <form action="{$xtfURL}{$crossqueryPath}" method="get" class="form" role="form">
+            <p class="help-block text-danger contentError">There's nothing to email!</p>
+            <form action="{$xtfURL}/scripts/rac/email.php" method="POST" class="form" role="form">
                 <div class="left">
                     <div class="form-group">
                         <label class="control-label" for="email">Address</label>
                         <input class="form-control" type="text" name="email"/>
+                        <p class="help-block text-danger" id="emailError">Please enter a valid email.</p>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="subject">Subject</label>
-                        <input class="form-control" type="text" name="subject"/>
+                        <input class="form-control" type="text" name="subject" placeholder="My List from dimes.rockarch.org"/>
                     </div>
                 </div>
                 <div class="right">
@@ -277,9 +278,13 @@
                         <textarea class="form-control" type="textarea" name="message" rows="4"/>
                     </div>
                 </div>
-                <!--<input type="hidden" name="smode" value="emailFolder"/>
-                <input type="hidden" name="docsPerPage" value="{$bagCount}"/>-->
             </form>
+        </div>
+
+        <div class="overlay" id="myListEmailConfirm">
+            <div class="confirm">
+                <h2>Your request has been emailed!</h2>
+            </div>
         </div>
     </xsl:template>
 
@@ -290,41 +295,62 @@
             <div class="myListContents">
                 <xsl:call-template name="emptyList"/>
             </div>
+            <p class="help-block text-danger contentError">There's nothing to print!</p>
         </div>
     </xsl:template>
 
     <!-- Submits an Aeon materials request for items in My List -->
     <xsl:template name="myListRequest">
         <div class="overlay" id="myListRequest">
-            <form id="requestForm" method="post" target="new" action="https://raccess.rockarch.org/aeon.dll">
+            <form id="requestForm" method="post" target="new"
+                action="https://raccess.rockarch.org/aeon.dll">
                 <input name="AeonForm" value="EADRequest" type="hidden"/>
                 <input name="RequestType" value="Loan" type="hidden"/>
                 <input name="DocumentType" value="Default" type="hidden"/>
                 <div class="myListContents">
                     <xsl:call-template name="emptyList"/>
                 </div>
-                <div class="scheduledDate">
-                    <label for="scheduledDate">Scheduled Date</label>
-                    <input name="ScheduledDate" type="text" value="12/20/2015"/>
-                    <input type="hidden" name="UserReview" value="No"/>
+                <div class="left scheduledDate">
+                    <div class="form-group">
+                        <label class="control-label" for="scheduledDate">Scheduled Date</label>
+                        <input class="form-control" name="ScheduledDate" type="text" value="12/20/2015"/>
+                        <p class="help-block" id="dateError">Please enter the scheduled date of your research visit.</p>
+                        <input type="hidden" name="UserReview" value="No"/>
+                    </div>
                 </div>
-                <div class="notes">
-                    <textarea rows="4" name="Notes"></textarea>
+                <div class="right notes">
+                    <div class="form-group">
+                        <label class="control-label" for="Notes">Notes</label>
+                        <textarea class="form-control" rows="4" name="Notes"/>
+                    </div>
                 </div>
             </form>
+        </div>
+
+        <div class="overlay" id="myListRequestConfirm">
+            <div class="confirm">
+                <h2>Your request has been submitted!</h2>
+            </div>
         </div>
     </xsl:template>
 
     <!-- Submits an Aeon duplication request for items in My List -->
     <xsl:template name="myListCopies">
         <div class="overlay" id="myListCopies">
-            <form id="duplicationForm" method="post" target="new" action="https://raccess.rockarch.org/aeon.dll">
+            <form id="duplicationForm" method="post" target="new"
+                action="https://raccess.rockarch.org/aeon.dll">
                 <input name="AeonForm" value="EADRequest" type="hidden"/>
                 <input name="RequestType" value="Copy" type="hidden"/>
                 <div class="myListContents">
                     <xsl:call-template name="emptyList"/>
                 </div>
             </form>
+        </div>
+
+        <div class="overlay" id="myListCopiesConfirm">
+            <div class="confirm">
+                <h2>Your request has been submitted!</h2>
+            </div>
         </div>
     </xsl:template>
 

@@ -124,7 +124,7 @@ $(document).ready(function () {
                     //'<div class="restrictions">' + item.accessRestrict + '</div>' +
                     //'<div class="callNumber">' + item.callNumber + '</div>' +
                     '<div class="dateAdded"><p>' + dateAdded + '</p></div>' + 
-                    '<button class="list-delete btn btn-danger" href="#" data-identifier="'+ identifier + '">Delete</button>' +
+                    '<button class="list-delete btn" href="#" data-identifier="'+ identifier + '">Delete</button>' +
                 '</div>');
 
             // change text for components already in bookbag

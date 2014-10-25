@@ -29,6 +29,7 @@ div.closeWindow a{color: #c45414;}
 .bookbag a {color:#c45414;text-decoration:none;float:left;margin-left:2em;}
 input[type="text"], select {vertical-align:0}
 label {display:inline-block; margin-right:.2em;}
+.text-danger {color:#c45414;}
 
 /* Formats header */
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
@@ -483,6 +484,7 @@ iframe {
 
 .myList .control-label {
 	font-weight: bold;
+	width:90%;
 }
 
 .myList .form-control {
@@ -493,13 +495,29 @@ iframe {
     float:right;
 }
 
-.myList .buttons .btn {
+.myList .btn, .ui-dialog .ui-dialog-buttonpane button {
   margin: 0 4px;
+  border: 1px outset #dddddd; 
+  background-color:#dddddd;
+  -webkit-appearance:none;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 }
+
+.myList .btn:hover, .ui-dialog .ui-dialog-buttonpane button:hover {box-shadow:0px 0px 3px #c45414;color: #c45414;cursor:pointer;}
+.myList .btn:active, .ui-dialog .ui-dialog-buttonpane button:active {border: 1px inset #dddddd;color: #c45414;}
 
 .ui-dialog-buttonpane {
 	border: none;
 	margin-top: 0 !important;
+}
+
+.myList .confirm h2 {
+	text-align: center;
+	margin: .5em 0;
+}
+
+.contentError {
+	text-align:center;
 }
 
 /* --------------------------------------------- */
