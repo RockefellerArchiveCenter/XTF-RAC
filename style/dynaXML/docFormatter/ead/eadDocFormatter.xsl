@@ -1110,19 +1110,6 @@
    </xsl:template>
    
    <xsl:template name="make-toc-link">
-   <!-- DG:  5/17/12
-
-         <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}&amp;doc.view=collection">Collection Description</a>
-          <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-         
-         example:  http://192.168.50.18/xtf/view?docId=ead/FA068/FA068.xml;chunk.id=headerlink;brand=default&doc.view=collection
-         
-         $query.string example - docId=ead/FA068/FA068.xml
-         $id = chunk.id value
-         content.href  = calculated later to be everything after "?"
-         document = FA068 eg.
-         $xtfURL + $dynaxmlPath =  http://192.168.50.18/xtf/view
-            -->
       <xsl:param name="submenuID"/>
       <xsl:param name="name"/>
       <xsl:param name="id"/>
