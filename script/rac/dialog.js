@@ -7,7 +7,7 @@ $('#myListRequest #dateError').hide();
 $('.contentError').hide();
 
 function content() {
-    if('.myListContents .empty') {
+    if($('.myListContents .empty').length) {
         return false;
     } else {
         return true;
@@ -274,18 +274,29 @@ $(function () {
         });
     });
 $(function () {
-    function sendEmail() {
-        // Make sure the email address is valid
-        function validate(){
-            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            var email= $('#myListEmail input[name="email"]').val();
-            if(regex.test(email)){
-                return true;
-            } else {
-                return false;
-            };
+    // Validate the form
+    function validate(){
+        console.log('validating')
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var email= $('#myListEmail input[name="email"]').val();
+        if(!regex.test(email)){
+            console.log('email error')
+            $('#myListEmail input[name="email"]').addClass('error');
+            $('#myListEmail #emailError').show();
+            return false;
         }
+        else if(!content()) {
+            console.log('content error')
+            $('#myListEmail .contentError').show();
+            return false;
+        } else {
+            return true;
+        };
+    }
 
+    // Sends the email
+    function sendEmail() {
+        // Adds text for blank subject lines
         function checkSubject() {
             if($('#myListEmail input[name="subject"]').val()) {
                 return $('#myListEmail input[name="subject"]').val();
@@ -294,69 +305,54 @@ $(function () {
             }
         }
 
+        // Add items in My List to the email
         function getItems(){
             var items = '';
-            $('#myListEmail .row .requestInputs').each(function(){
-                if($(this).children('input[type="checkbox"]').is(':checked')) {
-                    var item = $(this).children('input');
-                    items = item + items;
+                $('#myListEmail .row').each(function(){
+                if($(this).find('.requestInputs input[name="Request"]').is(":checked")) {
+                    var item = 
+                    '&#10;' + $(this).children(".collectionTitle").children('p').text() +
+                    '&#10;' + $(this).find(".creator").text() +
+                    '&#10;' + $(this).children(".title").text() +
+                    '&#10;' + $(this).children(".containers").text() +
+                    '&#10;' + $(this).children(".date").text() 
+                    
+                    items = items + item;
+
                     }
                 });
             return items;
-
         }
 
-        if(validate()) {
-            if(content()) {
-
         var address = $('#myListEmail input[name="email"]').val();
-        console.log(address);
         var subject = checkSubject();
-        console.log(subject);
         var text = $('#myListEmail textarea[name="message"]').val();
-        console.log(text);
         var items = getItems();
-        console.log(items);
-        var message = text + items;
-        console.log(message);
+        var message = text + '&#10;' + items;
 
             // Submit the form using AJAX.
             $.ajax({
-                type: 'POST',
-                url: 'address',
+                type: $('#myListMail').attr('method'),
+                url: $('#myListMail').attr('action'),
                 email: address,
                 subject: subject,
                 data: message
             })
             .done(function(response) {
                 // Show success message
-                console.log('Your messages have been sent to' + address);
+                console.log('Your message has been sent to' + address);
 
                 // Clear the form.
                 $('input[name="email"]').val('');
                 $('input[name="subject"]').val('');
                 $('input[name="message"]').val('');
+                return true;
             })
             .fail(function(data) {
                 // Show fail message
                 console.log('Message failed to send')
-
-            });
-
-            return true;
-
-        } else {
-            $('#myListEmail .contentError').show();
-            return false;
-        }
-
-            } else {
-                $('#myListEmail input[name="email"]').addClass('error');
-                $('#myListEmail #emailError').show();
                 return false;
-            };
-
-            return false;
+            });
         };
 
     var dialogMyListEmail = $('#myListEmail').dialog({
@@ -370,14 +366,22 @@ $(function () {
         resizable: true,
         buttons: [ 
             { text: "Send Email", click: function() {
-                console.log('send email');
-                if(sendEmail()) {
-                    $(this).dialog("close");
-                    $('#myListEmail input[name="email"]').removeClass('error');
-                    $('#myListEmail #emailError').hide();
-                    dialogMyListEmailConfirm.dialog("open");
+                if (validate()) {
+                    if(sendEmail()) {
+                        console.log('sending email')
+                        $(this).dialog("close");
+                        $('#myListEmail input[name="email"]').removeClass('error');
+                        $('#myListEmail #emailError').hide();
+                        dialogMyListEmailConfirm.dialog("open");
+                    } else {
+                        $(this).dialog("close");
+                        $('#myListEmail input[name="email"]').removeClass('error');
+                        $('#myListEmail #emailError').hide();
+                        dialogMyListEmailError.dialog("open");
+                    }
                 }
-            } },
+            } 
+            },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/1.2,
@@ -404,6 +408,24 @@ $(function () {
         }
     });    
 
+    var dialogMyListEmailError = $('#myListEmailError').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            $(".ui-dialog-content").addClass("myList");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        buttons: [ 
+            { text: "Close", click: function() { $( this ).dialog( "close" ); } }
+            ],
+        width: windowWidth/2,
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    }); 
+
     $(".myListEmail").on("click", function (e) {
         e.preventDefault();
         dialogMyListEmail.dialog("option", "title", "Email My List").dialog("open");
@@ -429,8 +451,7 @@ $(function () {
                     $('#myListPrint .contentError').show();
                     return false;
                 }
-                    return false;
-                } 
+            }
             },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
@@ -450,8 +471,6 @@ $(function () {
         if($('#myListRequest input[name="ScheduledDate"]').val()) {
             return true;
         } else {
-            $('#myListEmail input[name="ScheduledDate"]').addClass('error');
-            $('#myListEmail #dateError').show();
             return false;
         }
     }
@@ -467,13 +486,22 @@ $(function () {
         resizable: true,
         buttons: [ 
             { text: "Request Materials", click: function() {
-                console.log('request materials'); 
-                validate();
-                $('#requestForm').submit();
-                $(this).dialog("close")
-                $('#myListEmail input[name="ScheduledDate"]').removeClass('error');
-                $('#myListEmail #dateError').hide();
-                dialogMyListRequestConfirm.dialog("open");
+                console.log('request materials');
+                if(content()) { 
+                    if(validate()) {
+                        $('#requestForm').submit();
+                        $(this).dialog("close")
+                        $('#myListEmail input[name="ScheduledDate"]').removeClass('error');
+                        $('#myListEmail #dateError').hide();
+                        dialogMyListRequestConfirm.dialog("open");
+                    } else {
+                        $('#myListEmail input[name="ScheduledDate"]').addClass('error');
+                        $('#myListEmail #dateError').show();
+                        return false;
+                    }
+                } else {
+                    $('#myListRequest .contentError').show();
+                }
             } 
             },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
@@ -507,7 +535,7 @@ $(function () {
         dialogMyListRequest.dialog("option", "title", "Request in Reading Room").dialog("open");
         });
     });
-    $(function () {
+$(function () {
     var dialogMyListCopies = $('#myListCopies').dialog({
         create: function(event, ui) {
             var widget = $(this).dialog("widget");
@@ -520,9 +548,15 @@ $(function () {
         buttons: [ 
             { text: "Request Copies", click: function() {
                 console.log('request copies'); 
-                $('#duplicationForm').submit();
-                $(this).dialog("close");
-                dialogMyListCopiesConfirm.dialog("open");}
+                if(content()) {
+                    $('#duplicationForm').submit();
+                    $(this).dialog("close");
+                    dialogMyListCopiesConfirm.dialog("open");
+                } else {
+                    $('#myListCopies .contentError').show();
+                    return false;
+                }
+            }
             },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],

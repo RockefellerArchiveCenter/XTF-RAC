@@ -260,7 +260,7 @@
                 <xsl:call-template name="emptyList"/>
             </div>
             <p class="help-block text-danger contentError">There's nothing to email!</p>
-            <form action="{$xtfURL}/scripts/rac/email.php" method="POST" class="form" role="form">
+            <form id="myListMail" action="{$xtfURL}script/rac/myListMail.php" method="POST" class="form" role="form">
                 <div class="left">
                     <div class="form-group">
                         <label class="control-label" for="email">Address</label>
@@ -284,6 +284,13 @@
         <div class="overlay" id="myListEmailConfirm">
             <div class="confirm">
                 <h2>Your request has been emailed!</h2>
+            </div>
+        </div>
+        
+        <div class="overlay" id="myListEmailError">
+            <div class="confirm">
+                <h2>We're sorry, but there was a problem sending your email.</h2>
+                <p>Please try again, or contact us at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a>.</p>
             </div>
         </div>
     </xsl:template>
@@ -508,7 +515,7 @@
             <xsl:choose>
                 <xsl:when test="meta/type='mods'">
                     <pre>
-                  <xsl:text>&#xA;</xsl:text>Title: <xsl:value-of select="normalize-space(meta/title)"/>
+                      <xsl:text>&#xA;</xsl:text>Title: <xsl:value-of select="normalize-space(meta/title)"/>
                   <xsl:text>&#xA;</xsl:text>Creator: <xsl:value-of select="meta/creator"/>
                   <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
                   <xsl:if test="meta/callNo"><xsl:text>&#xA;</xsl:text>Call Number:  <xsl:value-of select="meta/callNo"/></xsl:if>
