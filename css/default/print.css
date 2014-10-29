@@ -1,6 +1,8 @@
 /* Print CSS */
 
-.ui-widget-overlay, .ui-dialog-buttonset, .bbar_custom, .main, .fixedFooter, .navbar, .comment, #myListNav, .resultsHeader, .results, #header img, .ui-dialog-titlebar, .myList .buttons, .searchPage, .footer, .myListContents .row button, .myListContents .row .checkbox {display: none;}
+.ui-widget-overlay, .ui-dialog-buttonset, .bbar_custom, .main, .fixedFooter, .navbar, .comment, #myListNav, .resultsHeader, .results, #header img, .ui-dialog-titlebar, .myList .buttons, .searchPage, .footer, .myListContents .row button, .myListContents .row .requestInputs {display: none;}
+
+html {font-size: .7em;}
 
 #header {width: 100%;}
 #header h1, #header .tagline {margin-left:0;}
@@ -9,6 +11,6 @@
 #myListPrint .date {width:8%;}
 #myListPrint .collectionTitle {width:25%;}
 #myListPrint .containers {width:14%;}
-#myListPrint .dateAdded {width:15%;}
+#myListPrint .dateAdded {width:14%;}
 
 .ui-dialog {width:100% !important; left: 0 !important;border:0 !important; border-radius: 0 !important;top:6.5em !important;}
