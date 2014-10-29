@@ -204,7 +204,7 @@
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                     > My List (<span class="listCount"><xsl:value-of
-                            select="count($bag/bag/savedDoc)"/></span>)<span class="caret"/>
+                            select="count($bag/bag/savedDoc)"/></span>)&#160;<span class="caret"/>
                 </button>
                 <ul class="dropdown-menu pull-right" role="menu">
                     <li>
@@ -224,7 +224,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="http://raccess.rockarch.org/aeon.dll" class="btn btn-default">Login</a>
+            <a href="http://raccess.rockarch.org/aeon.dll" class="btn btn-default" target="new">Login</a>
         </div>
     </xsl:template>
 
@@ -263,7 +263,7 @@
             <form id="myListMail" action="{$xtfURL}script/rac/myListMail.php" method="POST" class="form" role="form">
                 <div class="left">
                     <div class="form-group">
-                        <label class="control-label" for="email">Address</label>
+                        <label class="control-label required" for="email">Email Address</label>
                         <input class="form-control" type="text" name="email"/>
                         <p class="help-block text-danger" id="emailError">Please enter a valid email.</p>
                     </div>
@@ -320,7 +320,7 @@
                 <div class="left scheduledDate">
                     <div class="form-group">
                         <label class="control-label" for="scheduledDate">Scheduled Date</label>
-                        <input class="form-control" name="ScheduledDate" type="text" value="12/20/2015"/>
+                        <input id="ScheduledDate" class="form-control" name="ScheduledDate" type="text" placeholder="Enter the date of your research visit" />
                         <p class="help-block" id="dateError">Please enter the scheduled date of your research visit.</p>
                         <input type="hidden" name="UserReview" value="No"/>
                     </div>

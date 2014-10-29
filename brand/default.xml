@@ -24,6 +24,7 @@
       <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
       <script type="text/javascript" src="/xtf/script/rac/active.js"/>
       <script type="text/javascript" src="/xtf/script/rac/dialog.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/datepicker.js"/>
       <script src="script/rac/componentInfo.js" type="text/javascript"/>
       <script type="text/javascript" src="/xtf/script/bookbag.js"/>
       
@@ -57,6 +58,7 @@
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/bootstrap-scrollspy.js"></script>
       <script type="text/javascript" language="JavaScript" src="/xtf/script/rac/scroll.js"></script>
       <script type="text/javascript" src="/xtf/script/rac/dialog.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/datepicker.js"/>
       <script type="text/javascript" src="/xtf/script/bookbag.js"/>
       <script src="script/rac/componentInfo.js" type="text/javascript"/>
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
