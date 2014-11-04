@@ -311,11 +311,10 @@ $(function () {
                 $('#myListEmail .row').each(function(){
                 if($(this).find('.requestInputs input[name="Request"]').is(":checked")) {
                     var item = 
-                    '&#10;' + $(this).children(".collectionTitle").children('p').text() +
-                    '&#10;' + $(this).find(".creator").text() +
-                    '&#10;' + $(this).children(".title").text() +
-                    '&#10;' + $(this).children(".containers").text() +
-                    '&#10;' + $(this).children(".date").text() 
+                    '<p><strong>' + $(this).children('.title').children('p').html() + '</strong><br />' +
+                    $(this).children(".collectionTitle").children('p').text() + '<br />' +
+                    $(this).find(".creator").text() + '<br />' +
+                    $(this).children(".containers").text() + '</p>'
                     
                     items = items + item;
 
@@ -328,31 +327,31 @@ $(function () {
         var subject = checkSubject();
         var text = $('#myListEmail textarea[name="message"]').val();
         var items = getItems();
-        var message = text + '&#10;' + items;
+        var message = text + '\r\n' + items;
 
             // Submit the form using AJAX.
             $.ajax({
                 type: $('#myListMail').attr('method'),
                 url: $('#myListMail').attr('action'),
-                email: address,
-                subject: subject,
-                data: message
+                data: {
+                    email: address,
+                    subject: subject,
+                    message: message
+                }
             })
             .done(function(response) {
-                // Show success message
-                console.log('Your message has been sent to' + address);
-
                 // Clear the form.
                 $('input[name="email"]').val('');
                 $('input[name="subject"]').val('');
-                $('input[name="message"]').val('');
+                $('textarea[name="message"]').val('');
                 return true;
             })
             .fail(function(data) {
-                // Show fail message
-                console.log('Message failed to send')
+                // Fail message
                 return false;
             });
+
+            return true;
         };
 
     var dialogMyListEmail = $('#myListEmail').dialog({
@@ -368,7 +367,6 @@ $(function () {
             { text: "Send Email", click: function() {
                 if (validate()) {
                     if(sendEmail()) {
-                        console.log('sending email')
                         $(this).dialog("close");
                         $('#myListEmail input[name="email"]').removeClass('error');
                         $('#myListEmail #emailError').hide();
