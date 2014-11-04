@@ -41,7 +41,6 @@ $(document).ready(function () {
                 '<div class="row header-row">' + 
                     '<div class="requestInputs">&nbsp;</div>' + 
                     '<div class="title">Title</div>' + 
-                    '<div class="date">Date</div>' + 
                     '<div class="collectionTitle">Collection</div>' +
                     '<div class="containers">Containers</div>' +
                     '<div class="dateAdded">Date Added</div>' +
@@ -114,8 +113,8 @@ $(document).ready(function () {
                         '<input type="hidden" name="CallNumber_' + identifier + '" value="' + callNumber + '"/>' +
                         '<input type="hidden" name="ItemInfo3_' + identifier + '" value="' + url + '"/>' +
                     '</div>' + 
-                    '<div class="title"><p><a href="' + url + '">' + title + '</a></p></div>' + 
-                    '<div class="date"><p>' + date + '</p></div>' + 
+                    '<div class="title"><p><a href="' + url + '">' + title + ', ' + date + '</a></p></div>' + 
+                    //'<div class="date"><p>' + date + '</p></div>' + 
                     //'<div class="parents">' + item.parents + '</div>' +
                     '<div class="collectionTitle"><p>' + collectionTitle + '</p>' +
                         '<div class="creator"><p>' + creator + '</p></div>' +

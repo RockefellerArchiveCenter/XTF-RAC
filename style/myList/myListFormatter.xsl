@@ -309,11 +309,15 @@
     <!-- Submits an Aeon materials request for items in My List -->
     <xsl:template name="myListRequest">
         <div class="overlay" id="myListRequest">
+            <div class="register"><strong>Got an account?</strong> If not, make sure you 
+                <a href="http://raccess.rockarch.org">register</a> 
+                before requesting materials in the reading room.</div>
             <form id="requestForm" method="post" target="new"
                 action="https://raccess.rockarch.org/aeon.dll">
                 <input name="AeonForm" value="EADRequest" type="hidden"/>
                 <input name="RequestType" value="Loan" type="hidden"/>
                 <input name="DocumentType" value="Default" type="hidden"/>
+                <input type="hidden" name="SubmitButton" value="Submit Request" />
                 <div class="myListContents">
                     <xsl:call-template name="emptyList"/>
                 </div>
@@ -344,6 +348,9 @@
     <!-- Submits an Aeon duplication request for items in My List -->
     <xsl:template name="myListCopies">
         <div class="overlay" id="myListCopies">
+            <div class="register"><strong>Got an account?</strong> If not, make sure you 
+                <a href="http://raccess.rockarch.org">register</a> 
+                before requesting copies.</div>
             <form id="duplicationForm" method="post" target="new"
                 action="https://raccess.rockarch.org/aeon.dll">
                 <input name="AeonForm" value="EADRequest" type="hidden"/>
