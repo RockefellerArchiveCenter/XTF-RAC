@@ -3,6 +3,7 @@
    xmlns:parse="http://cdlib.org/xtf/parse"
    xmlns:xtf="http://cdlib.org/xtf"
    xmlns:ns2="http://www.w3.org/1999/xlink"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    exclude-result-prefixes="#all"
    xpath-default-namespace="urn:isbn:1-931666-22-9">
    
@@ -1107,7 +1108,7 @@
    
    <xsl:template name="get-ead-url">
       <xsl:if test="descendant-or-self::dao">
-         <daoLink xtf:meta="true"><xsl:value-of select="dao/@ns2:href"/></daoLink>
+         <daoLink xtf:meta="true"><xsl:value-of select="dao/ns2:href|did/dao/@xlink:href"/></daoLink>
       </xsl:if>
    </xsl:template>
    

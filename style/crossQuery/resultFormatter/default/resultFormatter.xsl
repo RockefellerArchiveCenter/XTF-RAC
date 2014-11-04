@@ -2144,7 +2144,6 @@
                      </xsl:otherwise>
                   </xsl:choose>
                </xsl:when>
-               <xsl:otherwise>none</xsl:otherwise>
             </xsl:choose>
             <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
          <xsl:if test="meta/date != ''">
