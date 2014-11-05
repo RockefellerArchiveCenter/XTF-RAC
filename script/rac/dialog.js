@@ -310,10 +310,24 @@ $(function () {
             var items = '';
                 $('#myListEmail .row').each(function(){
                 if($(this).find('.requestInputs input[name="Request"]').is(":checked")) {
+                    var getParents = function(){
+                        var string = $(this).find('.requestInputs input[name="CallNumber"]');
+                        console.log(string);
+                        var splitstring = string.split();
+                        console.log(splitstring);
+                        for(i=0 i<splitstring.length i++) {
+                            var parents = '';
+                            var parent = '<span class="' + i+1 + '">' + splitstring[i] + '</span><br />'
+                            console.log(parent);
+                            parents = parents + parent;
+                        }
+                        return parents;
+                    }
                     var item = 
                     '<p><strong>' + $(this).children('.title').children('p').html() + '</strong><br />' +
-                    $(this).children(".collectionTitle").children('p').text() + '<br />' +
-                    $(this).find(".creator").text() + '<br />' +
+                    $(this).children(".collectionTitle").children('p').text() + ' ('
+                    $(this).find('.requestInputs input[name="CallNumber"]').attr('value') + ')<br />' +
+                    parents + '<br />' +
                     $(this).children(".containers").text() + '</p>'
                     
                     items = items + item;

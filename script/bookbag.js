@@ -115,13 +115,11 @@ $(document).ready(function () {
                     '</div>' + 
                     '<div class="title"><p><a href="' + url + '">' + title + ', ' + date + '</a></p></div>' + 
                     //'<div class="date"><p>' + date + '</p></div>' + 
-                    //'<div class="parents">' + item.parents + '</div>' +
-                    '<div class="collectionTitle"><p>' + collectionTitle + '</p>' +
-                        '<div class="creator"><p>' + creator + '</p></div>' +
-                    '</div>' +
+                    '<div class="collectionTitle"><p>' + collectionTitle + ' (' + item.callNumber + ')</p></div>' +
+                    '<div class="parents">' + item.parents + '</div>' +
+                    // '<div class="creator"><p>' + creator + '</p></div>' +
                     '<div class="containers"><p>' + containers + '</p></div>' +
                     //'<div class="restrictions">' + item.accessRestrict + '</div>' +
-                    //'<div class="callNumber">' + item.callNumber + '</div>' +
                     '<div class="dateAdded"><p>' + dateAdded + '</p></div>' + 
                     '<button class="list-delete btn" href="#" data-identifier="'+ identifier + '">Delete</button>' +
                 '</div>');
