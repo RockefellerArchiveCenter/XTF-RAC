@@ -925,14 +925,15 @@
          <xsl:when test="@level">
             <xsl:if test="did/unitdate[@type='inclusive'] !='' or did/unitdate !=''">
             <date xtf:meta="true">
-               <xsl:choose>
+               <xsl:value-of select="did/unitdate"/>
+               <!--<xsl:choose>
                   <xsl:when test="did/unitdate[@type='inclusive']">
                      <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
                   </xsl:when>
                   <xsl:when test="did/unitdate">
                      <xsl:value-of select="did/unitdate"/>
                   </xsl:when>
-               </xsl:choose>
+               </xsl:choose>-->
             </date>
             </xsl:if>
             <xsl:if test="/ead/archdesc/did/unitdate[@type='inclusive']">
