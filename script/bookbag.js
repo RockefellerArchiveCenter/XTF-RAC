@@ -88,7 +88,7 @@ $(document).ready(function () {
                 var split = string.split('; ');
                 var parents = '';
                 for(var i=0; i<split.length; i++) {
-                    var parent = '<div style="text-indent:' + i*2 + 'px">' + split[i] + '</div>'
+                    var parent = '<div style="text-indent:' + i*2 + 'px;">' + split[i] + '</div>'
                     parents = parents + parent;
                 };
                 return parents;

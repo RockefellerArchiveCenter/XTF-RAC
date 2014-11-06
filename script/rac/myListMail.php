@@ -3,7 +3,7 @@
     // Only process POST requests.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
-        $subject = filter_var(trim($_POST["subject"]), FILTER_SANITIZE_STRING);
+        $subject = trim($_POST["subject"]);
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         $message .= '<html><body>';
         $message .= trim($_POST["message"]);

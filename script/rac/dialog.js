@@ -310,10 +310,11 @@ $(function () {
                 if($(this).find('.requestInputs input[name="Request"]').is(":checked")) {
                     var item = 
                     '<p><strong>' + $(this).children('.title').children('p').html() + '</strong><br />' +
-                    $(this).children('.collectionTitle').children('p').text() + ' ('
-                    $(this).find('.requestInputs input[name="CallNumber"]').attr('value') + ')<br />' +
-                    $(this).find('.parents').html() + '<br />' +
-                    $(this).children('.containers').text() + '</p>'
+                    $(this).children('.collectionTitle').children('p').text() + '<br/>' +
+                    $(this).children('.containers').text() + '<br/>' +
+                    $(this).find('.requestInputs input[name*="ItemSubtitle"]').attr('value')  + '</p>'
+
+                    console.log(item)
                     
                     items = items + item;
 
@@ -343,7 +344,7 @@ $(function () {
                 $('input[name="email"]').val('');
                 $('input[name="subject"]').val('');
                 $('textarea[name="message"]').val('');
-                $('#myListEmailConfirm .confirm h2').append('Your list has been emailed to '+ address +'!')
+                $('#myListEmailConfirm .confirm h2').empty().append('Your list has been emailed to '+ address +'!')
                 return true;
             })
             .fail(function(data) {
