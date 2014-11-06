@@ -4,6 +4,8 @@ var windowHeight = $(window).height();
 
 $('#myListEmail #emailError').hide();
 $('#myListRequest #dateError').hide();
+$('#myListCopies #formatError').hide();
+$('#myListCopies #itemPagesError').hide();
 $('.contentError').hide();
 
 function content() {
@@ -53,10 +55,6 @@ $(function () {
                 $('.daoCitation').remove();
                 
                 }
-            //close: function () {
-            //    iframe.attr("src", "");
-            //    $('.daoCitation').remove();
-            //}
         });
                             
         $(".daoLink a, .caption a").on("click", function (e) {
@@ -310,25 +308,12 @@ $(function () {
             var items = '';
                 $('#myListEmail .row').each(function(){
                 if($(this).find('.requestInputs input[name="Request"]').is(":checked")) {
-                    var getParents = function(){
-                        var string = $(this).find('.requestInputs input[name="CallNumber"]');
-                        console.log(string);
-                        var splitstring = string.split();
-                        console.log(splitstring);
-                        for(i=0 i<splitstring.length i++) {
-                            var parents = '';
-                            var parent = '<span class="' + i+1 + '">' + splitstring[i] + '</span><br />'
-                            console.log(parent);
-                            parents = parents + parent;
-                        }
-                        return parents;
-                    }
                     var item = 
                     '<p><strong>' + $(this).children('.title').children('p').html() + '</strong><br />' +
-                    $(this).children(".collectionTitle").children('p').text() + ' ('
+                    $(this).children('.collectionTitle').children('p').text() + ' ('
                     $(this).find('.requestInputs input[name="CallNumber"]').attr('value') + ')<br />' +
-                    parents + '<br />' +
-                    $(this).children(".containers").text() + '</p>'
+                    $(this).find('.parents').html() + '<br />' +
+                    $(this).children('.containers').text() + '</p>'
                     
                     items = items + item;
 
@@ -358,6 +343,7 @@ $(function () {
                 $('input[name="email"]').val('');
                 $('input[name="subject"]').val('');
                 $('textarea[name="message"]').val('');
+                $('#myListEmailConfirm .confirm h2').append('Your list has been emailed to '+ address +'!')
                 return true;
             })
             .fail(function(data) {
@@ -479,14 +465,6 @@ $(function () {
         });
     });
 $(function () {
-    function validate() {
-        if($('#myListRequest input[name="ScheduledDate"]').val()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     var dialogMyListRequest = $('#myListRequest').dialog({
         create: function(event, ui) {
             var widget = $(this).dialog("widget");
@@ -500,15 +478,15 @@ $(function () {
             { text: "Request Materials", click: function() {
                 console.log('request materials');
                 if(content()) { 
-                    if(validate()) {
+                    if($('#myListRequest input[name="ScheduledDate"]').val()) {
                         $('#requestForm').submit();
                         $(this).dialog("close")
-                        $('#myListEmail input[name="ScheduledDate"]').removeClass('error');
-                        $('#myListEmail #dateError').hide();
+                        $('#myListRequest input[name="ScheduledDate"]').removeClass('error');
+                        $('#myListRequest #dateError').hide();
                         dialogMyListRequestConfirm.dialog("open");
                     } else {
-                        $('#myListEmail input[name="ScheduledDate"]').addClass('error');
-                        $('#myListEmail #dateError').show();
+                        $('#myListRequest input[name="ScheduledDate"]').addClass('error');
+                        $('#myListRequest #dateError').show();
                         return false;
                     }
                 } else {
@@ -548,6 +526,33 @@ $(function () {
         });
     });
 $(function () {
+    function validate(){
+        if ($('#myListCopies select[name="Format"]').val()) {
+            $('#myListCopies select[name="Format"]').removeClass('error');
+            $('#myListCopies #formatError').hide();
+            if($('#myListCopies input[name="ItemPages"]').val()) {
+                return true;
+            } else {
+                $('#myListCopies input[name="ItemPages"]').addClass('error');
+                $('#myListCopies #itemPagesError').show();
+                return false;
+            }
+        } else {
+            $('#myListCopies select[name="Format"]').addClass('error');
+            $('#myListCopies #formatError').show();
+            if($('#myListCopies input[name="ItemPages"]').val()) {
+                $('#myListCopies input[name="ItemPages"]').removeClass('error');
+                $('#myListCopies #itemPagesError').hide();
+                return false;
+            } else {
+                $('#myListCopies input[name="ItemPages"]').addClass('error');
+                $('#myListCopies #itemPagesError').show();
+                return false;
+            }
+        }
+        return true;
+    }
+
     var dialogMyListCopies = $('#myListCopies').dialog({
         create: function(event, ui) {
             var widget = $(this).dialog("widget");
@@ -561,9 +566,15 @@ $(function () {
             { text: "Request Copies", click: function() {
                 console.log('request copies'); 
                 if(content()) {
-                    $('#duplicationForm').submit();
-                    $(this).dialog("close");
-                    dialogMyListCopiesConfirm.dialog("open");
+                    if(validate()){
+                        $('#duplicationForm').submit();
+                        $('#myListCopies input[name="ItemPages"]').removeClass('error');
+                        $('#myListCopies #itemPagesError').hide();
+                        $('#myListCopies select[name="Format"]').removeClass('error');
+                        $('#myListCopies #formatError').hide();
+                        $(this).dialog("close");
+                        dialogMyListCopiesConfirm.dialog("open");
+                    }
                 } else {
                     $('#myListCopies .contentError').show();
                     return false;

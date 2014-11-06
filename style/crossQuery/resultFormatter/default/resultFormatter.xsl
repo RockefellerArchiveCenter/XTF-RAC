@@ -93,9 +93,10 @@
          <xsl:when test="$smode = 'removeFromBag'">
             <a href="#">Add</a>
          </xsl:when>
-         <xsl:when test="$smode='getAddress'">
+         <!-- HA 11/6/2014 This template is no longer used -->
+         <!--<xsl:when test="$smode='getAddress'">
             <xsl:call-template name="getAddress"/>
-         </xsl:when>
+         </xsl:when> --> 
          <xsl:when test="$smode='getLang'">
             <xsl:call-template name="getLang"/>
          </xsl:when>

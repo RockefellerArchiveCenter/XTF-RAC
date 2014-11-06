@@ -446,6 +446,11 @@ iframe {
 
 .myListContents .empty, .register {margin: 1em;text-align: center;background: rgba(196, 84, 20, 0.1);padding: .5em;border: 1px solid #c45414;border-radius: 5px;}
 
+.fees {
+	float:right;
+	margin-right: 3em;text-align: center;background: rgba(196, 84, 20, 0.1);padding: .5em;border: 1px solid #c45414;border-radius: 5px;
+}
+
 .myListContents .row {
     width:98%;
     float:left;
@@ -456,6 +461,10 @@ iframe {
 	font-weight: bold;
 	color: #fff;
 	background-color: #333 !important;
+}
+
+.register a:focus, .myListContents input:focus {
+	outline:0;
 }
 
 .myListContents .row:nth-of-type(odd) {
@@ -500,6 +509,11 @@ content: "*";
 
 .myList .form-control {
     width:90%;
+}
+
+.myList .form-control.error {
+	border-color: #c45414;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(236, 155, 82, 0.6);
 }
 
 .myList .buttons {

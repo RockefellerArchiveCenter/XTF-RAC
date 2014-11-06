@@ -316,7 +316,7 @@
    <xsl:template name="addToBag">
       <xsl:variable name="identifier" select="string(//param[@name='identifier']/@value)"/>
       <xsl:variable name="url" select="string(//param[@name='url']/@value)"/>
-      <xsl:variable name="title" select="string(//param[@name='title']/@value"/>
+      <xsl:variable name="title" select="string(//param[@name='title']/@value)"/>
       <xsl:variable name="creator" select="string(//param[@name='creator']/@value)"/>
       <xsl:variable name="callNo" select="string(//param[@name='callNo']/@value)"/>
       <xsl:variable name="containers" select="string(//param[@name='containers']/@value)"/>

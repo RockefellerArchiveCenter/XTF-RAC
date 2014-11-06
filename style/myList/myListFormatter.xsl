@@ -79,13 +79,17 @@
                     </xsl:if>
                 </xsl:for-each>
             </xsl:variable>
+            <xsl:variable name="groupingfield">
+                <xsl:value-of select="concat(meta/seriesID, '-', $container1)"/>
+            </xsl:variable>
             <xsl:variable name="barcode"/>
             <a href="#" class="list-add" data-identifier="{$identifier}"
                 data-ItemNumber="{$barcode}" data-ItemTitle="{$collectionTitle}"
                 data-ItemSubtitle="{$parents}" data-ItemAuthor="{$creator}" data-ItemDate="{$date}"
                 data-CallNumber="{$callNo}" data-ItemVolume="{$container1}"
                 data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
-                data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}">
+                data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}"
+                data-GroupingField="{$groupingfield}">
                 <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
             </a>
         </xsl:if>
@@ -152,12 +156,15 @@
                 <xsl:value-of select="normalize-space(substring-after(xtf:meta/containers, ', '))"/>
             </xsl:if>
         </xsl:variable>
+        <xsl:variable name="groupingfield">
+            <xsl:value-of select="concat(xtf:meta/seriesID, '-', $container1)"/>
+        </xsl:variable>
         <xsl:variable name="barcode"/>
         <a href="#" class="list-add" data-identifier="{$identifier}" data-ItemNumber="{$barcode}"
             data-ItemTitle="{$collectionTitle}" data-ItemSubtitle="{$parents}"
             data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNumber="{$rootID}"
             data-ItemVolume="{$container1}" data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
-            data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}">
+            data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}" data-GroupingField="{$groupingfield}">
             <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
         </a>
     </xsl:template>
@@ -224,7 +231,8 @@
                     </li>
                 </ul>
             </div>
-            <a href="http://raccess.rockarch.org/aeon.dll" class="btn btn-default" target="new">Login</a>
+            <a href="http://raccess.rockarch.org/aeon.dll" class="btn btn-default" target="new"
+                >Login</a>
         </div>
     </xsl:template>
 
@@ -260,16 +268,19 @@
                 <xsl:call-template name="emptyList"/>
             </div>
             <p class="help-block text-danger contentError">There's nothing to email!</p>
-            <form id="myListMail" action="{$xtfURL}script/rac/myListMail.php" method="POST" class="form" role="form">
+            <form id="myListMail" action="{$xtfURL}script/rac/myListMail.php" method="POST"
+                class="form" role="form">
                 <div class="left">
                     <div class="form-group">
                         <label class="control-label required" for="email">Email Address</label>
                         <input class="form-control" type="text" name="email"/>
-                        <p class="help-block text-danger" id="emailError">Please enter a valid email.</p>
+                        <p class="help-block text-danger" id="emailError">Please enter a valid
+                            email.</p>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="subject">Subject</label>
-                        <input class="form-control" type="text" name="subject" placeholder="My List from dimes.rockarch.org"/>
+                        <input class="form-control" type="text" name="subject"
+                            placeholder="My List from dimes.rockarch.org"/>
                     </div>
                 </div>
                 <div class="right">
@@ -283,13 +294,14 @@
 
         <div class="overlay" id="myListEmailConfirm">
             <div class="confirm">
-                <h2>Your request has been emailed!</h2>
+                <!-- confirm message is appended to this element by dialog.js -->
+                <h2/>
             </div>
         </div>
-        
+
         <div class="overlay" id="myListEmailError">
             <div class="confirm">
-                <h2>We're sorry, but there was a problem sending your email.</h2>
+                <h2>We're sorry, but there was a problem sending your e-mail.</h2>
                 <p>Please try again, or contact us at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a>.</p>
             </div>
         </div>
@@ -309,24 +321,37 @@
     <!-- Submits an Aeon materials request for items in My List -->
     <xsl:template name="myListRequest">
         <div class="overlay" id="myListRequest">
-            <div class="register"><strong>Got an account?</strong> If not, make sure you 
-                <a href="http://raccess.rockarch.org">register</a> 
-                before requesting materials in the reading room.</div>
+            <div class="register">
+                <strong>Got an account?</strong> If not, make sure you <a href="http://raccess.rockarch.org" target="_blank">register</a> before requesting materials in the reading room.</div>
             <form id="requestForm" method="post" target="new"
                 action="https://raccess.rockarch.org/aeon.dll">
-                <input name="AeonForm" value="EADRequest" type="hidden"/>
-                <input name="RequestType" value="Loan" type="hidden"/>
-                <input name="DocumentType" value="Default" type="hidden"/>
-                <input type="hidden" name="SubmitButton" value="Submit Request" />
+                <!-- Aeon inputs -->
+                <input type="hidden" name="AeonForm" value="EADRequest"/>
+                <input type="hidden" name="RequestType" value="Loan"/>
+                <input type="hidden" name="DocumentType" value="Default"/>
+                <input type="hidden" name="GroupingIdentifier" value="GroupingField"/>
+                <input type="hidden" name="GroupingOption_ItemInfo1" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_ItemDate" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_ItemTitle" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemAuthor" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemSubtitle" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemVolume" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemIssue" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_ItemInfo2" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_CallNumber" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemInfo3" value="Concatenate"/>
+                <input type="hidden" name="SubmitButton" value="Submit Request"/>
+                <input type="hidden" name="UserReview" value="No"/>
                 <div class="myListContents">
                     <xsl:call-template name="emptyList"/>
                 </div>
                 <div class="left scheduledDate">
                     <div class="form-group">
-                        <label class="control-label" for="scheduledDate">Scheduled Date</label>
-                        <input id="ScheduledDate" class="form-control" name="ScheduledDate" type="text" placeholder="Enter the date of your research visit" />
-                        <p class="help-block" id="dateError">Please enter the scheduled date of your research visit.</p>
-                        <input type="hidden" name="UserReview" value="No"/>
+                        <label class="control-label required" for="scheduledDate">Scheduled Date</label>
+                        <input id="ScheduledDate" class="form-control" name="ScheduledDate"
+                            type="text" placeholder="Enter the date of your research visit"/>
+                        <p class="help-block text-danger" id="dateError">Please enter the date of your
+                            scheduled research visit.</p>
                     </div>
                 </div>
                 <div class="right notes">
@@ -340,7 +365,7 @@
 
         <div class="overlay" id="myListRequestConfirm">
             <div class="confirm">
-                <h2>Your request has been submitted!</h2>
+                <h2>Your request to view these materials has been submitted!</h2>
             </div>
         </div>
     </xsl:template>
@@ -349,89 +374,63 @@
     <xsl:template name="myListCopies">
         <div class="overlay" id="myListCopies">
             <div class="register"><strong>Got an account?</strong> If not, make sure you 
-                <a href="http://raccess.rockarch.org">register</a> 
-                before requesting copies.</div>
+                <a href="http://raccess.rockarch.org" target="_blank">register</a> before requesting copies.</div>
             <form id="duplicationForm" method="post" target="new"
                 action="https://raccess.rockarch.org/aeon.dll">
-                <input name="AeonForm" value="EADRequest" type="hidden"/>
-                <input name="RequestType" value="Copy" type="hidden"/>
+                <input type="hidden" name="AeonForm" value="EADRequest"/>
+                <input type="hidden" name="RequestType" value="Copy"/>
+                <input  type="hidden" name="DocumentType" value="Default"/>
+                <input type="hidden" name="GroupingIdentifier" value="GroupingField"/>
+                <input type="hidden" name="GroupingOption_ItemInfo1" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_ItemDate" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_ItemTitle" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemAuthor" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemSubtitle" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemVolume" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemIssue" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_ItemInfo2" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_CallNumber" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemInfo3" value="Concatenate"/>
+                <input type="hidden" name="SubmitButton" value="Submit Request"/>
                 <div class="myListContents">
                     <xsl:call-template name="emptyList"/>
                 </div>
+                <div class="left">
+                    <div class="form-group">
+                        <label class="control-label required" for="Format">Format</label>
+                        <!-- These options mush match exactly the list in the Aeon list of formats -->
+                        <select id="Format" class="form-control" name="Format">
+                            <option>JPEG</option>
+                            <option>PDF</option>
+                            <option>Photocopy</option>
+                            <option>TIFF</option>
+                        </select>
+                        <p class="help-block text-danger" id="formatError">Please select a format.</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label required" for="ItemPages">Description of Materials</label>
+                        <input id="ItemPages" class="form-control" name="ItemPages"
+                            type="text" placeholder="Describe the materials you want reproduced"/>
+                        <p class="help-block text-danger" id="itemPagesError">Please enter a description of the materials you want reproduced.</p>
+                    </div>
+                </div>
+                <div class="right notes">
+                    <div class="form-group">
+                        <label class="control-label" for="Notes">Notes</label>
+                        <textarea class="form-control" rows="4" name="Notes"/>
+                    </div>
+                </div>
             </form>
+            <div class="fees">By submitting this request you're agreeing to pay the costs. See our
+                <a href="#" target="_blank">fee schedule</a>.
+            </div>
         </div>
 
         <div class="overlay" id="myListCopiesConfirm">
             <div class="confirm">
-                <h2>Your request has been submitted!</h2>
+                <h2>Your request for copies has been submitted!</h2>
             </div>
         </div>
-    </xsl:template>
-
-    <xsl:template name="getAddress" exclude-result-prefixes="#all">
-        <xsl:variable name="totalDocs" select="@totalDocs"/>
-        <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
-        <html xml:lang="en" lang="en">
-            <head>
-                <title>E-mail My List: Get Address</title>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-                <xsl:copy-of select="$brand.links"/>
-            </head>
-            <body>
-                <div class="getAddress" style="margin:.5em;">
-                    <h2>E-mail My List</h2>
-                    <xsl:variable name="bagCount" select="count($bookbagContents//savedDoc)"/>
-                    <!--               <p><xsl:value-of select="$bagCount"/> items in your bookbag</p>-->
-                    <form action="{$xtfURL}{$crossqueryPath}" method="get">
-                        <table style="width: 200px;border:0;">
-                            <tr>
-                                <td>Address:</td>
-                                <td>
-                                    <input type="text" name="email"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Subject:</td>
-                                <td>
-                                    <input type="text" name="subject"/>
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td colspan="2" style="text-align:right;">
-                                    <input type="reset" value="CLEAR"/>
-                                    <xsl:text>&#160;</xsl:text>
-                                    <input type="submit" value="SUBMIT"
-                                        onClick="_gaq.push(['_trackEvent', 'bookbag', 'send', '{@totalDocs}'])"/>
-                                    <input type="hidden" name="smode" value="myListEmail"/>
-                                    <input type="hidden" name="docsPerPage" value="{$bagCount}"/>
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-                    <div style="margin:2em;">
-                        <a class="showLink" id="preview-show" href="#">+ Show preview</a>
-                        <div id="preview" class="more"
-                            style=" width: 550px; height: 450px; overflow-y: scroll; display:none; border:1px solid #ccc; margin:.5em; padding: .5em; word-wrap: break-word;">
-                            <xsl:call-template name="emptyList"/>
-                            <!--                     <xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>-->
-                        </div>
-                        <script type="text/javascript">
-                     $('#preview-show').click(function() {
-                        $('#preview').toggle();
-                     });
-                  </script>
-                    </div>
-                    <div class="closeWindow">
-                        <a>
-                            <xsl:attribute name="href">javascript://</xsl:attribute>
-                            <xsl:attribute name="onClick">
-                                <xsl:text>javascript:window.close('popup')</xsl:text>
-                            </xsl:attribute> X Close this Window </a>
-                    </div>
-                </div>
-            </body>
-        </html>
     </xsl:template>
 
     <!-- Creates placeholder display when My List is empty -->
@@ -440,113 +439,5 @@
                 alt="bookbag icon" src="/xtf/icons/default/addbag.gif"/> next to one or more items
             in your <a href="">Search Results</a> to add it to your bookbag.</div>
     </xsl:template>
-
-    <!-- <xsl:template name="savedDoc">
-        <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
-        <xsl:for-each select="$bookbagContents/savedDoc">
-            <h2>
-                <a href="{url}">
-                    <xsl:apply-templates select="title"/>
-                </a>
-            </h2>
-            <h4>
-                <xsl:value-of select="creator" disable-output-escaping="yes"/>
-            </h4>
-            <xsl:if test="string(containers)">
-                <p>
-                    <xsl:value-of select="containers" disable-output-escaping="yes"/>
-                </p>
-            </xsl:if>
-            <xsl:if test="string(parents)">
-                <p>
-                    <xsl:value-of select="parents" disable-output-escaping="yes"/>
-                </p>
-            </xsl:if>
-            <xsl:if test="string(date)">
-                <p>
-                    <xsl:value-of select="date" disable-output-escaping="yes"/>
-                </p>
-            </xsl:if>
-            <xsl:if test="string(callNo)">
-                <p>Call Number: <xsl:value-of select="callNo" disable-output-escaping="yes"/></p>
-            </xsl:if>
-            <xsl:text>&#xA;</xsl:text>
-        </xsl:for-each>
-    </xsl:template> -->
-
-    <!--<xsl:template match="savedDoc" mode="myListEmail" exclude-result-prefixes="#all">
-        <xsl:variable name="num" select="position()"/>
-        <xsl:variable name="id" select="@id"/>
-        <pre>myListEmail Mode</pre>
-        <xsl:for-each select="$docHits[string(meta/identifier[1]) = $id]">
-            <xsl:variable name="path" select="@path"/>
-            <xsl:variable name="chunk.id" select="@subDocument"/>
-            <xsl:variable name="docPath">
-                <xsl:variable name="uri">
-                    <xsl:call-template name="dynaxml.url">
-                        <xsl:with-param name="path" select="$path"/>
-                    </xsl:call-template>
-                </xsl:variable>
-                <xsl:choose>
-                    <xsl:when test="$chunk.id != ''">
-                        <xsl:value-of
-                            select="concat($xtfURL,$uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"
-                        />
-                    </xsl:when>
-                    <xsl:when test="starts-with($uri,'view')">
-                        <xsl:value-of select="concat($xtfURL,$uri)"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="$uri"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:variable>
-            <xsl:variable name="url">
-                <xsl:value-of select="$docPath"/>
-            </xsl:variable>
-            <xsl:variable name="level">
-                <xsl:choose>
-                    <xsl:when test="meta/level = 'collection'">Collection</xsl:when>
-                    <xsl:when test="meta/level = 'series'">Series</xsl:when>
-                    <xsl:when test="meta/level = 'subseries'">Subseries</xsl:when>
-                    <xsl:when test="meta/level = 'recordgrp'">Record Group</xsl:when>
-                    <xsl:when test="meta/level = 'subgrp'">Subgroup</xsl:when>
-                    <xsl:when test="meta/level = 'fonds'">Fonds</xsl:when>
-                    <xsl:when test="meta/level = 'subfonds'">Subfonds</xsl:when>
-                    <xsl:when test="meta/level = 'class'">Class</xsl:when>
-                    <xsl:when test="meta/level = 'otherlevel'">otherlevel</xsl:when>
-                    <xsl:when test="meta/level = 'file'">File</xsl:when>
-                    <xsl:when test="meta/level = 'item'">Item</xsl:when>
-                </xsl:choose>
-            </xsl:variable>
-            <xsl:choose>
-                <xsl:when test="meta/type='mods'">
-                    <pre>
-                      <xsl:text>&#xA;</xsl:text>Title: <xsl:value-of select="normalize-space(meta/title)"/>
-                  <xsl:text>&#xA;</xsl:text>Creator: <xsl:value-of select="meta/creator"/>
-                  <xsl:if test="meta/date"><xsl:text>&#xA;</xsl:text>Date:  <xsl:value-of select="meta/date"/></xsl:if>
-                  <xsl:if test="meta/callNo"><xsl:text>&#xA;</xsl:text>Call Number:  <xsl:value-of select="meta/callNo"/></xsl:if>
-                  <xsl:text>&#xA;</xsl:text>URL: <xsl:value-of select="$url"/>
-                  <xsl:text>&#xA;</xsl:text>  <xsl:text>&#xA;</xsl:text>
-                </pre>
-                </xsl:when>
-                <xsl:otherwise>
-                    <pre>
-                  <xsl:text>&#xA;</xsl:text>
-                  <xsl:if test="meta/format = 'Collection'">
-                     <xsl:for-each select="meta/parent">
-                        <xsl:value-of select="."/><xsl:text>&#xA;</xsl:text>
-                     </xsl:for-each>
-                  </xsl:if>
-                  <xsl:if test="meta/level"/><xsl:value-of select="normalize-space(meta/title)"/><xsl:if test="meta/date"><xsl:text> ,</xsl:text><xsl:value-of select="meta/date"/></xsl:if>
-                  <xsl:if test="meta/containers"><xsl:text>&#xA;</xsl:text><xsl:value-of select="meta/containers"/></xsl:if>
-                  <xsl:text>&#xA;</xsl:text><xsl:value-of select="$url"/>
-                  <xsl:text>&#xA;</xsl:text>  
-                  <xsl:text>&#xA;</xsl:text>
-                </pre>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:for-each>
-    </xsl:template>-->
 
 </xsl:stylesheet>

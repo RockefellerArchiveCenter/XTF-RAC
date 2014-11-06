@@ -39,7 +39,7 @@ $(document).ready(function () {
             if (myList.length > 0) {
             $('.myListContents').append(
                 '<div class="row header-row">' + 
-                    '<div class="requestInputs">&nbsp;</div>' + 
+                    '<div class="requestInputs"><input type="checkbox" checked="checked" name="allRequests"/></div>' + 
                     '<div class="title">Title</div>' + 
                     '<div class="collectionTitle">Collection</div>' +
                     '<div class="containers">Containers</div>' +
@@ -52,7 +52,7 @@ $(document).ready(function () {
             function sanitize(value) {
                 if (value) {return value;}
                 else {return '&nbsp;';}
-            }
+            };
 
             function dateConvert(value){
                 if(value){
@@ -84,6 +84,16 @@ $(document).ready(function () {
                 e.preventDefault();
             };
 
+            function splitparents(string) {
+                var split = string.split('; ');
+                var parents = '';
+                for(var i=0; i<split.length; i++) {
+                    var parent = '<div style="text-indent:' + i*2 + 'px">' + split[i] + '</div>'
+                    parents = parents + parent;
+                };
+                return parents;
+            };
+
             var title = sanitize(item.title);
             var date = sanitize(item.date);
             var collectionTitle = sanitize(item.collectionTitle);
@@ -92,11 +102,13 @@ $(document).ready(function () {
             var identifier = sanitize(item.identifier);
             var url = sanitize(item.URL);
             var parents = sanitize(item.parents);
+            var formatparents = splitparents(item.parents);
             var container1 = item.container1;
             var container2 = item.container2;
             var containers = containerJoin(container1, container2);
             var callNumber = sanitize(item.callNumber);
             var accessRestrict = sanitize(item.accessRestrict);
+            var groupingfield = sanitize(item.groupingfield);
 
             $('.myListContents').append(
                 '<div class="row">' + 
@@ -112,11 +124,12 @@ $(document).ready(function () {
                         '<input type="hidden" name="ItemInfo2_' + identifier + '" value="' + accessRestrict + '"/>' +
                         '<input type="hidden" name="CallNumber_' + identifier + '" value="' + callNumber + '"/>' +
                         '<input type="hidden" name="ItemInfo3_' + identifier + '" value="' + url + '"/>' +
+                        '<input type="hidden" name="GroupingField_' + identifier + '" value="' + groupingfield + '"/>' +
                     '</div>' + 
                     '<div class="title"><p><a href="' + url + '">' + title + ', ' + date + '</a></p></div>' + 
                     //'<div class="date"><p>' + date + '</p></div>' + 
-                    '<div class="collectionTitle"><p>' + collectionTitle + ' (' + item.callNumber + ')</p></div>' +
-                    '<div class="parents">' + item.parents + '</div>' +
+                    '<div class="collectionTitle"><p>' + collectionTitle + ' (' + item.callNumber + ')</p>' +
+                    '<div class="parents">' + formatparents + '</div></div>' +
                     // '<div class="creator"><p>' + creator + '</p></div>' +
                     '<div class="containers"><p>' + containers + '</p></div>' +
                     //'<div class="restrictions">' + item.accessRestrict + '</div>' +
@@ -125,7 +138,7 @@ $(document).ready(function () {
                 '</div>');
 
             // change text for components already in bookbag
-            $('.list-add[data-identifier*=' + item.identifier + ']').replaceWith('<span>Added</span>');
+            $('.list-add[data-identifier="' + identifier + '"]').replaceWith('<span>Added</span>');
 
         };
 
@@ -165,6 +178,7 @@ $(document).ready(function () {
         var accessRestrict = $(a).attr('data-iteminfo2');
         var callNumber = $(a).attr('data-callnumber');
         var url = $(a).attr('data-iteminfo3');
+        var groupingfield = $(a).attr('data-groupingfield');
 
         //Let the user know something is happpening
         a.text('Adding...');
@@ -191,6 +205,7 @@ $(document).ready(function () {
                 'accessRestrict': accessRestrict,
                 'callNumber': callNumber,
                 'URL': url,
+                'groupingfield': groupingfield,
                 'dateAdded': dateAdded
             }
 
@@ -246,4 +261,29 @@ $(document).ready(function () {
 
     return false;
 
+});
+
+// Disables inputs when checkbox is unchecked
+$(function() {
+    $('.requestInputs input[name="Request"]').on('click', function(){
+        if($(this).is(':checked')) {
+            $(this).siblings('input').attr("disabled", false);
+        } else {
+           $(this).siblings('input').attr("disabled", true);
+        }
+    });
+});
+
+// Checks or unchecks all
+$(function() {
+    $('.header-row input[type="checkbox"]').on('click', function(e) {
+        if($(this).is(':checked')) {
+            $('.requestInputs input[type="checkbox"]').attr('checked', true);
+            $('.requestInputs input[type="hidden"]').attr("disabled", false);
+        } else {
+            $('.requestInputs input[type="checkbox"]').attr('checked', false);
+            $('.requestInputs input[type="hidden"]').attr("disabled", true);
+        }
+        
+    });
 });
