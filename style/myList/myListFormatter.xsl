@@ -327,6 +327,7 @@
                 action="https://raccess.rockarch.org/aeon.dll">
                 <!-- Aeon inputs -->
                 <input type="hidden" name="AeonForm" value="EADRequest"/>
+                <input type="hidden" name="WebRequestForm" value="DefaultRequest"/>
                 <input type="hidden" name="RequestType" value="Loan"/>
                 <input type="hidden" name="DocumentType" value="Default"/>
                 <input type="hidden" name="GroupingIdentifier" value="GroupingField"/>
@@ -378,6 +379,7 @@
             <form id="duplicationForm" method="post" target="new"
                 action="https://raccess.rockarch.org/aeon.dll">
                 <input type="hidden" name="AeonForm" value="EADRequest"/>
+                <input type="hidden" name="WebRequestForm" value="PhotoduplicationRequest"/>
                 <input type="hidden" name="RequestType" value="Copy"/>
                 <input  type="hidden" name="DocumentType" value="Default"/>
                 <input type="hidden" name="GroupingIdentifier" value="GroupingField"/>
@@ -400,6 +402,7 @@
                         <label class="control-label required" for="Format">Format</label>
                         <!-- These options mush match exactly the list in the Aeon list of formats -->
                         <select id="Format" class="form-control" name="Format">
+                            <option></option>
                             <option>JPEG</option>
                             <option>PDF</option>
                             <option>Photocopy</option>
