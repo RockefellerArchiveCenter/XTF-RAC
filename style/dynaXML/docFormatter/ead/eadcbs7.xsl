@@ -1245,7 +1245,6 @@
                                                   <xsl:call-template name="clevel_dao"/>
                                                   <xsl:for-each select="c|c09">
                                                   <xsl:if
-                                                  test="dao | did/dao | xtf:meta/*:type = 'dao'">
                                                   <div class="{@level} c09"
                                                   style="width:99%;float:right;">
                                                   <xsl:call-template name="anchor"/>
@@ -1414,7 +1413,6 @@
                   <div class="seriesTitle">
                      <xsl:apply-templates select="did" mode="dsc"/>
                   </div>
-                  <!--                             <xsl:apply-templates select="did/unittitle" mode="dsc"/>-->
                   <xsl:apply-templates select="did/origination" mode="dsc"/>
                   <xsl:apply-templates select="scopecontent"/>
                   <xsl:apply-templates select="unitdate[not(@type)] | unitdate[@type != 'bulk']"
@@ -1837,10 +1835,12 @@
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}"
                   data-width="512" data-height="384"
                   onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);">
-                  <xsl:if test="../did/unittitle != ''">
-                     <xsl:value-of select="../did/unittitle"/>
-                     <xsl:if test="../did/unitdate">
-                        <xsl:text>,&#160;</xsl:text>
+                  <xsl:if test="../did/unittitle != ''"><xsl:value-of select="../did/unittitle"/>
+                     <xsl:if test="../did/unitdate"><xsl:text>,&#160;</xsl:text>
+                     </xsl:if>
+                  </xsl:if>
+                  <xsl:if test="../unittitle != ''"><xsl:value-of select="../unittitle"/>
+                     <xsl:if test="../unitdate"><xsl:text>,&#160;</xsl:text>
                      </xsl:if>
                   </xsl:if>
                   <xsl:if test="../unittitle != ''">
