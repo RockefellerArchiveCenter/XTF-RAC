@@ -87,9 +87,8 @@
                   <xsl:apply-templates select="/ead/archdesc/controlaccess"/>
                </xsl:when>
                <xsl:when test="$chunk.id = 'physdesclink'">
-                  <xsl:apply-templates
-                     select="/ead/archdesc/did/physdesc[@label = 'General Physical Description note']"
-                  />
+                  <xsl:apply-templates select="/ead/archdesc/did/physdesc[@label = 'General Physical Description note']" />
+                  <xsl:apply-templates select="/ead/archdesc/did/physdesc[not(@altrender)]" />
                </xsl:when>
                <xsl:when test="$chunk.id = 'contentsLink'">
                   <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
@@ -635,11 +634,11 @@
          </div>
       </xsl:if>
       <xsl:if
-         test="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')) and not(starts-with(@role,'aut')))]">
+         test="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')) and not(starts-with(@role,'aut')) and not(starts-with(../@label,'source')))]">
          <h4>Contributor(s)</h4>
          <div>
             <xsl:for-each
-               select="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')) and not(starts-with(@role,'aut')))]">
+               select="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')) and not(starts-with(@role,'aut'))and not(starts-with(../@label,'source')))]">
                <div>
                   <xsl:apply-templates/>
                </div>
@@ -888,6 +887,7 @@
             </p>
          </xsl:when>
          <xsl:otherwise>
+            <h4>Physical Description of Material</h4>
             <xsl:apply-templates/>
          </xsl:otherwise>
       </xsl:choose>

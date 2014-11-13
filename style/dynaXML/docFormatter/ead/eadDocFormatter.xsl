@@ -732,12 +732,12 @@
                               </xsl:call-template>
                               </div>
                            </xsl:if>
-                           <xsl:if test="archdesc/did/physdesc[@label = 'General Physical Description note']">
+                           <xsl:if test="archdesc/did/physdesc[@label = 'General Physical Description note']|archdesc/did/physdesc[not(@altrender)]">
                               <div class="tocRow" id="physdesclinkMenu">
                               <xsl:call-template name="make-toc-link">
                                  <xsl:with-param name="name" select="'Physical Description'"/>
                                  <xsl:with-param name="id" select="'physdesclink'"/>
-                                 <xsl:with-param name="nodes" select="archdesc/did/physdesc[@label = 'General Physical Description note']"/>
+                                 <xsl:with-param name="nodes" select="archdesc/did/physdesc[@label = 'General Physical Description note']|archdesc/did/physdesc[not(@altrender)]"/>
                               </xsl:call-template>
                               </div>
                            </xsl:if>   
