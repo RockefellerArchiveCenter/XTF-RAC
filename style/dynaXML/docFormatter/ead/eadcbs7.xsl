@@ -610,10 +610,10 @@
 
    <!-- 1/19/12 WS: Special template to handle creator/contributor/source rules for RA -->
    <xsl:template name="creators">
-      <xsl:if test="origination/child::*[starts-with(@role,'Author')]">
+      <xsl:if test="origination/child::*[starts-with(@role,'Author')]|origination/child::*[starts-with(@role,'aut')]">
          <h4>Creator</h4>
          <div>
-            <xsl:for-each select="origination/child::*[starts-with(@role,'Author')]">
+            <xsl:for-each select="origination/child::*[starts-with(@role,'Author')]|origination/child::*[starts-with(@role,'aut')]">
                <div>
                   <xsl:apply-templates/>
                </div>
