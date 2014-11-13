@@ -592,10 +592,10 @@
    <xsl:template name="get-ead-containers">
       <xsl:if test="child::did/container">
          <containers xtf:meta="true">
-         <xsl:for-each select="did/container">
-            <xsl:value-of select="concat(' ',concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
-            <xsl:if test="position()!=last()">, </xsl:if>
-         </xsl:for-each>
+            <xsl:for-each select="did/container">
+               <xsl:value-of select="concat(' ',concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
+               <xsl:if test="position()!=last()">, </xsl:if>
+            </xsl:for-each>
          </containers>
       </xsl:if>
    </xsl:template>
@@ -606,8 +606,12 @@
          <xsl:when test="@level">
             <xsl:choose>
                <xsl:when test="did/origination">
-                  <xsl:for-each
-                     select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+                     <collectionCreator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </collectionCreator>
+                  </xsl:for-each>
+                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
                      <collectionCreator xtf:meta="true">
                         <xsl:value-of select="normalize-space(.)"/>
                      </collectionCreator>
@@ -624,8 +628,15 @@
                   </xsl:for-each>
                </xsl:when>
                <xsl:otherwise>
-                  <xsl:for-each
-                     select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+                     <collectionCreator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </collectionCreator>
+                     <creator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </creator>
+                  </xsl:for-each>
+                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
                      <collectionCreator xtf:meta="true">
                         <xsl:value-of select="normalize-space(.)"/>
                      </collectionCreator>
