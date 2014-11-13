@@ -635,11 +635,11 @@
          </div>
       </xsl:if>
       <xsl:if
-         test="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')))]">
+         test="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')) and not(starts-with(@role,'aut')))]">
          <h4>Contributor(s)</h4>
          <div>
             <xsl:for-each
-               select="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')))]">
+               select="origination/child::*[(not(starts-with(@role,'Author')) and not(starts-with(@role,'Source')) and not(starts-with(@role,'aut')))]">
                <div>
                   <xsl:apply-templates/>
                </div>
