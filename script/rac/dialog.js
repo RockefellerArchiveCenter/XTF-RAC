@@ -212,6 +212,10 @@ $(function () {
 $(function () {                      
         var dscOptions = {
             autoOpen: false,
+            create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            },
             modal: true,
             resizable: true,
             width: windowWidth/3,
