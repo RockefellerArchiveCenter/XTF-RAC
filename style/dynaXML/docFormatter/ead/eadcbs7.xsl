@@ -1562,14 +1562,12 @@
                            select="count(../container[@parent = $id] | ../container[@id = $id])"/>
                         <div class="containerWrapper">
                            <span class="container" style="padding-right: 1em;">
-                              <xsl:value-of
-                                 select="concat(upper-case(substring(@type,1,1)),substring(@type,2))"
-                                 />&#160;<xsl:apply-templates select="."/>
+                              <xsl:value-of select="concat(upper-case(substring(@type,1,1)),substring(@type,2))"/>&#160;
+                              <xsl:apply-templates select="."/>
                            </span>
                            <span class="container">
-                              <xsl:value-of
-                                 select="concat(upper-case(substring(../container[@parent = $id]/@type,1,1)),substring(../container[@parent = $id]/@type,2))"
-                                 />&#160;<xsl:value-of select="../container[@parent = $id]"/>
+                              <xsl:value-of select="concat(upper-case(substring(../container[@parent = $id]/@type,1,1)),substring(../container[@parent = $id]/@type,2))"/>&#160;
+                              <xsl:value-of select="../container[@parent = $id]"/>
                            </span>
                         </div>
                      </div>
