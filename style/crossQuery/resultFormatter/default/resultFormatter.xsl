@@ -1792,15 +1792,10 @@
          <xsl:choose>
             <xsl:when test="meta/seriesID">
                <xsl:variable name="seriesID" select="meta/seriesID"/>
-               <xsl:value-of
-                  select="concat($uri,';chunk.id=',$seriesID,';doc.view=contents','#',$chunk.id)"/>
+               <xsl:value-of select="concat($uri,';chunk.id=',$seriesID,';doc.view=contents','#',$chunk.id)"/>
             </xsl:when>
             <xsl:when test="$chunk.id != ''">
-               <xsl:value-of
-                  select="concat($uri,';chunk.id=contentsLink',';doc.view=contents','#',$chunk.id)"/>
-               <!-- Link used to get sub-document out of context               
-                  <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
-               -->
+               <xsl:value-of select="concat($uri,';chunk.id=contentsLink',';doc.view=contents','#',$chunk.id)"/>
             </xsl:when>
             <xsl:otherwise>
                <xsl:value-of select="$uri"/>
@@ -1869,7 +1864,7 @@
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
             </xsl:attribute>
-            <!--<xsl:choose>
+            <xsl:choose>
                <xsl:when test="meta/level = 'series'">Series </xsl:when>
                <xsl:when test="meta/level = 'subseries'">Subseries </xsl:when>
                <xsl:when test="meta/level = 'recordgrp'">Record Group </xsl:when>
@@ -1903,14 +1898,13 @@
                </xsl:when>
             </xsl:choose>
             <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
-            <!--<xsl:if test="meta/date != ''">-->
+            <xsl:if test="meta/date != ''">
                <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
-               <!--<xsl:if test="meta/title != ''">
+               <xsl:if test="meta/title != ''">
                   <xsl:text>, </xsl:text>
                </xsl:if>
                <xsl:apply-templates select="meta/date"/>
-            </xsl:if>-->
-            <xsl:value-of select="$title"/>
+            </xsl:if>
             <xsl:if test="meta/*:type = 'dao'">
                <img src="/xtf/icons/default/dao.gif" alt="digital object" title="Digital object"/>
             </xsl:if>
