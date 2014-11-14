@@ -87,8 +87,9 @@
                   <xsl:apply-templates select="/ead/archdesc/controlaccess"/>
                </xsl:when>
                <xsl:when test="$chunk.id = 'physdesclink'">
-                  <xsl:apply-templates select="/ead/archdesc/did/physdesc[@label = 'General Physical Description note']" />
-                  <xsl:apply-templates select="/ead/archdesc/did/physdesc[not(@altrender)]" />
+                  <xsl:apply-templates
+                     select="/ead/archdesc/did/physdesc[@label = 'General Physical Description note']"/>
+                  <xsl:apply-templates select="/ead/archdesc/did/physdesc[not(@altrender)]"/>
                </xsl:when>
                <xsl:when test="$chunk.id = 'contentsLink'">
                   <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
@@ -609,10 +610,12 @@
 
    <!-- 1/19/12 WS: Special template to handle creator/contributor/source rules for RA -->
    <xsl:template name="creators">
-      <xsl:if test="origination/child::*[starts-with(@role,'Author')]|origination/child::*[starts-with(@role,'aut')]">
+      <xsl:if
+         test="origination/child::*[starts-with(@role,'Author')]|origination/child::*[starts-with(@role,'aut')]">
          <h4>Creator</h4>
          <div>
-            <xsl:for-each select="origination/child::*[starts-with(@role,'Author')]|origination/child::*[starts-with(@role,'aut')]">
+            <xsl:for-each
+               select="origination/child::*[starts-with(@role,'Author')]|origination/child::*[starts-with(@role,'aut')]">
                <div>
                   <xsl:apply-templates/>
                </div>
@@ -1244,7 +1247,7 @@
                                                   <xsl:call-template name="anchor"/>
                                                   <xsl:call-template name="clevel_dao"/>
                                                   <xsl:for-each select="c|c09">
-                                                  <xsl:if
+                                                     <xsl:if test="dao | did/dao | xtf:meta/*:type = 'dao'">
                                                   <div class="{@level} c09"
                                                   style="width:99%;float:right;">
                                                   <xsl:call-template name="anchor"/>
@@ -1456,8 +1459,7 @@
                         <xsl:for-each select="controlaccess/subject">
                            <span>
                               <xsl:value-of select="."/>
-                           </span>
-                           <br/>
+                           </span><br />
                         </xsl:for-each>
                      </xsl:if>
                      <xsl:if test="controlaccess/persname|controlaccess/famname">
@@ -1465,8 +1467,7 @@
                         <xsl:for-each select="controlaccess/persname|controlaccess/famname">
                            <span>
                               <xsl:value-of select="."/>
-                           </span>
-                           <br/>
+                           </span><br />
                         </xsl:for-each>
                      </xsl:if>
                      <xsl:if test="controlaccess/corpname">
@@ -1474,8 +1475,7 @@
                         <xsl:for-each select="controlaccess/corpname">
                            <span>
                               <xsl:value-of select="."/>
-                           </span>
-                           <br/>
+                           </span><br />
                         </xsl:for-each>
                      </xsl:if>
                      <xsl:if test="controlaccess/geogname">
@@ -1483,8 +1483,7 @@
                         <xsl:for-each select="controlaccess/geogname">
                            <span>
                               <xsl:value-of select="."/>
-                           </span>
-                           <br/>
+                           </span><br />
                         </xsl:for-each>
                      </xsl:if>
                      <xsl:if test="controlaccess/genreform">
@@ -1492,8 +1491,7 @@
                         <xsl:for-each select="controlaccess/genreform">
                            <span>
                               <xsl:value-of select="."/>
-                           </span>
-                           <br/>
+                           </span><br />
                         </xsl:for-each>
                      </xsl:if>
                   </xsl:if>
@@ -1562,12 +1560,14 @@
                            select="count(../container[@parent = $id] | ../container[@id = $id])"/>
                         <div class="containerWrapper">
                            <span class="container" style="padding-right: 1em;">
-                              <xsl:value-of select="concat(upper-case(substring(@type,1,1)),substring(@type,2))"/>&#160;
-                              <xsl:apply-templates select="."/>
+                              <xsl:value-of
+                                 select="concat(upper-case(substring(@type,1,1)),substring(@type,2))"
+                              />&#160; <xsl:apply-templates select="."/>
                            </span>
                            <span class="container">
-                              <xsl:value-of select="concat(upper-case(substring(../container[@parent = $id]/@type,1,1)),substring(../container[@parent = $id]/@type,2))"/>&#160;
-                              <xsl:value-of select="../container[@parent = $id]"/>
+                              <xsl:value-of
+                                 select="concat(upper-case(substring(../container[@parent = $id]/@type,1,1)),substring(../container[@parent = $id]/@type,2))"
+                              />&#160; <xsl:value-of select="../container[@parent = $id]"/>
                            </span>
                         </div>
                      </div>
@@ -1615,13 +1615,13 @@
                      </div>
                   </xsl:if>
                </span>
-               
+
                <span class="inventoryBookbag bookbag">
                   <xsl:call-template name="myListEad">
                      <xsl:with-param name="rootID" select="$rootID"/>
                   </xsl:call-template>
                </span>
-               
+
             </xsl:when>
             <xsl:otherwise>
                <div class="{$clevelMargin}">
@@ -1833,12 +1833,16 @@
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}"
                   data-width="512" data-height="384"
                   onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);">
-                  <xsl:if test="../did/unittitle != ''"><xsl:value-of select="../did/unittitle"/>
-                     <xsl:if test="../did/unitdate"><xsl:text>,&#160;</xsl:text>
+                  <xsl:if test="../did/unittitle != ''">
+                     <xsl:value-of select="../did/unittitle"/>
+                     <xsl:if test="../did/unitdate">
+                        <xsl:text>,&#160;</xsl:text>
                      </xsl:if>
                   </xsl:if>
-                  <xsl:if test="../unittitle != ''"><xsl:value-of select="../unittitle"/>
-                     <xsl:if test="../unitdate"><xsl:text>,&#160;</xsl:text>
+                  <xsl:if test="../unittitle != ''">
+                     <xsl:value-of select="../unittitle"/>
+                     <xsl:if test="../unitdate">
+                        <xsl:text>,&#160;</xsl:text>
                      </xsl:if>
                   </xsl:if>
                   <xsl:if test="../unittitle != ''">
