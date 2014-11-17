@@ -30,6 +30,7 @@ div.closeWindow a{color: #c45414;}
 input[type="text"], select {vertical-align:0}
 label {display:inline-block; margin-right:.2em;}
 .text-danger {color:#c45414;}
+dt {float:left;}
 
 /* Formats header */
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
