@@ -393,6 +393,7 @@
                 <input type="hidden" name="GroupingOption_ItemInfo2" value="Concatenate"/>
                 <input type="hidden" name="GroupingOption_CallNumber" value="FirstValue"/>
                 <input type="hidden" name="GroupingOption_ItemInfo3" value="Concatenate"/>
+                <input type="hidden" name="SkipOrderEstimate" value="Yes"/>
                 <input type="hidden" name="SubmitButton" value="Submit Request"/>
                 <div class="myListContents">
                     <xsl:call-template name="emptyList"/>
