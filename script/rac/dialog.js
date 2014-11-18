@@ -53,7 +53,8 @@ $(function () {
                 $('.ui-dialog').hide();
                 $('.dao-container > iframe').attr("src", "");
                 $('.daoCitation').remove();
-                
+                //Removes meta tags for Twitter Cards
+                $('head meta[name^="twitter"]').remove();
                 }
         });
                             
@@ -72,6 +73,8 @@ $(function () {
                 src: src
             });
                                 dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
+                                //Adds meta tags for Twitter Cards
+                                $('head').append( '<meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@rockarch_org"><meta name="twitter:title" content="'+title+'"><meta name="twitter:description" content="'+citation+'"><meta name="twitter:image:src" content="'+src+'">' );
                             });
                             
                             //checks for hash tag jumps to location and opens appropriate diolog 
@@ -101,6 +104,8 @@ $(function () {
                                     src: src
                                  });
                                  dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
+                                 //Adds meta tags for Twitter Cards
+                                 $('head').append( '<meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@rockarch_org"><meta name="twitter:title" content="'+title+'"><meta name="twitter:description" content="'+citation+'"><meta name="twitter:image:src" content="'+src+'">' );
                               });
                             } 
                           }
@@ -118,7 +123,7 @@ $(function () {
         width: windowWidth/2,
         close: function () {
             $('.ui-dialog').hide();
-                }
+            }
         });
        
     $("a.dimes").on("click", function (e) {
