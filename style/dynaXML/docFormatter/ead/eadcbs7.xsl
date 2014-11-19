@@ -1125,12 +1125,12 @@
                <xsl:call-template name="anchor"/>
                <xsl:call-template name="clevel_dao"/>
                <xsl:for-each select="c|c02">
-                  <xsl:if test="did/dao">
+                  <xsl:if test="dao | did/dao">
                   <div class="{@level} c02" style="width:99%;float:right;">
                      <xsl:call-template name="anchor"/>
                      <xsl:call-template name="clevel_dao"/>
                      <xsl:for-each select="c|c03">
-                        <xsl:if test="did/dao">
+                        <xsl:if test="dao | did/dao">
                         <div class="{@level} c03" style="width:99%;float:right;">
                            <xsl:call-template name="anchor"/>
                            <xsl:call-template name="clevel_dao"/>
