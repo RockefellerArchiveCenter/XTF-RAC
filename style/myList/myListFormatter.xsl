@@ -367,6 +367,7 @@
         <div class="overlay" id="myListRequestConfirm">
             <div class="confirm">
                 <h2>Your request to view these materials has been submitted!</h2>
+                <p>See all your requests in <a href="https://raccess.rockarch.org/aeon.dll" target="_blank">RACcess</a>.</p>
             </div>
         </div>
     </xsl:template>
@@ -433,6 +434,7 @@
         <div class="overlay" id="myListCopiesConfirm">
             <div class="confirm">
                 <h2>Your request for copies has been submitted!</h2>
+                <p>See all your requests in <a href="https://raccess.rockarch.org/aeon.dll" target="_blank">RACcess</a>.</p>
             </div>
         </div>
     </xsl:template>

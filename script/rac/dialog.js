@@ -519,7 +519,6 @@ $(function () {
         modal: true,
         resizable: true,
         buttons: [ 
-            { text: "Review Requests", click: function() { window.open = ('https://raccess.rockarch.org/aeon.dll?SessionID=B110808272C&Action=10&Form=60', '_blank')  } },
             { text: "Close", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/2,
@@ -607,7 +606,6 @@ $(function () {
         modal: true,
         resizable: true,
         buttons: [ 
-            { text: "Review Requests", click: function() { window.open = ('https://raccess.rockarch.org/aeon.dll?SessionID=B110808272C&Action=10&Form=60', '_blank')  } },
             { text: "Close", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/2,
