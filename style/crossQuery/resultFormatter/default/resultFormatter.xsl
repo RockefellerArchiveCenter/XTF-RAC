@@ -227,7 +227,7 @@
                     var myvalues = [<xsl:for-each select="facet[@field='facet-date']/group">
                      <xsl:value-of select="@totalDocs"/><xsl:text>, </xsl:text>
                      </xsl:for-each>];
-                  $('#histogram').sparkline(myvalues, {type: 'bar', barColor: '#c45414', width:'94%', height:'10', disableTooltips:true, disableHighlight:true});
+                  $('#histogram').sparkline(myvalues, {type: 'line', lineColor: '#c45414', fillColor: '#c45414', width:'94%', height:'20', disableTooltips:true, disableHighlight:true});
                   });
             </script>
 
