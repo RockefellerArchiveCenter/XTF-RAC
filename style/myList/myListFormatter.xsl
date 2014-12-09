@@ -25,7 +25,9 @@
         <xsl:param name="docPath"/>
         <xsl:if test="meta/level='file' or meta/level='item' or meta/type='mods'">
             <xsl:variable name="title">
-                <xsl:value-of select="meta/title"/>
+                <xsl:if test="meta/type='ead'">
+                    <xsl:value-of select="meta/title"/>
+                </xsl:if>
             </xsl:variable>
             <xsl:variable name="url">
                 <xsl:value-of select="concat($xtfURL, $docPath)"/>
@@ -47,7 +49,14 @@
                 <xsl:value-of select="meta/date"/>
             </xsl:variable>
             <xsl:variable name="collectionTitle">
-                <xsl:value-of select="meta/collectionTitle"/>
+                <xsl:choose>
+                    <xsl:when test="meta/type='ead'">
+                        <xsl:value-of select="meta/collectionTitle"/>
+                    </xsl:when>
+                    <xsl:when test="meta/type='mods'">
+                        <xsl:value-of select="meta/title"/>
+                    </xsl:when>
+                </xsl:choose>
             </xsl:variable>
             <xsl:variable name="restrictions">
                 <xsl:value-of select="meta/accessrestrict"/>
@@ -164,7 +173,8 @@
             data-ItemTitle="{$collectionTitle}" data-ItemSubtitle="{$parents}"
             data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNumber="{$rootID}"
             data-ItemVolume="{$container1}" data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
-            data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}" data-GroupingField="{$groupingfield}">
+            data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}"
+            data-GroupingField="{$groupingfield}">
             <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
         </a>
     </xsl:template>
@@ -302,7 +312,8 @@
         <div class="overlay" id="myListEmailError">
             <div class="confirm">
                 <h2>We're sorry, but there was a problem sending your e-mail.</h2>
-                <p>Please try again, or contact us at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a>.</p>
+                <p>Please try again, or contact us at <a href="mailto:archive@rockarch.org"
+                        >archive@rockarch.org</a>.</p>
             </div>
         </div>
     </xsl:template>
@@ -347,20 +358,24 @@
                 <div class="left">
                     <div>
                         <div class="radio">
-                            <input id="VisitScheduled" name="Visit" type="radio" checked="checked"> Schedule Retrieval</input>
+                            <input id="VisitScheduled" name="Visit" type="radio" checked="checked">
+                                Schedule Retrieval</input>
                         </div>
                         <div class="radio">
-                            <input id="VisitReview" name="Visit" type="radio"> Keep for My Review</input>
+                            <input id="VisitReview" name="Visit" type="radio"> Keep for My
+                                Review</input>
                         </div>
                     </div>
-                    
+
                     <div class="form-group scheduledDate">
-                        <label class="control-label required" for="scheduledDate">Scheduled Date</label>
+                        <label class="control-label required" for="scheduledDate">Scheduled
+                            Date</label>
                         <input id="ScheduledDate" class="form-control" name="ScheduledDate"
-                            type="text" placeholder="Enter the date of your research visit"/>    
+                            type="text" placeholder="Enter the date of your research visit"/>
                     </div>
                     <div class="form-group userReview">
-                        <span class="help-text">This request will be saved in RACcess, but won't be retrieved until you submit it for processing.</span>
+                        <span class="help-text">This request will be saved in RACcess, but won't be
+                            retrieved until you submit it for processing.</span>
                     </div>
                 </div>
                 <div class="right notes">
@@ -371,16 +386,22 @@
                 </div>
             </form>
             <div class="register">
-                <strong>Got an account?</strong> If not, make sure you <a href="http://raccess.rockarch.org" target="_blank">register</a> and log in before requesting materials to view in the reading room or you will need to submit your request again.<br/>
-                <strong>Good to know:</strong> Folders in the same box may be grouped together in a single request.
-            </div>
+                <strong>Got an account?</strong> If not, make sure you <a
+                    href="http://raccess.rockarch.org" target="_blank">register</a> and log in
+                before requesting materials to view in the reading room or you will need to submit
+                your request again.<br/>
+                <strong>Good to know:</strong> Folders in the same box may be grouped together in a
+                single request. </div>
         </div>
 
         <div class="overlay" id="myListRequestConfirm">
             <div class="confirm">
                 <h2>Your request to view these materials has been submitted to RACcess!</h2>
-                <p>Your request will open in a new browser tab, but you can also <a href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a> to see your requests.</p>
-                <p>If you tried to submit a request before registering for an account, you'll have to submit your request again. Sorry about that!</p>
+                <p>Your request will open in a new browser tab, but you can also <a
+                        href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a>
+                    to see your requests.</p>
+                <p>If you tried to submit a request before registering for an account, you'll have
+                    to submit your request again. Sorry about that!</p>
             </div>
         </div>
     </xsl:template>
@@ -393,7 +414,7 @@
                 <input type="hidden" name="AeonForm" value="EADRequest"/>
                 <input type="hidden" name="WebRequestForm" value="PhotoduplicationRequest"/>
                 <input type="hidden" name="RequestType" value="Copy"/>
-                <input  type="hidden" name="DocumentType" value="Default"/>
+                <input type="hidden" name="DocumentType" value="Default"/>
                 <input type="hidden" name="GroupingIdentifier" value="GroupingField"/>
                 <input type="hidden" name="GroupingOption_ItemInfo1" value="Concatenate"/>
                 <input type="hidden" name="GroupingOption_ItemDate" value="Concatenate"/>
@@ -415,19 +436,22 @@
                         <label class="control-label required" for="Format">Format</label>
                         <!-- These options mush match exactly the list in the Aeon list of formats -->
                         <select id="Format" class="form-control" name="Format">
-                            <option></option>
+                            <option/>
                             <option>JPEG</option>
                             <option>PDF</option>
                             <option>Photocopy</option>
                             <option>TIFF</option>
                         </select>
-                        <p class="help-block text-danger" id="formatError">Please select a format.</p>
+                        <p class="help-block text-danger" id="formatError">Please select a
+                            format.</p>
                     </div>
                     <div class="form-group">
-                        <label class="control-label required" for="ItemPages">Description of Materials</label>
-                        <input id="ItemPages" class="form-control" name="ItemPages"
-                            type="text" placeholder="Describe the materials you want reproduced"/>
-                        <p class="help-block text-danger" id="itemPagesError">Please enter a description of the materials you want reproduced.</p>
+                        <label class="control-label required" for="ItemPages">Description of
+                            Materials</label>
+                        <input id="ItemPages" class="form-control" name="ItemPages" type="text"
+                            placeholder="Describe the materials you want reproduced"/>
+                        <p class="help-block text-danger" id="itemPagesError">Please enter a
+                            description of the materials you want reproduced.</p>
                     </div>
                 </div>
                 <div class="right notes">
@@ -438,17 +462,23 @@
                 </div>
             </form>
             <div class="register">
-                <strong>Important:</strong> By submitting this request you're agreeing to pay the costs. See our <a href="#" target="_blank">fee schedule</a>.<br/>
-                <strong>Got an account?</strong> If not, make sure you <a href="http://raccess.rockarch.org" target="_blank">register</a> and log in before requesting copies, or you will need to submit your request again.<br/>
-                <strong>Good to know:</strong> Folders in the same box may be grouped together in a single request.
-            </div>
+                <strong>Important:</strong> By submitting this request you're agreeing to pay the
+                costs. See our <a href="#" target="_blank">fee schedule</a>.<br/>
+                <strong>Got an account?</strong> If not, make sure you <a
+                    href="http://raccess.rockarch.org" target="_blank">register</a> and log in
+                before requesting copies, or you will need to submit your request again.<br/>
+                <strong>Good to know:</strong> Folders in the same box may be grouped together in a
+                single request. </div>
         </div>
 
         <div class="overlay" id="myListCopiesConfirm">
             <div class="confirm">
                 <h2>Your request for copies has been submitted to RACcess!</h2>
-                <p>Your request will open in a new browser tab, but you can also <a href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a> to see your requests.</p>
-                <p>If you tried to submit a request before registering for an account, you'll have to submit your request again. Sorry about that!</p>
+                <p>Your request will open in a new browser tab, but you can also <a
+                        href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a>
+                    to see your requests.</p>
+                <p>If you tried to submit a request before registering for an account, you'll have
+                    to submit your request again. Sorry about that!</p>
             </div>
         </div>
     </xsl:template>
