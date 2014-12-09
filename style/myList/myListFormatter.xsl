@@ -321,8 +321,6 @@
     <!-- Submits an Aeon materials request for items in My List -->
     <xsl:template name="myListRequest">
         <div class="overlay" id="myListRequest">
-            <div class="register">
-                <strong>Got an account?</strong> If not, make sure you <a href="http://raccess.rockarch.org" target="_blank">register</a> before requesting materials in the reading room.</div>
             <form id="requestForm" method="post" target="new"
                 action="https://raccess.rockarch.org/aeon.dll">
                 <!-- Aeon inputs -->
@@ -342,17 +340,27 @@
                 <input type="hidden" name="GroupingOption_CallNumber" value="FirstValue"/>
                 <input type="hidden" name="GroupingOption_ItemInfo3" value="Concatenate"/>
                 <input type="hidden" name="SubmitButton" value="Submit Request"/>
-                <input type="hidden" name="UserReview" value="No"/>
                 <div class="myListContents">
                     <xsl:call-template name="emptyList"/>
                 </div>
-                <div class="left scheduledDate">
-                    <div class="form-group">
+                <div class="left">
+                    <div>
+                        <div class="radio">
+                            <input id="VisitScheduled" name="Visit" type="radio" checked="checked"> Schedule Retrieval</input>
+                        </div>
+                        <div class="radio">
+                            <input id="VisitReview" name="Visit" type="radio"> Keep for My Review</input>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group scheduledDate">
                         <label class="control-label required" for="scheduledDate">Scheduled Date</label>
                         <input id="ScheduledDate" class="form-control" name="ScheduledDate"
                             type="text" placeholder="Enter the date of your research visit"/>
-                        <p class="help-block text-danger" id="dateError">Please enter the date of your
-                            scheduled research visit.</p>
+                        
+                    </div>
+                    <div class="form-group userReview">
+                        <input name="UserReview" type="checkbox"> Keep in review (don't submit for processing)</input>
                     </div>
                 </div>
                 <div class="right notes">
@@ -362,12 +370,17 @@
                     </div>
                 </div>
             </form>
+            <div class="register">
+                <strong>Got an account?</strong> If not, make sure you <a href="http://raccess.rockarch.org" target="_blank">register</a> and log in before requesting materials to view in the reading room or you will need to submit your request again.
+                <strong>Good to know:</strong> Folders in the same box may be grouped together in a single request.
+            </div>
         </div>
 
         <div class="overlay" id="myListRequestConfirm">
             <div class="confirm">
-                <h2>Your request to view these materials has been submitted!</h2>
-                <p>See all your requests in <a href="https://raccess.rockarch.org/aeon.dll" target="_blank">RACcess</a>.</p>
+                <h2>Your request to view these materials has been submitted to RACcess!</h2>
+                <p>Your request will open in a new browser tab, but you can also <a href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a> to see your requests.</p>
+                <p>If you tried to submit a request before registering for an account, you'll have to submit your request again. Sorry about that!</p>
             </div>
         </div>
     </xsl:template>
@@ -375,8 +388,6 @@
     <!-- Submits an Aeon duplication request for items in My List -->
     <xsl:template name="myListCopies">
         <div class="overlay" id="myListCopies">
-            <div class="register"><strong>Got an account?</strong> If not, make sure you 
-                <a href="http://raccess.rockarch.org" target="_blank">register</a> before requesting copies.</div>
             <form id="duplicationForm" method="post" target="new"
                 action="https://raccess.rockarch.org/aeon.dll">
                 <input type="hidden" name="AeonForm" value="EADRequest"/>
@@ -426,15 +437,20 @@
                     </div>
                 </div>
             </form>
-            <div class="fees">By submitting this request you're agreeing to pay the costs. See our
-                <a href="#" target="_blank">fee schedule</a>.
+            <div class="register">
+                <strong>Got an account?</strong> If not, make sure you <a href="http://raccess.rockarch.org" target="_blank">register</a> and log in before requesting copies, or you will need to submit your request again.
+                <strong>Good to know:</strong> Folders in the same box may be grouped together in a single request.
+            </div>
+            <div class="fees">
+                By submitting this request you're agreeing to pay the costs. See our <a href="#" target="_blank">fee schedule</a>.
             </div>
         </div>
 
         <div class="overlay" id="myListCopiesConfirm">
             <div class="confirm">
-                <h2>Your request for copies has been submitted!</h2>
-                <p>See all your requests in <a href="https://raccess.rockarch.org/aeon.dll" target="_blank">RACcess</a>.</p>
+                <h2>Your request for copies has been submitted to RACcess!</h2>
+                <p>Your request will open in a new browser tab, but you can also <a href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a> to see your requests.</p>
+                <p>If you tried to submit a request before registering for an account, you'll have to submit your request again. Sorry about that!</p>
             </div>
         </div>
     </xsl:template>

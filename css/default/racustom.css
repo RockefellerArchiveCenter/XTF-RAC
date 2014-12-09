@@ -541,7 +541,7 @@ content: "*";
 	margin-top: 0 !important;
 }
 
-.myList .confirm h2 {
+.myList .confirm h2, .myList .confirm p {
 	text-align: center;
 	margin: .5em 0;
 }
