@@ -787,7 +787,7 @@
                            </xsl:if>   
                         </div>
                         <div class="subjects">
-                           <xsl:if test="archdesc/controlaccess">
+                           <xsl:if test="archdesc/controlaccess/child::*[not(@role='aut')]">
                               <h4>Subjects</h4>
                               <ul class="none">
                                  <xsl:for-each select="archdesc/controlaccess">
@@ -798,7 +798,7 @@
                                           </a>
                                        </li>
                                     </xsl:for-each>
-                                    <xsl:for-each select="corpname | famname | persname">
+                                    <xsl:for-each select="corpname[not(@role='aut')] | famname[not(@role='aut')] | persname[not(@role='aut')]">
                                        <li>
                                           <a onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);" href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}">
                                              <xsl:value-of select="."/>
