@@ -485,16 +485,26 @@ $(function () {
             { text: "Request Materials", click: function() {
                 console.log('request materials');
                 if(content()) { 
-                    if($('#myListRequest input[name="ScheduledDate"]').val()) {
+                    if($('#VisitScheduled').is(':checked')) {
+                        if($('#myListRequest input[name="ScheduledDate"]').val()) {
+                            $('input[name="UserReview"]').val("No");
+                            $('#requestForm').submit();
+                            $(this).dialog("close")
+                            $('#myListRequest input[name="ScheduledDate"]').removeClass('error');
+                            $('#myListRequest #dateError').hide();
+                            dialogMyListRequestConfirm.dialog("open");
+                        } else {
+                            $('#myListRequest input[name="ScheduledDate"]').addClass('error');
+                            $('#myListRequest #dateError').show();
+                            return false;
+                        }
+                    } else if ($('#VisitReview').is(':checked')) {
+                        $('input[name="UserReview"]').val("Yes");
                         $('#requestForm').submit();
                         $(this).dialog("close")
                         $('#myListRequest input[name="ScheduledDate"]').removeClass('error');
                         $('#myListRequest #dateError').hide();
                         dialogMyListRequestConfirm.dialog("open");
-                    } else {
-                        $('#myListRequest input[name="ScheduledDate"]').addClass('error');
-                        $('#myListRequest #dateError').show();
-                        return false;
                     }
                 } else {
                     $('#myListRequest .contentError').show();

@@ -435,7 +435,7 @@ iframe {
 }
 
 .myListContents {
-    max-height: 450px; 
+    max-height: 400px; 
     overflow-y: scroll;
     word-wrap: break-word;
     padding-bottom: .5em;
@@ -445,12 +445,9 @@ iframe {
 	margin-bottom: 0;
 }
 
-.myListContents .empty, .register {margin: 1em;text-align: center;background: rgba(196, 84, 20, 0.1);padding: .5em;border: 1px solid #c45414;border-radius: 5px;}
+.myListContents .empty {margin: 1em;text-align: center;background: rgba(196, 84, 20, 0.1);padding: .5em;border: 1px solid #c45414;border-radius: 5px;}
 
-.fees {
-	float:right;
-	margin-right: 3em;text-align: center;background: rgba(196, 84, 20, 0.1);padding: .5em;border: 1px solid #c45414;border-radius: 5px;
-}
+.register {margin: 1em;text-align: center;background: rgba(196, 84, 20, 0.1);padding: .5em;border: 1px solid #c45414;border-radius: 5px;float:left;width:96%;}
 
 .myListContents .row {
     width:98%;

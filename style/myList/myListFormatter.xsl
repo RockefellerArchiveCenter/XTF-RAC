@@ -340,6 +340,7 @@
                 <input type="hidden" name="GroupingOption_CallNumber" value="FirstValue"/>
                 <input type="hidden" name="GroupingOption_ItemInfo3" value="Concatenate"/>
                 <input type="hidden" name="SubmitButton" value="Submit Request"/>
+                <input type="hidden" name="UserReview" value="No"/>
                 <div class="myListContents">
                     <xsl:call-template name="emptyList"/>
                 </div>
@@ -356,11 +357,10 @@
                     <div class="form-group scheduledDate">
                         <label class="control-label required" for="scheduledDate">Scheduled Date</label>
                         <input id="ScheduledDate" class="form-control" name="ScheduledDate"
-                            type="text" placeholder="Enter the date of your research visit"/>
-                        
+                            type="text" placeholder="Enter the date of your research visit"/>    
                     </div>
                     <div class="form-group userReview">
-                        <input name="UserReview" type="checkbox"> Keep in review (don't submit for processing)</input>
+                        <span class="help-text">This request will be saved in RACcess, but won't be retrieved until you submit it for processing.</span>
                     </div>
                 </div>
                 <div class="right notes">
@@ -371,7 +371,7 @@
                 </div>
             </form>
             <div class="register">
-                <strong>Got an account?</strong> If not, make sure you <a href="http://raccess.rockarch.org" target="_blank">register</a> and log in before requesting materials to view in the reading room or you will need to submit your request again.
+                <strong>Got an account?</strong> If not, make sure you <a href="http://raccess.rockarch.org" target="_blank">register</a> and log in before requesting materials to view in the reading room or you will need to submit your request again.<br/>
                 <strong>Good to know:</strong> Folders in the same box may be grouped together in a single request.
             </div>
         </div>
@@ -438,11 +438,9 @@
                 </div>
             </form>
             <div class="register">
-                <strong>Got an account?</strong> If not, make sure you <a href="http://raccess.rockarch.org" target="_blank">register</a> and log in before requesting copies, or you will need to submit your request again.
+                <strong>Important:</strong> By submitting this request you're agreeing to pay the costs. See our <a href="#" target="_blank">fee schedule</a>.<br/>
+                <strong>Got an account?</strong> If not, make sure you <a href="http://raccess.rockarch.org" target="_blank">register</a> and log in before requesting copies, or you will need to submit your request again.<br/>
                 <strong>Good to know:</strong> Folders in the same box may be grouped together in a single request.
-            </div>
-            <div class="fees">
-                By submitting this request you're agreeing to pay the costs. See our <a href="#" target="_blank">fee schedule</a>.
             </div>
         </div>
 
