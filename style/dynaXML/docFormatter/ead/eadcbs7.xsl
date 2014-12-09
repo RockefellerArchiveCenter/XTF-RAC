@@ -1396,8 +1396,7 @@
                          </xsl:if>-->           
                                <xsl:apply-templates select="did" mode="dsc"/>  
                          <div class="instances">
-                            <xsl:for-each select="child::*/container">
-                               <xsl:if test="not(@parent)">
+                            <xsl:for-each select="child::*/container[not(@parent)]">
                                <div class="instance">
                                <div class="format">
                                   <xsl:variable name="label">
@@ -1430,7 +1429,6 @@
                                   </span>
                                </div>
                                </div>
-                               </xsl:if>
                             </xsl:for-each>
                             <xsl:text>&#160;</xsl:text>
                          </div>                               

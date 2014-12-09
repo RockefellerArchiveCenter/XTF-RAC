@@ -455,7 +455,9 @@
          </div>
       </div>
    </xsl:template>
-   <xsl:template match="titleproper/num"><br/><xsl:value-of select="."/></xsl:template>
+   <!-- only display first num tag -->
+   <xsl:template match="titleproper/num[1]"><br/><xsl:value-of select="."/></xsl:template>
+   <xsl:template match="titleproper/num[2]"/>
    <!-- ====================================================================== -->
    <!-- Tabs Templates                                                         -->
    <!-- ====================================================================== -->

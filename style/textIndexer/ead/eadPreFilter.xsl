@@ -249,7 +249,7 @@
       </xsl:copy>
    </xsl:template>
    
-   <xsl:template match="origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'Author')] | origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'Contributor')]">
+   <xsl:template match="origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'Author')] | origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'Contributor')] | origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'ctb')] | origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'aut')]">
       <xsl:copy>
          <xsl:copy-of select="@*"/>
          <xsl:attribute name="xtf:sectionType" select="'creator'"/>
@@ -575,7 +575,7 @@
       <xsl:if test="child::did/container">
          <containers xtf:meta="true">
          <xsl:for-each select="did/container">
-            <xsl:value-of select="concat(' ',@type,' ',.)"/>
+            <xsl:value-of select="concat(' ',concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
             <xsl:if test="position()!=last()">, </xsl:if>
          </xsl:for-each>
          </containers>
@@ -589,6 +589,11 @@
             <xsl:choose>
                <xsl:when test="did/origination">
                   <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+                     <collectionCreator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </collectionCreator>
+                  </xsl:for-each>
+                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
                      <collectionCreator xtf:meta="true">
                         <xsl:value-of select="normalize-space(.)"/>
                      </collectionCreator>
@@ -608,6 +613,14 @@
                         <xsl:value-of select="normalize-space(.)"/>
                      </creator>
                   </xsl:for-each>
+                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
+                     <collectionCreator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </collectionCreator>
+                     <creator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </creator>
+                  </xsl:for-each>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:when>
@@ -620,9 +633,25 @@
                      </creator>
                   </xsl:for-each>
                </xsl:when>
+               <xsl:when test="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
+                  <xsl:for-each
+                     select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
+                     <creator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </creator>
+                  </xsl:for-each>
+               </xsl:when>
                <xsl:when test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'Contributor')]">
                   <creator xtf:meta="true">
                      <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination[child::*[starts-with(@role, 'Contributor')]][1]/child::*))"/>
+                  </creator>
+               </xsl:when>
+               <xsl:when
+                  test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'ctb')]">
+                  <creator xtf:meta="true">
+                     <xsl:value-of
+                        select="normalize-space(string(/ead/archdesc/did/origination[child::*[starts-with(@role, 'ctb')]][1]/child::*))"
+                     />
                   </creator>
                </xsl:when>
                <xsl:otherwise>
@@ -925,15 +954,14 @@
          <xsl:when test="@level">
             <xsl:if test="did/unitdate[@type='inclusive'] !='' or did/unitdate !=''">
             <date xtf:meta="true">
-               <xsl:value-of select="did/unitdate"/>
-               <!--<xsl:choose>
-                  <xsl:when test="did/unitdate[@type='inclusive']">
-                     <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
-                  </xsl:when>
+               <xsl:choose>
                   <xsl:when test="did/unitdate">
                      <xsl:value-of select="did/unitdate"/>
                   </xsl:when>
-               </xsl:choose>-->
+                  <xsl:when test="did/unitdate[@type='inclusive']">
+                     <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
+                  </xsl:when>
+               </xsl:choose>
             </date>
             </xsl:if>
             <xsl:if test="/ead/archdesc/did/unitdate[@type='inclusive']">
