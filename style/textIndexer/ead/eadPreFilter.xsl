@@ -902,6 +902,11 @@
             <accessrestrict xtf:meta="true">
                <xsl:value-of select="accessrestrict/p"/>
             </accessrestrict>
+            <xsl:if test="@level='file' or @level='item'">
+               <filelevelaccessrestrict xtf:meta="true">
+                  <xsl:value-of select="accessrestrict/p"/>
+               </filelevelaccessrestrict>
+            </xsl:if>
          </xsl:when>
          <xsl:when test="ancestor::*/child::accessrestrict">
             <accessrestrict xtf:meta="true">
