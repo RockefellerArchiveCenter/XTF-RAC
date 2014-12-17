@@ -158,7 +158,7 @@ div.docHit {
 #docHits {float:left; width:73%;padding-bottom:1%}
 #docHits .hitRank {width:3%}
 #docHits .resultIcon {width:10%;}
-#docHits .resultContent {width:80%;}
+#docHits .resultContent {width:75%;}
 #docHits .resultLabel {width:15%;}
 #docHits .resultText {width:80%;}
 
@@ -173,7 +173,7 @@ div.docHit {
 .subdocuments {float: left;width:177%;padding-left:10%;}
 .subdocument {float:left; padding: .5em 1%;width:49%;}
 .subdocument.odd {background: rgb(228, 228, 228);}
-.subdocument .title {width:90%; float:left;font-size:1em;font-weight:bold;margin:.5em 0}
+.subdocument .title {width:85%; float:left;font-size:1em;font-weight:bold;margin:.5em 0}
 .subdocument .matches {float:left;width:87%;margin-left:3%;font-size:.9em;}
 .subdocument .resultLabel {width:10% !important}
 .subdocument.active {background-color: #bbb !important;width:51%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position:relative;z-index:2;

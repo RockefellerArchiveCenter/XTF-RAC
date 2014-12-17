@@ -115,7 +115,7 @@
                 data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
                 data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}"
                 data-GroupingField="{$groupingfield}">
-                <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
+                <img src="/xtf/icons/default/addlist.png" alt="Add to My List" title="Add to My List"/>
             </a>
         </xsl:if>
     </xsl:template>
@@ -207,7 +207,7 @@
             data-ItemVolume="{$container1}" data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
             data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}"
             data-GroupingField="{$groupingfield}">
-            <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
+            <img src="/xtf/icons/default/addlist.png" alt="Add to My List" title="Add to My List"/>
         </a>
     </xsl:template>
 
@@ -240,7 +240,7 @@
                     data-ItemNumber="{$barcode}" data-ItemTitle="{$title}"
                     data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNumber="{$callno}"
                     data-ItemInfo3="{$url}">
-                    <img src="/xtf/icons/default/addbag.gif" alt="Add to My List"/>
+                    <img src="/xtf/icons/default/addlist.png" alt="Add to My List" title="Add to My List"/>
                 </a>
             </xsl:otherwise>
         </xsl:choose>

@@ -267,7 +267,9 @@
                   </a>
                </div>
                
-               <xsl:call-template name="myListNav"/>
+               <div id="bookbag">
+                  <xsl:call-template name="myListNav"/>
+               </div>
 
                <xsl:call-template name="bbar_custom"/>
                
@@ -816,7 +818,7 @@
                      <xsl:value-of select="'active '"/>
                   </xsl:attribute>
                </xsl:when>-->
-            </xsl:choose>
+            </xsl:choose>ß
          </xsl:attribute>
          
          <xsl:variable name="levelID">
@@ -830,9 +832,17 @@
                <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
-               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1 and @otherlevel!='unspecified')"><xsl:value-of select="@otherlevel"/>: </xsl:when>
-               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)"/>
-               <xsl:when test="@otherlevel='unspecified'"/>
+               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1 and @otherlevel!='unspecified')"><xsl:value-of select="@otherlevel"/><xsl:value-of select="did/unitid"/>: </xsl:when>
+               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">
+                  <xsl:if test="did/unitid">
+                     <xsl:value-of select="did/unitid"/><xsl:text> :</xsl:text>
+                  </xsl:if>
+               </xsl:when>
+               <xsl:when test="@otherlevel='unspecified'">
+                  <xsl:if test="did/unitid">
+                     <xsl:value-of select="did/unitid"/><xsl:text> :</xsl:text>
+                  </xsl:if>
+               </xsl:when>
                <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>
             </xsl:choose>
          </xsl:variable>
@@ -888,8 +898,17 @@
             <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
-            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"><xsl:value-of select="@otherlevel"/>: </xsl:when>
-            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)"><xsl:value-of select="@otherlevel"/></xsl:when>
+            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1 and @otherlevel!='unspecified')"><xsl:value-of select="@otherlevel"/><xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">
+               <xsl:if test="did/unitid">
+                  <xsl:value-of select="did/unitid"/><xsl:text> :</xsl:text>
+               </xsl:if>
+            </xsl:when>
+            <xsl:when test="@otherlevel='unspecified'">
+               <xsl:if test="did/unitid">
+                  <xsl:value-of select="did/unitid"/><xsl:text> :</xsl:text>
+               </xsl:if>
+            </xsl:when>
             <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
