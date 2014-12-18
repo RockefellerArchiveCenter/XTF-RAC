@@ -835,12 +835,12 @@
                <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1 and @otherlevel!='unspecified')"><xsl:value-of select="@otherlevel"/><xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">
                   <xsl:if test="did/unitid">
-                     <xsl:value-of select="did/unitid"/><xsl:text> :</xsl:text>
+                     <xsl:value-of select="did/unitid"/><xsl:text>: </xsl:text>
                   </xsl:if>
                </xsl:when>
                <xsl:when test="@otherlevel='unspecified'">
                   <xsl:if test="did/unitid">
-                     <xsl:value-of select="did/unitid"/><xsl:text> :</xsl:text>
+                     <xsl:value-of select="did/unitid"/><xsl:text>: </xsl:text>
                   </xsl:if>
                </xsl:when>
                <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>
@@ -901,12 +901,12 @@
             <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1 and @otherlevel!='unspecified')"><xsl:value-of select="@otherlevel"/><xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">
                <xsl:if test="did/unitid">
-                  <xsl:value-of select="did/unitid"/><xsl:text> :</xsl:text>
+                  <xsl:value-of select="did/unitid"/><xsl:text>: </xsl:text>
                </xsl:if>
             </xsl:when>
             <xsl:when test="@otherlevel='unspecified'">
                <xsl:if test="did/unitid">
-                  <xsl:value-of select="did/unitid"/><xsl:text> :</xsl:text>
+                  <xsl:value-of select="did/unitid"/><xsl:text>: </xsl:text>
                </xsl:if>
             </xsl:when>
             <xsl:otherwise><xsl:value-of select="did/unitid"/>: </xsl:otherwise>

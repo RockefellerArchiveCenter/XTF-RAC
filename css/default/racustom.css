@@ -435,7 +435,7 @@ iframe {
 }
 
 .myListContents {
-    max-height: 400px; 
+    max-height: 300px; 
     overflow-y: scroll;
     word-wrap: break-word;
     padding-bottom: .5em;

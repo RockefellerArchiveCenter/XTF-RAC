@@ -495,7 +495,8 @@
             </form>
             <div class="register">
                 <strong>Important:</strong> By submitting this request you're agreeing to pay the
-                costs. See our <a href="#" target="_blank">fee schedule</a>.<br/>
+                costs. See our <a href="#" target="_blank">fee schedule</a>. If you want an estimated  
+                cost, email an archivist at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a>.<br/>
                 <strong>Got an account?</strong> If not, make sure you <a
                     href="http://raccess.rockarch.org" target="_blank">register</a> and log in
                 before requesting copies, or you will need to submit your request again.<br/>
