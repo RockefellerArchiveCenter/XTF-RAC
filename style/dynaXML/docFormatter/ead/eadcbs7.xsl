@@ -1359,7 +1359,48 @@
                              <xsl:apply-templates select="processinfo"/>
                              <xsl:apply-templates select="relatedmaterial"/>
                              <xsl:apply-templates select="separatedmaterial"/>
-                             <xsl:apply-templates select="controlaccess"/>
+                         <xsl:if test="controlaccess">
+                            <xsl:if test="controlaccess/subject">
+                               <h4>Subjects</h4>
+                               <xsl:for-each select="controlaccess/subject">
+                                  <span>
+                                     <xsl:value-of select="."/>
+                                  </span><br />
+                               </xsl:for-each>
+                            </xsl:if>
+                            <xsl:if test="controlaccess/persname|controlaccess/famname">
+                               <h4>People</h4>
+                               <xsl:for-each select="controlaccess/persname|controlaccess/famname">
+                                  <span>
+                                     <xsl:value-of select="."/>
+                                  </span><br />
+                               </xsl:for-each>
+                            </xsl:if>
+                            <xsl:if test="controlaccess/corpname">
+                               <h4>Organizations</h4>
+                               <xsl:for-each select="controlaccess/corpname">
+                                  <span>
+                                     <xsl:value-of select="."/>
+                                  </span><br />
+                               </xsl:for-each>
+                            </xsl:if>
+                            <xsl:if test="controlaccess/geogname">
+                               <h4>Places</h4>
+                               <xsl:for-each select="controlaccess/geogname">
+                                  <span>
+                                     <xsl:value-of select="."/>
+                                  </span><br />
+                               </xsl:for-each>
+                            </xsl:if>
+                            <xsl:if test="controlaccess/genreform">
+                               <h4>Formats</h4>
+                               <xsl:for-each select="controlaccess/genreform">
+                                  <span>
+                                     <xsl:value-of select="."/>
+                                  </span><br />
+                               </xsl:for-each>
+                            </xsl:if>
+                         </xsl:if>
                        </div>
                    <!-- ADDED 1/4/11: Adds container headings if series/subseries is followed by a file -->                                           
                       <xsl:if test="child::*[@level][1]/@level='file' or child::*[@level][1]/@level='item' or (child::*[@level][1]/@level='otherlevel'and child::*[@level][1]/child::did/container)">
