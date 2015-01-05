@@ -26,7 +26,12 @@
         <xsl:if test="meta/level='file' or meta/level='item' or meta/type='mods'">
             <xsl:variable name="title">
                 <xsl:if test="meta/type='ead'">
-                    <xsl:value-of select="meta/title"/>
+                    <xsl:variable name="octothorpe">
+                        <xsl:value-of select="replace(meta/title, '#', 'No.')"/>
+                    </xsl:variable>
+                    <xsl:variable name="quot">"</xsl:variable>
+                    <xsl:variable name="apos">'</xsl:variable>
+                    <xsl:value-of select="replace($octothorpe, $quot, $apos)"/>
                 </xsl:if>
             </xsl:variable>
             <xsl:variable name="url">
@@ -125,7 +130,12 @@
         <xsl:param name="rootID"/>
         <xsl:variable name="identifier" select="concat($rootID,'-',@id)"/>
         <xsl:variable name="title">
-            <xsl:value-of select="xtf:meta/title"/>
+            <xsl:variable name="octothorpe">
+                <xsl:value-of select="replace(xtf:meta/title, '#', 'No.')"/>
+            </xsl:variable>
+            <xsl:variable name="quot">"</xsl:variable>
+            <xsl:variable name="apos">'</xsl:variable>
+            <xsl:value-of select="replace($octothorpe, $quot, $apos)"/>
         </xsl:variable>
         <xsl:variable name="collectionTitle">
             <xsl:value-of select="xtf:meta/collectionTitle"/>
