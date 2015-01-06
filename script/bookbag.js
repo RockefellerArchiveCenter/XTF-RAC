@@ -51,7 +51,7 @@ $(document).ready(function () {
             //create variables
             function sanitize(value) {
                 if (value) {return value;}
-                else {return '&nbsp;';}
+                else {return '';}
             };
 
             function dateConvert(value){
@@ -67,7 +67,7 @@ $(document).ready(function () {
                         return d + ', ' + h + ':' + m + ' am';
                     }
                 } else {
-                    return '&nbsp;';
+                    return '';
                 }
             };
 
@@ -79,7 +79,7 @@ $(document).ready(function () {
                     return container1
                     }
                 } else {
-                    return '&nbsp;';
+                    return '';
                 }
                 e.preventDefault();
             };
