@@ -40,8 +40,9 @@ $(document).ready(function () {
             $('.myListContents').append(
                 '<div class="row header-row">' + 
                     '<div class="requestInputs"><input type="checkbox" checked="checked" name="allRequests"/></div>' + 
-                    '<div class="title">Title</div>' + 
-                    '<div class="collectionTitle">Collection</div>' +
+                    '<div class="collectionTitle">Collection/Book Title</div>' +
+                    '<div class="title">Folder Title</div>' + 
+                    '<div class="date">Date</div>' + 
                     '<div class="containers">Containers</div>' +
                     '<div class="dateAdded">Date Added</div>' +
                 '</div>');
@@ -85,13 +86,17 @@ $(document).ready(function () {
             };
 
             function splitparents(string) {
-                var split = string.split('; ');
-                var parents = '';
-                for(var i=0; i<split.length; i++) {
-                    var parent = '<div style="text-indent:' + i*2 + 'px;">' + split[i] + '</div>'
-                    parents = parents + parent;
-                };
-                return parents;
+                if(string) {
+                    var split = string.split('; ');
+                    var parents = '';
+                    for(var i=0; i<split.length; i++) {
+                        var parent = '<div style="text-indent:' + i*2 + 'px;">' + split[i] + '</div>'
+                        parents = parents + parent;
+                    };
+                    return parents;
+                    } else {
+                    return '';
+                }
             };
 
             var title = sanitize(item.title);
@@ -109,7 +114,7 @@ $(document).ready(function () {
             var callNumber = sanitize(item.callNumber);
             var accessRestrict = sanitize(item.accessRestrict);
             var groupingfield = sanitize(item.groupingfield);
-
+                                
             $('.myListContents').append(
                 '<div class="row">' + 
                     '<div class="requestInputs">' +
@@ -126,13 +131,11 @@ $(document).ready(function () {
                         '<input type="hidden" name="ItemInfo3_' + identifier + '" value="' + url + '"/>' +
                         '<input type="hidden" name="GroupingField_' + identifier + '" value="' + groupingfield + '"/>' +
                     '</div>' + 
-                    '<div class="title"><p><a href="' + url + '">' + title + ', ' + date + '</a></p></div>' + 
-                    //'<div class="date"><p>' + date + '</p></div>' + 
                     '<div class="collectionTitle"><p>' + collectionTitle + ' (' + item.callNumber + ')</p>' +
                     '<div class="parents">' + formatparents + '</div></div>' +
-                    // '<div class="creator"><p>' + creator + '</p></div>' +
+                    '<div class="title"><p><a href="' + url + '">' + title + '</a></p></div>' + 
+                    '<div class="date">' + date + ' </div>' +
                     '<div class="containers"><p>' + containers + '</p></div>' +
-                    //'<div class="restrictions">' + item.accessRestrict + '</div>' +
                     '<div class="dateAdded"><p>' + dateAdded + '</p></div>' + 
                     '<button class="list-delete btn" href="#" data-identifier="'+ identifier + '">Delete</button>' +
                 '</div>');
