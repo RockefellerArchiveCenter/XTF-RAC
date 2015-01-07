@@ -283,7 +283,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="http://raccess.rockarch.org/aeon.dll" class="btn btn-default" target="new"
+            <a href="https://raccess.rockarch.org/aeon.dll" class="btn btn-default" target="new"
                 >Login</a>
         </div>
     </xsl:template>
