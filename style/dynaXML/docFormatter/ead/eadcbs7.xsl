@@ -1226,22 +1226,19 @@
                                                   <xsl:call-template name="anchor"/>
                                                   <xsl:call-template name="clevel_dao"/>
                                                   <xsl:for-each select="c|c06">
-                                                  <xsl:if
-                                                  test="dao | did/dao | xtf:meta/*:type = 'dao'">
+                                                     <xsl:if test="dao | did/dao | xtf:meta/*:type = 'dao'">
                                                   <div class="{@level} c06"
                                                   style="width:99%;float:right;">
                                                   <xsl:call-template name="anchor"/>
                                                   <xsl:call-template name="clevel_dao"/>
                                                   <xsl:for-each select="c|c07">
-                                                  <xsl:if
-                                                  test="dao | did/dao | xtf:meta/*:type = 'dao'">
+                                                     <xsl:if test="dao | did/dao | xtf:meta/*:type = 'dao'">
                                                   <div class="{@level} c07"
                                                   style="width:99%;float:right;">
                                                   <xsl:call-template name="anchor"/>
                                                   <xsl:call-template name="clevel_dao"/>
                                                   <xsl:for-each select="c|c08">
-                                                  <xsl:if
-                                                  test="dao | did/dao | xtf:meta/*:type = 'dao'">
+                                                     <xsl:if test="dao | did/dao | xtf:meta/*:type = 'dao'">
                                                   <div class="{@level} c08"
                                                   style="width:99%;float:right;">
                                                   <xsl:call-template name="anchor"/>
