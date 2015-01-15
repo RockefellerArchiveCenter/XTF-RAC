@@ -271,8 +271,12 @@ $(function() {
     $('.requestInputs input[name="Request"]').on('click', function(){
         if($(this).is(':checked')) {
             $(this).siblings('input').attr("disabled", false);
+            var value = $(this).attr("value");
+            $('input[value='+value+"]").attr('checked', true);
         } else {
            $(this).siblings('input').attr("disabled", true);
+           var value = $(this).attr("value");
+           $('input[value='+value+"]").attr('checked', false);
         }
     });
 });

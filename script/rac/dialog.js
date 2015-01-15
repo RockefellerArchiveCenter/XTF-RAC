@@ -627,6 +627,19 @@ $(function () {
     $(".myListCopies").on("click", function (e) {
         e.preventDefault();
         dialogMyListCopies.dialog("option", "title", "Request Copies").dialog("open");
+        $(".ui-dialog-buttonpane button:contains('Request Copies')").button("disable");
+        $("input#costagree").attr('checked', false);
         });
+        
+    $("input#costagree").on("click", function() {
+        if($("input#costagree").is(':checked')) {
+            console.log("checked");
+            $(".ui-dialog-buttonpane button:contains('Request Copies')").button("enable");
+        } else {
+            console.log("unchecked");
+            $(".ui-dialog-buttonpane button:contains('Request Copies')").button("disable");
+        }
+    });   
+        
     });
 });
