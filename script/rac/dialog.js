@@ -633,10 +633,8 @@ $(function () {
         
     $("input#costagree").on("click", function() {
         if($("input#costagree").is(':checked')) {
-            console.log("checked");
             $(".ui-dialog-buttonpane button:contains('Request Copies')").button("enable");
         } else {
-            console.log("unchecked");
             $(".ui-dialog-buttonpane button:contains('Request Copies')").button("disable");
         }
     });   

@@ -424,6 +424,17 @@ iframe {
 /*My List (aka Bookbag)*/
 #myListNav {
 	margin-right:1%;
+	margin-top:5em;
+}
+
+#myListButton.hasContents {
+    color:#c45414 !important;
+    font-weight:bold;
+    box-shadow:0px 0px 5px #c45414;
+}
+
+#myListButton.hasContents .caret {
+    border-top: 4px solid #c45414;
 }
 
 .ui-dialog .myListContents {

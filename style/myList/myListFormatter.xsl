@@ -261,7 +261,7 @@
         <div class="pull-right" id="myListNav">
             <xsl:variable name="bag" select="session:getData('bag')"/>
             <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                <button id="myListButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                     > My List (<span class="listCount"><xsl:value-of
                             select="count($bag/bag/savedDoc)"/></span>)&#160;<span class="caret"/>
                 </button>
@@ -431,14 +431,16 @@
                 <strong>Got an account?</strong> If not, make sure you <a
                     href="http://raccess.rockarch.org" target="_blank">register</a> and log in
                 before requesting materials to view in the reading room or you will need to submit
-                your request again.<br/>
+                your request again.</div>
+            <div class="register">
                 <strong>Good to know:</strong> Folders in the same box may be grouped together in a
                 single request. </div>
         </div>
 
         <div class="overlay" id="myListRequestConfirm">
             <div class="confirm">
-                <h2>Do you have an account? If so, your request to view these materials has been submitted to RACcess! If you tried to submit a request before registering for an account, you'll have
+                <h2>Do you have an account? If so, your request to view these materials has been submitted to RACcess!</h2>
+                <h2>If you tried to submit a request before registering for an account, you'll have
                     to submit your request again. Sorry about that!</h2>
                 <p>Your request will open in a new browser tab, but you can also <a
                         href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a>
@@ -472,6 +474,7 @@
                 <div class="myListContents">
                     <xsl:call-template name="emptyList"/>
                 </div>
+                <div class="register"><input id="costagree" type="checkbox"/> I agree to pay the duplication costs for this request. See our <a href="/xtf/feeschedule.html" target="_blank">fee schedule</a>.</div>
                 <div class="left">
                     <div class="form-group">
                         <label class="control-label required" for="Format">Format</label>
@@ -503,19 +506,18 @@
                 </div>
             </form>
             <div class="register">
-                <strong>Important:</strong> By submitting this request you're agreeing to pay the
-                costs. See our <a href="/xtf/feeschedule.html" target="_blank">fee schedule</a>. If you want an estimated  
-                cost, email an archivist at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a>.<br/>
                 <strong>Got an account?</strong> If not, make sure you <a
                     href="http://raccess.rockarch.org" target="_blank">register</a> and log in
-                before requesting copies, or you will need to submit your request again.<br/>
-                <strong>Good to know:</strong> Folders in the same box may be grouped together in a
-                single request. </div>
+                before requesting copies, or you will need to submit your request again.</div>
+            <div class="register">
+                <strong>Good to know:</strong> If you want a cost estimate for your order, email an archivist at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a>.
+                Folders in the same box may be grouped together in a single request. </div>
         </div>
 
         <div class="overlay" id="myListCopiesConfirm">
             <div class="confirm">
-                <h2>Do you have an account? If so, your request for copies has been submitted to RACcess! If you tried to submit a request before registering for an account, you'll have
+                <h2>Do you have an account? If so, your request for copies has been submitted to RACcess!</h2>
+                <h2>If you tried to submit a request before registering for an account, you'll have
                     to submit your request again. Sorry about that!</h2>
                 <p>Your request will open in a new browser tab, but you can also <a
                         href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a>

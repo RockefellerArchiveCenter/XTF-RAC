@@ -37,6 +37,7 @@ $(document).ready(function () {
         if (myList) {
             $('.myListContents').empty();
             if (myList.length > 0) {
+            $('#myListNav #myListButton').addClass('hasContents');
             $('.myListContents').append(
                 '<div class="row header-row">' + 
                     '<div class="requestInputs"><input type="checkbox" checked="checked" name="allRequests"/></div>' + 
@@ -145,17 +146,22 @@ $(document).ready(function () {
 
         };
 
-        //update list count
+        // update list count
         var count = myList.length
         $(listCount).text(count);
         if (count < 1) {
             $('.myListContents').append('<div class="empty">Your Bookbag is empty! Click on the icon that looks like this <img alt="bookbag icon" src="/xtf/icons/default/addbag.gif"/> next to one or more items in your <a href="">Search Results</a> to add it to your bookbag.</div>');
-        }
-
+            $('#myListNav #myListButton').removeClass('hasContents');
+        } 
+        
+        
     } else {
         //if list is empty, set count to zero
         $(listCount).text('0');
+        $('#myListNav #myListButton').removeClass('hasContents');
     }
+    
+    
 
     return false;
 

@@ -272,7 +272,7 @@
             </div>
          </div>
       </div>
-      <div class="comment">									
+      <!--<div class="comment">									
          <a href="http://www.rockarch.org/" class="home">Home</a> |
          <a href="http://www.rockarch.org/faqs/" class="home">FAQs</a> | 
          <a href="http://www.rockarch.org/links.php" class="home">Links</a> | 
@@ -280,7 +280,7 @@
          <a href="http://www.facebook.com/RockefellerArchiveCenter" onClick="_gaq.push(['_trackEvent', 'Rockarch Home', 'Social', 'Facebook']);" target="_blank"><img src="http://www.rockarch.org/images/fb-icon.gif" width="20" height="20" alt="FB" border="0" align="top"/></a>
          <a href="https://twitter.com/rockarch_org" onClick="_gaq.push(['_trackEvent', 'Rockarch Home', 'Social', 'Twitter']);" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false"></a>
          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-      </div>
+      </div>-->
    </header>
 
    <dynaxml.header>
