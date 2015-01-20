@@ -232,7 +232,7 @@
    <xsl:template name="simpleForm" exclude-result-prefixes="#all">
       <form id="searchHome" method="get" action="{$xtfURL}{$crossqueryPath}">
          <div class="home">
-            <div id="about">
+            <!--<div id="about">
                <div class="aboutButton dropdownButton">
                   <h3>About</h3>
                </div>
@@ -271,7 +271,7 @@
                   </ul>
                </div>
 
-            </div>
+            </div>-->
             <div id="searchTop">
                <div id="searchtip" class="box">
                   <ul>

@@ -43,7 +43,7 @@
             <xsl:variable name="callNo">
                 <xsl:choose>
                     <xsl:when test="meta/type='mods'">
-                        <xsl:value-of select="meta/identifier"/>
+                        <xsl:value-of select="meta/callNo"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="substring-before(meta/identifier, '-')"/>
@@ -225,19 +225,19 @@
     <xsl:template name="myListMods">
         <xsl:param name="url"/>
         <xsl:variable name="identifier">
-            <xsl:value-of select="/mods:mods/mods:identifier"/>
+            <xsl:value-of select="/mods:mods/mods:identifier[@type='local']"/>
         </xsl:variable>
         <xsl:variable name="title">
-            <xsl:value-of select="mods:titleInfo/mods:title"/>
+            <xsl:value-of select="/mods:mods/xtf:meta/*:title"/>
         </xsl:variable>
         <xsl:variable name="creator">
-            <xsl:value-of select="mods:name[mods:role/mods:roleTerm != 'Publisher']"/>
+            <xsl:value-of select="/mods:mods/xtf:meta/*:creator"/>
         </xsl:variable>
         <xsl:variable name="date">
-            <xsl:value-of select="mods:originInfo/mods:dateIssued"/>
+            <xsl:value-of select="/mods:mods/xtf:meta/*:date"/>
         </xsl:variable>
         <xsl:variable name="callno">
-            <xsl:value-of select="/mods:mods/mods:classification"/>
+            <xsl:value-of select="/mods:mods/xtf:meta/*:callNo"/>
         </xsl:variable>
         <xsl:variable name="barcode"/>
 
@@ -262,7 +262,7 @@
             <xsl:variable name="bag" select="session:getData('bag')"/>
             <div class="btn-group">
                 <button id="myListButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                    > My List (<span class="listCount"><xsl:value-of
+                    ><img src="/xtf/icons/default/add.png"/> My List (<span class="listCount"><xsl:value-of
                             select="count($bag/bag/savedDoc)"/></span>)&#160;<span class="caret"/>
                 </button>
                 <ul class="dropdown-menu pull-right" role="menu">
@@ -304,11 +304,11 @@
         <div class="actions">
             <xsl:variable name="bag" select="session:getData('bag')"/>
             <xsl:variable name="bagCount" select="count($bag/bag/savedDoc)"/>
-            <a class="btn btn-default myListEmail">E-mail My Bookbag</a>
-            <a class="btn btn-default myListPrint">Print</a>
-            <a class="btn btn-default myListRequest">Request in Reading Room</a>
-            <a class="btn btn-default myListCopies">Request Copies</a>
-            <a class="btn btn-default myListRemoveAll">Remove All Items</a>
+            <a class="btn btn-default myListEmail"><img src="/xtf/icons/default/email-list.png"/> E-mail My Bookbag</a>
+            <a class="btn btn-default myListPrint"><img src="/xtf/icons/default/print-list.png"/> Print</a>
+            <a class="btn btn-default myListRequest"><img src="/xtf/icons/default/reading-room-request.png"/> Request in Reading Room</a>
+            <a class="btn btn-default myListCopies"><img src="/xtf/icons/default/duplication-request.png"/> Request Copies</a>
+            <a class="btn btn-default myListRemoveAll"><img src="/xtf/icons/default/delete-all.png"/> Remove All Items</a>
         </div>
     </xsl:template>
 
@@ -316,7 +316,7 @@
     <xsl:template name="myListEmail">
         <!--<xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>-->
         <div class="overlay" id="myListEmail">
-            <div class="myListContents">
+            <div class="myListContents dialog">
                 <xsl:call-template name="emptyList"/>
             </div>
             <p class="help-block text-danger contentError">There's nothing to email!</p>
@@ -364,7 +364,7 @@
     <xsl:template name="myListPrint">
         <xsl:variable name="bookbagContents" select="session:getData('bag')/bag"/>
         <div class="overlay" id="myListPrint">
-            <div class="myListContents">
+            <div class="myListContents dialog">
                 <xsl:call-template name="emptyList"/>
             </div>
             <p class="help-block text-danger contentError">There's nothing to print!</p>
@@ -394,7 +394,7 @@
                 <input type="hidden" name="GroupingOption_ItemInfo3" value="Concatenate"/>
                 <input type="hidden" name="SubmitButton" value="Submit Request"/>
                 <input type="hidden" name="UserReview" value="No"/>
-                <div class="myListContents">
+                <div class="myListContents dialog">
                     <xsl:call-template name="emptyList"/>
                 </div>
                 <div class="left">
@@ -439,9 +439,9 @@
 
         <div class="overlay" id="myListRequestConfirm">
             <div class="confirm">
-                <h2>Do you have an account? If so, your request to view these materials has been submitted to RACcess!</h2>
-                <h2>If you tried to submit a request before registering for an account, you'll have
-                    to submit your request again. Sorry about that!</h2>
+                <h1>You need an account to request materials!</h1>
+                <h3>If you are logged in to your RACcess account, your request has been submitted.</h3>
+                <h3>If not, you may have to submit your request again.</h3>
                 <p>Your request will open in a new browser tab, but you can also <a
                         href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a>
                     to see your requests.</p>
@@ -471,7 +471,7 @@
                 <input type="hidden" name="GroupingOption_ItemInfo3" value="Concatenate"/>
                 <input type="hidden" name="SkipOrderEstimate" value="Yes"/>
                 <input type="hidden" name="SubmitButton" value="Submit Request"/>
-                <div class="myListContents">
+                <div class="myListContents dialog">
                     <xsl:call-template name="emptyList"/>
                 </div>
                 <div class="register"><input id="costagree" type="checkbox"/> I agree to pay the duplication costs for this request. See our <a href="/xtf/feeschedule.html" target="_blank">fee schedule</a>.</div>
@@ -516,11 +516,11 @@
 
         <div class="overlay" id="myListCopiesConfirm">
             <div class="confirm">
-                <h2>Do you have an account? If so, your request for copies has been submitted to RACcess!</h2>
-                <h2>If you tried to submit a request before registering for an account, you'll have
-                    to submit your request again. Sorry about that!</h2>
+                <h1>You need an account to request copies!</h1>
+                <h2>If you are logged in to your RACcess account, your request has been submitted.</h2>
+                <h2>If not, you may have to submit your request again.</h2>
                 <p>Your request will open in a new browser tab, but you can also <a
-                        href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a>
+                    href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a>
                     to see your requests.</p>
             </div>
         </div>
@@ -528,9 +528,9 @@
 
     <!-- Creates placeholder display when My List is empty -->
     <xsl:template name="emptyList">
-        <div class="empty">Your Bookbag is empty! Click on the icon that looks like this <img
-                alt="bookbag icon" src="/xtf/icons/default/addbag.gif"/> next to one or more items
-            in your <a href="">Search Results</a> to add it to your bookbag.</div>
+        <div class="empty">Your List is empty! Click on the icon that looks like this <img
+                alt="bookbag icon" src="/xtf/icons/default/addlist.png"/> next to one or more items
+            in your <a href="">Search Results</a> to add it to your list.</div>
     </xsl:template>
 
 </xsl:stylesheet>

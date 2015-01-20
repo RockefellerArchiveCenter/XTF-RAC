@@ -109,8 +109,8 @@ $(document).ready(function () {
             var url = sanitize(item.URL);
             var parents = sanitize(item.parents);
             var formatparents = splitparents(item.parents);
-            var container1 = item.container1;
-            var container2 = item.container2;
+            var container1 = sanitize(item.container1);
+            var container2 = sanitize(item.container2);
             var containers = containerJoin(container1, container2);
             var callNumber = sanitize(item.callNumber);
             var accessRestrict = sanitize(item.accessRestrict);
@@ -150,7 +150,7 @@ $(document).ready(function () {
         var count = myList.length
         $(listCount).text(count);
         if (count < 1) {
-            $('.myListContents').append('<div class="empty">Your Bookbag is empty! Click on the icon that looks like this <img alt="bookbag icon" src="/xtf/icons/default/addbag.gif"/> next to one or more items in your <a href="">Search Results</a> to add it to your bookbag.</div>');
+            $('.myListContents').append('<div class="empty">Your List is empty! Click on the icon that looks like this <img alt="bookbag icon" src="/xtf/icons/default/addlist.png"/> next to one or more items in your <a href="">Search Results</a> to add it to your list.</div>');
             $('#myListNav #myListButton').removeClass('hasContents');
         } 
         
@@ -279,10 +279,16 @@ $(function() {
             $(this).siblings('input').attr("disabled", false);
             var value = $(this).attr("value");
             $('input[value='+value+"]").attr('checked', true);
+            if(!($(this).parents('.myListContents').hasClass('dialog'))) {
+                $('input[value='+value+"]").parents('.row').removeClass('disabled');
+            }
         } else {
            $(this).siblings('input').attr("disabled", true);
            var value = $(this).attr("value");
            $('input[value='+value+"]").attr('checked', false);
+           if(!($(this).parents('.myListContents').hasClass('dialog'))) {
+                $('input[value='+value+"]").parents('.row').addClass('disabled');
+           }
         }
     });
 });
@@ -293,9 +299,11 @@ $(function() {
         if($(this).is(':checked')) {
             $('.requestInputs input[type="checkbox"]').attr('checked', true);
             $('.requestInputs input[type="hidden"]').attr("disabled", false);
+            $('.requestInputs').parents('.row').removeClass('disabled');
         } else {
             $('.requestInputs input[type="checkbox"]').attr('checked', false);
             $('.requestInputs input[type="hidden"]').attr("disabled", true);
+            $('.requestInputs').parents('.row').addClass('disabled');
         }
         
     });

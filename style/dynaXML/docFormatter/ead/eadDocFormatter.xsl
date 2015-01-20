@@ -818,7 +818,7 @@
                      <xsl:value-of select="'active '"/>
                   </xsl:attribute>
                </xsl:when>-->
-            </xsl:choose>ß
+            </xsl:choose>
          </xsl:attribute>
          
          <xsl:variable name="levelID">

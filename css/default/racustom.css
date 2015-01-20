@@ -427,10 +427,23 @@ iframe {
 	margin-top:5em;
 }
 
+#myListButton img {
+height: 15px;
+margin-top: -3px;
+vertical-align: middle;
+}
+
+.myListRemoveAll img, .myListPrint img {
+height: 15px;
+}
+
+.actions img {
+vertical-align: top;
+margin-top: 3px;
+}
+
 #myListButton.hasContents {
     color:#c45414 !important;
-    font-weight:bold;
-    box-shadow:0px 0px 5px #c45414;
 }
 
 #myListButton.hasContents .caret {
@@ -446,7 +459,6 @@ iframe {
 }
 
 .myListContents {
-    max-height: 300px; 
     overflow-y: scroll;
     word-wrap: break-word;
     padding-bottom: .5em;
@@ -454,6 +466,14 @@ iframe {
 
 .myListContents p {
 	margin-bottom: 0;
+}
+
+.myListContents.dialog {
+    max-height: 300px; 
+}
+
+.myListContents.dialog .row.disabled {
+    display:none;
 }
 
 .myListContents .empty {margin: 1em;text-align: center;background: rgba(196, 84, 20, 0.1);padding: .5em;border: 1px solid #c45414;border-radius: 5px;}
@@ -547,9 +567,9 @@ content: "*";
 	margin-top: 0 !important;
 }
 
-.myList .confirm h2, .myList .confirm p {
+.myList .confirm h1, .myList .confirm p, .myList .confirm h3 {
 	text-align: center;
-	margin: .5em 0;
+	border-bottom: none;
 }
 
 .contentError {
