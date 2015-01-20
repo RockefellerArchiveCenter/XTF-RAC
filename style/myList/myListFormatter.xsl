@@ -112,6 +112,12 @@
             <xsl:variable name="groupingfield">
                 <xsl:value-of select="concat(meta/seriesID, '-', $container1)"/>
             </xsl:variable>
+            <xsl:variable name="type">
+                <xsl:choose>
+                    <xsl:when test="meta/type='ead'">Archival</xsl:when>
+                    <xsl:when test="meta/type='mods'">Library</xsl:when>
+                </xsl:choose>
+            </xsl:variable>
             <xsl:variable name="barcode"/>
             <a href="#" class="list-add" data-identifier="{$identifier}"
                 data-ItemNumber="{$barcode}" data-ItemTitle="{$collectionTitle}"
@@ -119,7 +125,7 @@
                 data-CallNumber="{$callNo}" data-ItemVolume="{$container1}"
                 data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
                 data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}"
-                data-GroupingField="{$groupingfield}">
+                data-GroupingField="{$groupingfield}" onClick="_gaq.push(['_trackEvent', 'My List', 'Add', '{$type} Search Results']);">
                 <img src="/xtf/icons/default/addlist.png" alt="Add to My List" title="Add to My List"/>
             </a>
         </xsl:if>
@@ -216,7 +222,7 @@
             data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNumber="{$rootID}"
             data-ItemVolume="{$container1}" data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
             data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}"
-            data-GroupingField="{$groupingfield}">
+            data-GroupingField="{$groupingfield}" onClick="_gaq.push(['_trackEvent', 'My List', 'Add', 'Archival Container List']);">
             <img src="/xtf/icons/default/addlist.png" alt="Add to My List" title="Add to My List"/>
         </a>
     </xsl:template>
@@ -249,7 +255,7 @@
                 <a href="#" class="list-add" data-identifier="{$identifier}"
                     data-ItemNumber="{$barcode}" data-ItemTitle="{$title}"
                     data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNumber="{$callno}"
-                    data-ItemInfo3="{$url}">
+                    data-ItemInfo3="{$url}" onClick="_gaq.push(['_trackEvent', 'My List', 'Add', 'Library Record']);">
                     <img src="/xtf/icons/default/addlist.png" alt="Add to My List" title="Add to My List"/>
                 </a>
             </xsl:otherwise>
@@ -267,23 +273,23 @@
                 </button>
                 <ul class="dropdown-menu pull-right" role="menu">
                     <li>
-                        <a href="{$xtfURL}{$crossqueryPath}?smode=showBag">View</a>
+                        <a href="{$xtfURL}{$crossqueryPath}?smode=showBag" onClick="_gaq.push(['_trackEvent', 'My List', 'View', 'My List Button']);">View</a>
                     </li>
                     <li>
-                        <a href="#" class="myListEmail">Email</a>
+                        <a href="#" class="myListEmail" onClick="_gaq.push(['_trackEvent', 'My List', 'Email', 'My List Button']);">Email</a>
                     </li>
                     <li>
-                        <a href="#" class="myListPrint">Print</a>
+                        <a href="#" class="myListPrint" onClick="_gaq.push(['_trackEvent', 'My List', 'Print', 'My List Button']);">Print</a>
                     </li>
                     <li>
-                        <a href="#" class="myListRequest">Request in Reading Room</a>
+                        <a href="#" class="myListRequest" onClick="_gaq.push(['_trackEvent', 'My List', 'Reading Room Request', 'My List Button']);">Request in Reading Room</a>
                     </li>
                     <li>
-                        <a href="#" class="myListCopies">Request copies</a>
+                        <a href="#" class="myListCopies" onClick="_gaq.push(['_trackEvent', 'My List', 'Duplication Request', 'My List Button']);">Request copies</a>
                     </li>
                 </ul>
             </div>
-            <a href="https://raccess.rockarch.org/aeon.dll" class="btn btn-default" target="new"
+            <a href="https://raccess.rockarch.org/aeon.dll" class="btn btn-default" target="new" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Log In Button']);"
                 >Login</a>
         </div>
     </xsl:template>
@@ -304,11 +310,11 @@
         <div class="actions">
             <xsl:variable name="bag" select="session:getData('bag')"/>
             <xsl:variable name="bagCount" select="count($bag/bag/savedDoc)"/>
-            <a class="btn btn-default myListEmail"><img src="/xtf/icons/default/email-list.png"/> E-mail My Bookbag</a>
-            <a class="btn btn-default myListPrint"><img src="/xtf/icons/default/print-list.png"/> Print</a>
-            <a class="btn btn-default myListRequest"><img src="/xtf/icons/default/reading-room-request.png"/> Request in Reading Room</a>
-            <a class="btn btn-default myListCopies"><img src="/xtf/icons/default/duplication-request.png"/> Request Copies</a>
-            <a class="btn btn-default myListRemoveAll"><img src="/xtf/icons/default/delete-all.png"/> Remove All Items</a>
+            <a class="btn btn-default myListEmail" onClick="_gaq.push(['_trackEvent', 'My List', 'Email', 'My List Header']);"><img src="/xtf/icons/default/email-list.png"/> E-mail My Bookbag</a>
+            <a class="btn btn-default myListPrint" onClick="_gaq.push(['_trackEvent', 'My List', 'Print', 'My List Header']);"><img src="/xtf/icons/default/print-list.png"/> Print</a>
+            <a class="btn btn-default myListRequest" onClick="_gaq.push(['_trackEvent', 'My List', 'Reading Room Request', 'My List Header']);"><img src="/xtf/icons/default/reading-room-request.png"/> Request in Reading Room</a>
+            <a class="btn btn-default myListCopies" onClick="_gaq.push(['_trackEvent', 'My List', 'Duplication Request', 'My List Header']);"><img src="/xtf/icons/default/duplication-request.png"/> Request Copies</a>
+            <a class="btn btn-default myListRemoveAll" onClick="_gaq.push(['_trackEvent', 'My List', 'Remove All Items', 'My List Header']);"><img src="/xtf/icons/default/delete-all.png"/> Remove All Items</a>
         </div>
     </xsl:template>
 
@@ -429,7 +435,7 @@
             </form>
             <div class="register">
                 <strong>Got an account?</strong> If not, make sure you <a
-                    href="http://raccess.rockarch.org" target="_blank">register</a> and log in
+                    href="http://raccess.rockarch.org" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Reading Room Request Dialog']);">register</a> and log in
                 before requesting materials to view in the reading room or you will need to submit
                 your request again.</div>
             <div class="register">
@@ -443,7 +449,7 @@
                 <h3>If you are logged in to your RACcess account, your request has been submitted.</h3>
                 <h3>If not, you may have to submit your request again.</h3>
                 <p>Your request will open in a new browser tab, but you can also <a
-                        href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a>
+                    href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Reading Room Request Confirm Dialog']);">click here</a>
                     to see your requests.</p>
             </div>
         </div>
@@ -474,7 +480,7 @@
                 <div class="myListContents dialog">
                     <xsl:call-template name="emptyList"/>
                 </div>
-                <div class="register"><input id="costagree" type="checkbox"/> I agree to pay the duplication costs for this request. See our <a href="/xtf/feeschedule.html" target="_blank">fee schedule</a>.</div>
+                <div class="register"><input id="costagree" type="checkbox"/> I agree to pay the duplication costs for this request. See our <a href="/xtf/feeschedule.html" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Fee Schedule', 'Duplication Dialog']);">fee schedule</a>.</div>
                 <div class="left">
                     <div class="form-group">
                         <label class="control-label required" for="Format">Format</label>
@@ -507,10 +513,10 @@
             </form>
             <div class="register">
                 <strong>Got an account?</strong> If not, make sure you <a
-                    href="http://raccess.rockarch.org" target="_blank">register</a> and log in
+                    href="http://raccess.rockarch.org" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Duplication Dialog']);">register</a> and log in
                 before requesting copies, or you will need to submit your request again.</div>
             <div class="register">
-                <strong>Good to know:</strong> If you want a cost estimate for your order, email an archivist at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a>.
+                <strong>Good to know:</strong> If you want a cost estimate for your order, email an archivist at <a href="mailto:archive@rockarch.org" onClick="_gaq.push(['_trackEvent', 'My List', 'Contact Us', 'Duplication Dialog']);">archive@rockarch.org</a>.
                 Folders in the same box may be grouped together in a single request. </div>
         </div>
 
@@ -520,7 +526,7 @@
                 <h2>If you are logged in to your RACcess account, your request has been submitted.</h2>
                 <h2>If not, you may have to submit your request again.</h2>
                 <p>Your request will open in a new browser tab, but you can also <a
-                    href="https://raccess.rockarch.org/aeon.dll" target="_blank">click here</a>
+                    href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Duplication Confirm Dialog']);">click here</a>
                     to see your requests.</p>
             </div>
         </div>
