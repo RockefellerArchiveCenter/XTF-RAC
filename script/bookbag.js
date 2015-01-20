@@ -299,11 +299,15 @@ $(function() {
         if($(this).is(':checked')) {
             $('.requestInputs input[type="checkbox"]').attr('checked', true);
             $('.requestInputs input[type="hidden"]').attr("disabled", false);
-            $('.requestInputs').parents('.row').removeClass('disabled');
+            if(!($('.requestInputs').parents('.myListContents').hasClass('dialog'))) {
+                $('.requestInputs').parents('.row').removeClass('disabled');
+            }
         } else {
             $('.requestInputs input[type="checkbox"]').attr('checked', false);
             $('.requestInputs input[type="hidden"]').attr("disabled", true);
-            $('.requestInputs').parents('.row').addClass('disabled');
+            if(!($('.requestInputs').parents('.myListContents').hasClass('dialog'))) {
+                $('.requestInputs').parents('.row').addClass('disabled');
+            }
         }
         
     });
