@@ -438,8 +438,8 @@ height: 15px;
 }
 
 .actions img {
-vertical-align: top;
-margin-top: 3px;
+vertical-align: middle;
+height:20px;
 }
 
 #myListButton.hasContents {
