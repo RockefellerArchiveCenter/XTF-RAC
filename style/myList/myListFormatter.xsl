@@ -480,7 +480,7 @@
                 <div class="myListContents dialog">
                     <xsl:call-template name="emptyList"/>
                 </div>
-                <div class="register"><input id="costagree" type="checkbox"/> I agree to pay the duplication costs for this request. See our <a href="/xtf/feeschedule.html" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Fee Schedule', 'Duplication Dialog']);">fee schedule</a>.</div>
+                <div class="register"><input id="costagree" type="checkbox"/> I agree to pay the duplication costs for this request. See our <a href="http://rockarch.org/research/inforesearch.php#photocopying" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Fee Schedule', 'Duplication Dialog']);">fee schedule</a>.</div>
                 <div class="left">
                     <div class="form-group">
                         <label class="control-label required" for="Format">Format</label>
