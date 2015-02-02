@@ -92,7 +92,14 @@
                   <xsl:apply-templates select="/ead/archdesc/did/physdesc[not(@altrender)]"/>
                </xsl:when>
                <xsl:when test="$chunk.id = 'contentsLink'">
-                  <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
+                  <xsl:choose>
+                     <xsl:when test="($query != '0') and ($query != '')">
+                        <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level and @xtf:hitCount]"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level]"/>
+                     </xsl:otherwise>
+                  </xsl:choose>
                </xsl:when>
                <xsl:when test="$chunk.id = 'digitalLink'">
                   <div typeof="schema:ImageGallery">
@@ -1193,7 +1200,48 @@
       <!-- Call children of dsc -->
       <xsl:apply-templates select="*"/>
    </xsl:template>
+   
    <xsl:template match="arcdesc/dsc/head"/>
+   
+   <xsl:template name="containerHits">
+      <xsl:variable name="sum">
+         <xsl:choose>
+            <xsl:when test="string(number(/ead/archdesc/@xtf:hitCount))='NaN'">
+               <xsl:text>0</xsl:text>
+            </xsl:when>
+            <xsl:when test="($query != '0') and ($query != '')">
+               <xsl:value-of select="number(/ead/archdesc/dsc/@xtf:hitCount)"/>
+            </xsl:when>
+            <xsl:otherwise>0</xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:variable name="occur">
+         <xsl:choose>
+            <xsl:when test="$sum != 1">occurrences</xsl:when>
+            <xsl:otherwise>occurrence</xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <div id="results">
+         <span class="hit-count">
+            <xsl:value-of select="$sum"/>
+         </span>
+         <xsl:text> </xsl:text>
+         <xsl:value-of select="$occur"/>
+         <xsl:text> of </xsl:text>
+         <span class="hit-count">
+            <xsl:value-of select="$query"/>
+         </span>
+         <xsl:text> in this Contents List</xsl:text>
+         <a class="resultsButton btn btn-default">
+            <xsl:attribute name="href">
+               <xsl:value-of select="$doc.path"/>;chunk.id=<xsl:value-of select="$chunk.id"
+                  />;brand=<xsl:value-of select="$brand"/>;doc.view=<xsl:value-of select="$doc.view"
+               />
+            </xsl:attribute>
+            <xsl:text>Clear Search</xsl:text>
+         </a>
+      </div>
+   </xsl:template>
 
    <!--This section of the stylesheet creates a div for each c01 or c 
         It then recursively processes each child component of the c01 by 
@@ -1275,6 +1323,98 @@
                </xsl:for-each>
             </div>
          </xsl:when>
+         <xsl:when test="($query != '0') and ($query != '')">
+            <xsl:call-template name="containerHits"/>
+            <div class="{@level} c01" style="width:100%;float:left;">
+               <xsl:call-template name="anchor"/>
+               <xsl:call-template name="clevel">
+                  <xsl:with-param name="level">01</xsl:with-param>
+               </xsl:call-template>
+               <xsl:for-each select="c|c02">
+                  <xsl:if test="@xtf:hitCount">
+                     <div class="{@level} c02" style="width:99%;float:right;">
+                        <xsl:call-template name="anchor"/>
+                        <xsl:call-template name="clevel">
+                           <xsl:with-param name="level">01</xsl:with-param>
+                        </xsl:call-template>
+                        <xsl:for-each select="c|c03">
+                           <xsl:if test="@xtf:hitCount">
+                              <div class="{@level} c03" style="width:99%;float:right;">
+                                 <xsl:call-template name="anchor"/>
+                                 <xsl:call-template name="clevel">
+                                    <xsl:with-param name="level">01</xsl:with-param>
+                                 </xsl:call-template>
+                                 <xsl:for-each select="c|c04">
+                                    <xsl:if test="@xtf:hitCount">
+                                       <div class="{@level} c04" style="width:99%;float:right;">
+                                          <xsl:call-template name="anchor"/>
+                                          <xsl:call-template name="clevel">
+                                             <xsl:with-param name="level">01</xsl:with-param>
+                                          </xsl:call-template>
+                                          <xsl:for-each select="c|c05">
+                                             <xsl:if test="@xtf:hitCount">
+                                                <div class="{@level} c05"
+                                                   style="width:99%;float:right;">
+                                                   <xsl:call-template name="anchor"/>
+                                                   <xsl:call-template name="clevel">
+                                                      <xsl:with-param name="level">01</xsl:with-param>
+                                                   </xsl:call-template>
+                                                   <xsl:for-each select="c|c06">
+                                                      <xsl:if test="@xtf:hitCount">
+                                                         <div class="{@level} c06"
+                                                            style="width:99%;float:right;">
+                                                            <xsl:call-template name="anchor"/>
+                                                            <xsl:call-template name="clevel">
+                                                               <xsl:with-param name="level">01</xsl:with-param>
+                                                            </xsl:call-template>
+                                                            <xsl:for-each select="c|c07">
+                                                               <xsl:if test="@xtf:hitCount">
+                                                                  <div class="{@level} c07"
+                                                                     style="width:99%;float:right;">
+                                                                     <xsl:call-template name="anchor"/>
+                                                                     <xsl:call-template name="clevel">
+                                                                        <xsl:with-param name="level">01</xsl:with-param>
+                                                                     </xsl:call-template>
+                                                                     <xsl:for-each select="c|c08">
+                                                                        <xsl:if test="@xtf:hitCount">
+                                                                           <div class="{@level} c08"
+                                                                              style="width:99%;float:right;">
+                                                                              <xsl:call-template name="anchor"/>
+                                                                              <xsl:call-template name="clevel">
+                                                                                 <xsl:with-param name="level">01</xsl:with-param>
+                                                                              </xsl:call-template>
+                                                                              <xsl:for-each select="c|c09">
+                                                                                 <xsl:if test="@xtf:hitCount">
+                                                                                    <div class="{@level} c09"
+                                                                                       style="width:99%;float:right;">
+                                                                                       <xsl:call-template name="anchor"/>
+                                                                                       <xsl:call-template name="clevel_dao"/>
+                                                                                    </div>
+                                                                                 </xsl:if>
+                                                                              </xsl:for-each>
+                                                                           </div>
+                                                                        </xsl:if>
+                                                                     </xsl:for-each>
+                                                                  </div>
+                                                               </xsl:if>
+                                                            </xsl:for-each>
+                                                         </div>
+                                                      </xsl:if>
+                                                   </xsl:for-each>
+                                                </div>
+                                             </xsl:if>
+                                          </xsl:for-each>
+                                       </div>
+                                    </xsl:if>
+                                 </xsl:for-each>
+                              </div>
+                           </xsl:if>
+                        </xsl:for-each>
+                     </div>
+                  </xsl:if>
+               </xsl:for-each>
+            </div>
+         </xsl:when> 
          <xsl:otherwise>
             <div class="{@level} c01" style="width:100%;float:left;">
                <xsl:call-template name="anchor"/>
