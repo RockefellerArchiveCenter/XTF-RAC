@@ -175,6 +175,8 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #rss {float:left;margin-right:.5em;}
 #hits {float:left;margin-bottom:1%;width:32%}
 #sort {float:right;}
+#results .resultsButton {float:right;}
+#results .resultsButton:hover {font-weight:normal;}
 
 .facets h2 {margin:0; padding:.5em;border-radius:5px 5px 0 0;background-color:#c45414; color:#fff;text-align:center;}
 .facets li {list-style: none;margin: 0px;padding:1%;text-align:left;font-size:1em;display:none;}
@@ -557,7 +559,7 @@ content: "*";
     float:right;
 }
 
-.myList .btn, .ui-dialog .ui-dialog-buttonpane button, #myListNav .btn, .actions .btn {
+.myList .btn, .ui-dialog .ui-dialog-buttonpane button, #myListNav .btn, .actions .btn, #results .btn {
   margin: 0 4px;
   border: 1px outset #dddddd; 
   background-color:#dddddd;
@@ -569,8 +571,8 @@ content: "*";
   color:#000;
 }
 
-.myList .btn:hover, .ui-dialog .ui-dialog-buttonpane button:hover, #myListNav .btn:hover, .actions .btn:hover {box-shadow:0px 0px 3px #c45414;color: #c45414;cursor:pointer;text-decoration:none !important;}
-.myList .btn:active, .ui-dialog .ui-dialog-buttonpane button:active, #myListNav .btn:active, .actions .btn:active {border: 1px inset #dddddd;color: #c45414;}
+.myList .btn:hover, .ui-dialog .ui-dialog-buttonpane button:hover, #myListNav .btn:hover, .actions .btn:hover, #results .btn:hover {box-shadow:0px 0px 3px #c45414;color: #c45414;cursor:pointer;text-decoration:none !important;}
+.myList .btn:active, .ui-dialog .ui-dialog-buttonpane button:active, #myListNav .btn:active, .actions .btn:active, #results .btn:active {border: 1px inset #dddddd;color: #c45414;}
 
 .ui-dialog-buttonpane {
 	border: none;
