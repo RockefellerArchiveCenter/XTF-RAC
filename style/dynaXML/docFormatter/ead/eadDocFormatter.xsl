@@ -293,23 +293,6 @@
    <!-- 7/29/2013 HA: making additional changes                                -->
    <!-- ====================================================================== -->
    <xsl:template name="bbar_custom">
-      <xsl:variable name="sum">
-         <xsl:choose>
-            <xsl:when test="string(number(/ead/archdesc/@xtf:hitCount))='NaN'">
-               <xsl:text>0</xsl:text>
-            </xsl:when>
-            <xsl:when test="($query != '0') and ($query != '')">
-               <xsl:value-of select="number(/ead/archdesc/@xtf:hitCount)"/>
-            </xsl:when>
-            <xsl:otherwise>0</xsl:otherwise>
-         </xsl:choose>
-      </xsl:variable>
-      <xsl:variable name="occur">
-         <xsl:choose>
-            <xsl:when test="$sum != 1">occurrences</xsl:when>
-            <xsl:otherwise>occurrence</xsl:otherwise>
-         </xsl:choose>
-      </xsl:variable>
       <div class="bbar_custom">
          <div class="documentTitle ead">
             <h1>
@@ -330,23 +313,10 @@
                </xsl:choose>
             </h1>
          </div>
-
          <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
          <xsl:variable name="indexId" select="$identifier"/>
          <div class="headerIcons">
             <ul>
-               <!-- Commented out citation until digital objects are added-->
-               <!--
-                     <a>
-                        <xsl:attribute name="href">javascript://</xsl:attribute>
-                        <xsl:attribute name="onclick">
-                           <xsl:text>javascript:window.open('</xsl:text><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/><xsl:text>?docId=</xsl:text><xsl:value-of
-                              select="$docId"/><xsl:text>;doc.view=citation</xsl:text><xsl:text>','popup','width=500,height=200,resizable=yes,scrollbars=no')</xsl:text>
-                        </xsl:attribute>
-                        <xsl:text>Citation</xsl:text>
-                     </a>
-                     <xsl:text> | </xsl:text>
-                     -->
                <xsl:if test="$doc.view != 'dao'">
                   <li>
                      <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
@@ -380,36 +350,6 @@
                <input type="hidden" name="doc.view" value="{$doc.view}"/>
                <input type="submit" value="Search this Collection" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
             </form>
-            <xsl:if test="($query != '0') and ($query != '')">
-               <div class="headerResults">
-               <strong>
-                  <span class="hit-count">
-                     <xsl:value-of select="$sum"/>
-                  </span>
-                  <xsl:text> </xsl:text>
-                  <xsl:value-of select="$occur"/>
-                  <xsl:text> of </xsl:text>
-                  <span class="hit-count">
-                     <xsl:value-of select="$query"/>
-                  </span>
-               </strong>
-               <xsl:text> [</xsl:text>
-               <a>
-                  <xsl:attribute name="href">
-                     <xsl:value-of select="$doc.path"/>;chunk.id=<xsl:value-of select="$chunk.id"
-                        />;brand=<xsl:value-of select="$brand"/>;doc.view=<xsl:value-of
-                        select="$doc.view"/>
-                  </xsl:attribute>
-                  <xsl:text>Clear Hits</xsl:text>
-               </a>
-               <xsl:text>]</xsl:text>
-               
-
-                  &#160;<xsl:text>[</xsl:text> <a href="{session:getData('queryURL')}">Back to Search
-                        Results</a> <xsl:text>]</xsl:text>
-
-               </div>
-            </xsl:if>
          </div>
       </div>
    </xsl:template>
