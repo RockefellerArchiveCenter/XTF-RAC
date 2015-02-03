@@ -48,8 +48,9 @@ $(document).ready(function () {
                     '<div class="dateAdded">Date Added</div>' +
                 '</div>');
             }
-        for(var i =0; i <= myList.length -1; i++) {
-            item = myList[i];
+        for(var i =0; i <= myList.length-1; i++) {
+            var item = myList[i];
+            
             //create variables
             function sanitize(value) {
                 if (value) {return value;}
@@ -115,6 +116,7 @@ $(document).ready(function () {
             var callNumber = sanitize(item.callNumber);
             var accessRestrict = sanitize(item.accessRestrict);
             var groupingfield = sanitize(item.groupingfield);
+            console.log(item);
                                 
             $('.myListContents').append(
                 '<div class="row">' + 
