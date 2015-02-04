@@ -422,14 +422,20 @@
                             type="text" placeholder="Enter the date of your research visit"/>
                     </div>
                     <div class="form-group userReview">
-                        <span class="help-text">This request will be saved in RACcess, but won't be
+                        <span class="help-block">This request will be saved in RACcess, but won't be
                             retrieved until you submit it for processing.</span>
                     </div>
                 </div>
                 <div class="right notes">
                     <div class="form-group">
+                        <label class="control-label" for="SpecialRequest">Special Requests/Questions</label>
+                        <textarea class="form-control" rows="2" name="SpecialRequest"/>
+                        <span class="help-block">Please enter any special requests or questions for RAC staff.</span>
+                    </div>
+                    <div class="form-group">
                         <label class="control-label" for="Notes">Notes</label>
-                        <textarea class="form-control" rows="4" name="Notes"/>
+                        <textarea class="form-control" rows="2" name="Notes"/>
+                        <span class="help-block">Enter any notes about this request for your personal reference here.</span>
                     </div>
                 </div>
             </form>
@@ -503,11 +509,23 @@
                         <p class="help-block text-danger" id="itemPagesError">Please enter a
                             description of the materials you want reproduced.</p>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label" for="ForPublication">Description of
+                            Materials</label>
+                        <input id="ForPublication" name="ForPublication" type="checkbox" value="Yes"/>
+                        <xsl:text> If you intend to publish this material, check this box</xsl:text>
+                    </div>
                 </div>
                 <div class="right notes">
                     <div class="form-group">
+                        <label class="control-label" for="SpecialRequest">Special Requests/Questions</label>
+                        <textarea class="form-control" rows="2" name="SpecialRequest"/>
+                        <span class="help-block">Please enter any special requests or questions for RAC staff.</span>
+                    </div>
+                    <div class="form-group">
                         <label class="control-label" for="Notes">Notes</label>
-                        <textarea class="form-control" rows="4" name="Notes"/>
+                        <textarea class="form-control" rows="2" name="Notes"/>
+                        <span class="help-block">Enter any notes about this request for your personal reference here.</span>
                     </div>
                 </div>
             </form>
