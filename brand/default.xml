@@ -67,9 +67,6 @@
          ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
          '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0];
          s.parentNode.insertBefore(ga, s); })(); </script>
-      <div><!--[if IE ]>
-                  <div class="chromeframe"><p>You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, <a href="http://browsehappy.com/">use a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p></div>
-                  <![endif]--></div>
    </dynaxml.links>
 
    <header>
@@ -285,11 +282,6 @@
 
    <dynaxml.header>
       <!-- 7/12/13 HA: Changed to match updated RA  bootstrap header -->
-      <div>
-         <!--[if IE ]>
-                  <div class="chromeframe"><p>You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, <a href="http://browsehappy.com/">use a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p></div>
-                  <![endif]-->
-      </div>
       <div class="navbar">
          <div class="navbar-inner">
             <div class="container">
