@@ -6,7 +6,7 @@ html {font-size: .7em;}
 
 #header {width: 100%;}
 #header h1, #header .tagline {margin-left:0;}
-.myListContents {max-height: none;}
+.myListContents {max-height: none !important;}
 #myListPrint {display: block; width: 100% !important; float: left; padding:0 !important;}
 #myListPrint .title {width:33%;}
 #myListPrint .date {width:8%;}
