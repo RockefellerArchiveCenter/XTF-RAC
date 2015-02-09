@@ -331,7 +331,7 @@ ul.none {list-style:none;}
 .overview a {color: #c45414 !important;}
 #content-right table tr td {padding-right:1em;}
 .col4 {padding-right: 1em;}
-.moreInfo a {width:100%; float:left;}
+.moreInfo a {float:left;}
 /*.addToBag {font-weight:normal !important;}*/
 
 /* Container list styles*/
@@ -360,9 +360,11 @@ ul.none {list-style:none;}
 .daoLink {width:38%;padding:0 1% 0 1%;}
 .format {width:30%;}
 .containers {width:20%;}
-.moreInfo {width:14%;}
+.moreInfo {width:16%;}
+.moreInfo .hit {padding-left:2px}
 .containerWrapper {float: left;width:59%;}
 .inventoryBookbag {text-align:center;float:right;font-size: 1em;line-height: 2em;padding-right: 5px;}
+.dialog_dsc, .restrict_dsc {width:100%}
 
 
 
