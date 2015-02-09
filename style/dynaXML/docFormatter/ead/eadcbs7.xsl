@@ -93,7 +93,8 @@
                </xsl:when>
                <xsl:when test="$chunk.id = 'contentsLink'">
                   <xsl:choose>
-                     <xsl:when test="($query != '0') and ($query != '')">
+                     <xsl:when test="$doc.view='contentsSearch'">
+                        <xsl:call-template name="containerHits"/>
                         <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level and @xtf:hitCount]"/>
                      </xsl:when>
                      <xsl:otherwise>
@@ -111,7 +112,16 @@
                   <xsl:apply-templates select="/ead/archdesc/bioghist"/>
                </xsl:when>
                <xsl:when test="$chunk.id != '0'">
-                  <xsl:apply-templates select="key('chunk-id', $chunk.id)"/>
+                  <xsl:choose>
+                     <xsl:when test="$doc.view='contentsSearch'">
+                        <xsl:call-template name="containerHits"/>
+                        <xsl:apply-templates select="key('chunk-id', $chunk.id)"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:apply-templates select="key('chunk-id', $chunk.id)"/>
+                     </xsl:otherwise>
+                  </xsl:choose>
+                  
                </xsl:when>
                <xsl:otherwise>
                   <!--<xsl:apply-templates select="/ead/eadheader"/>-->
@@ -1234,9 +1244,12 @@
          <xsl:text> in this Contents List</xsl:text>
          <a class="resultsButton btn btn-default">
             <xsl:attribute name="href">
-               <xsl:value-of select="$doc.path"/>;chunk.id=<xsl:value-of select="$chunk.id"
-                  />;brand=<xsl:value-of select="$brand"/>;doc.view=<xsl:value-of select="$doc.view"
-               />
+               <xsl:value-of select="$doc.path"/>
+               <xsl:text>;chunk.id=</xsl:text>
+               <xsl:value-of select="$chunk.id"/>
+               <xsl:text>;brand=</xsl:text>
+               <xsl:value-of select="$brand"/>
+               <xsl:text>;doc.view=contents</xsl:text>
             </xsl:attribute>
             <xsl:text>Clear Search</xsl:text>
          </a>
@@ -1323,8 +1336,7 @@
                </xsl:for-each>
             </div>
          </xsl:when>
-         <xsl:when test="($query != '0') and ($query != '')">
-            <xsl:call-template name="containerHits"/>
+         <xsl:when test="$doc.view='contentsSearch'">
             <div class="{@level} c01" style="width:100%;float:left;">
                <xsl:call-template name="anchor"/>
                <xsl:call-template name="clevel">
@@ -1642,7 +1654,7 @@
                      <span class="inventoryHeaderFormat">Format</span>
                      <span class="inventoryHeaderContainers">Containers</span>
                      <span class="inventoryHeaderNotes">Notes</span>
-                     <span class="inventoryHeaderBookbag">Bookbag</span>
+                     <span class="inventoryHeaderBookbag">My List</span>
                   </div>
                </xsl:if>
             </xsl:when>

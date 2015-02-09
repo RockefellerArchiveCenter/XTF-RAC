@@ -346,8 +346,8 @@
             <form action="{$xtfURL}{$dynaxmlPath}" method="get" class="bbform">
                <input name="query" type="text"/>
                <input type="hidden" name="docId" value="{$docId}"/>
-               <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
-               <input type="hidden" name="doc.view" value="{$doc.view}"/>
+               <input type="hidden" name="chunk.id" value="contentsLink"/>
+               <input type="hidden" name="doc.view" value="contentsSearch"/>
                <input type="submit" value="Search this Collection" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
             </form>
          </div>
@@ -371,6 +371,7 @@
                </xsl:when>
                <xsl:when test="$doc.view = 'contents'"/>
                <xsl:when test="$doc.view = 'dao'"/>
+               <xsl:when test="$doc.view = 'contentsSearch'"/>
                <xsl:otherwise>
                   <xsl:attribute name="class">tab select</xsl:attribute>
                </xsl:otherwise>
@@ -383,7 +384,7 @@
             </xsl:call-template>
          </div>
          <div class="tab contentsTab">
-            <xsl:if test="$doc.view='contents'">
+            <xsl:if test="$doc.view='contents' or $doc.view='contentsSearch'">
                <xsl:attribute name="class">tab contentsTab select</xsl:attribute>
             </xsl:if>
             <xsl:variable name="idFile">
@@ -566,7 +567,7 @@
                      of contents.  Each if statement tests to see if there is
                      a matching element with content in the finding aid.-->
                   <xsl:choose>   
-                     <xsl:when test="$doc.view='contents'">
+                     <xsl:when test="$doc.view='contents' or $doc.view = 'contentsSearch'">
                         <div class="contentsList">
                            <xsl:if test="archdesc/dsc/child::*[@level='series'] | 
                               archdesc/dsc/child::*[@level='recordgrp'] | 
