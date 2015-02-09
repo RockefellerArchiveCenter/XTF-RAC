@@ -348,7 +348,7 @@
                <input type="hidden" name="docId" value="{$docId}"/>
                <input type="hidden" name="chunk.id" value="contentsLink"/>
                <input type="hidden" name="doc.view" value="contentsSearch"/>
-               <input type="submit" value="Search this Collection" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
+               <input type="submit" value="Search Contents List" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
             </form>
          </div>
       </div>
