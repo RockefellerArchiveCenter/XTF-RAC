@@ -290,7 +290,7 @@
                 </ul>
             </div>
             <a href="https://raccess.rockarch.org/aeon.dll" class="btn btn-default" target="new" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Log In Button']);"
-                >Login</a>
+                >Login to RACcess</a>
         </div>
     </xsl:template>
 
@@ -420,6 +420,7 @@
                             Date</label>
                         <input id="ScheduledDate" class="form-control" name="ScheduledDate"
                             type="text" placeholder="Enter the date of your research visit"/>
+                        <div id="dateError" class="error">Please enter the date of your research visit.</div>
                     </div>
                     <div class="form-group userReview">
                         <span class="help-block">This request will be saved in RACcess, but won't be
@@ -440,23 +441,15 @@
                 </div>
             </form>
             <div class="register">
-                <strong>Got an account?</strong> If not, make sure you <a
-                    href="http://raccess.rockarch.org" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Reading Room Request Dialog']);">register</a> and log in
-                before requesting materials to view in the reading room or you will need to submit
-                your request again.</div>
-            <div class="register">
                 <strong>Good to know:</strong> Folders in the same box may be grouped together in a
                 single request. </div>
         </div>
 
         <div class="overlay" id="myListRequestConfirm">
             <div class="confirm">
-                <h1>You need an account to request materials!</h1>
-                <h3>If you are logged in to your RACcess account, your request has been submitted.</h3>
-                <h3>If not, you may have to submit your request again.</h3>
-                <p>Your request will open in a new browser tab, but you can also <a
-                    href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Reading Room Request Confirm Dialog']);">click here</a>
-                    to see your requests.</p>
+                <h1>Your request has been submitted to RACcess!</h1>
+                <p><a href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Reading Room Request Confirm Dialog']);">
+                    Click here</a> to see your requests.</p>
             </div>
         </div>
     </xsl:template>
@@ -530,22 +523,15 @@
                 </div>
             </form>
             <div class="register">
-                <strong>Got an account?</strong> If not, make sure you <a
-                    href="http://raccess.rockarch.org" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Duplication Dialog']);">register</a> and log in
-                before requesting copies, or you will need to submit your request again.</div>
-            <div class="register">
                 <strong>Good to know:</strong> If you want a cost estimate for your order, email an archivist at <a href="mailto:archive@rockarch.org" onClick="_gaq.push(['_trackEvent', 'My List', 'Contact Us', 'Duplication Dialog']);">archive@rockarch.org</a>.
                 Folders in the same box may be grouped together in a single request. </div>
         </div>
 
         <div class="overlay" id="myListCopiesConfirm">
             <div class="confirm">
-                <h1>You need an account to request copies!</h1>
-                <h2>If you are logged in to your RACcess account, your request has been submitted.</h2>
-                <h2>If not, you may have to submit your request again.</h2>
-                <p>Your request will open in a new browser tab, but you can also <a
-                    href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Duplication Confirm Dialog']);">click here</a>
-                    to see your requests.</p>
+                <h1>Your request has been submitted to RACcess!</h1>
+                <p><a href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Reading Room Request Confirm Dialog']);">
+                    Click here</a> to see your requests.</p>
             </div>
         </div>
     </xsl:template>

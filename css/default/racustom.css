@@ -543,6 +543,10 @@ content: "*";
 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(236, 155, 82, 0.6);
 }
 
+.myList .error {
+    color:#c45414;
+}
+
 .myList .buttons {
     float:right;
 }
