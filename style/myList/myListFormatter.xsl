@@ -69,16 +69,9 @@
                         <xsl:value-of select="meta/filelevelaccessrestrict"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:choose>
-                            <xsl:when test="contains(meta/accessrestrict,'open for research') or contains(meta/accessrestrict,'Open for research') or contains(meta/accessrestrict,'open for scholarly') or contains(meta/accessrestrict,'Open for scholarly')">
-                                <xsl:if test="contains(meta/accessrestrict, 'years')">
-                                        <xsl:value-of select="meta/accessrestrict"/>
-                                </xsl:if>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:value-of select="meta/accessrestrict"/>
-                            </xsl:otherwise>
-                        </xsl:choose>
+                        <xsl:if test="not(contains(meta/accessrestrict,'open for research') or contains(meta/accessrestrict,'Open for research') or contains(meta/accessrestrict,'open for scholarly') or contains(meta/accessrestrict,'Open for scholarly'))">
+                           <xsl:value-of select="meta/accessrestrict"/>
+                        </xsl:if>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
@@ -152,16 +145,9 @@
                     <xsl:value-of select="xtf:meta/filelevelaccessrestrict"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:choose>
-                        <xsl:when test="contains(xtf:meta/accessrestrict,'open for research') or contains(xtf:meta/accessrestrict,'Open for research') or contains(xtf:meta/accessrestrict,'open for scholarly') or contains(xtf:meta/accessrestrict,'Open for scholarly')">
-                            <xsl:if test="contains(xtf:meta/accessrestrict, 'years')">
-                                <xsl:value-of select="xtf:meta/accessrestrict"/>
-                            </xsl:if>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="xtf:meta/accessrestrict"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
+                    <xsl:if test="not(contains(xtf:meta/accessrestrict,'open for research') or contains(xtf:meta/accessrestrict,'Open for research') or contains(xtf:meta/accessrestrict,'open for scholarly') or contains(xtf:meta/accessrestrict,'Open for scholarly'))">
+                       <xsl:value-of select="xtf:meta/accessrestrict"/>
+                    </xsl:if>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
