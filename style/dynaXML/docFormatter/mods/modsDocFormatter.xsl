@@ -219,9 +219,7 @@
                   </a>
                </div>
 
-               <div id="bookbag">
-                  <xsl:call-template name="myListNav"/>
-               </div>
+               <xsl:call-template name="myListNav"/>
 
                <xsl:call-template name="bbar_custom"/>
 
