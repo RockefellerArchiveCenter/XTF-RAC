@@ -314,7 +314,7 @@
             <p class="help-block text-danger contentError">There's nothing to email!</p>
             <form id="myListMail" action="{$xtfURL}script/rac/myListMail.php" method="POST"
                 class="form" role="form">
-                <div class="left">
+                <div class="half">
                     <div class="form-group">
                         <label class="control-label required" for="email">Email Address</label>
                         <input class="form-control" type="text" name="email"/>
@@ -327,7 +327,7 @@
                             placeholder="My List from dimes.rockarch.org"/>
                     </div>
                 </div>
-                <div class="right">
+                <div class="half">
                     <div class="form-group">
                         <label class="control-label" for="message">Message</label>
                         <textarea class="form-control" type="textarea" name="message" rows="4"/>
@@ -389,7 +389,7 @@
                 <div class="myListContents dialog">
                     <xsl:call-template name="emptyList"/>
                 </div>
-                <div class="left">
+                <div class="third">
                     <div>
                         <div class="radio">
                             <input id="VisitReview" name="Visit" type="radio"> Keep for My
@@ -413,12 +413,14 @@
                             retrieved until you submit it for processing.</span>
                     </div>
                 </div>
-                <div class="right notes">
+                <div class="third notes">
                     <div class="form-group">
                         <label class="control-label" for="SpecialRequest">Special Requests/Questions</label>
                         <textarea class="form-control" rows="2" name="SpecialRequest"/>
                         <span class="help-block">Please enter any special requests or questions for RAC staff.</span>
                     </div>
+                </div>
+                <div class="third notes">
                     <div class="form-group">
                         <label class="control-label" for="Notes">Notes</label>
                         <textarea class="form-control" rows="2" name="Notes"/>
@@ -466,7 +468,7 @@
                     <xsl:call-template name="emptyList"/>
                 </div>
                 <div class="register"><input id="costagree" type="checkbox"/> I agree to pay the duplication costs for this request. See our <a href="http://rockarch.org/research/inforesearch.php#photocopying" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Fee Schedule', 'Duplication Dialog']);">fee schedule</a>.</div>
-                <div class="left">
+                <div class="third">
                     <div class="form-group">
                         <label class="control-label required" for="Format">Format</label>
                         <!-- These options mush match exactly the list in the Aeon list of formats -->
@@ -489,18 +491,18 @@
                             description of the materials you want reproduced.</p>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="ForPublication">Description of
-                            Materials</label>
                         <input id="ForPublication" name="ForPublication" type="checkbox" value="Yes"/>
                         <xsl:text> If you intend to publish this material, check this box</xsl:text>
                     </div>
                 </div>
-                <div class="right notes">
+                <div class="third notes">
                     <div class="form-group">
                         <label class="control-label" for="SpecialRequest">Special Requests/Questions</label>
                         <textarea class="form-control" rows="2" name="SpecialRequest"/>
                         <span class="help-block">Please enter any special requests or questions for RAC staff.</span>
                     </div>
+                </div>
+                <div class="third notes">
                     <div class="form-group">
                         <label class="control-label" for="Notes">Notes</label>
                         <textarea class="form-control" rows="2" name="Notes"/>

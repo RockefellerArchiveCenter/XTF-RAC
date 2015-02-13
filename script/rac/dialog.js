@@ -433,6 +433,7 @@ $(function () {
 
     $(".myListEmail").on("click", function (e) {
         e.preventDefault();
+        $('.myListContents.dialog').css('max-height', windowHeight-(windowHeight/2.2));
         dialogMyListEmail.dialog("option", "title", "Email My List").dialog("open");
         });
     });
@@ -468,6 +469,7 @@ $(function () {
 
     $(".myListPrint").on("click", function (e) {
         e.preventDefault();
+        $('.myListContents.dialog').css('max-height', windowHeight-(windowHeight/3));
         dialogMyListPrint.dialog("option", "title", "Print My List").dialog("open");
         });
     });
@@ -539,6 +541,7 @@ $(function () {
 
     $(".myListRequest").on("click", function (e) {
         e.preventDefault();
+        $('.myListContents.dialog').css('max-height', windowHeight-(windowHeight/2.2));
         dialogMyListRequest.dialog("option", "title", "Request in Reading Room").dialog("open");
         });
     });
@@ -626,6 +629,7 @@ $(function () {
 
     $(".myListCopies").on("click", function (e) {
         e.preventDefault();
+        $('.myListContents.dialog').css('max-height', windowHeight-(windowHeight/1.7));
         dialogMyListCopies.dialog("option", "title", "Request Copies").dialog("open");
         $(".ui-dialog-buttonpane button:contains('Request Copies')").button("disable");
         $("input#costagree").attr('checked', false);

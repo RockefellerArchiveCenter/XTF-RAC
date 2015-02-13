@@ -116,7 +116,6 @@ $(document).ready(function () {
             var callNumber = sanitize(item.callNumber);
             var accessRestrict = sanitize(item.accessRestrict);
             var groupingfield = sanitize(item.groupingfield);
-            console.log(item);
                                 
             $('.myListContents').append(
                 '<div class="row">' + 

@@ -514,7 +514,13 @@ height:20px;
 
 .myListContents .list-delete {margin-top:0;float:right;}
 
-.myList .left, .myList .right {
+.myList .third {
+    width:33%;
+    float:left;
+    margin-top:1em;
+}
+
+.myList .half {
     width:50%;
     float:left;
     margin-top:1em;
