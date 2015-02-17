@@ -168,14 +168,14 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 .pages .pageNumber {display:inline;vertical-align:middle;width: 1em;padding: .2em .3em .2em .3em;}
 #results .pageNumber {padding:.2em .4em .2em .4em;}
 
-#results {width:95%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:#eee;border-radius:5px;font-size:1em;}
+#results {width:95%; float:left;padding:1em 1% 1em 1%; margin:1%; margin-top:1%;background:#eee;border-radius:5px;font-size:1.2em;}
 #results a {color:#c45414; text-decoration:none;}
 #results a:hover {font-weight:bold}
 #results select, #results input {font-size:1em;margin-top:0; margin-bottom:0;padding:0;height: auto;line-height: 0;width: auto;}
 #rss {float:left;margin-right:.5em;}
 #hits {float:left;margin-bottom:1%;width:32%}
 #sort {float:right;}
-#results .resultsButton {float:right;}
+#results .resultsButton {float:right;font-size:1em;}
 #results .resultsButton:hover {font-weight:normal;}
 
 .facets h2 {margin:0; padding:.5em;border-radius:5px 5px 0 0;background-color:#c45414; color:#fff;text-align:center;}
