@@ -272,13 +272,14 @@ a.hit {background-color:rgba(196, 84, 20, 0.1) !important;color: #c45414 !import
 #toc .inventory{padding-left:.2em;padding-right:.2em;float:left;max-width:86%;}
 #toc .inventory2{padding-left:.2em;float:left;max-width:88%}
 #toc .tocItem {float:left; padding-right:.2em;width:100%}
-#toc .tocRow {font-size:1.2em;float:left;width:100%;padding:2%;background:#eee;border-bottom:1px solid #999; border-top:1px solid #999; border-left: 5px solid #666;min-height:1.2em;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing:border-box;}
+#toc .tocRow {font-size:1.2em;float:left;width:100%;padding:2%;background:#eee;border-bottom:1px solid #999; border-left: 5px solid #666;min-height:1.2em;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing:border-box;}
 #toc .tocRow:hover {background-color:#ccc !important}
 #toc .active {background-color: #999 !important;border-left: .5em solid #c45414;padding-right: .5em;width:100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 #toc .active a {color:#fff}
 #toc .active:hover {background-color:#999 !important}
-#toc .tocSubrow {float:left;width:95%;margin-left:5%;padding:1%;border-left:2px solid #999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+#toc .tocSubrow {float:left;width:100%;padding:1% 1% 1% 5%;border-left:2px solid #999;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 #toc .tocSubrow:not(:last-child) {border-bottom: 1px dashed #999;}
+#toc .tocSubrow:last-child {border-bottom: 1px solid #999;}
 #toc .accordionButton:after {margin-top: .1em;}
 #toc .on:after {margin-top: .4em;}
 .tocSubrow:nth-of-type(odd) {background-color: rgb(243, 243, 243);}
