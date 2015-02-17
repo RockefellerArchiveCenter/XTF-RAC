@@ -1216,13 +1216,12 @@
    <xsl:template name="containerHits">
       <xsl:variable name="sum">
          <xsl:choose>
-            <xsl:when test="string(number(/ead/archdesc/@xtf:hitCount))='NaN'">
+            <xsl:when test="string(number(/ead/archdesc/dsc/@xtf:hitCount))='NaN'">
                <xsl:text>0</xsl:text>
             </xsl:when>
             <xsl:when test="($query != '0') and ($query != '')">
                <xsl:value-of select="number(/ead/archdesc/dsc/@xtf:hitCount)"/>
             </xsl:when>
-            <xsl:otherwise>0</xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
       <xsl:variable name="occur">
