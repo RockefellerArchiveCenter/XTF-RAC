@@ -229,7 +229,7 @@
       <xsl:copy>
          <xsl:copy-of select="@*"/>
          <xsl:attribute name="xtf:sectionType" select="concat('head ', @type)"/>
-         <xsl:attribute name="xtf:wordBoost" select="95.0"/>
+         <xsl:attribute name="xtf:wordBoost" select="75.0"/>
          <xsl:apply-templates/>
       </xsl:copy>
    </xsl:template>
