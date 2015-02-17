@@ -1,8 +1,5 @@
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:xtf="http://cdlib.org/xtf" xmlns:html="http://www.w3.org/1999/xhtml"
-   xmlns="http://www.w3.org/1999/xhtml" xmlns:session="java:org.cdlib.xtf.xslt.Session"
-   extension-element-prefixes="session" exclude-result-prefixes="#all"
-   xpath-default-namespace="urn:isbn:1-931666-22-9">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xtf="http://cdlib.org/xtf" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:session="java:org.cdlib.xtf.xslt.Session" extension-element-prefixes="session" exclude-result-prefixes="#all" xpath-default-namespace="urn:isbn:1-931666-22-9">
 
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    <!-- EAD dynaXML Stylesheet                                                 -->
@@ -61,10 +58,8 @@
    <!-- Output Format                                                          -->
    <!-- ====================================================================== -->
 
-   <xsl:output method="xhtml" indent="yes" encoding="UTF-8" media-type="text/html; charset=UTF-8"
-      doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
-      doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
-      exclude-result-prefixes="#all" omit-xml-declaration="yes"/>
+   <xsl:output method="xhtml" indent="yes" encoding="UTF-8" media-type="text/html; charset=UTF-8" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+      doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" exclude-result-prefixes="#all" omit-xml-declaration="yes"/>
 
    <!-- ====================================================================== -->
    <!-- Strip Space                                                            -->
@@ -84,8 +79,7 @@
    <!-- Define Keys                                                            -->
    <!-- ====================================================================== -->
 
-   <xsl:key name="chunk-id"
-      match="*[parent::archdesc or matches(local-name(), '^(c|c[0-9][0-9])$')][@id]" use="@id"/>
+   <xsl:key name="chunk-id" match="*[parent::archdesc or matches(local-name(), '^(c|c[0-9][0-9])$')][@id]" use="@id"/>
 
    <!-- ====================================================================== -->
    <!-- EAD-specific parameters                                                -->
@@ -170,15 +164,11 @@
    <!-- ====================================================================== -->
 
    <xsl:template name="contents">
-      <xsl:variable name="bbar.href"><xsl:value-of select="$query.string"
-            />;doc.view=bbar;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"
-         /></xsl:variable>
-      <xsl:variable name="toc.href"><xsl:value-of select="$query.string"
-            />;doc.view=toc;brand=<xsl:value-of select="$brand"/>;chunk.id=<xsl:value-of
-            select="$chunk.id"/>;<xsl:value-of select="$search"/>#X</xsl:variable>
-      <xsl:variable name="content.href"><xsl:value-of select="$query.string"
-            />;doc.view=content;brand=<xsl:value-of select="$brand"/>;chunk.id=<xsl:value-of
-            select="$chunk.id"/><xsl:value-of select="$search"/></xsl:variable>
+      <xsl:variable name="bbar.href"><xsl:value-of select="$query.string"/>;doc.view=bbar;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/></xsl:variable>
+      <xsl:variable name="toc.href"><xsl:value-of select="$query.string"/>;doc.view=toc;brand=<xsl:value-of select="$brand"/>;chunk.id=<xsl:value-of select="$chunk.id"/>;<xsl:value-of select="$search"
+         />#X</xsl:variable>
+      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;doc.view=content;brand=<xsl:value-of select="$brand"/>;chunk.id=<xsl:value-of select="$chunk.id"/><xsl:value-of
+            select="$search"/></xsl:variable>
 
       <xsl:result-document exclude-result-prefixes="#all">
 
@@ -207,34 +197,29 @@
                         <xsl:value-of select="archdesc/did/unittitle"/>
                      </xsl:attribute>
                   </meta>
-                  <div itemprop="http:/schema.org/contentLocation" itemscope=""
-                     itemtype="http:/schema.org/Place">
+                  <div itemprop="http:/schema.org/contentLocation" itemscope="" itemtype="http:/schema.org/Place">
                      <meta itemprop="http:/schema.org/name" content="Rockefeller Archive Center"/>
                      <meta itemprop="http:/schema.org/url" content="http://www.rockarch.org"/>
-                     <div itemprop="http:/schema.org/address" itemscop=""
-                        itemtype="http:/schema.org/PostalAddress">
+                     <div itemprop="http:/schema.org/address" itemscop="" itemtype="http:/schema.org/PostalAddress">
                         <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
                         <meta itemprop="addressLocality" content="Sleepy Hollow"/>
                         <meta itemprop="addressRegion" content="NY"/>
                         <meta itemprop="postalCode" content="10591"/>
                      </div>
-                     <div itemprop="http:/schema.org/geo" itemscope=""
-                        itemtype="http:/schema.org/GeoCoordinates">
+                     <div itemprop="http:/schema.org/geo" itemscope="" itemtype="http:/schema.org/GeoCoordinates">
                         <meta itemprop="http:/schema.org/latitude" content="41.091845"/>
                         <meta itemprop="http:/schema.org/longitude" content="-73.835265"/>
                      </div>
                      <meta itemprop="http:/schema.org/telephone" content="(914) 366-6300"/>
                   </div>
-                  <xsl:for-each
-                     select="archdesc/did/origination/child::*[starts-with(@role,'Contributor')]">
+                  <xsl:for-each select="archdesc/did/origination/child::*[starts-with(@role,'Contributor')]">
                      <meta itemprop="http:/schema.org/contributor">
                         <xsl:attribute name="content">
                            <xsl:apply-templates/>
                         </xsl:attribute>
                      </meta>
                   </xsl:for-each>
-                  <xsl:for-each
-                     select="archdesc/did/origination/child::*[starts-with(@role,'Author')]">
+                  <xsl:for-each select="archdesc/did/origination/child::*[starts-with(@role,'Author')]">
                      <meta itemprop="http:/schema.org/creator">
                         <xsl:attribute name="content">
                            <xsl:apply-templates/>
@@ -249,12 +234,10 @@
                      </meta>
                   </div>
                   <meta itemprop="http:/schema.org/inLanguage" content="en"/>
-                  <div itemprop="http:/schema.org/publisher" itemscope=""
-                     itemtype="http:/schema.org/organization">
+                  <div itemprop="http:/schema.org/publisher" itemscope="" itemtype="http:/schema.org/organization">
                      <meta itemprop="http:/schema.org/name" content="Rockefeller Archive Center"/>
                      <meta itemprop="http:/schema.org/url" content="http://www.rockarch.org"/>
-                     <div itemprop="http:/schema.org/address" itemscop=""
-                        itemtype="http:/schema.org/PostalAddress">
+                     <div itemprop="http:/schema.org/address" itemscop="" itemtype="http:/schema.org/PostalAddress">
                         <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
                         <meta itemprop="addressLocality" content="Sleepy Hollow"/>
                         <meta itemprop="addressRegion" content="NY"/>
@@ -268,16 +251,14 @@
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
                   <a href="/xtf/search">
-                     <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
-                        alt="The Rockefeller Archive Center" border="0"/>
+                     <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center" border="0"/>
                      <h1>dimes.rockarch.org</h1>
-                     <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
-                        Center</p>
+                     <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
                   </a>
                </div>
 
                <xsl:call-template name="myListNav"/>
-               
+
                <xsl:call-template name="bbar_custom"/>
 
                <div class="main">
@@ -313,8 +294,7 @@
                </xsl:if>
                <xsl:choose>
                   <xsl:when test="eadheader/filedesc/titlestmt/titleproper[@type='filing']">
-                     <xsl:apply-templates
-                        select="eadheader/filedesc/titlestmt/titleproper[not(@type='filing')]"/>
+                     <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper[not(@type='filing')]"/>
                   </xsl:when>
                   <xsl:otherwise>
                      <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
@@ -342,8 +322,7 @@
                <xsl:if test="$doc.view != 'dao'">
                   <li>
                      <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf"
-                        onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
+                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
                         <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
                      </a>
                   </li>
@@ -356,10 +335,11 @@
                <input type="hidden" name="docId" value="{$docId}"/>
                <input type="hidden" name="chunk.id" value="contentsLink"/>
                <input type="hidden" name="doc.view" value="contentsSearch"/>
-               <input type="submit" value="Search Contents List"
-                  onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
+               <input type="submit" value="Search Contents List" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
             </form>
-            <div class="searchAll"><a href="{$xtfURL}{$crossqueryPath}">Search all collections</a></div>
+            <div class="searchAll">
+               <a href="{$xtfURL}{$crossqueryPath}">Search all collections</a>
+            </div>
          </div>
          <xsl:call-template name="tabs"/>
       </div>
@@ -375,8 +355,7 @@
    <!-- ====================================================================== -->
 
    <xsl:template name="tabs">
-      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;brand=<xsl:value-of
-            select="$brand"/><xsl:value-of select="$search"/></xsl:variable>
+      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/></xsl:variable>
       <div class="tabs">
          <div class="tab collectionTab">
             <xsl:choose>
@@ -413,8 +392,7 @@
             </xsl:variable>
             <xsl:variable name="nodesLst">
                <xsl:choose>
-                  <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file']"
-                     >archdesc/dsc/child::*</xsl:when>
+                  <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file']">archdesc/dsc/child::*</xsl:when>
                   <xsl:otherwise>archdesc/dsc/child::*[1]</xsl:otherwise>
                </xsl:choose>
             </xsl:variable>
@@ -440,8 +418,7 @@
             </xsl:if>
             <xsl:variable name="idFile">
                <xsl:choose>
-                  <xsl:when
-                     test="archdesc/dsc/child::*[1][@level = 'file' and exists(xtf:meta/*:type = 'dao')]">
+                  <xsl:when test="archdesc/dsc/child::*[1][@level = 'file' and exists(xtf:meta/*:type = 'dao')]">
                      <xsl:value-of select="'digitalLink'"/>
                   </xsl:when>
                   <xsl:otherwise>
@@ -451,8 +428,7 @@
             </xsl:variable>
             <xsl:variable name="nodesLst">
                <xsl:choose>
-                  <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file' and exists(dao)]"
-                     >archdesc/dsc/child::*</xsl:when>
+                  <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file' and exists(dao)]">archdesc/dsc/child::*</xsl:when>
                   <xsl:otherwise>archdesc/dsc/child::*[xtf:meta/*:type = 'dao'][1]</xsl:otherwise>
                </xsl:choose>
             </xsl:variable>
@@ -482,8 +458,7 @@
       <xsl:variable name="hit.count">
          <xsl:choose>
             <xsl:when test="$doc.view='collection'">
-               <xsl:value-of select="/ead/archdesc/@xtf:hitCount - /ead/archdesc/dsc/@xtf:hitCount"
-               />
+               <xsl:value-of select="/ead/archdesc/@xtf:hitCount - /ead/archdesc/dsc/@xtf:hitCount"/>
             </xsl:when>
             <xsl:when test="$doc.view='contents'">
                <xsl:value-of select="/ead/archdesc/dsc/@xtf:hitCount"/>
@@ -506,18 +481,13 @@
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
-      <xsl:variable name="content.href"><xsl:value-of select="$query.string"
-            />;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"
-            /><xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"
-         /></xsl:variable>
+      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"
+            />&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>
       <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'tab', '{$tracking-id}']);">
 
          <!-- 5/17/2012 DG: create variables for the new href: documentname2, basicchoice2, xtfURL2, href2. Just use chunk.id and doc name for now-->
          <xsl:variable name="documentname2">
-            <xsl:analyze-string select="$query.string"
-               regex="docId=ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
-
-               <!--   "/xtf/view\?docId=ead/([a-z0-9^/]+)/([a-z0-9^/]+).xml;query=;brand=default" -->
+            <xsl:analyze-string select="$query.string" regex="docId=ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
 
                <xsl:matching-substring>
                   <xsl:value-of select="regex-group(2)"/>
@@ -565,8 +535,7 @@
          <xsl:attribute name="href">
             <xsl:choose>
                <xsl:when test="($query != '0') and ($query != '')">
-                  <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
-                     />?<xsl:value-of select="$content.href"/>
+                  <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
                </xsl:when>
                <xsl:otherwise>
                   <xsl:value-of select="$href2"/>
@@ -640,8 +609,7 @@
                                  <xsl:call-template name="make-toc-link">
                                     <xsl:with-param name="name" select="'Overview'"/>
                                     <xsl:with-param name="id" select="'headerlink'"/>
-                                    <xsl:with-param name="nodes"
-                                       select="archdesc/did | archdesc/scopecontent"/>
+                                    <xsl:with-param name="nodes" select="archdesc/did | archdesc/scopecontent"/>
                                  </xsl:call-template>
                               </div>
                            </xsl:if>
@@ -682,8 +650,7 @@
                            <xsl:if test="archdesc/bioghist/head">
                               <div class="tocRow" id="bioghistMenu">
                                  <xsl:call-template name="make-toc-link">
-                                    <xsl:with-param name="name"
-                                       select="'Biographical/Historical Note'"/>
+                                    <xsl:with-param name="name" select="'Biographical/Historical Note'"/>
                                     <xsl:with-param name="id" select="'bioghist'"/>
                                     <xsl:with-param name="nodes" select="archdesc/bioghist"/>
                                  </xsl:call-template>
@@ -696,8 +663,7 @@
                               archdesc/separatedmaterial or archdesc/altformavail or archdesc/accruals">
                               <div class="tocRow" id="adminlinkMenu">
                                  <xsl:call-template name="make-toc-link">
-                                    <xsl:with-param name="name"
-                                       select="'Administrative Information'"/>
+                                    <xsl:with-param name="name" select="'Administrative Information'"/>
                                     <xsl:with-param name="id" select="'adminlink'"/>
                                     <xsl:with-param name="nodes"
                                        select="archdesc/revisiondesc|
@@ -714,15 +680,12 @@
                                  </xsl:call-template>
                               </div>
                            </xsl:if>
-                           <xsl:if
-                              test="archdesc/did/physdesc[@label = 'General Physical Description note']|archdesc/did/physdesc[not(@altrender)]">
+                           <xsl:if test="archdesc/did/physdesc[@label = 'General Physical Description note']|archdesc/did/physdesc[not(@altrender)]">
                               <div class="tocRow" id="physdesclinkMenu">
                                  <xsl:call-template name="make-toc-link">
                                     <xsl:with-param name="name" select="'Physical Description'"/>
                                     <xsl:with-param name="id" select="'physdesclink'"/>
-                                    <xsl:with-param name="nodes"
-                                       select="archdesc/did/physdesc[@label = 'General Physical Description note']|archdesc/did/physdesc[not(@altrender)]"
-                                    />
+                                    <xsl:with-param name="nodes" select="archdesc/did/physdesc[@label = 'General Physical Description note']|archdesc/did/physdesc[not(@altrender)]"/>
                                  </xsl:call-template>
                               </div>
                            </xsl:if>
@@ -734,28 +697,21 @@
                                  <xsl:for-each select="archdesc/controlaccess">
                                     <xsl:for-each select="subject | genreform | title | occupation">
                                        <li>
-                                          <a
-                                             onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);"
-                                             href="{$xtfURL}search?browse-all=yes;f1-subject={.}">
+                                          <a onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);" href="{$xtfURL}search?browse-all=yes;f1-subject={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
                                     </xsl:for-each>
-                                    <xsl:for-each
-                                       select="corpname[not(@role='aut')] | famname[not(@role='aut')] | persname[not(@role='aut')]">
+                                    <xsl:for-each select="corpname[not(@role='aut')] | famname[not(@role='aut')] | persname[not(@role='aut')]">
                                        <li>
-                                          <a
-                                             onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);"
-                                             href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}">
+                                          <a onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);" href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
                                     </xsl:for-each>
                                     <xsl:for-each select="geogname">
                                        <li>
-                                          <a
-                                             onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);"
-                                             href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}">
+                                          <a onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);" href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
@@ -786,47 +742,28 @@
          <xsl:value-of select="concat('dsc',$seriesID)"/>
       </xsl:variable>
       <xsl:variable name="submenu">
-         <xsl:if
-            test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+         <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
             <xsl:value-of select="'true'"/>
          </xsl:if>
       </xsl:variable>
       <div id="{@id}Menu">
          <xsl:attribute name="class">
             <xsl:value-of select="'tocRow '"/>
-            <!--<xsl:choose>
-               <xsl:when test="$submenu = 'true'">
-                  <xsl:value-of select="'accordionButton '"/>
-                  <xsl:if test="$chunk.id = @id">
-                     <xsl:attribute name="class">
-                        <xsl:value-of select="'active on'"/>
-                     </xsl:attribute>
-                  </xsl:if>
-               </xsl:when>
-               <xsl:when test="$chunk.id = @id">
-                  <xsl:attribute name="class">
-                     <xsl:value-of select="'active '"/>
-                  </xsl:attribute>
-               </xsl:when>
-            </xsl:choose>-->
          </xsl:attribute>
 
          <xsl:variable name="levelID">
             <xsl:choose>
                <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
-               <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of
-                     select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
-               <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of
-                     select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
-               <xsl:when
-                  test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1 and @otherlevel!='unspecified')"
-                     ><xsl:value-of select="@otherlevel"/><xsl:value-of select="did/unitid"/>: </xsl:when>
+               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1 and @otherlevel!='unspecified')">
+                  <xsl:value-of select="@otherlevel"/><xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">
                   <xsl:if test="did/unitid">
                      <xsl:value-of select="did/unitid"/>
@@ -888,18 +825,15 @@
          <xsl:choose>
             <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
-            <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"
-               />: </xsl:when>
+            <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
-            <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"
-               />: </xsl:when>
+            <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
-            <xsl:when
-               test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1 and @otherlevel!='unspecified')"
-                  ><xsl:value-of select="@otherlevel"/><xsl:value-of select="did/unitid"/>: </xsl:when>
+            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1 and @otherlevel!='unspecified')">
+               <xsl:value-of select="@otherlevel"/><xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">
                <xsl:if test="did/unitid">
                   <xsl:value-of select="did/unitid"/>
@@ -929,9 +863,6 @@
       <div>
          <xsl:attribute name="class">
             <xsl:value-of select="'tocSubrow '"/>
-            <!--<xsl:if test="$chunk.id = @id">
-               <xsl:value-of select="'active '"/>
-            </xsl:if>-->
          </xsl:attribute>
          <xsl:call-template name="make-toc-link">
             <xsl:with-param name="submenuID" select="$submenuID"/>
@@ -954,8 +885,7 @@
          <xsl:value-of select="concat('dsc',$seriesID)"/>
       </xsl:variable>
       <xsl:variable name="submenu">
-         <xsl:if
-            test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+         <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
             <xsl:value-of select="'true'"/>
          </xsl:if>
       </xsl:variable>
@@ -963,14 +893,6 @@
          <xsl:attribute name="class">
             <xsl:value-of select="'tocRow '"/>
             <xsl:choose>
-               <!--<xsl:when test="$submenu = 'true'">
-                  <xsl:value-of select="'accordionButton '"/>
-                  <xsl:if test="$chunk.id = @id">
-                     <xsl:attribute name="class">
-                        <xsl:value-of select="'active on'"/>
-                     </xsl:attribute>
-                  </xsl:if>
-               </xsl:when>-->
                <xsl:when test="$chunk.id = @id">
                   <xsl:attribute name="class">
                      <xsl:value-of select="'active '"/>
@@ -983,17 +905,14 @@
             <xsl:choose>
                <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
-               <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of
-                     select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
-               <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of
-                     select="did/unitid"/>: </xsl:when>
+               <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
                <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
-               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"
-                     ><xsl:value-of select="@otherlevel"/>: </xsl:when>
+               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"><xsl:value-of select="@otherlevel"/>: </xsl:when>
                <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">
                   <xsl:value-of select="@otherlevel"/>
                </xsl:when>
@@ -1034,8 +953,7 @@
             <xsl:if test="$parentID = $submenuID">
                <xsl:attribute name="style">display:block;</xsl:attribute>
             </xsl:if>
-            <xsl:apply-templates
-               select="child::*[@level='subgrp'] 
+            <xsl:apply-templates select="child::*[@level='subgrp'] 
                   | child::*[@level='subseries'] 
                   | child::*[@level='otherlevel' and not(child::did/container)]"
                mode="dscTocDaoSubseries">
@@ -1051,17 +969,14 @@
          <xsl:choose>
             <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='subseries'">Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
-            <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"
-               />: </xsl:when>
+            <xsl:when test="@level='subsubseries'">Sub-Subseries <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='collection'">Collection <xsl:value-of select="did/unitid"/>: </xsl:when>
-            <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"
-               />: </xsl:when>
+            <xsl:when test="@level='subcollection'">Subcollection <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='fonds'">Fonds <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='subfonds'">Subfonds <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='recordgrp'">Record Group <xsl:value-of select="did/unitid"/>: </xsl:when>
             <xsl:when test="@level='subgrp'">Subgroup <xsl:value-of select="did/unitid"/>: </xsl:when>
-            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"
-                  ><xsl:value-of select="@otherlevel"/>: </xsl:when>
+            <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)"><xsl:value-of select="@otherlevel"/>: </xsl:when>
             <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">
                <xsl:value-of select="@otherlevel"/>
             </xsl:when>
@@ -1109,14 +1024,9 @@
       <xsl:param name="indent" select="1"/>
       <xsl:param name="dao"/>
       <xsl:variable name="hit.count" select="sum($nodes/@xtf:hitCount)"/>
-      <!-- 5/17/2012 DG:  a new variable for the new href.
-      Just use chunk.id and doc name for now
-        -->
+      <!-- 5/17/2012 DG:  a new variable for the new href.       -->
       <xsl:variable name="documentname2">
-         <xsl:analyze-string select="$query.string" regex="(.*)ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml"
-            flags="i">
-
-            <!--   "/xtf/view\?docId=ead/([a-z0-9^/]+)/([a-z0-9^/]+).xml;query=;brand=default" -->
+         <xsl:analyze-string select="$query.string" regex="(.*)ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
 
             <xsl:matching-substring>
                <xsl:value-of select="regex-group(2)"/>
@@ -1168,17 +1078,9 @@
          <xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2)"/>
       </xsl:variable>
       <!--  end new  DG: created $href2 -->
-
-      <xsl:variable name="content.href"><xsl:value-of select="$query.string"
-            />;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"
-            /><xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"
-         /></xsl:variable>
-
-      <!--<xsl:if test="@id = $chunk.id">
-         <a name="X"/>
-      </xsl:if>-->
-
-
+      <xsl:variable name="content.href">
+         <xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/>
+         <xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>
       <xsl:choose>
          <xsl:when
             test="$doc.view='collection' or $chunk.id='headerlink' or $chunk.id='restrictlink' or $chunk.id='arrangementlink' or $chunk.id='bioghist' or $chunk.id='adminlink' or $chunk.id='physdesclink'">
@@ -1204,19 +1106,15 @@
                   </xsl:when>
                </xsl:choose>
             </xsl:variable>
-            <a
-               onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$tracking-id}']);">
+            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$tracking-id}']);">
                <!-- if basicchoice2 = "nomatch_for_id" then use the original -->
                <xsl:attribute name="href">
-                  <!--   <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>   (old had &amp;menu=more)-->
                   <xsl:choose>
                      <xsl:when test="($query != '0') and ($query != '')">
-                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
-                           />?<xsl:value-of select="$content.href"/>
+                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
                      </xsl:when>
                      <xsl:when test="$basicchoice2='nomatch_for_id'">
-                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
-                           />?<xsl:value-of select="$content.href"/>
+                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
                      </xsl:when>
                      <xsl:otherwise>
                         <!-- 5/17/12 DG for RAC: rewrite -->
@@ -1242,20 +1140,17 @@
             </a>
          </xsl:when>
          <xsl:otherwise>
-            <a
-               onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', 'level {$indent} component']);">
+            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', 'level {$indent} component']);">
                <xsl:attribute name="rel">
                   <xsl:value-of select="concat('#',@id)"/>
                </xsl:attribute>
                <xsl:attribute name="href">
                   <xsl:choose>
                      <xsl:when test="($query != '0') and ($query != '')">
-                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
-                           />?<xsl:value-of select="$content.href"/>
+                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
                      </xsl:when>
                      <xsl:when test="$basicchoice2='nomatch_for_id'">
-                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"
-                           />?<xsl:value-of select="$content.href"/>
+                        <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
                      </xsl:when>
                      <xsl:otherwise>
                         <xsl:value-of select="$href2"/>
@@ -1282,8 +1177,7 @@
          </xsl:otherwise>
       </xsl:choose>
       <xsl:if test="$dao = 'true'">
-         <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects"
-            title="Contains digital objects"/>
+         <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
       </xsl:if>
    </xsl:template>
 
