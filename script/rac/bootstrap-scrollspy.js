@@ -100,10 +100,10 @@
         
         $(this.selector)
           .parent('div.active')
-          .removeClass('active on')
+          .removeClass('active')
           
           $('div.accordionContent').hide();
-          $('div.accordionButton').removeClass('on');
+          //$('div.accordionButton').removeClass('on');
 
         selector = this.selector
           + '[data-target="' + target + '"],'
@@ -114,10 +114,12 @@
           .addClass('active')
 
         if ($(active).hasClass('accordionButton'))  {
-          active = active.addClass('on').next('div.accordionContent').show()
+          active = active.next('div.accordionContent').show()
+          //active.addClass('on').next('div.accordionContent').show()
         } else if
          ($(active).hasClass('tocSubrow')) {
-         active = active.parent().show().prev('div.tocRow').addClass('on')
+         active = active.parent().show()
+         //.prev('div.tocRow').addClass('on')
          }
         active.trigger('activate')
 
