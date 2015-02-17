@@ -321,6 +321,19 @@
                </xsl:choose>
             </h1>
          </div>
+         <xsl:variable name="searchPage">
+            <xsl:choose>
+               <xsl:when test="$doc.view='dao'">
+                  <xsl:value-of select="'Digital Materials'"/>
+               </xsl:when>
+               <xsl:when test="$doc.view='contents'">
+                  <xsl:value-of select="'Contents List'"/>
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:value-of select="'Collection Description'"/>
+               </xsl:otherwise>
+            </xsl:choose>
+         </xsl:variable>
          <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
          <xsl:variable name="indexId" select="$identifier"/>
          <div class="headerIcons">
@@ -336,20 +349,6 @@
                </xsl:if>
             </ul>
          </div>
-         <xsl:call-template name="tabs"/>
-         <xsl:variable name="searchPage">
-            <xsl:choose>
-               <xsl:when test="$doc.view='dao'">
-                  <xsl:value-of select="'Digital Materials'"/>
-               </xsl:when>
-               <xsl:when test="$doc.view='contents'">
-                  <xsl:value-of select="'Contents List'"/>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:value-of select="'Collection Description'"/>
-               </xsl:otherwise>
-            </xsl:choose>
-         </xsl:variable>
          <div class="headerSearch">
             <form action="{$xtfURL}{$dynaxmlPath}" method="get" class="bbform">
                <input name="query" type="text"/>
@@ -359,7 +358,9 @@
                <input type="submit" value="Search Contents List"
                   onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
             </form>
+            <div class="searchAll"><a href="{$xtfURL}{$crossqueryPath}">Search all collections</a></div>
          </div>
+         <xsl:call-template name="tabs"/>
       </div>
    </xsl:template>
    <!-- only display first num tag -->
