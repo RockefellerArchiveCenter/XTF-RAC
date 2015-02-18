@@ -1023,7 +1023,12 @@
       <xsl:param name="nodes"/>
       <xsl:param name="indent" select="1"/>
       <xsl:param name="dao"/>
-      <xsl:variable name="hit.count" select="sum($nodes/@xtf:hitCount)"/>
+      <xsl:variable name="submenu">
+         <xsl:if test="child::*[@level='subgrp' or @level='subseries' or @level='subfonds' or @level='series' or (@level='otherlevel' and not(child::did/container))]">
+            <xsl:value-of select="'true'"/>
+         </xsl:if>
+      </xsl:variable>
+      <xsl:variable name="hit.count" select="number(@xtf:hitCount)"/>
       <xsl:variable name="series.hit.count" select="$hit.count - count(child::c/descendant::*/xtf:hit)"/>
       <!-- 5/17/2012 DG:  a new variable for the new href.       -->
       <xsl:variable name="documentname2">
@@ -1171,12 +1176,14 @@
                   </xsl:choose>
                   <xsl:value-of select="$name"/>
                   <div class="hit-count">
-                     <xsl:if test="$hit.count">
                         <xsl:choose>
-                           <xsl:when test="$indent = 2"> (<xsl:value-of select="$series.hit.count"/>) </xsl:when>
-                           <xsl:otherwise> (<xsl:value-of select="$hit.count"/>) </xsl:otherwise>
+                           <xsl:when test="$submenu = 'true'">
+                              <xsl:if test="$series.hit.count > 0"> (<xsl:value-of select="$series.hit.count"/>) </xsl:if>
+                           </xsl:when>
+                           <xsl:otherwise>
+                              <xsl:if test="$hit.count > 0"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
+                           </xsl:otherwise>
                         </xsl:choose>
-                     </xsl:if>
                   </div>
                </div>
             </a>
