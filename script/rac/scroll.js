@@ -30,7 +30,7 @@ function checkIfInView(element, action) {
     } else if (action === 'scroll') {
         var tocHeight = $('div#tocWrapper .contentsList').innerHeight();
         var visibleTocHeight = $('div#tocWrapper').innerHeight();
-        var tocTop = 280;
+        var tocTop = 267;
         var footerHeight = $('.fixedFooter').innerHeight();
         var elementTop = element.offset().top;
         var moveUp = tocTop + visibleTocHeight - 100;
@@ -43,17 +43,16 @@ function checkIfInView(element, action) {
                 $('div#tocWrapper').animate({
                     scrollTop: newScrollTop
                 },
-                700);
+                300);
             } else if (newScrollTop > maxScroll) {
                 $('div#tocWrapper').animate({
                     scrollTop: maxScroll
                 },
-                700);
+                300);
             } else {
                 return false;
             }
         } else if (tocTop > elementTop) {
-            console.log('move down');
             var distance = elementTop - tocHeight;
             var currentScrollTop = $('div#tocWrapper').scrollTop();
             var newScrollTop = currentScrollTop + distance
@@ -61,12 +60,12 @@ function checkIfInView(element, action) {
                 $('div#tocWrapper').animate({
                     scrollTop: newScrollTop
                 },
-                700);
+                300);
             } else if (newScrollTop < 0) {
                 $('div#tocWrapper').animate({
                     scrollTop: 0
                 },
-                700);
+                300);
             } else {
                 return false;
             }
