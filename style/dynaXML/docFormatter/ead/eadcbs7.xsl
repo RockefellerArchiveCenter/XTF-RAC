@@ -1577,11 +1577,9 @@
                   </xsl:variable>
                   <xsl:if
                      test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
-                                child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
-                                child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
-                                child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
-                                child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
-                                child::separatedmaterial |  child::controlaccess">
+                                child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc | 
+                                child::fileplan |  child::odd | child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
+                                child::otherfindaid |  child::phystech |  child::processinfo | child::relatedmaterial | child::separatedmaterial |  child::controlaccess">
                      <span class="dialog_dsc">
                         <a href="#"
                            onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Additional Description']);"
