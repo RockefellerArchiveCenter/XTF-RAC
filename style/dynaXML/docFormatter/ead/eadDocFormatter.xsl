@@ -1023,6 +1023,7 @@
       <xsl:param name="indent" select="1"/>
       <xsl:param name="dao"/>
       <xsl:variable name="hit.count" select="sum($nodes/@xtf:hitCount)"/>
+      <xsl:variable name="series.hit.count" select="$hit.count - count(child::c/descendant::*/xtf:hit)"/>
       <!-- 5/17/2012 DG:  a new variable for the new href.       -->
       <xsl:variable name="documentname2">
          <xsl:analyze-string select="$query.string" regex="(.*)ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
@@ -1169,7 +1170,12 @@
                   </xsl:choose>
                   <xsl:value-of select="$name"/>
                   <div class="hit-count">
-                     <xsl:if test="$hit.count"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
+                     <xsl:if test="$hit.count">
+                        <xsl:choose>
+                           <xsl:when test="$indent = 2"> (<xsl:value-of select="$series.hit.count"/>) </xsl:when>
+                           <xsl:otherwise> (<xsl:value-of select="$hit.count"/>) </xsl:otherwise>
+                        </xsl:choose>
+                     </xsl:if>
                   </div>
                </div>
             </a>

@@ -1660,7 +1660,7 @@
                </div>
                <span class="moreInfo">
                   <xsl:variable name="didHitCount">
-                     <xsl:value-of select="count(descendant-or-self::xtf:hit)"/>
+                     <xsl:value-of select="count(descendant-or-self::xtf:hit) - count(did/descendant::xtf:hit)"/>
                   </xsl:variable>
                   <xsl:if
                      test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
