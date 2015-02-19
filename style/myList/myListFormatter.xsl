@@ -310,7 +310,7 @@
         <div class="actions">
             <xsl:variable name="bag" select="session:getData('bag')"/>
             <xsl:variable name="bagCount" select="count($bag/bag/savedDoc)"/>
-            <a class="btn btn-default myListEmail" onClick="_gaq.push(['_trackEvent', 'My List', 'Email', 'My List Header']);"><img src="/xtf/icons/default/email-list.png"/> E-mail My Bookbag</a>
+            <a class="btn btn-default myListEmail" onClick="_gaq.push(['_trackEvent', 'My List', 'Email', 'My List Header']);"><img src="/xtf/icons/default/email-list.png"/> E-mail</a>
             <a class="btn btn-default myListPrint" onClick="_gaq.push(['_trackEvent', 'My List', 'Print', 'My List Header']);"><img src="/xtf/icons/default/print-list.png"/> Print</a>
             <a class="btn btn-default myListRequest" onClick="_gaq.push(['_trackEvent', 'My List', 'Reading Room Request', 'My List Header']);"><img src="/xtf/icons/default/reading-room-request.png"/> Request in Reading Room</a>
             <a class="btn btn-default myListCopies" onClick="_gaq.push(['_trackEvent', 'My List', 'Duplication Request', 'My List Header']);"><img src="/xtf/icons/default/duplication-request.png"/> Request Copies</a>
