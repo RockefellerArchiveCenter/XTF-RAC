@@ -302,6 +302,21 @@
                </xsl:choose>
             </h1>
          </div>
+         <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
+         <xsl:variable name="indexId" select="$identifier"/>
+         <div class="headerIcons">
+            <ul>
+               <xsl:if test="$doc.view != 'dao'">
+                  <li>
+                     <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
+                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf"
+                        onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
+                        <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
+                     </a>
+                  </li>
+               </xsl:if>
+            </ul>
+         </div>
          <xsl:variable name="searchPage">
             <xsl:choose>
                <xsl:when test="$doc.view='dao'">
@@ -315,20 +330,6 @@
                </xsl:otherwise>
             </xsl:choose>
          </xsl:variable>
-         <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
-         <xsl:variable name="indexId" select="$identifier"/>
-         <div class="headerIcons">
-            <ul>
-               <xsl:if test="$doc.view != 'dao'">
-                  <li>
-                     <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
-                        <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
-                     </a>
-                  </li>
-               </xsl:if>
-            </ul>
-         </div>
          <div class="headerSearch">
             <form action="{$xtfURL}{$dynaxmlPath}" method="get" class="bbform">
                <input name="query" type="text"/>
@@ -562,7 +563,7 @@
                      determine which elements will be included in the table
                      of contents.  Each if statement tests to see if there is
                      a matching element with content in the finding aid.-->
-                  <xsl:choose>
+                  <xsl:choose> 
                      <xsl:when test="$doc.view='contents' or $doc.view = 'contentsSearch'">
                         <div class="contentsList">
                            <xsl:if
