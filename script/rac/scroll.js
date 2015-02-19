@@ -30,13 +30,13 @@ function checkIfInView(element, action) {
     } else if (action === 'scroll') {
         var tocHeight = $('div#tocWrapper .contentsList').innerHeight();
         var visibleTocHeight = $('div#tocWrapper').innerHeight();
-        var tocTop = 267;
+        var tocTop = 280;
         var footerHeight = $('.fixedFooter').innerHeight();
         var elementTop = element.offset().top;
         var moveUp = tocTop + visibleTocHeight - 100;
         var maxScroll = tocHeight + tocTop - $(window).height() + footerHeight;
         if (moveUp < elementTop) {
-            var distance = elementTop - tocHeight;
+            var distance = elementTop - visibleTocHeight;
             var currentScrollTop = $('div#tocWrapper').scrollTop();
             var newScrollTop = currentScrollTop + distance
             if (newScrollTop < maxScroll) {
