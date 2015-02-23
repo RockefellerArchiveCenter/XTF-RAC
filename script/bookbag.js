@@ -173,6 +173,9 @@ $(document).ready(function () {
     
     //Adds documents to My List
     $(listAdd).on('click', function (e) {
+    
+        //animate my list button
+        $('#myListButton').effect( "highlight", {color:"#c45414"}, 500 );
 
         var a = $(this);
 
