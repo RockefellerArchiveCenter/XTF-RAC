@@ -175,8 +175,8 @@ $(document).ready(function () {
     $(listAdd).on('click', function (e) {
     
         //animate my list button
-        $('#myListButton').effect( "highlight", {color:"#c45414"}, 500 );
-
+        $('#myListButton').effect( "highlight", {color:"rgba(196, 84, 20, 0.1)"}, 500 );
+        
         var a = $(this);
 
         //data variables
