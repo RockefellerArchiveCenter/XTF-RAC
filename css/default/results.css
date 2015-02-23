@@ -201,7 +201,7 @@ div.docHit {
     margin-top: 1%;
     position:relative;
     z-index:2;}
-.docHit > .activeArrow {margin-right: -12.5%;margin-top: 3%;}
+.docHit > .activeArrow {margin-right: -13%;margin-top: 3%;}
 .bookbagView .activeArrow {margin-right:-13%;}
 .bookbagView .top-level .activeArrow {margin-right:-12%;}
     
@@ -232,10 +232,10 @@ div.docHit {
     visibility:hidden;
     width:29%;
     position: absolute;
-    margin:0 1%;
+    margin:0 1em;
+    padding: 1em;
     border-radius:5px;
     background-color:#FAFAFB;
-    padding:1%;
     float:right;
     min-height:6em;
 }
@@ -249,7 +249,7 @@ div.docHit {
 .componentInfo h3 {font-size:1em;color:#333}
 .componentInfo .title {font-weight:bold;font-size:1.3em;}
 .componentInfo .containers, .componentInfo .callNo {width:100%; font-size:1em;}
-.componentInfo .parents {font-size:.8em}
+.componentInfo .parents {font-size:.8em;}
 .results .parents {font-size:.9em;}
 .componentInfo .language {font-size:.9em;}
 .componentInfo .notes, .componentInfo .restrictions {font-size:.9em;max-height: 9em;overflow: hidden;float: left;width: 100%;}
