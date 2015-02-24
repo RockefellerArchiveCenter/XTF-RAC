@@ -383,7 +383,7 @@
                 <input type="hidden" name="GroupingOption_ItemIssue" value="Concatenate"/>
                 <input type="hidden" name="GroupingOption_ItemInfo2" value="Concatenate"/>
                 <input type="hidden" name="GroupingOption_CallNumber" value="FirstValue"/>
-                <input type="hidden" name="GroupingOption_ItemInfo3" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_ItemInfo3" value="FirstValue"/>
                 <input type="hidden" name="SubmitButton" value="Submit Request"/>
                 <input type="hidden" name="UserReview" value="No"/>
                 <div class="myListContents dialog">
@@ -461,7 +461,7 @@
                 <input type="hidden" name="GroupingOption_ItemIssue" value="Concatenate"/>
                 <input type="hidden" name="GroupingOption_ItemInfo2" value="Concatenate"/>
                 <input type="hidden" name="GroupingOption_CallNumber" value="FirstValue"/>
-                <input type="hidden" name="GroupingOption_ItemInfo3" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_ItemInfo3" value="FirstValue"/>
                 <input type="hidden" name="SkipOrderEstimate" value="Yes"/>
                 <input type="hidden" name="SubmitButton" value="Submit Request"/>
                 <div class="myListContents dialog">
