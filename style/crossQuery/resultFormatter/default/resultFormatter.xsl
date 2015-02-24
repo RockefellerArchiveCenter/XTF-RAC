@@ -2021,6 +2021,7 @@
       </xsl:if>
       <xsl:if test="meta/language != ''">
          <div class="language">
+            <h4>Language(s)</h4>
             <p>
                <xsl:text>Materials are in </xsl:text>
                <xsl:apply-templates select="meta/language"/>
@@ -2224,6 +2225,7 @@
       </xsl:if>
       <xsl:if test="meta/language != ''">
          <div class="language">
+            <h4>Language(s)</h4>
             <p>
                <xsl:text>Materials are in </xsl:text>
                <xsl:apply-templates select="meta/language"/>
