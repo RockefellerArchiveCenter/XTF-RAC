@@ -1667,11 +1667,16 @@
                <div class="instances">
                   <xsl:for-each select="child::*/container[not(@parent)]">
                      <div class="instance">
+<<<<<<< HEAD
+=======
+                        
+>>>>>>> changing display of instances in container lists
                         <!--7/16/11 WS: Adjusted Containers -->
                         <!-- ADDED 3/14/10: Sorts containers alpha numerically -->
                         <!--<xsl:sort select="."/>-->
                         <xsl:variable name="id" select="@id"/>
                         <xsl:variable name="containerSib" select="count(../container[@parent = $id] | ../container[@id = $id])"/>
+<<<<<<< HEAD
                         <span class="container">
                            <xsl:value-of select="concat(upper-case(substring(@type,1,1)),substring(@type,2))"/>
                            <xsl:text> </xsl:text>
@@ -1684,6 +1689,20 @@
                            <xsl:value-of select="../container[@parent = $id]"/>
                         </span>
                         <span class="format">
+=======
+                           <span class="container">
+                              <xsl:value-of select="concat(upper-case(substring(@type,1,1)),substring(@type,2))"/>
+                              <xsl:text> </xsl:text>
+                              <xsl:apply-templates select="."/>
+                              <xsl:text> </xsl:text>
+                           </span>
+                           <span class="container">
+                              <xsl:value-of select="concat(upper-case(substring(../container[@parent = $id]/@type,1,1)),substring(../container[@parent = $id]/@type,2))"/>
+                              <xsl:text> </xsl:text>
+                              <xsl:value-of select="../container[@parent = $id]"/>
+                           </span>
+                        
+>>>>>>> changing display of instances in container lists
                            <xsl:variable name="label">
                               <xsl:choose>
                                  <xsl:when test="contains(@label, ' (')">
@@ -1699,11 +1718,16 @@
                               <xsl:value-of select="$label"/>
                               <xsl:text>)</xsl:text>
                            </xsl:if>
+<<<<<<< HEAD
                         </span>
                      </div>
                   </xsl:for-each>
                   <!-- need this here in case there's a note but no instance -->
                   &#160;
+=======
+                     </div>
+                  </xsl:for-each>
+>>>>>>> changing display of instances in container lists
                </div>
                <span class="moreInfo">
                   <xsl:variable name="didHitCount">
