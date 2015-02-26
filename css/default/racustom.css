@@ -378,7 +378,7 @@ ul.none {list-style:none;}
 .file.active, .item.active, .active .item, .active .file {color:#fff;background-color: #999 !important;border-left: .5em solid #c45414;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position:relative;z-index:2;}
 .active .item, .active .file {background-color: #999 !important}
 .file.active .subhit, .item.active .subhit {color:#fff !important;}
-.daoLink, .format, .containers, .moreInfo {float:left;display:inline-block;vertical-align:middle;}
+.daoLink, .containers, .moreInfo {float:left;display:inline-block;vertical-align:middle;}
 .daoLink {width:38%;padding:0 1% 0 1%;}
 .instance .container {float: left;padding-right: 1em;}
 .moreInfo {width:16%;}
