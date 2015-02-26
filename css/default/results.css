@@ -244,7 +244,7 @@ div.docHit {
 }
 .componentDefault {visibility:visible;position:absolute; top: 24.3em; right: 1%;min-height:20em;}
 .componentDefault h3 {margin: 0;color: #666;}
-.componentInfo .parents, .componentInfo .language, .componentInfo .notes, .componentInfo .extent {margin-top:.5em;float:left;width:100%}
+.componentInfo .parents, .componentInfo .language, .componentInfo .notes {margin-top:.5em;float:left;width:100%}
 .componentInfo h4, .componentInfo p {margin:0;}
 .componentInfo h3 {font-size:1em;color:#333}
 .componentInfo .title {font-weight:bold;font-size:1.3em;}
