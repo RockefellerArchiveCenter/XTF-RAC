@@ -56,13 +56,13 @@ $(document).ready(function () {
                     if (scrolltop < 261) {
                         $(componentid).css({
                             top: setheightnoscroll, right: '1%', position: 'absolute', visibility: 'visible'
-                        }).hide().show("slide", { direction: "left" }, 500, 'easeInCirc');
+                        }).hide().show("slide", { direction: "left" }, 200, 'easeInCirc');
                     } else {
                         $(componentid).css({
                             top: setheight, right: '1%', position: 'absolute', visibility: 'visible'
-                        }).hide().show("slide", { direction: "left" }, 500, 'easeInCirc');
+                        }).hide().show("slide", { direction: "left" }, 200, 'easeInCirc');
                     }
-                }, 200);
+                }, 300);
             }
         });
     }
