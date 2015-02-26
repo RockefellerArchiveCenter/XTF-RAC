@@ -1,12 +1,6 @@
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-   xmlns:parse="http://cdlib.org/xtf/parse"
-   xmlns:xtf="http://cdlib.org/xtf"
-   xmlns:ns2="http://www.w3.org/1999/xlink"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   exclude-result-prefixes="#all"
-   xpath-default-namespace="urn:isbn:1-931666-22-9">
-   
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:parse="http://cdlib.org/xtf/parse" xmlns:xtf="http://cdlib.org/xtf"
+   xmlns:ns2="http://www.w3.org/1999/xlink" xmlns:xlink="http://www.w3.org/1999/xlink" exclude-result-prefixes="#all" xpath-default-namespace="urn:isbn:1-931666-22-9">
+
    <!--
       Copyright (c) 2008, Regents of the University of California
       All rights reserved.
@@ -151,16 +145,14 @@
       <xsl:copy>
          <xsl:copy-of select="@*"/>
          <xsl:choose>
-            <xsl:when
-               test="self::c01 or self::c02 or (self::* and (parent::archdesc or parent::ead))">
+            <xsl:when test="self::c01 or self::c02 or (self::* and (parent::archdesc or parent::ead))">
                <xsl:if test="not(@id)">
                   <xsl:attribute name="id" select="concat(local-name(), '_', $chunk.id)"/>
                </xsl:if>
                <xsl:for-each select="node()">
                   <xsl:call-template name="ead-copy">
                      <xsl:with-param name="node" select="."/>
-                     <xsl:with-param name="chunk.id"
-                        select="concat($chunk.id, xtf:posToChar(position()))"/>
+                     <xsl:with-param name="chunk.id" select="concat($chunk.id, xtf:posToChar(position()))"/>
                   </xsl:call-template>
                </xsl:for-each>
             </xsl:when>
@@ -174,13 +166,11 @@
    <!-- Used to generate compact IDs by encoding numbers 1..26 as letters instead -->
    <xsl:function name="xtf:posToChar">
       <xsl:param name="pos"/>
-      <xsl:value-of
-         select="
+      <xsl:value-of select="
          if ($pos &lt; 27) then
             substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ', $pos, 1)
          else
-            concat('.', $pos)"
-      />
+            concat('.', $pos)"/>
    </xsl:function>
 
    <!-- ====================================================================== -->
@@ -250,7 +240,8 @@
          <xsl:apply-templates/>
       </xsl:copy>
    </xsl:template>
-   <xsl:template match="origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'Author')] | origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'Contributor')] | origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'ctb')] | origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'aut')]">
+   <xsl:template
+      match="origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'Author')] | origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'Contributor')] | origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'ctb')] | origination[parent::did/parent::archdesc][starts-with(child::*/@role, 'aut')]">
       <xsl:copy>
          <xsl:copy-of select="@*"/>
          <xsl:attribute name="xtf:sectionType" select="'creator'"/>
@@ -295,8 +286,7 @@
       </xsl:copy>
    </xsl:template>
 
-   <xsl:template match="c | c01 | c02 | c03 | c04 | c05 | c06 | c07 | c08 | c09 | c10 | c11 | c12"
-      mode="addChunkId">
+   <xsl:template match="c | c01 | c02 | c03 | c04 | c05 | c06 | c07 | c08 | c09 | c10 | c11 | c12" mode="addChunkId">
       <xsl:copy>
          <xsl:namespace name="xtf" select="'http://cdlib.org/xtf'"/>
          <xsl:attribute name="xtf:subDocument" select="@id"/>
@@ -343,16 +333,8 @@
                <xsl:call-template name="get-ead-date"/>
                <xsl:call-template name="get-ead-type"/>
                <xsl:call-template name="get-ead-format"/>
-               <!-- This is coded as 'unkown,' as it does not contain any useful information we are not including it              
-   <xsl:call-template name="get-ead-source"/>
--->
                <xsl:call-template name="get-ead-language"/>
-               <!--               <xsl:call-template name="get-ead-relation"/>-->
                <xsl:call-template name="get-ead-coverage"/>
-               <!--  
-               <xsl:call-template name="get-ead-scopecontent"/>
-               <xsl:call-template name="get-ead-bioghist"/>
-   -->
                <xsl:call-template name="get-ead-restrictions"/>
                <xsl:call-template name="get-ead-rights"/>
                <!-- 9/9/2013 HA: Adding template for dao links -->
@@ -546,19 +528,16 @@
                <xsl:value-of select="/ead/archdesc/did/unittitle"/>
             </collectionTitle>
             <filingTitle xtf:meta="true">
-               <xsl:value-of select="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']"
-               />
+               <xsl:value-of select="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']"/>
             </filingTitle>
          </xsl:when>
          <xsl:otherwise>
             <xsl:if test="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']">
                <filingTitle xtf:meta="true">
-                  <xsl:value-of
-                     select="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']"/>
+                  <xsl:value-of select="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']"/>
                </filingTitle>
                <title xtf:meta="true">
-                  <xsl:value-of
-                     select="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']"/>
+                  <xsl:value-of select="/ead/eadheader/filedesc/titlestmt/titleproper[@type='filing']"/>
                </title>
             </xsl:if>
             <xsl:if test="/ead/archdesc/did/unittitle">
@@ -687,16 +666,14 @@
          <xsl:otherwise>
             <xsl:choose>
                <xsl:when test="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
-                  <xsl:for-each
-                     select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
                      <creator xtf:meta="true">
                         <xsl:value-of select="normalize-space(.)"/>
                      </creator>
                   </xsl:for-each>
                </xsl:when>
                <xsl:when test="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
-                  <xsl:for-each
-                     select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
+                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
                      <creator xtf:meta="true">
                         <xsl:value-of select="normalize-space(.)"/>
                      </creator>
@@ -704,17 +681,12 @@
                </xsl:when>
                <xsl:when test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'Contributor')]">
                   <creator xtf:meta="true">
-                     <xsl:value-of
-                        select="normalize-space(string(/ead/archdesc/did/origination[child::*[starts-with(@role, 'Contributor')]][1]/child::*))"
-                     />
+                     <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination[child::*[starts-with(@role, 'Contributor')]][1]/child::*))"/>
                   </creator>
                </xsl:when>
-               <xsl:when
-                  test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'ctb')]">
+               <xsl:when test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'ctb')]">
                   <creator xtf:meta="true">
-                     <xsl:value-of
-                        select="normalize-space(string(/ead/archdesc/did/origination[child::*[starts-with(@role, 'ctb')]][1]/child::*))"
-                     />
+                     <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination[child::*[starts-with(@role, 'ctb')]][1]/child::*))"/>
                   </creator>
                </xsl:when>
                <xsl:otherwise>
@@ -750,7 +722,11 @@
             </xsl:for-each>
          </xsl:when>
          <xsl:when test="/ead/eadheader/filedesc/notestmt/subject">
+<<<<<<< HEAD
             <xsl:for-each select="/ead/eadheader/filedesc/notestmt/subject">
+=======
+            <xsl:for-each-group select="/ead/eadheader/filedesc/notestmt/subject" group-by="string()">
+>>>>>>> improving indexing of containers
                <subject xtf:meta="true">
                   <xsl:value-of select="."/>
                </subject>
@@ -764,6 +740,7 @@
       <xsl:choose>
          <xsl:when test="@level">
             <xsl:if test="controlaccess">
+<<<<<<< HEAD
                <xsl:for-each
                   select="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
                   <subjectpers xtf:meta="true">
@@ -771,25 +748,43 @@
                   </subjectpers>
                </xsl:for-each>
                <xsl:for-each select="controlaccess/persname | controlaccess/famname">
+=======
+               <xsl:for-each-group select="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/famname" group-by="string()">
+                  <subjectpers xtf:meta="true">
+                     <xsl:value-of select="."/>
+                  </subjectpers>
+               </xsl:for-each-group>
+               <xsl:for-each-group select="controlaccess/persname | controlaccess/famname" group-by="string()">
+>>>>>>> improving indexing of containers
                   <subjectpers xtf:meta="true">
                      <xsl:value-of select="."/>
                   </subjectpers>
                </xsl:for-each>
             </xsl:if>
          </xsl:when>
+<<<<<<< HEAD
          <xsl:when
             test="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
             <xsl:for-each
                select="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
+=======
+         <xsl:when test="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/famname">
+            <xsl:for-each-group select="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/famname" group-by="string()">
+>>>>>>> improving indexing of containers
                <subjectpers xtf:meta="true">
                   <xsl:value-of select="."/>
                </subjectpers>
             </xsl:for-each>
          </xsl:when>
+<<<<<<< HEAD
          <xsl:when
             test="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname">
             <xsl:for-each
                select="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname">
+=======
+         <xsl:when test="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname">
+            <xsl:for-each-group select="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname" group-by="string()">
+>>>>>>> improving indexing of containers
                <subjectpers xtf:meta="true">
                   <xsl:value-of select="."/>
                </subjectpers>
@@ -802,7 +797,11 @@
       <xsl:choose>
          <xsl:when test="@level">
             <xsl:if test="controlaccess">
+<<<<<<< HEAD
                <xsl:for-each select="/ead/archdesc/controlaccess/corpname">
+=======
+               <xsl:for-each-group select="/ead/archdesc//controlaccess/corpname" group-by="string()">
+>>>>>>> improving indexing of containers
                   <subjectcorp xtf:meta="true">
                      <xsl:value-of select="."/>
                   </subjectcorp>
@@ -822,7 +821,11 @@
             </xsl:for-each>
          </xsl:when>
          <xsl:when test="/ead/eadheader/filedesc/notestmt/corpname">
+<<<<<<< HEAD
             <xsl:for-each select="/ead/eadheader/filedesc/notestmt/corpname">
+=======
+            <xsl:for-each-group select="/ead/eadheader/filedesc/notestmt/corpname" group-by="string()">
+>>>>>>> improving indexing of containers
                <subjectcorp xtf:meta="true">
                   <xsl:value-of select="."/>
                </subjectcorp>
@@ -854,7 +857,11 @@
             </xsl:for-each>
          </xsl:when>
          <xsl:when test="/ead/eadheader/filedesc/notestmt/geogname">
+<<<<<<< HEAD
             <xsl:for-each select="/ead/eadheader/filedesc/notestmt/geogname">
+=======
+            <xsl:for-each-group select="/ead/eadheader/filedesc/notestmt/geogname" group-by="string()">
+>>>>>>> improving indexing of containers
                <geogname xtf:meta="true">
                   <xsl:value-of select="."/>
                </geogname>
@@ -870,7 +877,19 @@
             <xsl:choose>
                <xsl:when test="did/physdesc/extent">
                   <extent xtf:meta="true">
-                     <xsl:value-of select="did/physdesc/extent"/>
+                     <xsl:choose>
+                        <xsl:when test="did/physdesc/extent/@altrender">
+                           <xsl:value-of select="did/physdesc/extent[@altrender='materialtype spaceoccupied']"/>
+                           <xsl:if test="did/physdesc/extent[@altrender='carrier']">
+                              <xsl:text> (</xsl:text>
+                              <xsl:value-of select="did/physdesc/extent[@altrender='carrier']"/>
+                              <xsl:text>)</xsl:text>
+                           </xsl:if>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:value-of select="did/physdesc/extent"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
                   </extent>
                   <collectionExtent xtf:meta="true">
                      <xsl:value-of select="/ead/archdesc/did/physdesc/extent"/>
@@ -1029,9 +1048,7 @@
                         <xsl:value-of select="did/unitdate"/>
                      </xsl:when>
                      <xsl:when test="did/unitdate[@type='inclusive']">
-                        <xsl:value-of
-                           select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"
-                        />
+                        <xsl:value-of select="replace(string(did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
                      </xsl:when>
                   </xsl:choose>
                </date>
@@ -1044,9 +1061,7 @@
          </xsl:when>
          <xsl:when test="/ead/archdesc/did/unitdate[@type='inclusive']">
             <date xtf:meta="true">
-               <xsl:value-of
-                  select="replace(string(/ead/archdesc/did/unitdate[@type='inclusive']/@normal[1]),'/','-')"
-               />
+               <xsl:value-of select="replace(string(/ead/archdesc/did/unitdate[@type='inclusive']/@normal[1]),'/','-')"/>
             </date>
             <collectionDate xtf:meta="true">
                <xsl:value-of select="/ead/archdesc/did/unitdate[@type='inclusive']"/>
@@ -1141,26 +1156,16 @@
          <xsl:when test="did/langmaterial/language">
             <language xtf:meta="true">
                <xsl:choose>
-                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'bur'"
-                     >Burmese</xsl:when>
-                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'chi'"
-                     >Chinese</xsl:when>
-                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'dut'"
-                     >Dutch</xsl:when>
-                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'eng'"
-                     >English</xsl:when>
-                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'fre'"
-                     >French</xsl:when>
-                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'gre'">Modern
-                     Greek</xsl:when>
-                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'mul'"
-                     >Multiple languages</xsl:when>
-                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'por'"
-                     >Portuguese</xsl:when>
-                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'spa'"
-                     >Spanish</xsl:when>
-                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'tha'"
-                     >Thai</xsl:when>
+                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'bur'">Burmese</xsl:when>
+                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'chi'">Chinese</xsl:when>
+                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'dut'">Dutch</xsl:when>
+                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'eng'">English</xsl:when>
+                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'fre'">French</xsl:when>
+                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'gre'">Modern Greek</xsl:when>
+                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'mul'">Multiple languages</xsl:when>
+                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'por'">Portuguese</xsl:when>
+                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'spa'">Spanish</xsl:when>
+                  <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'tha'">Thai</xsl:when>
                </xsl:choose>
             </language>
          </xsl:when>
@@ -1169,26 +1174,16 @@
                <xsl:when test="/ead/archdesc/did/langmaterial/language[@langcode]">
                   <language xtf:meta="true">
                      <xsl:choose>
-                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'bur'"
-                           >Burmese</xsl:when>
-                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'chi'"
-                           >Chinese</xsl:when>
-                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'dut'"
-                           >Dutch</xsl:when>
-                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'eng'"
-                           >English</xsl:when>
-                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'fre'"
-                           >French</xsl:when>
-                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'gre'"
-                           >Modern Greek</xsl:when>
-                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'mul'"
-                           >Multiple languages</xsl:when>
-                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'por'"
-                           >Portuguese</xsl:when>
-                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'spa'"
-                           >Spanish</xsl:when>
-                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'tha'"
-                           >Thai</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'bur'">Burmese</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'chi'">Chinese</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'dut'">Dutch</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'eng'">English</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'fre'">French</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'gre'">Modern Greek</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'mul'">Multiple languages</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'por'">Portuguese</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'spa'">Spanish</xsl:when>
+                        <xsl:when test="/ead/archdesc/did/langmaterial/language/@langcode = 'tha'">Thai</xsl:when>
                      </xsl:choose>
                   </language>
                </xsl:when>
@@ -1237,7 +1232,9 @@
 
    <xsl:template name="get-ead-url">
       <xsl:if test="descendant-or-self::dao">
-         <daoLink xtf:meta="true"><xsl:value-of select="dao/ns2:href|did/dao/@xlink:href"/></daoLink>
+         <daoLink xtf:meta="true">
+            <xsl:value-of select="dao/ns2:href|did/dao/@xlink:href"/>
+         </daoLink>
       </xsl:if>
    </xsl:template>
 
