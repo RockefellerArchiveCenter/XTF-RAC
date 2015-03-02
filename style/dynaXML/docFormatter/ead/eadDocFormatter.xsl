@@ -186,9 +186,10 @@
                <link rel="alternate" type="application/xml" href="{$xtfURL}data/{$docId}" />
                <xsl:copy-of select="$brand.links"/>
                <title>
-                  <xsl:value-of select="eadheader/filedesc/titlestmt/titleproper"/>
-                  <xsl:text>  </xsl:text>
-                  <xsl:value-of select="eadheader/filedesc/titlestmt/subtitle"/>
+                  <xsl:value-of select="archdesc/did/unittitle"/>
+                  <xsl:text> (</xsl:text>
+                  <xsl:value-of select="archdesc/did/unitid"/>
+                  <xsl:text>)</xsl:text>
                </title>
                </head>
             <body>
