@@ -1,7 +1,5 @@
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:editURL="http://cdlib.org/xtf/editURL"
-   xmlns="http://www.w3.org/1999/xhtml" extension-element-prefixes="session"
-   exclude-result-prefixes="#all" version="2.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:editURL="http://cdlib.org/xtf/editURL" xmlns="http://www.w3.org/1999/xhtml"
+   extension-element-prefixes="session" exclude-result-prefixes="#all" version="2.0">
 
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    <!-- Query result formatter stylesheet                                      -->
@@ -49,6 +47,7 @@
    <xsl:import href="rss.xsl"/>
    <xsl:include href="searchForms.xsl"/>
    <xsl:include href="../../../myList/myListFormatter.xsl"/>
+   <xsl:include href="../../../digital/digitalFormatter.xsl"/>
 
    <xsl:param name="browse-collections"/>
    <xsl:param name="type"/>
@@ -58,10 +57,8 @@
    <!-- Output                                                                 -->
    <!-- ====================================================================== -->
 
-   <xsl:output method="xhtml" indent="no" encoding="UTF-8" media-type="text/html; charset=UTF-8"
-      doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
-      doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
-      omit-xml-declaration="yes" exclude-result-prefixes="#all"/>
+   <xsl:output method="xhtml" indent="no" encoding="UTF-8" media-type="text/html; charset=UTF-8" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+      doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" omit-xml-declaration="yes" exclude-result-prefixes="#all"/>
 
    <!-- ====================================================================== -->
    <!-- Local Parameters                                                       -->
@@ -87,22 +84,23 @@
             <xsl:apply-templates select="crossQueryResult" mode="results"/>
          </xsl:when>
          <!-- book bag -->
-         <xsl:when test="$smode = 'addToBag'">
+         <!--<xsl:when test="$smode = 'addToBag'">
             <a href="#">Delete</a>
          </xsl:when>
          <xsl:when test="$smode = 'removeFromBag'">
             <a href="#">Add</a>
-         </xsl:when>
+         </xsl:when>-->
          <!-- HA 11/6/2014 This template is no longer used -->
          <!--<xsl:when test="$smode='getAddress'">
             <xsl:call-template name="getAddress"/>
-         </xsl:when> --> 
-         <xsl:when test="$smode='getLang'">
+         </xsl:when> -->
+         <!-- templates not in use -->
+         <!--<xsl:when test="$smode='getLang'">
             <xsl:call-template name="getLang"/>
          </xsl:when>
          <xsl:when test="$smode='setLang'">
             <xsl:call-template name="setLang"/>
-         </xsl:when>
+         </xsl:when>-->
          <!-- rss feed -->
          <xsl:when test="$rmode='rss'">
             <xsl:apply-templates select="crossQueryResult" mode="rss"/>
@@ -115,13 +113,14 @@
             </xsl:call-template>
          </xsl:when>
          <!-- similar item -->
-         <xsl:when test="$smode = 'moreLike'">
+         <!-- HA this template is no longer used -->
+         <!--<xsl:when test="$smode = 'moreLike'">
             <xsl:call-template name="translate">
                <xsl:with-param name="resultTree">
                   <xsl:apply-templates select="crossQueryResult" mode="moreLike"/>
                </xsl:with-param>
             </xsl:call-template>
-         </xsl:when>
+         </xsl:when>-->
          <!-- modify search -->
          <xsl:when test="contains($smode, '-modify')">
             <xsl:call-template name="translate">
@@ -131,8 +130,7 @@
             </xsl:call-template>
          </xsl:when>
          <!-- browse pages -->
-         <xsl:when
-            test="$browse-title or $browse-creator or $browse-geogname or $browse-subject or $browse-subjectname or $browse-updated">
+         <xsl:when test="$browse-title or $browse-creator or $browse-geogname or $browse-subject or $browse-subjectname or $browse-updated">
             <xsl:call-template name="translate">
                <xsl:with-param name="resultTree">
                   <xsl:apply-templates select="crossQueryResult" mode="browse"/>
@@ -165,8 +163,7 @@
    <xsl:template match="crossQueryResult" mode="results" exclude-result-prefixes="#all">
 
       <!-- modify query URL -->
-      <xsl:variable name="modify"
-         select="if(matches($smode,'simple')) then 'simple-modify' else 'advanced-modify'"/>
+      <xsl:variable name="modify" select="if(matches($smode,'simple')) then 'simple-modify' else 'advanced-modify'"/>
       <xsl:variable name="modifyString" select="editURL:set($queryString, 'smode', $modify)"/>
       <xsl:variable name="min">
          <xsl:value-of select="facet[@field='facet-date']/group[last()]/@value"/>
@@ -203,7 +200,7 @@
             <script src="script/rac/facets.js" type="text/javascript"/>
             <script src="script/rac/jquery.sparkline.min.js" type="text/javascript"/>
             <xsl:if test="($min | $max) != ''">
-            <script>
+               <script>
                $(function() {
                   $( "#slider-range" ).slider({
                      range: true,
@@ -233,38 +230,9 @@
 
          </head>
          <body>
-            <div class="overlay" id="searchTips" style="width:1100px; top:20px !important;">
-               <div class="dscDescription">
-                  <h4>Searching tips and tricks</h4>
-                  <p>You can search across the RAC’s archival materials, books, DVDs, VHS and
-                     microfilm holdings from the home page or the Advanced Search page. You can
-                     search within an archival collection by selecting that collection and then
-                     using the "search within this collection" in the navigation bar.</p>
-                  <p>An asterisk - * - will find from one to many characters within a word: hist*
-                     will retrieve history, histories, and historians, coo*tion will find
-                     cooperation and coordination</p>
-                  <p>A question mark - ? - will find only one character within a word: america? will
-                     retrieve american and americas, wom?n will retrieve woman, women, and womyn</p>
-                  <p>To search for an exact string, place quotation marks around the string: "south
-                     africa" will find south africa, but not south african</p>
-                  <p>Search queries are not case sensitive. Except for the above examples,
-                     punctuation is ignored.</p>
-                  <img src="./icons/default/facets.png" alt="facets" align="left" width="280px"/>
-                  <h4>Refining your search</h4>
-                  <p>On every search results screen you will see a box titled "Refine Search." It
-                     contains categories called facets, and you can discover relevant resources by
-                     browsing the contents of the facets. By selecting one or more facets (1) you
-                     can further narrow your initial search. In order to remove a facet and expand
-                     your search click on the [x] next to the search term (2) in the navigation bar.
-                     When you see a facet under "Refine Search" that is of interest to you, you can
-                     also dig in deeper by clicking the "more" link (3) to see additional terms.</p>
-                  <h4>Get notified when we update the site</h4>
-                  <p>When you see this icon <img src="./icons/default/i_rss.png" alt="rss feed"/> it
-                     means there is an RSS feed for this search. You can click on it to subscribe to
-                     see the most recent changes and additions in that search in your favorite feed
-                     reader.</p>
-               </div>
-            </div>
+            <!-- search tips -->
+            <xsl:copy-of select="$brand.searchtips"/>
+
             <div typeof="SearchResultsPage">
                <!-- header -->
                <xsl:copy-of select="$brand.header"/>
@@ -273,11 +241,9 @@
                <!-- 9/27/11 WS:  Adjusted results header for a cleaner look-->
                <div id="header">
                   <a href="/xtf/search">
-                     <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
-                        alt="The Rockefeller Archive Center"/>
+                     <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center"/>
                      <h1>dimes.rockarch.org</h1>
-                     <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
-                        Center</p>
+                     <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
                   </a>
                </div>
 
@@ -294,10 +260,8 @@
                               <div id="searchTop">
                                  <div id="searchtip" class="box">
                                     <ul>
-                                       <li>Want help? See these <a href="#searchTips"
-                                             class="searchTips"
-                                             onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on results page']);"
-                                             >search tips</a>. </li>
+                                       <li>Want help? See these <a href="#searchTips" class="searchTips" onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on results page']);">search
+                                             tips</a>. </li>
                                     </ul>
                                  </div>
                                  <div id="searchbox">
@@ -317,13 +281,11 @@
                                              <xsl:when test="$text-join = 'or'">
                                                 <input type="radio" name="text-join" value=""/>
                                                 <xsl:text> all of </xsl:text>
-                                                <input type="radio" name="text-join" value="or"
-                                                  checked="checked"/>
+                                                <input type="radio" name="text-join" value="or" checked="checked"/>
                                                 <xsl:text> any of </xsl:text>
                                              </xsl:when>
                                              <xsl:otherwise>
-                                                <input type="radio" name="text-join" value=""
-                                                  checked="checked"/>
+                                                <input type="radio" name="text-join" value="" checked="checked"/>
                                                 <xsl:text> all of </xsl:text>
                                                 <input type="radio" name="text-join" value="or"/>
                                                 <xsl:text> any of </xsl:text>
@@ -337,18 +299,15 @@
                                              <option value="">All Materials</option>
                                              <option value="ead">
                                                 <xsl:if test="$type = 'ead'">
-                                                  <xsl:attribute name="selected"
-                                                  >selected</xsl:attribute>
+                                                   <xsl:attribute name="selected">selected</xsl:attribute>
                                                 </xsl:if>Archival Collections </option>
                                              <option value="dao">
                                                 <xsl:if test="$type = 'dao'">
-                                                  <xsl:attribute name="selected"
-                                                  >selected</xsl:attribute>
+                                                   <xsl:attribute name="selected">selected</xsl:attribute>
                                                 </xsl:if> Digital Materials</option>
                                              <option value="mods">
                                                 <xsl:if test="$type = 'mods'">
-                                                  <xsl:attribute name="selected"
-                                                  >selected</xsl:attribute>
+                                                   <xsl:attribute name="selected">selected</xsl:attribute>
                                                 </xsl:if> Library Materials</option>
                                           </select>
                                           <!-- 6/21/2013 HA: adding advanced search to home page -->
@@ -364,30 +323,24 @@
                                              <option value="">All Fields</option>
                                              <option value="title">Title</option>
                                              <option value="creator">Creator</option>
-                                             <option value="bioghist">Biographical or Historical
-                                                Note</option>
-                                             <option value="scopecontent">Scope and Content
-                                                Note</option>
+                                             <option value="bioghist">Biographical or Historical Note</option>
+                                             <option value="scopecontent">Scope and Content Note</option>
                                              <option value="file">Folder Title</option>
                                              <option value="item">Item</option>
                                              <option value="series">Series Description</option>
-                                             <option value="subseries">Subseries
-                                                Description</option>
+                                             <option value="subseries">Subseries Description</option>
                                              <option value="controlaccess">Subject Headings</option>
                                           </select>
                                           <select name="sectionType" id="dao">
                                              <option value="">All Fields</option>
                                              <option value="title">Title</option>
                                              <option value="creator">Creator</option>
-                                             <option value="bioghist">Biographical or Historical
-                                                Note</option>
-                                             <option value="scopecontent">Scope and Content
-                                                Note</option>
+                                             <option value="bioghist">Biographical or Historical Note</option>
+                                             <option value="scopecontent">Scope and Content Note</option>
                                              <option value="file">Folder Title</option>
                                              <option value="item">Item</option>
                                              <option value="series">Series Description</option>
-                                             <option value="subseries">Subseries
-                                                Description</option>
+                                             <option value="subseries">Subseries Description</option>
                                              <option value="controlaccess">Subject Headings</option>
                                           </select>
                                        </div>
@@ -398,8 +351,7 @@
                                           <input class="date" type="text" name="year-max"/>
                                           <div id="searchtipDate" class="box">
                                              <ul>
-                                                <li>Enter the date as a single year, for example
-                                                  1942 or 1973.</li>
+                                                <li>Enter the date as a single year, for example 1942 or 1973.</li>
                                              </ul>
                                           </div>
                                        </div>
@@ -408,8 +360,7 @@
                                        </div>
                                     </div>
 
-                                    <input class="searchbox" type="submit" value="Search"
-                                       onClick="_gaq.push(['_trackEvent', 'search', 'keyword', 'results page']);"/>
+                                    <input class="searchbox" type="submit" value="Search" onClick="_gaq.push(['_trackEvent', 'search', 'keyword', 'results page']);"/>
                                     <script type="text/javascript">
                                     $("#searchResults").submit(function() {
                                     $('input[value=]',this).remove();
@@ -417,9 +368,7 @@
                                     return true;
                                     });
                               </script>
-                                    <a href="#" class="showAdvanced closed"
-                                       onClick="_gaq.push(['_trackEvent', 'search', 'advanced', 'results page']);"
-                                       >show more search options</a>
+                                    <a href="#" class="showAdvanced closed" onClick="_gaq.push(['_trackEvent', 'search', 'advanced', 'results page']);">show more search options</a>
                                  </div>
                               </div>
                            </div>
@@ -436,8 +385,7 @@
                   <xsl:if test="//spelling">
                      <div class="spelling">
                         <xsl:call-template name="did-you-mean">
-                           <xsl:with-param name="baseURL"
-                              select="concat($xtfURL, $crossqueryPath, '?', $queryString)"/>
+                           <xsl:with-param name="baseURL" select="concat($xtfURL, $crossqueryPath, '?', $queryString)"/>
                            <xsl:with-param name="spelling" select="//spelling"/>
                         </xsl:call-template>
                      </div>
@@ -462,21 +410,15 @@
                                           <form method="get" action="{$xtfURL}{$crossqueryPath}">
                                              <xsl:if test="parameters/param">
                                                 <xsl:for-each select="parameters/param">
-                                                  <xsl:if
-                                                  test="@name !='year' and @name !='year-max'">
-                                                  <input type="hidden" name="{@name}"
-                                                  value="{@value}"/>
-                                                  </xsl:if>
+                                                   <xsl:if test="@name !='year' and @name !='year-max'">
+                                                      <input type="hidden" name="{@name}" value="{@value}"/>
+                                                   </xsl:if>
                                                 </xsl:for-each>
                                              </xsl:if>
 
-                                             <input type="text" name="year" id="from" size="4"
-                                                onClick="_gaq.push(['_trackEvent', 'results', 'date', 'set from date']);"/>
-                                             <input type="text" name="year-max" id="to" size="4"
-                                                onClick="_gaq.push(['_trackEvent', 'results', 'date', 'set to date']);"/>
-                                             <input type="submit" value="Filter"
-                                                onClick="_gaq.push(['_trackEvent', 'results', 'date', 'filter dates']);"
-                                             />
+                                             <input type="text" name="year" id="from" size="4" onClick="_gaq.push(['_trackEvent', 'results', 'date', 'set from date']);"/>
+                                             <input type="text" name="year-max" id="to" size="4" onClick="_gaq.push(['_trackEvent', 'results', 'date', 'set to date']);"/>
+                                             <input type="submit" value="Filter" onClick="_gaq.push(['_trackEvent', 'results', 'date', 'filter dates']);"/>
                                           </form>
                                           <div id="histogram"/>
                                           <div id="slider-range"/>
@@ -486,16 +428,13 @@
                                        <xsl:apply-templates select="facet[@field='facet-subject']"/>
                                     </xsl:if>
                                     <xsl:if test="facet[@field='facet-subjectpers']/child::*">
-                                       <xsl:apply-templates
-                                          select="facet[@field='facet-subjectpers']"/>
+                                       <xsl:apply-templates select="facet[@field='facet-subjectpers']"/>
                                     </xsl:if>
                                     <xsl:if test="facet[@field='facet-subjectcorp']/child::*">
-                                       <xsl:apply-templates
-                                          select="facet[@field='facet-subjectcorp']"/>
+                                       <xsl:apply-templates select="facet[@field='facet-subjectcorp']"/>
                                     </xsl:if>
                                     <xsl:if test="facet[@field='facet-geogname']/child::*">
-                                       <xsl:apply-templates select="facet[@field='facet-geogname']"
-                                       />
+                                       <xsl:apply-templates select="facet[@field='facet-geogname']"/>
                                     </xsl:if>
                                     <xsl:if test="facet[@field='facet-format']/child::*">
                                        <xsl:apply-templates select="facet[@field='facet-format']"/>
@@ -506,78 +445,54 @@
                               <div class="browse">
                                  <h2>Browse</h2>
                                  <div class="accordionButton category">
-                                    <h3><img src="/xtf/icons/default/collections.gif"
-                                          alt="archival collections" height="25px"/>Archival
-                                       Collections</h3>
+                                    <h3><img src="/xtf/icons/default/collections.gif" alt="archival collections" height="25px"/>Archival Collections</h3>
                                  </div>
                                  <div class="accordionContent">
                                     <li class="browseOption">
-                                       <a
-                                          href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'archival']);"
-                                          >Browse All</a>
+                                       <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
+                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'archival']);">Browse All</a>
                                     </li>
                                     <li class="browseOption">
-                                       <a
-                                          href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'archival-title']);"
-                                          >By Title</a>
+                                       <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
+                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'archival-title']);">By Title</a>
                                     </li>
                                     <li class="browseOption">
-                                       <a
-                                          href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'archival-creator']);"
-                                          >By Creator</a>
+                                       <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
+                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'archival-creator']);">By Creator</a>
                                     </li>
                                  </div>
                                  <div class="accordionButton category">
-                                    <h3><img src="/xtf/icons/default/book.gif"
-                                          alt="library materials" height="25px"/>Library
-                                       Materials</h3>
+                                    <h3><img src="/xtf/icons/default/book.gif" alt="library materials" height="25px"/>Library Materials</h3>
                                  </div>
                                  <div class="accordionContent">
                                     <li class="browseOption">
-                                       <a
-                                          href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'library']);"
-                                          >Browse All</a>
+                                       <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
+                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'library']);">Browse All</a>
                                     </li>
                                     <li class="browseOption">
-                                       <a
-                                          href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'library-title']);"
-                                          >By Title</a>
+                                       <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
+                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'library-title']);">By Title</a>
                                     </li>
                                     <li class="browseOption">
-                                       <a
-                                          href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'library-creator']);"
-                                          >By Creator</a>
+                                       <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
+                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'library-creator']);">By Creator</a>
                                     </li>
                                  </div>
                                  <div class="accordionButton category">
-                                    <h3><img src="/xtf/icons/default/dao_large.gif"
-                                          alt="digital materials" height="25px"/>Digital
-                                       Materials</h3>
+                                    <h3><img src="/xtf/icons/default/dao_large.gif" alt="digital materials" height="25px"/>Digital Materials</h3>
                                  </div>
                                  <div class="accordionContent">
                                     <li class="browseOption">
-                                       <a
-                                          href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=file;type=dao"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital']);"
-                                          >Browse All</a>
+                                       <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=file;type=dao"
+                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital']);">Browse All</a>
                                     </li>
                                     <li class="browseOption">
-                                       <a
-                                          href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital-title']);"
-                                          >By Title</a>
+                                       <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao"
+                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital-title']);">By Title</a>
                                     </li>
                                     <li class="browseOption">
-                                       <a
-                                          href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital-creator']);"
-                                          >By Creator</a>
+                                       <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao"
+                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital-creator']);">By Creator</a>
                                     </li>
                                  </div>
                               </div>
@@ -587,12 +502,9 @@
                               <div id="results">
                                  <div id="rss">
                                     <xsl:if test="docHit">
-                                       <xsl:variable name="cleanString"
-                                          select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
-                                       <a href="search?{$cleanString};rmode=rss;sort=rss"
-                                          onClick="_gaq.push(['_trackEvent', 'results', 'rss', {$cleanString}]);">
-                                          <img src="{$icon.path}/i_rss.png" alt="rss icon"
-                                             style="vertical-align:bottom;"/>
+                                       <xsl:variable name="cleanString" select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
+                                       <a href="search?{$cleanString};rmode=rss;sort=rss" onClick="_gaq.push(['_trackEvent', 'results', 'rss', {$cleanString}]);">
+                                          <img src="{$icon.path}/i_rss.png" alt="rss icon" style="vertical-align:bottom;"/>
                                        </a>
                                     </xsl:if>
                                  </div>
@@ -602,17 +514,14 @@
                                        <xsl:value-of select="$startDoc"/>
                                        <xsl:text>-</xsl:text>
                                        <xsl:choose>
-                                          <xsl:when
-                                             test="(/crossQueryResult/@totalDocs &lt; $docsPerPage)">
+                                          <xsl:when test="(/crossQueryResult/@totalDocs &lt; $docsPerPage)">
                                              <xsl:value-of select="/crossQueryResult/@totalDocs"/>
                                           </xsl:when>
-                                          <xsl:when
-                                             test="(/crossQueryResult/@totalDocs &lt; ($docsPerPage + ($startDoc - 1)))">
+                                          <xsl:when test="(/crossQueryResult/@totalDocs &lt; ($docsPerPage + ($startDoc - 1)))">
                                              <xsl:value-of select="/crossQueryResult/@totalDocs"/>
                                           </xsl:when>
                                           <xsl:otherwise>
-                                             <xsl:value-of select="($docsPerPage + ($startDoc - 1))"
-                                             />
+                                             <xsl:value-of select="($docsPerPage + ($startDoc - 1))"/>
                                           </xsl:otherwise>
                                        </xsl:choose>
                                        <xsl:text> of </xsl:text>
@@ -645,18 +554,14 @@
                                     </div>
                                  </xsl:if>
                                  <div id="sort">
-                                    <form id="sortForm" method="get"
-                                       action="{$xtfURL}{$crossqueryPath}">
+                                    <form id="sortForm" method="get" action="{$xtfURL}{$crossqueryPath}">
                                        <b>Sort:</b>
                                        <xsl:call-template name="sort.options"/>
                                        <xsl:call-template name="hidden.query">
-                                          <xsl:with-param name="queryString"
-                                             select="editURL:remove($queryString, 'sort')"/>
+                                          <xsl:with-param name="queryString" select="editURL:remove($queryString, 'sort')"/>
                                        </xsl:call-template>
                                        <noscript>
-                                          <input type="submit" value="Go!"
-                                             onClick="_gaq.push(['_trackEvent', 'results', 'sort', '{$sort}']);"
-                                          />
+                                          <input type="submit" value="Go!" onClick="_gaq.push(['_trackEvent', 'results', 'sort', '{$sort}']);"/>
                                        </noscript>
                                     </form>
                                  </div>
@@ -694,8 +599,7 @@
                               </div>
                            </xsl:when>
                            <xsl:otherwise>
-                              <div class="nohits">Oops, I couldn't find anything! Do you want to try
-                                    <a href="{$xtfURL}{$crossqueryPath}">another search</a>? </div>
+                              <div class="nohits">Oops, I couldn't find anything! Do you want to try <a href="{$xtfURL}{$crossqueryPath}">another search</a>? </div>
                            </xsl:otherwise>
                         </xsl:choose>
 
@@ -704,7 +608,6 @@
                </div>
 
                <!-- feedback and footer -->
-               <xsl:copy-of select="$brand.feedback"/>
                <xsl:copy-of select="$brand.footer"/>
                <xsl:call-template name="myListEmail"/>
                <xsl:call-template name="myListPrint"/>
@@ -730,60 +633,17 @@
             <xsl:copy-of select="$brand.links"/>
          </head>
          <body>
-            <div class="overlay" id="searchTips" style="width:1100px; top:20px !important;">
-               <div class="dscDescription">
-                  <h4>Searching tips and tricks</h4>
-                  <p>You can search across the RAC’s archival materials, books, DVDs, VHS and
-                     microfilm holdings from the home page or the Advanced Search page. You can
-                     search within an archival collection by selecting that collection and then
-                     using the "search within this collection" in the navigation bar.</p>
-                  <p>An asterisk - * - will find from one to many characters within a word: hist*
-                     will retrieve history, histories, and historians, coo*tion will find
-                     cooperation and coordination</p>
-                  <p>A question mark - ? - will find only one character within a word: america? will
-                     retrieve american and americas, wom?n will retrieve woman, women, and womyn</p>
-                  <p>To search for an exact string, place quotation marks around the string: "south
-                     africa" will find south africa, but not south african</p>
-                  <p>Search queries are not case sensitive. Except for the above examples,
-                     punctuation is ignored.</p>
-                  <img src="./icons/default/facets.png" alt="facets" align="left" width="280px"/>
-                  <h4>Refining your search</h4>
-                  <p>On every search results screen you will see a box titled "Refine Search." It
-                     contains categories called facets, and you can discover relevant resources by
-                     browsing the contents of the facets. By selecting one or more facets (1) you
-                     can further narrow your initial search. In order to remove a facet and expand
-                     your search click on the [x] next to the search term (2) in the navigation bar.
-                     When you see a facet under "Refine Search" that is of interest to you, you can
-                     also dig in deeper by clicking the "more" link (3) to see additional terms.</p>
-                  <h4>Get notified when we update the site</h4>
-                  <p>When you see this icon <img src="./icons/default/i_rss.png" alt="rss feed"/> it
-                     means there is an RSS feed for this search. You can click on it to subscribe to
-                     see the most recent changes and additions in that search in your favorite feed
-                     reader.</p>
-                  <h4>Not everything is up yet!</h4>
-                  <p>We’re still in the process of adding information to this system. </p>
-                  <p>Some large collections, like those of the <strong>Ford Foundation</strong>,
-                        <strong>Population Council</strong>, and <strong>Rockefeller
-                        University</strong>, are only partially represented in the online system;
-                     other smaller collections, like the <strong>Trilateral Commission</strong>, the
-                        <strong>Near East Foundation</strong>, and some collections of personal
-                     papers are not yet represented at all (note: finding aids for Ford Foundation
-                     grant records are not yet available online). Please contact the archival staff
-                     at <a href="mailto:archive@rockarch.org">archive@rockarch.org</a> for further
-                     information about these collections.</p>
-               </div>
-            </div>
+            <!-- search tips -->
+            <xsl:copy-of select="$brand.searchtips"/>
             <!-- header -->
             <xsl:copy-of select="$brand.header"/>
 
             <!-- result header -->
             <div id="header">
                <a href="/xtf/search">
-                  <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
-                     alt="The Rockefeller Archive Center" border="0"/>
+                  <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center" border="0"/>
                   <h1>dimes.rockarch.org</h1>
-                  <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
-                     Center</p>
+                  <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
                </a>
             </div>
 
@@ -802,18 +662,7 @@
                   <div id="alphaLinks">
                      <xsl:call-template name="alphaList">
                         <xsl:with-param name="alphaList" select="$alphaList"/>
-                        <!--<xsl:with-param name="level" select="'collection'"/>-->
                      </xsl:call-template>
-                     <!--<xsl:choose>
-                     <xsl:when test="$browse-title"> &#160;| <a
-                           href="{$xtfURL}{$crossqueryPath}?browse-all=yes;level=collection;sort=title"
-                           >BROWSE ALL</a>
-                     </xsl:when>
-                     <xsl:when test="$browse-creator"> &#160;| <a
-                           href="{$xtfURL}{$crossqueryPath}?browse-all=yes;level=collection;sort=creator"
-                           >BROWSE ALL</a>
-                     </xsl:when>
-                  </xsl:choose>-->
                   </div>
                </div>
             </div>
@@ -824,75 +673,53 @@
                   <div class="browse">
                      <h2>Browse</h2>
                      <div class="accordionButton category">
-                        <h3><img src="/xtf/icons/default/collections.gif" alt="archival collections"
-                              height="25px"/>Archival Collections</h3>
+                        <h3><img src="/xtf/icons/default/collections.gif" alt="archival collections" height="25px"/>Archival Collections</h3>
                      </div>
                      <div class="accordionContent">
                         <li class="browseOption">
-                           <a
-                              href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival']);"
-                              >Browse All</a>
+                           <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival']);">Browse
+                              All</a>
                         </li>
                         <li class="browseOption">
-                           <a
-                              href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-title']);"
-                              >By Title</a>
+                           <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
+                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-title']);">By Title</a>
                         </li>
                         <li class="browseOption">
-                           <a
-                              href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-creator']);"
-                              >By Creator</a>
+                           <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
+                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-creator']);">By Creator</a>
                         </li>
                      </div>
                      <div class="accordionButton category">
-                        <h3><img src="/xtf/icons/default/book.gif" alt="library materials"
-                              height="25px"/>Library Materials</h3>
+                        <h3><img src="/xtf/icons/default/book.gif" alt="library materials" height="25px"/>Library Materials</h3>
                      </div>
                      <div class="accordionContent">
                         <li class="browseOption">
-                           <a
-                              href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library']);"
-                              >Browse All</a>
+                           <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library']);">Browse
+                              All</a>
                         </li>
                         <li class="browseOption">
-                           <a
-                              href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-title']);"
-                              >By Title</a>
+                           <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
+                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-title']);">By Title</a>
                         </li>
                         <li class="browseOption">
-                           <a
-                              href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-creator']);"
-                              >By Creator</a>
+                           <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
+                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-creator']);">By Creator</a>
                         </li>
                      </div>
                      <div class="accordionButton category">
-                        <h3><img src="/xtf/icons/default/dao_large.gif" alt="digital materials"
-                              height="25px"/>Digital Materials</h3>
+                        <h3><img src="/xtf/icons/default/dao_large.gif" alt="digital materials" height="25px"/>Digital Materials</h3>
                      </div>
                      <div class="accordionContent">
                         <li class="browseOption">
-                           <a
-                              href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=file;type=dao"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital']);"
-                              >Browse All</a>
+                           <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=file;type=dao" onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital']);">Browse All</a>
                         </li>
                         <li class="browseOption">
-                           <a
-                              href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital-title']);"
-                              >By Title</a>
+                           <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao"
+                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital-title']);">By Title</a>
                         </li>
                         <li class="browseOption">
-                           <a
-                              href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital-creator']);"
-                              >By Creator</a>
+                           <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao"
+                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital-creator']);">By Creator</a>
                         </li>
                      </div>
                   </div>
@@ -901,46 +728,38 @@
                <div id="docHits">
                   <xsl:choose>
                      <xsl:when test="$browse-title">
-                        <xsl:apply-templates select="facet[@field='browse-title']/group/docHit"
-                           mode="docHit"/>
+                        <xsl:apply-templates select="facet[@field='browse-title']/group/docHit" mode="docHit"/>
                      </xsl:when>
                      <xsl:when test="$browse-creator">
-                        <xsl:apply-templates select="facet[@field='browse-creator']/group/docHit"
-                           mode="docHit"/>
+                        <xsl:apply-templates select="facet[@field='browse-creator']/group/docHit" mode="docHit"/>
                      </xsl:when>
                      <!-- 2/28/2013 HA: added browse option -->
                      <xsl:when test="$browse-updated">
-                        <xsl:apply-templates select="facet[@field='browse-updated']/group/docHit"
-                           mode="docHit"/>
+                        <xsl:apply-templates select="facet[@field='browse-updated']/group/docHit" mode="docHit"/>
                      </xsl:when>
                      <!-- 9/26/11 WS: Added browse options -->
                      <xsl:when test="$browse-subject">
-                        <xsl:apply-templates select="facet[@field='browse-subject']/group/docHit"
-                           mode="docHit"/>
+                        <xsl:apply-templates select="facet[@field='browse-subject']/group/docHit" mode="docHit"/>
                      </xsl:when>
                      <xsl:when test="$browse-subjectname">
-                        <xsl:apply-templates
-                           select="facet[@field='browse-subjectname']/group/docHit" mode="docHit"/>
+                        <xsl:apply-templates select="facet[@field='browse-subjectname']/group/docHit" mode="docHit"/>
                      </xsl:when>
                      <xsl:when test="$browse-geogname">
-                        <xsl:apply-templates select="facet[@field='browse-geogname']/group/docHit"
-                           mode="docHit"/>
+                        <xsl:apply-templates select="facet[@field='browse-geogname']/group/docHit" mode="docHit"/>
                      </xsl:when>
                      <xsl:otherwise>
-                        <xsl:apply-templates select="facet[@field='browse-creator']/group/docHit"
-                           mode="docHit"/>
+                        <xsl:apply-templates select="facet[@field='browse-creator']/group/docHit" mode="docHit"/>
                      </xsl:otherwise>
                   </xsl:choose>
                </div>
-               <!--<div class="componentDefault" style="top:19.3em; min-height:10em;">
-                  <h3>Select a result to see more information</h3>
-               </div> -->
             </div>
 
-
             <!-- feedback and footer -->
-            <xsl:copy-of select="$brand.feedback"/>
             <xsl:copy-of select="$brand.footer"/>
+            <xsl:call-template name="myListEmail"/>
+            <xsl:call-template name="myListPrint"/>
+            <xsl:call-template name="myListRequest"/>
+            <xsl:call-template name="myListCopies"/>
 
          </body>
       </html>
@@ -949,33 +768,23 @@
    <xsl:template name="browseLinks">
       <div class="browselinks">
          <h3>
-            <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection"
-               >Browse All</a>
+            <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection">Browse All</a>
          </h3>
          <div class="boxLeft">
-            <img class="categoryImage" src="/xtf/icons/default/collections.gif"
-               alt="archival collections"/>
+            <img class="categoryImage" src="/xtf/icons/default/collections.gif" alt="archival collections"/>
             <h4>Archival Collections</h4>
             <ul>
                <li>
-                  <a
-                     href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
-                     >Browse All Archival Collections</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">Browse All Archival Collections</a>
                </li>
                <li>
-                  <a
-                     href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                     >Collections by Title</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead">Collections by Title</a>
                </li>
                <li>
-                  <a
-                     href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                     >Collections by Creator</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead">Collections by Creator</a>
                </li>
                <li>
-                  <a
-                     href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
-                     >Recently Updated Collections</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead">Recently Updated Collections</a>
                </li>
             </ul>
          </div>
@@ -984,41 +793,28 @@
             <h4>Library Materials</h4>
             <ul>
                <li>
-                  <a
-                     href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
-                     >Browse All Library Materials</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods">Browse All Library Materials</a>
                </li>
                <li>
-                  <a
-                     href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                     >Library Materials by Title</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods">Library Materials by Title</a>
                </li>
                <li>
-                  <a
-                     href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                     >Library Materials by Creator</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods">Library Materials by Creator</a>
                </li>
             </ul>
          </div>
          <div class="boxRight">
-            <img class="categoryImage" src="/xtf/icons/default/dao_large.gif"
-               alt="digital materials"/>
+            <img class="categoryImage" src="/xtf/icons/default/dao_large.gif" alt="digital materials"/>
             <h4>Digital Materials</h4>
             <ul>
                <li>
-                  <a
-                     href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=file;type=dao"
-                     >Browse All Digital Materials</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=file;type=dao">Browse All Digital Materials</a>
                </li>
                <li>
-                  <a
-                     href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                     >by Title</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao">by Title</a>
                </li>
                <li>
-                  <a
-                     href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                     >by Creator</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao">by Creator</a>
                </li>
             </ul>
          </div>
@@ -1027,14 +823,10 @@
 
    <xsl:template name="currentBrowseLinks">
       <span class="currentBrowse">
-         <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection">All</a>
-         | <a
-            href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">
-            <xsl:if
-               test="$type='ead' and not($browse-title) and not($browse-creator) and not($browse-updated)">
+         <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection">All</a> | <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead">
+            <xsl:if test="$type='ead' and not($browse-title) and not($browse-creator) and not($browse-updated)">
                <xsl:attribute name="class">active</xsl:attribute>
-            </xsl:if> Archival Collections</a> | <a
-            href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods">
+            </xsl:if> Archival Collections</a> | <a href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods">
             <xsl:if test="$type='mods' and not($browse-title) and not($browse-creator)">
                <xsl:attribute name="class">active</xsl:attribute>
             </xsl:if> Library Materials</a>
@@ -1085,11 +877,7 @@
          </xsl:variable>
          <xsl:choose>
             <xsl:when test="$chunk.id != ''">
-               <xsl:value-of
-                  select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
-               <!-- Link used to get sub-document out of context               
-   <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
--->
+               <xsl:value-of select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
             </xsl:when>
             <xsl:otherwise>
                <xsl:value-of select="concat($uri,';chunk.id=headerlink')"/>
@@ -1117,45 +905,36 @@
             <!-- 9/26/11 WS: Moved title above Author -->
             <div class="resultIcon">
                <xsl:choose>
+                  <!-- HA todo: add new thumbnails distinguishing between files with single or multiple daos -->
                   <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
-                     <xsl:variable name="daoFile"
-                        select="substring-before(tokenize(meta/daoLink,'/')[position()=last()],'.')"/>
-                     <xsl:variable name="daoImg"
-                        select="concat(string-join(tokenize(meta/daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/>
+                     <xsl:variable name="daoFile" select="substring-before(tokenize(meta/daoLink,'/')[position()=last()],'.')"/>
+                     <xsl:variable name="daoImg" select="concat(string-join(tokenize(meta/daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/>
                      <img src="{$daoImg}" alt="Digital object thumbnail"/>
                   </xsl:when>
                   <xsl:when test="meta/genre[contains(.,'DVD')]">
                      <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
-                     <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>-->
                   </xsl:when>
                   <xsl:when test="meta/genre[contains(.,'Videocassette')]">
                      <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
-                     <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>-->
                   </xsl:when>
                   <xsl:when test="meta/genre[contains(.,'Reel')]">
                      <img src="/xtf/icons/default/microfilm.gif" alt="Microfilm" title="Microfilm"/>
-                     <!--<span style="font-size:.75em;color:#C45428;display:block;">Microfilm</span>-->
                   </xsl:when>
                   <xsl:when test="meta/genre[contains(.,'Volume')]">
                      <img src="/xtf/icons/default/book.gif" alt="Book" title="Book"/>
-                     <!--<span style="font-size:.75em;color:#C45428;display:block;">Book</span>-->
                   </xsl:when>
                   <xsl:when test="meta/type = 'ead' and meta/type != 'dao'">
-                     <img src="/xtf/icons/default/collections.gif" alt="Archival collection"
-                        title="Archival collection"/>
-                     <!--<span style="font-size:.75em;color:#C45428;display:block;">Collection</span>-->
+                     <img src="/xtf/icons/default/collections.gif" alt="Archival collection" title="Archival collection"/>
                   </xsl:when>
                   <xsl:otherwise>
                      <xsl:value-of select="meta/genre"/>
                   </xsl:otherwise>
                </xsl:choose>
             </div>
-            
+
             <div class="resultContent">
                <div class="result title">
-                  <a
-                     onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);"
-                     title="Go to finding aid">
+                  <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);" title="Go to finding aid">
                      <xsl:attribute name="href">
                         <xsl:value-of select="$docPath"/>
                      </xsl:attribute>
@@ -1179,7 +958,6 @@
                            </xsl:choose>
                         </xsl:when>
                      </xsl:choose>
-                     
                      <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
                      <xsl:if test="meta/date">
                         <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
@@ -1187,11 +965,6 @@
                            <xsl:text>, </xsl:text>
                         </xsl:if>
                         <xsl:apply-templates select="meta/date"/>
-                     </xsl:if>
-                     <!--</a>-->
-                     <xsl:if test="meta/*:type = 'dao'">
-                        <img src="/xtf/icons/default/dao.gif" alt="digital object"
-                           title="Digital object"/>
                      </xsl:if>
                      <xsl:if test="meta/type = 'ead' and meta/level='collection'">
                         <span class="identifier">
@@ -1209,7 +982,7 @@
                      </xsl:if>
                   </a>
                </div>
-               
+
                <!-- 11/15/2013 HA: removing label and changing logic -->
                <xsl:if test="meta/creator">
                   <div class="result creator">
@@ -1219,33 +992,35 @@
                      </xsl:for-each>
                   </div>
                </xsl:if>
-               
+
                <!-- 9/5/2013 HA: adding collection for DAO browse -->
                <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level !='collection'">
-                  <div class="collection">
-                     <xsl:apply-templates select="meta/collectionTitle"/>
+                  <div class="parents">
+                     <xsl:for-each select="meta/parent">
+                        <xsl:value-of select="."/>
+                        <xsl:if test="position() != last()">
+                           <xsl:text> &gt; </xsl:text>
+                        </xsl:if>
+                     </xsl:for-each>
                   </div>
                </xsl:if>
-               
-               
+
+
                <!-- 11/15/2013 HA: removing label -->
                <!-- 11/14/2013 HA: changing logic to only display snippets for hits not already visible -->
                <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
                <xsl:choose>
                   <xsl:when test="$browse-all"/>
                   <xsl:otherwise>
-                     <xsl:if
-                        test="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']">
+                     <xsl:if test="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']">
                         <div class="result matches">
-                           <xsl:apply-templates
-                              select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']"
-                              mode="text"/>
+                           <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']" mode="text"/>
                         </div>
                      </xsl:if>
                   </xsl:otherwise>
                </xsl:choose>
             </div>
-            
+
             <div class="bookbag">
                <xsl:call-template name="myList">
                   <xsl:with-param name="chunk.id" select="$chunk.id"/>
@@ -1253,7 +1028,12 @@
                   <xsl:with-param name="docPath" select="$docPath"/>
                </xsl:call-template>
             </div>
-            
+
+            <!-- dao table -->
+            <xsl:if test="meta/daoLink != ''">
+               <xsl:call-template name="daoTable"/>
+            </xsl:if>
+
          </div>
          <div class="activeArrow"/>
 
@@ -1263,6 +1043,7 @@
       </div>
    </xsl:template>
 
+   <!-- HA todo: can this call docHit template for first part of code? -->
    <xsl:template name="docHitColl" exclude-result-prefixes="#all">
       <xsl:variable name="chunk.id" select="@subDocument"/>
       <xsl:variable name="level" select="meta/level"/>
@@ -1275,16 +1056,11 @@
          <xsl:variable name="uri">
             <xsl:call-template name="dynaxml.url">
                <xsl:with-param name="path" select="$path"/>
-               <!--<xsl:with-param name="chunk.id" select="'headerlink'"/>-->
             </xsl:call-template>
          </xsl:variable>
          <xsl:choose>
             <xsl:when test="$chunk.id != ''">
-               <xsl:value-of
-                  select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
-               <!-- Link used to get sub-document out of context               
-                  <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
-               -->
+               <xsl:value-of select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
             </xsl:when>
             <xsl:otherwise>
                <xsl:value-of select="$uri"/>
@@ -1313,57 +1089,42 @@
       </xsl:variable>
 
       <div id="main_{@rank}" class="docHit">
+         <xsl:variable name="collectionId" select="substring-before(meta/identifier[1],'-')"/>
          <!-- 11/15/2013 HA: streamlining display, removing subjects, labels and find similar -->
          <!-- 7/10/2013 HA: turning results list into divs rather than table -->
          <!-- Deals with collections vrs. series/files -->
          <div id="top-level_{@rank}-collection" class="top-level component">
-            <xsl:choose>
-               <xsl:when test="meta/level = 'collection'">
-                  <div class="resultIcon">
+            <div class="resultIcon">
+               <xsl:choose>
+                  <xsl:when test="meta/genre[contains(.,'DVD')]">
+                     <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
+                  </xsl:when>
+                  <xsl:when test="meta/genre[contains(.,'Videocassette')]">
+                     <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
+                  </xsl:when>
+                  <xsl:when test="meta/genre[contains(.,'Reel')]">
+                     <img src="/xtf/icons/default/microfilm.gif" alt="Microfilm" title="Microfilm"/>
+                  </xsl:when>
+                  <xsl:when test="meta/genre[contains(.,'Volume')]">
+                     <img src="/xtf/icons/default/book.gif" alt="Book" title="Book"/>
+                  </xsl:when>
+                  <xsl:when test="meta/type = 'ead' and meta/type != 'dao'">
+                     <img src="/xtf/icons/default/collections.gif" alt="Archival collection" title="Archival collection"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="meta/genre"/>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </div>
+            <div class="resultContent">
+               <div class="result title">
+                  <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);" title="Go to finding aid">
+                     <xsl:attribute name="href">
+                        <xsl:value-of select="$collPath"/>
+                     </xsl:attribute>
+
                      <xsl:choose>
-                        <xsl:when test="meta/genre[contains(.,'DVD')]">
-                           <img src="/xtf/icons/default/video.gif" alt="Moving Image"
-                              title="Moving Image"/>
-                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving
-                              Image</span>-->
-                        </xsl:when>
-                        <xsl:when test="meta/genre[contains(.,'Videocassette')]">
-                           <img src="/xtf/icons/default/video.gif" alt="Moving Image"
-                              title="Moving Image"/>
-                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving
-                              Image</span>-->
-                        </xsl:when>
-                        <xsl:when test="meta/genre[contains(.,'Reel')]">
-                           <img src="/xtf/icons/default/microfilm.gif" alt="Microfilm"
-                              title="Microfilm"/>
-                           <!--<span style="font-size:.75em;color:#C45428;display:block;"
-                              >Microfilm</span>-->
-                        </xsl:when>
-                        <xsl:when test="meta/genre[contains(.,'Volume')]">
-                           <img src="/xtf/icons/default/book.gif" alt="Book" title="Book"/>
-                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Book</span>-->
-                        </xsl:when>
-                        <xsl:when test="meta/type = 'ead' and meta/type != 'dao'">
-                           <img src="/xtf/icons/default/collections.gif" alt="Archival collection"
-                              title="Archival collection"/>
-                           <!--<span style="font-size:.75em;color:#C45428;display:block;"
-                              >Collection</span>-->
-                        </xsl:when>
-                        <xsl:otherwise>
-                           <xsl:value-of select="meta/genre"/>
-                        </xsl:otherwise>
-                     </xsl:choose>
-                  </div>
-
-                  <div class="resultContent">
-                     <div class="result title">
-                        <a
-                           onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);"
-                           title="Go to finding aid">
-                           <xsl:attribute name="href">
-                              <xsl:value-of select="$collPath"/>
-                           </xsl:attribute>
-
+                        <xsl:when test="meta/level = 'collection'">
                            <xsl:choose>
                               <xsl:when test="meta/filingTitle">
                                  <xsl:apply-templates select="meta/filingTitle"/>
@@ -1389,18 +1150,16 @@
                               <xsl:text>, </xsl:text>
                               <xsl:apply-templates select="meta/date"/>
                            </xsl:if>
-                           <!-- </a> -->
-                           <xsl:if test="meta/*:type = 'dao'">
+                           <!--<xsl:if test="meta/*:type = 'dao'">
                               <img src="/xtf/icons/default/dao.gif" alt="digital object"
                                  title="Digital object"/>
-                           </xsl:if>
+                           </xsl:if>-->
                            <xsl:if test="meta/type = 'ead' and meta/level='collection'">
                               <span class="identifier">
                                  <xsl:text> (</xsl:text>
                                  <xsl:choose>
                                     <xsl:when test="contains(meta/identifier, '|')">
-                                       <xsl:value-of select="substring-before(meta/identifier, '|')"
-                                       />
+                                       <xsl:value-of select="substring-before(meta/identifier, '|')"/>
                                     </xsl:when>
                                     <xsl:otherwise>
                                        <xsl:value-of select="meta/identifier"/>
@@ -1409,84 +1168,8 @@
                                  <xsl:text>)</xsl:text>
                               </span>
                            </xsl:if>
-                        </a>
-                     </div>
-
-                     <!-- 11/15/2013 HA: removing label and changing logic -->
-                     <xsl:if test="meta/creator">
-                        <div class="result creator">
-                           <xsl:for-each select="meta/creator">
-                              <xsl:apply-templates select="."/>
-                              <br/>
-                           </xsl:for-each>
-                        </div>
-                     </xsl:if>
-
-                     <!-- 11/14/2013 HA: changing logic to only display snippets not already visible -->
-                     <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
-                     <xsl:choose>
-                        <xsl:when test="$browse-all"/>
-                        <xsl:otherwise>
-                           <xsl:if
-                              test="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']">
-                              <div class="result matches">
-                                 <xsl:apply-templates
-                                    select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']"
-                                    mode="text"/>
-                              </div>
-                           </xsl:if>
-                        </xsl:otherwise>
-                     </xsl:choose>
-                  </div>
-
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:variable name="collectionId"
-                     select="substring-before(meta/identifier[1],'-')"/>
-                  <div class="resultIcon">
-                     <xsl:choose>
-                        <xsl:when test="meta/genre[contains(.,'DVD')]">
-                           <img src="/xtf/icons/default/video.gif" alt="Moving Image"
-                              title="Moving Image"/>
-                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving
-                              Image</span>-->
-                        </xsl:when>
-                        <xsl:when test="meta/genre[contains(.,'Videocassette')]">
-                           <img src="/xtf/icons/default/video.gif" alt="Moving Image"
-                              title="Moving Image"/>
-                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving
-                              Image</span>-->
-                        </xsl:when>
-                        <xsl:when test="meta/genre[contains(.,'Reel')]">
-                           <img src="/xtf/icons/default/microfilm.gif" alt="Microfilm"
-                              title="Microfilm"/>
-                           <!--<span style="font-size:.75em;color:#C45428;display:block;"
-                              >Microfilm</span>-->
-                        </xsl:when>
-                        <xsl:when test="meta/genre[contains(.,'Volume')]">
-                           <img src="/xtf/icons/default/book.gif" alt="Book" title="Book"/>
-                           <!--<span style="font-size:.75em;color:#C45428;display:block;">Book</span>-->
-                        </xsl:when>
-                        <xsl:when test="meta/type = 'ead'">
-                           <img src="/xtf/icons/default/collections.gif" alt="Archival collection"
-                              title="Archival collection"/>
-                           <!--<span style="font-size:.75em;color:#C45428;display:block;"
-                              >Collection</span>-->
                         </xsl:when>
                         <xsl:otherwise>
-                           <xsl:value-of select="meta/genre"/>
-                        </xsl:otherwise>
-                     </xsl:choose>
-                  </div>
-
-                  <div class="resultContent">
-                     <div class="result title">
-                        <a
-                           onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);"
-                           title="Go to finding aid">
-                           <xsl:attribute name="href">
-                              <xsl:value-of select="$collPath"/>
-                           </xsl:attribute>
                            <xsl:choose>
                               <xsl:when test="meta/collectionTitle">
                                  <xsl:apply-templates select="meta/collectionTitle"/>
@@ -1506,49 +1189,46 @@
                               <xsl:text>, </xsl:text>
                               <xsl:apply-templates select="meta/collectionDate"/>
                            </xsl:if>
-                           <!-- </a> -->
-                           <xsl:if test="meta/*:type = 'dao'">
+                           <!--<xsl:if test="meta/*:type = 'dao'">
                               <img src="/xtf/icons/default/dao.gif" alt="digital object"
                                  title="Digital object"/>
-                           </xsl:if>
-                           <xsl:if test="meta/type = 'ead' and meta/level='collection'">
-                              <span class="identifier">
-                                 <xsl:text> (</xsl:text>
-                                 <xsl:choose>
-                                    <xsl:when test="contains(meta/identifier, '-')">
-                                       <xsl:value-of select="substring-before(meta/identifier, '-')"
-                                       />
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                       <xsl:value-of select="meta/identifier"/>
-                                    </xsl:otherwise>
-                                 </xsl:choose>
-                                 <xsl:text>)</xsl:text>
-                              </span>
-                           </xsl:if>
-                        </a>
-                     </div>
+                           </xsl:if>-->
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </a>
+               </div>
 
-                     <!-- 11/15/2013 HA: removing label and changing logic -->
-                     <xsl:if test="meta/creator">
-                        <div class="result creator">
-                           <xsl:for-each select="meta/creator">
-                              <xsl:apply-templates select="."/>
-                              <br/>
-                           </xsl:for-each>
+               <!-- 11/15/2013 HA: removing label and changing logic -->
+               <xsl:if test="meta/creator">
+                  <div class="result creator">
+                     <xsl:for-each select="meta/creator">
+                        <xsl:apply-templates select="."/>
+                        <br/>
+                     </xsl:for-each>
+                  </div>
+               </xsl:if>
+
+               <!-- 11/14/2013 HA: changing logic to only display snippets not already visible -->
+               <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
+               <xsl:choose>
+                  <xsl:when test="$browse-all"/>
+                  <xsl:otherwise>
+                     <xsl:if test="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']">
+                        <div class="result matches">
+                           <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']" mode="text"/>
                         </div>
                      </xsl:if>
-                  </div>
-               </xsl:otherwise>
-            </xsl:choose>
-            
+                  </xsl:otherwise>
+               </xsl:choose>
+            </div>
+
             <xsl:if test="meta/type='mods'">
                <div class="bookbag">
-               <xsl:call-template name="myList">
-                  <xsl:with-param name="chunk.id" select="$chunk.id"/>
-                  <xsl:with-param name="path" select="$path"/>
-                  <xsl:with-param name="docPath" select="$docPath"/>
-               </xsl:call-template>
+                  <xsl:call-template name="myList">
+                     <xsl:with-param name="chunk.id" select="$chunk.id"/>
+                     <xsl:with-param name="path" select="$path"/>
+                     <xsl:with-param name="docPath" select="$docPath"/>
+                  </xsl:call-template>
                </div>
             </xsl:if>
 
@@ -1630,88 +1310,50 @@
             <xsl:text>: </xsl:text>
          </xsl:if>
          <xsl:choose>
-            <xsl:when test="meta/title">
-               <xsl:choose>
-                  <xsl:when test="count(meta/title) &gt; 1">
-                     <xsl:apply-templates select="meta/title[2]"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     <xsl:apply-templates select="meta/title[1]"/>
-                  </xsl:otherwise>
-               </xsl:choose>
+            <xsl:when test="meta/title = meta/date">
+               <xsl:apply-templates select="meta/title"/>
             </xsl:when>
-            <xsl:when test="meta/subtitle">
+            <xsl:otherwise>
                <xsl:choose>
-                  <xsl:when test="count(meta/subtitle) &gt; 1">
-                     <xsl:apply-templates select="meta/subtitle[2]"/>
+                  <xsl:when test="meta/title">
+                     <xsl:choose>
+                        <xsl:when test="count(meta/title) &gt; 1">
+                           <xsl:apply-templates select="meta/title[2]"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:apply-templates select="meta/title[1]"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
                   </xsl:when>
-                  <xsl:otherwise>
-                     <xsl:apply-templates select="meta/subtitle[1]"/>
-                  </xsl:otherwise>
+                  <xsl:when test="meta/subtitle">
+                     <xsl:choose>
+                        <xsl:when test="count(meta/subtitle) &gt; 1">
+                           <xsl:apply-templates select="meta/subtitle[2]"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:apply-templates select="meta/subtitle[1]"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </xsl:when>
                </xsl:choose>
-            </xsl:when>
+               <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
+               <xsl:if test="meta/date != ''">
+                  <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
+                  <xsl:if test="meta/title != ''">
+                     <xsl:text>, </xsl:text>
+                  </xsl:if>
+                  <xsl:apply-templates select="meta/date"/>
+               </xsl:if>
+            </xsl:otherwise>
          </xsl:choose>
-         <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
-         <xsl:if test="meta/date != ''">
-            <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
-            <xsl:if test="meta/title != ''">
-               <xsl:text>, </xsl:text>
-            </xsl:if>
-            <xsl:apply-templates select="meta/date"/>
-         </xsl:if>
       </xsl:variable>
 
       <div class="result title">
-         <a
-            onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main subdocument']);"
-            title="Go to finding aid">
+         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main subdocument']);" title="Go to finding aid">
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
             </xsl:attribute>
-            <xsl:choose>
-               <xsl:when test="meta/level = 'series'">Series </xsl:when>
-               <xsl:when test="meta/level = 'subseries'">Subseries </xsl:when>
-               <xsl:when test="meta/level = 'recordgrp'">Record Group </xsl:when>
-               <xsl:when test="meta/level = 'subgrp'">Subgroup </xsl:when>
-               <xsl:otherwise/>
-            </xsl:choose>
-            <xsl:if test="meta/componentID != ''">
-               <xsl:apply-templates select="meta/componentID"/>
-               <xsl:text>: </xsl:text>
-            </xsl:if>
-            <xsl:choose>
-               <xsl:when test="meta/title">
-                  <xsl:choose>
-                     <xsl:when test="count(meta/title) &gt; 1">
-                        <xsl:apply-templates select="meta/title[2]"/>
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:apply-templates select="meta/title[1]"/>
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </xsl:when>
-               <xsl:when test="meta/subtitle">
-                  <xsl:choose>
-                     <xsl:when test="count(meta/subtitle) &gt; 1">
-                        <xsl:apply-templates select="meta/subtitle[2]"/>
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:apply-templates select="meta/subtitle[1]"/>
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </xsl:when>
-            </xsl:choose>
-            <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
-            <xsl:if test="meta/date != ''">
-               <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
-               <xsl:if test="meta/title != ''">
-                  <xsl:text>, </xsl:text>
-               </xsl:if>
-               <xsl:apply-templates select="meta/date"/>
-            </xsl:if>
-            <xsl:if test="meta/*:type = 'dao'">
-               <img src="/xtf/icons/default/dao.gif" alt="digital object" title="Digital object"/>
-            </xsl:if>
+            <xsl:value-of select="$title"/>
          </a>
          <div class="parents">
             <xsl:for-each select="meta/parent[position()&gt;1]">
@@ -1737,8 +1379,7 @@
       <xsl:choose>
          <xsl:when test="$browse-all"/>
          <xsl:otherwise>
-            <xsl:if
-               test="descendant-or-self::snippet[(@sectionType = 'file' or @sectionType = 'series' or @sectionType = 'subseries' or @sectionType = 'otherlevel' or @sectionType = 'collection')]">
+            <xsl:if test="descendant-or-self::snippet[(@sectionType = 'file' or @sectionType = 'series' or @sectionType = 'subseries' or @sectionType = 'otherlevel' or @sectionType = 'collection')]">
                <div class="result matches">
                   <xsl:apply-templates
                      select="descendant-or-self::snippet[(@sectionType = 'file' or @sectionType = 'series' or @sectionType = 'subseries' or @sectionType = 'otherlevel' or @sectionType = 'collection')]"
@@ -1747,6 +1388,12 @@
             </xsl:if>
          </xsl:otherwise>
       </xsl:choose>
+
+      <!-- dao table -->
+      <xsl:if test="meta/daoLink != ''">
+         <xsl:call-template name="daoTable"/>
+      </xsl:if>
+
    </xsl:template>
 
    <!-- ====================================================================== -->
@@ -1880,9 +1527,7 @@
          </xsl:variable>
          <xsl:choose>
             <xsl:when test="$chunk.id != ''">
-               <xsl:value-of
-                  select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"
-               />
+               <xsl:value-of select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
             </xsl:when>
             <xsl:otherwise>
                <xsl:value-of select="$uri"/>
@@ -1890,9 +1535,7 @@
          </xsl:choose>
       </xsl:variable>
       <div class="title">
-         <a
-            onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results details subdocument']);"
-            title="Go to finding aid">
+         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results details subdocument']);" title="Go to finding aid">
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
             </xsl:attribute>
@@ -1912,25 +1555,32 @@
                <xsl:apply-templates select="meta/componentID"/>
                <xsl:text>: </xsl:text>
             </xsl:if>
-            <xsl:apply-templates select="meta/title"/>
-            <xsl:if test="meta/date != ''">
-               <xsl:if test="meta/title != ''">
-                  <xsl:text>, </xsl:text>
-               </xsl:if>
-               <xsl:apply-templates select="meta/date"/>
-            </xsl:if>
-            <xsl:if test="meta/*:type = 'dao'">
-               <img src="/xtf/icons/default/dao.gif" alt="digital object" title="Digital object"/>
-            </xsl:if>
+            <xsl:choose>
+               <xsl:when test="meta/title = meta/date">
+                  <xsl:apply-templates select="meta/title"/>
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:apply-templates select="meta/title"/>
+                  <xsl:if test="meta/date != ''">
+                     <xsl:if test="meta/title != ''">
+                        <xsl:text>, </xsl:text>
+                     </xsl:if>
+                     <xsl:apply-templates select="meta/date"/>
+                  </xsl:if>
+               </xsl:otherwise>
+            </xsl:choose>
          </a>
       </div>
       <xsl:if test="meta/level = 'file'">
-         <div class="containers">
-            <xsl:value-of select="meta/containers"/>
-            <xsl:if test="meta/extent != ''">
-               <xsl:text>, </xsl:text>
-            </xsl:if>
-         </div>
+         <xsl:if test="meta/container">
+            <div class="containers">
+               <xsl:for-each select="meta/container">
+                  <div class="container">
+                     <xsl:value-of select="."/>
+                  </div>
+               </xsl:for-each>
+            </div>
+         </xsl:if>
       </xsl:if>
       <xsl:if test="meta/extent != ''">
          <div class="extent">
@@ -1941,9 +1591,6 @@
          <xsl:for-each select="meta/parent">
             <div class="parent" style="padding-left:{(position() -1)}em">
                <xsl:value-of select="."/>
-               <!--<xsl:if test="position() != last()">
-                  <xsl:text> &gt; </xsl:text>
-               </xsl:if>-->
             </div>
          </xsl:for-each>
       </div>
@@ -1958,16 +1605,12 @@
          </div>
          <div class="notesMore">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
-                  >more</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
-                  >less</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a>
             </div>
          </div>
       </xsl:if>
@@ -1982,16 +1625,12 @@
          </div>
          <div class="notesMore">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
-                  >more</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
-                  >less</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a>
             </div>
          </div>
       </xsl:if>
@@ -2006,16 +1645,12 @@
          </div>
          <div class="notesMore">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
-                  >more</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
-                  >less</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a>
             </div>
          </div>
       </xsl:if>
@@ -2042,9 +1677,7 @@
          </xsl:variable>
          <xsl:choose>
             <xsl:when test="$chunk.id != ''">
-               <xsl:value-of
-                  select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"
-               />
+               <xsl:value-of select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
             </xsl:when>
             <xsl:otherwise>
                <xsl:value-of select="$uri"/>
@@ -2061,9 +1694,7 @@
          <xsl:value-of select="$uri"/>
       </xsl:variable>
       <div class="title">
-         <a
-            onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results details collection']);"
-            title="Go to finding aid">
+         <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results details collection']);" title="Go to finding aid">
             <xsl:attribute name="href">
                <xsl:choose>
                   <xsl:when test="meta/level='collection'">
@@ -2105,9 +1736,9 @@
                   </xsl:if>
                </xsl:otherwise>
             </xsl:choose>
-            <xsl:if test="meta/*:type = 'dao'">
+            <!--<xsl:if test="meta/*:type = 'dao'">
                <img src="/xtf/icons/default/dao.gif" alt="digital object" title="Digital object"/>
-            </xsl:if>
+            </xsl:if>-->
          </a>
       </div>
       <xsl:if test="meta/collectionExtent != ''">
@@ -2138,16 +1769,12 @@
          </div>
          <div class="notesMore">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
-                  >more</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
-                  >less</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a>
             </div>
          </div>
       </xsl:if>
@@ -2161,16 +1788,12 @@
          </div>
          <div class="notesMore">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
-                  >more</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
-                  >less</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a>
             </div>
          </div>
       </xsl:if>
@@ -2186,16 +1809,12 @@
          </div>
          <div class="notesMore">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
-                  >more</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
-                  >less</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a>
             </div>
          </div>
       </xsl:if>
@@ -2210,16 +1829,12 @@
          </div>
          <div class="notesMore">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
-                  >more</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);">more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
-               <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
-                  >less</a>
+               <a href="#" onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);">less</a>
             </div>
          </div>
       </xsl:if>

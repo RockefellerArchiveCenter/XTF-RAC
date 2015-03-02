@@ -156,7 +156,7 @@
    <xsl:param name="brand.links" select="$brand.file/brand/dynaxml.links/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.header" select="$brand.file/brand/dynaxml.header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.footer" select="$brand.file/brand/footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   <xsl:param name="brand.feedback" select="$brand.file/brand/feedback/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="brand.searchtips" select="$brand.file/brand/searchtips/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    
    <!-- Special Robot Parameters -->
    
