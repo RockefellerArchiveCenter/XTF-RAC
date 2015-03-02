@@ -227,7 +227,6 @@
                   <xsl:call-template name="toc"/>
                   <xsl:call-template name="body"/>
                </div>
-               <xsl:copy-of select="$brand.feedback"/>
                <div class="fixedFooter">
                   <xsl:copy-of select="$brand.footer"/>
                </div>

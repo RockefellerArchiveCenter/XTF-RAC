@@ -178,7 +178,6 @@
                   </div>
                </div>
             </div>
-            <xsl:copy-of select="$brand.feedback"/>
             <xsl:copy-of select="$brand.footer"/>
             <xsl:call-template name="myListCopies"/>
             <xsl:call-template name="myListEmail"/>
