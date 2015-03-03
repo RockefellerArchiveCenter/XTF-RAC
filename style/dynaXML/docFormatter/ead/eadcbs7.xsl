@@ -1188,11 +1188,11 @@
             </xsl:when>
             <xsl:otherwise>
                <xsl:choose>
-                  <xsl:when test="string(number(/ead/archdesc/dsc/child::c[@id=$chunk.id]/@xtf:hitCount))='NaN'">
+                  <xsl:when test="string(number(/ead/archdesc/dsc/descendant::c[@id=$chunk.id]/@xtf:hitCount))='NaN'">
                      <xsl:text>0</xsl:text>
                   </xsl:when>
                   <xsl:when test="($query != '0') and ($query != '')">
-                     <xsl:value-of select="number(/ead/archdesc/dsc/child::c[@id=$chunk.id]/@xtf:hitCount)"/>
+                     <xsl:value-of select="number(/ead/archdesc/dsc/descendant::c[@id=$chunk.id]/@xtf:hitCount)"/>
                   </xsl:when>
                </xsl:choose>
             </xsl:otherwise>
@@ -1210,11 +1210,11 @@
                <xsl:text>this Contents List</xsl:text>
             </xsl:when>
             <xsl:otherwise>
-               <xsl:value-of select="concat(upper-case(substring(/ead/archdesc/dsc/child::c[@id=$chunk.id]/@level, 1, 1)), substring(/ead/archdesc/dsc/child::c[@id=$chunk.id]/@level, 2))"/>
+               <xsl:value-of select="concat(upper-case(substring(/ead/archdesc/dsc/descendant::c[@id=$chunk.id]/@level, 1, 1)), substring(/ead/archdesc/dsc/descendant::c[@id=$chunk.id]/@level, 2))"/>
                <xsl:text> </xsl:text>
-               <xsl:value-of select="/ead/archdesc/dsc/child::c[@id=$chunk.id]/did/unitid"/>
+               <xsl:value-of select="/ead/archdesc/dsc/descendant::c[@id=$chunk.id]/did/unitid"/>
                <xsl:text>: </xsl:text>
-               <xsl:value-of select="/ead/archdesc/dsc/child::c[@id=$chunk.id]/did/unittitle"/>
+               <xsl:value-of select="/ead/archdesc/dsc/descendant::c[@id=$chunk.id]/did/unittitle"/>
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
