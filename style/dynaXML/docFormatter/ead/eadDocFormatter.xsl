@@ -265,7 +265,6 @@
                   <xsl:call-template name="toc"/>
                   <xsl:call-template name="body"/>
                </div>
-               <xsl:copy-of select="$brand.feedback"/>
                <xsl:call-template name="myListCopies"/>
                <xsl:call-template name="myListEmail"/>
                <xsl:call-template name="myListPrint"/>
