@@ -1321,40 +1321,42 @@
          </xsl:when>
          <xsl:when test="$doc.view='contentsSearch'">
             <div class="{@level} c01" style="width:100%;float:left;">
+               <xsl:if test="@xtf:hitCount">
                <xsl:call-template name="anchor"/>
                <xsl:call-template name="clevel">
                   <xsl:with-param name="level">01</xsl:with-param>
                </xsl:call-template>
+               </xsl:if>
                <xsl:for-each select="c|c02">
-                  <xsl:if test="@xtf:hitCount">
+                  <xsl:if test="@xtf:hitCount or ((@level='file' or @level='item') and parent::c[@xtf:hitCount] and not(preceding-sibling::c[@xtf:hitCount] | following-sibling::c[@xtf:hitCount]))">
                      <div class="{@level} c02" style="width:99%;float:right;">
                         <xsl:call-template name="anchor"/>
                         <xsl:call-template name="clevel">
                            <xsl:with-param name="level">01</xsl:with-param>
                         </xsl:call-template>
                         <xsl:for-each select="c|c03">
-                           <xsl:if test="@xtf:hitCount">
+                           <xsl:if test="@xtf:hitCount or ((@level='file' or @level='item') and parent::c[@xtf:hitCount] and not(preceding-sibling::c[@xtf:hitCount] | following-sibling::c[@xtf:hitCount]))">
                               <div class="{@level} c03" style="width:99%;float:right;">
                                  <xsl:call-template name="anchor"/>
                                  <xsl:call-template name="clevel">
                                     <xsl:with-param name="level">01</xsl:with-param>
                                  </xsl:call-template>
                                  <xsl:for-each select="c|c04">
-                                    <xsl:if test="@xtf:hitCount">
+                                    <xsl:if test="@xtf:hitCount or ((@level='file' or @level='item') and parent::c[@xtf:hitCount] and not(preceding-sibling::c[@xtf:hitCount] | following-sibling::c[@xtf:hitCount]))">
                                        <div class="{@level} c04" style="width:99%;float:right;">
                                           <xsl:call-template name="anchor"/>
                                           <xsl:call-template name="clevel">
                                              <xsl:with-param name="level">01</xsl:with-param>
                                           </xsl:call-template>
                                           <xsl:for-each select="c|c05">
-                                             <xsl:if test="@xtf:hitCount">
+                                             <xsl:if test="@xtf:hitCount or ((@level='file' or @level='item') and parent::c[@xtf:hitCount] and not(preceding-sibling::c[@xtf:hitCount] | following-sibling::c[@xtf:hitCount]))">
                                                 <div class="{@level} c05" style="width:99%;float:right;">
                                                    <xsl:call-template name="anchor"/>
                                                    <xsl:call-template name="clevel">
                                                       <xsl:with-param name="level">01</xsl:with-param>
                                                    </xsl:call-template>
                                                    <xsl:for-each select="c|c06">
-                                                      <xsl:if test="@xtf:hitCount">
+                                                      <xsl:if test="@xtf:hitCount or ((@level='file' or @level='item') and parent::c[@xtf:hitCount] and not(preceding-sibling::c[@xtf:hitCount] | following-sibling::c[@xtf:hitCount]))">
                                                          <div class="{@level} c06" style="width:99%;float:right;">
                                                             <xsl:call-template name="anchor"/>
                                                             <xsl:call-template name="clevel">
@@ -1368,14 +1370,14 @@
                                                                         <xsl:with-param name="level">01</xsl:with-param>
                                                                      </xsl:call-template>
                                                                      <xsl:for-each select="c|c08">
-                                                                        <xsl:if test="@xtf:hitCount">
+                                                                        <xsl:if test="@xtf:hitCount or ((@level='file' or @level='item') and parent::c[@xtf:hitCount] and not(preceding-sibling::c[@xtf:hitCount] | following-sibling::c[@xtf:hitCount]))">
                                                                            <div class="{@level} c08" style="width:99%;float:right;">
                                                                               <xsl:call-template name="anchor"/>
                                                                               <xsl:call-template name="clevel">
                                                                                  <xsl:with-param name="level">01</xsl:with-param>
                                                                               </xsl:call-template>
                                                                               <xsl:for-each select="c|c09">
-                                                                                 <xsl:if test="@xtf:hitCount">
+                                                                                 <xsl:if test="@xtf:hitCount or ((@level='file' or @level='item') and parent::c[@xtf:hitCount] and not(preceding-sibling::c[@xtf:hitCount] | following-sibling::c[@xtf:hitCount]))">
                                                                                     <div class="{@level} c09" style="width:99%;float:right;">
                                                                                        <xsl:call-template name="anchor"/>
                                                                                        <xsl:call-template name="clevel_dao"/>
@@ -1716,7 +1718,6 @@
                   <div class="inventoryTitle {$clevelChildMargin}">Inventory</div>
                   <div class="inventoryHeader {$clevelChildMargin}">
                      <span class="inventoryHeaderTitle">Title</span>
-                     <span class="inventoryHeaderFormat">Format</span>
                      <span class="inventoryHeaderContainers">Containers</span>
                      <span class="inventoryHeaderNotes">Notes</span>
                      <span class="inventoryHeaderBookbag">My List</span>
@@ -1731,7 +1732,6 @@
                   <div class="inventoryTitle {$clevelChildMargin}">Inventory</div>
                   <div class="inventoryHeader {$clevelChildMargin}">
                      <span class="inventoryHeaderTitle">Title</span>
-                     <span class="inventoryHeaderFormat">Format</span>
                      <span class="inventoryHeaderContainers">Containers</span>
                      <span class="inventoryHeaderNotes">Notes</span>
                      <span class="inventoryHeaderBookbag">Bookbag</span>
