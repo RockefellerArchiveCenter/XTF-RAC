@@ -25,34 +25,12 @@
                 <th>Format</th>
                 <th>Size</th>
             </tr>
+            <xsl:for-each select="xtf:meta/daoLink">
+                <tr data-identifier=".">
+                    <td><xsl:value-of select="."/></td>
+                </tr>
+            </xsl:for-each>
         </table>
-    </xsl:template>
-    
-    <!-- ====================================================================== -->
-    <!-- DAO Details Page                                                       -->
-    <!-- ====================================================================== -->
-    
-    <xsl:template match="dao" mode="daoDetails">
-        <div>Hello world!</div>
-        <div class="main">
-            <div id="tocWrapper">
-                <div id="foundIn"></div>
-                <div class="subjects"></div>
-            </div>
-            <div id="content-wrapper">
-                <div class="thumbnail">
-                    <div class="thumbnailButtons"></div>
-                </div>
-                <div class="description">
-                    <div class="title"></div>
-                    <div class="creator"></div>
-                    <div class="extent"></div>
-                    <div class="parents"></div>
-                    <div class="scopeContent"></div>
-                    <div class="restrictions"></div>
-                </div>
-            </div>
-        </div>
     </xsl:template>
     
 </xsl:stylesheet>
