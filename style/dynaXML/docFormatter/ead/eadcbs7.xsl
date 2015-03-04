@@ -1612,9 +1612,11 @@
                </span>
 
                <span class="inventoryBookbag bookbag">
-                  <xsl:call-template name="myListEad">
-                     <xsl:with-param name="rootID" select="$rootID"/>
-                  </xsl:call-template>
+                  <xsl:if test="child::did/container and not(child::*[@level='file' or @level='item'])">
+                     <xsl:call-template name="myListEad">
+                        <xsl:with-param name="rootID" select="$rootID"/>
+                     </xsl:call-template>
+                  </xsl:if>
                </span>
 
             </xsl:when>
