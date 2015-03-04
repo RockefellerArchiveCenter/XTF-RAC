@@ -1723,11 +1723,13 @@
       </div>
 
       <div class="bookbag">
+         <xsl:if test="meta/containers !=''">
          <xsl:call-template name="myList">
             <xsl:with-param name="chunk.id" select="$chunk.id"/>
             <xsl:with-param name="path" select="$path"/>
             <xsl:with-param name="docPath" select="$docPath"/>
          </xsl:call-template>
+         </xsl:if>
       </div>
 
       <!-- 11/14/2013 HA: added logic to display only snippets not already visible -->
