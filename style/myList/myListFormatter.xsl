@@ -103,7 +103,14 @@
                 </xsl:for-each>
             </xsl:variable>
             <xsl:variable name="groupingfield">
-                <xsl:value-of select="concat(meta/seriesID, '-', $container1)"/>
+                <xsl:choose>
+                    <xsl:when test="meta/seriesID !=''">
+                        <xsl:value-of select="concat(meta/seriesID, '-', $container1)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="meta/identifier"/>
+                    </xsl:otherwise>
+                </xsl:choose>            
             </xsl:variable>
             <xsl:variable name="type">
                 <xsl:choose>
@@ -231,6 +238,9 @@
         <xsl:variable name="callno">
             <xsl:value-of select="/mods:mods/xtf:meta/*:callNo"/>
         </xsl:variable>
+        <xsl:variable name="groupingfield">
+            <xsl:value-of select="/mods:mods/xtf:meta/*:identifier"></xsl:value-of>
+        </xsl:variable>
         <xsl:variable name="barcode"/>
 
         <xsl:choose>
@@ -241,7 +251,8 @@
                 <a href="#" class="list-add" data-identifier="{$identifier}"
                     data-ItemNumber="{$barcode}" data-ItemTitle="{$title}"
                     data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNumber="{$callno}"
-                    data-ItemInfo3="{$url}" onClick="_gaq.push(['_trackEvent', 'My List', 'Add', 'Library Record']);">
+                    data-ItemInfo3="{$url}" data-GroupingField="{$groupingfield}"
+                    onClick="_gaq.push(['_trackEvent', 'My List', 'Add', 'Library Record']);">
                     <img src="/xtf/icons/default/addlist.png" alt="Add to My List" title="Add to My List"/>
                 </a>
             </xsl:otherwise>
