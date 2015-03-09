@@ -73,8 +73,9 @@
             <head>
                <xsl:copy-of select="$brand.links"/>
                <title>
-                  <!-- HA todo: this should be filename plus FA title -->
-                  <xsl:value-of select="meta/title"/>
+                  <xsl:value-of select="xtf:meta/*:filename"/>
+                  <xsl:text> - </xsl:text>
+                  <xsl:value-of select="xtf:meta/*:collectionTitle"/>
                </title>
             </head>
             <body>
@@ -89,7 +90,7 @@
                   </xsl:if>
                   <meta itemprop="http:/schema.org/name">
                      <xsl:attribute name="content">
-                        <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mods:xmlData/mods:mods/mods:titleInfo/mods:title"/>
+                        <xsl:value-of select="xtf:meta/*:filename"/>
                      </xsl:attribute>
                   </meta>
                   <div itemprop="http:/schema.org/contentLocation" itemscope="" itemtype="http:/schema.org/Place">
@@ -107,17 +108,17 @@
                      </div>
                      <meta itemprop="http:/schema.org/telephone" content="(914) 366-6300"/>
                   </div>
-                  <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mods:xmlData/mods:mods/mods:subject/mods:name[@encodinganalog=('700' or '710')]">
+                  <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mods:xmlData/mods:mods/mods:subject/mods:name[mods:role/mods:roleTerm='contributor']">
                      <meta itemprop="http:/schema.org/contributor">
                         <xsl:attribute name="content">
                            <xsl:apply-templates/>
                         </xsl:attribute>
                      </meta>
                   </xsl:for-each>
-                  <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mods:xmlData/mods:mods/mods:name/mods:namePart">
+                  <xsl:for-each select="xtf:meta/*:creator">
                      <meta itemprop="http:/schema.org/creator">
                         <xsl:attribute name="content">
-                           <xsl:apply-templates/>
+                           <xsl:value-of select="."/>
                         </xsl:attribute>
                      </meta>
                   </xsl:for-each>
@@ -138,11 +139,12 @@
                   </a>
                </div>
                <xsl:call-template name="bbar_custom"/>
-               <xsl:call-template name="bookmarkMenu"/>
                <div class="main">
                   <div id="tocWrapper">
-                     <xsl:call-template name="foundIn"/>
-                     <xsl:call-template name="subjects"/>
+                     <div id="toc">
+                        <xsl:call-template name="foundIn"/>
+                        <xsl:call-template name="subjects"/>
+                     </div>
                   </div>
                   <xsl:call-template name="body"/>
                </div>
@@ -157,124 +159,70 @@
    <!-- Document header for finding aid to which digital object is attached    -->
    <!-- ====================================================================== -->
    <xsl:template name="bbar_custom">
-      <!-- HA todo: need to add variables to get this data from somewhere else? -->
+      <xsl:variable name="collectionTitle">
+         <xsl:value-of select="xtf:meta/*:collectionTitle"/>
+      </xsl:variable>
+      <xsl:if test="string-length($collectionTitle) &gt; 175">
+         <xsl:attribute name="style"> font-size:1.15em; </xsl:attribute>
+      </xsl:if>
+      <xsl:variable name="eadId">
+         <xsl:value-of select="xtf:meta/*:collectionId"/>
+      </xsl:variable>
+      <xsl:variable name="collectionId">
+         <xsl:value-of select="substring-before($eadId, '.xml')"/>
+      </xsl:variable>
       <div class="bbar_custom">
-         <!--<div class="documentTitle ead">
+         <div class="documentTitle ead">
             <h1>
-               <xsl:variable name="title">
-                  <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
-               </xsl:variable>
-               <xsl:if test="string-length($title) &gt; 175">
-                  <xsl:attribute name="style"> font-size:1.15em; </xsl:attribute>
-               </xsl:if>
-               <xsl:choose>
-                  <xsl:when test="eadheader/filedesc/titlestmt/titleproper[@type='filing']">
-                     <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper[not(@type='filing')]"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
-                  </xsl:otherwise>
-               </xsl:choose>
+               <xsl:text>A Guide to the </xsl:text>
+               <xsl:value-of select="$collectionTitle"/>
+               <br/>
+               <xsl:value-of select="$collectionId"/>
             </h1>
          </div>
-         <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
-         <xsl:variable name="indexId" select="$identifier"/>
          <div class="headerIcons">
             <ul>
-               <xsl:if test="$doc.view != 'dao'">
-                  <li>
-                     <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf"
-                        onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
-                        <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
-                     </a>
-                  </li>
-               </xsl:if>
+               <li>
+                  <a href="{$xtfURL}/media/pdf/{$collectionId}.pdf" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
+                     <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
+                  </a>
+               </li>
             </ul>
          </div>
-         <xsl:variable name="searchPage">
-            <xsl:choose>
-               <xsl:when test="$doc.view='dao'">
-                  <xsl:value-of select="'Digital Materials'"/>
-               </xsl:when>
-               <xsl:when test="$doc.view='contents'">
-                  <xsl:value-of select="'Contents List'"/>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:value-of select="'Collection Description'"/>
-               </xsl:otherwise>
-            </xsl:choose>
-         </xsl:variable>
          <div class="headerSearch">
             <form action="{$xtfURL}{$dynaxmlPath}" method="get" class="bbform">
                <input name="query" type="text"/>
-               <input type="hidden" name="docId" value="{$docId}"/>
+               <input type="hidden" name="docId" value="ead/{$collectionId}/{$eadId}"/>
                <input type="hidden" name="chunk.id" value="contentsLink"/>
                <input type="hidden" name="doc.view" value="contentsSearch"/>
-               <input type="submit" value="Search Contents List" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
+               <input type="submit" value="Search Contents List" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', 'Digital Materials Detail']);"/>
             </form>
             <div class="searchAll">
                <a href="{$xtfURL}{$crossqueryPath}">Search all collections</a>
             </div>
          </div>
-         <xsl:call-template name="tabs"/>-->
+         <xsl:call-template name="tabs"/>
       </div>
    </xsl:template>
    <!-- ====================================================================== -->
    <!-- Tabs Templates                                                          -->
    <!-- ====================================================================== -->
    <xsl:template name="tabs">
-      <!-- HA todo: needs to be heavily edited -->
-      <!-- HA todo: see if we can get some of this stuff indexed -->
-      <!--<xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/></xsl:variable>
       <div class="tabs">
          <div class="tab collectionTab">
-            <xsl:choose>
-               <xsl:when test="$doc.view = 'collection'">
-                  <xsl:attribute name="class">tab collectionTab select</xsl:attribute>
-               </xsl:when>
-               <xsl:when test="$doc.view = 'contents'"/>
-               <xsl:when test="$doc.view = 'dao'"/>
-               <xsl:when test="$doc.view = 'contentsSearch'"/>
-               <xsl:otherwise>
-                  <xsl:attribute name="class">tab select</xsl:attribute>
-               </xsl:otherwise>
-            </xsl:choose>
             <xsl:call-template name="make-tab-link">
                <xsl:with-param name="name" select="'Collection Description'"/>
                <xsl:with-param name="id" select="'headerlink'"/>
                <xsl:with-param name="doc.view" select="'collection'"/>
-               <xsl:with-param name="nodes" select="archdesc/did"/>
             </xsl:call-template>
          </div>
          <div class="tab contentsTab">
-            <xsl:if test="$doc.view='contents' or $doc.view='contentsSearch'">
-               <xsl:attribute name="class">tab contentsTab select</xsl:attribute>
-            </xsl:if>
-            <xsl:variable name="idFile">
-               <xsl:choose>
-                  <xsl:when test="archdesc/dsc/child::*[1][@level = 'file']">
-                     <xsl:value-of select="'contentsLink'"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     <xsl:value-of select="archdesc/dsc/child::*[1]/@id"/>
-                  </xsl:otherwise>
-               </xsl:choose>
-            </xsl:variable>
-            <xsl:variable name="nodesLst">
-               <xsl:choose>
-                  <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file']">archdesc/dsc/child::*</xsl:when>
-                  <xsl:otherwise>archdesc/dsc/child::*[1]</xsl:otherwise>
-               </xsl:choose>
-            </xsl:variable>
-            <!-\- 7/24/12 WS: Added condition to test for finding aids with no contents list and supress this tab -\->
             <xsl:choose>
-               <xsl:when test="/ead/archdesc/dsc/child::*">
+               <xsl:when test="xtf:meta/*:componentTitle != ''">
                   <xsl:call-template name="make-tab-link">
                      <xsl:with-param name="name" select="'Contents List'"/>
                      <xsl:with-param name="id" select="'contentsLink'"/>
                      <xsl:with-param name="doc.view" select="'contents'"/>
-                     <xsl:with-param name="nodes" select="$nodesLst"/>
                   </xsl:call-template>
                </xsl:when>
                <xsl:otherwise>
@@ -282,50 +230,26 @@
                </xsl:otherwise>
             </xsl:choose>
          </div>
-         <div class="tab digitalTab">
-            <!-\- Need to insure only shows up if digital material is available -\->
-            <xsl:if test="$doc.view='dao'">
-               <xsl:attribute name="class">tab digitalTab select</xsl:attribute>
-            </xsl:if>
-            <xsl:variable name="idFile">
-               <xsl:choose>
-                  <xsl:when test="archdesc/dsc/child::*[1][@level = 'file' and exists(xtf:meta/*:type = 'dao')]">
-                     <xsl:value-of select="'digitalLink'"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     <xsl:value-of select="archdesc/dsc/child::*[xtf:meta/*:type = 'dao'][1]/@id"/>
-                  </xsl:otherwise>
-               </xsl:choose>
-            </xsl:variable>
-            <xsl:variable name="nodesLst">
-               <xsl:choose>
-                  <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file' and exists(dao)]">archdesc/dsc/child::*</xsl:when>
-                  <xsl:otherwise>archdesc/dsc/child::*[xtf:meta/*:type = 'dao'][1]</xsl:otherwise>
-               </xsl:choose>
-            </xsl:variable>
-            <xsl:choose>
-               <xsl:when test="/ead/xtf:meta/*:type = 'dao'">
-                  <xsl:call-template name="make-tab-link">
-                     <xsl:with-param name="name" select="'Digital Materials'"/>
-                     <xsl:with-param name="id" select="'digitalLink'"/>
-                     <xsl:with-param name="doc.view" select="'dao'"/>
-                     <xsl:with-param name="nodes" select="$nodesLst"/>
-                  </xsl:call-template>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:attribute name="class">clear</xsl:attribute>
-               </xsl:otherwise>
-            </xsl:choose>
+         <div class="tab digitalTab select">
+            <xsl:call-template name="make-tab-link">
+               <xsl:with-param name="name" select="'Digital Materials'"/>
+               <xsl:with-param name="id" select="'digitalLink'"/>
+               <xsl:with-param name="doc.view" select="'dao'"/>
+            </xsl:call-template>
          </div>
-      </div>-->
+      </div>
    </xsl:template>
+
    <xsl:template name="make-tab-link">
-      <!--<xsl:param name="name"/>
+      <xsl:param name="name"/>
       <xsl:param name="id"/>
       <xsl:param name="doc.view"/>
-      <xsl:param name="nodes"/>
       <xsl:param name="indent" select="1"/>
-      <xsl:variable name="hit.count">
+      <xsl:variable name="collectionId">
+         <xsl:value-of select="substring-before(xtf:meta/*:collectionId, '.xml')"/>
+      </xsl:variable>
+      <!-- HA todo: hits??? -->
+      <!--<xsl:variable name="hit.count">
          <xsl:choose>
             <xsl:when test="$doc.view='collection'">
                <xsl:value-of select="/ead/archdesc/@xtf:hitCount - /ead/archdesc/dsc/@xtf:hitCount"/>
@@ -337,7 +261,7 @@
                <xsl:value-of select="'0'"/>
             </xsl:otherwise>
          </xsl:choose>
-      </xsl:variable>
+      </xsl:variable>-->
       <xsl:variable name="tracking-id">
          <xsl:choose>
             <xsl:when test="$id='contentsLink'">
@@ -351,24 +275,8 @@
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
-      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"
-      />&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>
       <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'tab', '{$tracking-id}']);">
-         
-         <!-\- 5/17/2012 DG: create variables for the new href: documentname2, basicchoice2, xtfURL2, href2. Just use chunk.id and doc name for now-\->
-         <xsl:variable name="documentname2">
-            <xsl:analyze-string select="$query.string" regex="docId=ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
-               
-               <xsl:matching-substring>
-                  <xsl:value-of select="regex-group(2)"/>
-               </xsl:matching-substring>
-               
-               <xsl:non-matching-substring>
-                  <xsl:text>no_match_docname</xsl:text>
-               </xsl:non-matching-substring>
-            </xsl:analyze-string>
-         </xsl:variable>
-         
+
          <xsl:variable name="basicchoice2">
             <xsl:choose>
                <xsl:when test="$id='headerlink'">
@@ -387,7 +295,7 @@
             </xsl:choose>
          </xsl:variable>
          <xsl:variable name="xtfURL2">
-            <!-\- remove xtf/ from end, if there.  -\->
+            <!-- remove xtf/ from end, if there.  -->
             <xsl:analyze-string select="$xtfURL" regex="(.*)xtf/">
                <xsl:matching-substring>
                   <xsl:value-of select="regex-group(1)"/>
@@ -397,24 +305,13 @@
                </xsl:non-matching-substring>
             </xsl:analyze-string>
          </xsl:variable>
-         
-         <xsl:variable name="href2">
-            <xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2)"/>
-         </xsl:variable>
-         <!-\-  end new  DG: created $href2 -\->
+
          <xsl:attribute name="href">
-            <xsl:choose>
-               <xsl:when test="($query != '0') and ($query != '')">
-                  <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:value-of select="$href2"/>
-               </xsl:otherwise>
-            </xsl:choose>
+            <xsl:value-of select="concat($xtfURL2, $collectionId, '/', $basicchoice2)"/>
          </xsl:attribute>
          <xsl:value-of select="$name"/>
       </a>
-      <xsl:if test="string-length($hit.count) &gt; 0 and $hit.count != '0'">
+      <!--<xsl:if test="string-length($hit.count) &gt; 0 and $hit.count != '0'">
          <span class="hit"> (<xsl:value-of select="$hit.count"/>)</span>
       </xsl:if>-->
    </xsl:template>
@@ -427,11 +324,12 @@
       </xsl:variable>-->
       <div id="content-wrapper">
          <div id="content-right">
+            <xsl:call-template name="bookmarkMenu"/>
             <div class="thumbnail">
                <img src="/xtf/icons/default/thumbnail-large.png" height="300px"/>
                <div class="thumbnailButtons">
-                  <button class="download"><img src="/xtf/icons/default/download.png"/> Download</button>
-                  <button class="view"><img src="/xtf/icons/default/view.png"/> View</button>
+                  <button class="btn btn-default download"><img src="/xtf/icons/default/download.png"/> Download</button>
+                  <button class="btn btn-default view"><img src="/xtf/icons/default/view.png"/> View</button>
                </div>
             </div>
             <div class="description">
@@ -447,10 +345,7 @@
                </div>
                <div class="extent">
                   <p>
-                     <xsl:variable name="fileid">
-                        <xsl:value-of select="/mets:mets/mets:fileSec/mets:fileGrp/mets:file/@ID"/>
-                     </xsl:variable>
-                     <xsl:value-of select="/mets:mets/mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/*:mods/*:identifier"/>
+                     <xsl:value-of select="xtf:meta/*:format"/>
                      <xsl:if test="xtf:meta/*:size">
                         <xtf:text>, </xtf:text>
                         <xsl:value-of select="xtf:meta/*:size"/>
@@ -502,6 +397,7 @@
    <!-- Controlled Terms Templates                                             -->
    <!-- ====================================================================== -->
    <xsl:template name="subjects">
+      <!-- HA todo: link subject terms -->
       <div class="subjects">
          <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject">
             <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject"/>
@@ -512,7 +408,7 @@
    <xsl:template match="mods:subject">
       <xsl:if test="mods:topic">
          <h4>Subjects</h4>
-         <ul>
+         <ul class="none">
             <xsl:for-each select="mods:topic">
                <li>
                   <xsl:value-of select="."/>
@@ -521,52 +417,60 @@
          </ul>
       </xsl:if>
       <xsl:if test="mods:geographic">
-      <h4>Places</h4>
-      <ul>
-         <xsl:for-each select="mods:geographic">
-            <li>
-               <xsl:value-of select="."/>
-            </li>
-         </xsl:for-each>
-      </ul>
+         <h4>Places</h4>
+         <ul class="none">
+            <xsl:for-each select="mods:geographic">
+               <li>
+                  <xsl:value-of select="."/>
+               </li>
+            </xsl:for-each>
+         </ul>
       </xsl:if>
       <xsl:if test="mods:name">
          <xsl:if test="mods:name[@type='personal']">
             <h4>People</h4>
-            <xsl:for-each select="mods:name[@type='personal']">
-               <li>
-                  <xsl:value-of select="mods:namePart"/>
-               </li>
-            </xsl:for-each>
+            <ul class="none">
+               <xsl:for-each select="mods:name[@type='personal']">
+                  <li>
+                     <xsl:apply-templates/>
+                  </li>
+               </xsl:for-each>
+            </ul>
          </xsl:if>
          <xsl:if test="mods:name[@type='corporate']">
             <h4>Organizations</h4>
-            <xsl:for-each select="mods:name[@type='corporate']">
-               <li>
-                  <xsl:value-of select="mods:namePart"/>
-               </li>
-            </xsl:for-each>
+            <ul class="none">
+               <xsl:for-each select="mods:name[@type='corporate']">
+                  <li>
+                     <xsl:apply-templates/>
+                  </li>
+               </xsl:for-each>
+            </ul>
          </xsl:if>
          <xsl:if test="mods:name[@type='family']">
             <h4>Families</h4>
-            <xsl:for-each select="mods:name[@type='family']">
-               <li>
-                  <xsl:value-of select="mods:namePart"/>
-               </li>
-            </xsl:for-each>
+            <ul class="none">
+               <xsl:for-each select="mods:name[@type='family']">
+                  <li>
+                     <xsl:apply-templates/>
+                  </li>
+               </xsl:for-each>
+            </ul>
          </xsl:if>
          <xsl:if test="mods:name[@type='conference']">
             <h4>Conferences</h4>
-            <xsl:for-each select="mods:name[@type='conference']">
-               <li>
-                  <xsl:value-of select="mods:namePart"/>
-               </li>
-            </xsl:for-each>
+            <ul class="none">
+               <xsl:for-each select="mods:name[@type='conference']">
+                  <li>
+                     <xsl:apply-templates/>
+                  </li>
+               </xsl:for-each>
+            </ul>
          </xsl:if>
       </xsl:if>
       <xsl:if test="mods:genre">
          <h4>Formats</h4>
-         <ul>
+         <ul class="none">
             <xsl:for-each select="mods:genre">
                <li>
                   <xsl:value-of select="."/>
@@ -574,6 +478,14 @@
             </xsl:for-each>
          </ul>
       </xsl:if>
+
+   </xsl:template>
+
+   <xsl:template match="mods:name">
+      <xsl:for-each select="mods:namePart">
+         <xsl:value-of select="normalize-space(.)"/>
+         <xsl:if test="position() != last()">&#160;</xsl:if>
+      </xsl:for-each>
    </xsl:template>
 
    <!-- ====================================================================== -->
