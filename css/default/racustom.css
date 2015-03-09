@@ -342,6 +342,10 @@ ul.none {list-style:none;}
 #content-wrapper .active a {color: #fff;}
 #content-wrapper a:hover {text-decoration:underline;}
 
+#content-wrapper .dropdown-menu {min-width:0}
+#content-wrapper .dropdown-menu > li > a {width:5em;}
+#content-wrapper .dropdown-menu > li > a:hover {color:#fff; text-decoration:none;}
+
 #content-wrapper h2 {padding-top:1em;}
          
 #content-right {
@@ -402,6 +406,25 @@ ul.none {list-style:none;}
 
 /* --- Formats library records --- */
 .modsInfo h3 {margin:0; padding:.25em .25em 1em .25em; background-color:#ccc !important; border:red;}
+
+/*--- Formats METS records ---*/
+
+.thumbnail {
+    float:left;
+}
+
+.thumbnailButtons {
+    text-align:center;
+}
+
+.thumbnailButtons img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.thumbnailButtons .btn {
+    margin: 1em .5em;
+}
 
 /* --- Custom styles for dialog --- */
 .dao-container {
