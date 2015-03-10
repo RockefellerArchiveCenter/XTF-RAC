@@ -329,7 +329,11 @@
          </div>
          <div class="headerSearch">
             <form action="{$xtfURL}{$dynaxmlPath}" method="get" class="bbform">
-               <input name="query" type="text"/>
+               <input name="query" type="text">
+                  <xsl:attribute name="value">
+                     <xsl:if test="$doc.view='contentsSearch'"><xsl:value-of select="$query"/></xsl:if>
+                  </xsl:attribute>
+               </input>
                <input type="hidden" name="docId" value="{$docId}"/>
                <input type="hidden" name="chunk.id" value="contentsLink"/>
                <input type="hidden" name="doc.view" value="contentsSearch"/>

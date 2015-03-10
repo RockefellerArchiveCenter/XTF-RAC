@@ -1721,7 +1721,9 @@
                </div>
                <!-- ADDED 1/4/11: Adds container headings if series/subseries is followed by a file -->
                <xsl:if test="child::*[@level][1]/@level='file' or child::*[@level][1]/@level='item' or (child::*[@level][1]/@level='otherlevel'and child::*[@level][1]/child::did/container)">
-                  <div class="inventoryTitle {$clevelChildMargin}">Inventory</div>
+                  <xsl:if test="$doc.view!='contentsSearch'">
+                     <div class="inventoryTitle {$clevelChildMargin}">Inventory</div>
+                  </xsl:if>
                   <div class="inventoryHeader {$clevelChildMargin}">
                      <span class="inventoryHeaderTitle">Title</span>
                      <span class="inventoryHeaderContainers">Containers</span>
@@ -1735,7 +1737,9 @@
             <xsl:when test="@level='file' or @level='item' or (@level='otherlevel'and child::did/container)">
                <!-- Tests to see if current container type is different from previous container type, if it is a new row with container type headings is outout -->
                <xsl:if test="not(preceding-sibling::*) and parent::dsc">
-                  <div class="inventoryTitle {$clevelChildMargin}">Inventory</div>
+                  <xsl:if test="$doc.view!='contentsSearch'">
+                     <div class="inventoryTitle {$clevelChildMargin}">Inventory</div>
+                  </xsl:if>
                   <div class="inventoryHeader {$clevelChildMargin}">
                      <span class="inventoryHeaderTitle">Title</span>
                      <span class="inventoryHeaderContainers">Containers</span>
