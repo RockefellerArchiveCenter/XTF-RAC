@@ -26,6 +26,7 @@
       <script type="text/javascript" src="/xtf/script/rac/dialog.js"/>
       <script type="text/javascript" src="/xtf/script/rac/datepicker.js"/>
       <script src="script/rac/componentInfo.js" type="text/javascript"/>
+      <script src="script/rac/daoTable.js" type="text/javascript"/>
       <script type="text/javascript" src="/xtf/script/bookbag.js"/>
       
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
@@ -61,6 +62,7 @@
       <script type="text/javascript" src="/xtf/script/rac/datepicker.js"/>
       <script type="text/javascript" src="/xtf/script/bookbag.js"/>
       <script src="script/rac/componentInfo.js" type="text/javascript"/>
+      <script src="script/rac/daoTable.js" type="text/javascript"/>
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
          'UA-10013579-1']); _gaq.push(['_trackPageview']); (function() { var ga =
          document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src =

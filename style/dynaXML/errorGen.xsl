@@ -96,6 +96,7 @@
 <xsl:param name="message"/>
 <xsl:param name="ipAddr" select="''"/>
 <xsl:param name="stackTrace" select="''"/>
+<xsl:param name="smode"/>
 
 <!-- ====================================================================== -->
 <!-- Root Template                                                          -->
@@ -132,6 +133,11 @@
 </xsl:variable>
 
 <xsl:template match="/">
+   <xsl:choose>
+      <xsl:when test="$smode = 'daoTable'">
+         <p>missing</p>
+      </xsl:when>
+      <xsl:otherwise>
 
   <html>
     <head>
@@ -3960,6 +3966,8 @@
       </div>
      </body>
   </html>
+      </xsl:otherwise>
+   </xsl:choose>
 
 </xsl:template>
 
