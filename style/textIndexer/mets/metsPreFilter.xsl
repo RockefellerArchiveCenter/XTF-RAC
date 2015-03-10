@@ -159,39 +159,44 @@
             </xsl:otherwise>
          </xsl:choose>
       </format>
-      <xsl:if test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size !=''">
-         <size xtf:meta="true" xtf:tokenize="no">
-            <xsl:variable name="byteSize">
-               <xsl:value-of select="number(/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size)"/>
-            </xsl:variable>
-            <xsl:choose>
-               <xsl:when test="$byteSize &gt; 1099511627776">
-                  <!-- convert to TB -->
-                  <xsl:value-of select="format-number($byteSize div 1099511627776, '#.##')"/>
-                  <xsl:text> TB</xsl:text>
-               </xsl:when>
-               <xsl:when test="$byteSize &gt; 1073741824">
-                  <!-- convert to GB -->
-                  <xsl:value-of select="format-number($byteSize div 1073741824, '#.##')"/>
-                  <xsl:text> GB</xsl:text>
-               </xsl:when>
-               <xsl:when test="$byteSize &gt; 1048576">
-                  <!-- convert to MB -->
-                  <xsl:value-of select="format-number($byteSize div 1048576, '#.##')"/>
-                  <xsl:text> MB</xsl:text>
-               </xsl:when>
-               <xsl:when test="$byteSize &gt; 1024">
-                  <!-- convert to KB -->
-                  <xsl:value-of select="format-number($byteSize div 1024, '#.##')"/>
-                  <xsl:text> KB</xsl:text>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:value-of select="$byteSize"/>
-                  <xsl:text> Bytes</xsl:text>
-               </xsl:otherwise>
-            </xsl:choose>
-         </size>
-      </xsl:if>
+      <size xtf:meta="true" xtf:tokenize="no">
+         <xsl:choose>
+            <xsl:when test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size !=''">
+               <xsl:variable name="byteSize">
+                  <xsl:value-of select="number(/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size)"/>
+               </xsl:variable>
+               <xsl:choose>
+                  <xsl:when test="$byteSize &gt; 1099511627776">
+                     <!-- convert to TB -->
+                     <xsl:value-of select="format-number($byteSize div 1099511627776, '#.##')"/>
+                     <xsl:text> TB</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$byteSize &gt; 1073741824">
+                     <!-- convert to GB -->
+                     <xsl:value-of select="format-number($byteSize div 1073741824, '#.##')"/>
+                     <xsl:text> GB</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$byteSize &gt; 1048576">
+                     <!-- convert to MB -->
+                     <xsl:value-of select="format-number($byteSize div 1048576, '#.##')"/>
+                     <xsl:text> MB</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$byteSize &gt; 1024">
+                     <!-- convert to KB -->
+                     <xsl:value-of select="format-number($byteSize div 1024, '#.##')"/>
+                     <xsl:text> KB</xsl:text>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="$byteSize"/>
+                     <xsl:text> Bytes</xsl:text>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:text>unknown</xsl:text>
+            </xsl:otherwise>
+         </xsl:choose>
+      </size>
    </xsl:template>
 
    <!-- creator -->
@@ -232,22 +237,30 @@
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
-   
+
    <!-- get component and resource parents -->
    <xsl:template name="get-mets-parents">
       <xsl:if test="/mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:relatedItem[@type='host']">
          <xsl:apply-templates select="/mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:relatedItem[@type='host']"/>
       </xsl:if>
    </xsl:template>
-   
+
    <xsl:template match="mods:relatedItem[@type='host']">
       <xsl:if test="@displayLabel='resource'">
-         <collectionTitle xtf:meta="true"><xsl:value-of select="mods:name"/></collectionTitle>
-         <collectionId xtf:meta="true"><xsl:value-of select="mods:identifier"/></collectionId>
+         <collectionTitle xtf:meta="true">
+            <xsl:value-of select="mods:name"/>
+         </collectionTitle>
+         <collectionId xtf:meta="true">
+            <xsl:value-of select="mods:identifier"/>
+         </collectionId>
       </xsl:if>
       <xsl:if test="@displayLabel='component'">
-         <componentTitle xtf:meta="true"><xsl:value-of select="mods:name"/></componentTitle>
-         <componentId xtf:meta="true"><xsl:value-of select="mods:identifier"/></componentId>
+         <componentTitle xtf:meta="true">
+            <xsl:value-of select="mods:name"/>
+         </componentTitle>
+         <componentId xtf:meta="true">
+            <xsl:value-of select="mods:identifier"/>
+         </componentId>
       </xsl:if>
    </xsl:template>
 

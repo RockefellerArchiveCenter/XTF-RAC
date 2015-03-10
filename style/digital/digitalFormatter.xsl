@@ -21,14 +21,24 @@
         <table class="daoTable">
             <tr>
                 <th>Filename</th>
-                <th>Last Modified</th>
                 <th>Format</th>
                 <th>Size</th>
             </tr>
-            <xsl:for-each select="xtf:meta/daoLink">
-                <tr data-identifier=".">
-                    <td><xsl:value-of select="."/></td>
-                </tr>
+            <xsl:for-each select="meta/daoLink">
+                <xsl:if test=".!=''">
+                    <xsl:variable name="identifier">
+                        <!--http://storage.rockarch.org/46d03fe1-c30d-49b9-b1ff-da164a414ec3-rac_rfdiaries_12-2_mason_1928-1936_006.pdf-->
+                        <xsl:analyze-string select="." regex="http://storage.rockarch.org/(([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+))\-(.*)" flags="i">
+                            <xsl:matching-substring>
+                                <xsl:value-of select="regex-group(1)"/>
+                            </xsl:matching-substring>
+                            <xsl:non-matching-substring>
+                                <xsl:value-of select="'none'"/>
+                            </xsl:non-matching-substring>
+                        </xsl:analyze-string>
+                    </xsl:variable>
+                    <tr class="dao" data-identifier="{$identifier}"/>
+                </xsl:if>
             </xsl:for-each>
         </table>
     </xsl:template>

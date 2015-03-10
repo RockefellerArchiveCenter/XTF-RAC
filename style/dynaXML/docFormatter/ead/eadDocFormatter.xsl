@@ -1,5 +1,6 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xtf="http://cdlib.org/xtf" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml"
-   xmlns:session="java:org.cdlib.xtf.xslt.Session" extension-element-prefixes="session" exclude-result-prefixes="#all" xpath-default-namespace="urn:isbn:1-931666-22-9">
+   xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:xlink="http://www.w3.org/1999/xlink" extension-element-prefixes="session" exclude-result-prefixes="#all"
+   xpath-default-namespace="urn:isbn:1-931666-22-9">
 
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    <!-- EAD dynaXML Stylesheet                                                 -->
@@ -153,6 +154,9 @@
             <xsl:call-template name="citation"/>
          </xsl:when>
          <!-- Creates the basic frameset.-->
+         <xsl:when test="$doc.view='parents'">
+            <xsl:call-template name="parents"/>
+         </xsl:when>
          <xsl:otherwise>
             <xsl:call-template name="contents"/>
          </xsl:otherwise>
@@ -324,6 +328,20 @@
                   </xsl:otherwise>
                </xsl:choose>
             </h1>
+         </div>
+         <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
+         <xsl:variable name="indexId" select="$identifier"/>
+         <div class="headerIcons">
+            <ul>
+               <xsl:if test="$doc.view != 'dao'">
+                  <li>
+                     <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
+                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
+                        <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
+                     </a>
+                  </li>
+               </xsl:if>
+            </ul>
          </div>
          <xsl:variable name="searchPage">
             <xsl:choose>
@@ -1260,6 +1278,43 @@
             <hr/>
          </body>
       </html>
+   </xsl:template>
+
+   <!-- ====================================================================== -->
+   <!-- Show Parents Template (for digital objects)                            -->
+   <!-- ====================================================================== -->
+   <xsl:template name="parents">
+      <xsl:variable name="offset">
+         <xsl:value-of select="count(/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:parent) + 1"/>
+      </xsl:variable>
+      <xsl:variable name="componentLink">
+         <xsl:value-of select="'test'"/>
+      </xsl:variable>
+      <div>
+      <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:parent[position()&gt;1]">
+         <div class="parent" style="padding-left:{(position() -1)}em">
+            <xsl:variable name="seriesLink">
+               <xsl:value-of select="concat($xtfURL, $dynaxmlPath, '?docId=', $docId, ';chunk.id=', ../*:seriesID, ';doc.view=contents')"/>
+            </xsl:variable>
+            <a href="{$seriesLink}">
+               <xsl:value-of select="."/>
+            </a>
+         </div>
+         <div class="component" style="padding-left:{offset}em">
+            <a href="{$componentLink}">
+               <xsl:value-of select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:title"/>
+            </a>
+         </div>
+         <div class="sibling" style="padding-left:{offset + 1}em">
+            <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/did/dao">
+               <xsl:variable name="daoLink"/>
+               <a href="#">
+                  <xsl:value-of select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/@xlink:title"/>
+               </a>
+            </xsl:for-each>
+         </div>
+      </xsl:for-each>
+      </div>
    </xsl:template>
 
 </xsl:stylesheet>

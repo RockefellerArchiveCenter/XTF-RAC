@@ -58,6 +58,9 @@
          <xsl:when test="matches($http.user-agent,$robots)">
             <xsl:call-template name="robot"/>
          </xsl:when>
+         <xsl:when test="$smode='daoTable'">
+            <xsl:call-template name="daoSummary"/>
+         </xsl:when>
          <!-- Creates the basic frameset.-->
          <xsl:otherwise>
             <xsl:call-template name="contents"/>
@@ -492,8 +495,15 @@
    <!-- EAD Hierarchy Templates                                                -->
    <!-- ====================================================================== -->
    <xsl:template name="foundIn">
+      <xsl:variable name="collectionId">
+         <xsl:value-of select="xtf:meta/*:collectionId"/>
+      </xsl:variable>
+      <xsl:variable name="componentId">
+         <xsl:value-of select="xtf:meta/*:componentId"/>
+      </xsl:variable>
       <div class="foundIn">
          <h3>Found In</h3>
+         <p data-collectionId="{$collectionId}" componentId="{$componentId}"/>
       </div>
    </xsl:template>
    <!-- ====================================================================== -->
@@ -522,4 +532,28 @@
          </div>
       </div>
    </xsl:template>
+   
+   <!-- ====================================================================== -->
+   <!-- DAO summary for tables                                                 -->
+   <!-- ====================================================================== -->
+   
+   <xsl:template name="daoSummary">
+      <xsl:variable name="link">
+         <xsl:value-of select="concat('/xtf/view?docId=mets/', xtf:meta/*:identifier, '_mets/', xtf:meta/*:identifier, '_mets.xml')"/>
+      </xsl:variable>
+      <tr>
+         <td>
+            <xsl:value-of select="xtf:meta/*:filename"/>
+         </td>
+         <td>
+            <xsl:value-of select="xtf:meta/*:format"/>
+         </td>
+         <td>
+            <xsl:value-of select="xtf:meta/*:size"/>
+         </td>
+         <td><a href="{$link}">details</a></td>
+      </tr>
+   </xsl:template>
+   
+   
 </xsl:stylesheet>
