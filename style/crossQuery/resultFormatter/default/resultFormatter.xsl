@@ -1091,11 +1091,12 @@
 
          </div>
          <div class="activeArrow"/>
+         <div id="componentInfo_{@rank}" class="componentInfo">
+            <xsl:apply-templates select="." mode="collection"/>
+         </div>
 
       </div>
-      <div id="componentInfo_{@rank}" class="componentInfo">
-         <xsl:apply-templates select="." mode="collection"/>
-      </div>
+
    </xsl:template>
 
    <!-- HA todo: can this call docHit template for first part of code? -->
@@ -1790,7 +1791,6 @@
                      <xsl:value-of select="$docPath"/>
                   </xsl:otherwise>
                </xsl:choose>
-
             </xsl:attribute>
             <xsl:if test="meta/*:type = 'dao'">
                <xsl:attribute name="onClick">
