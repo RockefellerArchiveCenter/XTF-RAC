@@ -23,6 +23,8 @@
                 <th>Filename</th>
                 <th>Format</th>
                 <th>Size</th>
+                <th> </th>
+                <th> </th>
             </tr>
             <xsl:for-each select="meta/daoLink">
                 <xsl:if test=".!=''">
