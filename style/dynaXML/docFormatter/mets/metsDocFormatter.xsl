@@ -505,7 +505,7 @@
       </xsl:variable>
       <div class="foundIn">
          <h3>Found In</h3>
-         <p data-collectionId="{$collectionId}" componentId="{$componentId}"/>
+         <p data-collectionId="{$collectionId}" data-componentId="{$componentId}"/>
       </div>
    </xsl:template>
    <!-- ====================================================================== -->
@@ -541,7 +541,10 @@
    
    <xsl:template name="daoSummary">
       <xsl:variable name="link">
-         <xsl:value-of select="concat('/xtf/view?docId=mets/', xtf:meta/*:identifier, '_mets/', xtf:meta/*:identifier, '_mets.xml')"/>
+         <xsl:value-of select="concat('/xtf/view?docId=mets/', xtf:meta/*:identifier, '/', xtf:meta/*:identifier, '.xml')"/>
+      </xsl:variable>
+      <xsl:variable name="downloadLink">
+         <xsl:value-of select="concat('http://storage.rockarch.org/', xtf:meta/*:identifier, '-', xtf:meta/*:filename)"/>
       </xsl:variable>
       <tr>
          <td>
@@ -554,6 +557,7 @@
             <xsl:value-of select="xtf:meta/*:size"/>
          </td>
          <td><a href="{$link}">details</a></td>
+         <td><a href="{$downloadLink}" download="true"><img src="/xtf/icons/default/download.png"/></a></td>
       </tr>
    </xsl:template>
    
