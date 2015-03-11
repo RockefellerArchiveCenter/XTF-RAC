@@ -139,22 +139,23 @@
       </filename>
       <format xtf:meta="true">
          <xsl:choose>
-            <xsl:when test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation">
+            <xsl:when test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatName !=''">
                <xsl:value-of select="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatName"/>
-               <xsl:if test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatVersion">
+               <xsl:if test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatVersion !=''">
                   <xsl:text> (version </xsl:text>
                   <xsl:value-of select="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatVersion"/>
                   <xsl:text>)</xsl:text>
                </xsl:if>
             </xsl:when>
             <xsl:otherwise>
+               <!-- HA todo: align this list with AS values -->
                <xsl:variable name="extension">
-                  <xsl:value-of select="substring-after($uri, $filename)"/>
+                  <xsl:value-of select="substring-after($filename, '.')"/>
                </xsl:variable>
                <xsl:choose>
-                  <xsl:when test="$extension='.pdf'">PDF</xsl:when>
-                  <xsl:when test="$extension='.doc'">Word Document</xsl:when>
-                  <xsl:when test="$extension='.docx'">Word Document</xsl:when>
+                  <xsl:when test="$extension='pdf'">PDF</xsl:when>
+                  <xsl:when test="$extension='doc'">Word Document</xsl:when>
+                  <xsl:when test="$extension='docx'">Word Document</xsl:when>
                </xsl:choose>
             </xsl:otherwise>
          </xsl:choose>
