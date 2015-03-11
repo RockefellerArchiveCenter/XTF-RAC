@@ -398,6 +398,23 @@ ul.none {list-style:none;}
 /* --- Formats library records --- */
 .modsInfo h3 {margin:0; padding:.25em .25em 1em .25em; background-color:#ccc !important; border:red;}
 
+/* --- DAO tables --- */
+
+.daoTable {
+  text-align: left;
+  border-collapse: collapse;
+  background-color:#fff;
+  float: right;
+  width: 82%;
+}
+
+.daoTable td, th {
+  border: 1px solid #666;
+  padding: 0 2px;
+}
+
+
+
 /*--- Formats METS records ---*/
 
 .thumbnail {
