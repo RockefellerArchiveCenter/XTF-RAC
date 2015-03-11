@@ -135,7 +135,7 @@
 <xsl:template match="/">
    <xsl:choose>
       <xsl:when test="$smode = 'daoTable'">
-         <p>missing</p>
+         <p>missing <xsl:value-of select="$docId"/></p>
       </xsl:when>
       <xsl:otherwise>
 
