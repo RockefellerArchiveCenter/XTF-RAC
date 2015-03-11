@@ -252,6 +252,7 @@
          <xsl:value-of select="substring-before(xtf:meta/*:collectionId, '.xml')"/>
       </xsl:variable>
       <!-- HA todo: hits??? -->
+      <!-- HA todo: add support for queries -->
       <!--<xsl:variable name="hit.count">
          <xsl:choose>
             <xsl:when test="$doc.view='collection'">
@@ -409,6 +410,7 @@
    </xsl:template>
 
    <xsl:template match="mods:subject">
+      <!-- HA todo: check if this is correct. names may not export as subjects -->
       <xsl:if test="mods:topic">
          <h4>Subjects</h4>
          <ul class="none">
