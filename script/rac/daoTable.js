@@ -7,7 +7,7 @@ $(document).ready(function () {
         var a = $(this);
         var identifier = $(this).attr('data-identifier');
         a.text('Loading...');
-        var search = '/xtf/view?docId=mets/'+identifier+'_mets/'+identifier+'_mets.xml;smode=daoTable';
+        var search = '/xtf/view?docId=mets/'+identifier+'/'+identifier+'.xml;smode=daoTable';
         $.ajax(search).success(function (data) {
             // If results were retrieved, display them
             a.replaceWith(data);
@@ -20,7 +20,7 @@ $(document).ready(function () {
     $(function () {
         var collectionId = $(parents).attr('data-collectionId');
         var componentId = $(parents).attr('data-componentId');
-        var resourceId = collectionId.substring(0, collectionId.indexOf('.xml');
+        var resourceId = collectionId.substring(0, collectionId.indexOf('.xml'));
         $(parents).text('Loading...');
         var search = '/xtf/view?docId=ead/'+resourceId+'/'+collectionId+';chunk.id=aspace_'+componentId+';doc.view=parents';
         $.ajax(search).success(function (data) {
