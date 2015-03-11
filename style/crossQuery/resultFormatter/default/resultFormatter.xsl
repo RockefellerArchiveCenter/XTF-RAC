@@ -938,11 +938,6 @@
                      <xsl:attribute name="href">
                         <xsl:value-of select="$docPath"/>
                      </xsl:attribute>
-                     <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
-                        <xsl:attribute name="onClick">
-                           <xsl:text>_gaq.push(['_trackEvent', 'digital object', 'view', 'results page']);</xsl:text>
-                        </xsl:attribute>
-                     </xsl:if>
                      <xsl:choose>
                         <xsl:when test="meta/title != ''">
                            <xsl:apply-templates select="meta/title"/>
@@ -1036,11 +1031,12 @@
 
          </div>
          <div class="activeArrow"/>
+         <div id="componentInfo_{@rank}" class="componentInfo">
+            <xsl:apply-templates select="." mode="collection"/>
+         </div>
 
       </div>
-      <div id="componentInfo_{@rank}" class="componentInfo">
-         <xsl:apply-templates select="." mode="collection"/>
-      </div>
+      
    </xsl:template>
 
    <!-- HA todo: can this call docHit template for first part of code? -->
@@ -1704,13 +1700,7 @@
                      <xsl:value-of select="$docPath"/>
                   </xsl:otherwise>
                </xsl:choose>
-
             </xsl:attribute>
-            <xsl:if test="meta/*:type = 'dao'">
-               <xsl:attribute name="onClick">
-                  <xsl:text>_gaq.push(['_trackEvent', 'digital object', 'view', 'results page']);</xsl:text>
-               </xsl:attribute>
-            </xsl:if>
             <xsl:choose>
                <xsl:when test="$type='dao'">
                   <xsl:apply-templates select="meta/title"/>
