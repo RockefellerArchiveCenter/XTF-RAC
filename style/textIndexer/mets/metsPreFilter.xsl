@@ -153,9 +153,15 @@
                   <xsl:value-of select="substring-after($filename, '.')"/>
                </xsl:variable>
                <xsl:choose>
-                  <xsl:when test="$extension='pdf'">PDF</xsl:when>
-                  <xsl:when test="$extension='doc'">Word Document</xsl:when>
-                  <xsl:when test="$extension='docx'">Word Document</xsl:when>
+                  <xsl:when test="$extension='pdf'">
+                     <xsl:text>PDF</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$extension='doc'">
+                     <xsl:text>Word Document</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$extension='docx'">
+                     <xsl:text>Word Document</xsl:text>
+                  </xsl:when>
                </xsl:choose>
             </xsl:otherwise>
          </xsl:choose>
