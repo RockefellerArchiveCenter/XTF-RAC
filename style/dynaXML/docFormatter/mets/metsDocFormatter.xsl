@@ -1,6 +1,8 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xtf="http://cdlib.org/xtf" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mets="http://www.loc.gov/METS/"
+   xmlns:lxslt="http://xml.apache.org/xslt"
+   xmlns:result="http://www.example.com/results"
    xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.w3.org/1999/xhtml" xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:xlink="http://www.w3.org/1999/xlink"
-   extension-element-prefixes="session" exclude-result-prefixes="#all">
+   extension-element-prefixes="session result" exclude-result-prefixes="#all">
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    <!-- METS dynaXML Stylesheet                                                -->
    <!-- Author: Hillel Arnold, Rockefeller Archive Center                      -->
@@ -48,6 +50,7 @@
       </xsl:choose>
    </xsl:param>
    <xsl:param name="parentID"/>
+   
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
@@ -323,6 +326,7 @@
    <!-- Main body template                                                     -->
    <!-- ====================================================================== -->
    <xsl:template name="body">
+      
       <!--<xsl:variable name="file">
          <xsl:value-of select="/mods:mods/mods:identifier"/>
       </xsl:variable>-->
@@ -350,7 +354,7 @@
                <div class="extent">
                   <p>
                      <xsl:value-of select="xtf:meta/*:format"/>
-                     <xsl:if test="xtf:meta/*:size">
+                     <xsl:if test="xtf:meta/*:size !='unknown'">
                         <xtf:text>, </xtf:text>
                         <xsl:value-of select="xtf:meta/*:size"/>
                      </xsl:if>

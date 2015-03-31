@@ -126,6 +126,9 @@
 
    <xsl:template match="/ead">
       <xsl:choose>
+         <xsl:when test="$doc.view='parents'">
+            <xsl:call-template name="parents"/>
+         </xsl:when>
          <!-- robot solution -->
          <!--<xsl:when test="matches($http.user-agent,$robots)">
             <xsl:call-template name="robot"/>
@@ -154,9 +157,6 @@
             <xsl:call-template name="citation"/>
          </xsl:when>
          <!-- Creates the basic frameset.-->
-         <xsl:when test="$doc.view='parents'">
-            <xsl:call-template name="parents"/>
-         </xsl:when>
          <xsl:otherwise>
             <xsl:call-template name="contents"/>
          </xsl:otherwise>
@@ -1284,9 +1284,7 @@
    <!-- Show Parents Template (for digital objects)                            -->
    <!-- ====================================================================== -->
    <xsl:template name="parents">
-      <xsl:variable name="offset">
-         <xsl:value-of select="count(/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:parent) + 1"/>
-      </xsl:variable>
+      <!-- HA todo: add component link -->
       <xsl:variable name="componentLink">
          <xsl:value-of select="'test'"/>
       </xsl:variable>
@@ -1296,16 +1294,18 @@
             <xsl:variable name="seriesLink">
                <xsl:value-of select="concat($xtfURL, $dynaxmlPath, '?docId=', $docId, ';chunk.id=', ../*:seriesID, ';doc.view=contents')"/>
             </xsl:variable>
+            <!-- HA todo: are these links correct? -->
             <a href="{$seriesLink}">
                <xsl:value-of select="."/>
             </a>
          </div>
-         <div class="component" style="padding-left:{offset}em">
+         <div class="component">
             <a href="{$componentLink}">
                <xsl:value-of select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:title"/>
             </a>
          </div>
-         <div class="sibling" style="padding-left:{offset + 1}em">
+         <!-- HA todo: link all the other DAOs, but not this one -->
+         <div class="sibling">
             <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/did/dao">
                <xsl:variable name="daoLink"/>
                <a href="#">
