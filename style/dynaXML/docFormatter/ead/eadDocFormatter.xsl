@@ -137,9 +137,9 @@
    <xsl:template match="/ead">
       <xsl:choose>
          <!-- robot solution -->
-         <xsl:when test="matches($http.user-agent,$robots)">
+         <!--<xsl:when test="matches($http.user-agent,$robots)">
             <xsl:call-template name="robot"/>
-         </xsl:when>
+         </xsl:when>-->
          <!-- Creates the body of the finding aid.-->
          <xsl:when test="$doc.view = 'content'">
             <xsl:call-template name="body"/>
