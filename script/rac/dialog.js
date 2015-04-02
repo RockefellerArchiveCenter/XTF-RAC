@@ -490,6 +490,15 @@ $(function () {
                     if($('#VisitScheduled').is(':checked')) {
                         if($('#myListRequest input[name="ScheduledDate"]').val()) {
                             $('input[name="UserReview"]').val("No");
+                            $.ajax({
+                                type: 'POST',
+                                url: '/xtf/script/rac/myListLog.php',
+                            data: {
+                                email: 'harnold@rockarch.org',
+                                subject: 'myList Request',
+                                message: $('#requestForm').serialize()
+                                }
+                            });
                             $('#requestForm').submit();
                             $(this).dialog("close")
                             $('#myListRequest input[name="ScheduledDate"]').removeClass('error');
