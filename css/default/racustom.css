@@ -220,7 +220,7 @@ a.hit {color: #c45414 !important;font-weight: bold;}
 .ead {background: url(/xtf/icons/default/collections.gif) left no-repeat; min-height: 50px;}
 .headerSearch {float:right;text-align:right;width:29%; margin-top:0.5em;}
 .headerSearch form {margin:0}
-.searchAll {margin: .5em 0 0 25%;float: left;}
+.searchAll {margin: .5em 30% 0 30%;float: right;width:40%}
 .headerResults {float:right;width:100%;padding-top:.5em;}
 .headerResults a {color:#c45414; text-decoration:none;}
 .headerResults a:hover {text-decoration:underline;}
