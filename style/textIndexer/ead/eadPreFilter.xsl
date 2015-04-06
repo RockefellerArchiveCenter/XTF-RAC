@@ -591,14 +591,43 @@
    <!-- containers -->
    <xsl:template name="get-ead-containers">
       <xsl:if test="child::did/container">
-         <containers xtf:meta="true">
-            <xsl:for-each select="did/container">
-               <xsl:value-of select="concat(' ',concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
-               <xsl:if test="position()!=last()">, </xsl:if>
-            </xsl:for-each>
-         </containers>
+         <xsl:choose>
+               <xsl:when test="did/container/@label='Microform' or did/container/@label='microform'">
+                  <xsl:for-each select="did/container[@label='Microform' or @label='microform']">
+                     <containers xtf:meta="true">
+                     <xsl:variable name="id">
+                        <xsl:value-of select="@id"/>
+                     </xsl:variable>
+                     <xsl:value-of select="concat(concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
+                     <xsl:if test="../../did/container[@parent=$id]">
+                        <xsl:text>, </xsl:text>
+                        <xsl:value-of select="concat(concat(upper-case(substring(../../did/container[@parent=$id]/@type,1,1)),substring(../../did/container[@parent=$id]/@type,2)),' ',../../did/container[@parent=$id])"/>
+                     </xsl:if>
+                  </containers>
+               </xsl:for-each>   
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:for-each select="did/container[not(@parent)]">
+                  <containers xtf:meta="true">
+                     <xsl:variable name="id">
+                        <xsl:value-of select="@id"/>
+                     </xsl:variable>
+                     <xsl:value-of select="concat(concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
+                     <xsl:if test="../../did/container[@parent=$id]">
+                        <xsl:text>, </xsl:text>
+                        <xsl:value-of select="concat(concat(upper-case(substring(../../did/container[@parent=$id]/@type,1,1)),substring(../../did/container[@parent=$id]/@type,2)),' ',../../did/container[@parent=$id])"/>
+                     </xsl:if>
+                  </containers>
+               </xsl:for-each>
+            </xsl:otherwise>
+         </xsl:choose>
       </xsl:if>
    </xsl:template>
+   
+   <xsl:template name="container-type-number">
+      <xsl:value-of select="concat(' ',concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
+   </xsl:template>
+   
 
    <!-- creator -->
    <xsl:template name="get-ead-creator">
