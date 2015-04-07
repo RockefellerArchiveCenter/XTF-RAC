@@ -339,9 +339,9 @@
                <input type="hidden" name="doc.view" value="contentsSearch"/>
                <input type="submit" value="Search Contents List" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
             </form>
-            <div class="searchAll">
+            <!--<div class="searchAll">
                <a href="{$xtfURL}{$crossqueryPath}">Search all collections</a>
-            </div>
+            </div>-->
          </div>
          <xsl:call-template name="tabs"/>
       </div>
