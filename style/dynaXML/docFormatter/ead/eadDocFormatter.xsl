@@ -491,7 +491,7 @@
 
          <!-- 5/17/2012 DG: create variables for the new href: documentname2, basicchoice2, xtfURL2, href2. Just use chunk.id and doc name for now-->
          <xsl:variable name="documentname2">
-            <xsl:analyze-string select="$query.string" regex="docId=ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
+            <xsl:analyze-string select="$query.string" regex="docId=ead/([A-Z0-9/.^/]+)/([A-Z0-9/.^/]+).xml" flags="i">
 
                <xsl:matching-substring>
                   <xsl:value-of select="regex-group(2)"/>
@@ -1037,7 +1037,7 @@
       <xsl:variable name="description.hit.count" select="sum($nodes/@xtf:hitCount)"/>
       <!-- 5/17/2012 DG:  a new variable for the new href.       -->
       <xsl:variable name="documentname2">
-         <xsl:analyze-string select="$query.string" regex="(.*)ead/([A-Z0-9^/]+)/([A-Z0-9^/]+).xml" flags="i">
+         <xsl:analyze-string select="$query.string" regex="(.*)ead/([A-Z0-9/.^/]+)/([A-Z0-9/.^/]+).xml" flags="i">
 
             <xsl:matching-substring>
                <xsl:value-of select="regex-group(2)"/>
