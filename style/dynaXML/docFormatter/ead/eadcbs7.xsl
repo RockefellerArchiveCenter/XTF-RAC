@@ -93,8 +93,12 @@
                </xsl:when>
                <xsl:when test="$chunk.id = 'contentsLink'">
                   <xsl:choose>
+<<<<<<< HEAD
                      <xsl:when test="$doc.view='contentsSearch'">
                         <xsl:call-template name="containerHits"/>
+=======
+                     <xsl:when test="($query != '0') and ($query != '')">
+>>>>>>> search within container list option
                         <xsl:apply-templates select="/ead/archdesc/dsc/child::*[@level and @xtf:hitCount]"/>
                      </xsl:when>
                      <xsl:otherwise>
@@ -1244,12 +1248,18 @@
          <xsl:text> in this Contents List</xsl:text>
          <a class="resultsButton btn btn-default">
             <xsl:attribute name="href">
+<<<<<<< HEAD
                <xsl:value-of select="$doc.path"/>
                <xsl:text>;chunk.id=</xsl:text>
                <xsl:value-of select="$chunk.id"/>
                <xsl:text>;brand=</xsl:text>
                <xsl:value-of select="$brand"/>
                <xsl:text>;doc.view=contents</xsl:text>
+=======
+               <xsl:value-of select="$doc.path"/>;chunk.id=<xsl:value-of select="$chunk.id"
+                  />;brand=<xsl:value-of select="$brand"/>;doc.view=<xsl:value-of select="$doc.view"
+               />
+>>>>>>> search within container list option
             </xsl:attribute>
             <xsl:text>Clear Search</xsl:text>
          </a>
@@ -1336,7 +1346,12 @@
                </xsl:for-each>
             </div>
          </xsl:when>
+<<<<<<< HEAD
          <xsl:when test="$doc.view='contentsSearch'">
+=======
+         <xsl:when test="($query != '0') and ($query != '')">
+            <xsl:call-template name="containerHits"/>
+>>>>>>> search within container list option
             <div class="{@level} c01" style="width:100%;float:left;">
                <xsl:call-template name="anchor"/>
                <xsl:call-template name="clevel">
