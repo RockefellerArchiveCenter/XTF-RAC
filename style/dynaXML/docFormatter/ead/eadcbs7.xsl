@@ -1413,8 +1413,6 @@
                </xsl:for-each>
             </div>
          </xsl:when>
-<<<<<<< HEAD
-=======
          <xsl:when test="$doc.view='contentsSearch'">
             <div class="{@level} c01" style="width:100%;float:left;">
                <xsl:call-template name="anchor"/>
