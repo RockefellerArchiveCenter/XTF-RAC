@@ -446,9 +446,9 @@
 
         <div class="overlay" id="myListRequestConfirm">
             <div class="confirm">
-                <h1>Your request has been submitted to RACcess!</h1>
-                <p><a href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Reading Room Request Confirm Dialog']);">
-                    Click here</a> to see your requests.</p>
+                <h1>Your request has been sent to RACcess!</h1>
+                <p>You must be logged into <a href="https://raccess.rockarch.org">RACcess</a> in order for your request to be submitted. <a href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Reading Room Request Confirm Dialog']);">
+                    Click here</a> to view your requests.</p>
             </div>
         </div>
     </xsl:template>
@@ -528,8 +528,8 @@
 
         <div class="overlay" id="myListCopiesConfirm">
             <div class="confirm">
-                <h1>Your request has been submitted to RACcess!</h1>
-                <p><a href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Reading Room Request Confirm Dialog']);">
+                <h1>Your request has been sent to RACcess!</h1>
+                <p>You must be logged into <a href="https://raccess.rockarch.org">RACcess</a> in order for your request to be submitted. <a href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="_gaq.push(['_trackEvent', 'My List', 'Log In', 'Reading Room Request Confirm Dialog']);">
                     Click here</a> to see your requests.</p>
             </div>
         </div>
