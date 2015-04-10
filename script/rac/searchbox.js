@@ -28,6 +28,15 @@
                             $('input[type="text"].searchbox').attr('name','keyword');
                                  }
                             });
+                    $('#searchTarget').change(function() {
+                        var url = $('#searchTarget option:selected').attr("data-url");
+                        $('form.bbform').attr("action", url);
+                        if ($('#searchTarget option:selected').text().trim() == 'Everything') {
+                            $('form.bbform input[type="hidden"]').attr("disabled", "disabled");
+                        } else {
+                            $('form.bbform input[type="hidden"]').removeAttr("disabled");
+                        }
+                    });
                     $('.showAdvanced').click(function (event) {
                         event.preventDefault();
                         $('#advancedSearch').slideToggle(400, 'linear');

@@ -315,6 +315,16 @@
          </xsl:variable>
          <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
          <xsl:variable name="indexId" select="$identifier"/>
+         <xsl:variable name="component">
+            <xsl:choose>
+               <xsl:when test="contains($chunk.id, 'ref')">
+                  <xsl:value-of select="$chunk.id"/>
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:value-of select="'contentsLink'"/>
+               </xsl:otherwise>
+            </xsl:choose>
+         </xsl:variable>
          <div class="headerIcons">
             <ul>
                <xsl:if test="$doc.view != 'dao'">
@@ -331,13 +341,17 @@
             <form action="{$xtfURL}{$dynaxmlPath}" method="get" class="bbform">
                <input name="query" type="text">
                   <xsl:attribute name="value">
-                     <xsl:if test="$doc.view='contentsSearch'"><xsl:value-of select="$query"/></xsl:if>
+                     <xsl:value-of select="$query"/>
                   </xsl:attribute>
                </input>
+               <select id="searchTarget">
+                  <option data-url="{$xtfURL}{$dynaxmlPath}" selected="selected">This collection</option>
+                  <option data-url="{$xtfURL}{$crossqueryPath}">Everything</option>
+               </select>
                <input type="hidden" name="docId" value="{$docId}"/>
-               <input type="hidden" name="chunk.id" value="contentsLink"/>
+               <input type="hidden" name="chunk.id" value="{$component}"/>
                <input type="hidden" name="doc.view" value="contentsSearch"/>
-               <input type="submit" value="Search Contents List" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
+               <input type="submit" value="Search" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
             </form>
             <!--<div class="searchAll">
                <a href="{$xtfURL}{$crossqueryPath}">Search all collections</a>

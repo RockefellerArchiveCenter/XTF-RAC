@@ -220,7 +220,15 @@ a.hit {color: #c45414 !important;font-weight: bold;}
 .ead {background: url(/xtf/icons/default/collections.gif) left no-repeat; min-height: 50px;}
 .headerSearch {float:right;text-align:left;width:59%; margin-top:.3em}
 .headerSearch form {margin:0; font-size:1.5em}
-.searchAll {margin: .2em 8%;float: left;width:40%}
+select#searchTarget {
+  font-size: 1em;
+  border-radius: 5px;
+  padding: .2em;
+  margin: 0 0 0 1%;
+  height: 1.4em;
+  vertical-align: 1px;
+  width: auto;
+ }
 .headerResults {float:right;width:100%;padding-top:.5em;}
 .headerResults a {color:#c45414; text-decoration:none;}
 .headerResults a:hover {text-decoration:underline;}
