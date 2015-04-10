@@ -646,9 +646,9 @@
                      </collectionCreator>
                   </xsl:for-each>
                   <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
-                     <collectionCreator xtf:meta="true">
+                     <creator xtf:meta="true">
                         <xsl:value-of select="normalize-space(.)"/>
-                     </collectionCreator>
+                     </creator>
                   </xsl:for-each>
                   <xsl:for-each select="did/origination">
                      <creator xtf:meta="true">

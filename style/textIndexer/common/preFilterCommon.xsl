@@ -360,9 +360,9 @@
             <xsl:value-of select="replace($first-creator, '(.+?), .+', '$1')"/>
          </xsl:when>
          <!-- Pattern:  'X. NAME' or ' NAME' -->
-         <xsl:when test="matches($first-creator, '^.+\.? (\w{2,100})')">
+         <!--<xsl:when test="matches($first-creator, '^.+\.? (\w{2,100})')">
             <xsl:value-of select="replace($first-creator, '^.+\.? (\w{2,100})', '$1')"/>
-         </xsl:when>
+         </xsl:when>-->
          <!-- Pattern:  Everything else -->
          <xsl:otherwise>
             <xsl:value-of select="$first-creator"/>
