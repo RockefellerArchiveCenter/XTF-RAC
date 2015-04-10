@@ -1206,7 +1206,7 @@
       <xsl:variable name="searchLocation">
          <xsl:choose>
             <xsl:when test="$chunk.id='contentsLink'">
-               <xsl:text>this Contents List</xsl:text>
+               <xsl:text>the Contents List of this collection</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                <xsl:value-of select="concat(upper-case(substring(/ead/archdesc/dsc/descendant::c[@id=$chunk.id]/@level, 1, 1)), substring(/ead/archdesc/dsc/descendant::c[@id=$chunk.id]/@level, 2))"/>
