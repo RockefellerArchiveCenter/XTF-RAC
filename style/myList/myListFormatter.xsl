@@ -80,18 +80,18 @@
             </xsl:variable>
             <xsl:variable name="container1">
                 <xsl:choose>
-                    <xsl:when test="contains(meta/containers, ',')">
+                    <xsl:when test="contains(meta/containers[0], ',')">
                         <xsl:value-of
-                            select="normalize-space(substring-before(meta/containers, ', '))"/>
+                            select="normalize-space(substring-before(meta/containers[0], ', '))"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:value-of select="normalize-space(meta/containers)"/>
+                        <xsl:value-of select="normalize-space(meta/containers[0])"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
             <xsl:variable name="container2">
-                <xsl:if test="contains(meta/containers, ',')">
-                    <xsl:value-of select="normalize-space(substring-after(meta/containers, ', '))"/>
+                <xsl:if test="contains(meta/containers[0], ',')">
+                    <xsl:value-of select="normalize-space(substring-after(meta/containers[0], ', '))"/>
                 </xsl:if>
             </xsl:variable>
             <xsl:variable name="parents">
