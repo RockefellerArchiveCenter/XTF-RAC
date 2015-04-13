@@ -345,8 +345,8 @@
                   </xsl:attribute>
                </input>
                <select id="searchTarget">
-                  <option data-url="{$xtfURL}{$dynaxmlPath}" selected="selected">This collection</option>
-                  <option data-url="{$xtfURL}{$crossqueryPath}">Everything</option>
+                  <option data-url="{$xtfURL}{$crossqueryPath}" selected="selected">Everything</option>
+                  <option data-url="{$xtfURL}{$dynaxmlPath}">This collection</option>
                </select>
                <input type="hidden" name="docId" value="{$docId}"/>
                <input type="hidden" name="chunk.id" value="{$component}"/>
