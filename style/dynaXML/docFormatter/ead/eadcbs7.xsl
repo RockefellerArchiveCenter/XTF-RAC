@@ -1702,7 +1702,7 @@
                   </xsl:variable>
                   <xsl:if
                      test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
-                                child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc | 
+                                child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc | 
                                 child::fileplan |  child::odd | child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                 child::otherfindaid |  child::phystech |  child::processinfo | child::relatedmaterial | child::separatedmaterial |  child::controlaccess">
                      <span class="dialog_dsc">
