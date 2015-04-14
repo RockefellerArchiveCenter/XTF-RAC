@@ -103,14 +103,7 @@
                 </xsl:for-each>
             </xsl:variable>
             <xsl:variable name="groupingfield">
-                <xsl:choose>
-                    <xsl:when test="meta/seriesID !=''">
-                        <xsl:value-of select="concat(substring-before(meta/identifier, '-'), meta/seriesID, '-', $container1)"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="meta/identifier"/>
-                    </xsl:otherwise>
-                </xsl:choose>            
+                <xsl:value-of select="concat(substring-before(meta/identifier, '-'), meta/seriesID, '-', $container1)"/>           
             </xsl:variable>
             <xsl:variable name="type">
                 <xsl:choose>
@@ -207,7 +200,7 @@
             </xsl:if>
         </xsl:variable>
         <xsl:variable name="groupingfield">
-            <xsl:value-of select="concat($rootID, '-', xtf:meta/seriesID, '-', $container1)"/>
+            <xsl:value-of select="concat($rootID, xtf:meta/seriesID, '-', $container1)"/>
         </xsl:variable>
         <xsl:variable name="barcode"/>
         <a href="#" class="list-add" data-identifier="{$identifier}" data-ItemNumber="{$barcode}"
