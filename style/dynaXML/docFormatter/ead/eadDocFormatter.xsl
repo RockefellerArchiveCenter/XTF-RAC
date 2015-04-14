@@ -1044,9 +1044,9 @@
             <xsl:value-of select="'true'"/>
          </xsl:if>
       </xsl:variable>
-      <xsl:variable name="hit.count" select="number(@xtf:hitCount)"/>
-      <xsl:variable name="series.hit.count" select="$hit.count - count(child::c/descendant::*/xtf:hit)"/>
-      <xsl:variable name="description.hit.count" select="sum($nodes/@xtf:hitCount)"/>
+      <xsl:variable name="hit.count" select="sum($nodes/@xtf:hitCount)"/><!--
+      <xsl:variable name="description.hit.count" select=""/>
+      <xsl:variable name="series.hit.count" select="$hit.count - $description.hit.count"/>-->
       <!-- 5/17/2012 DG:  a new variable for the new href.       -->
       <xsl:variable name="documentname2">
          <xsl:analyze-string select="$query.string" regex="(.*)ead/([A-Z0-9/.^/]+)/([A-Z0-9/.^/]+).xml" flags="i">
@@ -1157,7 +1157,7 @@
                   </xsl:choose>
                   <xsl:value-of select="$name"/>
                   <div class="hit-count">
-                     <xsl:if test="$description.hit.count"> (<xsl:value-of select="$description.hit.count"/>) </xsl:if>
+                     <xsl:if test="$hit.count"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
                   </div>
                </div>
             </a>
@@ -1193,14 +1193,7 @@
                   </xsl:choose>
                   <xsl:value-of select="$name"/>
                   <div class="hit-count">
-                        <xsl:choose>
-                           <xsl:when test="$submenu = 'true'">
-                              <xsl:if test="$series.hit.count > 0"> (<xsl:value-of select="$series.hit.count"/>) </xsl:if>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <xsl:if test="$hit.count > 0"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
-                           </xsl:otherwise>
-                        </xsl:choose>
+                      <xsl:if test="$hit.count > 0"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
                   </div>
                </div>
             </a>
