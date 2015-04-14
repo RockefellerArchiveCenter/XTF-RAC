@@ -192,18 +192,18 @@
         </xsl:variable>
         <xsl:variable name="container1">
             <xsl:choose>
-                <xsl:when test="contains(xtf:meta/containers[0], ',')">
+                <xsl:when test="contains(xtf:meta/containers[1], ',')">
                     <xsl:value-of
-                        select="normalize-space(substring-before(xtf:meta/containers[0], ', '))"/>
+                        select="normalize-space(substring-before(xtf:meta/containers[1], ', '))"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="normalize-space(xtf:meta/containers[0])"/>
+                    <xsl:value-of select="normalize-space(xtf:meta/containers[1])"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <xsl:variable name="container2">
-            <xsl:if test="contains(xtf:meta/containers[0], ',')">
-                <xsl:value-of select="normalize-space(substring-after(xtf:meta/containers[0], ', '))"/>
+            <xsl:if test="contains(xtf:meta/containers[1], ',')">
+                <xsl:value-of select="normalize-space(substring-after(xtf:meta/containers[1], ', '))"/>
             </xsl:if>
         </xsl:variable>
         <xsl:variable name="groupingfield">
