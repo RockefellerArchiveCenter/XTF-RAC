@@ -474,6 +474,7 @@ $(function () {
         });
     });
 $(function () {
+    var listCount = $('#requestForm .row > .requestInputs > input[checked="checked"]').length - 1;
     var dialogMyListRequest = $('#myListRequest').dialog({
         create: function(event, ui) {
             var widget = $(this).dialog("widget");
@@ -484,7 +485,7 @@ $(function () {
         modal: true,
         resizable: true,
         buttons: [ 
-            { text: "Request Materials", click: function() {
+            { html: 'Request <span class="listCount">'+listCount+'</span> item(s)', click: function() {
                 console.log('request materials');
                 if(content()) { 
                     if($('#VisitScheduled').is(':checked')) {
@@ -653,4 +654,5 @@ $(function () {
     });   
         
     });
+    
 });

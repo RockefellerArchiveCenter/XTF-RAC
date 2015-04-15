@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     //gets list items from localStorage
     function getList() {
-        var list = JSON.parse(localStorage.getItem("myList"));
+        var list = JSON.parse(localStorage.getItem("myList")).sort();
         return list;
     };
 
@@ -296,8 +296,11 @@ $(function() {
                 $('input[value='+value+"]").parents('.row:not(.header-row)').addClass('disabled');
            }
         }
+        var listCount = $('#requestForm .row > .requestInputs > input[checked="checked"]').length - 1;
+        $('.listCount').html(listCount);
     });
 });
+
 
 // Checks or unchecks all
 $(function() {
@@ -308,14 +311,17 @@ $(function() {
             if(!($(this).parents('.myListContents').hasClass('dialog'))) {
                 $('.requestInputs').parents('.row:not(.header-row)').removeClass('disabled');
             }
+            var listCount = $('#requestForm .row > .requestInputs > input[checked="checked"]').length - 1;
+           $('.listCount').html(listCount);
         } else {
             $('.requestInputs input[type="checkbox"]').attr('checked', false);
             $('.requestInputs input[type="hidden"]').attr("disabled", true);
             if(!($(this).parents('.myListContents').hasClass('dialog'))) {
                 $('.requestInputs').parents('.row:not(.header-row)').addClass('disabled');
             }
+           var listCount = $('#requestForm .row > .requestInputs > input[checked="checked"]').length;
+           $('.listCount').html(listCount);
         }
-        
     });
 });
 
