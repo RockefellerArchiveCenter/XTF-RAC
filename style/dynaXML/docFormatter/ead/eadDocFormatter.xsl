@@ -348,9 +348,9 @@
                   <option data-url="{$xtfURL}{$crossqueryPath}" selected="selected">Everything</option>
                   <option data-url="{$xtfURL}{$dynaxmlPath}">This collection</option>
                </select>
-               <input type="hidden" name="docId" value="{$docId}"/>
-               <input type="hidden" name="chunk.id" value="{$component}"/>
-               <input type="hidden" name="doc.view" value="contentsSearch"/>
+               <input type="hidden" name="docId" value="{$docId}" disabled="disabled"/>
+               <input type="hidden" name="chunk.id" value="{$component}" disabled="disabled"/>
+               <input type="hidden" name="doc.view" value="contentsSearch" disabled="disabled"/>
                <input type="submit" value="Search" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
             </form>
             <!--<div class="searchAll">
