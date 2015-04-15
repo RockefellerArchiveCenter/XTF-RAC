@@ -338,8 +338,8 @@
             </ul>
          </div>
          <div class="headerSearch">
-            <form action="{$xtfURL}{$dynaxmlPath}" method="get" class="bbform">
-               <input name="query" type="text">
+            <form action="{$xtfURL}{$crossqueryPath}" method="get" class="bbform">
+               <input name="keyword" type="text">
                   <xsl:attribute name="value">
                      <xsl:value-of select="$query"/>
                   </xsl:attribute>
