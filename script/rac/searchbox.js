@@ -33,8 +33,10 @@
                         $('form.bbform').attr("action", url);
                         if ($('#searchTarget option:selected').text().trim() == 'Everything') {
                             $('form.bbform input[type="hidden"]').attr("disabled", "disabled");
+                            $('form.bbform input[type="text"]').attr('name','keyword');
                         } else {
                             $('form.bbform input[type="hidden"]').removeAttr("disabled");
+                            $('form.bbform input[type="text"]').attr('name','query');
                         }
                     });
                     $('.showAdvanced').click(function (event) {
