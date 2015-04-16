@@ -196,16 +196,21 @@
             </ul>
          </div>
          <div class="headerSearch">
-            <form action="{$xtfURL}{$dynaxmlPath}" method="get" class="bbform">
-               <input name="query" type="text"/>
-               <input type="hidden" name="docId" value="ead/{$collectionId}/{$eadId}"/>
-               <input type="hidden" name="chunk.id" value="contentsLink"/>
-               <input type="hidden" name="doc.view" value="contentsSearch"/>
-               <input type="submit" value="Search Contents List" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', 'Digital Materials Detail']);"/>
+            <form action="{$xtfURL}{$crossqueryPath}" method="get" class="bbform">
+               <input name="keyword" type="text">
+                  <xsl:attribute name="value">
+                     <xsl:value-of select="$query"/>
+                  </xsl:attribute>
+               </input>
+               <select id="searchTarget">
+                  <option data-url="{$xtfURL}{$crossqueryPath}" selected="selected">Everything</option>
+                  <option data-url="{$xtfURL}{$dynaxmlPath}">This collection</option>
+               </select>
+               <input type="hidden" name="docId" value="{$collectionId}" disabled="disabled"/>
+               <input type="hidden" name="chunk.id" value="contentsLink" disabled="disabled"/>
+               <input type="hidden" name="doc.view" value="contentsSearch" disabled="disabled"/>
+               <input type="submit" value="Search" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', 'Digital Object details']);"/>
             </form>
-            <div class="searchAll">
-               <a href="{$xtfURL}{$crossqueryPath}">Search all collections</a>
-            </div>
          </div>
          <xsl:call-template name="tabs"/>
       </div>
@@ -336,8 +341,8 @@
             <div class="thumbnail">
                <img src="/xtf/icons/default/thumbnail-large.png" height="300px"/>
                <div class="thumbnailButtons">
-                  <button class="btn btn-default download"><img src="/xtf/icons/default/download.png"/> Download</button>
-                  <button class="btn btn-default view"><img src="/xtf/icons/default/view.png"/> View</button>
+                  <button class="btn btn-default download"><img src="/xtf/icons/default/download.svg"/> Download</button>
+                  <button class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</button>
                </div>
             </div>
             <div class="description">
@@ -519,7 +524,7 @@
       <div class="pull-right" id="bookmarkMenu">
          <div class="btn-group">
             <button id="myListButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-               <img src="/xtf/icons/default/share.png"/> Share <span class="caret"/>
+               <img src="/xtf/icons/default/share.svg"/> Share <span class="caret"/>
             </button>
             <ul class="dropdown-menu pull-right" role="menu">
                <li>
@@ -561,7 +566,7 @@
             <xsl:value-of select="xtf:meta/*:size"/>
          </td>
          <td><a href="{$link}">details</a></td>
-         <td><a href="{$downloadLink}" download="true"><img src="/xtf/icons/default/download.png"/></a></td>
+         <td><a href="{$downloadLink}" download="true"><img src="/xtf/icons/default/download.svg"/></a></td>
       </tr>
    </xsl:template>
    
