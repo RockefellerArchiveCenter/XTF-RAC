@@ -6,7 +6,6 @@ $(document).ready(function () {
     $(daoTable).each(function () {
         var a = $(this);
         var identifier = $(this).attr('data-identifier');
-        a.text('Loading...');
         var search = '/xtf/view?docId=mets/'+identifier+'/'+identifier+'.xml;smode=daoTable';
         $.ajax(search).success(function (data) {
             // If results were retrieved, display them

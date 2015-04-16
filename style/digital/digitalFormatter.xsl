@@ -26,7 +26,7 @@
                 <th> </th>
                 <th> </th>
             </tr>
-            <xsl:for-each select="meta/daoLink">
+            <xsl:for-each select="meta/daoLink | xtf:meta/*:daoLink">
                 <xsl:if test=".!=''">
                     <xsl:variable name="identifier">
                         <!--http://storage.rockarch.org/46d03fe1-c30d-49b9-b1ff-da164a414ec3-rac_rfdiaries_12-2_mason_1928-1936_006.pdf-->
@@ -39,7 +39,13 @@
                             </xsl:non-matching-substring>
                         </xsl:analyze-string>
                     </xsl:variable>
-                    <tr class="dao" data-identifier="{$identifier}"/>
+                    <tr class="dao" data-identifier="{$identifier}">
+                        <td><img alt="loading data" src="/xtf/icons/default/loading.gif"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 </xsl:if>
             </xsl:for-each>
         </table>
