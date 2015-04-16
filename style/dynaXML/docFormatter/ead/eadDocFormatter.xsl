@@ -329,8 +329,6 @@
                </xsl:choose>
             </h1>
          </div>
-         <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
-         <xsl:variable name="indexId" select="$identifier"/>
          <div class="headerIcons">
             <ul>
                <xsl:if test="$doc.view != 'dao'">
@@ -368,18 +366,6 @@
                </xsl:otherwise>
             </xsl:choose>
          </xsl:variable>
-         <div class="headerIcons">
-            <ul>
-               <xsl:if test="$doc.view != 'dao'">
-                  <li>
-                     <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="ga('send', 'event', 'finding aid', 'view', 'pdf');">
-                        <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
-                     </a>
-                  </li>
-               </xsl:if>
-            </ul>
-         </div>
          <div class="headerSearch">
             <form action="{$xtfURL}{$crossqueryPath}" method="get" class="bbform">
                <xsl:if test="$query">
