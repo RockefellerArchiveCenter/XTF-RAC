@@ -726,11 +726,7 @@
             </xsl:for-each>
          </xsl:when>
          <xsl:when test="/ead/eadheader/filedesc/notestmt/subject">
-<<<<<<< HEAD
             <xsl:for-each select="/ead/eadheader/filedesc/notestmt/subject">
-=======
-            <xsl:for-each-group select="/ead/eadheader/filedesc/notestmt/subject" group-by="string()">
->>>>>>> improving indexing of containers
                <subject xtf:meta="true">
                   <xsl:value-of select="."/>
                </subject>
@@ -744,7 +740,6 @@
       <xsl:choose>
          <xsl:when test="@level">
             <xsl:if test="controlaccess">
-<<<<<<< HEAD
                <xsl:for-each
                   select="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
                   <subjectpers xtf:meta="true">
@@ -752,43 +747,25 @@
                   </subjectpers>
                </xsl:for-each>
                <xsl:for-each select="controlaccess/persname | controlaccess/famname">
-=======
-               <xsl:for-each-group select="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/famname" group-by="string()">
-                  <subjectpers xtf:meta="true">
-                     <xsl:value-of select="."/>
-                  </subjectpers>
-               </xsl:for-each-group>
-               <xsl:for-each-group select="controlaccess/persname | controlaccess/famname" group-by="string()">
->>>>>>> improving indexing of containers
                   <subjectpers xtf:meta="true">
                      <xsl:value-of select="."/>
                   </subjectpers>
                </xsl:for-each>
             </xsl:if>
          </xsl:when>
-<<<<<<< HEAD
          <xsl:when
             test="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
             <xsl:for-each
                select="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
-=======
-         <xsl:when test="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/famname">
-            <xsl:for-each-group select="/ead/archdesc//controlaccess/persname | /ead/archdesc//controlaccess/famname" group-by="string()">
->>>>>>> improving indexing of containers
                <subjectpers xtf:meta="true">
                   <xsl:value-of select="."/>
                </subjectpers>
             </xsl:for-each>
          </xsl:when>
-<<<<<<< HEAD
          <xsl:when
             test="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname">
             <xsl:for-each
                select="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname">
-=======
-         <xsl:when test="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname">
-            <xsl:for-each-group select="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname" group-by="string()">
->>>>>>> improving indexing of containers
                <subjectpers xtf:meta="true">
                   <xsl:value-of select="."/>
                </subjectpers>
@@ -801,11 +778,7 @@
       <xsl:choose>
          <xsl:when test="@level">
             <xsl:if test="controlaccess">
-<<<<<<< HEAD
                <xsl:for-each select="/ead/archdesc/controlaccess/corpname">
-=======
-               <xsl:for-each-group select="/ead/archdesc//controlaccess/corpname" group-by="string()">
->>>>>>> improving indexing of containers
                   <subjectcorp xtf:meta="true">
                      <xsl:value-of select="."/>
                   </subjectcorp>
@@ -825,11 +798,7 @@
             </xsl:for-each>
          </xsl:when>
          <xsl:when test="/ead/eadheader/filedesc/notestmt/corpname">
-<<<<<<< HEAD
             <xsl:for-each select="/ead/eadheader/filedesc/notestmt/corpname">
-=======
-            <xsl:for-each-group select="/ead/eadheader/filedesc/notestmt/corpname" group-by="string()">
->>>>>>> improving indexing of containers
                <subjectcorp xtf:meta="true">
                   <xsl:value-of select="."/>
                </subjectcorp>
@@ -861,11 +830,7 @@
             </xsl:for-each>
          </xsl:when>
          <xsl:when test="/ead/eadheader/filedesc/notestmt/geogname">
-<<<<<<< HEAD
             <xsl:for-each select="/ead/eadheader/filedesc/notestmt/geogname">
-=======
-            <xsl:for-each-group select="/ead/eadheader/filedesc/notestmt/geogname" group-by="string()">
->>>>>>> improving indexing of containers
                <geogname xtf:meta="true">
                   <xsl:value-of select="."/>
                </geogname>
