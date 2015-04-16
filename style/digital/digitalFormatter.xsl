@@ -17,7 +17,6 @@
     <!-- ====================================================================== -->
 
     <xsl:template name="daoTable">
-        <!-- HA todo: add dao table template here -->
         <table class="daoTable">
             <tr>
                 <th>Filename</th>

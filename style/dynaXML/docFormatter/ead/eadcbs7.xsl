@@ -1790,6 +1790,7 @@
                   <xsl:apply-templates select="did" mode="dsc"/>
                </div>
             </xsl:when>
+            <!-- HA todo: missing some when clauses here -->
          </xsl:choose>
       </xsl:for-each>
    </xsl:template>

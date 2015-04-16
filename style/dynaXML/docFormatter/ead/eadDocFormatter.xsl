@@ -1280,7 +1280,6 @@
             <xsl:variable name="seriesLink">
                <xsl:value-of select="concat($xtfURL, $dynaxmlPath, '?docId=', $docId, ';chunk.id=', ../*:seriesID, ';doc.view=contents')"/>
             </xsl:variable>
-            <!-- HA todo: are these links correct? -->
             <a href="{$seriesLink}">
                <xsl:value-of select="."/>
             </a>
