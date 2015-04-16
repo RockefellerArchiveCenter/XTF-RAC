@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     //gets list items from localStorage
     function getList() {
-        var list = JSON.parse(localStorage.getItem("myList")).sort();
+        var list = JSON.parse(localStorage.getItem("myList"));
         return list;
     };
 
@@ -35,6 +35,7 @@ $(document).ready(function () {
     function updateDisplay() {
         var myList = getList();
         if (myList) {
+            var myList = myList.sort();
             $('.myListContents').empty();
             if (myList.length > 0) {
             $('#myListNav #myListButton').addClass('hasContents');
