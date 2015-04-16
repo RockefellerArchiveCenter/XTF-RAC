@@ -382,8 +382,8 @@ ul.none {list-style:none;}
 .file.active, .item.active, .active .item, .active .file {color:#fff;background-color: #999 !important;border-left: .5em solid #c45414;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position:relative;z-index:2;}
 .active .item, .active .file {background-color: #999 !important}
 .file.active .subhit, .item.active .subhit {color:#fff !important;}
-.daoLink, .containers, .moreInfo {float:left;display:inline-block;vertical-align:middle;}
-.daoLink {width:38%;padding:0 1% 0 1%;}
+.component-title, .containers, .moreInfo {float:left;display:inline-block;vertical-align:middle;}
+.component-title {width:38%;padding:0 1% 0 1%;}
 .instance .container {float: left;padding-right: 1em;}
 .moreInfo {width:16%;}
 .moreInfo .hit {padding-left:2px}
@@ -410,16 +410,41 @@ ul.none {list-style:none;}
 /* --- DAO tables --- */
 
 .daoTable {
-  text-align: left;
   border-collapse: collapse;
-  background-color:#fff;
+  text-align:center
+}
+
+.daoTable tr {
+  border-left: 1px solid #666;
+  border-right: 1px solid #666;
+  border-bottom: 1px solid #999;
+}
+
+.daoTable tr:last-child {
+    border-bottom: 1px solid #666;
+}
+
+.daoTable td {
+  padding: 2px 5px;
+}
+
+.daoTable th {
+    border-bottom: 2px solid #666;
+    border-top: 1px solid #666;
+}
+
+#docHits .daoTable {
   float: right;
   width: 82%;
 }
 
-.daoTable td, th {
-  border: 1px solid #666;
-  padding: 0 2px;
+#content-wrapper .daoTable {
+  float: left;
+  width: 91%;
+}
+
+.daoTable img {
+  height: 1em;
 }
 
 
@@ -698,7 +723,7 @@ div.docHit {width:97%}
 #content-wrapper {left:39%; top:272px;}
 #contentsLink {width:99%}
 
-.daoLink {width:28%}
+.component-title {width:28%}
 .instances {width:38%}
 .format {width:40%}
 .containerWrapper {width:59%}
@@ -764,7 +789,7 @@ div[id^='navOption'] {display:none}
 .inventoryHeaderFormat, .inventoryHeaderNotes, .format, .moreInfo {display:none}
 .inventoryHeaderContainers {width:30%}
 .inventoryHeaderTitle {width:45%}
-.daoLink {width:41%;padding:0 2% 0 2%}
+.component-title {width:41%;padding:0 2% 0 2%}
 .instances {width:30%}
 .containerWrapper {width:100%}
 .digitalTab {display:none}
