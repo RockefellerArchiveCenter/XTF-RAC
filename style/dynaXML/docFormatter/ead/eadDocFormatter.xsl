@@ -304,8 +304,6 @@
                </xsl:choose>
             </h1>
          </div>
-         <xsl:variable name="identifier" select="/ead/xtf:meta/child::*[1]"/>
-         <xsl:variable name="indexId" select="$identifier"/>
          <div class="headerIcons">
             <ul>
                <xsl:if test="$doc.view != 'dao'">
@@ -343,18 +341,6 @@
                </xsl:otherwise>
             </xsl:choose>
          </xsl:variable>
-         <div class="headerIcons">
-            <ul>
-               <xsl:if test="$doc.view != 'dao'">
-                  <li>
-                     <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
-                        <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
-                     </a>
-                  </li>
-               </xsl:if>
-            </ul>
-         </div>
          <div class="headerSearch">
             <form action="{$xtfURL}{$crossqueryPath}" method="get" class="bbform">
                <input name="keyword" type="text">
@@ -371,9 +357,6 @@
                <input type="hidden" name="doc.view" value="contentsSearch" disabled="disabled"/>
                <input type="submit" value="Search" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
             </form>
-            <!--<div class="searchAll">
-               <a href="{$xtfURL}{$crossqueryPath}">Search all collections</a>
-            </div>-->
          </div>
          <xsl:call-template name="tabs"/>
       </div>
