@@ -10,6 +10,8 @@
    <xsl:import href="../common/docFormatterCommon.xsl"/>
    <xsl:import href="../../../xtfCommon/xtfCommon.xsl"/>
    <xsl:import href="../../../myList/myListFormatter.xsl"/>
+   
+   <xsl:include href="../../../digital/digitalFormatter.xsl"/>
 
    <!-- Creates a variable equal to the value of the number in eadid which serves as the base
       for file names for the various components of the frameset.-->
@@ -1743,6 +1745,9 @@
                      </xsl:call-template>
                   </xsl:if>
                </span>
+               <xsl:if test="child::dao | child::did/dao">
+                  <xsl:call-template name="daoTable"/>
+               </xsl:if>
 
             </xsl:when>
             <xsl:otherwise>
@@ -1806,18 +1811,8 @@
    </xsl:template>
    <!--Otherwise render the text in its normal font.-->
    <xsl:template match="did" mode="dsc">
-      <div class="daoLink">
-         <xsl:choose>
-            <xsl:when test="../dao | dao">
-               <xsl:if test="count(../dao | dao) &gt; 1">
-                  <xsl:call-template name="component-did-core"/>
-                  <br/>
-               </xsl:if>
-            </xsl:when>
-            <xsl:otherwise>
-               <xsl:call-template name="component-did-core"/>
-            </xsl:otherwise>
-         </xsl:choose>
+      <div class="component-title">
+         <xsl:call-template name="component-did-core"/>
       </div>             
    </xsl:template>
 
