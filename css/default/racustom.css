@@ -313,12 +313,12 @@ select#searchTarget {
 
 /* TOC subjects submenu*/
 ul.none {list-style:none;}
-#toc .subjects {margin:1em 0 0 0; padding:0;background-color:#eee;border-radius:5px 5px 0 0;box-shadow: 0px 0px 10px #666;float:left;width:100%;}
-#toc .subjects:hover {box-shadow: 0px 0px 5px #666;}
-#toc .subjects h4 {margin:0;}
-#toc .subjects ul{margin:0;padding:0;}
-#toc .subjects li{padding-top:.2em;padding-bottom:.2em;padding-left:.5em;padding-right:.5em}
-#toc .subjects li:nth-of-type(even) {background-color: rgb(228, 228, 228); border-top: 1px dashed #999;border-bottom:1px dashed #999;}
+#toc .subjects, #toc .foundIn {margin:1em 0 0 0; padding:0;background-color:#eee;border-radius:5px 5px 0 0;box-shadow: 0px 0px 10px #666;float:left;width:100%;}
+#toc .subjects:hover, #toc .foundIn:hover {box-shadow: 0px 0px 5px #666;}
+#toc .subjects h4, #toc .foundIn h4 {margin:0;}
+#toc .subjects ul, #toc .foundIn ul{margin:0;padding:0;}
+#toc .subjects li, #toc .foundIn li{padding-top:.2em;padding-bottom:.2em;padding-left:.5em;padding-right:.5em}
+#toc .subjects li:nth-of-type(even), #toc .foundIn li:nth-of-type(even) {background-color: rgb(228, 228, 228); border-top: 1px dashed #999;border-bottom:1px dashed #999;}
 .more {display:none;}
 
 /* --- EAD body --- */
@@ -466,6 +466,14 @@ ul.none {list-style:none;}
 
 .thumbnailButtons .btn {
     margin: 1em .5em;
+}
+
+.description .creator p {
+    margin-bottom:0;
+}
+
+.description .extent  {
+    margin-top:1em;
 }
 
 /* --- Custom styles for dialog --- */
