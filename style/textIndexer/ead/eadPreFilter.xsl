@@ -615,90 +615,63 @@
    <!-- creator -->
    <xsl:template name="get-ead-creator">
       <xsl:choose>
-         <xsl:when test="@level">
-            <xsl:choose>
-               <xsl:when test="did/origination">
-                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
-                     <collectionCreator xtf:meta="true">
-                        <xsl:value-of select="normalize-space(.)"/>
-                     </collectionCreator>
-                  </xsl:for-each>
-                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
-                     <collectionCreator xtf:meta="true">
-                        <xsl:value-of select="normalize-space(.)"/>
-                     </collectionCreator>
-                  </xsl:for-each>
-                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
-                     <creator xtf:meta="true">
-                        <xsl:value-of select="normalize-space(.)"/>
-                     </creator>
-                  </xsl:for-each>
-                  <xsl:for-each select="did/origination">
+         <xsl:when test="did/origination">
+            <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+               <collectionCreator xtf:meta="true">
+                  <xsl:value-of select="normalize-space(.)"/>
+               </collectionCreator>
+            </xsl:for-each>
+            <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
+               <collectionCreator xtf:meta="true">
+                  <xsl:value-of select="normalize-space(.)"/>
+               </collectionCreator>
+            </xsl:for-each>
+            <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
+               <creator xtf:meta="true">
+                  <xsl:value-of select="normalize-space(.)"/>
+               </creator>
+            </xsl:for-each>
+            <!--<xsl:for-each select="did/origination">
                      <creator xtf:meta="true">
                         <xsl:value-of select="normalize-space(string(child::*))"/>
                      </creator>
-                  </xsl:for-each>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
-                     <collectionCreator xtf:meta="true">
-                        <xsl:value-of select="normalize-space(.)"/>
-                     </collectionCreator>
-                     <creator xtf:meta="true">
-                        <xsl:value-of select="normalize-space(.)"/>
-                     </creator>
-                  </xsl:for-each>
-                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
-                     <collectionCreator xtf:meta="true">
-                        <xsl:value-of select="normalize-space(.)"/>
-                     </collectionCreator>
-                     <creator xtf:meta="true">
-                        <xsl:value-of select="normalize-space(.)"/>
-                     </creator>
-                  </xsl:for-each>
-                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
-                     <collectionCreator xtf:meta="true">
-                        <xsl:value-of select="normalize-space(.)"/>
-                     </collectionCreator>
-                     <creator xtf:meta="true">
-                        <xsl:value-of select="normalize-space(.)"/>
-                     </creator>
-                  </xsl:for-each>
-               </xsl:otherwise>
-            </xsl:choose>
+                  </xsl:for-each>-->
          </xsl:when>
          <xsl:otherwise>
-            <xsl:choose>
-               <xsl:when test="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
-                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+            <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Author')]">
+               <collectionCreator xtf:meta="true">
+                  <xsl:value-of select="normalize-space(.)"/>
+               </collectionCreator>
+               <creator xtf:meta="true">
+                  <xsl:value-of select="normalize-space(.)"/>
+               </creator>
+            </xsl:for-each>
+            <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
+               <collectionCreator xtf:meta="true">
+                  <xsl:value-of select="normalize-space(.)"/>
+               </collectionCreator>
+               <creator xtf:meta="true">
+                  <xsl:value-of select="normalize-space(.)"/>
+               </creator>
+            </xsl:for-each>
+            <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'Contributor')]">
+               <creator xtf:meta="true">
+                  <xsl:value-of select="normalize-space(.)"/>
+               </creator>
+            </xsl:for-each>
+            <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'ctb')]">
+               <creator xtf:meta="true">
+                  <xsl:value-of select="normalize-space(.)"/>
+               </creator>
+            </xsl:for-each>
+            <!--<xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
+                     <collectionCreator xtf:meta="true">
+                        <xsl:value-of select="normalize-space(.)"/>
+                     </collectionCreator>
                      <creator xtf:meta="true">
                         <xsl:value-of select="normalize-space(.)"/>
                      </creator>
-                  </xsl:for-each>
-               </xsl:when>
-               <xsl:when test="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
-                  <xsl:for-each select="/ead/archdesc/did/origination/child::*[starts-with(@role, 'aut')]">
-                     <creator xtf:meta="true">
-                        <xsl:value-of select="normalize-space(.)"/>
-                     </creator>
-                  </xsl:for-each>
-               </xsl:when>
-               <xsl:when test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'Contributor')]">
-                  <creator xtf:meta="true">
-                     <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination[child::*[starts-with(@role, 'Contributor')]][1]/child::*))"/>
-                  </creator>
-               </xsl:when>
-               <xsl:when test="/ead/archdesc/did/origination/child::*[1][starts-with(@role, 'ctb')]">
-                  <creator xtf:meta="true">
-                     <xsl:value-of select="normalize-space(string(/ead/archdesc/did/origination[child::*[starts-with(@role, 'ctb')]][1]/child::*))"/>
-                  </creator>
-               </xsl:when>
-               <xsl:otherwise>
-                  <creator xtf:meta="true">
-                     <xsl:value-of select="'unknown'"/>
-                  </creator>
-               </xsl:otherwise>
-            </xsl:choose>
+                  </xsl:for-each>-->
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>

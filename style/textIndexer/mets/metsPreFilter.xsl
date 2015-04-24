@@ -117,7 +117,7 @@
       </xsl:call-template>
    </xsl:template>
 
-   <!-- identifier -->
+   <!-- technical metadata -->
    <xsl:template name="get-mets-techmd">
       <xsl:variable name="identifier">
          <xsl:value-of select="/mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/*:mods/*:identifier"/>
@@ -166,6 +166,7 @@
             </xsl:otherwise>
          </xsl:choose>
       </format>
+      <!-- HA todo get size -->
       <size xtf:meta="true" xtf:tokenize="no">
          <xsl:choose>
             <xsl:when test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size !=''">
@@ -217,10 +218,21 @@
             /mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'contributor')]] | 
             /mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'creator')]]">
             <creator xtf:meta="true">
-               <xsl:for-each select="mods:namePart">
-                  <xsl:value-of select="normalize-space(.)"/>
-                  <xsl:if test="position() != last()">&#160;</xsl:if>
-               </xsl:for-each>
+               <xsl:choose>
+                  <xsl:when test="@type='personal'">
+                     <xsl:value-of select="normalize-space(mods:namePart[@type='family'])"/>
+                     <xsl:if test="mods:namePart[@type='given']">
+                        <xsl:text>, </xsl:text>
+                        <xsl:value-of select="normalize-space(mods:namePart[@type='given'])"/>
+                     </xsl:if>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:for-each select="mods:namePart">
+                        <xsl:value-of select="normalize-space(.)"/>
+                        <xsl:if test="position() != last()"><xsl:text> </xsl:text></xsl:if>
+                     </xsl:for-each>
+                  </xsl:otherwise>
+               </xsl:choose>
             </creator>
          </xsl:for-each>
       </xsl:if>
