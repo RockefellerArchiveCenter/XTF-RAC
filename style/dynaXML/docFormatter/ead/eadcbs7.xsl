@@ -773,6 +773,9 @@
    <xsl:template match="scopecontent">
       <h4>
          <xsl:choose>
+            <xsl:when test="head != ''">
+               <xsl:value-of select="head"/>
+            </xsl:when>
             <xsl:when test="parent::archdesc">
                <xsl:call-template name="anchor"/>Collection Description </xsl:when>
             <xsl:when test="parent::*[@level = 'recordgrp']">Record Group Description</xsl:when>
@@ -1785,7 +1788,11 @@
                   <xsl:apply-templates select="did" mode="dsc"/>
                </div>
             </xsl:when>
-            <!-- HA todo: missing some when clauses here -->
+            <!-- Items/Files-->
+            <xsl:when test="@level='file'">
+               <xsl:apply-templates select="did" mode="dsc"/>
+               <xsl:call-template name="daoTable"/>
+            </xsl:when>
          </xsl:choose>
       </xsl:for-each>
    </xsl:template>
@@ -1872,8 +1879,8 @@
          <xsl:apply-templates/>
       </p>
    </xsl:template>
-   <!--<xsl:template match="xtf:meta"/>
-   <xsl:template match="dao" mode="moreInfo"/>-->
+   <xsl:template match="xtf:meta"/>
+   <xsl:template match="dao" mode="moreInfo"/>
    <xsl:template match="*" mode="moreInfo">
       <xsl:apply-templates select="did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
       <xsl:apply-templates select="did/physdesc"/>

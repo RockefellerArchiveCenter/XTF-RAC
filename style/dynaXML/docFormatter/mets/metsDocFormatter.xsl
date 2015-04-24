@@ -1,8 +1,6 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xtf="http://cdlib.org/xtf" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mets="http://www.loc.gov/METS/"
-   xmlns:lxslt="http://xml.apache.org/xslt"
-   xmlns:result="http://www.example.com/results"
-   xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.w3.org/1999/xhtml" xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:xlink="http://www.w3.org/1999/xlink"
-   extension-element-prefixes="session result" exclude-result-prefixes="#all">
+   xmlns:lxslt="http://xml.apache.org/xslt" xmlns:result="http://www.example.com/results" xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:xlink="http://www.w3.org/1999/xlink" extension-element-prefixes="session result" exclude-result-prefixes="#all">
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    <!-- METS dynaXML Stylesheet                                                -->
    <!-- Author: Hillel Arnold, Rockefeller Archive Center                      -->
@@ -50,17 +48,13 @@
       </xsl:choose>
    </xsl:param>
    <xsl:param name="parentID"/>
-   
+
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
    <xsl:template match="/mets:mets">
       <xsl:choose>
-         <!-- robot solution -->
-         <!-- HA todo: add robot template -->
-         <xsl:when test="matches($http.user-agent,$robots)">
-            <xsl:call-template name="robot"/>
-         </xsl:when>
+         <!-- DAO tables in EAD container lists -->
          <xsl:when test="$smode='daoTable'">
             <xsl:call-template name="daoSummary"/>
          </xsl:when>
@@ -85,12 +79,12 @@
                </title>
             </head>
             <body>
-               <!-- HA todo: check these values -->
                <div itemscope="" typeof="http:/schema.org/ItemPage">
-                  <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mods:xmlData/mods:mods/mods:abstract">
-                     <meta itemprop="http:/schema.org/description">
+                  <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:abstract | mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']">
+                     <meta itemprop="http:/schema.org/about">
                         <xsl:attribute name="content">
-                           <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mods:xmlData/mods:mods/mods:abstract"/>
+                           <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:abstract"/>
+                           <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']"/>
                         </xsl:attribute>
                      </meta>
                   </xsl:if>
@@ -99,7 +93,7 @@
                         <xsl:value-of select="xtf:meta/*:filename"/>
                      </xsl:attribute>
                   </meta>
-                  <div itemprop="http:/schema.org/contentLocation" itemscope="" itemtype="http:/schema.org/Place">
+                  <div itemprop="http:/schema.org/contentLocation" itemtype="http:/schema.org/Place" itemscope="">
                      <meta itemprop="http:/schema.org/name" content="Rockefeller Archive Center"/>
                      <meta itemprop="http:/schema.org/url" content="http://www.rockarch.org"/>
                      <div itemprop="http:/schema.org/address" itemscop="" itemtype="http:/schema.org/PostalAddress">
@@ -114,13 +108,6 @@
                      </div>
                      <meta itemprop="http:/schema.org/telephone" content="(914) 366-6300"/>
                   </div>
-                  <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mods:xmlData/mods:mods/mods:subject/mods:name[mods:role/mods:roleTerm='contributor']">
-                     <meta itemprop="http:/schema.org/contributor">
-                        <xsl:attribute name="content">
-                           <xsl:apply-templates/>
-                        </xsl:attribute>
-                     </meta>
-                  </xsl:for-each>
                   <xsl:for-each select="xtf:meta/*:creator">
                      <meta itemprop="http:/schema.org/creator">
                         <xsl:attribute name="content">
@@ -131,10 +118,20 @@
                   <div itemprop="http:/schema.org/dateCreated" itemscope="" itemtype="Date">
                      <meta itemprop="date">
                         <xsl:attribute name="content">
-                           <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mods:xmlData/mods:mods/mods:originInfo/mods:dateIssued"/>
+                           <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:originInfo/mods:dateCreated"/>
                         </xsl:attribute>
                      </meta>
                   </div>
+                  <meta itemprop="http:/schema.org/keywords">
+                      <xsl:attribute name="content">
+                         <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:subject/mods:topic">
+                            <xsl:value-of select="."/>
+                            <xsl:if test="position() != last()">
+                               <xsl:text>, </xsl:text>
+                            </xsl:if>
+                         </xsl:for-each>
+                      </xsl:attribute>
+                   </meta>
                </div>
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
@@ -331,7 +328,7 @@
    <!-- Main body template                                                     -->
    <!-- ====================================================================== -->
    <xsl:template name="body">
-      
+
       <!--<xsl:variable name="file">
          <xsl:value-of select="/mods:mods/mods:identifier"/>
       </xsl:variable>-->
@@ -352,9 +349,11 @@
                   </h2>
                </div>
                <div class="creator">
-                  <p>
-                     <xsl:value-of select="xtf:meta/*:creator"/>
-                  </p>
+                  <xsl:for-each select="xtf:meta/*:creator">
+                     <p>
+                        <xsl:value-of select="."/>
+                     </p>
+                  </xsl:for-each>
                </div>
                <div class="extent">
                   <p>
@@ -410,96 +409,90 @@
    <!-- Controlled Terms Templates                                             -->
    <!-- ====================================================================== -->
    <xsl:template name="subjects">
-      <!-- HA todo: link subject terms -->
-      <div class="subjects">
-         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject">
-            <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject"/>
+         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:topic">
+            <div class="subjects">
+               <h4>Subjects</h4>
+               <ul class="none">
+                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:topic"/>
+               </ul>
+            </div>
          </xsl:if>
-      </div>
+         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:geographic">
+            <div class="subjects">
+               <h4>Places</h4>
+               <ul class="none">
+                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:geographic"/>
+               </ul>
+            </div>
+         </xsl:if>
+         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='personal']">
+            <div class="subjects">
+               <h4>People</h4>
+               <ul class="none">
+                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='personal']"/>
+               </ul>
+            </div>
+         </xsl:if>
+         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='corporate']">
+            <div class="subjects">
+               <h4>Organizations</h4>
+               <ul class="none">
+                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='corporate']"/>
+               </ul>
+            </div>
+         </xsl:if>
+         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='family']">
+            <div class="subjects">
+               <h4>Families</h4>
+               <ul class="none">
+                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='family']"/>
+               </ul>
+            </div>
+         </xsl:if>
+         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='conference']">
+            <div class="subjects">
+               <h4>Conferences</h4>
+               <ul class="none">
+                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='conference']"/>
+               </ul>
+            </div>
+         </xsl:if>
+         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:genre">
+            <div class="subjects">
+               <h4>Formats</h4>
+               <ul class="none">
+                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:genre"/>
+               </ul>
+            </div>
+         </xsl:if>
    </xsl:template>
 
-   <xsl:template match="mods:subject">
-      <!-- HA todo: check if this is correct. names may not export as subjects -->
-      <xsl:if test="mods:topic">
-         <h4>Subjects</h4>
-         <ul class="none">
-            <xsl:for-each select="mods:topic">
-               <li>
-                  <xsl:value-of select="."/>
-               </li>
-            </xsl:for-each>
-         </ul>
-      </xsl:if>
-      <xsl:if test="mods:geographic">
-         <h4>Places</h4>
-         <ul class="none">
-            <xsl:for-each select="mods:geographic">
-               <li>
-                  <xsl:value-of select="."/>
-               </li>
-            </xsl:for-each>
-         </ul>
-      </xsl:if>
-      <xsl:if test="mods:name">
-         <xsl:if test="mods:name[@type='personal']">
-            <h4>People</h4>
-            <ul class="none">
-               <xsl:for-each select="mods:name[@type='personal']">
-                  <li>
-                     <xsl:apply-templates/>
-                  </li>
-               </xsl:for-each>
-            </ul>
-         </xsl:if>
-         <xsl:if test="mods:name[@type='corporate']">
-            <h4>Organizations</h4>
-            <ul class="none">
-               <xsl:for-each select="mods:name[@type='corporate']">
-                  <li>
-                     <xsl:apply-templates/>
-                  </li>
-               </xsl:for-each>
-            </ul>
-         </xsl:if>
-         <xsl:if test="mods:name[@type='family']">
-            <h4>Families</h4>
-            <ul class="none">
-               <xsl:for-each select="mods:name[@type='family']">
-                  <li>
-                     <xsl:apply-templates/>
-                  </li>
-               </xsl:for-each>
-            </ul>
-         </xsl:if>
-         <xsl:if test="mods:name[@type='conference']">
-            <h4>Conferences</h4>
-            <ul class="none">
-               <xsl:for-each select="mods:name[@type='conference']">
-                  <li>
-                     <xsl:apply-templates/>
-                  </li>
-               </xsl:for-each>
-            </ul>
-         </xsl:if>
-      </xsl:if>
-      <xsl:if test="mods:genre">
-         <h4>Formats</h4>
-         <ul class="none">
-            <xsl:for-each select="mods:genre">
-               <li>
-                  <xsl:value-of select="."/>
-               </li>
-            </xsl:for-each>
-         </ul>
-      </xsl:if>
-
+   <xsl:template match="mods:subject/mods:topic | mods:subject/mods:geographic | mods:subject/mods:genre">
+      <xsl:for-each select=".">
+         <li>
+            <xsl:value-of select="."/>
+         </li>
+      </xsl:for-each>
    </xsl:template>
 
    <xsl:template match="mods:name">
-      <xsl:for-each select="mods:namePart">
-         <xsl:value-of select="normalize-space(.)"/>
-         <xsl:if test="position() != last()">&#160;</xsl:if>
-      </xsl:for-each>
+      <li>
+      <xsl:choose>
+         <xsl:when test="@type='personal'">
+            <xsl:value-of select="normalize-space(mods:namePart[@type='family'])"/>
+            <xsl:if test="mods:namePart[@type='given']">
+               <xsl:text>, </xsl:text>
+               <xsl:value-of select="normalize-space(mods:namePart[@type='given'])"/>
+            </xsl:if>
+         </xsl:when>
+         <xsl:otherwise>
+            <xsl:for-each select="mods:namePart">
+               <xsl:value-of select="normalize-space(.)"/>
+               <xsl:if test="position() != last()"><xsl:text> </xsl:text></xsl:if>
+            </xsl:for-each>
+         </xsl:otherwise>
+      </xsl:choose>
+      </li>
    </xsl:template>
 
    <!-- ====================================================================== -->
@@ -513,8 +506,10 @@
          <xsl:value-of select="xtf:meta/*:componentId"/>
       </xsl:variable>
       <div class="foundIn">
-         <h3>Found In</h3>
-         <p data-collectionId="{$collectionId}" data-componentId="{$componentId}"/>
+         <h4>Found In</h4>
+         <p data-collectionId="{$collectionId}" data-componentId="{$componentId}">
+            <img src="/xtf/icons/default/loading.gif"/>
+         </p>
       </div>
    </xsl:template>
    <!-- ====================================================================== -->
@@ -543,11 +538,11 @@
          </div>
       </div>
    </xsl:template>
-   
+
    <!-- ====================================================================== -->
    <!-- DAO summary for tables                                                 -->
    <!-- ====================================================================== -->
-   
+
    <xsl:template name="daoSummary">
       <xsl:variable name="link">
          <xsl:value-of select="concat('/xtf/view?docId=mets/', xtf:meta/*:identifier, '/', xtf:meta/*:identifier, '.xml')"/>
@@ -565,10 +560,16 @@
          <td>
             <xsl:value-of select="xtf:meta/*:size"/>
          </td>
-         <td><a href="{$link}">details</a></td>
-         <td><a href="{$downloadLink}" download="true"><img src="/xtf/icons/default/download.svg"/></a></td>
+         <td>
+            <a href="{$link}">details</a>
+         </td>
+         <td>
+            <a href="{$downloadLink}" download="true">
+               <img src="/xtf/icons/default/download.svg"/>
+            </a>
+         </td>
       </tr>
    </xsl:template>
-   
-   
+
+
 </xsl:stylesheet>
