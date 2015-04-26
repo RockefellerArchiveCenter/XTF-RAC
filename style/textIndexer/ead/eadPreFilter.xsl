@@ -579,8 +579,10 @@
                      </xsl:variable>
                      <xsl:value-of select="concat(concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
                      <xsl:if test="../../did/container[@parent=$id]">
-                        <xsl:text>, </xsl:text>
-                        <xsl:value-of select="concat(concat(upper-case(substring(../../did/container[@parent=$id]/@type,1,1)),substring(../../did/container[@parent=$id]/@type,2)),' ',../../did/container[@parent=$id])"/>
+                        <xsl:for-each select="../../did/container[@parent=$id]">
+                           <xsl:text>, </xsl:text>
+                           <xsl:value-of select="concat(concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
+                        </xsl:for-each>
                      </xsl:if>
                   </containers>
                </xsl:for-each>   
@@ -593,8 +595,10 @@
                      </xsl:variable>
                      <xsl:value-of select="concat(concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
                      <xsl:if test="../../did/container[@parent=$id]">
-                        <xsl:text>, </xsl:text>
-                        <xsl:value-of select="concat(concat(upper-case(substring(../../did/container[@parent=$id][1]/@type,1,1)),substring(../../did/container[@parent=$id][1]/@type,2)),' ',../../did/container[@parent=$id][1])"/>
+                        <xsl:for-each select="../../did/container[@parent=$id]">
+                           <xsl:text>, </xsl:text>
+                           <xsl:value-of select="concat(concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
+                        </xsl:for-each>
                      </xsl:if>
                   </containers>
                </xsl:for-each>
