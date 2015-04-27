@@ -103,7 +103,14 @@
                 </xsl:for-each>
             </xsl:variable>
             <xsl:variable name="groupingfield">
-                <xsl:value-of select="concat(substring-before(meta/identifier, '-'), meta/seriesID, '-', $container1)"/>           
+                <xsl:choose>
+                    <xsl:when test="meta/type='ead'">
+                        <xsl:value-of select="concat(substring-before(meta/identifier, '-'), meta/seriesID, '-', $container1)"/> 
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$identifier"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:variable>
             <xsl:variable name="type">
                 <xsl:choose>
