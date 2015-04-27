@@ -560,22 +560,22 @@ $(function () {
         if ($('#myListCopies select[name="Format"]').val()) {
             $('#myListCopies select[name="Format"]').removeClass('error');
             $('#myListCopies #formatError').hide();
-            if($('#myListCopies input[name="ItemPages"]').val()) {
+            if($('#myListCopies input[name="ItemInfo4"]').val()) {
                 return true;
             } else {
-                $('#myListCopies input[name="ItemPages"]').addClass('error');
+                $('#myListCopies input[name="ItemInfo4"]').addClass('error');
                 $('#myListCopies #itemPagesError').show();
                 return false;
             }
         } else {
             $('#myListCopies select[name="Format"]').addClass('error');
             $('#myListCopies #formatError').show();
-            if($('#myListCopies input[name="ItemPages"]').val()) {
-                $('#myListCopies input[name="ItemPages"]').removeClass('error');
+            if($('#myListCopies input[name="ItemInfo4"]').val()) {
+                $('#myListCopies input[name="ItemInfo4"]').removeClass('error');
                 $('#myListCopies #itemPagesError').hide();
                 return false;
             } else {
-                $('#myListCopies input[name="ItemPages"]').addClass('error');
+                $('#myListCopies input[name="ItemInfo4"]').addClass('error');
                 $('#myListCopies #itemPagesError').show();
                 return false;
             }
@@ -598,7 +598,7 @@ $(function () {
                 if(content()) {
                     if(validate()){
                         $('#duplicationForm').submit();
-                        $('#myListCopies input[name="ItemPages"]').removeClass('error');
+                        $('#myListCopies input[name="ItemInfo4"]').removeClass('error');
                         $('#myListCopies #itemPagesError').hide();
                         $('#myListCopies select[name="Format"]').removeClass('error');
                         $('#myListCopies #formatError').hide();

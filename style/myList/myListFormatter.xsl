@@ -487,9 +487,9 @@
                             format.</p>
                     </div>
                     <div class="form-group">
-                        <label class="control-label required" for="ItemPages">Description of
+                        <label class="control-label required" for="ItemInfo4">Description of
                             Materials</label>
-                        <input id="ItemPages" class="form-control" name="ItemPages" type="text"
+                        <input id="ItemInfo4" class="form-control" name="ItemInfo4" type="text"
                             placeholder="Describe the materials you want reproduced"/>
                         <p class="help-block text-danger" id="itemPagesError">Please enter a
                             description of the materials you want reproduced.</p>
