@@ -780,6 +780,9 @@
             <xsl:when test="parent::*[@level = 'subfonds']">Sub-Fonds Description</xsl:when>
             <xsl:when test="parent::*[@level = 'series']">Series Description</xsl:when>
             <xsl:when test="parent::*[@level = 'subseries']">Subseries Description</xsl:when>
+            <xsl:when test="head != ''">
+               <xsl:value-of select="head"/>
+            </xsl:when>
             <xsl:when test="parent::*[@level = 'item']">Item Description</xsl:when>
             <xsl:when test="parent::*[@level = 'file']">File Description</xsl:when>
             <xsl:otherwise>Description</xsl:otherwise>
