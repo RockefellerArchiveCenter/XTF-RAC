@@ -119,6 +119,9 @@
    </xsl:param>
 
    <xsl:param name="parentID"/>
+   
+   <xsl:param name="filename"/>
+   <xsl:param name="identifier"/>
 
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
@@ -1270,9 +1273,11 @@
    <!-- Show Parents Template (for digital objects)                            -->
    <!-- ====================================================================== -->
    <xsl:template name="parents">
-      <!-- HA todo: add component link -->
       <xsl:variable name="componentLink">
-         <xsl:value-of select="'test'"/>
+         <xsl:value-of select="concat($xtfURL, $dynaxmlPath, '?docId=', $docId, ';chunk.id=', /ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:seriesID, ';doc.view=contents', '#', $chunk.id)"/>
+      </xsl:variable>
+      <xsl:variable name="indent">
+         <xsl:value-of select="count(/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:parent)"/>
       </xsl:variable>
       <div>
       <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:parent[position()&gt;1]">
@@ -1284,18 +1289,29 @@
                <xsl:value-of select="."/>
             </a>
          </div>
-         <div class="component">
+         <div class="component" style="padding-left:{($indent)-1}em">
             <a href="{$componentLink}">
                <xsl:value-of select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:title"/>
             </a>
          </div>
-         <!-- HA todo: link all the other DAOs, but not this one -->
-         <div class="sibling">
+         <div class="sibling" style="padding-left:{$indent}em">
             <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/did/dao">
-               <xsl:variable name="daoLink"/>
-               <a href="#">
-                  <xsl:value-of select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/@xlink:title"/>
-               </a>
+               <xsl:variable name="daoLink">
+                  <xsl:value-of select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/did/dao/@xlink:href"/>
+               </xsl:variable>
+               <xsl:variable name="daoFilename">
+                  <xsl:value-of select="substring-after($daoLink, concat($identifier, '-'))"/>
+               </xsl:variable>
+               <xsl:choose>
+                  <xsl:when test="ends-with($daoFilename, $filename)">
+                     <xsl:value-of select="$daoFilename"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <a href="{$identifier}">
+                        <xsl:value-of select="$daoFilename"/>
+                     </a>
+                  </xsl:otherwise>
+               </xsl:choose>
             </xsl:for-each>
          </div>
       </xsl:for-each>

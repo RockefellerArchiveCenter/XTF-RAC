@@ -227,7 +227,7 @@ a.hit {color: #c45414 !important;font-weight: bold;}
 .documentTitle {text-align:left; font-size:.8em;margin:0; padding-left:.5em; float:left; width:69%;height:50px}
 .documentTitle h1 {color:#333; margin:0; margin-left:50px; padding:0; font-size:1.75em;}
 .ead {background: url(/xtf/icons/default/collections.gif) left no-repeat; min-height: 50px;}
-.headerSearch {float:right;text-align:left;width:59%; margin-top:.3em}
+.headerSearch {float:right;text-align:left;width:59%; margin-top:.5em}
 .headerSearch form {margin:0; font-size:1.5em}
 select#searchTarget {
   font-size: 1em;
@@ -321,6 +321,10 @@ ul.none {list-style:none;}
 #toc .subjects li:nth-of-type(even), #toc .foundIn li:nth-of-type(even) {background-color: rgb(228, 228, 228); border-top: 1px dashed #999;border-bottom:1px dashed #999;}
 .more {display:none;}
 
+#toc .foundIn img {height:1em;float:left;margin:1em;}
+#toc .foundIn .parent, #toc .foundIn .component, #toc .foundIn .sibling {margin: .5em 1em;}
+#toc .foundIn a {text-decoration: underline;color:#c45414}
+
 /* --- EAD body --- */
 #content-wrapper { /* required to avoid jumping */
     position: fixed !important;
@@ -410,13 +414,15 @@ ul.none {list-style:none;}
 /* --- DAO tables --- */
 
 .daoTable {
-  border-collapse: collapse;
-  text-align:center
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align:center;
+  border:1px solid #666;
+  border-radius:4px;
+  margin-top:1em;
 }
 
 .daoTable tr {
-  border-left: 1px solid #666;
-  border-right: 1px solid #666;
   border-bottom: 1px solid #999;
 }
 
@@ -429,8 +435,9 @@ ul.none {list-style:none;}
 }
 
 .daoTable th {
-    border-bottom: 2px solid #666;
-    border-top: 1px solid #666;
+  background: #333;
+  color: #eee;
+  font-weight: normal;
 }
 
 #docHits .daoTable {
@@ -440,7 +447,8 @@ ul.none {list-style:none;}
 
 #content-wrapper .daoTable {
   float: left;
-  width: 91%;
+  width: 72%;
+  margin-left: 1%;
 }
 
 .daoTable img {
@@ -453,6 +461,11 @@ ul.none {list-style:none;}
 
 .thumbnail {
     float:left;
+}
+
+#content-wrapper .thumbnailButtons a {
+  text-decoration: none;
+  color: #333;
 }
 
 .thumbnailButtons {

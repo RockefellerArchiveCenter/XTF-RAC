@@ -338,8 +338,8 @@
             <div class="thumbnail">
                <img src="/xtf/icons/default/thumbnail-large.png" height="300px"/>
                <div class="thumbnailButtons">
-                  <button class="btn btn-default download"><img src="/xtf/icons/default/download.svg"/> Download</button>
-                  <button class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</button>
+                  <a href="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}" download="true" class="btn btn-default download"><img src="/xtf/icons/default/download.svg"/> Download</a>
+                  <a href="#" class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</a>
                </div>
             </div>
             <div class="description">
@@ -507,7 +507,7 @@
       </xsl:variable>
       <div class="foundIn">
          <h4>Found In</h4>
-         <p data-collectionId="{$collectionId}" data-componentId="{$componentId}">
+         <p data-collectionId="{$collectionId}" data-componentId="{$componentId}" data-filename="{xtf:meta/*:filename}" data-identifier="{xtf:meta/*:identifier}">
             <img src="/xtf/icons/default/loading.gif"/>
          </p>
       </div>

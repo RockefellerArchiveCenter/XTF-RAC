@@ -1670,45 +1670,49 @@
 
                <xsl:apply-templates select="did" mode="dsc"/>
                <div class="instances">
-                  <xsl:for-each select="child::*/container[not(@parent)]">
-                     <div class="instance">
-                        <!--7/16/11 WS: Adjusted Containers -->
-                        <!-- ADDED 3/14/10: Sorts containers alpha numerically -->
-                        <!--<xsl:sort select="."/>-->
-                        <xsl:variable name="id" select="@id"/>
-                        <xsl:variable name="containerSib" select="count(../container[@parent = $id] | ../container[@id = $id])"/>
-                        <span class="container">
-                           <xsl:value-of select="concat(upper-case(substring(@type,1,1)),substring(@type,2))"/>
-                           <xsl:text> </xsl:text>
-                           <xsl:apply-templates select="."/>
-                           <xsl:text> </xsl:text>
-                        </span>
-                        <span class="container">
-                           <xsl:value-of select="concat(upper-case(substring(../container[@parent = $id]/@type,1,1)),substring(../container[@parent = $id]/@type,2))"/>
-                           <xsl:text> </xsl:text>
-                           <xsl:value-of select="../container[@parent = $id]"/>
-                        </span>
-                        <span class="format">
-                           <xsl:variable name="label">
-                              <xsl:choose>
-                                 <xsl:when test="contains(@label, ' (')">
-                                    <xsl:value-of select="substring-before(@label,' (')"/>
-                                 </xsl:when>
-                                 <xsl:otherwise>
-                                    <xsl:value-of select="concat(upper-case(substring(@label,1,1)),substring(@label,2))"/>
-                                 </xsl:otherwise>
-                              </xsl:choose>
-                           </xsl:variable>
-                           <xsl:if test="$label != 'Mixed materials' and $label != 'Mixed Materials' and $label != 'mixed materials'">
-                              <xsl:text> (</xsl:text>
-                              <xsl:value-of select="$label"/>
-                              <xsl:text>)</xsl:text>
-                           </xsl:if>
-                        </span>
-                     </div>
-                  </xsl:for-each>
-                  <!-- need this here in case there's a note but no instance -->
-                  &#160;
+                  <xsl:choose>
+                     <xsl:when test="child::*/container">
+                        <xsl:for-each select="child::*/container[not(@parent)]">
+                           <div class="instance">
+                              <!--7/16/11 WS: Adjusted Containers -->
+                              <!-- ADDED 3/14/10: Sorts containers alpha numerically -->
+                              <!--<xsl:sort select="."/>-->
+                              <xsl:variable name="id" select="@id"/>
+                              <xsl:variable name="containerSib" select="count(../container[@parent = $id] | ../container[@id = $id])"/>
+                              <span class="container">
+                                 <xsl:value-of select="concat(upper-case(substring(@type,1,1)),substring(@type,2))"/>
+                                 <xsl:text> </xsl:text>
+                                 <xsl:apply-templates select="."/>
+                                 <xsl:text> </xsl:text>
+                              </span>
+                              <span class="container">
+                                 <xsl:value-of select="concat(upper-case(substring(../container[@parent = $id]/@type,1,1)),substring(../container[@parent = $id]/@type,2))"/>
+                                 <xsl:text> </xsl:text>
+                                 <xsl:value-of select="../container[@parent = $id]"/>
+                              </span>
+                              <span class="format">
+                                 <xsl:variable name="label">
+                                    <xsl:choose>
+                                       <xsl:when test="contains(@label, ' (')">
+                                          <xsl:value-of select="substring-before(@label,' (')"/>
+                                       </xsl:when>
+                                       <xsl:otherwise>
+                                          <xsl:value-of select="concat(upper-case(substring(@label,1,1)),substring(@label,2))"/>
+                                       </xsl:otherwise>
+                                    </xsl:choose>
+                                 </xsl:variable>
+                                 <xsl:if test="$label != 'Mixed materials' and $label != 'Mixed Materials' and $label != 'mixed materials'">
+                                    <xsl:text> (</xsl:text>
+                                    <xsl:value-of select="$label"/>
+                                    <xsl:text>)</xsl:text>
+                                 </xsl:if>
+                              </span>
+                           </div>
+                        </xsl:for-each>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <!-- need this here in case there's a note but no instance --> &#160; </xsl:otherwise>
+                  </xsl:choose>
                </div>
                <span class="moreInfo">
                   <xsl:variable name="didHitCount">
