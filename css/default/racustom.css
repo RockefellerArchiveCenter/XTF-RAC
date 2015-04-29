@@ -423,11 +423,15 @@ ul.none {list-style:none;}
 }
 
 .daoTable tr {
-  border-bottom: 1px solid #999;
+  height:2em;
 }
 
-.daoTable tr:last-child {
-    border-bottom: 1px solid #666;
+.daoTable tr:nth-of-type(odd) {
+  background: #fff;
+}
+
+.daoTable tr:nth-of-type(even) {
+  background: #eee;
 }
 
 .daoTable td {

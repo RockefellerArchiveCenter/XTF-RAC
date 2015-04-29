@@ -1297,17 +1297,24 @@
          <div class="sibling" style="padding-left:{$indent}em">
             <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/did/dao">
                <xsl:variable name="daoLink">
-                  <xsl:value-of select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/did/dao/@xlink:href"/>
+                  <xsl:value-of select="@xlink:href"/>
+               </xsl:variable>
+               <xsl:variable name="daoIdentifier">
+                  <xsl:analyze-string select="$daoLink" regex="(([a-z0-9]{{8}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{12}}))">
+                     <xsl:matching-substring>
+                        <xsl:value-of select="regex-group(1)"/>
+                     </xsl:matching-substring>
+                  </xsl:analyze-string>
                </xsl:variable>
                <xsl:variable name="daoFilename">
-                  <xsl:value-of select="substring-after($daoLink, concat($identifier, '-'))"/>
+                  <xsl:value-of select="substring-after($daoLink, $daoIdentifier)"/>
                </xsl:variable>
                <xsl:choose>
-                  <xsl:when test="ends-with($daoFilename, $filename)">
+                  <xsl:when test="matches($daoFilename, $filename)">
                      <xsl:value-of select="$daoFilename"/>
                   </xsl:when>
                   <xsl:otherwise>
-                     <a href="{$identifier}">
+                     <a href="/{$daoIdentifier}">
                         <xsl:value-of select="$daoFilename"/>
                      </a>
                   </xsl:otherwise>
