@@ -450,6 +450,11 @@ ul.none {list-style:none;}
 
 /*--- Formats METS records ---*/
 
+#bookmarkMenu img {
+  height: 1em;
+  vertical-align: middle;
+}
+
 .thumbnail {
     float:left;
 }

@@ -72,6 +72,12 @@
          <html xml:lang="en" lang="en">
             <head>
                <xsl:copy-of select="$brand.links"/>
+               <script type="text/javascript" src="/xtf/script/rac/ZeroClipboard.min.js"></script>
+               <script type="text/javascript">
+                  $(document).ready(function() {
+                  var client = new ZeroClipboard($('#copy-link'));
+                  });
+               </script>
                <title>
                   <xsl:value-of select="xtf:meta/*:filename"/>
                   <xsl:text> - </xsl:text>
@@ -80,7 +86,8 @@
             </head>
             <body>
                <div itemscope="" typeof="http:/schema.org/ItemPage">
-                  <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:abstract | mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']">
+                  <xsl:if
+                     test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:abstract | mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']">
                      <meta itemprop="http:/schema.org/about">
                         <xsl:attribute name="content">
                            <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:abstract"/>
@@ -123,15 +130,15 @@
                      </meta>
                   </div>
                   <meta itemprop="http:/schema.org/keywords">
-                      <xsl:attribute name="content">
-                         <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:subject/mods:topic">
-                            <xsl:value-of select="."/>
-                            <xsl:if test="position() != last()">
-                               <xsl:text>, </xsl:text>
-                            </xsl:if>
-                         </xsl:for-each>
-                      </xsl:attribute>
-                   </meta>
+                     <xsl:attribute name="content">
+                        <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:subject/mods:topic">
+                           <xsl:value-of select="."/>
+                           <xsl:if test="position() != last()">
+                              <xsl:text>, </xsl:text>
+                           </xsl:if>
+                        </xsl:for-each>
+                     </xsl:attribute>
+                  </meta>
                </div>
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
@@ -412,62 +419,62 @@
    <!-- Controlled Terms Templates                                             -->
    <!-- ====================================================================== -->
    <xsl:template name="subjects">
-         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:topic">
-            <div class="subjects">
-               <h4>Subjects</h4>
-               <ul class="none">
-                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:topic"/>
-               </ul>
-            </div>
-         </xsl:if>
-         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:geographic">
-            <div class="subjects">
-               <h4>Places</h4>
-               <ul class="none">
-                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:geographic"/>
-               </ul>
-            </div>
-         </xsl:if>
-         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='personal']">
-            <div class="subjects">
-               <h4>People</h4>
-               <ul class="none">
-                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='personal']"/>
-               </ul>
-            </div>
-         </xsl:if>
-         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='corporate']">
-            <div class="subjects">
-               <h4>Organizations</h4>
-               <ul class="none">
-                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='corporate']"/>
-               </ul>
-            </div>
-         </xsl:if>
-         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='family']">
-            <div class="subjects">
-               <h4>Families</h4>
-               <ul class="none">
-                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='family']"/>
-               </ul>
-            </div>
-         </xsl:if>
-         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='conference']">
-            <div class="subjects">
-               <h4>Conferences</h4>
-               <ul class="none">
-                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='conference']"/>
-               </ul>
-            </div>
-         </xsl:if>
-         <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:genre">
-            <div class="subjects">
-               <h4>Formats</h4>
-               <ul class="none">
-                  <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:genre"/>
-               </ul>
-            </div>
-         </xsl:if>
+      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:topic">
+         <div class="subjects">
+            <h4>Subjects</h4>
+            <ul class="none">
+               <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:topic"/>
+            </ul>
+         </div>
+      </xsl:if>
+      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:geographic">
+         <div class="subjects">
+            <h4>Places</h4>
+            <ul class="none">
+               <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:geographic"/>
+            </ul>
+         </div>
+      </xsl:if>
+      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='personal']">
+         <div class="subjects">
+            <h4>People</h4>
+            <ul class="none">
+               <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='personal']"/>
+            </ul>
+         </div>
+      </xsl:if>
+      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='corporate']">
+         <div class="subjects">
+            <h4>Organizations</h4>
+            <ul class="none">
+               <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='corporate']"/>
+            </ul>
+         </div>
+      </xsl:if>
+      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='family']">
+         <div class="subjects">
+            <h4>Families</h4>
+            <ul class="none">
+               <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='family']"/>
+            </ul>
+         </div>
+      </xsl:if>
+      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='conference']">
+         <div class="subjects">
+            <h4>Conferences</h4>
+            <ul class="none">
+               <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='conference']"/>
+            </ul>
+         </div>
+      </xsl:if>
+      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:genre">
+         <div class="subjects">
+            <h4>Formats</h4>
+            <ul class="none">
+               <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:genre"/>
+            </ul>
+         </div>
+      </xsl:if>
    </xsl:template>
 
    <xsl:template match="mods:subject/mods:topic | mods:subject/mods:geographic | mods:subject/mods:genre">
@@ -480,21 +487,23 @@
 
    <xsl:template match="mods:name">
       <li>
-      <xsl:choose>
-         <xsl:when test="@type='personal'">
-            <xsl:value-of select="normalize-space(mods:namePart[@type='family'])"/>
-            <xsl:if test="mods:namePart[@type='given']">
-               <xsl:text>, </xsl:text>
-               <xsl:value-of select="normalize-space(mods:namePart[@type='given'])"/>
-            </xsl:if>
-         </xsl:when>
-         <xsl:otherwise>
-            <xsl:for-each select="mods:namePart">
-               <xsl:value-of select="normalize-space(.)"/>
-               <xsl:if test="position() != last()"><xsl:text> </xsl:text></xsl:if>
-            </xsl:for-each>
-         </xsl:otherwise>
-      </xsl:choose>
+         <xsl:choose>
+            <xsl:when test="@type='personal'">
+               <xsl:value-of select="normalize-space(mods:namePart[@type='family'])"/>
+               <xsl:if test="mods:namePart[@type='given']">
+                  <xsl:text>, </xsl:text>
+                  <xsl:value-of select="normalize-space(mods:namePart[@type='given'])"/>
+               </xsl:if>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:for-each select="mods:namePart">
+                  <xsl:value-of select="normalize-space(.)"/>
+                  <xsl:if test="position() != last()">
+                     <xsl:text> </xsl:text>
+                  </xsl:if>
+               </xsl:for-each>
+            </xsl:otherwise>
+         </xsl:choose>
       </li>
    </xsl:template>
 
@@ -526,16 +535,23 @@
             </button>
             <ul class="dropdown-menu pull-right" role="menu">
                <li>
-                  <a href="#">Facebook</a>
+                  <a href="#"><img src="/xtf/icons/default/facebook.svg"/> Facebook</a>
                </li>
                <li>
-                  <a href="#">Twitter</a>
+                  <a href="#"><img src="/xtf/icons/default/twitter.svg"/> Twitter</a>
                </li>
                <li>
-                  <a href="#">Email</a>
+                  <a href="" title="Share by Email">
+                     <xsl:attribute name="href">
+                        <xsl:value-of
+                           select="concat('mailto:?subject=', xtf:meta/*:filename, ' - ', xtf:meta/*:collectionTitle, '&amp;body=', xtf:meta/*:filename, ' - ', xtf:meta/*:collectionTitle, ' from DIMES, the online catalog of Rockefeller Archive Center. ', mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href)"
+                        />
+                     </xsl:attribute>
+                     <img src="/xtf/icons/default/email-list.svg"/> Email</a>
                </li>
                <li>
-                  <a href="#">Link</a>
+                  <!-- HA todo: replace this with a short link -->
+                  <a id="copy-link" href="#" data-clipboard-text="{concat($xtfURL, 'view?docId=mets/', xtf:meta/*:identifier, '/', xtf:meta/*:identifier, '.xml')}"><img src="/xtf/icons/default/link.svg"/> Link</a>
                </li>
             </ul>
          </div>
@@ -573,14 +589,16 @@
          </td>
       </tr>
    </xsl:template>
-   
+
    <!-- ====================================================================== -->
    <!-- DAO modal windows                                                      -->
    <!-- ====================================================================== -->
-   
+
    <xsl:template name="daoView">
       <!-- HA todo check if we need an iframe instead -->
-      <p><xsl:value-of select="mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href"/></p>
+      <p>
+         <xsl:value-of select="mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href"/>
+      </p>
       <img src="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}"/>
    </xsl:template>
 
