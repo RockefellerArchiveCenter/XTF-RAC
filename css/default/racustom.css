@@ -512,7 +512,7 @@ ul.none {list-style:none;}
                  
 .ui-dialog .ui-dialog-title {font-size:1.2em !important;}
                  
-iframe {
+#daoView iframe {
     background-image: url("/xtf/icons/default/loading.gif");   
     background-repeat: no-repeat;
     background-position: 50% 50%;
