@@ -596,10 +596,7 @@
 
    <xsl:template name="daoView">
       <!-- HA todo check if we need an iframe instead -->
-      <p>
-         <xsl:value-of select="mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href"/>
-      </p>
-      <img src="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}"/>
+      <iframe frameborder="0" marginwidth="0" marginheight="0" src="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}"/>
    </xsl:template>
 
 
