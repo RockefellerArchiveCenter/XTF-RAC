@@ -25,7 +25,8 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        width: windowWidth/2,
+        width: windowWidth/1.2,
+        height: windowHeight/1.1,
         close: function () {
             $('.ui-dialog').hide();
         }
