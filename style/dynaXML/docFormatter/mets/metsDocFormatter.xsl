@@ -83,6 +83,13 @@
                   <xsl:text> - </xsl:text>
                   <xsl:value-of select="xtf:meta/*:collectionTitle"/>
                </title>
+               <!-- Twitter Card meta tags -->
+               <meta name="twitter:card" content="summary_large_image"/>
+               <meta name="twitter:site" content="@rockarch_org"/>
+               <meta name="twitter:title" content="{xtf:meta/*:filename}"/>
+               <meta name="twitter:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
+               <!-- HA todo add large thumbnail image -->
+               <meta name="twitter:image" content=""/>
             </head>
             <body>
                <div itemscope="" typeof="http:/schema.org/ItemPage">
@@ -90,7 +97,6 @@
                      test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:abstract | mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']">
                      <meta itemprop="http:/schema.org/about">
                         <xsl:attribute name="content">
-                           <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:abstract"/>
                            <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']"/>
                         </xsl:attribute>
                      </meta>
