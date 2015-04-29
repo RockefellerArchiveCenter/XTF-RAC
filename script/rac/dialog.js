@@ -17,6 +17,27 @@ function content() {
 }
 
 $(function () {
+    var dialogView = $('#daoView').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        width: windowWidth/2,
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    $(".thumbnailButtons .view").on("click", function (e) {
+        e.preventDefault();
+        dialogView.dialog("open");
+    });
+});
+
+$(function () {
     var dialogSearchTips = $('#searchTips').dialog({
         create: function(event, ui) {
             var widget = $(this).dialog("widget");

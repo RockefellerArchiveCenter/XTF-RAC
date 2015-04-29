@@ -154,6 +154,9 @@
                <div class="fixedFooter">
                   <xsl:copy-of select="$brand.footer"/>
                </div>
+               <div id="daoView">
+                  <xsl:call-template name="daoView"/>
+               </div>
             </body>
          </html>
       </xsl:result-document>
@@ -569,6 +572,16 @@
             </a>
          </td>
       </tr>
+   </xsl:template>
+   
+   <!-- ====================================================================== -->
+   <!-- DAO modal windows                                                      -->
+   <!-- ====================================================================== -->
+   
+   <xsl:template name="daoView">
+      <!-- HA todo check if we need an iframe instead -->
+      <p><xsl:value-of select="mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href"/></p>
+      <img src="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}"/>
    </xsl:template>
 
 
