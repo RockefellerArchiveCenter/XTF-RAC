@@ -6,14 +6,14 @@
       <meta name="viewport" content="width=device-width,initial-scale=1"/>
       <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
       <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
-      <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
+      <link rel="stylesheet" href="/xtf/css/default/results.css" type="text/css"/>
       <link rel="stylesheet" href="http://www.rockarch.org/css/more.css" type="text/css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
-      <link rel="shortcut icon" href="icons/default/favicon.png"/>
+      <link rel="shortcut icon" href="/xtf/icons/default/favicon.png"/>
       <!-- 9/27/11 WS: RA links and javascript -->
       <link rel="stylesheet" type="text/css" href="http://www.rockarch.org/css/bootstrap.css"/>
-      <link rel="stylesheet" href="css/default/racustom.css" type="text/css"/>
-      <link rel="stylesheet" href="css/default/print.css" type="text/css" media="print"/>
+      <link rel="stylesheet" href="/xtf/css/default/racustom.css" type="text/css"/>
+      <link rel="stylesheet" href="/xtf/css/default/print.css" type="text/css" media="print"/>
       <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'/>
       <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"/>
       <script type="text/javascript" src="http://www.rockarch.org/js/bootstrap.js"/>
@@ -48,11 +48,11 @@
       <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
       <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
       <link rel="stylesheet" href="http://www.rockarch.org/css/more.css" type="text/css"/>
-      <link rel="shortcut icon" href="icons/default/favicon.png"/>
+      <link rel="shortcut icon" href="/xtf/icons/default/favicon.png"/>
       <!-- 9/27/11 WS: RA links and javascript -->
       <link rel="stylesheet" rev="stylesheet" type="text/css" href="http://www.rockarch.org/css/bootstrap.css"/>
       <link rel="stylesheet" href="/xtf/css/default/racustom.css" type="text/css"/>
-      <link rel="stylesheet" href="css/default/print.css" type="text/css" media="print"/>
+      <link rel="stylesheet" href="/xtf/css/default/print.css" type="text/css" media="print"/>
       <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'/>
       <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"/>
       <script type="text/javascript" src="http://www.rockarch.org/js/bootstrap.js"/>
