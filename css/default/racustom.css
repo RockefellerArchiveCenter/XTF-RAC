@@ -504,7 +504,7 @@ ul.none {list-style:none;}
 .ui-dialog .ui-dialog-title {font-size:1.2em !important;}
                  
 iframe {
-    background-image: url("images/loading.gif");   
+    background-image: url("/xtf/icons/default/loading.gif");   
     background-repeat: no-repeat;
     background-position: 50% 50%;
     width:99%;
