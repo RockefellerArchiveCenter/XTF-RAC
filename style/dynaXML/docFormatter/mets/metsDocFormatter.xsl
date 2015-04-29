@@ -78,6 +78,10 @@
                   var client = new ZeroClipboard($('#copy-link'));
                   });
                </script>
+               <!-- Twitter script -->
+               <script>
+                  window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+               </script>
                <title>
                   <xsl:value-of select="xtf:meta/*:filename"/>
                   <xsl:text> - </xsl:text>
@@ -90,8 +94,19 @@
                <meta name="twitter:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
                <!-- HA todo add large thumbnail image -->
                <meta name="twitter:image" content=""/>
+               <!-- Open Graph meta tags -->
+               <!-- HA todo add short URL -->
+               <meta property="og:url" content="" />
+               <meta property="og:title" content="{xtf:meta/*:filename}" />
+               <meta property="og:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}" />
+               <!-- HA todo add large thumbnail image -->
+               <meta property="og:image" content="" />
             </head>
             <body>
+               <!-- Facebook script -->
+               <div id="fb-root"></div>
+               
+               <!-- schema.org meta tags -->
                <div itemscope="" typeof="http:/schema.org/ItemPage">
                   <xsl:if
                      test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:abstract | mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']">
@@ -171,6 +186,17 @@
                   <xsl:call-template name="daoView"/>
                </div>
             </body>
+            <script>
+                  /* <![CDATA[ */
+                  (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+                  fjs.parentNode.insertBefore(js, fjs);
+                  }(document, 'script', 'facebook-jssdk'));
+                  /* ]]> */
+               </script>
          </html>
       </xsl:result-document>
    </xsl:template>
@@ -535,7 +561,17 @@
    <!-- ====================================================================== -->
    <xsl:template name="bookmarkMenu">
       <div class="pull-right" id="bookmarkMenu">
-         <div class="btn-group">
+         <!-- HA todo add short url-->
+         <a href="https://twitter.com/share" class="twitter-share-button"
+            data-dnt="true"
+            data-count="none"
+            data-via="rockarch_org"
+            data-url="">
+            Twitter
+         </a>
+         <!-- HA todo add short url-->
+         <div class="fb-share-button" data-href="{concat('/xtf/view?docId=mets/', xtf:meta/*:identifier, '/', xtf:meta/*:identifier, '.xml')}" data-layout="button"></div>
+         <!--<div class="btn-group">
             <button id="myListButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                <img src="/xtf/icons/default/share.svg"/> Share <span class="caret"/>
             </button>
@@ -556,11 +592,11 @@
                      <img src="/xtf/icons/default/email-list.svg"/> Email</a>
                </li>
                <li>
-                  <!-- HA todo: replace this with a short link -->
+                  <!-\- HA todo: replace this with a short link -\->
                   <a id="copy-link" href="#" data-clipboard-text="{concat($xtfURL, 'view?docId=mets/', xtf:meta/*:identifier, '/', xtf:meta/*:identifier, '.xml')}"><img src="/xtf/icons/default/link.svg"/> Link</a>
                </li>
             </ul>
-         </div>
+         </div>-->
       </div>
    </xsl:template>
 
