@@ -101,11 +101,24 @@
                <meta property="og:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}" />
                <!-- HA todo add large thumbnail image -->
                <meta property="og:image" content="" />
+               <!-- HA todo add cropped image height/width -->
+               <meta property="og:image:width" content="" />
+               <meta property="og:image:height" content="" />
             </head>
             <body>
                <!-- Facebook script -->
                <div id="fb-root"></div>
-               
+               <script>
+                  /* <![CDATA[ */
+                  (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+                  fjs.parentNode.insertBefore(js, fjs);
+                  }(document, 'script', 'facebook-jssdk'));
+                  /* ]]> */
+               </script>
                <!-- schema.org meta tags -->
                <div itemscope="" typeof="http:/schema.org/ItemPage">
                   <xsl:if
@@ -186,17 +199,6 @@
                   <xsl:call-template name="daoView"/>
                </div>
             </body>
-            <script>
-                  /* <![CDATA[ */
-                  (function(d, s, id) {
-                  var js, fjs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) return;
-                  js = d.createElement(s); js.id = id;
-                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
-                  fjs.parentNode.insertBefore(js, fjs);
-                  }(document, 'script', 'facebook-jssdk'));
-                  /* ]]> */
-               </script>
          </html>
       </xsl:result-document>
    </xsl:template>
@@ -571,6 +573,9 @@
          </a>
          <!-- HA todo add short url-->
          <div class="fb-share-button" data-href="{concat('/xtf/view?docId=mets/', xtf:meta/*:identifier, '/', xtf:meta/*:identifier, '.xml')}" data-layout="button"></div>
+         <!-- HA todo add short url -->
+         <!-- HA todo improve interaction - show link, then copy, provide feedback? -->
+         <button class="link"><a id="copy-link" href="#" data-clipboard-text="{concat($xtfURL, 'view?docId=mets/', xtf:meta/*:identifier, '/', xtf:meta/*:identifier, '.xml')}"><img src="/xtf/icons/default/link.svg"/> Link</a></button>
          <!--<div class="btn-group">
             <button id="myListButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                <img src="/xtf/icons/default/share.svg"/> Share <span class="caret"/>
