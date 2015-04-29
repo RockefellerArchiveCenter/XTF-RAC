@@ -95,8 +95,7 @@
                <!-- HA todo add large thumbnail image -->
                <meta name="twitter:image" content=""/>
                <!-- Open Graph meta tags -->
-               <!-- HA todo add short URL -->
-               <meta property="og:url" content="" />
+               <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" />
                <meta property="og:title" content="{xtf:meta/*:filename}" />
                <meta property="og:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}" />
                <!-- HA todo add large thumbnail image -->
@@ -563,19 +562,16 @@
    <!-- ====================================================================== -->
    <xsl:template name="bookmarkMenu">
       <div class="pull-right" id="bookmarkMenu">
-         <!-- HA todo add short url-->
          <a href="https://twitter.com/share" class="twitter-share-button"
             data-dnt="true"
             data-count="none"
             data-via="rockarch_org"
-            data-url="">
+            data-url="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}">
             Twitter
          </a>
-         <!-- HA todo add short url-->
-         <div class="fb-share-button" data-href="{concat('/xtf/view?docId=mets/', xtf:meta/*:identifier, '/', xtf:meta/*:identifier, '.xml')}" data-layout="button"></div>
-         <!-- HA todo add short url -->
+         <div class="fb-share-button" data-href="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-layout="button"></div>
          <!-- HA todo improve interaction - show link, then copy, provide feedback? -->
-         <button class="link"><a id="copy-link" href="#" data-clipboard-text="{concat($xtfURL, 'view?docId=mets/', xtf:meta/*:identifier, '/', xtf:meta/*:identifier, '.xml')}"><img src="/xtf/icons/default/link.svg"/> Link</a></button>
+         <button class="link"><a id="copy-link" href="#" data-clipboard-text="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"><img src="/xtf/icons/default/link.svg"/> Link</a></button>
          <!--<div class="btn-group">
             <button id="myListButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                <img src="/xtf/icons/default/share.svg"/> Share <span class="caret"/>
@@ -611,7 +607,7 @@
 
    <xsl:template name="daoSummary">
       <xsl:variable name="link">
-         <xsl:value-of select="concat('/xtf/view?docId=mets/', xtf:meta/*:identifier, '/', xtf:meta/*:identifier, '.xml')"/>
+         <xsl:value-of select="concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)"/>
       </xsl:variable>
       <xsl:variable name="downloadLink">
          <xsl:value-of select="concat('http://storage.rockarch.org/', xtf:meta/*:identifier, '-', xtf:meta/*:filename)"/>
