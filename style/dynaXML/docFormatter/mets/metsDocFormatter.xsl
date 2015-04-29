@@ -56,7 +56,9 @@
       <xsl:choose>
          <!-- DAO tables in EAD container lists -->
          <xsl:when test="$smode='daoTable'">
-            <xsl:call-template name="daoSummary"/>
+            <xsl:for-each select=".">
+               <xsl:call-template name="daoSummary"/>
+            </xsl:for-each>
          </xsl:when>
          <!-- Creates the basic frameset.-->
          <xsl:otherwise>
@@ -109,13 +111,15 @@
                <div id="fb-root"></div>
                <script>
                   /* <![CDATA[ */
+                  $(document).ready(function() {
                   (function(d, s, id) {
                   var js, fjs = d.getElementsByTagName(s)[0];
                   if (d.getElementById(id)) return;
                   js = d.createElement(s); js.id = id;
-                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1;version=v2.3";
                   fjs.parentNode.insertBefore(js, fjs);
                   }(document, 'script', 'facebook-jssdk'));
+                  });
                   /* ]]> */
                </script>
                <!-- schema.org meta tags -->
@@ -569,7 +573,7 @@
             data-url="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}">
             Twitter
          </a>
-         <div class="fb-share-button" data-href="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-layout="button"></div>
+         <div class="fb-share-button" data-href="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-layout="button">Facebook</div>
          <!-- HA todo improve interaction - show link, then copy, provide feedback? -->
          <button class="link"><a id="copy-link" href="#" data-clipboard-text="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"><img src="/xtf/icons/default/link.svg"/> Link</a></button>
          <!--<div class="btn-group">
@@ -623,11 +627,11 @@
             <xsl:value-of select="xtf:meta/*:size"/>
          </td>
          <td>
-            <a href="{$link}">details</a>
+            <a href="{$link}" title="About this file">details</a>
          </td>
          <td>
             <a href="{$downloadLink}" download="true">
-               <img src="/xtf/icons/default/download.svg"/>
+               <img src="/xtf/icons/default/download.svg" alt="download digital object" title="Download"/>
             </a>
          </td>
       </tr>

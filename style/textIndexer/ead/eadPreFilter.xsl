@@ -571,9 +571,9 @@
    <xsl:template name="get-ead-containers">
       <xsl:if test="child::did/container">
          <xsl:choose>
-               <xsl:when test="did/container/@label='Microform' or did/container/@label='microform'">
-                  <xsl:for-each select="did/container[@label='Microform' or @label='microform']">
-                     <containers xtf:meta="true">
+            <xsl:when test="did/container/@label='Microform' or did/container/@label='microform'">
+               <xsl:for-each select="did/container[@label='Microform' or @label='microform']">
+                  <containers xtf:meta="true">
                      <xsl:variable name="id">
                         <xsl:value-of select="@id"/>
                      </xsl:variable>
@@ -585,7 +585,7 @@
                         </xsl:for-each>
                      </xsl:if>
                   </containers>
-               </xsl:for-each>   
+               </xsl:for-each>
             </xsl:when>
             <xsl:otherwise>
                <xsl:for-each select="did/container[not(@parent)]">
@@ -606,11 +606,11 @@
          </xsl:choose>
       </xsl:if>
    </xsl:template>
-   
+
    <xsl:template name="container-type-number">
       <xsl:value-of select="concat(' ',concat(upper-case(substring(@type,1,1)),substring(@type,2)),' ',.)"/>
    </xsl:template>
-   
+
 
    <!-- creator -->
    <xsl:template name="get-ead-creator">
@@ -713,8 +713,7 @@
       <xsl:choose>
          <xsl:when test="@level">
             <xsl:if test="controlaccess">
-               <xsl:for-each
-                  select="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
+               <xsl:for-each select="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
                   <subjectpers xtf:meta="true">
                      <xsl:value-of select="."/>
                   </subjectpers>
@@ -726,19 +725,15 @@
                </xsl:for-each>
             </xsl:if>
          </xsl:when>
-         <xsl:when
-            test="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
-            <xsl:for-each
-               select="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
+         <xsl:when test="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
+            <xsl:for-each select="/ead/archdesc/controlaccess/persname | /ead/archdesc/controlaccess/famname">
                <subjectpers xtf:meta="true">
                   <xsl:value-of select="."/>
                </subjectpers>
             </xsl:for-each>
          </xsl:when>
-         <xsl:when
-            test="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname">
-            <xsl:for-each
-               select="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname">
+         <xsl:when test="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname">
+            <xsl:for-each select="/ead/eadheader/filedesc/notestmt/persname | /ead/eadheader/filedesc/notestmt/famname">
                <subjectpers xtf:meta="true">
                   <xsl:value-of select="."/>
                </subjectpers>
@@ -1174,9 +1169,11 @@
 
    <xsl:template name="get-ead-url">
       <xsl:if test="descendant-or-self::dao">
-         <daoLink xtf:meta="true">
-            <xsl:value-of select="dao/ns2:href|did/dao/@xlink:href"/>
-         </daoLink>
+         <xsl:for-each select="dao/ns2:href|did/dao/@xlink:href">
+            <daoLink xtf:meta="true">
+               <xsl:value-of select="."/>
+            </daoLink>
+         </xsl:for-each>
       </xsl:if>
    </xsl:template>
 
