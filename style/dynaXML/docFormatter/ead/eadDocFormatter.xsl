@@ -119,7 +119,7 @@
    </xsl:param>
 
    <xsl:param name="parentID"/>
-   
+
    <xsl:param name="filename"/>
    <xsl:param name="identifier"/>
 
@@ -280,6 +280,21 @@
                      <meta itemprop="http://schema.org/telephone" content="(914) 366-6300"/>
                   </div>
                </div>
+
+               <!-- Twitter meta tags -->
+               <meta name="twitter:card" content="summary"/>
+               <meta name="twitter:site" content="@rockarch_org"/>
+               <meta name="twitter:title" content="{archdesc/did/unittitle}"/>
+               <meta name="twitter:description" content="{archdesc/abstract/p} {archdesc/scopecontent/p}"/>
+               <meta name="twitter:image" content="/xtf/icons/default/collection.gif"/>
+
+               <!-- Open Graph (Facebook) meta tags -->
+               <meta property="og:url" content="{concat($xtfURL, substring-before($docId, '.xml'), '/overview')}" />
+               <meta property="og:title" content="{archdesc/did/unittitle}" />
+               <meta property="og:description" content="{archdesc/abstract/p} {archdesc/scopecontent/p}" />
+               <meta property="og:image" content="/xtf/icons/default/collection.gif" />
+               <meta property="og:image:width" content="49px" />
+               <meta property="og:image:height" content="49px" />
 
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
@@ -1281,7 +1296,7 @@
       </xsl:variable>
       <div>
       <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:parent[position()&gt;1]">
-         <div class="parent" style="padding-left:{(position() -1)}em">
+         <div class="parent row" style="padding-left:{(position())}em">
             <xsl:variable name="seriesLink">
                <xsl:value-of select="concat($xtfURL, $dynaxmlPath, '?docId=', $docId, ';chunk.id=', ../*:seriesID, ';doc.view=contents')"/>
             </xsl:variable>
@@ -1289,13 +1304,13 @@
                <xsl:value-of select="."/>
             </a>
          </div>
-         <div class="component" style="padding-left:{($indent)-1}em">
+         <div class="component row" style="padding-left:{($indent)}em">
             <a href="{$componentLink}">
                <xsl:value-of select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:title"/>
             </a>
          </div>
-         <div class="sibling" style="padding-left:{$indent}em">
             <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/did/dao">
+               <div class="sibling row" style="padding-left:{$indent+1}em">
                <xsl:variable name="daoLink">
                   <xsl:value-of select="@xlink:href"/>
                </xsl:variable>
@@ -1307,7 +1322,7 @@
                   </xsl:analyze-string>
                </xsl:variable>
                <xsl:variable name="daoFilename">
-                  <xsl:value-of select="substring-after($daoLink, $daoIdentifier)"/>
+                  <xsl:value-of select="substring-after($daoLink, concat($daoIdentifier, '-'))"/>
                </xsl:variable>
                <xsl:choose>
                   <xsl:when test="matches($daoFilename, $filename)">
@@ -1319,8 +1334,8 @@
                      </a>
                   </xsl:otherwise>
                </xsl:choose>
+               </div>
             </xsl:for-each>
-         </div>
       </xsl:for-each>
       </div>
    </xsl:template>
