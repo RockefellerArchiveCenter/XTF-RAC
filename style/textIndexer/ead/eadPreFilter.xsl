@@ -1169,7 +1169,7 @@
 
    <xsl:template name="get-ead-url">
       <xsl:if test="descendant-or-self::dao">
-         <xsl:for-each select="dao[@xlink:show!='none']/ns2:href|did/dao[@xlink:show!='none']/@xlink:href">
+         <xsl:for-each select="dao/ns2:href|did/dao/@xlink:href">
             <daoLink xtf:meta="true">
                <xsl:value-of select="."/>
             </daoLink>
