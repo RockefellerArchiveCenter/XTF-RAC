@@ -280,6 +280,7 @@
                      <meta itemprop="http://schema.org/telephone" content="(914) 366-6300"/>
                   </div>
                </div>
+<<<<<<< HEAD
 
                <!-- Twitter meta tags -->
                <meta name="twitter:card" content="summary"/>
@@ -296,6 +297,9 @@
                <meta property="og:image:width" content="49px" />
                <meta property="og:image:height" content="49px" />
 
+=======
+         
+>>>>>>> removing meta links already in master, removing restricted daos from index
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
                   <a href="/xtf/search">
