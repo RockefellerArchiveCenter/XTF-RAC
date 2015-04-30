@@ -182,6 +182,20 @@
                   <xsl:value-of select="archdesc/did/unitid"/>
                   <xsl:text>)</xsl:text>
                </title>
+               <!-- Twitter meta tags -->
+               <meta name="twitter:card" content="summary"/>
+               <meta name="twitter:site" content="@rockarch_org"/>
+               <meta name="twitter:title" content="{archdesc/did/unittitle}"/>
+               <meta name="twitter:description" content="{archdesc/abstract/p} {archdesc/scopecontent/p}"/>
+               <meta name="twitter:image" content="/xtf/icons/default/collection.gif"/>
+               
+               <!-- Open Graph (Facebook) meta tags -->
+               <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/overview')}" />
+               <meta property="og:title" content="{archdesc/did/unittitle}" />
+               <meta property="og:description" content="{archdesc/abstract/p} {archdesc/scopecontent/p}" />
+               <meta property="og:image" content="{concat($xtfURL, 'icons/default/collection.gif')}" />
+               <meta property="og:image:width" content="49" />
+               <meta property="og:image:height" content="49" />
             </head>
             <body>
                <!-- Schema.org metadata -->
@@ -247,21 +261,6 @@
                      <meta itemprop="http:/schema.org/telephone" content="(914) 366-6300"/>
                   </div>
                </div>
-               
-               <!-- Twitter meta tags -->
-               <meta name="twitter:card" content="summary"/>
-               <meta name="twitter:site" content="@rockarch_org"/>
-               <meta name="twitter:title" content="{archdesc/did/unittitle}"/>
-               <meta name="twitter:description" content="{archdesc/abstract/p} {archdesc/scopecontent/p}"/>
-               <meta name="twitter:image" content="/xtf/icons/default/collection.gif"/>
-               
-               <!-- Open Graph (Facebook) meta tags -->
-               <meta property="og:url" content="{concat($xtfURL, substring-before($docId, '.xml'), '/overview')}" />
-               <meta property="og:title" content="{archdesc/did/unittitle}" />
-               <meta property="og:description" content="{archdesc/abstract/p} {archdesc/scopecontent/p}" />
-               <meta property="og:image" content="/xtf/icons/default/collection.gif" />
-               <meta property="og:image:width" content="49px" />
-               <meta property="og:image:height" content="49px" />
 
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
