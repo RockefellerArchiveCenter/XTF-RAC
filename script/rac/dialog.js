@@ -8,6 +8,8 @@ $('#myListCopies #formatError').hide();
 $('#myListCopies #itemPagesError').hide();
 $('.contentError').hide();
 
+$('#copyLink .success').hide();
+
 function content() {
     if($('.myListContents .empty').length) {
         return false;
@@ -15,6 +17,36 @@ function content() {
         return true;
     }
 }
+
+// Select contents of link copy text input on load
+$('#copyLink input[type="text"]').focus().select();
+
+$('#copyLink button').on('click', function(e) {
+    e.preventDefault();
+    $('#copyLink .success').fadeIn();
+});
+
+$(function () {
+    var copyLink = $('#copyLink').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        width: '57em',
+        height: '100',
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    $("#bookmarkMenu .link").on("click", function (e) {
+        e.preventDefault();
+        copyLink.dialog("open");
+    });
+});
 
 $(function () {
     var dialogView = $('#daoView').dialog({

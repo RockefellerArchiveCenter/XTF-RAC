@@ -427,6 +427,11 @@ ul.none {list-style:none;}
 
 .daoTable td {
   padding: 2px 5px;
+  color: #000;
+}
+
+#content-wrapper .daoTable td a {
+    color:#c45414;
 }
 
 .daoTable th {
@@ -455,11 +460,20 @@ ul.none {list-style:none;}
 /*--- Formats METS records ---*/
 #bookmarkMenu {
     width:16em;
+    height:2em;
 }
 
-#bookmarkMenu iframe, #bookmarkMenu div, #bookmarkMenu button {
+#bookmarkMenu .button {
     float:left;
-    margin:0 .5em;
+    margin:0 0 0 1em;
+}
+
+#bookmarkMenu .button .link {
+  width: 56px;
+  height: 20px;
+  padding: 1px;
+  font-size: 13px;
+  line-height: 13px;
 }
 
 #bookmarkMenu img {
@@ -521,6 +535,23 @@ ul.none {list-style:none;}
     background-position: 50% 50%;
     width:99%;
     height:100%;
+}
+
+#copyLink input[type="text"] {
+  width: 40em;
+  font-family: Courier, monospace;
+  margin-right:1em;
+  margin-bottom:5px;
+}
+
+#copyLink button {
+  margin-top:-2px;
+}
+
+#copyLink .success {
+  color: #c45414;
+  font-weight: bold;
+  text-align: center;
 }
 
 .daoCitation {padding-bottom: 5px;}
