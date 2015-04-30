@@ -39,7 +39,7 @@
                         </xsl:analyze-string>
                     </xsl:variable>
                     <tr class="dao" data-identifier="{$identifier}">
-                        <td><img alt="loading data" src="/xtf/icons/default/loading.gif"/></td>
+                        <td><img alt="loading data" src="/xtf/icons/default/loading.gif"/> <span style="color:#c45414;margin-left:.5em;">Loading</span></td>
                         <td></td>
                         <td></td>
                         <td></td>

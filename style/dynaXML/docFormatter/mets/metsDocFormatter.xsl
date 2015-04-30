@@ -74,6 +74,7 @@
          <html xml:lang="en" lang="en">
             <head>
                <xsl:copy-of select="$brand.links"/>
+               <script src="/xtf/script/rac/fb.js"/>
                <script type="text/javascript" src="/xtf/script/rac/ZeroClipboard.min.js"/>
                <script type="text/javascript">
                   $(document).ready(function() {
@@ -107,19 +108,8 @@
                <meta property="og:image:height" content=""/>
             </head>
             <body>
-               <!-- Facebook script -->
+               <!-- Facebook root -->
                <div id="fb-root"/>
-               <script>
-                  $(document).ready(function() {
-                  (function(d, s, id) {
-                  var js, fjs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) return;
-                  js = d.createElement(s); js.id = id;
-                  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;version=v2.3";
-                  fjs.parentNode.insertBefore(js, fjs);
-                  }(document, 'script', 'facebook-jssdk'));
-                  });
-               </script>
                <!-- schema.org meta tags -->
                <div itemscope="" typeof="http:/schema.org/ItemPage">
                   <xsl:if
@@ -304,7 +294,6 @@
       <xsl:variable name="collectionId">
          <xsl:value-of select="substring-before(xtf:meta/*:collectionId, '.xml')"/>
       </xsl:variable>
-      <!-- HA todo: hits??? -->
       <!-- HA todo: add support for queries -->
       <!--<xsl:variable name="hit.count">
          <xsl:choose>
@@ -557,8 +546,8 @@
       </xsl:variable>
       <div class="foundIn">
          <h4>Found In</h4>
-         <p data-collectionId="{$collectionId}" data-componentId="{$componentId}" data-filename="{xtf:meta/*:filename}" data-identifier="{xtf:meta/*:identifier}">
-            <img src="/xtf/icons/default/loading.gif"/>
+         <p style="color:#c45414;margin-top:1em;" data-collectionId="{$collectionId}" data-componentId="{$componentId}" data-filename="{xtf:meta/*:filename}" data-identifier="{xtf:meta/*:identifier}">
+            <img style="margin:0 .5em 0 1em;" src="/xtf/icons/default/loading.gif"/> Loading
          </p>
       </div>
    </xsl:template>
@@ -566,7 +555,6 @@
    <!-- Bookmark options menu                                                  -->
    <!-- ====================================================================== -->
    <xsl:template name="bookmarkMenu">
-      <!-- HA todo find a way to display these only when loaded so they don't jump around as much -->
       <div class="pull-right" id="bookmarkMenu">
          <div class="button">
             <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true" data-count="none" data-via="rockarch_org"

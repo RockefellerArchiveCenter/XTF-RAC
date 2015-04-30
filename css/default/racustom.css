@@ -470,6 +470,7 @@ ul.none {list-style:none;}
 #bookmarkMenu {
     width:16em;
     height:2em;
+    opacity:0;
 }
 
 #bookmarkMenu .button {
