@@ -187,13 +187,13 @@
                <meta name="twitter:site" content="@rockarch_org"/>
                <meta name="twitter:title" content="{archdesc/did/unittitle}"/>
                <meta name="twitter:description" content="{archdesc/abstract/p} {archdesc/scopecontent/p}"/>
-               <meta name="twitter:image" content="/xtf/icons/default/collection.gif"/>
+               <meta name="twitter:image" content="{concat($xtfURL, 'icons/default/collections.gif')}"/>
                
                <!-- Open Graph (Facebook) meta tags -->
                <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/overview')}" />
                <meta property="og:title" content="{archdesc/did/unittitle}" />
                <meta property="og:description" content="{archdesc/abstract/p} {archdesc/scopecontent/p}" />
-               <meta property="og:image" content="{concat($xtfURL, 'icons/default/collection.gif')}" />
+               <meta property="og:image" content="{concat($xtfURL, 'icons/default/collections.gif')}" />
                <meta property="og:image:width" content="49" />
                <meta property="og:image:height" content="49" />
             </head>
