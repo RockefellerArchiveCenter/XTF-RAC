@@ -74,7 +74,7 @@
          <html xml:lang="en" lang="en">
             <head>
                <xsl:copy-of select="$brand.links"/>
-               <script type="text/javascript" src="/xtf/script/rac/ZeroClipboard.min.js"></script>
+               <script type="text/javascript" src="/xtf/script/rac/ZeroClipboard.min.js"/>
                <script type="text/javascript">
                   $(document).ready(function() {
                   var client = new ZeroClipboard($('#copy-link'));
@@ -97,30 +97,28 @@
                <!-- HA todo add large thumbnail image -->
                <meta name="twitter:image" content=""/>
                <!-- Open Graph meta tags -->
-               <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" />
-               <meta property="og:title" content="{xtf:meta/*:filename}" />
-               <meta property="og:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}" />
+               <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"/>
+               <meta property="og:title" content="{xtf:meta/*:filename}"/>
+               <meta property="og:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
                <!-- HA todo add large thumbnail image -->
-               <meta property="og:image" content="" />
+               <meta property="og:image" content=""/>
                <!-- HA todo add cropped image height/width -->
-               <meta property="og:image:width" content="" />
-               <meta property="og:image:height" content="" />
+               <meta property="og:image:width" content=""/>
+               <meta property="og:image:height" content=""/>
             </head>
             <body>
                <!-- Facebook script -->
-               <div id="fb-root"></div>
+               <div id="fb-root"/>
                <script>
-                  /* <![CDATA[ */
                   $(document).ready(function() {
                   (function(d, s, id) {
                   var js, fjs = d.getElementsByTagName(s)[0];
                   if (d.getElementById(id)) return;
                   js = d.createElement(s); js.id = id;
-                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1;version=v2.3";
+                  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;version=v2.3";
                   fjs.parentNode.insertBefore(js, fjs);
                   }(document, 'script', 'facebook-jssdk'));
                   });
-                  /* ]]> */
                </script>
                <!-- schema.org meta tags -->
                <div itemscope="" typeof="http:/schema.org/ItemPage">
@@ -200,6 +198,9 @@
                </div>
                <div id="daoView">
                   <xsl:call-template name="daoView"/>
+               </div>
+               <div id="copyLink">
+                  <xsl:call-template name="copyLink"/>
                </div>
             </body>
          </html>
@@ -565,43 +566,20 @@
    <!-- Bookmark options menu                                                  -->
    <!-- ====================================================================== -->
    <xsl:template name="bookmarkMenu">
+      <!-- HA todo find a way to display these only when loaded so they don't jump around as much -->
       <div class="pull-right" id="bookmarkMenu">
-         <a href="https://twitter.com/share" class="twitter-share-button"
-            data-dnt="true"
-            data-count="none"
-            data-via="rockarch_org"
-            data-url="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}">
-            Twitter
-         </a>
-         <div class="fb-share-button" data-href="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-layout="button">Facebook</div>
-         <!-- HA todo improve interaction - show link, then copy, provide feedback? -->
-         <button class="link"><a id="copy-link" href="#" data-clipboard-text="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"><img src="/xtf/icons/default/link.svg"/> Link</a></button>
-         <!--<div class="btn-group">
-            <button id="myListButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-               <img src="/xtf/icons/default/share.svg"/> Share <span class="caret"/>
+         <div class="button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true" data-count="none" data-via="rockarch_org"
+               data-url="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"></a>
+         </div>
+         <div class="button">
+            <div class="fb-share-button" data-href="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-layout="button"></div>
+         </div>
+         <div class="button">
+            <button class="btn btn-default link">
+               <img src="/xtf/icons/default/link.svg"/> Link
             </button>
-            <ul class="dropdown-menu pull-right" role="menu">
-               <li>
-                  <a href="#"><img src="/xtf/icons/default/facebook.svg"/> Facebook</a>
-               </li>
-               <li>
-                  <a href="#"><img src="/xtf/icons/default/twitter.svg"/> Twitter</a>
-               </li>
-               <li>
-                  <a href="" title="Share by Email">
-                     <xsl:attribute name="href">
-                        <xsl:value-of
-                           select="concat('mailto:?subject=', xtf:meta/*:filename, ' - ', xtf:meta/*:collectionTitle, '&amp;body=', xtf:meta/*:filename, ' - ', xtf:meta/*:collectionTitle, ' from DIMES, the online catalog of Rockefeller Archive Center. ', mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href)"
-                        />
-                     </xsl:attribute>
-                     <img src="/xtf/icons/default/email-list.svg"/> Email</a>
-               </li>
-               <li>
-                  <!-\- HA todo: replace this with a short link -\->
-                  <a id="copy-link" href="#" data-clipboard-text="{concat($xtfURL, 'view?docId=mets/', xtf:meta/*:identifier, '/', xtf:meta/*:identifier, '.xml')}"><img src="/xtf/icons/default/link.svg"/> Link</a>
-               </li>
-            </ul>
-         </div>-->
+         </div>
       </div>
    </xsl:template>
 
@@ -642,8 +620,17 @@
    <!-- ====================================================================== -->
 
    <xsl:template name="daoView">
-      <!-- HA todo check if we need an iframe instead -->
       <iframe frameborder="0" marginwidth="0" marginheight="0" src="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}"/>
+   </xsl:template>
+   
+   <xsl:template name="copyLink">
+      <input type="text" value="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"/>
+      <button class="btn btn-sm" id="copy-link" href="#" data-clipboard-text="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}">
+         Copy to clipboard
+      </button>
+      <div class="success">
+         <p>Link copied to clipboard!</p>
+      </div>
    </xsl:template>
 
 
