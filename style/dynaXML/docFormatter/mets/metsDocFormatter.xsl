@@ -48,6 +48,7 @@
       </xsl:choose>
    </xsl:param>
    <xsl:param name="parentID"/>
+   <xsl:param name="restricted"/>
 
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
@@ -372,10 +373,14 @@
       <div id="content-wrapper">
          <div id="content-right">
             <xsl:call-template name="bookmarkMenu"/>
-            <div class="thumbnail">
+            <div class="digital-thumbnail">
+               <!-- HA todo  account for multiple files -->
+               <!-- HA todo  account for non-viewable files -->
                <img src="/xtf/icons/default/thumbnail-large.png" height="300px"/>
+               <!-- HA todo hide buttons if restricted -->
                <div class="thumbnailButtons">
                   <a href="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}" download="true" class="btn btn-default download"><img src="/xtf/icons/default/download.svg"/> Download</a>
+                  <!-- HA todo hide this button if file not viewable -->
                   <a href="#" class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</a>
                </div>
             </div>
@@ -596,9 +601,16 @@
             <a href="{$link}" title="About this file">details</a>
          </td>
          <td>
-            <a href="{$downloadLink}" download="true">
-               <img src="/xtf/icons/default/download.svg" alt="download digital object" title="Download"/>
-            </a>
+            <xsl:choose>
+               <xsl:when test="$restricted = 'restricted'">
+                  <xsl:text>&#160;</xsl:text>
+               </xsl:when>
+               <xsl:otherwise>
+                  <a href="{$downloadLink}" download="true">
+                     <img src="/xtf/icons/default/download.svg" alt="download digital object" title="Download"/>
+                  </a>
+               </xsl:otherwise>
+            </xsl:choose>
          </td>
       </tr>
    </xsl:template>

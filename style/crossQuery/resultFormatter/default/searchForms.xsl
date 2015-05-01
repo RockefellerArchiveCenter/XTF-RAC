@@ -101,7 +101,7 @@
                      When you see a facet under "Refine Search" that is of interest to you, you can
                      also dig in deeper by clicking the "more" link (3) to see additional terms.</p>
                   <h4>Get notified when we update the site</h4>
-                  <p>When you see this icon <img src="./icons/default/i_rss.png" alt="rss feed"/> it
+                  <p>When you see this icon <img height="10" src="/xtf/icons/default/rss.svg" alt="rss feed"/> it
                      means there is an RSS feed for this search. You can click on it to subscribe to
                      see the most recent changes and additions in that search in your favorite feed
                      reader.</p>

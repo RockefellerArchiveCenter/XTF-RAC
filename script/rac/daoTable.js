@@ -6,7 +6,8 @@ $(document).ready(function () {
     $(daoTable).each(function () {
         var a = $(this);
         var identifier = $(this).attr('data-identifier');
-        var search = '/xtf/view?docId=mets/' + identifier + '/' + identifier + '.xml;smode=daoTable';
+        var restricted = $(this).attr('data-restricted')
+        var search = '/xtf/view?docId=mets/' + identifier + '/' + identifier + '.xml;smode=daoTable;restricted='+restricted;
         $.ajax(search).success(function (data) {
             // If results were retrieved, display them
             a.replaceWith(data);
