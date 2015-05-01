@@ -504,7 +504,7 @@
                                     <xsl:if test="docHit">
                                        <xsl:variable name="cleanString" select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
                                        <a href="search?{$cleanString};rmode=rss;sort=rss" onClick="_gaq.push(['_trackEvent', 'results', 'rss', {$cleanString}]);">
-                                          <img src="{$icon.path}/i_rss.png" alt="rss icon" style="vertical-align:bottom;"/>
+                                          <img src="{$icon.path}rss.svg" alt="rss icon"/>
                                        </a>
                                     </xsl:if>
                                  </div>
@@ -570,7 +570,7 @@
                               <xsl:choose>
                                  <xsl:when test="$type = 'dao'">
                                     <xsl:for-each select="docHit">
-                                       <xsl:if test="string(meta/daoLink)">
+                                       <xsl:if test="meta/daoLink!=''">
                                           <xsl:apply-templates select="." mode="docHit"/>
                                        </xsl:if>
                                     </xsl:for-each>
@@ -907,9 +907,20 @@
                <xsl:choose>
                   <!-- HA todo: add new thumbnails distinguishing between files with single or multiple daos -->
                   <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
-                     <xsl:variable name="daoFile" select="substring-before(tokenize(meta/daoLink,'/')[position()=last()],'.')"/>
-                     <xsl:variable name="daoImg" select="concat(string-join(tokenize(meta/daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/>
-                     <img src="{$daoImg}" alt="Digital object thumbnail"/>
+                     <xsl:variable name="daoImg">
+                     <xsl:choose>
+                        <xsl:when test="count(meta/daoLink | meta/daoLinkRestrict) &gt; 1">
+                           <xsl:value-of>/xtf/icons/default/thumbnail-multi.svg</xsl:value-of>
+                        </xsl:when>
+                        <!-- HA todo account for non-viewable files -->
+                        <xsl:otherwise>
+                           <xsl:variable name="daoFile" select="substring-before(meta/daoLink,'.pdf')"/>
+                           <!-- HA todo replace this with new thumbnail -->
+                           <xsl:value-of select="concat($daoFile,'_thumb.jpg')"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                     </xsl:variable>
+                     <img src="{$daoImg}" alt="Digital object thumbnail" width="75"/>
                   </xsl:when>
                   <xsl:when test="meta/genre[contains(.,'DVD')]">
                      <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>

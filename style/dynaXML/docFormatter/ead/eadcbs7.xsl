@@ -62,6 +62,9 @@
          <xsl:value-of select="/ead/eadheader/eadid"/>
       </xsl:variable>
       <div id="content-wrapper" data-spy="scroll" data-target="#toc" data-offset="100">
+         <xsl:if test="$doc.view='dao'">
+            <xsl:attribute name="class">digital</xsl:attribute>
+         </xsl:if>
          <div id="{$chunk.id}">
             <xsl:choose>
                <xsl:when test="$chunk.id = 'headerlink'">
@@ -1659,7 +1662,7 @@
                      <span class="inventoryHeaderTitle">Title</span>
                      <span class="inventoryHeaderContainers">Containers</span>
                      <span class="inventoryHeaderNotes">Notes</span>
-                     <span class="inventoryHeaderBookbag">Bookbag</span>
+                     <span class="inventoryHeaderBookbag">My List</span>
                   </div>
                </xsl:if>
 
@@ -1791,10 +1794,87 @@
                <div class="seriesTitle">
                   <xsl:apply-templates select="did" mode="dsc"/>
                </div>
+               <xsl:if test="child::*[@level][1]/@level='file' or child::*[@level][1]/@level='item' or (child::*[@level][1]/@level='otherlevel'and child::*[@level][1]/child::did/container)">
+                  <div class="inventoryTitle">Inventory</div>
+                  <div class="inventoryHeader">
+                     <span class="thumbnail">&#160;</span>
+                     <span class="inventoryHeaderTitle">Title</span>
+                     <span class="inventoryHeaderNotes">Notes</span>
+                     <span class="inventoryHeaderBookbag">My List</span>
+                  </div>
+               </xsl:if>
             </xsl:when>
             <!-- Items/Files-->
             <xsl:when test="@level='file'">
+               <xsl:if test="not(preceding-sibling::xtf:meta/*:dao) and parent::dsc">
+                  <div class="inventoryTitle">Inventory</div>
+                  <div class="inventoryHeader">
+                     <span class="thumbnail">&#160;</span>
+                     <span class="inventoryHeaderTitle">Title</span>
+                     <span class="inventoryHeaderNotes">Notes</span>
+                     <span class="inventoryHeaderBookbag">My List</span>
+                  </div>
+               </xsl:if>
+               <div class="thumbnail">
+                  <xsl:variable name="daoImg">
+                     <xsl:choose>
+                        <xsl:when test="count(xtf:meta/*:daoLink) &gt; 1">
+                           <xsl:value-of>/xtf/icons/default/thumbnail-multi.svg</xsl:value-of>
+                        </xsl:when>
+                        <!-- HA todo account for non-viewable files -->
+                        <xsl:otherwise>
+                           <xsl:variable name="daoFile" select="substring-before(xtf:meta/*:daoLink,'.pdf')"/>
+                           <!-- HA todo replace this with new thumbnail -->
+                           <xsl:value-of select="concat($daoFile,'_thumb.jpg')"/>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </xsl:variable>
+                  <img src="{$daoImg}" alt="Digital object thumbnail" width="75"/>
+               </div>
                <xsl:apply-templates select="did" mode="dsc"/>
+               <span class="moreInfo">
+                  <xsl:variable name="didHitCount">
+                     <xsl:value-of select="count(descendant-or-self::xtf:hit) - count(did/descendant::xtf:hit)"/>
+                  </xsl:variable>
+                  <xsl:if
+                     test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
+                     child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc | 
+                     child::fileplan |  child::odd | child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
+                     child::otherfindaid |  child::phystech |  child::processinfo | child::relatedmaterial | child::separatedmaterial |  child::controlaccess">
+                     <span class="dialog_dsc">
+                        <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Additional Description']);">Additional description</a>
+                     </span>
+                     <xsl:if test="$didHitCount &gt; 0">
+                        <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                     </xsl:if>
+                     <div id="{@id}_details" class="overlay" rel="{child::did/unittitle}">
+                        <div class="details">
+                           <xsl:apply-templates select="." mode="moreInfo"/>
+                        </div>
+                     </div>
+                  </xsl:if>
+                  <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
+                     <span class="restrict_dsc">
+                        <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Restrictions']);">Restrictions</a>
+                     </span>
+                     <xsl:if test="$didHitCount &gt; 0">
+                        <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                     </xsl:if>
+                     <div id="{@id}_restrictions" class="overlay" rel="{child::did/unittitle}">
+                        <div class="restrictions">
+                           <xsl:apply-templates select="." mode="restrictions"/>
+                        </div>
+                     </div>
+                  </xsl:if>
+               </span>
+               
+               <span class="inventoryBookbag bookbag">
+                  <xsl:if test="child::did/container and not(child::*[@level='file' or @level='item'])">
+                     <xsl:call-template name="myListEad">
+                        <xsl:with-param name="rootID" select="$rootID"/>
+                     </xsl:call-template>
+                  </xsl:if>
+               </span>
                <xsl:call-template name="daoTable"/>
             </xsl:when>
          </xsl:choose>

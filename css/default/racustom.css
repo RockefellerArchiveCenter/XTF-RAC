@@ -172,7 +172,7 @@ background-color: #EEEEEE;box-shadow: 0px 5px 10px #666;}
 #results a {color:#c45414; text-decoration:none;}
 #results a:hover {font-weight:bold}
 #results select, #results input {font-size:1em;margin-top:0; margin-bottom:0;padding:0;height: auto;line-height: 0;width: auto;}
-#rss {float:left;margin-right:.5em;}
+#rss {float:left;margin-right:.5em;margin-top: 2px;width: 1em;}
 #hits {float:left;margin-bottom:1%;width:32%}
 #sort {float:right;}
 #results .resultsButton {float:right;font-size:1em;}
@@ -342,6 +342,10 @@ ul.none {list-style:none;}
 #content-wrapper .dropdown-menu > li > a:hover {color:#fff; text-decoration:none;}
 
 #content-wrapper h2 {padding-top:1em;}
+
+#content-wrapper .thumbnail {
+    width:10%;
+}
          
 #content-right {
     display:block;
@@ -438,17 +442,25 @@ ul.none {list-style:none;}
   background: #333;
   color: #eee;
   font-weight: normal;
-}
+} 
 
 #docHits .daoTable {
   float: right;
   width: 82%;
 }
 
+#docHits .subdocument .daoTable {
+  width: 100%;
+}
+
 #content-wrapper .daoTable {
   float: left;
-  width: 72%;
+  width: 88%;
   margin-left: 1%;
+}
+
+#content-wrapper.digital .daoTable {
+    width:82%;
 }
 
 .daoTable img {
@@ -482,7 +494,7 @@ ul.none {list-style:none;}
   vertical-align: middle;
 }
 
-.thumbnail {
+.digital-thumbnail {
     float:left;
 }
 

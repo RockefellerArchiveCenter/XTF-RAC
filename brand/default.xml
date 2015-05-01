@@ -27,7 +27,6 @@
       <script type="text/javascript" src="/xtf/script/rac/componentInfo.js"/>
       <script type="text/javascript" src="/xtf/script/rac/daoTable.js"/>
       <script type="text/javascript" src="/xtf/script/bookbag.js"/>
-      
       <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
          'UA-10013579-1']); _gaq.push(['_trackPageview']); (function() { var ga =
          document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src =
@@ -508,7 +507,7 @@
                term (2) in the navigation bar. When you see a facet under "Refine Search" that is of interest to you, you can also dig in deeper by clicking the "more" link (3) to see additional
                terms.</p>
             <h4>Get notified when we update the site</h4>
-            <p>When you see this icon <img src="./icons/default/i_rss.png" alt="rss feed"/> it means there is an RSS feed for this search. You can click on it to subscribe to see the most recent
+            <p>When you see this icon <img height="10" src="/xtf/icons/default/rss.svg" alt="rss feed"/> it means there is an RSS feed for this search. You can click on it to subscribe to see the most recent
                changes and additions in that search in your favorite feed reader.</p>
             <h4>Not everything is up yet!</h4>
             <p>We’re still in the process of adding information to this system. </p>

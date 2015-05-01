@@ -18,6 +18,7 @@
 
     <xsl:template name="daoTable">
         <table class="daoTable">
+            <thead>
             <tr>
                 <th>Filename</th>
                 <th>Format</th>
@@ -25,6 +26,8 @@
                 <th> </th>
                 <th> </th>
             </tr>
+            </thead>
+            <tbody>
             <xsl:for-each select="meta/daoLink | xtf:meta/*:daoLink">
                 <xsl:if test=".!=''">
                     <xsl:variable name="identifier">
@@ -47,6 +50,29 @@
                     </tr>
                 </xsl:if>
             </xsl:for-each>
+                <xsl:for-each select="meta/daoLinkRestricted | xtf:meta/*:daoLinkRestricted">
+                    <xsl:if test=".!=''">
+                        <xsl:variable name="identifier">
+                            <!--http://storage.rockarch.org/46d03fe1-c30d-49b9-b1ff-da164a414ec3-rac_rfdiaries_12-2_mason_1928-1936_006.pdf-->
+                            <xsl:analyze-string select="." regex="http://storage.rockarch.org/(([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+))\-(.*)" flags="i">
+                                <xsl:matching-substring>
+                                    <xsl:value-of select="regex-group(1)"/>
+                                </xsl:matching-substring>
+                                <xsl:non-matching-substring>
+                                    <xsl:value-of select="'none'"/>
+                                </xsl:non-matching-substring>
+                            </xsl:analyze-string>
+                        </xsl:variable>
+                        <tr class="dao" data-identifier="{$identifier}" data-restricted="restricted">
+                            <td><img alt="loading data" src="/xtf/icons/default/loading.gif"/> <span style="color:#c45414;margin-left:.5em;">Loading</span></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </xsl:if>
+                </xsl:for-each>
+            </tbody>
         </table>
     </xsl:template>
     
