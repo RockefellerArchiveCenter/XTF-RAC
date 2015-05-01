@@ -96,17 +96,14 @@
                <meta name="twitter:site" content="@rockarch_org"/>
                <meta name="twitter:title" content="{xtf:meta/*:filename}"/>
                <meta name="twitter:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
-               <!-- HA todo add large thumbnail image -->
-               <meta name="twitter:image" content=""/>
+               <meta name="twitter:image" content="{concat('http://storage.rockarch.org/', xtf:meta/*:identifier, '_thumb300.jpg')}"/>
                <!-- Open Graph meta tags -->
                <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"/>
                <meta property="og:title" content="{xtf:meta/*:filename}"/>
                <meta property="og:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
-               <!-- HA todo add large thumbnail image -->
-               <meta property="og:image" content=""/>
-               <!-- HA todo add cropped image height/width -->
-               <meta property="og:image:width" content=""/>
-               <meta property="og:image:height" content=""/>
+               <meta property="og:image" content="{concat('http://storage.rockarch.org/', xtf:meta/*:identifier, '_thumbfb.jpg')}"/>
+               <meta property="og:image:width" content="600"/>
+               <meta property="og:image:height" content="316"/>
             </head>
             <body>
                <!-- Facebook root -->
@@ -366,22 +363,28 @@
    <!-- Main body template                                                     -->
    <!-- ====================================================================== -->
    <xsl:template name="body">
-
-      <!--<xsl:variable name="file">
-         <xsl:value-of select="/mods:mods/mods:identifier"/>
-      </xsl:variable>-->
       <div id="content-wrapper">
          <div id="content-right">
             <xsl:call-template name="bookmarkMenu"/>
             <div class="digital-thumbnail">
-               <!-- HA todo  account for multiple files -->
-               <!-- HA todo  account for non-viewable files -->
-               <img src="/xtf/icons/default/thumbnail-large.png" height="300px"/>
+               <xsl:variable name="href">
+               <xsl:choose>
+                  <xsl:when test="xtf:meta/*:viewable='true'">
+                     <xsl:value-of select="concat('http://storage.rockarch.org/', xtf:meta/*:identifier, '_thumb300.jpg')"/>
+                  </xsl:when>
+                  <!-- HA todo  account for non-viewable files -->
+                  <xsl:otherwise>
+                     <xsl:value-of>/xtf/icons/default/thumbnail-large.svg</xsl:value-of>
+                  </xsl:otherwise>
+               </xsl:choose>
+               </xsl:variable>
+               <img src="{$href}" height="300px"/>
                <!-- HA todo hide buttons if restricted -->
                <div class="thumbnailButtons">
                   <a href="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}" download="true" class="btn btn-default download"><img src="/xtf/icons/default/download.svg"/> Download</a>
-                  <!-- HA todo hide this button if file not viewable -->
-                  <a href="#" class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</a>
+                  <xsl:if test="xtf:meta/*:viewable='true'">
+                     <a href="#" class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</a>
+                  </xsl:if>
                </div>
             </div>
             <div class="description">

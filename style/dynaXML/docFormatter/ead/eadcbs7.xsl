@@ -1829,8 +1829,7 @@
                         <!-- HA todo account for non-viewable files -->
                         <xsl:otherwise>
                            <xsl:variable name="daoFile" select="substring-before(xtf:meta/*:daoLink,'.pdf')"/>
-                           <!-- HA todo replace this with new thumbnail -->
-                           <xsl:value-of select="concat($daoFile,'_thumb.jpg')"/>
+                           <xsl:value-of select="concat($daoFile,'_thumb75.jpg')"/>
                         </xsl:otherwise>
                      </xsl:choose>
                   </xsl:variable>

@@ -137,21 +137,23 @@
       <filename xtf:meta="true" xtf:tokenize="no">
          <xsl:value-of select="$filename"/>
       </filename>
-      <format xtf:meta="true">
-         <xsl:choose>
-            <xsl:when test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatName !=''">
+      <xsl:choose>
+         <xsl:when test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatName !=''">
+            <format xtf:meta="true">
                <xsl:value-of select="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatName"/>
                <xsl:if test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatVersion !=''">
                   <xsl:text> (version </xsl:text>
                   <xsl:value-of select="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatVersion"/>
                   <xsl:text>)</xsl:text>
                </xsl:if>
-            </xsl:when>
-            <xsl:otherwise>
-               <!-- HA todo: align this list with AS values -->
-               <xsl:variable name="extension">
-                  <xsl:value-of select="substring-after($filename, '.')"/>
-               </xsl:variable>
+            </format>
+         </xsl:when>
+         <xsl:otherwise>
+            <!-- HA todo: align this list with AS values -->
+            <xsl:variable name="extension">
+               <xsl:value-of select="substring-after($filename, '.')"/>
+            </xsl:variable>
+            <format xtf:meta="true">
                <xsl:choose>
                   <xsl:when test="$extension='pdf'">
                      <xsl:text>PDF</xsl:text>
@@ -163,9 +165,15 @@
                      <xsl:text>Word Document</xsl:text>
                   </xsl:when>
                </xsl:choose>
-            </xsl:otherwise>
-         </xsl:choose>
-      </format>
+            </format>
+            <viewable xtf:meta="true">
+               <xsl:choose>
+                  <xsl:when test="$extension='pdf' or $extension='jpg'">true</xsl:when>
+                  <xsl:otherwise>false</xsl:otherwise>
+               </xsl:choose>
+            </viewable>
+         </xsl:otherwise>
+      </xsl:choose>
       <!-- HA todo get size -->
       <size xtf:meta="true" xtf:tokenize="no">
          <xsl:choose>
@@ -229,7 +237,9 @@
                   <xsl:otherwise>
                      <xsl:for-each select="mods:namePart">
                         <xsl:value-of select="normalize-space(.)"/>
-                        <xsl:if test="position() != last()"><xsl:text> </xsl:text></xsl:if>
+                        <xsl:if test="position() != last()">
+                           <xsl:text> </xsl:text>
+                        </xsl:if>
                      </xsl:for-each>
                   </xsl:otherwise>
                </xsl:choose>
