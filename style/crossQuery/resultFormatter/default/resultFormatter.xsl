@@ -905,7 +905,6 @@
             <!-- 9/26/11 WS: Moved title above Author -->
             <div class="resultIcon">
                <xsl:choose>
-                  <!-- HA todo: add new thumbnails distinguishing between files with single or multiple daos -->
                   <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
                      <xsl:variable name="daoImg">
                      <xsl:choose>
@@ -915,8 +914,7 @@
                         <!-- HA todo account for non-viewable files -->
                         <xsl:otherwise>
                            <xsl:variable name="daoFile" select="substring-before(meta/daoLink,'.pdf')"/>
-                           <!-- HA todo replace this with new thumbnail -->
-                           <xsl:value-of select="concat($daoFile,'_thumb.jpg')"/>
+                           <xsl:value-of select="concat($daoFile,'_thumb75.jpg')"/>
                         </xsl:otherwise>
                      </xsl:choose>
                      </xsl:variable>
