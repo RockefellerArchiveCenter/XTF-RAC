@@ -76,6 +76,7 @@
             <head>
                <xsl:copy-of select="$brand.links"/>
                <script src="/xtf/script/rac/fb.js"/>
+               <!-- copy to clipboard scrips -->
                <script type="text/javascript" src="/xtf/script/rac/ZeroClipboard.min.js"/>
                <script type="text/javascript">
                   $(document).ready(function() {
@@ -96,12 +97,12 @@
                <meta name="twitter:site" content="@rockarch_org"/>
                <meta name="twitter:title" content="{xtf:meta/*:filename}"/>
                <meta name="twitter:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
-               <meta name="twitter:image" content="{concat('http://storage.rockarch.org/', xtf:meta/*:identifier, '_thumb300.jpg')}"/>
+               <meta name="twitter:image" content="{concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf'), '_thumb300.jpg')}"/>
                <!-- Open Graph meta tags -->
                <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"/>
                <meta property="og:title" content="{xtf:meta/*:filename}"/>
                <meta property="og:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
-               <meta property="og:image" content="{concat('http://storage.rockarch.org/', xtf:meta/*:identifier, '_thumbfb.jpg')}"/>
+               <meta property="og:image" content="{concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf'), '_thumbfb.jpg')}"/>
                <meta property="og:image:width" content="600"/>
                <meta property="og:image:height" content="316"/>
             </head>
@@ -368,17 +369,21 @@
             <xsl:call-template name="bookmarkMenu"/>
             <div class="digital-thumbnail">
                <xsl:variable name="href">
-               <xsl:choose>
-                  <xsl:when test="xtf:meta/*:viewable='true'">
-                     <xsl:value-of select="concat('http://storage.rockarch.org/', xtf:meta/*:identifier, '_thumb300.jpg')"/>
-                  </xsl:when>
-                  <!-- HA todo  account for non-viewable files -->
-                  <xsl:otherwise>
-                     <xsl:value-of>/xtf/icons/default/thumbnail-large.svg</xsl:value-of>
-                  </xsl:otherwise>
-               </xsl:choose>
+                  <xsl:choose>
+                     <xsl:when test="xtf:meta/*:viewable='true'">
+                        <xsl:value-of select="concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf'), '_thumb300.jpg')"/>
+                     </xsl:when>
+                     <!-- HA todo  account for non-viewable files -->
+                     <xsl:otherwise>
+                        <xsl:value-of>/xtf/icons/default/thumbnail-large.svg</xsl:value-of>
+                     </xsl:otherwise>
+                  </xsl:choose>
                </xsl:variable>
-               <img src="{$href}" height="300px"/>
+               <img src="{$href}" height="300px">
+                  <xsl:if test="xtf:meta/*:viewable='true'">
+                     <xsl:attribute name="class">view</xsl:attribute>
+                  </xsl:if>
+               </img>
                <!-- HA todo hide buttons if restricted -->
                <div class="thumbnailButtons">
                   <a href="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}" download="true" class="btn btn-default download"><img src="/xtf/icons/default/download.svg"/> Download</a>
@@ -434,6 +439,7 @@
       </p>
    </xsl:template>
 
+   <!-- Handle restrictions notes -->
    <xsl:template match="mods:accessCondition">
       <xsl:variable name="heading">
          <xsl:choose>
@@ -545,6 +551,7 @@
    <!-- ====================================================================== -->
    <!-- EAD Hierarchy Templates                                                -->
    <!-- ====================================================================== -->
+
    <xsl:template name="foundIn">
       <xsl:variable name="collectionId">
          <xsl:value-of select="xtf:meta/*:collectionId"/>
@@ -555,26 +562,26 @@
       <div class="foundIn">
          <h4>Found In</h4>
          <p style="color:#c45414;margin-top:1em;" data-collectionId="{$collectionId}" data-componentId="{$componentId}" data-filename="{xtf:meta/*:filename}" data-identifier="{xtf:meta/*:identifier}">
-            <img style="margin:0 .5em 0 1em;" src="/xtf/icons/default/loading.gif"/> Loading
-         </p>
+            <img style="margin:0 .5em 0 1em;" src="/xtf/icons/default/loading.gif"/> Loading </p>
       </div>
    </xsl:template>
+
    <!-- ====================================================================== -->
    <!-- Bookmark options menu                                                  -->
    <!-- ====================================================================== -->
+
    <xsl:template name="bookmarkMenu">
       <div class="pull-right" id="bookmarkMenu">
          <div class="button">
             <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true" data-count="none" data-via="rockarch_org"
-               data-url="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"></a>
+               data-url="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"/>
          </div>
          <div class="button">
-            <div class="fb-share-button" data-href="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-layout="button"></div>
+            <div class="fb-share-button" data-href="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-layout="button"/>
          </div>
          <div class="button">
             <button class="btn btn-default link">
-               <img src="/xtf/icons/default/link.svg"/> Link
-            </button>
+               <img src="/xtf/icons/default/link.svg"/> Link </button>
          </div>
       </div>
    </xsl:template>
@@ -625,16 +632,13 @@
    <xsl:template name="daoView">
       <iframe frameborder="0" marginwidth="0" marginheight="0" src="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}"/>
    </xsl:template>
-   
+
    <xsl:template name="copyLink">
       <input type="text" value="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"/>
-      <button class="btn btn-sm" id="copy-link" href="#" data-clipboard-text="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}">
-         Copy to clipboard
-      </button>
+      <button class="btn btn-sm" id="copy-link" href="#" data-clipboard-text="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"> Copy to clipboard </button>
       <div class="success">
          <p>Link copied to clipboard!</p>
       </div>
    </xsl:template>
-
 
 </xsl:stylesheet>
