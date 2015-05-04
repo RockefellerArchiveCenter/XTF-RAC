@@ -64,7 +64,7 @@ $(function () {
         }
     });
 
-    $(".thumbnailButtons .view").on("click", function (e) {
+    $(".digital-thumbnail .view").on("click", function (e) {
         e.preventDefault();
         dialogView.dialog("open");
     });

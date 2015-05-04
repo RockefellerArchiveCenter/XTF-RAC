@@ -505,7 +505,11 @@ ul.none {list-style:none;}
 
 .digital-thumbnail {
     float:left;
-    opacity:0.7;
+    margin-right:2em;
+}
+
+.digital-thumbnail img {
+    cursor:pointer
 }
 
 #content-wrapper .thumbnailButtons a {
