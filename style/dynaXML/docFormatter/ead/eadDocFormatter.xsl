@@ -182,6 +182,33 @@
                   <xsl:value-of select="archdesc/did/unitid"/>
                   <xsl:text>)</xsl:text>
                </title>
+               <xsl:variable name="description">
+                  <xsl:choose>
+                     <xsl:when test="archdesc/did/abstract">
+                        <xsl:value-of select="archdesc/did/abstract"/>
+                     </xsl:when>
+                     <xsl:when test="archdesc/scopecontent/p">
+                        <xsl:value-of select="archdesc/scopecontent/p"/>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <xsl:value-of select="archdesc/bioghist/p"/>
+                     </xsl:otherwise>
+                  </xsl:choose>
+               </xsl:variable>
+               <!-- Twitter meta tags -->
+               <meta name="twitter:card" content="summary"/>
+               <meta name="twitter:site" content="@rockarch_org"/>
+               <meta name="twitter:title" content="{archdesc/did/unittitle}"/>
+               <meta name="twitter:description" content="{$description}"/>
+               <meta name="twitter:image" content="{concat($xtfURL, 'icons/default/collections.gif')}"/>
+               
+               <!-- Open Graph (Facebook) meta tags -->
+               <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/overview')}" />
+               <meta property="og:title" content="{archdesc/did/unittitle}" />
+               <meta property="og:description" content="{$description}" />
+               <meta property="og:image" content="{concat($xtfURL, 'icons/default/collections.gif')}" />
+               <meta property="og:image:width" content="49" />
+               <meta property="og:image:height" content="49" />
             </head>
             <body>
                <!-- Schema.org metadata -->
@@ -247,7 +274,6 @@
                      <meta itemprop="http:/schema.org/telephone" content="(914) 366-6300"/>
                   </div>
                </div>
-               <!-- End Schema.org metadata -->
 
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
