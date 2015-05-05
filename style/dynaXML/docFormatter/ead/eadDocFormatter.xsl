@@ -203,7 +203,7 @@
                <meta name="twitter:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}"/>
                
                <!-- Open Graph (Facebook) meta tags -->
-               <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/overview')}" />
+               <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/collection')}" />
                <meta property="og:title" content="{archdesc/did/unittitle}" />
                <meta property="og:description" content="{$description}" />
                <meta property="og:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}" />
