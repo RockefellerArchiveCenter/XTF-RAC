@@ -200,15 +200,15 @@
                <meta name="twitter:site" content="@rockarch_org"/>
                <meta name="twitter:title" content="{archdesc/did/unittitle}"/>
                <meta name="twitter:description" content="{$description}"/>
-               <meta name="twitter:image" content="{concat($xtfURL, 'icons/default/collections.gif')}"/>
+               <meta name="twitter:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}"/>
                
                <!-- Open Graph (Facebook) meta tags -->
                <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/overview')}" />
                <meta property="og:title" content="{archdesc/did/unittitle}" />
                <meta property="og:description" content="{$description}" />
-               <meta property="og:image" content="{concat($xtfURL, 'icons/default/collections.gif')}" />
-               <meta property="og:image:width" content="49" />
-               <meta property="og:image:height" content="49" />
+               <meta property="og:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}" />
+               <meta property="og:image:width" content="200" />
+               <meta property="og:image:height" content="200" />
             </head>
             <body>
                <!-- Schema.org metadata -->
