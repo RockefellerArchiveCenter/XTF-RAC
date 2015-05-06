@@ -840,6 +840,7 @@
    <xsl:template name="alphaList">
       
       <xsl:param name="alphaList"/>
+      <xsl:param name="level"/>
       
       <xsl:variable name="browse-name">
          <xsl:choose>

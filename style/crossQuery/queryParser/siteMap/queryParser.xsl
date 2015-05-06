@@ -19,9 +19,12 @@
    
    <xsl:template match="/">
       <xsl:variable name="stylesheet" select="'style/crossQuery/resultFormatter/siteMap/resultFormatter.xsl'"/>
-      <query indexPath="index" style="{$stylesheet}" termLimit="-1" maxDocs="1000000" 
-             returnMetaFields="identifier, dateStamp" sortMetaFields="identifier">
-         <allDocs/>
+      <query indexPath="index" style="{$stylesheet}" termLimit="-1" maxDocs="100000" 
+             returnMetaFields="level, type, identifier, dateStamp" sortMetaFields="type, identifier">
+         <and field="level">
+            <term>collection</term>
+         </and>
+         <!--<allDocs/>-->
       </query>
    </xsl:template>
 

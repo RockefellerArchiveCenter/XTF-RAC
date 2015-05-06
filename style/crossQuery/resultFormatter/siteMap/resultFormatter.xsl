@@ -32,15 +32,15 @@
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-         <xsl:apply-templates select="crossQueryResult/docHit" mode="siteMap" exclude-result-prefixes="#all"/>
+         <xsl:apply-templates select="crossQueryResult/docHit[meta/type='ead']" mode="siteMap" exclude-result-prefixes="#all"/>
       </urlset>
    </xsl:template>
 
    <xsl:template match="docHit" mode="siteMap" exclude-result-prefixes="#all">
 
       <xsl:variable name="identifier" select="meta/identifier"/>
-      <!--<xsl:variable name="id" select="replace(@path,'^default:','')"/>-->
-      <xsl:variable name="loc" select="concat($xtfURL,$identifier, '/collection')"/>
+      
+      <xsl:variable name="loc" select="concat(substring-before($xtfURL, 'xtf'),$identifier, '/collection')"/>
 
       <url xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
          <loc xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -51,6 +51,7 @@
             <xsl:value-of select="meta/dateStamp"/>
          </lastmod>
       </url>
+      
 
    </xsl:template>
 
