@@ -277,22 +277,6 @@ div.notesMore div.button a:hover, div.notesLess div.button a:hover {color:#c4541
 .notesLess {display:none;}
 .notesHide {display:none;}
 
-.hit {
-   color: #c45414;
-   font-weight: bold;
-}
-
-
-.subhit {
-   color: #c45414;
-   font-weight: bold;
-	 margin-left: 5px;
-}
-
-.hitsection {
-   background-color: #D6DCE5;
-}
-
 .facetWrapper {width:98%;float:left;}
 .facetName {float:left;max-width:94%;}
 .totalDocs {float:left;padding-left:.2em;color:#888;}
