@@ -106,6 +106,7 @@
                <xsl:call-template name="get-mets-creator"/>
                <xsl:call-template name="get-mets-title"/>
                <xsl:call-template name="get-mets-parents"/>
+               <xsl:call-template name="get-mets-rights"/>
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
@@ -272,6 +273,11 @@
       <xsl:if test="/mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:relatedItem[@type='host']">
          <xsl:apply-templates select="/mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:relatedItem[@type='host']"/>
       </xsl:if>
+   </xsl:template>
+   
+   <!-- rights -->
+   <xsl:template name="get-mets-rights">
+      <!--HA todo add rights indexing, right now just to show/hide view link-->
    </xsl:template>
 
    <xsl:template match="mods:relatedItem[@type='host']">

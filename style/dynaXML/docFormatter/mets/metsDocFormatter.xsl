@@ -1,6 +1,6 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xtf="http://cdlib.org/xtf" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mets="http://www.loc.gov/METS/"
    xmlns:lxslt="http://xml.apache.org/xslt" xmlns:result="http://www.example.com/results" xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.w3.org/1999/xhtml"
-   xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:xlink="http://www.w3.org/1999/xlink" extension-element-prefixes="session result" exclude-result-prefixes="#all">
+   xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:FileUtils="java:org.cdlib.xtf.xslt.FileUtils" extension-element-prefixes="session result" exclude-result-prefixes="#all">
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    <!-- METS dynaXML Stylesheet                                                -->
    <!-- Author: Hillel Arnold, Rockefeller Archive Center                      -->
@@ -373,7 +373,6 @@
                      <xsl:when test="xtf:meta/*:viewable='true'">
                         <xsl:value-of select="concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf'), '_thumb300.jpg')"/>
                      </xsl:when>
-                     <!-- HA todo  account for non-viewable files -->
                      <xsl:otherwise>
                         <xsl:value-of>/xtf/icons/default/thumbnail-large.svg</xsl:value-of>
                      </xsl:otherwise>
@@ -413,6 +412,7 @@
                         <xsl:value-of select="xtf:meta/*:size"/>
                      </xsl:if>
                   </p>
+                  <p><xsl:value-of select="FileUtils:humanFileSize(FileUtils:length('/mnt/tomcat/apache2.tar'))"/></p>
                </div>
                <div class="notes">
                   <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:note[not(@type='originalsloc')]">
