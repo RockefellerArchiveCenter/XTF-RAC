@@ -959,16 +959,19 @@
                <xsl:choose>
                   <xsl:when test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
                      <xsl:variable name="daoImg">
-                     <xsl:choose>
-                        <xsl:when test="count(meta/daoLink | meta/daoLinkRestrict) &gt; 1">
-                           <xsl:value-of>/xtf/icons/default/thumbnail-multi.svg</xsl:value-of>
-                        </xsl:when>
-                        <!-- HA todo account for non-viewable files -->
-                        <xsl:otherwise>
-                           <xsl:variable name="daoFile" select="substring-before(meta/daoLink,'.pdf')"/>
-                           <xsl:value-of select="concat($daoFile,'_thumb75.jpg')"/>
-                        </xsl:otherwise>
-                     </xsl:choose>
+                        <xsl:choose>
+                           <xsl:when test="count(meta/daoLink) &gt; 1">
+                              <xsl:value-of>/xtf/icons/default/thumbnail-multi.svg</xsl:value-of>
+                           </xsl:when>
+                           <!-- HA todo: replace with FileUtils:exists test to see if the file exists (need to set up symbolic link first) -->
+                           <!--<xsl:when test="meta/viewable='true'">
+                              <xsl:variable name="daoFile" select="substring-before(meta/daoLink,'.pdf')"/>
+                              <xsl:value-of select="concat($daoFile,'_thumb75.jpg')"/>
+                           </xsl:when>-->
+                           <xsl:otherwise>
+                              <xsl:value-of>/xtf/icons/default/thumbnail-large.svg</xsl:value-of>
+                           </xsl:otherwise>
+                        </xsl:choose>
                      </xsl:variable>
                      <img src="{$daoImg}" alt="Digital object thumbnail" width="75"/>
                   </xsl:when>
