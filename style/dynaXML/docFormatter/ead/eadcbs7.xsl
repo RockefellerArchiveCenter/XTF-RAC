@@ -1377,7 +1377,7 @@
                                                                <xsl:with-param name="level">06</xsl:with-param>
                                                             </xsl:call-template>
                                                             <xsl:for-each select="c|c07">
-                                                               <xsl:if test="@xtf:hitCount">
+                                                               <xsl:if test="@xtf:hitCount or ((@level='file' or @level='item') and parent::c[@xtf:hitCount] and not(preceding-sibling::c[@xtf:hitCount] | following-sibling::c[@xtf:hitCount]))">
                                                                   <div class="{@level} c07" style="width:99%;float:right;">
                                                                      <xsl:call-template name="anchor"/>
                                                                      <xsl:call-template name="clevel">
