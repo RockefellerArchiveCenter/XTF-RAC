@@ -32,6 +32,12 @@ label {display:inline-block; margin-right:.2em;}
 .text-danger {color:#c45414;}
 dt {float:left;}
 
+/*Hits*/
+.hit, .subhit {
+   color: #c45414;
+   font-weight: bold;
+}
+
 /* Formats header */
 #RAheaderMenu{background: url("images/RAheader.gif") repeat-x right top; background-color:#fff;}
 #header {margin-left:2%; font-family: 'Questrial', sans;-webkit-text-stroke: 1px;width:75%;float:left;}
