@@ -412,7 +412,12 @@
                         <xsl:value-of select="xtf:meta/*:size"/>
                      </xsl:if>
                   </p>
-                  <p><xsl:value-of select="FileUtils:humanFileSize(FileUtils:length('/mnt/tomcat/apache2.tar'))"/></p>
+                  <xsl:variable name="size">
+                     <xsl:value-of select="concat('/mnt/images/', xtf:meta/*:identifier, '-', xtf:meta/*:filename)"/>
+                  </xsl:variable>
+                  <p><xsl:value-of select="$size"/></p>
+                  <p><xsl:value-of select="FileUtils:exists($size)"/></p>
+                  <p><xsl:value-of select="FileUtils:humanFileSize(FileUtils:length($size))"/></p>
                </div>
                <div class="notes">
                   <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:note[not(@type='originalsloc')]">
