@@ -18,6 +18,8 @@
    <xsl:import href="../common/resultFormatterCommon.xsl"/>
    <xsl:param name="icon.path" select="concat($xtfURL, 'icons/default/')"/>
    
+   <xsl:param name="level"/>
+   
    <!-- ====================================================================== -->
    <!-- Output                                                                 -->
    <!-- ====================================================================== -->
