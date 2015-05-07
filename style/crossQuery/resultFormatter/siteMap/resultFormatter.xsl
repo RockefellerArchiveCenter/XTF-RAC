@@ -47,9 +47,9 @@
             <xsl:value-of select="$loc"/>
          </loc>
          <!--<changefreq xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">monthly</changefreq>-->
-         <lastmod xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-            <xsl:value-of select="meta/dateStamp"/>
-         </lastmod>
+            <!--<lastmod xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+               <xsl:value-of select="meta/dateStamp"/>
+            </lastmod>-->
       </url>
       
 
