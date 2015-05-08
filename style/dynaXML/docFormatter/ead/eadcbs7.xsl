@@ -1826,11 +1826,10 @@
                         <xsl:when test="count(xtf:meta/*:daoLink) &gt; 1">
                            <xsl:value-of>/xtf/icons/default/thumbnail-multi.svg</xsl:value-of>
                         </xsl:when>
-                        <!-- HA todo: replace with FileUtils:exists test to see if the file exists (need to set up symbolic link first) -->
-                        <!--<xsl:when test="xtf:meta/*:viewable='true'">
+                        <xsl:when test="xtf:meta/*:viewable='true'">
                            <xsl:variable name="daoFile" select="substring-before(xtf:meta/*:daoLink,'.pdf')"/>
                            <xsl:value-of select="concat($daoFile,'_thumb75.jpg')"/>
-                        </xsl:when>-->
+                        </xsl:when>
                         <xsl:otherwise>
                            <xsl:value-of>/xtf/icons/default/thumbnail-large.svg</xsl:value-of>
                         </xsl:otherwise>
