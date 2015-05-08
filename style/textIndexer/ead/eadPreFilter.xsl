@@ -1,5 +1,5 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:parse="http://cdlib.org/xtf/parse" xmlns:xtf="http://cdlib.org/xtf"
-   xmlns:ns2="http://www.w3.org/1999/xlink" xmlns:xlink="http://www.w3.org/1999/xlink" exclude-result-prefixes="#all" xpath-default-namespace="urn:isbn:1-931666-22-9">
+   xmlns:ns2="http://www.w3.org/1999/xlink" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:FileUtils="java:org.cdlib.xtf.xslt.FileUtils" exclude-result-prefixes="#all" xpath-default-namespace="urn:isbn:1-931666-22-9">
 
    <!--
       Copyright (c) 2008, Regents of the University of California
@@ -1180,6 +1180,14 @@
                   <daoLink xtf:meta="true">
                      <xsl:value-of select="."/>
                   </daoLink>
+               </xsl:otherwise>
+            </xsl:choose>
+            <xsl:choose>
+               <xsl:when test="FileUtils:exists(concat('/mnt/images/', substring-after(., 'http://storage.rockarch.org')))">
+                  <viewable xtf:meta="true" xtf:tokenize="no">true</viewable>
+               </xsl:when>
+               <xsl:otherwise>
+                  <viewable xtf:meta="true" xtf:tokenize="no">false</viewable>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:for-each>
