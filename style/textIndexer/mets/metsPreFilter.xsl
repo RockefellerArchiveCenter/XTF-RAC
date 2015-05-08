@@ -1,5 +1,5 @@
 <xsl:stylesheet version="2.0" xmlns:parse="http://cdlib.org/xtf/parse" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xtf="http://cdlib.org/xtf" xmlns:html="http://www.w3.org/1999/xhtml"
-   xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/1999/xhtml" xmlns:session="java:org.cdlib.xtf.xslt.Session"
+   xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/1999/xhtml" xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:FileUtils="java:org.cdlib.xtf.xslt.FileUtils"
    extension-element-prefixes="session" exclude-result-prefixes="#all" xpath-default-namespace="http://www.loc.gov/METS/">
 
    <!-- HA: new preFilter for handling RAC METS records  -->
@@ -175,39 +175,13 @@
             </viewable>
          </xsl:otherwise>
       </xsl:choose>
-      <!-- HA todo get size -->
       <size xtf:meta="true" xtf:tokenize="no">
          <xsl:choose>
             <xsl:when test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size !=''">
-               <xsl:variable name="byteSize">
-                  <xsl:value-of select="number(/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size)"/>
-               </xsl:variable>
-               <xsl:choose>
-                  <xsl:when test="$byteSize &gt; 1099511627776">
-                     <!-- convert to TB -->
-                     <xsl:value-of select="format-number($byteSize div 1099511627776, '#.##')"/>
-                     <xsl:text> TB</xsl:text>
-                  </xsl:when>
-                  <xsl:when test="$byteSize &gt; 1073741824">
-                     <!-- convert to GB -->
-                     <xsl:value-of select="format-number($byteSize div 1073741824, '#.##')"/>
-                     <xsl:text> GB</xsl:text>
-                  </xsl:when>
-                  <xsl:when test="$byteSize &gt; 1048576">
-                     <!-- convert to MB -->
-                     <xsl:value-of select="format-number($byteSize div 1048576, '#.##')"/>
-                     <xsl:text> MB</xsl:text>
-                  </xsl:when>
-                  <xsl:when test="$byteSize &gt; 1024">
-                     <!-- convert to KB -->
-                     <xsl:value-of select="format-number($byteSize div 1024, '#.##')"/>
-                     <xsl:text> KB</xsl:text>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     <xsl:value-of select="$byteSize"/>
-                     <xsl:text> Bytes</xsl:text>
-                  </xsl:otherwise>
-               </xsl:choose>
+                <xsl:value-of select="number(/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size)"/>
+            </xsl:when>
+            <xsl:when test="FileUtils:exists(concat('/mnt/images/', substring-after($uri, 'http://storage.rockarch.org')))">
+               <xsl:value-of select="FileUtils:length(concat('/mnt/images/', substring-after($uri, 'http://storage.rockarch.org')))"/>
             </xsl:when>
             <xsl:otherwise>
                <xsl:text>unknown</xsl:text>
