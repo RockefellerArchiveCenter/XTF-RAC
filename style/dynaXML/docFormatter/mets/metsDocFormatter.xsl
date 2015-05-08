@@ -408,16 +408,10 @@
                   <p>
                      <xsl:value-of select="xtf:meta/*:format"/>
                      <xsl:if test="xtf:meta/*:size !='unknown'">
-                        <xtf:text>, </xtf:text>
-                        <xsl:value-of select="xtf:meta/*:size"/>
+                        <xsl:text>, </xsl:text>
+                        <xsl:value-of select="FileUtils:humanFileSize(xtf:meta/*:size)"/>
                      </xsl:if>
                   </p>
-                  <xsl:variable name="size">
-                     <xsl:value-of select="concat('/mnt/images/', xtf:meta/*:identifier, '-', xtf:meta/*:filename)"/>
-                  </xsl:variable>
-                  <p><xsl:value-of select="$size"/></p>
-                  <p><xsl:value-of select="FileUtils:exists($size)"/></p>
-                  <p><xsl:value-of select="FileUtils:humanFileSize(FileUtils:length($size))"/></p>
                </div>
                <div class="notes">
                   <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:note[not(@type='originalsloc')]">
@@ -610,7 +604,7 @@
             <xsl:value-of select="xtf:meta/*:format"/>
          </td>
          <td>
-            <xsl:value-of select="xtf:meta/*:size"/>
+            <xsl:value-of select="FileUtils:humanFileSize(xtf:meta/*:size)"/>
          </td>
          <td>
             <a href="{$link}" title="About this file">details</a>
