@@ -1232,7 +1232,7 @@
          </span>
          <xsl:text> in </xsl:text>
          <xsl:value-of select="$searchLocation"/>
-         <a class="resultsButton btn btn-default">
+         <!--<a class="resultsButton btn btn-default">
             <xsl:attribute name="href">
                <xsl:value-of select="$doc.path"/>
                <xsl:text>;chunk.id=</xsl:text>
@@ -1241,8 +1241,8 @@
                <xsl:value-of select="$brand"/>
                <xsl:text>;doc.view=contents</xsl:text>
             </xsl:attribute>
-            <xsl:text>Clear Search</xsl:text>
-         </a>
+            <xsl:text>Clear Hits</xsl:text>
+         </a>-->
       </div>
    </xsl:template>
 
