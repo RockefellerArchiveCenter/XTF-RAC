@@ -370,14 +370,14 @@
                      <xsl:value-of select="$query"/>
                   </xsl:attribute>
                </input>
-               <select id="searchTarget">
+               <select id="searchTarget" disabled="disabled">
                   <option data-url="{$xtfURL}{$crossqueryPath}" selected="selected">Everything</option>
                   <option data-url="{$xtfURL}{$dynaxmlPath}">This collection</option>
                </select>
                <input type="hidden" name="docId" value="{$docId}" disabled="disabled"/>
                <input type="hidden" name="chunk.id" value="{$component}" disabled="disabled"/>
                <input type="hidden" name="doc.view" value="contentsSearch" disabled="disabled"/>
-               <input type="submit" value="Search" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);"/>
+               <input type="submit" value="Search" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);" disabled="disabled"/>
             </form>
             <!--<div class="searchAll">
                <a href="{$xtfURL}{$crossqueryPath}">Search all collections</a>

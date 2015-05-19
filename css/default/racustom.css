@@ -221,6 +221,7 @@ a.hit {color: #c45414 !important;font-weight: bold;}
 .bbform input[type="submit"] {margin:0 0 0 1%;border: 1px outset #eee; background-color:rgb(253, 253, 253)}
 .bbform input[type="submit"]:hover {box-shadow:0px 0px 3px #c45414;color: #c45414;cursor:pointer;}
 .bbform input[type="submit"]:active {border: 1px inset #dddddd;color: #c45414;}
+.bbform input[disabled], .bbform input[disabled]:hover {cursor: not-allowed;background-color: #eeeeee;box-shadow:none;color:#555;}
 .documentTitle {text-align:left; font-size:.8em;margin:0; padding-left:.5em; float:left; width:69%;height:50px}
 .documentTitle h1 {color:#333; margin:0; margin-left:50px; padding:0; font-size:1.75em;}
 .ead {background: url(/xtf/icons/default/collections.gif) left no-repeat; min-height: 50px;}

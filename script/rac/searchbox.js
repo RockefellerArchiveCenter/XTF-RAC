@@ -1,4 +1,6 @@
                 $(document).ready(function () {
+                    $('#searchTarget').removeAttr("disabled", false);
+                    $('.headerSearch input[type="submit"]').removeAttr("disabled", false);
                     $('#collections').hide();
                     $('#library').hide();
                     $('#dao').hide();
