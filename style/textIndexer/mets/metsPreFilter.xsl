@@ -250,8 +250,31 @@
    </xsl:template>
    
    <!-- rights -->
+   <!--HA todo add rights indexing, right now just to show/hide view link-->
    <xsl:template name="get-mets-rights">
-      <!--HA todo add rights indexing, right now just to show/hide view link-->
+      <rights xtf:meta="true">
+       <!--<xsl:choose>
+          <xsl:when test="rights">
+             <xsl:for-each select="rights">
+               <xsl:choose>
+                  <xsl:when test="act='disallow'">
+                     <xsl:value-of>disallow</xsl:value-of>
+                  </xsl:when>
+                  <xsl:when test="act='conditional'">
+                     <xsl:value-of>conditional</xsl:value-of>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of>allow</xsl:value-of>
+                  </xsl:otherwise>
+               </xsl:choose>
+             </xsl:for-each>
+          </xsl:when>
+          <xsl:otherwise>
+             <!-\-May need to check for file - ask Patrick if we'll move restricted DOs to image server or not -\->
+             <!-\-If we will, then we'll probably have to do some metadata remediation, ar we'll have to figure out a way to tie EAD indexing to this-\->
+          </xsl:otherwise>
+       </xsl:choose>-->
+      </rights>
    </xsl:template>
 
    <xsl:template match="mods:relatedItem[@type='host']">
