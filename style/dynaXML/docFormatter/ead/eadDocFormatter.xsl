@@ -169,6 +169,19 @@
          />#X</xsl:variable>
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;doc.view=content;brand=<xsl:value-of select="$brand"/>;chunk.id=<xsl:value-of select="$chunk.id"/><xsl:value-of
             select="$search"/></xsl:variable>
+      <xsl:variable name="description">
+         <xsl:choose>
+            <xsl:when test="archdesc/did/abstract">
+               <xsl:value-of select="archdesc/did/abstract"/>
+            </xsl:when>
+            <xsl:when test="archdesc/scopecontent/p">
+               <xsl:value-of select="archdesc/scopecontent/p"/>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="archdesc/bioghist/p"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
 
       <xsl:result-document exclude-result-prefixes="#all">
 
@@ -182,19 +195,7 @@
                   <xsl:value-of select="archdesc/did/unitid"/>
                   <xsl:text>)</xsl:text>
                </title>
-               <xsl:variable name="description">
-                  <xsl:choose>
-                     <xsl:when test="archdesc/did/abstract">
-                        <xsl:value-of select="archdesc/did/abstract"/>
-                     </xsl:when>
-                     <xsl:when test="archdesc/scopecontent/p">
-                        <xsl:value-of select="archdesc/scopecontent/p"/>
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:value-of select="archdesc/bioghist/p"/>
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </xsl:variable>
+               
                <!-- Twitter meta tags -->
                <meta name="twitter:card" content="summary"/>
                <meta name="twitter:site" content="@rockarch_org"/>
@@ -203,7 +204,7 @@
                <meta name="twitter:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}"/>
                
                <!-- Open Graph (Facebook) meta tags -->
-               <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/overview')}" />
+               <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/collection')}" />
                <meta property="og:title" content="{archdesc/did/unittitle}" />
                <meta property="og:description" content="{$description}" />
                <meta property="og:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}" />
@@ -212,66 +213,64 @@
             </head>
             <body>
                <!-- Schema.org metadata -->
-               <div itemscope="" typeof="http:/schema.org/CollectionPage">
-                  <xsl:if test="ead/archdesc/abstract">
-                     <meta itemprop="http:/schema.org/description">
+               <div itemscope="" itemtype="http://schema.org/CollectionPage" >
+                  <xsl:if test="$description">
+                     <meta itemprop="http://schema.org/description">
                         <xsl:attribute name="content">
-                           <xsl:value-of select="archdesc/abstract"/>
+                           <xsl:value-of select="$description"/>
                         </xsl:attribute>
                      </meta>
                   </xsl:if>
-                  <meta itemprop="http:/schema.org/name">
+                  <meta itemprop="http://schema.org/name">
                      <xsl:attribute name="content">
                         <xsl:value-of select="archdesc/did/unittitle"/>
                      </xsl:attribute>
                   </meta>
-                  <div itemprop="http:/schema.org/contentLocation" itemscope="" itemtype="http:/schema.org/Place">
-                     <meta itemprop="http:/schema.org/name" content="Rockefeller Archive Center"/>
-                     <meta itemprop="http:/schema.org/url" content="http://www.rockarch.org"/>
-                     <div itemprop="http:/schema.org/address" itemscop="" itemtype="http:/schema.org/PostalAddress">
+                  <div itemprop="http://schema.org/contentLocation" itemscope="" itemtype="http://schema.org/Place">
+                     <meta itemprop="http://schema.org/name" content="Rockefeller Archive Center"/>
+                     <meta itemprop="http://schema.org/url" content="http://www.rockarch.org"/>
+                     <div itemprop="http://schema.org/address" itemscope="" itemtype="http://schema.org/PostalAddress">
                         <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
                         <meta itemprop="addressLocality" content="Sleepy Hollow"/>
                         <meta itemprop="addressRegion" content="NY"/>
                         <meta itemprop="postalCode" content="10591"/>
                      </div>
-                     <div itemprop="http:/schema.org/geo" itemscope="" itemtype="http:/schema.org/GeoCoordinates">
-                        <meta itemprop="http:/schema.org/latitude" content="41.091845"/>
-                        <meta itemprop="http:/schema.org/longitude" content="-73.835265"/>
+                     <div itemprop="http://schema.org/geo" itemscope="" itemtype="http://schema.org/GeoCoordinates">
+                        <meta itemprop="http://schema.org/latitude" content="41.091845"/>
+                        <meta itemprop="http://schema.org/longitude" content="-73.835265"/>
                      </div>
-                     <meta itemprop="http:/schema.org/telephone" content="(914) 366-6300"/>
+                     <meta itemprop="http://schema.org/telephone" content="(914) 366-6300"/>
                   </div>
                   <xsl:for-each select="archdesc/did/origination/child::*[starts-with(@role,'Contributor')]">
-                     <meta itemprop="http:/schema.org/contributor">
+                     <meta itemprop="http://schema.org/contributor">
                         <xsl:attribute name="content">
                            <xsl:apply-templates/>
                         </xsl:attribute>
                      </meta>
                   </xsl:for-each>
                   <xsl:for-each select="archdesc/did/origination/child::*[starts-with(@role,'Author')]">
-                     <meta itemprop="http:/schema.org/creator">
+                     <meta itemprop="http://schema.org/creator">
                         <xsl:attribute name="content">
                            <xsl:apply-templates/>
                         </xsl:attribute>
                      </meta>
                   </xsl:for-each>
-                  <div itemprop="http:/schema.org/dateCreated" itemscope="" itemtype="Date">
-                     <meta itemprop="date">
-                        <xsl:attribute name="content">
-                           <xsl:value-of select="archdesc/did/unitdate[@type != 'bulk']"/>
-                        </xsl:attribute>
-                     </meta>
-                  </div>
-                  <meta itemprop="http:/schema.org/inLanguage" content="en"/>
-                  <div itemprop="http:/schema.org/publisher" itemscope="" itemtype="http:/schema.org/organization">
-                     <meta itemprop="http:/schema.org/name" content="Rockefeller Archive Center"/>
-                     <meta itemprop="http:/schema.org/url" content="http://www.rockarch.org"/>
-                     <div itemprop="http:/schema.org/address" itemscop="" itemtype="http:/schema.org/PostalAddress">
+                  <meta itemprop="http://schema.org/dateCreated">
+                     <xsl:attribute name="content">
+                        <xsl:value-of select="archdesc/did/unitdate[@type != 'bulk']"/>
+                     </xsl:attribute>
+                  </meta>
+                  <meta itemprop="http://schema.org/inLanguage" content="en"/>
+                  <div itemprop="http://schema.org/publisher" itemscope="" itemtype="http://schema.org/organization">
+                     <meta itemprop="http://schema.org/name" content="Rockefeller Archive Center"/>
+                     <meta itemprop="http://schema.org/url" content="http://www.rockarch.org"/>
+                     <div itemprop="http://schema.org/address" itemscope="" itemtype="http://schema.org/PostalAddress">
                         <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
                         <meta itemprop="addressLocality" content="Sleepy Hollow"/>
                         <meta itemprop="addressRegion" content="NY"/>
                         <meta itemprop="postalCode" content="10591"/>
                      </div>
-                     <meta itemprop="http:/schema.org/telephone" content="(914) 366-6300"/>
+                     <meta itemprop="http://schema.org/telephone" content="(914) 366-6300"/>
                   </div>
                </div>
 
