@@ -115,49 +115,47 @@
             </head>
             <body>
                <!-- schema.org meta tags -->
-               <div itemscope="" typeof="http:/schema.org/ItemPage">
+               <div itemscope="" itemtype="http://schema.org/ItemPage">
                   <xsl:if
                      test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:abstract | mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']">
-                     <meta itemprop="http:/schema.org/about">
+                     <meta itemprop="http://schema.org/description">
                         <xsl:attribute name="content">
-                           <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']"/>
+                           <xsl:value-of select="concat('From ', xtf:meta/*:collectionTitle, ' ',$formattedCollectionId,'. ',mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note'])"/>
                         </xsl:attribute>
                      </meta>
                   </xsl:if>
-                  <meta itemprop="http:/schema.org/name">
+                  <meta itemprop="http://schema.org/name">
                      <xsl:attribute name="content">
                         <xsl:value-of select="xtf:meta/*:filename"/>
                      </xsl:attribute>
                   </meta>
-                  <div itemprop="http:/schema.org/contentLocation" itemtype="http:/schema.org/Place" itemscope="">
-                     <meta itemprop="http:/schema.org/name" content="Rockefeller Archive Center"/>
-                     <meta itemprop="http:/schema.org/url" content="http://www.rockarch.org"/>
-                     <div itemprop="http:/schema.org/address" itemscop="" itemtype="http:/schema.org/PostalAddress">
+                  <div itemprop="http://schema.org/contentLocation" itemtype="http://schema.org/Place" itemscope="">
+                     <meta itemprop="http://schema.org/name" content="Rockefeller Archive Center"/>
+                     <meta itemprop="http://schema.org/url" content="http://www.rockarch.org"/>
+                     <div itemprop="http://schema.org/address" itemscope="" itemtype="http://schema.org/PostalAddress">
                         <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
                         <meta itemprop="addressLocality" content="Sleepy Hollow"/>
                         <meta itemprop="addressRegion" content="NY"/>
                         <meta itemprop="postalCode" content="10591"/>
                      </div>
-                     <div itemprop="http:/schema.org/geo" itemscope="" itemtype="http:/schema.org/GeoCoordinates">
-                        <meta itemprop="http:/schema.org/latitude" content="41.091845"/>
-                        <meta itemprop="http:/schema.org/longitude" content="-73.835265"/>
+                     <div itemprop="http://schema.org/geo" itemscope="" itemtype="http://schema.org/GeoCoordinates">
+                        <meta itemprop="http://schema.org/latitude" content="41.091845"/>
+                        <meta itemprop="http://schema.org/longitude" content="-73.835265"/>
                      </div>
-                     <meta itemprop="http:/schema.org/telephone" content="(914) 366-6300"/>
+                     <meta itemprop="http://schema.org/telephone" content="(914) 366-6300"/>
                   </div>
                   <xsl:for-each select="xtf:meta/*:creator">
-                     <meta itemprop="http:/schema.org/creator">
+                     <meta itemprop="http://schema.org/creator">
                         <xsl:attribute name="content">
                            <xsl:value-of select="."/>
                         </xsl:attribute>
                      </meta>
                   </xsl:for-each>
-                  <div itemprop="http:/schema.org/dateCreated" itemscope="" itemtype="Date">
-                     <meta itemprop="date">
-                        <xsl:attribute name="content">
-                           <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:originInfo/mods:dateCreated"/>
-                        </xsl:attribute>
-                     </meta>
-                  </div>
+                  <meta itemprop="http://schema.org/dateCreated">
+                     <xsl:attribute name="content">
+                        <xsl:value-of select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:originInfo/mods:dateCreated"/>
+                     </xsl:attribute>
+                  </meta>
                   <meta itemprop="http:/schema.org/keywords">
                      <xsl:attribute name="content">
                         <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:subject/mods:topic">
