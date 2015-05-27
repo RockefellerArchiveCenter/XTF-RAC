@@ -150,7 +150,6 @@
             </format>
          </xsl:when>
          <xsl:otherwise>
-            <!-- HA todo: align this list with AS values -->
             <xsl:variable name="extension">
                <xsl:value-of select="substring-after($filename, '.')"/>
             </xsl:variable>
@@ -160,10 +159,28 @@
                      <xsl:text>PDF</xsl:text>
                   </xsl:when>
                   <xsl:when test="$extension='doc'">
-                     <xsl:text>Word Document</xsl:text>
+                     <xsl:text>Word</xsl:text>
                   </xsl:when>
                   <xsl:when test="$extension='docx'">
-                     <xsl:text>Word Document</xsl:text>
+                     <xsl:text>Word (2007-2013)</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$extension='html'">
+                    <xsl:text>HTML</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$extension='iso'">
+                    <xsl:text>Disk image</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$extension='ppt'">
+                    <xsl:text>PowerPoint</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$extension='pptx'">
+                    <xsl:text>PowerPoint (2007-2013)</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$extension='xls'">
+                    <xsl:text>Excel</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$extension='xlsx'">
+                    <xsl:text>Excel (2007-2013)</xsl:text>
                   </xsl:when>
                </xsl:choose>
             </format>
@@ -193,12 +210,12 @@
    <!-- creator -->
    <xsl:template name="get-mets-creator">
       <xsl:if
-         test="/mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'author')]] | 
-         /mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'contributor')]] | 
+         test="/mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'author')]] |
+         /mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'contributor')]] |
          /mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'creator')]]">
          <xsl:for-each
-            select="/mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'author')]] | 
-            /mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'contributor')]] | 
+            select="/mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'author')]] |
+            /mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'contributor')]] |
             /mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:name[mods:role/mods:roleTerm[starts-with(., 'creator')]]">
             <creator xtf:meta="true">
                <xsl:choose>
@@ -248,32 +265,39 @@
          <xsl:apply-templates select="/mets/dmdSec/mdWrap[@MDTYPE='MODS']/xmlData/mods:mods/mods:relatedItem[@type='host']"/>
       </xsl:if>
    </xsl:template>
-   
+
    <!-- rights -->
-   <!--HA todo add rights indexing, right now just to show/hide view link-->
    <xsl:template name="get-mets-rights">
+      <xsl:variable name="uri">
+         <xsl:value-of select="/mets/fileSec/fileGrp/file/FLocat/@xlink:href"/>
+      </xsl:variable>
       <rights xtf:meta="true">
-       <!--<xsl:choose>
-          <xsl:when test="rights">
-             <xsl:for-each select="rights">
+       <xsl:choose>
+          <!-- Look for PREMIS rights statement that allows us to publish -->
+          <xsl:when test="/mets/amdSec/rightsMD/mdWrap/xmlData/*:rightsStatement/*:rightsGranted/*:act='publish'">
                <xsl:choose>
-                  <xsl:when test="act='disallow'">
-                     <xsl:value-of>disallow</xsl:value-of>
+                  <xsl:when test="/mets/amdSec/rightsMD/mdWrap/xmlData/*:rightsStatement/*:rightsGranted[*:act='publish']/*:permissions='allow'">
+                     <xsl:text>allow</xsl:text>
                   </xsl:when>
-                  <xsl:when test="act='conditional'">
-                     <xsl:value-of>conditional</xsl:value-of>
+                  <xsl:when test="/mets/amdSec/rightsMD/mdWrap/xmlData/*:rightsStatement/*:rightsGranted[*:act='publish']/*:restrictions='conditional'">
+                     <xsl:text>conditional</xsl:text>
                   </xsl:when>
                   <xsl:otherwise>
-                     <xsl:value-of>allow</xsl:value-of>
+                     <xsl:text>disallow</xsl:text>
                   </xsl:otherwise>
                </xsl:choose>
-             </xsl:for-each>
           </xsl:when>
           <xsl:otherwise>
-             <!-\-May need to check for file - ask Patrick if we'll move restricted DOs to image server or not -\->
-             <!-\-If we will, then we'll probably have to do some metadata remediation, ar we'll have to figure out a way to tie EAD indexing to this-\->
+            <xsl:choose>
+              <xsl:when test="FileUtils:exists(concat('/mnt/images/', substring-after($uri, 'http://storage.rockarch.org')))">
+                <xsl:text>allow</xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>disallow</xsl:text>
+              </xsl:otherwise>
+            </xsl:choose>
           </xsl:otherwise>
-       </xsl:choose>-->
+       </xsl:choose>
       </rights>
    </xsl:template>
 
