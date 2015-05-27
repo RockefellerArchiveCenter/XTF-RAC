@@ -71,6 +71,12 @@
    <!-- Main Template                                                      -->
    <!-- ====================================================================== -->
    <xsl:template name="contents">
+      <xsl:variable name="collectionId">
+         <xsl:value-of select="substring-before(xtf:meta/*:collectionId, '.xml')"/>
+      </xsl:variable>
+      <xsl:variable name="formattedCollectionId">
+         <xsl:value-of select="concat('(',$collectionId,')')"/>
+      </xsl:variable>
       <xsl:result-document exclude-result-prefixes="#all">
          <html xml:lang="en" lang="en">
             <head>
@@ -91,24 +97,23 @@
                   <xsl:value-of select="xtf:meta/*:filename"/>
                   <xsl:text> - </xsl:text>
                   <xsl:value-of select="xtf:meta/*:collectionTitle"/>
+                  <xsl:value-of select="$formattedCollectionId"/>
                </title>
                <!-- Twitter Card meta tags -->
                <meta name="twitter:card" content="summary_large_image"/>
                <meta name="twitter:site" content="@rockarch_org"/>
                <meta name="twitter:title" content="{xtf:meta/*:filename}"/>
-               <meta name="twitter:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
+               <meta name="twitter:description" content="From {xtf:meta/*:collectionTitle} {$formattedCollectionId}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
                <meta name="twitter:image" content="{concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf'), '_thumb300.jpg')}"/>
                <!-- Open Graph meta tags -->
                <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"/>
                <meta property="og:title" content="{xtf:meta/*:filename}"/>
-               <meta property="og:description" content="{xtf:meta/*:collectionTitle}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
+               <meta property="og:description" content="From {xtf:meta/*:collectionTitle} {$formattedCollectionId}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
                <meta property="og:image" content="{concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf'), '_thumbfb.jpg')}"/>
                <meta property="og:image:width" content="600"/>
                <meta property="og:image:height" content="316"/>
             </head>
             <body>
-               <!-- Facebook root -->
-               <div id="fb-root"/>
                <!-- schema.org meta tags -->
                <div itemscope="" typeof="http:/schema.org/ItemPage">
                   <xsl:if
