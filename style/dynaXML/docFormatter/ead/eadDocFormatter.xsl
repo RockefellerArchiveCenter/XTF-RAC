@@ -364,6 +364,15 @@
          </div>
          <div class="headerSearch">
             <form action="{$xtfURL}{$crossqueryPath}" method="get" class="bbform">
+               <xsl:if test="$query">
+                  <a class="clearHits">
+                     <xsl:attribute name="href">
+                        <xsl:value-of select="$doc.path"/>;chunk.id=<xsl:value-of select="$chunk.id"/>;brand=<xsl:value-of select="$brand"/>;doc.view=<xsl:value-of select="$doc.view"/>
+                     </xsl:attribute>
+                     <img src="/xtf/icons/default/cancel.svg" alt="Clear Hits"/>
+                     <xsl:text>Clear Hits</xsl:text>
+                  </a>
+               </xsl:if>
                <input name="keyword" type="text">
                   <xsl:attribute name="value">
                      <xsl:value-of select="$query"/>
@@ -378,9 +387,6 @@
                <input type="hidden" name="doc.view" value="contentsSearch" disabled="disabled"/>
                <input type="submit" value="Search" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);" disabled="disabled"/>
             </form>
-            <!--<div class="searchAll">
-               <a href="{$xtfURL}{$crossqueryPath}">Search all collections</a>
-            </div>-->
          </div>
          <xsl:call-template name="tabs"/>
       </div>
