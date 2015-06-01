@@ -22,13 +22,13 @@
                 if (isNS4) {
                     document.write("<link rel='stylesheet' type='text/css' href='/css/globalStyleNS4.css'>")
                 }
-                
-                
+
+
                 function dhtmlShow(submenu, num) {
-                    
+
                     var uselayers = false;
                     if ((navigator.appName == "Netscape") &&(parseInt(navigator.appVersion) < 5)) uselayers = true;
-                    
+
                     if (uselayers) {
                         if (window.document.layers[submenu]) {
                             window.document.layers[submenu].visibility = 'show';
@@ -60,13 +60,13 @@
                         }
                     }
                 }
-                
-                
+
+
                 function dhtmlHide(submenu) {
-                    
+
                     var uselayers = false;
                     if ((navigator.appName == "Netscape") &&(parseInt(navigator.appVersion) < 5)) uselayers = true;
-                    
+
                     if (uselayers) {
                         if (window.document.layers[submenu]) {
                             window.document.layers[submenu].visibility = 'hide';
@@ -78,60 +78,65 @@
                         }
                     }
                 }//-->
-      </script>
+        </script>
         <script type="text/javascript" language="JavaScript">
-         <!--
-                function newImage(arg) {
-                    if (document.images) {
-                        rslt = new Image();
-                        rslt.src = arg;
-                        return rslt;
-                    }
-                }
-                
-                function changeImages() {
-                    if (document.images && (preloadFlag == true)) {
-                        for (var i = 0; i < changeImages.arguments.length; i += 2) {
-                            document[changeImages.arguments[i]].src = changeImages.arguments[i + 1];
-                        }
-                    }
-                }
-                
-                var preloadFlag = false;
-                function preloadImages() {
-                    if (document.images) {
-                        
-                        
-                        navOption0_over = newImage("/images/nav2_about.gif");
-                        navOption2_over = newImage("/images/nav2_grants.gif");
-                        navOption3_over = newImage("/images/nav2_collections.gif");
-                        navOption4_over = newImage("/images/nav2_programs.gif");
-                        navOption5_over = newImage("/images/nav2_rockefellers.gif");
-                        navOption1_over = newImage("/images/nav2_researchers.gif");
-                        navOption6_over = newImage("/images/nav2_search.gif");
-                        
-                        preloadFlag = true;
-                    }
-                }//-->
-      </script>
-        <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount',
-         'UA-10013579-1']); _gaq.push(['_trackPageview']); (function() { var ga =
-         document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src =
-         ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
-         '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0];
-         s.parentNode.insertBefore(ga, s); })(); </script>
+           <!--
+                  function newImage(arg) {
+                      if (document.images) {
+                          rslt = new Image();
+                          rslt.src = arg;
+                          return rslt;
+                      }
+                  }
+
+                  function changeImages() {
+                      if (document.images && (preloadFlag == true)) {
+                          for (var i = 0; i < changeImages.arguments.length; i += 2) {
+                              document[changeImages.arguments[i]].src = changeImages.arguments[i + 1];
+                          }
+                      }
+                  }
+
+                  var preloadFlag = false;
+                  function preloadImages() {
+                      if (document.images) {
+
+
+                          navOption0_over = newImage("/images/nav2_about.gif");
+                          navOption2_over = newImage("/images/nav2_grants.gif");
+                          navOption3_over = newImage("/images/nav2_collections.gif");
+                          navOption4_over = newImage("/images/nav2_programs.gif");
+                          navOption5_over = newImage("/images/nav2_rockefellers.gif");
+                          navOption1_over = newImage("/images/nav2_researchers.gif");
+                          navOption6_over = newImage("/images/nav2_search.gif");
+
+                          preloadFlag = true;
+                      }
+                  }//-->
+        </script>
+        <!-- Google Analytics -->
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-10013579-1', 'auto');
+        ga('send', 'pageview');
+        </script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
         <script type="text/javascript" src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
         <script type="text/javascript"> $(document).ready(function() { $("img[rel]").overlay(); }); </script>
         <script type="text/javascript"> $(document).ready(function() { $("a[rel]").overlay(); }); </script>
         <script type="text/javascript"><!--
-function Redirect()
-{
-    window.history.back();
-}
+          function Redirect()
+          {
+              window.history.back();
+          }
 
-setTimeout('Redirect()', 5000);
-//--></script>
+          setTimeout('Redirect()', 5000);
+          //-->
+        </script>
       </head>
     <body><div>
             <!--[if IE ]>
@@ -2946,7 +2951,7 @@ setTimeout('Redirect()', 5000);
             </tr>
         </table>
         <div style="margin:20px;"><h1>Thank you for your feedback!</h1>
-            <p>Your comments will help us make this site better. If we require further information, we will contact you via the email address you provided.</p> 
+            <p>Your comments will help us make this site better. If we require further information, we will contact you via the email address you provided.</p>
             <p>You will be redirected to the page from which you submitted this form shortly.</p>
             <div class="footer" style="text-align:left !important;">
             Copyright © The Rockefeller Archive Center.  All rights reserved.<br />

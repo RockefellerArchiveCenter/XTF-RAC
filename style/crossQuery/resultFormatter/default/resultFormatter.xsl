@@ -10,35 +10,35 @@
    <!--
       Copyright (c) 2008, Regents of the University of California
       All rights reserved.
-      
-      Redistribution and use in source and binary forms, with or without 
-      modification, are permitted provided that the following conditions are 
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are
       met:
-      
-      - Redistributions of source code must retain the above copyright notice, 
+
+      - Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-      - Redistributions in binary form must reproduce the above copyright 
-      notice, this list of conditions and the following disclaimer in the 
+      - Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
       - Neither the name of the University of California nor the names of its
-      contributors may be used to endorse or promote products derived from 
+      contributors may be used to endorse or promote products derived from
       this software without specific prior written permission.
-      
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
    -->
 
-   <!-- this stylesheet implements very simple search forms and query results. 
-      Alpha and facet browsing are also included. Formatting has been kept to a 
+   <!-- this stylesheet implements very simple search forms and query results.
+      Alpha and facet browsing are also included. Formatting has been kept to a
       minimum to make the stylesheets easily adaptable. -->
 
    <!-- ====================================================================== -->
@@ -96,7 +96,7 @@
          <!-- HA 11/6/2014 This template is no longer used -->
          <!--<xsl:when test="$smode='getAddress'">
             <xsl:call-template name="getAddress"/>
-         </xsl:when> --> 
+         </xsl:when> -->
          <xsl:when test="$smode='getLang'">
             <xsl:call-template name="getLang"/>
          </xsl:when>
@@ -209,7 +209,7 @@
                      range: true,
                      min: <xsl:value-of select="$min"/>,
                      max: <xsl:value-of select="$max"/>,
-                     values: [ <xsl:value-of select="$sliderMin"/>, 
+                     values: [ <xsl:value-of select="$sliderMin"/>,
                                <xsl:value-of select="$sliderMax"/> ],
                      slide: function( event, ui ) {
                        $( "#from" ).val( ui.values[ 0 ] );
@@ -296,7 +296,7 @@
                                     <ul>
                                        <li>Want help? See these <a href="#searchTips"
                                              class="searchTips"
-                                             onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on results page']);"
+                                             onClick="ga('send', 'event', 'about', 'view', 'search tips on results page');"
                                              >search tips</a>. </li>
                                     </ul>
                                  </div>
@@ -409,7 +409,7 @@
                                     </div>
 
                                     <input class="searchbox" type="submit" value="Search"
-                                       onClick="_gaq.push(['_trackEvent', 'search', 'keyword', 'results page']);"/>
+                                       onClick="ga('send', 'event', 'search', 'keyword', 'results page');"/>
                                     <script type="text/javascript">
                                     $("#searchResults").submit(function() {
                                     $('input[value=]',this).remove();
@@ -418,7 +418,7 @@
                                     });
                               </script>
                                     <a href="#" class="showAdvanced closed"
-                                       onClick="_gaq.push(['_trackEvent', 'search', 'advanced', 'results page']);"
+                                       onClick="ga('send', 'event', 'search', 'advanced', 'results page');"
                                        >show more search options</a>
                                  </div>
                               </div>
@@ -471,11 +471,11 @@
                                              </xsl:if>
 
                                              <input type="text" name="year" id="from" size="4"
-                                                onClick="_gaq.push(['_trackEvent', 'results', 'date', 'set from date']);"/>
+                                                onClick="ga('send', 'event', 'results', 'date', 'set from date');"/>
                                              <input type="text" name="year-max" id="to" size="4"
-                                                onClick="_gaq.push(['_trackEvent', 'results', 'date', 'set to date']);"/>
+                                                onClick="ga('send', 'event', 'results', 'date', 'set to date');"/>
                                              <input type="submit" value="Filter"
-                                                onClick="_gaq.push(['_trackEvent', 'results', 'date', 'filter dates']);"
+                                                onClick="ga('send', 'event', 'results', 'date', 'filter dates');"
                                              />
                                           </form>
                                           <div id="histogram"/>
@@ -514,19 +514,19 @@
                                     <li class="browseOption">
                                        <a
                                           href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'archival']);"
+                                          onClick="ga('send', 'event', 'search', 'results browse', 'archival');"
                                           >Browse All</a>
                                     </li>
                                     <li class="browseOption">
                                        <a
                                           href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'archival-title']);"
+                                          onClick="ga('send', 'event', 'search', 'results browse', 'archival-title');"
                                           >By Title</a>
                                     </li>
                                     <li class="browseOption">
                                        <a
                                           href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'archival-creator']);"
+                                          onClick="ga('send', 'event', 'search', 'results browse', 'archival-creator');"
                                           >By Creator</a>
                                     </li>
                                  </div>
@@ -539,19 +539,19 @@
                                     <li class="browseOption">
                                        <a
                                           href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'library']);"
+                                          onClick="ga('send', 'event', 'search', 'results browse', 'library');"
                                           >Browse All</a>
                                     </li>
                                     <li class="browseOption">
                                        <a
                                           href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'library-title']);"
+                                          onClick="ga('send', 'event', 'search', 'results browse', 'library-title');"
                                           >By Title</a>
                                     </li>
                                     <li class="browseOption">
                                        <a
                                           href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'library-creator']);"
+                                          onClick="ga('send', 'event', 'search', 'results browse', 'library-creator');"
                                           >By Creator</a>
                                     </li>
                                  </div>
@@ -564,19 +564,19 @@
                                     <li class="browseOption">
                                        <a
                                           href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=file;type=dao"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital']);"
+                                          onClick="ga('send', 'event', 'search', 'results browse', 'digital');"
                                           >Browse All</a>
                                     </li>
                                     <li class="browseOption">
                                        <a
                                           href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital-title']);"
+                                          onClick="ga('send', 'event', 'search', 'results browse', 'digital-title');"
                                           >By Title</a>
                                     </li>
                                     <li class="browseOption">
                                        <a
                                           href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                                          onClick="_gaq.push(['_trackEvent', 'search', 'results browse', 'digital-creator']);"
+                                          onClick="ga('send', 'event', 'search', 'results browse', 'digital-creator');"
                                           >By Creator</a>
                                     </li>
                                  </div>
@@ -590,7 +590,7 @@
                                        <xsl:variable name="cleanString"
                                           select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
                                        <a href="search?{$cleanString};rmode=rss;sort=rss"
-                                          onClick="_gaq.push(['_trackEvent', 'results', 'rss', {$cleanString}]);">
+                                          onClick="ga('send', 'event', 'results', 'rss', {$cleanString});">
                                           <img src="{$icon.path}/i_rss.png" alt="rss icon"
                                              style="vertical-align:bottom;"/>
                                        </a>
@@ -655,7 +655,7 @@
                                        </xsl:call-template>
                                        <noscript>
                                           <input type="submit" value="Go!"
-                                             onClick="_gaq.push(['_trackEvent', 'results', 'sort', '{$sort}']);"
+                                             onClick="ga('send', 'event', 'results', 'sort', '{$sort}');"
                                           />
                                        </noscript>
                                     </form>
@@ -831,19 +831,19 @@
                         <li class="browseOption">
                            <a
                               href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival']);"
+                              onClick="ga('send', 'event', 'search', 'browse', 'archival');"
                               >Browse All</a>
                         </li>
                         <li class="browseOption">
                            <a
                               href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-title']);"
+                              onClick="ga('send', 'event', 'search', 'browse', 'archival-title');"
                               >By Title</a>
                         </li>
                         <li class="browseOption">
                            <a
                               href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-creator']);"
+                              onClick="ga('send', 'event', 'search', 'browse', 'archival-creator');"
                               >By Creator</a>
                         </li>
                      </div>
@@ -855,19 +855,19 @@
                         <li class="browseOption">
                            <a
                               href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library']);"
+                              onClick="ga('send', 'event', 'search', 'browse', 'library');"
                               >Browse All</a>
                         </li>
                         <li class="browseOption">
                            <a
                               href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-title']);"
+                              onClick="ga('send', 'event', 'search', 'browse', 'library-title');"
                               >By Title</a>
                         </li>
                         <li class="browseOption">
                            <a
                               href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-creator']);"
+                              onClick="ga('send', 'event', 'search', 'browse', 'library-creator');"
                               >By Creator</a>
                         </li>
                      </div>
@@ -879,19 +879,19 @@
                         <li class="browseOption">
                            <a
                               href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=file;type=dao"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital']);"
+                              onClick="ga('send', 'event', 'search', 'browse', 'digital');"
                               >Browse All</a>
                         </li>
                         <li class="browseOption">
                            <a
                               href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital-title']);"
+                              onClick="ga('send', 'event', 'search', 'browse', 'digital-title');"
                               >By Title</a>
                         </li>
                         <li class="browseOption">
                            <a
                               href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                              onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital-creator']);"
+                              onClick="ga('send', 'event', 'search', 'browse', 'digital-creator');"
                               >By Creator</a>
                         </li>
                      </div>
@@ -1087,8 +1087,8 @@
             <xsl:when test="$chunk.id != ''">
                <xsl:value-of
                   select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
-               <!-- Link used to get sub-document out of context               
-   <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
+               <!-- Link used to get sub-document out of context
+   <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/>
 -->
             </xsl:when>
             <xsl:otherwise>
@@ -1150,18 +1150,18 @@
                   </xsl:otherwise>
                </xsl:choose>
             </div>
-            
+
             <div class="resultContent">
                <div class="result title">
                   <a
-                     onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);"
+                     onClick="ga('send', 'event', 'component info', 'view finding aid', 'results main collection');"
                      title="Go to finding aid">
                      <xsl:attribute name="href">
                         <xsl:value-of select="$docPath"/>
                      </xsl:attribute>
                      <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level = 'file'">
                         <xsl:attribute name="onClick">
-                           <xsl:text>_gaq.push(['_trackEvent', 'digital object', 'view', 'results page']);</xsl:text>
+                           <xsl:text>ga('send', 'event', 'digital object', 'view', 'results page');</xsl:text>
                         </xsl:attribute>
                      </xsl:if>
                      <xsl:choose>
@@ -1179,7 +1179,7 @@
                            </xsl:choose>
                         </xsl:when>
                      </xsl:choose>
-                     
+
                      <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
                      <xsl:if test="meta/date">
                         <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
@@ -1209,7 +1209,7 @@
                      </xsl:if>
                   </a>
                </div>
-               
+
                <!-- 11/15/2013 HA: removing label and changing logic -->
                <xsl:if test="meta/creator">
                   <div class="result creator">
@@ -1219,15 +1219,15 @@
                      </xsl:for-each>
                   </div>
                </xsl:if>
-               
+
                <!-- 9/5/2013 HA: adding collection for DAO browse -->
                <xsl:if test="meta/type = 'dao' and meta/type = 'ead' and meta/level !='collection'">
                   <div class="collection">
                      <xsl:apply-templates select="meta/collectionTitle"/>
                   </div>
                </xsl:if>
-               
-               
+
+
                <!-- 11/15/2013 HA: removing label -->
                <!-- 11/14/2013 HA: changing logic to only display snippets for hits not already visible -->
                <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
@@ -1245,7 +1245,7 @@
                   </xsl:otherwise>
                </xsl:choose>
             </div>
-            
+
             <div class="bookbag">
                <xsl:call-template name="myList">
                   <xsl:with-param name="chunk.id" select="$chunk.id"/>
@@ -1253,7 +1253,7 @@
                   <xsl:with-param name="docPath" select="$docPath"/>
                </xsl:call-template>
             </div>
-            
+
          </div>
          <div class="activeArrow"/>
 
@@ -1282,8 +1282,8 @@
             <xsl:when test="$chunk.id != ''">
                <xsl:value-of
                   select="concat($uri,';chunk.id=',meta/seriesID,';doc.view=contents','#',$chunk.id)"/>
-               <!-- Link used to get sub-document out of context               
-                  <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/> 
+               <!-- Link used to get sub-document out of context
+                  <xsl:value-of select="concat($uri,';doc.view=contents',';chunk.id=',$chunk.id)"/>
                -->
             </xsl:when>
             <xsl:otherwise>
@@ -1358,7 +1358,7 @@
                   <div class="resultContent">
                      <div class="result title">
                         <a
-                           onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);"
+                           onClick="ga('send', 'event', 'component info', 'view finding aid', 'results main collection');"
                            title="Go to finding aid">
                            <xsl:attribute name="href">
                               <xsl:value-of select="$collPath"/>
@@ -1482,7 +1482,7 @@
                   <div class="resultContent">
                      <div class="result title">
                         <a
-                           onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);"
+                           onClick="ga('send', 'event', 'component info', 'view finding aid', 'results main collection');"
                            title="Go to finding aid">
                            <xsl:attribute name="href">
                               <xsl:value-of select="$collPath"/>
@@ -1541,7 +1541,7 @@
                   </div>
                </xsl:otherwise>
             </xsl:choose>
-            
+
             <xsl:if test="meta/type='mods'">
                <div class="bookbag">
                <xsl:call-template name="myList">
@@ -1663,7 +1663,7 @@
 
       <div class="result title">
          <a
-            onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main subdocument']);"
+            onClick="ga('send', 'event', 'component info', 'view finding aid', 'results main subdocument');"
             title="Go to finding aid">
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
@@ -1891,14 +1891,14 @@
       </xsl:variable>
       <div class="title">
          <a
-            onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results details subdocument']);"
+            onClick="ga('send', 'event', 'component info', 'view finding aid', 'results details subdocument');"
             title="Go to finding aid">
             <xsl:attribute name="href">
                <xsl:value-of select="$docPath"/>
             </xsl:attribute>
             <xsl:if test="meta/*:type = 'dao'">
                <xsl:attribute name="onClick">
-                  <xsl:text>_gaq.push(['_trackEvent', 'digital object', 'view', 'results page']);</xsl:text>
+                  <xsl:text>ga('send', 'event', 'digital object', 'view', 'results page');</xsl:text>
                </xsl:attribute>
             </xsl:if>
             <xsl:choose>
@@ -1959,14 +1959,14 @@
          <div class="notesMore">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes more', 'results page');"
                   >more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes less', 'results page');"
                   >less</a>
             </div>
          </div>
@@ -1983,14 +1983,14 @@
          <div class="notesMore">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes more', 'results page');"
                   >more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes less', 'results page');"
                   >less</a>
             </div>
          </div>
@@ -2007,14 +2007,14 @@
          <div class="notesMore">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes more', 'results page');"
                   >more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes less', 'results page');"
                   >less</a>
             </div>
          </div>
@@ -2062,7 +2062,7 @@
       </xsl:variable>
       <div class="title">
          <a
-            onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results details collection']);"
+            onClick="ga('send', 'event', 'component info', 'view finding aid', 'results details collection');"
             title="Go to finding aid">
             <xsl:attribute name="href">
                <xsl:choose>
@@ -2077,7 +2077,7 @@
             </xsl:attribute>
             <xsl:if test="meta/*:type = 'dao'">
                <xsl:attribute name="onClick">
-                  <xsl:text>_gaq.push(['_trackEvent', 'digital object', 'view', 'results page']);</xsl:text>
+                  <xsl:text>ga('send', 'event', 'digital object', 'view', 'results page');</xsl:text>
                </xsl:attribute>
             </xsl:if>
             <xsl:choose>
@@ -2139,14 +2139,14 @@
          <div class="notesMore">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes more', 'results page');"
                   >more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes less', 'results page');"
                   >less</a>
             </div>
          </div>
@@ -2162,14 +2162,14 @@
          <div class="notesMore">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes more', 'results page');"
                   >more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes less', 'results page');"
                   >less</a>
             </div>
          </div>
@@ -2187,14 +2187,14 @@
          <div class="notesMore">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes more', 'results page');"
                   >more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes less', 'results page');"
                   >less</a>
             </div>
          </div>
@@ -2211,14 +2211,14 @@
          <div class="notesMore">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes more', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes more', 'results page');"
                   >more</a>
             </div>
          </div>
          <div class="notesLess">
             <div class="button">
                <a href="#"
-                  onClick="_gaq.push(['_trackEvent', 'component info', 'notes less', 'results page']);"
+                  onClick="ga('send', 'event', 'component info', 'notes less', 'results page');"
                   >less</a>
             </div>
          </div>
