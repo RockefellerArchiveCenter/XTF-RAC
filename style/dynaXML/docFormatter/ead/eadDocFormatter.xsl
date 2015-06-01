@@ -280,7 +280,6 @@
                      <meta itemprop="http://schema.org/telephone" content="(914) 366-6300"/>
                   </div>
                </div>
-<<<<<<< HEAD
 
                <!-- Twitter meta tags -->
                <meta name="twitter:card" content="summary"/>
@@ -297,9 +296,6 @@
                <meta property="og:image:width" content="49px" />
                <meta property="og:image:height" content="49px" />
 
-=======
-         
->>>>>>> removing meta links already in master, removing restricted daos from index
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
                   <a href="/xtf/search">
@@ -1213,9 +1209,6 @@
                      <xsl:otherwise/>
                   </xsl:choose>
                   <xsl:value-of select="$name"/>
-                  <xsl:if test="$dao = 'true'">
-                     <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
-                  </xsl:if>
                   <div class="hit-count">
                      <xsl:if test="$hit.count"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
                   </div>
@@ -1252,9 +1245,6 @@
                      <xsl:otherwise/>
                   </xsl:choose>
                   <xsl:value-of select="$name"/>
-                  <xsl:if test="$dao = 'true'">
-                     <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
-                  </xsl:if>
                   <div class="hit-count">
                       <xsl:if test="$hit.count > 0"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
                   </div>
@@ -1262,6 +1252,9 @@
             </a>
          </xsl:otherwise>
       </xsl:choose>
+      <xsl:if test="$dao = 'true'">
+         <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
+      </xsl:if>
    </xsl:template>
 
    <!-- ====================================================================== -->
