@@ -49,24 +49,12 @@
 
    <!-- main form page -->
    <xsl:template match="crossQueryResult" mode="form" exclude-result-prefixes="#all">
-      <!-- <xsl:choose>
-         <xsl:when test="$smode='collectionGuides'">
-            <xsl:call-template name="collectionGuides"/>
-         </xsl:when>
-         <xsl:when test="$smode='archivalMat'">
-            <xsl:call-template name="archivalMat"/>
-         </xsl:when>
-         <xsl:when test="$smode='searchTips'">
-            <xsl:call-template name="searchTips"/>
-         </xsl:when>
-         <xsl:otherwise> -->
+
       <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
          <head>
             <title>DIMES: Online Collections and Catalog of Rockefeller Archive Center</title>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <xsl:copy-of select="$brand.links"/>
-
-            <!--<script type="text/javascript" src="/xtf/script/rac/featured.js"/>-->
          </head>
          <body>
             <xsl:copy-of select="$brand.header"/>
@@ -171,30 +159,10 @@
                </a>
             </div>
 
-               <xsl:call-template name="myListNav"/>
+            <xsl:call-template name="myListNav"/>
 
             <div class="searchPage">
-               <!--<div class="tabs">
-                        <a href="search?smode=simple"><div class="{if(matches($smode,'simple')) then 'tab-select' else 'tab'}">Keyword</div></a>
-                        <a href="search?smode=browse"><div class="{if(matches($smode,'browse')) then 'tab-select' else 'tab'}">Browse</div></a>
-                     </div>-->
                <div class="forms">
-                  <!-- <table>
-                           <tr>
-                              <td class="{if(matches($smode,'simple')) then 'tab-select' else 'tab'}"><a href="search?smode=simple">Keyword</a></td>
-                              6/21/2013 HA: remove advanced search tab <td class="{if(matches($smode,'advanced')) then 'tab-select' else 'tab'}"><a href="search?smode=advanced">Advanced</a></td> -->
-                  <!-- 9/21/11 WS for RA: removed Freeform tab
-                                 <td class="{if(matches($smode,'freeform')) then 'tab-select' else 'tab'}"><a href="search?smode=freeform">Freeform</a></td>
-                              -->
-                  <!--<td class="{if(matches($smode,'browse')) then 'tab-select' else 'tab'}">
-                                 <a href="search?browse-all=yes">
-                                    <xsl:text>Browse</xsl:text>
-                                 </a>-->
-                  <!--<a href="search?smode=browse">Browse</a>
-                              </td>
-                           </tr>
-                           <tr>
-                              <td colspan="4">-->
                   <div class="form">
                      <xsl:choose>
                         <xsl:when test="matches($smode,'simple')">
@@ -211,9 +179,6 @@
                         </xsl:when>
                      </xsl:choose>
                   </div>
-                  <!--</td>
-                           </tr>
-                        </table>-->
                </div>
             </div>
             <xsl:copy-of select="$brand.feedback"/>
@@ -224,54 +189,13 @@
             <xsl:call-template name="myListRequest"/>
          </body>
       </html>
-      <!--</xsl:otherwise>
-      </xsl:choose>-->
+
    </xsl:template>
 
    <!-- simple form -->
    <xsl:template name="simpleForm" exclude-result-prefixes="#all">
       <form id="searchHome" method="get" action="{$xtfURL}{$crossqueryPath}">
          <div class="home">
-            <!--<div id="about">
-               <div class="aboutButton dropdownButton">
-                  <h3>About</h3>
-               </div>
-               <div class="aboutContent dropdownContent">
-                  <ul>
-                     <li>
-                        <a href="#archivalMat" class="archivalMat"
-                           onClick="ga('send', 'event', 'about', 'view', 'archival materials');"
-                           >Archival Materials</a>
-                     </li>
-                     <li>
-                        <a href="#holdings" class="holdings"
-                           onClick="ga('send', 'event', 'about', 'view', 'our collections');"
-                           >Our Collections</a>
-                     </li>
-                     <li>
-                        <a href="#dscDescription" class="dscDescription"
-                           onClick="ga('send', 'event', 'about', 'view', 'collection guides');"
-                           >Collection Guides</a>
-                     </li>
-                     <li>
-                        <a href="#dimes" class="dimes"
-                           onClick="ga('send', 'event', 'about', 'view', 'website name');"
-                           >This Website's Name</a>
-                     </li>
-                     <li>
-                        <a href="#license" class="license"
-                           onClick="ga('send', 'event', 'about', 'view', 'license');"
-                           >Licensing for our Descriptive Metadata</a>
-                     </li>
-                     <li>
-                        <a href="#takedown" class="takedown"
-                           onClick="ga('send', 'event', 'about', 'view', 'takedown');">Our
-                           Take-Down Policy</a>
-                     </li>
-                  </ul>
-               </div>
-
-            </div>-->
             <div id="searchTop">
                <div id="searchtip" class="box">
                   <ul>
@@ -354,7 +278,6 @@
                            </ul>
                         </div>
                      </div>
-                     <!--<input type="hidden" name="smode" value="advanced" id="start"/>-->
                      <div class="showAdvanced open">
                         <a href="#">close</a>
                      </div>
@@ -368,10 +291,6 @@
                            return true;
                            });
                   </script>
-                  <!--<input type="hidden" value="series" name="level"/>-->
-                  <!-- 6/30/2013 HA: removing clear button <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'" value="Clear"/> -->
-                  <!-- Uncomment and complete code when digital objects are included -->
-                  <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
                   <a href="#" class="showAdvanced closed"
                      onClick="ga('send', 'event', 'search', 'advanced', 'home page');">show
                      more search options</a>
@@ -491,42 +410,14 @@
             <div id="disclaimer">
                <p>We are still in the process of adding collections information to DIMES. Some large
                   collections, like those of the Ford Foundation, Population Council, and
-                  Rockefeller University, are only partially represented; other smaller collections,
-                  including some collections of personal papers and grant records for the Ford
-                  Foundation, are not yet represented at all. Please <a
+                  Rockefeller University, are only partially represented; other smaller collections
+                  are not yet represented at all. Please <a
                      href="http://rockarch.org/about/contact.php">contact archival staff</a> for
                   further information.</p>
             </div>
 
          </div>
 
-         <!-- 9/21/11 WS: Moved to Advanced Search tab
-                  <table class="sampleTable">
-                     <tr>
-                        <td colspan="2">Examples:</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">africa</td>
-                        <td class="sampleDescrip">Search keywords (full text and metadata) for 'africa'</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">south africa</td>
-                        <td class="sampleDescrip">Search keywords for 'south' AND 'africa'</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">"south africa"</td>
-                        <td class="sampleDescrip">Search keywords for the phrase 'south africa'</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">africa*</td>
-                        <td class="sampleDescrip">Search keywords for the string 'africa' followed by 0 or more characters</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">africa?</td>
-                        <td class="sampleDescrip">Search keywords for the string 'africa' followed by a single character</td>
-                     </tr>
-                  </table>
-                  -->
       </form>
    </xsl:template>
 
@@ -605,12 +496,6 @@
                <td>
                   <input type="text" name="year" size="60" value="{$year}"/>
                </td>
-               <!--
-                  <input type="text" name="s" id="s"
-                  value="Text to be displayed here"
-                  onfocus="if(this.value==this.defaultValue)this.value='';"
-                  onblur="if(this.value=='')this.value=this.defaultValue;"/>
-               -->
             </tr>
             <tr>
                <td/>
@@ -638,109 +523,4 @@
       </form>
    </xsl:template>
 
-   <!-- free-form form -->
-   <xsl:template name="freeformForm" exclude-result-prefixes="#all">
-      <form method="get" action="{$xtfURL}{$crossqueryPath}">
-         <table>
-            <tr>
-               <td>
-                  <p><i>Experimental feature:</i> "Freeform" complex query supporting -/NOT, |/OR,
-                     &amp;/AND, field names, and parentheses.</p>
-                  <input type="text" name="freeformQuery" size="40" value="{$freeformQuery}"/>
-                  <xsl:text>&#160;</xsl:text>
-                  <input type="submit" value="Search"/>
-                  <input type="reset" onclick="location.href='{$xtfURL}{$crossqueryPath}'"
-                     value="Clear"/>
-               </td>
-            </tr>
-            <tr>
-               <td>
-                  <table class="sampleTable">
-                     <tr>
-                        <td colspan="2">Examples:</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">africa</td>
-                        <td class="sampleDescrip">Search keywords (full text and metadata) for
-                           'africa'</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">south africa</td>
-                        <td class="sampleDescrip">Search keywords for 'south' AND 'africa'</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">south &amp; africa</td>
-                        <td class="sampleDescrip">(same)</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">south AND africa</td>
-                        <td class="sampleDescrip">(same; note 'AND' must be capitalized)</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">title:south africa</td>
-                        <td class="sampleDescrip">Search title for 'south' AND 'africa'</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">creator:moodley title:africa</td>
-                        <td class="sampleDescrip">Search creator for 'moodley' AND title for
-                           'africa'</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">south | africa</td>
-                        <td class="sampleDescrip">Search keywords for 'south' OR 'africa'</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">south OR africa</td>
-                        <td class="sampleDescrip">(same; note 'OR' must be capitalized)</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">africa -south</td>
-                        <td class="sampleDescrip">Search keywords for 'africa' not near 'south'</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">africa NOT south</td>
-                        <td class="sampleDescrip">(same; note 'NOT' must be capitalized)</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">title:africa -south</td>
-                        <td class="sampleDescrip">Search title for 'africa' not near 'south'</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">title:africa subject:-politics</td>
-                        <td class="sampleDescrip"> Search items with 'africa' in title but not
-                           'politics' in subject. Note '-' must follow ':' </td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">title:-south</td>
-                        <td class="sampleDescrip">Match all items without 'south' in title</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">-africa</td>
-                        <td class="sampleDescrip">Match all items without 'africa' in keywords</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">south (africa OR america)</td>
-                        <td class="sampleDescrip">Search keywords for 'south' AND either 'africa' OR
-                           'america'</td>
-                     </tr>
-                     <tr>
-                        <td class="sampleQuery">south africa OR america</td>
-                        <td class="sampleDescrip">(same, due to precedence)</td>
-                     </tr>
-                  </table>
-               </td>
-            </tr>
-         </table>
-      </form>
-   </xsl:template>
-
-
-   <!--
-      <xsl:when test="$doc.view='collectionGuides'">
-      <xsl:call-template name="collectionGuides"/>
-      </xsl:when>
-      <xsl:when test="$doc.view='archivalMat'">
-      <xsl:call-template name="archivalMat"/>
-      </xsl:when>
-   -->
 </xsl:stylesheet>
