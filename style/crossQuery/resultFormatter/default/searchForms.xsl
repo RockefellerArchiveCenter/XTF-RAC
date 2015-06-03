@@ -171,9 +171,6 @@
                         <xsl:when test="matches($smode,'advanced')">
                            <xsl:call-template name="advancedForm"/>
                         </xsl:when>
-                        <xsl:when test="matches($smode,'freeform')">
-                           <xsl:call-template name="freeformForm"/>
-                        </xsl:when>
                         <xsl:when test="matches($smode,'browse')">
                            <xsl:call-template name="browseLinks"/>
                         </xsl:when>
