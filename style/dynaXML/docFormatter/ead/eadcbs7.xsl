@@ -650,7 +650,7 @@
       archdesc/did/langmaterial
    -->
 
-   <xsl:template match="archdesc/did/repository | archdesc/did/unitid   
+   <xsl:template match="archdesc/did/repository | archdesc/did/unitid
       | archdesc/did/abstract | archdesc/did/langmaterial | archdesc/did/materialspec | archdesc/did/container">
       <!--The template tests to see if there is a label attribute,
          inserting the contents if there is or adding display textif there isn't.
@@ -791,11 +791,11 @@
       <xsl:apply-templates select="child::*[name() != 'head']"/>
    </xsl:template>
 
-   <!-- Template calls and formats all other children of archdesc many of 
+   <!-- Template calls and formats all other children of archdesc many of
       these elements are repeatable within the dsc section as well.-->
    <xsl:template
-      match="physloc |  accessrestrict |  userestrict |  phystech |  otherfindaid | 
-      relatedmaterial |  altformavail |  originalsloc | 
+      match="physloc |  accessrestrict |  userestrict |  phystech |  otherfindaid |
+      relatedmaterial |  altformavail |  originalsloc |
       odd | custodhist | fileplan | acqinfo | processinfo | separatedmaterial | appraisal | materialspec | prefercite">
       <h4>
          <xsl:choose>
@@ -1246,8 +1246,8 @@
       </div>
    </xsl:template>
 
-   <!--This section of the stylesheet creates a div for each c01 or c 
-        It then recursively processes each child component of the c01 by 
+   <!--This section of the stylesheet creates a div for each c01 or c
+        It then recursively processes each child component of the c01 by
         calling the clevel template. -->
    <xsl:template match="c|c01">
       <xsl:choose>
@@ -1493,7 +1493,7 @@
    </xsl:template>
    <!--This is a named template that processes all c0* elements  -->
    <xsl:template name="clevel">
-      <!-- Establishes which level is being processed in order to provided indented displays. 
+      <!-- Establishes which level is being processed in order to provided indented displays.
            Indents handled by CSS margins-->
       <xsl:param name="level"/>
       <xsl:variable name="clevelMargin">
@@ -1545,8 +1545,8 @@
          <xsl:choose>
             <!--Formats Series and Groups  -->
             <xsl:when
-               test="@level='subcollection' or @level='subgrp' or @level='series' 
-                       or @level='subseries' or @level='collection'or @level='fonds' or 
+               test="@level='subcollection' or @level='subgrp' or @level='series'
+                       or @level='subseries' or @level='collection'or @level='fonds' or
                        @level='recordgrp' or @level='subfonds' or @level='class' or (@level='otherlevel' and not(child::did/container))">
                <div class="inventoryNotes">
                   <div class="seriesTitle">
@@ -1710,12 +1710,12 @@
                      <xsl:value-of select="count(descendant-or-self::xtf:hit) - count(did/descendant::xtf:hit)"/>
                   </xsl:variable>
                   <xsl:if
-                     test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
-                                child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc | 
+                     test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement |
+                                child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |
                                 child::fileplan |  child::odd | child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                 child::otherfindaid |  child::phystech |  child::processinfo | child::relatedmaterial | child::separatedmaterial |  child::controlaccess">
                      <span class="dialog_dsc">
-                        <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Additional Description']);">Additional description</a>
+                        <a href="#" onClick="ga('send', 'event', 'finding aid', 'view', 'Additional Description');">Additional description</a>
                      </span>
                      <xsl:if test="$didHitCount &gt; 0">
                         <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
@@ -1728,7 +1728,7 @@
                   </xsl:if>
                   <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
                      <span class="restrict_dsc">
-                        <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Restrictions']);">Restrictions</a>
+                        <a href="#" onClick="ga('send', 'event', 'finding aid', 'view', 'Restrictions');">Restrictions</a>
                      </span>
                      <xsl:if test="$didHitCount &gt; 0">
                         <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
@@ -1754,12 +1754,12 @@
                <div class="{$clevelMargin}">
                   <xsl:apply-templates select="did" mode="dsc"/>
                   <xsl:apply-templates
-                     select="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
-                                 child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict | 
-                                 child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] | 
-                                 child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd | 
+                     select="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement |
+                                 child::bioghist |  child::accessrestrict[not(child::legalstatus)] |   child::userestrict |
+                                 child::custodhist |  child::altformavail |  child::originalsloc |  child::did/physdesc[@label='Dimensions note'] |
+                                 child::fileplan |  child::did/physdesc[@label = 'General Physical Description note'] |  child::odd |
                                  child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
-                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial | 
+                                 child::otherfindaid |  child::phystech |  child::did/physdesc[@label='Physical Facet note'] |  child::processinfo | child::relatedmaterial |
                                  child::separatedmaterial |  child::controlaccess"
                   />
                </div>
@@ -1769,7 +1769,7 @@
    </xsl:template>
 
    <xsl:template name="clevel_dao">
-      <!-- Establishes which level is being processed in order to provided indented displays. 
+      <!-- Establishes which level is being processed in order to provided indented displays.
            Indents handled by CSS margins-->
       <xsl:param name="level"/>
       <!-- Processes the all child elements of the c or c0* level -->
@@ -1777,8 +1777,8 @@
          <xsl:choose>
             <!--Formats Series and Groups  -->
             <xsl:when
-               test="@level='subcollection' or @level='subgrp' or @level='series' 
-                       or @level='subseries' or @level='collection'or @level='fonds' or 
+               test="@level='subcollection' or @level='subgrp' or @level='series'
+                       or @level='subseries' or @level='collection'or @level='fonds' or
                        @level='recordgrp' or @level='subfonds' or @level='class' or (@level='otherlevel' and not(child::did/container))">
 
                <div class="seriesTitle">
@@ -1834,7 +1834,7 @@
                   <xsl:choose>
                      <xsl:when test="(@ns2:actuate | @xlink:actuate) and (@ns2:actuate | @xlink:actuate) != 'none'">
                         <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384"
-                           onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);" title="Digital object">
+                           onClick="ga('send', 'event', 'digital object', 'view', '{$doc.view}');" title="Digital object">
                            <xsl:if test="count(../dao | dao) &gt; 1">
                               <xsl:attribute name="style">margin-left:1em;</xsl:attribute>
                            </xsl:if>
@@ -1886,14 +1886,14 @@
             <xsl:variable name="daoImg" select="concat(string-join(tokenize($daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/>
             <div class="daoLink" style="float:left; width:15%">
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384"
-                  onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);">
+                  onClick="ga('send', 'event', 'digital object', 'view', '{$doc.view}');">
                   <xsl:call-template name="component-did-core"/>
                   <img src="{$daoImg}"/>
                </a>
             </div>
             <div class="caption" style="float:left;padding: 3em 0 0 1em;width: 75%;font-size:1em;">
                <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384"
-                  onClick="_gaq.push(['_trackEvent', 'digital object', 'view', '{$doc.view}']);">
+                  onClick="ga('send', 'event', 'digital object', 'view', '{$doc.view}');">
                   <xsl:if test="../did/unittitle != ''">
                      <xsl:value-of select="../did/unittitle"/>
                      <xsl:if test="../did/unitdate">
@@ -2061,7 +2061,7 @@
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"
             />&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>
       <a href="{$xtfURL}{$dynaxmlPath}?{$content.href}" data-citation="" data-title="{$name}" data-width="400" data-height="200"
-         onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'additional information']);">
+         onClick="ga('send', 'event', 'finding aid', 'view', 'additional information');">
          <xsl:value-of select="$name"/>
       </a>
    </xsl:template>

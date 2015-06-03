@@ -7,7 +7,7 @@
 
    <!--  Modified by DG for RAC 5/17/12 - 6/11/12
 	This files goes in  /var/lib/tomcat6/webapps/xtf/style/dynaXML/docFormatter/ead/
- 
+
 	-->
 
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -15,36 +15,36 @@
    <!--
       Copyright (c) 2008, Regents of the University of California
       All rights reserved.
-      
-      Redistribution and use in source and binary forms, with or without 
-      modification, are permitted provided that the following conditions are 
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are
       met:
-      
-      - Redistributions of source code must retain the above copyright notice, 
+
+      - Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-      - Redistributions in binary form must reproduce the above copyright 
-      notice, this list of conditions and the following disclaimer in the 
+      - Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
       - Neither the name of the University of California nor the names of its
-      contributors may be used to endorse or promote products derived from 
+      contributors may be used to endorse or promote products derived from
       this software without specific prior written permission.
-      
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
    -->
 
-   <!-- 
-      NOTE: This is rough adaptation of the EAD Cookbook stylesheets to get them 
-      to work with XTF. It should in no way be considered a production interface 
+   <!--
+      NOTE: This is rough adaptation of the EAD Cookbook stylesheets to get them
+      to work with XTF. It should in no way be considered a production interface
    -->
 
    <!-- ====================================================================== -->
@@ -85,7 +85,7 @@
    <!-- EAD-specific parameters                                                -->
    <!-- ====================================================================== -->
 
-   <!-- If a query was specified but no particular hit rank, jump to the first hit 
+   <!-- If a query was specified but no particular hit rank, jump to the first hit
         (in document order) -->
    <xsl:param name="hit.num" select="'0'"/>
 
@@ -195,14 +195,14 @@
                   <xsl:value-of select="archdesc/did/unitid"/>
                   <xsl:text>)</xsl:text>
                </title>
-               
+
                <!-- Twitter meta tags -->
                <meta name="twitter:card" content="summary"/>
                <meta name="twitter:site" content="@rockarch_org"/>
                <meta name="twitter:title" content="{archdesc/did/unittitle}"/>
                <meta name="twitter:description" content="{$description}"/>
                <meta name="twitter:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}"/>
-               
+
                <!-- Open Graph (Facebook) meta tags -->
                <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/collection')}" />
                <meta property="og:title" content="{archdesc/did/unittitle}" />
@@ -355,7 +355,7 @@
                <xsl:if test="$doc.view != 'dao'">
                   <li>
                      <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
+                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="ga('send', 'event', 'finding aid', 'view', 'pdf');">
                         <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
                      </a>
                   </li>
@@ -385,7 +385,7 @@
                <input type="hidden" name="docId" value="{$docId}" disabled="disabled"/>
                <input type="hidden" name="chunk.id" value="{$component}" disabled="disabled"/>
                <input type="hidden" name="doc.view" value="contentsSearch" disabled="disabled"/>
-               <input type="submit" value="Search" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', '{$searchPage}']);" disabled="disabled"/>
+               <input type="submit" value="Search" onclick="ga('send', 'event', 'finding aid', 'search', '{$searchPage}');" disabled="disabled"/>
             </form>
          </div>
          <xsl:call-template name="tabs"/>
@@ -530,7 +530,7 @@
       </xsl:variable>
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"
             />&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>
-      <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'tab', '{$tracking-id}']);">
+      <a onclick="ga('send', 'event', 'finding aid', 'tab', '{$tracking-id}');">
 
          <!-- 5/17/2012 DG: create variables for the new href: documentname2, basicchoice2, xtfURL2, href2. Just use chunk.id and doc name for now-->
          <xsl:variable name="documentname2">
@@ -613,10 +613,10 @@
                      <xsl:when test="$doc.view='contents' or $doc.view = 'contentsSearch'">
                         <div class="contentsList">
                            <xsl:if
-                              test="archdesc/dsc/child::*[@level='series'] | 
-                              archdesc/dsc/child::*[@level='recordgrp'] | 
-                              archdesc/dsc/child::*[@level='fonds'] | archdesc/dsc/child::*[@level='subgrp'] 
-                              | archdesc/dsc/child::*[@level='subseries'] 
+                              test="archdesc/dsc/child::*[@level='series'] |
+                              archdesc/dsc/child::*[@level='recordgrp'] |
+                              archdesc/dsc/child::*[@level='fonds'] | archdesc/dsc/child::*[@level='subgrp']
+                              | archdesc/dsc/child::*[@level='subseries']
                               | archdesc/dsc/child::*[@level='otherlevel' and not(child::did/container)]">
                               <h4>Contents List</h4>
                            </xsl:if>
@@ -627,10 +627,10 @@
                                  to form a hyperlink to each.   Delete this section if you do not
                                  wish the c01 titles to appear in the table of contents.-->
                               <xsl:apply-templates
-                                 select="archdesc/dsc/child::*[@level='series'] | 
-                                 archdesc/dsc/child::*[@level='recordgrp'] | 
-                                 archdesc/dsc/child::*[@level='fonds'] | archdesc/dsc/child::*[@level='subgrp'] 
-                                 | archdesc/dsc/child::*[@level='subseries'] 
+                                 select="archdesc/dsc/child::*[@level='series'] |
+                                 archdesc/dsc/child::*[@level='recordgrp'] |
+                                 archdesc/dsc/child::*[@level='fonds'] | archdesc/dsc/child::*[@level='subgrp']
+                                 | archdesc/dsc/child::*[@level='subseries']
                                  | archdesc/dsc/child::*[@level='otherlevel' and not(child::did/container)]"
                                  mode="dscTocSeries"/>
                            </xsl:if>
@@ -640,10 +640,10 @@
                         <div class="contentsList">
                            <h4>Digital Contents List</h4>
                            <xsl:apply-templates
-                              select="archdesc/dsc/child::*[@level='series'] [xtf:meta/*:type = 'dao'] | 
-                              archdesc/dsc/child::*[@level='recordgrp'][xtf:meta/*:type = 'dao'] | 
-                              archdesc/dsc/child::*[@level='fonds'][xtf:meta/*:type = 'dao'] | archdesc/dsc/child::*[@level='subgrp'][xtf:meta/*:type = 'dao'] 
-                              | archdesc/dsc/child::*[@level='subseries'][xtf:meta/*:type = 'dao'] 
+                              select="archdesc/dsc/child::*[@level='series'] [xtf:meta/*:type = 'dao'] |
+                              archdesc/dsc/child::*[@level='recordgrp'][xtf:meta/*:type = 'dao'] |
+                              archdesc/dsc/child::*[@level='fonds'][xtf:meta/*:type = 'dao'] | archdesc/dsc/child::*[@level='subgrp'][xtf:meta/*:type = 'dao']
+                              | archdesc/dsc/child::*[@level='subseries'][xtf:meta/*:type = 'dao']
                               | archdesc/dsc/child::*[@level='otherlevel' and not(child::did/container)][xtf:meta/*:type = 'dao']"
                               mode="dscTocDao"/>
                         </div>
@@ -666,8 +666,8 @@
                               </div>
                            </xsl:if>
                            <xsl:if
-                              test="archdesc/accessrestrict or archdesc/userestrict or 
-                              archdesc/phystech or archdesc/otherfindaid or  archdesc/relatedmaterial or 
+                              test="archdesc/accessrestrict or archdesc/userestrict or
+                              archdesc/phystech or archdesc/otherfindaid or  archdesc/relatedmaterial or
                               archdesc/altformavail or archdesc/originalsloc or archdesc/bibliography">
                               <div class="tocRow" id="restrictlinkMenu">
                                  <xsl:call-template name="make-toc-link">
@@ -744,21 +744,21 @@
                                  <xsl:for-each select="archdesc/controlaccess">
                                     <xsl:for-each select="subject | genreform | title | occupation">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);" href="{$xtfURL}search?browse-all=yes;f1-subject={.}">
+                                          <a onclick="ga('send', 'event', 'search', 'subject', 'finding aid');" href="{$xtfURL}search?browse-all=yes;f1-subject={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
                                     </xsl:for-each>
                                     <xsl:for-each select="corpname[not(@role='aut')] | famname[not(@role='aut')] | persname[not(@role='aut')]">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);" href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}">
+                                          <a onclick="ga('send', 'event', 'search', 'subject', 'finding aid');" href="{$xtfURL}/search?browse-all=yes;f1-subjectname={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
                                     </xsl:for-each>
                                     <xsl:for-each select="geogname">
                                        <li>
-                                          <a onclick="_gaq.push(['_trackEvent', 'search', 'subject', 'finding aid']);" href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}">
+                                          <a onclick="ga('send', 'event', 'search', 'subject', 'finding aid');" href="{$xtfURL}/search?browse-all=yes;f1-geogname={.}">
                                              <xsl:value-of select="."/>
                                           </a>
                                        </li>
@@ -856,9 +856,9 @@
                <xsl:attribute name="style">display:block;</xsl:attribute>
             </xsl:if>
             <xsl:apply-templates
-               select="child::*[@level='subgrp'] 
+               select="child::*[@level='subgrp']
                   | child::*[@level='series']
-                  | child::*[@level='subseries'] 
+                  | child::*[@level='subseries']
                   | child::*[@level='otherlevel' and not(child::did/container)]"
                mode="dscTocSubseries">
                <xsl:with-param name="submenuID" select="$submenuID"/>
@@ -991,17 +991,17 @@
          </xsl:call-template>
       </div>
 
-      <!-- Displays the unittitle and unitdates for each c02 if it is a subseries 
-      (as evidenced by the level attribute series) and forms a hyperlink to each.   
-      Delete this section if you do not wish the c02 titles to appear in the 
+      <!-- Displays the unittitle and unitdates for each c02 if it is a subseries
+      (as evidenced by the level attribute series) and forms a hyperlink to each.
+      Delete this section if you do not wish the c02 titles to appear in the
       table of contents. -->
       <xsl:if test="$submenu = 'true'">
          <div id="{$submenuID}">
             <xsl:if test="$parentID = $submenuID">
                <xsl:attribute name="style">display:block;</xsl:attribute>
             </xsl:if>
-            <xsl:apply-templates select="child::*[@level='subgrp'] 
-                  | child::*[@level='subseries'] 
+            <xsl:apply-templates select="child::*[@level='subgrp']
+                  | child::*[@level='subseries']
                   | child::*[@level='otherlevel' and not(child::did/container)]"
                mode="dscTocDaoSubseries">
                <xsl:with-param name="submenuID" select="$submenuID"/>
@@ -1160,7 +1160,7 @@
                   </xsl:when>
                </xsl:choose>
             </xsl:variable>
-            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', '{$tracking-id}']);">
+            <a onclick="ga('send', 'event', 'finding aid', 'table of contents', '{$tracking-id}');">
                <!-- if basicchoice2 = "nomatch_for_id" then use the original -->
                <xsl:attribute name="href">
                   <xsl:choose>
@@ -1194,7 +1194,7 @@
             </a>
          </xsl:when>
          <xsl:otherwise>
-            <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'table of contents', 'level {$indent} component']);">
+            <a onclick="ga('send', 'event', 'finding aid', 'table of contents', 'level {$indent} component');">
                <xsl:attribute name="rel">
                   <xsl:value-of select="concat('#',@id)"/>
                </xsl:attribute>

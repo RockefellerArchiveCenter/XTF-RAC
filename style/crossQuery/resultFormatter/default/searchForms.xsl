@@ -10,37 +10,37 @@
    <!--
       Copyright (c) 2008, Regents of the University of California
       All rights reserved.
-      
-      Redistribution and use in source and binary forms, with or without 
-      modification, are permitted provided that the following conditions are 
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are
       met:
-      
-      - Redistributions of source code must retain the above copyright notice, 
+
+      - Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-      - Redistributions in binary form must reproduce the above copyright 
-      notice, this list of conditions and the following disclaimer in the 
+      - Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
       - Neither the name of the University of California nor the names of its
-      contributors may be used to endorse or promote products derived from 
+      contributors may be used to endorse or promote products derived from
       this software without specific prior written permission.
-      
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
    -->
 
    <!-- ====================================================================== -->
    <!-- Global parameters                                                      -->
    <!-- ====================================================================== -->
-   
+
    <xsl:param name="freeformQuery"/>
 
    <!-- ====================================================================== -->
@@ -170,7 +170,7 @@
                      Center</p>
                </a>
             </div>
-            
+
                <xsl:call-template name="myListNav"/>
 
             <div class="searchPage">
@@ -240,32 +240,32 @@
                   <ul>
                      <li>
                         <a href="#archivalMat" class="archivalMat"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'archival materials']);"
+                           onClick="ga('send', 'event', 'about', 'view', 'archival materials');"
                            >Archival Materials</a>
                      </li>
                      <li>
                         <a href="#holdings" class="holdings"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'our collections']);"
+                           onClick="ga('send', 'event', 'about', 'view', 'our collections');"
                            >Our Collections</a>
                      </li>
                      <li>
                         <a href="#dscDescription" class="dscDescription"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'collection guides']);"
+                           onClick="ga('send', 'event', 'about', 'view', 'collection guides');"
                            >Collection Guides</a>
                      </li>
                      <li>
                         <a href="#dimes" class="dimes"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);"
+                           onClick="ga('send', 'event', 'about', 'view', 'website name');"
                            >This Website's Name</a>
                      </li>
                      <li>
                         <a href="#license" class="license"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'license']);"
+                           onClick="ga('send', 'event', 'about', 'view', 'license');"
                            >Licensing for our Descriptive Metadata</a>
                      </li>
                      <li>
                         <a href="#takedown" class="takedown"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'takedown']);">Our
+                           onClick="ga('send', 'event', 'about', 'view', 'takedown');">Our
                            Take-Down Policy</a>
                      </li>
                   </ul>
@@ -276,7 +276,7 @@
                <div id="searchtip" class="box">
                   <ul>
                      <li>Want help? See these <a href="#searchTips" class="searchTips"
-                           onClick="_gaq.push(['_trackEvent', 'about', 'view', 'search tips on home page']);"
+                           onClick="ga('send', 'event', 'about', 'view', 'search tips on home page');"
                            >search tips</a>. </li>
                   </ul>
 
@@ -360,7 +360,7 @@
                      </div>
                   </div>
                   <input class="searchbox" type="submit" value="Search"
-                     onClick="_gaq.push(['_trackEvent', 'search', 'keyword', 'home page']);"/>
+                     onClick="ga('send', 'event', 'search', 'keyword', 'home page');"/>
                   <script type="text/javascript">
                            $("#searchHome").submit(function() {
                            $('input[value=]',this).remove();
@@ -373,7 +373,7 @@
                   <!-- Uncomment and complete code when digital objects are included -->
                   <!--    <input type="checkbox" id="dao"/> Search only digitized material-->
                   <a href="#" class="showAdvanced closed"
-                     onClick="_gaq.push(['_trackEvent', 'search', 'advanced', 'home page']);">show
+                     onClick="ga('send', 'event', 'search', 'advanced', 'home page');">show
                      more search options</a>
                </div>
             </div>
@@ -388,19 +388,19 @@
                   <li class="browseOption">
                      <a
                         href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=ead"
-                        onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival']);">Browse
+                        onClick="ga('send', 'event', 'search', 'browse', 'archival');">Browse
                         All</a>
                   </li>
                   <li class="browseOption">
                      <a
                         href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                        onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-title']);"
+                        onClick="ga('send', 'event', 'search', 'browse', 'archival-title');"
                         >By Title</a>
                   </li>
                   <li class="browseOption">
                      <a
                         href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
-                        onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-creator']);"
+                        onClick="ga('send', 'event', 'search', 'browse', 'archival-creator');"
                         >By Creator</a>
                   </li>
                </div>
@@ -412,19 +412,19 @@
                   <li class="browseOption">
                      <a
                         href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
-                        onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library']);">Browse
+                        onClick="ga('send', 'event', 'search', 'browse', 'library');">Browse
                         All</a>
                   </li>
                   <li class="browseOption">
                      <a
                         href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                        onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-title']);"
+                        onClick="ga('send', 'event', 'search', 'browse', 'library-title');"
                         >By Title</a>
                   </li>
                   <li class="browseOption">
                      <a
                         href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                        onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'library-creator']);"
+                        onClick="ga('send', 'event', 'search', 'browse', 'library-creator');"
                         >By Creator</a>
                   </li>
                </div>
@@ -436,19 +436,19 @@
                   <li class="browseOption">
                      <a
                         href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=file;type=dao"
-                        onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital']);">Browse
+                        onClick="ga('send', 'event', 'search', 'browse', 'digital');">Browse
                         All</a>
                   </li>
                   <li class="browseOption">
                      <a
                         href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                        onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital-title']);"
+                        onClick="ga('send', 'event', 'search', 'browse', 'digital-title');"
                         >By Title</a>
                   </li>
                   <li class="browseOption">
                      <a
                         href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=file;type=dao"
-                        onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'digital-creator']);"
+                        onClick="ga('send', 'event', 'search', 'browse', 'digital-creator');"
                         >By Creator</a>
                   </li>
                </div>
@@ -460,7 +460,7 @@
                   alt="John D. Rockefeller handing out dimes"/>
                <p id="caption">John D. Rockefeller handing out dimes, the inspiration for this <a
                      href="#dimes" class="dimes"
-                     onClick="_gaq.push(['_trackEvent', 'about', 'view', 'website name']);"
+                     onClick="ga('send', 'event', 'about', 'view', 'website name');"
                      >website's name</a>.</p>
             </div>
 
@@ -483,7 +483,7 @@
                      material!</li>
                   <li> View <a
                         href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
-                        onClick="_gaq.push(['_trackEvent', 'search', 'browse', 'archival-updated']);"
+                        onClick="ga('send', 'event', 'search', 'browse', 'archival-updated');"
                         >Recently Updated Collections</a>. </li>
                </ul>
             </div>
@@ -503,7 +503,7 @@
          <!-- 9/21/11 WS: Moved to Advanced Search tab
                   <table class="sampleTable">
                      <tr>
-                        <td colspan="2">Examples:</td>                  
+                        <td colspan="2">Examples:</td>
                      </tr>
                      <tr>
                         <td class="sampleQuery">africa</td>
@@ -539,14 +539,14 @@
                   <strong>Search full text:</strong>
                </td>
                <td>
-                  <input type="text" name="text" size="60" value="{$text}"/>&#160; 
+                  <input type="text" name="text" size="60" value="{$text}"/>&#160;
                   <select
                      name="type" id="type">
                      <option value="">All Materials</option>
                      <option value="ead">Archival Collections</option>
                      <option value="dao">Digital Materials</option>
                      <option value="mods">Library Materials</option>
-                  </select> &#160; 
+                  </select> &#160;
                   <select name="sectionType" id="library">
                      <option value="">All Fields</option>
                      <option value="title">Title</option>
@@ -605,10 +605,10 @@
                <td>
                   <input type="text" name="year" size="60" value="{$year}"/>
                </td>
-               <!-- 
-                  <input type="text" name="s" id="s" 
-                  value="Text to be displayed here" 
-                  onfocus="if(this.value==this.defaultValue)this.value='';" 
+               <!--
+                  <input type="text" name="s" id="s"
+                  value="Text to be displayed here"
+                  onfocus="if(this.value==this.defaultValue)this.value='';"
                   onblur="if(this.value=='')this.value=this.defaultValue;"/>
                -->
             </tr>
@@ -735,7 +735,7 @@
    </xsl:template>
 
 
-   <!-- 
+   <!--
       <xsl:when test="$doc.view='collectionGuides'">
       <xsl:call-template name="collectionGuides"/>
       </xsl:when>

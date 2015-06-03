@@ -1,59 +1,59 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:xtf="http://cdlib.org/xtf" 
-   xmlns:editURL="http://cdlib.org/xtf/editURL" 
+   xmlns:xtf="http://cdlib.org/xtf"
+   xmlns:editURL="http://cdlib.org/xtf/editURL"
    xmlns="http://www.w3.org/1999/xhtml"
-   exclude-result-prefixes="#all" 
+   exclude-result-prefixes="#all"
    version="2.0">
-   
+
    <!--
       Copyright (c) 2008, Regents of the University of California
       All rights reserved.
-      
-      Redistribution and use in source and binary forms, with or without 
-      modification, are permitted provided that the following conditions are 
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are
       met:
-      
-      - Redistributions of source code must retain the above copyright notice, 
+
+      - Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-      - Redistributions in binary form must reproduce the above copyright 
-      notice, this list of conditions and the following disclaimer in the 
+      - Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
       - Neither the name of the University of California nor the names of its
-      contributors may be used to endorse or promote products derived from 
+      contributors may be used to endorse or promote products derived from
       this software without specific prior written permission.
-      
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
    -->
-   
-   <!-- 
-      Stylesheet used for reformatting the query structure into a user-friendly 
-      string for display.  
+
+   <!--
+      Stylesheet used for reformatting the query structure into a user-friendly
+      string for display.
    -->
-   
+
    <!-- ====================================================================== -->
    <!-- Local Parameters                                                       -->
    <!-- ====================================================================== -->
-   
+
    <!-- hidden queries -->
    <xsl:param name="noShow" select="'all|display|browse-[a-z]+|type|level'"/>
-   
+
    <!-- ====================================================================== -->
    <!-- Format Query for Display                                               -->
    <!-- ====================================================================== -->
-   
+
    <!-- main template -->
    <xsl:template name="format-query">
-      
+
       <!--<xsl:choose>
          <xsl:when test="$type"/>-->
          <!--<xsl:when test="$browse-all">
@@ -65,13 +65,13 @@
             </div>
          <!--</xsl:otherwise>
       </xsl:choose>-->
-      
+
    </xsl:template>
-   
+
    <!-- and|or|exact|near|range operators -->
    <xsl:template match="and|or|exact|near|range" mode="query">
       <!-- field -->
-      <xsl:variable name="field" select="if (@field) then @field else 'keyword'"/> 
+      <xsl:variable name="field" select="if (@field) then @field else 'keyword'"/>
       <!-- terms -->
       <xsl:variable name="terms">
          <xsl:for-each select=".//term/text()">
@@ -95,21 +95,21 @@
       </xsl:variable>
       <xsl:variable name="v3" select="editURL:remove($v2, concat(replace($field, 'facet-', 'f[0-9]+-'),'=',$terms))"/>
       <xsl:variable name="removeString" select="editURL:replaceEmpty($v3, 'browse-all=yes')"/>
-      
+
       <!-- If unchanged, it probably means there's a 'freeform' query that we don't understand,
            so remove that.
       -->
       <xsl:variable name="finalString" select="if ($removeString = $queryString)
          then replace($removeString, 'freeformQuery=[^=;]+', '')
          else $removeString"/>
-      
+
       <xsl:choose>
          <!-- hidden queries -->
          <xsl:when test="matches(@field,$noShow)"/>
-         
+
          <!-- 'text' supplement to keyword queries -->
          <xsl:when test="@field='text' and parent::*[1]/and/@fields"/>
-         
+
          <!-- a query at this level -->
          <xsl:when test="@field or @fields or not/@field">
             <!-- query -->
@@ -161,22 +161,22 @@
             <!-- 3/6/12 WS: Added choose statement to return users to browse all option if last term is removed-->
             <xsl:choose>
                <xsl:when test="following-sibling::* or preceding-sibling::*">
-                  <a href="{$xtfURL}{$crossqueryPath}?{editURL:clean($finalString)}" onClick="_gaq.push(['_trackEvent', 'results', 'remove query', '{$finalString}']);">[X]</a>                  
+                  <a href="{$xtfURL}{$crossqueryPath}?{editURL:clean($finalString)}" onClick="ga('send', 'event', 'results', 'remove query', '{$finalString}');">[X]</a>                  
                </xsl:when>
                <xsl:otherwise>
-                  <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;{editURL:clean($finalString)}" onClick="_gaq.push(['_trackEvent', 'results', 'remove query', '{$finalString}']);">[X]</a>
+                  <a href="{$xtfURL}{$crossqueryPath}?browse-all=yes;{editURL:clean($finalString)}" onClick="ga('send', 'event', 'results', 'remove query', '{$finalString}');">[X]</a>
                </xsl:otherwise>
             </xsl:choose>
             <br/>
          </xsl:when>
-         
+
          <!-- keep searching down until we find the query -->
          <xsl:otherwise>
             <xsl:apply-templates mode="query"/>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
-   
+
    <!-- term -->
    <xsl:template match="term" mode="query" priority="-1">
       <xsl:if test="preceding-sibling::term and (. != $keyword)">
@@ -188,7 +188,7 @@
       </span>
       <!--<xsl:text>&#160;</xsl:text>-->
    </xsl:template>
-   
+
    <!-- phrase -->
    <xsl:template match="phrase" mode="query">
       <span class="subhit">
@@ -197,7 +197,7 @@
          <xsl:text>&quot;</xsl:text>
       </span>
    </xsl:template>
-   
+
    <!-- exact -->
    <xsl:template match="exact" mode="query">
       <span class="subhit">
@@ -210,14 +210,14 @@
          <b><xsl:value-of select="@field"/></b>
       </xsl:if>
    </xsl:template>
-   
+
    <!-- range queries -->
    <xsl:template match="lower" mode="query">
       <span class="subhit">
          <xsl:value-of select="."/>
       </span>
    </xsl:template>
-   
+
    <xsl:template match="upper" mode="query">
       <xsl:if test="../lower != .">
          <xsl:text> - </xsl:text>
@@ -226,14 +226,14 @@
          </span>
       </xsl:if>
    </xsl:template>
-   
+
    <!-- not -->
    <xsl:template match="not" mode="query">
       <xsl:text> not </xsl:text>
       <xsl:apply-templates mode="query"/>
    </xsl:template>
-   
+
    <!-- hide sectionType -->
    <xsl:template match="sectionType" mode="query"/>
-   
+
 </xsl:stylesheet>
