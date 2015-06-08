@@ -134,7 +134,7 @@
             </div>
             <div class="overlay" id="dimes">
                <div class="homeDialog" style="float:left;">
-                  <img src="./icons/default/dimes.jpg"
+                  <img src="{$icon.path}dimes.jpg"
                      alt="John D. Rockefeller, Sr. handing out dimes"
                      style="float:right; width:45%;"/>
                   <p style="float:left; width:50%;">DIMES is an acronym for Digital Information
@@ -371,7 +371,7 @@
 
             <div id="featured" class="box">
                <h2>From our collections</h2>
-               <img src="/xtf/icons/default/featured/dimes.jpg"
+               <img src="{$icon.path}featured/dimes.jpg"
                   alt="John D. Rockefeller handing out dimes"/>
                <p id="caption">John D. Rockefeller handing out dimes, the inspiration for this <a
                      href="#dimes" class="dimes"

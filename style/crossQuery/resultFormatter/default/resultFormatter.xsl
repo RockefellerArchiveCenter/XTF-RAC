@@ -534,7 +534,7 @@
                                           select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
                                        <a href="search?{$cleanString};rmode=rss;sort=rss"
                                           onClick="ga('send', 'event', 'results', 'rss', {$cleanString});">
-                                          <img src="{$icon.path}/i_rss.png" alt="rss icon"
+                                          <img src="{$icon.path}rss.svg" alt="rss icon"
                                              style="vertical-align:bottom;"/>
                                        </a>
                                     </xsl:if>
@@ -1185,7 +1185,7 @@
             </div>
             <div class="resultContent">
                <div class="result title">
-                  <a onClick="_gaq.push(['_trackEvent', 'component info', 'view finding aid', 'results main collection']);" title="Go to finding aid">
+                 <a onClick="ga('send', 'event', 'component info', 'view finding aid', 'results main collection');" title="Go to finding aid">
                      <xsl:attribute name="href">
                         <xsl:value-of select="$collPath"/>
                      </xsl:attribute>
@@ -1237,19 +1237,6 @@
                            </xsl:if>
                         </xsl:when>
                         <xsl:otherwise>
-                           <xsl:value-of select="meta/genre"/>
-                        </xsl:otherwise>
-                     </xsl:choose>
-                  </div>
-
-                  <div class="resultContent">
-                     <div class="result title">
-                        <a
-                           onClick="ga('send', 'event', 'component info', 'view finding aid', 'results main collection');"
-                           title="Go to finding aid">
-                           <xsl:attribute name="href">
-                              <xsl:value-of select="$collPath"/>
-                           </xsl:attribute>
                            <xsl:choose>
                               <xsl:when test="meta/collectionTitle">
                                  <xsl:apply-templates select="meta/collectionTitle"/>
@@ -1298,9 +1285,9 @@
                            <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']" mode="text"/>
                         </div>
                      </xsl:if>
-                  </div>
                </xsl:otherwise>
             </xsl:choose>
+            </div>
 
             <xsl:if test="meta/type='mods'">
                <div class="bookbag">
