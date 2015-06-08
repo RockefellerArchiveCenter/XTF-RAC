@@ -4,17 +4,16 @@
 
    <links>
       <meta name="viewport" content="width=device-width,initial-scale=1"/>
-      <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
-      <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
-      <link rel="stylesheet" href="/xtf/css/default/results.css" type="text/css"/>
-      <link rel="stylesheet" href="http://www.rockarch.org/css/more.css" type="text/css"/>
-      <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
       <link rel="shortcut icon" href="/xtf/icons/default/favicon.png"/>
-      <!-- 9/27/11 WS: RA links and javascript -->
-      <link rel="stylesheet" type="text/css" href="http://www.rockarch.org/css/bootstrap.css"/>
+
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Questrial" type="text/css"/>
+      <link rel="stylesheet" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css" type="text/css"/>
+      <link rel="stylesheet" href="http://www.rockarch.org/css/more.css" type="text/css"/>
+      <link rel="stylesheet" href="http://www.rockarch.org/css/bootstrap.css" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/racustom.css" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/print.css" type="text/css" media="print"/>
-      <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'/>
+
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"/>
       <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"/>
       <script type="text/javascript" src="http://www.rockarch.org/js/bootstrap.js"/>
       <script type="text/javascript" src="http://www.rockarch.org/js/browserDetect.js"/>
@@ -43,16 +42,16 @@
 
    <dynaxml.links>
       <meta name="viewport" content="width=device-width,initial-scale=1"/>
-      <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
-      <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
-      <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
-      <link rel="stylesheet" href="http://www.rockarch.org/css/more.css" type="text/css"/>
       <link rel="shortcut icon" href="/xtf/icons/default/favicon.png"/>
-      <!-- 9/27/11 WS: RA links and javascript -->
-      <link rel="stylesheet" rev="stylesheet" type="text/css" href="http://www.rockarch.org/css/bootstrap.css"/>
+
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Questrial" type="text/css"/>
+      <link rel="stylesheet" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css" type="text/css"/>
+      <link rel="stylesheet" href="http://www.rockarch.org/css/more.css" type="text/css"/>
+      <link rel="stylesheet" href="http://www.rockarch.org/css/bootstrap.css" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/racustom.css" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/print.css" type="text/css" media="print"/>
-      <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'/>
+
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"/>
       <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"/>
       <script type="text/javascript" src="http://www.rockarch.org/js/bootstrap.js"/>
       <script type="text/javascript" src="/xtf/script/rac/dropdown.js"/>
@@ -66,7 +65,7 @@
       <script type="text/javascript" src="/xtf/script/bookbag.js"/>
       <script type="text/javascript" src="/xtf/script/rac/componentInfo.js"/>
       <script type="text/javascript" src="/xtf/script/rac/daoTable.js"/>
-      
+
       <!-- Google Analytics -->
       <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -501,7 +500,7 @@
          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </div>-->
    </dynaxml.header>
-   
+
    <searchtips>
       <div class="overlay" id="searchTips" style="width:1100px; top:20px !important;">
          <div class="dscDescription">
