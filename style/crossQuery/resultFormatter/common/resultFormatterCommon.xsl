@@ -223,8 +223,8 @@
    <xsl:param name="brand.header" select="$brand.file//header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.footer" select="$brand.file//footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.searchtips" select="$brand.file//searchtips/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-
-   <!-- Paging Parameters-->
+   
+   <!-- Paging Parameters--> 
    <xsl:param name="startDoc" as="xs:integer" select="1"/>
    <!-- Documents per Page -->
    <xsl:param name="docsPerPage" as="xs:integer">

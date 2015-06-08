@@ -280,7 +280,7 @@
                      <meta itemprop="http://schema.org/telephone" content="(914) 366-6300"/>
                   </div>
                </div>
-
+               
                <!-- Twitter meta tags -->
                <meta name="twitter:card" content="summary"/>
                <meta name="twitter:site" content="@rockarch_org"/>
@@ -1209,6 +1209,9 @@
                      <xsl:otherwise/>
                   </xsl:choose>
                   <xsl:value-of select="$name"/>
+                  <xsl:if test="$dao = 'true'">
+                     <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
+                  </xsl:if>
                   <div class="hit-count">
                      <xsl:if test="$hit.count"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
                   </div>
@@ -1245,6 +1248,9 @@
                      <xsl:otherwise/>
                   </xsl:choose>
                   <xsl:value-of select="$name"/>
+                  <xsl:if test="$dao = 'true'">
+                     <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
+                  </xsl:if>
                   <div class="hit-count">
                       <xsl:if test="$hit.count > 0"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
                   </div>
@@ -1252,9 +1258,6 @@
             </a>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:if test="$dao = 'true'">
-         <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
-      </xsl:if>
    </xsl:template>
 
    <!-- ====================================================================== -->

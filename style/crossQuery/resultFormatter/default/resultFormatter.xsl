@@ -475,6 +475,7 @@
                                           href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=ead"
                                           onClick="ga('send', 'event', 'search', 'results browse', 'archival-creator');"
                                           >By Creator</a>
+
                                     </li>
                                  </div>
                                  <div class="accordionButton category">
@@ -1023,7 +1024,7 @@
                            </xsl:choose>
                         </xsl:when>
                      </xsl:choose>
-
+                     
                      <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
                      <xsl:if test="meta/date">
                         <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
@@ -1264,7 +1265,6 @@
                      </xsl:choose>
                   </a>
                </div>
-
                <!-- 11/15/2013 HA: removing label and changing logic -->
                <xsl:if test="meta/creator">
                   <div class="result creator">
@@ -1274,7 +1274,7 @@
                      </xsl:for-each>
                   </div>
                </xsl:if>
-
+               
                <!-- 11/14/2013 HA: changing logic to only display snippets not already visible -->
                <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
                <xsl:choose>
@@ -1285,8 +1285,8 @@
                            <xsl:apply-templates select="descendant-or-self::snippet[@sectionType = 'bioghist' or @sectionType = 'scopecontent']" mode="text"/>
                         </div>
                      </xsl:if>
-               </xsl:otherwise>
-            </xsl:choose>
+                  </xsl:otherwise>
+               </xsl:choose>
             </div>
 
             <xsl:if test="meta/type='mods'">
@@ -1795,6 +1795,7 @@
                   <xsl:text>ga('send', 'event', 'digital object', 'view', 'results page');</xsl:text>
                </xsl:attribute>
             </xsl:if>
+            
             <xsl:choose>
                <xsl:when test="$type='dao'">
                   <xsl:apply-templates select="meta/title"/>
