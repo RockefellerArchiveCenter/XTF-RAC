@@ -818,11 +818,9 @@ div.notesMore div.button a:hover, div.notesLess div.button a:hover {
 }
 
 /* ===[ FACETS ]=== */
-/*HA todo: probably some duplication here*/
-.facets {
+div.facets {
     width: 25%;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin:0 1%;
     float: left;
 }
 
@@ -830,12 +828,17 @@ div.facetGroup {
     font-size: 95%
 }
 
-.facetWrapper {
+.facetGroup .col3 {
+    font-weight: bold;
+    color: #c45414;
+}
+
+div.facetWrapper {
     width: 98%;
     float: left;
 }
 
-.facetName {
+div.facetName {
     float: left;
     max-width: 94%;
 }
@@ -914,7 +917,18 @@ div.facetLess:hover, div.facetMore:hover {
     text-decoration: underline !important;
 }
 
-.browse a {
+.facets .browse {
+    float: left;
+    width: 100%;
+    margin-top: .5em;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.facets .browse li {
+    display: block
+}
+
+.facets .browse a {
     color: #c45414 !important;
     text-decoration: none !important;
 }
@@ -953,19 +967,8 @@ div.facetShow p {
     background-color: rgb(228, 228, 228)
 }
 
-.browse li {
-    display: block
-}
-
 .facets #facets h2 {
     background-color: #174780
-}
-
-.facets .browse {
-    float: left;
-    width: 100%;
-    margin-top: .5em;
-    border-radius: 5px 5px 0px 0px;
 }
 
 .facets #facets {
@@ -979,12 +982,6 @@ div.facetShow p {
     font-weight: bold;
     color: #c45414;
 }
-
-.facetGroup .col3 {
-    font-weight: bold;
-    color: #c45414;
-}
-
 
 /* ===[ Date Facet ]=== */
 #to, #from {
@@ -1006,67 +1003,17 @@ div.facetShow p {
 
 
 /* ===[ Hits ]=== */
-/*HA todo: de duplicate*/
-.hit, .subhit {
-    color: #c45414;
-    font-weight: bold;
-}
-
-a.hit {
+.hit, .subhit, a.hit, hit-count {
     color: #c45414 !important;
     font-weight: bold;
 }
 
 .hit-count {
-    color: #c45414 !important;
-    font-weight: bold;
     display: inline;
-}
-
-.inventoryNotes .hitsection .subhit {
-    color: #c45414;
-    font-weight: bold;
 }
 
 .active .subhit {
     color: #fff
-}
-
-.hit {
-    color: #c45414;
-    font-weight: bold;
-}
-
-/*HA todo: look at these styles and see if they can be removed*/
-.overlay {
-    display: none;
-    z-index: 10000;
-    background-color: #fff;
-    width: 410px;
-    min-height: 200px;
-    border: 1px solid #666;
-    padding: 20px;
-}
-
-.overlay .close {
-    background-image: url(/xtf/icons/default/close.png);
-    position: absolute;
-    right: -15px;
-    top: -15px;
-    cursor: pointer;
-    height: 35px;
-    width: 35px;
-}
-
-.overlay h3 {
-    border-bottom: 1px dotted
-}
-
-.overlay div.dscDescription {
-    border: 1px solid #ccc;
-    margin: 1em;
-    padding: 1em;
-    min-height: 500px;
 }
 
 /* ===[ HOME PAGE ]=== */
@@ -2308,6 +2255,23 @@ ul.none {
 }
 
 /* ===[ MODAL DIALOGS ]=== */
+.overlay {
+    display: none;
+    z-index: 10000;
+    background-color: #fff;
+    width: 410px;
+    min-height: 200px;
+    border: 1px solid #666;
+    padding: 20px;
+}
+
+div.dscDescription {
+    border: 1px solid #ccc;
+    margin: 1em;
+    padding: 1em;
+    min-height: 500px;
+}
+
 .ui-icon.ui-icon-myCloseButton {
     float: right;
     clear: left;
@@ -2576,22 +2540,13 @@ ul.none {
     line-height: 25px;
 }
 
-/* ---------------------------------------------
-   ================================================== */
-
-/* ------------- RESPONSIVE STYLES -------------
-   ================================================== */
-
-/* ---------------------------------------------
-   ================================================== */
+/*===================================*/
+/*======= [RESPONSIVE STYLES] =======*/
+/*===================================*/
 
 @media screen and (max-width:1024px) {
     .resultIcon img {
         max-height: 33px
-    }
-
-    .comment {
-        display: none
     }
 
     #header {
@@ -2622,10 +2577,6 @@ ul.none {
 
     .home li, .resultsHeader li {
         font-size: 1em
-    }
-
-    #bookbag {
-        padding-top: 0
     }
 
     #about {
