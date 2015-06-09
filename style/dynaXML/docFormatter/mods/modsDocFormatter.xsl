@@ -8,7 +8,7 @@
    <!-- Author: Winona Salesky wsalesky@gmail.com                              -->
    <!-- Date:   10/10/12                                                       -->
    <!--         Created for  for Rockefeller Archives Center                   -->
-   <!-- 
+   <!--
 	   This files goes in  /var/lib/tomcat6/webapps/xtf/style/dynaXML/docFormatter/mods/
 	-->
 
@@ -17,30 +17,30 @@
    <!--
       Copyright (c) 2008, Regents of the University of California
       All rights reserved.
-      
-      Redistribution and use in source and binary forms, with or without 
-      modification, are permitted provided that the following conditions are 
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are
       met:
-      
-      - Redistributions of source code must retain the above copyright notice, 
+
+      - Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-      - Redistributions in binary form must reproduce the above copyright 
-      notice, this list of conditions and the following disclaimer in the 
+      - Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
       - Neither the name of the University of California nor the names of its
-      contributors may be used to endorse or promote products derived from 
+      contributors may be used to endorse or promote products derived from
       this software without specific prior written permission.
-      
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
    -->
 
@@ -85,8 +85,8 @@
    <!-- MODS-specific parameters                                                -->
    <!-- ====================================================================== -->
 
-   <!-- If a query was specified but no particular hit rank, jump to the first hit 
-        (in document order) 
+   <!-- If a query was specified but no particular hit rank, jump to the first hit
+        (in document order)
    -->
    <xsl:param name="hit.num" select="'0'"/>
 
@@ -283,36 +283,6 @@
             <xsl:call-template name="myListMods">
                <xsl:with-param name="url" select="$doc.path"/>
             </xsl:call-template>
-         </div>
-         <div class="headerSearch">
-            <xsl:if test="($query != '0') and ($query != '')">
-               <div class="headerResults">
-                  <strong>
-                     <span class="hit-count">
-                        <xsl:value-of select="$sum"/>
-                     </span>
-                     <xsl:text> </xsl:text>
-                     <xsl:value-of select="$occur"/>
-                     <xsl:text> of </xsl:text>
-                     <span class="hit-count">
-                        <xsl:value-of select="$query"/>
-                     </span>
-                  </strong>
-                  <xsl:text> [</xsl:text>
-                  <a>
-                     <xsl:attribute name="href">
-                        <xsl:value-of select="$doc.path"/>;brand=<xsl:value-of select="$brand"/>
-                     </xsl:attribute>
-                     <xsl:text>Clear Hits</xsl:text>
-                  </a>
-                  <xsl:text>]</xsl:text>
-                  <xsl:choose>
-                     <xsl:when test="$docId"/>
-                     <xsl:otherwise> &#160;[ <a href="{session:getData('queryURL')}"> Back to Search
-                           Results </a> ] </xsl:otherwise>
-                  </xsl:choose>
-               </div>
-            </xsl:if>
          </div>
          <xsl:call-template name="tabs"/>
       </div>

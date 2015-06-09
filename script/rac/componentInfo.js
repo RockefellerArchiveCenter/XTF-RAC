@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     $('div.notesMore').hide();
     $('.notes > div').each(function () {
         var height = $(this).height();
@@ -10,23 +10,23 @@ $(document).ready(function () {
             $(this).parent().next('.notesMore').hide();
         }
     });
-    
+
     $(".notesMore").click(function (event) {
         event.preventDefault();
         $(this).prev('div.notes').css("max-height", "none")
         $(this).next('div.notesLess').show();
         $(this).hide();
     });
-    
+
     $(".notesLess").click(function (event) {
         event.preventDefault();
         $(this).prev().prev('div.notes').css("max-height", "7.5em")
         $(this).prev('div.notesMore').show();
         $(this).hide();
     });
-    
+
     if ($(window).width() > 768) {
-        
+
         $('div.component').mouseenter(function () {
             var firstcomponent = '#' + $('.docHit').attr('id') + '> .top-level';
             var id = $(this).attr("id").split('_')[1]
@@ -43,7 +43,7 @@ $(document).ready(function () {
             var fractionnoscroll = (windowheight + $(firstcomponent).position().top) / offsetnoscroll;
             var setheight = position.top - (infoheight / fraction);
             var setheightnoscroll = position.top - (infoheight / fractionnoscroll);
-            
+
             if ($(this).hasClass("active")) {
             } else {
                 $('div.component').removeClass("active");
@@ -59,7 +59,7 @@ $(document).ready(function () {
                         }).hide().show("slide", { direction: "left" }, 200, 'easeInCirc');
                     } else {
                         $(componentid).css({
-                            top: setheight, right: '1%', position: 'absolute', visibility: 'visible'
+                            top: setheight, right: '2%', position: 'absolute', visibility: 'visible'
                         }).hide().show("slide", { direction: "left" }, 200, 'easeInCirc');
                     }
                 }, 300);

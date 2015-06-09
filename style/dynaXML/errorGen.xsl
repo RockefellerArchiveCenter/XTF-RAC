@@ -147,11 +147,6 @@
     </head>
 
     <body>
-      <div>
-         <!--[if IE ]>
-         <div class="chromeframe"><p>You are using Microsoft Internet Explorer, which is not fully supported by this site. For better results, <a href="http://browsehappy.com/">use a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p></div>
-        <![endif]-->
-      </div>
 
       <xsl:copy-of select="$brand.header"/>
 
