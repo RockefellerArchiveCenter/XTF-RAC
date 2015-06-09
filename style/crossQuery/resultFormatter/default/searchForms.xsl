@@ -288,8 +288,7 @@
                            });
                   </script>
                   <a href="#" class="showAdvanced closed"
-                     onClick="ga('send', 'event', 'search', 'advanced', 'home page');">show
-                     more search options</a>
+                     onClick="ga('send', 'event', 'search', 'advanced', 'home page');">more search options</a>
                </div>
             </div>
 
