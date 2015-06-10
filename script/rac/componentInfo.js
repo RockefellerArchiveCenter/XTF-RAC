@@ -49,17 +49,17 @@ $(document).ready(function () {
                 $('div.component').removeClass("active");
                 $('div.componentInfo').css('visibility', 'hidden');
                 $('div.activeArrow').css('visibility', 'hidden');
-                $(componentid).prev('div.activeArrow').css('visibility', 'visible');
+                $(this).next('div.activeArrow').css('visibility', 'visible');
                 $(this).addClass('active');
                 setTimeout(function () {
                     $('div.componentInfo').css('visibility', 'hidden');
                     if (scrolltop < 261) {
                         $(componentid).css({
-                            top: setheightnoscroll, right: '1%', position: 'absolute', visibility: 'visible'
+                            top: setheightnoscroll, right: '0', position: 'absolute', visibility: 'visible'
                         }).hide().show("slide", { direction: "left" }, 200, 'easeInCirc');
                     } else {
                         $(componentid).css({
-                            top: setheight, right: '2%', position: 'absolute', visibility: 'visible'
+                            top: setheight, right: '0', position: 'absolute', visibility: 'visible'
                         }).hide().show("slide", { direction: "left" }, 200, 'easeInCirc');
                     }
                 }, 300);

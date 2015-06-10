@@ -351,16 +351,17 @@ div.docHit {
     float: left;
     width: 73%;
     padding-bottom: 1%;
+    position: relative;
 }
 
 #docHits .resultIcon {
     float:left;
-    width: 10%
+    width: 13%
 }
 
 #docHits .resultContent {
     float:left;
-    width: 75%
+    width: 70%
 }
 
 #docHits .resultLabel {
@@ -387,14 +388,15 @@ div.docHit {
 
 .subdocuments {
     float: left;
-    width: 177%;
+    width: 90%;
     padding-left: 10%;
 }
 
 .subdocument {
     float: left;
     padding: .5em 1%;
-    width: 49%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .subdocument.odd {
@@ -402,7 +404,7 @@ div.docHit {
 }
 
 .subdocument .title {
-    width: 85%;
+    width: 80%;
     float: left;
     font-size: 1em;
     font-weight: bold;
@@ -422,7 +424,6 @@ div.docHit {
 
 .subdocument.active {
     background-color: #bbb !important;
-    width: 51%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -457,23 +458,16 @@ div.docHit {
     border-bottom: 10px solid transparent;
     border-left: 10px solid #bbb;
     content: " ";
-    float: left;
+    float: right;
     margin-top: 1%;
+    margin-right:-10px;
     position: relative;
     z-index: 2;
 }
 
 .docHit > .activeArrow {
-    margin-right: -13%;
+    margin-right: -10px;
     margin-top: 3%;
-}
-
-.bookbagView .activeArrow {
-    margin-right: -13%
-}
-
-.bookbagView .top-level .activeArrow {
-    margin-right: -12%
 }
 
 .docHit .active .result, .docHit .active .collection {
@@ -511,9 +505,9 @@ div.docHit {
 .componentInfo {
     display: block;
     visibility: hidden;
-    width: 29%;
+    width: 42%;
     position: absolute;
-    margin: 0 1em;
+    margin: 0 1%;
     padding: 1em;
     border-radius: 5px;
     background-color: #FAFAFB;
@@ -673,10 +667,10 @@ div.notesMore div.button a:hover, div.notesLess div.button a:hover {
 }
 
 #results .pages {
-    width: 32%;
+    width: 42%;
     float: left;
     font-size: .8em;
-    padding: .8em;
+    padding: 1%;
     border-left: 2px groove #fff;
     border-right: 2px groove #fff;
     background: 0;
@@ -722,11 +716,10 @@ div.notesMore div.button a:hover, div.notesLess div.button a:hover {
 }
 
 #results {
-    width: 95%;
+    width: 96%;
     float: left;
     padding: 1em 1% 1em 1%;
     margin: 1%;
-    margin-top: 1%;
     background: #eee;
     border-radius: 5px;
     font-size: 1.2em;
@@ -761,7 +754,7 @@ div.notesMore div.button a:hover, div.notesLess div.button a:hover {
 #hits {
     float: left;
     margin-bottom: 1%;
-    width: 32%;
+    width: 29%;
 }
 
 #sort {
@@ -841,6 +834,7 @@ div.facetWrapper {
 div.facetName {
     float: left;
     max-width: 94%;
+    margin-right:.2em;
 }
 
 div.facetMore, div.facetLess {
@@ -1182,7 +1176,7 @@ input[type="submit"].searchbox:active {
 }
 
 .accordionButton h3 {
-    margin: .6em;
+    margin: .6em 0 .6em .6em;
     float: left;
     padding-left: .4em;
 }
@@ -2543,6 +2537,12 @@ div.dscDescription {
 /*===================================*/
 /*======= [RESPONSIVE STYLES] =======*/
 /*===================================*/
+@media screen and (max-width:1450px) {
+  .componentInfo {
+    width:41%;
+  }
+}
+
 @media screen and (max-width:1060px) {
   .navbar {
     font-size:11px
@@ -2553,28 +2553,67 @@ div.dscDescription {
   #myListNav {
     margin-top: 6em;
   }
+  .resultsHeader #searchbox {
+    top:13em;
+  }
+  .componentInfo {
+    width:40%;
+  }
 
 }
 
 @media screen and (max-width:1024px) {
   .resultIcon img {
-        max-height: 33px
+      max-height: 33px
     }
 
     #header {
         width: 60%
     }
 
-    #bookbag {
-        padding-top: 5em
+    #results #hits {
+      width:42%
+    }
+
+    #results .pages, #results #sort {
+      border: none;
+      width: 55%;
+      float:left;
+      text-align: center;
+    }
+
+    #results #sort {
+      margin-top: 1em;
+      padding: 0 1%
+    }
+
+    div.facets {
+      width:34%;
+    }
+
+    #docHits {
+      width:64%
+    }
+
+    #docHits .resultContent {
+      width: 65%;
+    }
+
+    .subdocuments {
+      width:95%;
+      padding-left: 5%;
+    }
+
+    .subdocument .title {
+      width: 73%;
     }
 
     #tocWrapper {
-        top: 299px
+      top: 299px
     }
 
     #content-wrapper {
-        top: 299px
+      top: 299px
     }
 }
 
@@ -2583,6 +2622,16 @@ div.dscDescription {
           width: 96%;
           box-shadow: none;
           margin: 2%;
+      }
+      .componentInfo {
+        padding:.5em;
+        width:41%
+      }
+      div.facets {
+        width:34%;
+      }
+      #docHits .resultContent {
+        width: 60%;
       }
 }
 
@@ -2640,20 +2689,21 @@ div.dscDescription {
         vertical-align: middle
     }
 
-    #results {
-        font-size: .8em
+    #results #hits {
+      width:100%;
+      text-align: center;
     }
 
-    #results .pages, #results .hits {
-        width: 31%
+    #results .pages, #results #sort {
+      width:96%
     }
 
-    .facets {
-        width: 33%
+    div.facets {
+        width: 47%
     }
 
     #docHits {
-        width: 65%
+        width: 51%
     }
 
     #docHits .resultIcon {
@@ -2661,7 +2711,7 @@ div.dscDescription {
     }
 
     #docHits .resultContent {
-        width: 75%
+        width: 61%
     }
 
     #docHits .resultLabel {
@@ -2736,7 +2786,7 @@ div.dscDescription {
     }
 
     .subdocument .title {
-        width: 88%
+        width: 70%
     }
 
     #docHits .dao .resultContent {
@@ -2749,10 +2799,6 @@ div.dscDescription {
 
     #docHits .creator, #docHits .collection {
         font-size: .8em
-    }
-
-    .bookbag {
-        width: 11%
     }
 
     .activeArrow {
@@ -2835,7 +2881,7 @@ div.dscDescription {
     .resultsHeader #searchbox {
         left: 0%;
         width: 90%;
-        top: 7em;
+        top: 11em;
     }
 
     .resultsHeader input[type="text"].searchbox {
@@ -2852,21 +2898,10 @@ div.dscDescription {
         width: 70%;
     }
 
-    #rss, #hits {
-        display: none
-    }
-
-    #results .pages {
+    #results .pages, #results #sort {
         float: left;
-        width: 47%;
         border: 0;
         font-size: 1em;
-        text-align: center;
-        padding: 1%;
-    }
-
-    #sort {
-        width: 47%;
         text-align: center;
         padding: 1%;
     }
@@ -2987,15 +3022,15 @@ div.dscDescription {
     }
 
     div.docHit {
-        width: 96%
+        width: 98%
     }
 
     .subdocuments {
-        width: 90%
+        width: 95%;
+        padding-left:5%;
     }
 
     .subdocument, .subdocument.active {
-        width: 98%;
         margin: 0;
     }
 
@@ -3005,7 +3040,7 @@ div.dscDescription {
     }
 
     .subdocument .title {
-        width: 82%
+        width: 77%
     }
 
     .activeArrow {

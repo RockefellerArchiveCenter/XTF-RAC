@@ -372,8 +372,7 @@
                                     });
                               </script>
                                     <a href="#" class="showAdvanced closed"
-                                       onClick="ga('send', 'event', 'search', 'advanced', 'results page');"
-                                       >show more search options</a>
+                                       onClick="ga('send', 'event', 'search', 'advanced', 'results page');">more search options</a>
                                  </div>
                               </div>
                            </div>
@@ -529,17 +528,6 @@
                            </div>
                            <div id="docHits">
                               <div id="results">
-                                 <div id="rss">
-                                    <xsl:if test="docHit">
-                                       <xsl:variable name="cleanString"
-                                          select="replace(replace($queryString,';*smode=docHits',''),'^;','')"/>
-                                       <a href="search?{$cleanString};rmode=rss;sort=rss"
-                                          onClick="ga('send', 'event', 'results', 'rss', {$cleanString});">
-                                          <img src="{$icon.path}rss.svg" alt="rss icon"
-                                             style="vertical-align:bottom;"/>
-                                       </a>
-                                    </xsl:if>
-                                 </div>
                                  <div id="hits">
                                     <xsl:if test="(/crossQueryResult/@totalDocs &gt; 1)">
                                        <xsl:text>Showing </xsl:text>
@@ -587,7 +575,7 @@
                                  </xsl:if>
                                  <div id="sort">
                                     <form id="sortForm" method="get" action="{$xtfURL}{$crossqueryPath}">
-                                       <b>Sort:</b>
+                                       <b>Sort: </b>
                                        <xsl:call-template name="sort.options"/>
                                        <xsl:call-template name="hidden.query">
                                           <xsl:with-param name="queryString" select="editURL:remove($queryString, 'sort')"/>
@@ -1024,7 +1012,7 @@
                            </xsl:choose>
                         </xsl:when>
                      </xsl:choose>
-                     
+
                      <!-- 11/15/2013 HA: moving date after title, changing logic so only appears if exists -->
                      <xsl:if test="meta/date">
                         <!-- 9/27/11 WS: Changed date to always grab from meta/date -->
@@ -1103,10 +1091,10 @@
 
          </div>
          <div class="activeArrow"/>
-         <div id="componentInfo_{@rank}" class="componentInfo">
-            <xsl:apply-templates select="." mode="collection"/>
-         </div>
 
+      </div>
+      <div id="componentInfo_{@rank}" class="componentInfo">
+         <xsl:apply-templates select="." mode="collection"/>
       </div>
 
    </xsl:template>
@@ -1274,7 +1262,7 @@
                      </xsl:for-each>
                   </div>
                </xsl:if>
-               
+
                <!-- 11/14/2013 HA: changing logic to only display snippets not already visible -->
                <!-- 1/26/12 WS: Added descendant-or-self to catch deeply nested matches -->
                <xsl:choose>
@@ -1301,9 +1289,6 @@
 
          </div>
          <div class="activeArrow"/>
-         <div id="componentInfo_{@rank}-collection" class="componentInfo">
-            <xsl:apply-templates select="." mode="collection"/>
-         </div>
 
          <xsl:if test="current-group()[meta/level != 'collection']">
             <div class="subdocuments">
@@ -1316,13 +1301,16 @@
                         <xsl:call-template name="subDocument"/>
                      </div>
                      <div class="activeArrow"/>
-                     <div id="componentInfo_{@rank}" class="componentInfo">
-                        <xsl:apply-templates select="." mode="subdocument"/>
-                     </div>
+                  </div>
+                  <div id="componentInfo_{@rank}" class="componentInfo">
+                     <xsl:apply-templates select="." mode="subdocument"/>
                   </div>
                </xsl:for-each>
             </div>
          </xsl:if>
+      </div>
+      <div id="componentInfo_{@rank}-collection" class="componentInfo">
+         <xsl:apply-templates select="." mode="collection"/>
       </div>
    </xsl:template>
 
@@ -1795,7 +1783,7 @@
                   <xsl:text>ga('send', 'event', 'digital object', 'view', 'results page');</xsl:text>
                </xsl:attribute>
             </xsl:if>
-            
+
             <xsl:choose>
                <xsl:when test="$type='dao'">
                   <xsl:apply-templates select="meta/title"/>
