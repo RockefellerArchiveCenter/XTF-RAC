@@ -27,7 +27,7 @@ $(document).ready(function () {
 
     if ($(window).width() > 768) {
 
-        $('div.component').mouseenter(function () {
+        $('div.component').on('mouseenter click', (function () {
             var firstcomponent = '#' + $('.docHit').attr('id') + '> .top-level';
             var id = $(this).attr("id").split('_')[1]
             var componentid = "#componentInfo_" + id;
@@ -64,6 +64,6 @@ $(document).ready(function () {
                     }
                 }, 300);
             }
-        });
+        }) );
     }
 })
