@@ -2834,6 +2834,11 @@ div.dscDescription {
         text-align: center;
     }
 
+    #myListNav {
+      float: none;
+      text-align: center;
+    }
+
     #searchTop {
         height: 5em
     }
