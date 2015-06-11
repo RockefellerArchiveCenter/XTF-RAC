@@ -677,14 +677,75 @@
                   <xsl:call-template name="currentBrowse"/>
                </div>
 
+               <!-- <form id="browse-" method="get" action="{$xtfURL}{$crossqueryPath}">
+                 <select name="alphaLinksSelect" onchange="document.getElementById('alphaListSelectForm').submit()">
+                   <xsl:call-template name="alphaList">
+                     <xsl:with-param name="select" select="'select'"/>
+                     <xsl:with-param name="alphaList" select="$alphaList"/>
+                   </xsl:call-template>
+                 </select>
+               </form> -->
+
+               <xsl:variable name="browse-name">
+                  <xsl:choose>
+                     <xsl:when test="$browse-creator">
+                        <xsl:value-of select="'creator'"/>
+                     </xsl:when>
+                     <xsl:when test="$browse-title">
+                        <xsl:value-of select="'title'"/>
+                     </xsl:when>
+                     <!-- 9/26/11 WS: added new browse options -->
+                     <xsl:when test="$browse-subject">
+                        <xsl:value-of select="'Subject - Topical Term'"/>
+                     </xsl:when>
+                     <xsl:when test="$browse-subjectname">
+                        <xsl:value-of select="'Subject - Personal, Family, or Corporate Name'"/>
+                     </xsl:when>
+                     <xsl:when test="$browse-geogname">
+                        <xsl:value-of select="'Subject - Geographic Name'"/>
+                     </xsl:when>
+                  </xsl:choose>
+               </xsl:variable>
+
+               <xsl:variable name="browse-value">
+                  <xsl:choose>
+                     <xsl:when test="$browse-creator">
+                        <xsl:value-of select="$browse-creator"/>
+                     </xsl:when>
+                     <xsl:when test="$browse-title">
+                        <xsl:value-of select="$browse-title"/>
+                     </xsl:when>
+                     <!-- 2/28/2013 HA: Adding new browse option -->
+                     <xsl:when test="$browse-updated">
+                        <xsl:value-of select="$browse-updated"/>
+                     </xsl:when>
+                     <!-- 9/26/11 WS: Added new browse options -->
+                     <xsl:when test="$browse-subject">
+                        <xsl:value-of select="$browse-subject"/>
+                     </xsl:when>
+                     <xsl:when test="$browse-subjectname">
+                        <xsl:value-of select="$browse-subjectname"/>
+                     </xsl:when>
+                     <xsl:when test="$browse-geogname">
+                        <xsl:value-of select="$browse-geogname"/>
+                     </xsl:when>
+                  </xsl:choose>
+               </xsl:variable>
+
                <div id="alphaList">
-                  <div id="menuTitle">
-                     <a href="#">&#9776;</a>
+                  <div id="alphaLinksSelect">
+                    <b>Jump to: </b>
+                    <select id="alphaLinksOptions">
+                      <xsl:call-template name="alphaList">
+                          <xsl:with-param name="select" select="'select'"/>
+                          <xsl:with-param name="alphaList" select="$alphaList"/>
+                      </xsl:call-template>
+                    </select>
                   </div>
                   <div id="alphaLinks">
-                     <xsl:call-template name="alphaList">
-                        <xsl:with-param name="alphaList" select="$alphaList"/>
-                     </xsl:call-template>
+                    <xsl:call-template name="alphaList">
+                       <xsl:with-param name="alphaList" select="$alphaList"/>
+                    </xsl:call-template>
                   </div>
                </div>
             </div>

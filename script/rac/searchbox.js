@@ -45,7 +45,7 @@
                         event.preventDefault();
                         $('#advancedSearch').slideToggle(400, 'linear');
                     });
-                    
+
                     if ($(window).width() > 480) {
                     $('input.searchbox').focus(function () {
                         $('#searchtipDate').hide();
@@ -61,5 +61,9 @@
                     $('input.date').blur(function () {
                         $('#searchtipDate').fadeOut('slow');
                     });
-                    }   
+                    }
+                    $('#alphaLinksOptions').change(function() {
+                      var url = $(this).val();
+                      window.location = url;
+                    });
                 });

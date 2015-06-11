@@ -781,8 +781,12 @@ div.notesMore div.button a:hover, div.notesLess div.button a:hover {
     font-weight: bold;
 }
 
-#alphaList #menuTitle {
+#alphaLinksSelect {
     display: none
+}
+
+#alphaLinksOptions {
+  width: 4em;
 }
 
 .alphaLink {
@@ -2698,6 +2702,14 @@ div.dscDescription {
       width:96%
     }
 
+    #alphaLinksSelect {
+        display: block;
+    }
+
+    #alphaLinks {
+        display: none;
+    }
+
     div.facets {
         width: 47%
     }
@@ -2972,53 +2984,6 @@ div.dscDescription {
 
     .digitalTab {
         display: none
-    }
-
-    #currentBrowse {
-        width: 70%;
-        padding-left: 15%;
-        float: left;
-        text-align: left;
-    }
-
-    #alphaList {
-        float: right;
-        padding: 0 1% 0 1%;
-        border: 1px solid #999;
-        background: #eee;
-        border-radius: 4px;
-        margin-right: 3%;
-        width: 6%;
-        box-shadow: 0px 0px 2px #000;
-    }
-
-    #alphaList #menuTitle {
-        display: block;
-        font-size: 2em;
-    }
-
-    .alphaLink {
-        position: relative;
-        width: 100%;
-        float: left;
-        padding: 2%;
-        margin: 4% 0 4% 0;
-    }
-
-    #alphaLinks {
-        display: none;
-        position: absolute;
-        top: 7em;
-        right: 4%;
-        width: 8%;
-        padding: 0 1% 0 1%;
-        border: 1px solid #999;
-        background: #fff;
-        box-sizing: border-box;
-    }
-
-    #alphaList:hover #alphaLinks {
-        display: block
     }
 
     div.docHit {

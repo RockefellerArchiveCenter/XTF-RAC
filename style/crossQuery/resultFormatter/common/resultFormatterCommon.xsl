@@ -223,8 +223,8 @@
    <xsl:param name="brand.header" select="$brand.file//header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.footer" select="$brand.file//footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.searchtips" select="$brand.file//searchtips/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   
-   <!-- Paging Parameters--> 
+
+   <!-- Paging Parameters-->
    <xsl:param name="startDoc" as="xs:integer" select="1"/>
    <!-- Documents per Page -->
    <xsl:param name="docsPerPage" as="xs:integer">
@@ -840,6 +840,7 @@
    <xsl:template name="alphaList">
 
       <xsl:param name="alphaList"/>
+      <xsl:param name="select"/>
 
       <xsl:variable name="browse-name">
          <xsl:choose>
@@ -901,24 +902,43 @@
       </xsl:variable>
 
       <xsl:choose>
-          <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(descendant::group[docHit]) > 1]">
-             <div class="alphaLink active"><xsl:value-of select="upper-case($alpha)"/></div>
-         </xsl:when>
-          <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(docHit) > 0]">
-             <div class="alphaLink active"><xsl:value-of select="upper-case($alpha)"/></div>
-         </xsl:when>
-          <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link]">
-             <!-- 10/29/12 WS: Added type parameter for browsing  -->
-             <a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level={$level};type={$type};sort={$browse-name}"><div class="alphaLink"><xsl:value-of select="$alpha"/></div></a>
-         </xsl:when>
-         <xsl:otherwise>
-            <div class="alphaLink"><xsl:value-of select="upper-case($alpha)"/></div>
-         </xsl:otherwise>
+        <xsl:when test="$select='select'">
+          <xsl:choose>
+            <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(descendant::group[docHit]) > 1]">
+               <option selected="selected"><xsl:value-of select="upper-case($alpha)"/></option>
+           </xsl:when>
+            <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(docHit) > 0]">
+               <option selected="selected"><xsl:value-of select="upper-case($alpha)"/></option>
+           </xsl:when>
+            <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link]">
+               <!-- 10/29/12 WS: Added type parameter for browsing  -->
+               <option value="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level={$level};type={$type};sort={$browse-name}"><xsl:value-of select="$alpha"/></option>
+           </xsl:when>
+          </xsl:choose>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:choose>
+            <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(descendant::group[docHit]) > 1]">
+               <div class="alphaLink active"><xsl:value-of select="upper-case($alpha)"/></div>
+           </xsl:when>
+            <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link and count(docHit) > 0]">
+               <div class="alphaLink active"><xsl:value-of select="upper-case($alpha)"/></div>
+           </xsl:when>
+            <xsl:when test="/crossQueryResult/facet[@field=concat('browse-',$browse-name)]/group[@value=$browse-link]">
+               <!-- 10/29/12 WS: Added type parameter for browsing  -->
+               <a href="{$xtfURL}{$crossqueryPath}?browse-{$browse-name}={$browse-link};level={$level};type={$type};sort={$browse-name}"><div class="alphaLink"><xsl:value-of select="$alpha"/></div></a>
+           </xsl:when>
+           <xsl:otherwise>
+              <div class="alphaLink"><xsl:value-of select="upper-case($alpha)"/></div>
+           </xsl:otherwise>
+          </xsl:choose>
+        </xsl:otherwise>
       </xsl:choose>
 
       <xsl:if test="contains($alphaList,' ')">
          <!--<xsl:text> | </xsl:text>-->
          <xsl:call-template name="alphaList">
+            <xsl:with-param name="select" select="$select"/>
             <xsl:with-param name="alphaList" select="replace($alphaList,'^[A-Z]+ ','')"/>
          </xsl:call-template>
       </xsl:if>
