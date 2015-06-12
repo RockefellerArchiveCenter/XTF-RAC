@@ -677,15 +677,6 @@
                   <xsl:call-template name="currentBrowse"/>
                </div>
 
-               <!-- <form id="browse-" method="get" action="{$xtfURL}{$crossqueryPath}">
-                 <select name="alphaLinksSelect" onchange="document.getElementById('alphaListSelectForm').submit()">
-                   <xsl:call-template name="alphaList">
-                     <xsl:with-param name="select" select="'select'"/>
-                     <xsl:with-param name="alphaList" select="$alphaList"/>
-                   </xsl:call-template>
-                 </select>
-               </form> -->
-
                <xsl:variable name="browse-name">
                   <xsl:choose>
                      <xsl:when test="$browse-creator">

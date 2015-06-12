@@ -1557,7 +1557,7 @@ input[type="submit"].searchbox:active {
     margin: 0;
     padding-left: .5em;
     float: left;
-    width: 69%;
+    width: 89%;
     height: 50px;
 }
 
@@ -1577,7 +1577,7 @@ input[type="submit"].searchbox:active {
 .headerSearch {
     float: right;
     text-align: left;
-    width: 59%;
+    width: 50%;
     margin-top: .5em;
 }
 
@@ -1586,7 +1586,7 @@ input[type="submit"].searchbox:active {
     font-size: 1.5em;
 }
 
-select#searchTarget {
+select#searchTarget, select#tabsSelect {
     font-size: 1em;
     border-radius: 5px;
     padding: .1em;
@@ -1597,10 +1597,14 @@ select#searchTarget {
 }
 
 /* ===[ TABS FOR FINDING AIDS ]=== */
+.tabsSelect {
+  display:none;
+}
+
 .tabs {
     float: left;
     margin-top: 10px;
-    width: 40%;
+    width: 50%;
 }
 
 .tab {
@@ -1657,8 +1661,6 @@ select#searchTarget {
     color: #333 !important
 }
 
-
-
 .main {
     float: left;
     width: 98%;
@@ -1669,9 +1671,8 @@ select#searchTarget {
 /* ===[ TOCS for FINDING AIDS ]=== */
 #tocWrapper {
     /* required to avoid jumping */
-    position: fixed !important;
-    position: absolute;
-    top: 267px;
+    position: fixed;
+    top: 266px;
     left: 1%;
     bottom: 1.6em;
     width: 27%;
@@ -1882,9 +1883,8 @@ ul.none {
 /* ===[ MAIN BODY of FINDING AIDS ]=== */
 #content-wrapper {
     /* required to avoid jumping */
-    position: fixed !important;
-    position: absolute;
-    top: 267px;
+    position: fixed;
+    top: 266px;
     right: 1%;
     left: 30%;
     bottom: 1.6em;
@@ -2547,6 +2547,12 @@ div.dscDescription {
   }
 }
 
+@media screen and (max-width:1100px) {
+  .headerSearch form {
+    font-size:1.4em
+  }
+}
+
 @media screen and (max-width:1060px) {
   .navbar {
     font-size:11px
@@ -2562,6 +2568,9 @@ div.dscDescription {
   }
   .componentInfo {
     width:40%;
+  }
+  .headerSearch form {
+    font-size:1.3em
   }
 
 }
@@ -2611,14 +2620,24 @@ div.dscDescription {
     .subdocument .title {
       width: 73%;
     }
-
-    #tocWrapper {
-      top: 299px
+    .tabs {
+      font-size: .8em;
+      margin-top: 20px
+    }
+    .tab {
+      height:18px;
+      padding:6px;
+    }
+    .headerSearch {
+      margin-top:1em;
+    }
+    .headerSearch form {
+      font-size: 1.1em;
+    }
+    .headerSearch .clearHits {
+      margin-top: .4em;
     }
 
-    #content-wrapper {
-      top: 299px
-    }
 }
 
 @media screen and (max-width:860px) {
@@ -2636,6 +2655,12 @@ div.dscDescription {
       }
       #docHits .resultContent {
         width: 60%;
+      }
+      .tabs {
+        font-size:.7em;
+      }
+      .headerSearch form {
+        font-size:1em;
       }
 }
 
@@ -2738,27 +2763,16 @@ div.dscDescription {
         width: 97%
     }
 
-    .headerSearch {
-        font-size: .8em;
-        width: 35%;
-    }
-
-    .headerSearch input {
-        width: 45%
-    }
-
     .category img {
         display: none
     }
 
     #tocWrapper {
         width: 35%;
-        top: 272px;
     }
 
     #content-wrapper {
         left: 39%;
-        top: 272px;
     }
 
     #contentsLink {
@@ -2815,6 +2829,31 @@ div.dscDescription {
 
     .activeArrow {
         margin-right: -16%
+    }
+    .headerIcons {
+      display: none;
+    }
+    .documentTitle {
+      width: 98%;
+    }
+    .headerSearch .clearHits {
+      display:none;
+    }
+    .headerSearch form {
+      font-size: .8em;
+    }
+    .bbform input, .bbform input[type="text"] {
+      padding:.1em;
+    }
+    .tabs {
+      display:none;
+    }
+    .tabsSelect {
+      display: block;
+      width: 50%;
+      float: left;
+      margin-top: 1em;
+      text-align: center
     }
 }
 
@@ -2927,27 +2966,15 @@ div.dscDescription {
         display: none
     }
 
-    .headerSearch {
-        display: none
-    }
-
-    .headerIcons {
-        width: 14%
-    }
-
-    .documentTitle {
-        width: 83%
-    }
-
     #tocWrapper {
         display: none
     }
 
     #content-wrapper {
-        position: relative !important;
+        position: relative;
         top: 0;
-        left: 2%;
-        width: 96%;
+        left: 0;
+        width: 98%;
         border: 0;
     }
 
@@ -2956,10 +2983,7 @@ div.dscDescription {
     }
 
     .fixedFooter {
-        position: relative !important;
-        top: 0;
-        left: 2%;
-        width: 96%;
+        position: relative;
     }
 
     .inventoryHeaderFormat, .inventoryHeaderNotes, .format, .moreInfo {
@@ -3027,6 +3051,12 @@ div.dscDescription {
     .top-level.active {
         width: 100%
     }
+    .headerSearch {
+      display: none;
+    }
+    .tabsSelect {
+      width: 100%;
+    }
 }
 
 @media screen and (max-width:320px) {
@@ -3052,12 +3082,6 @@ div.dscDescription {
 
     .headerIcons {
         display: none
-    }
-
-    .tab {
-        padding: 5px;
-        height: 30px;
-        text-align: center;
     }
 
     #docHits .resultLabel {
