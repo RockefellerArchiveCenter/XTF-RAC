@@ -46,7 +46,7 @@
                         $('#advancedSearch').slideToggle(400, 'linear');
                     });
 
-                    if ($(window).width() > 480) {
+                    if ($(window).width() > 800) {
                     $('input.searchbox').focus(function () {
                         $('#searchtipDate').hide();
                         $('#searchtip').fadeIn('slow');
