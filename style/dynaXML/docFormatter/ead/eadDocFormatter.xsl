@@ -438,23 +438,12 @@
                   <xsl:with-param name="nodes" select="archdesc/did"/>
                   <xsl:with-param name="currentTab" select="$currentTab"/>
                </xsl:call-template>
-               <xsl:variable name="idFile">
-                  <xsl:choose>
-                     <xsl:when test="archdesc/dsc/child::*[1][@level = 'file']">
-                        <xsl:value-of select="'contentsLink'"/>
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:value-of select="archdesc/dsc/child::*[1]/@id"/>
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </xsl:variable>
                <xsl:variable name="nodesLst">
                   <xsl:choose>
                      <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file']">archdesc/dsc/child::*</xsl:when>
                      <xsl:otherwise>archdesc/dsc/child::*[1]</xsl:otherwise>
                   </xsl:choose>
                </xsl:variable>
-               <!-- 7/24/12 WS: Added condition to test for finding aids with no contents list and supress this tab -->
                <xsl:choose>
                   <xsl:when test="/ead/archdesc/dsc/child::*">
                      <xsl:call-template name="make-tab-select-link">
@@ -465,21 +454,8 @@
                         <xsl:with-param name="currentTab" select="$currentTab"/>
                      </xsl:call-template>
                   </xsl:when>
-                  <xsl:otherwise>
-                     <xsl:attribute name="class">clear</xsl:attribute>
-                  </xsl:otherwise>
                </xsl:choose>
-               <xsl:variable name="idFile">
-                  <xsl:choose>
-                     <xsl:when test="archdesc/dsc/child::*[1][@level = 'file' and exists(xtf:meta/*:type = 'dao')]">
-                        <xsl:value-of select="'digitalLink'"/>
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:value-of select="archdesc/dsc/child::*[xtf:meta/*:type = 'dao'][1]/@id"/>
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </xsl:variable>
-               <xsl:variable name="nodesLst">
+               <xsl:variable name="daonodesLst">
                   <xsl:choose>
                      <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file' and exists(dao)]">archdesc/dsc/child::*</xsl:when>
                      <xsl:otherwise>archdesc/dsc/child::*[xtf:meta/*:type = 'dao'][1]</xsl:otherwise>
@@ -491,13 +467,10 @@
                         <xsl:with-param name="name" select="'Digital Materials'"/>
                         <xsl:with-param name="id" select="'digitalLink'"/>
                         <xsl:with-param name="doc.view" select="'dao'"/>
-                        <xsl:with-param name="nodes" select="$nodesLst"/>
+                        <xsl:with-param name="nodes" select="$daonodesLst"/>
                         <xsl:with-param name="currentTab" select="$currentTab"/>
                      </xsl:call-template>
                   </xsl:when>
-                  <xsl:otherwise>
-                     <xsl:attribute name="class">clear</xsl:attribute>
-                  </xsl:otherwise>
                </xsl:choose>
          </select>
       </div>

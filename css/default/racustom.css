@@ -1579,19 +1579,18 @@ input[type="submit"].searchbox:active {
     text-align: left;
     width: 50%;
     margin-top: .5em;
+    font-size:1.3em;
 }
 
 .headerSearch form {
     margin: 0;
-    font-size: 1.5em;
 }
 
 select#searchTarget, select#tabsSelect {
     font-size: 1em;
     border-radius: 5px;
-    padding: .1em;
     margin: 0 0 0 1%;
-    height: 1.6em;
+    height: 2em;
     vertical-align: 1px;
     width: auto;
 }
@@ -2547,12 +2546,6 @@ div.dscDescription {
   }
 }
 
-@media screen and (max-width:1100px) {
-  .headerSearch form {
-    font-size:1.4em
-  }
-}
-
 @media screen and (max-width:1060px) {
   .navbar {
     font-size:11px
@@ -2569,7 +2562,7 @@ div.dscDescription {
   .componentInfo {
     width:40%;
   }
-  .headerSearch form {
+  .headerSearch {
     font-size:1.3em
   }
 
@@ -2631,7 +2624,7 @@ div.dscDescription {
     .headerSearch {
       margin-top:1em;
     }
-    .headerSearch form {
+    .headerSearch {
       font-size: 1.1em;
     }
     .headerSearch .clearHits {
@@ -2659,7 +2652,7 @@ div.dscDescription {
       .tabs {
         font-size:.7em;
       }
-      .headerSearch form {
+      .headerSearch {
         font-size:1em;
       }
 }
@@ -2839,8 +2832,8 @@ div.dscDescription {
     .headerSearch .clearHits {
       display:none;
     }
-    .headerSearch form {
-      font-size: .8em;
+    .headerSearch {
+      font-size: .85em;
     }
     .bbform input, .bbform input[type="text"] {
       padding:.1em;
@@ -2852,7 +2845,7 @@ div.dscDescription {
       display: block;
       width: 50%;
       float: left;
-      margin-top: 1em;
+      margin-top: .85em;
       text-align: center
     }
 }
