@@ -2009,6 +2009,10 @@ ul.none {
     float: left;
 }
 
+.digital .inventoryHeaderTitle {
+  width:55%;
+}
+
 .inventoryHeaderFormat, .inventoryHeaderContainers, .inventoryHeaderNotes, .inventoryHeaderBookbag {
     font-weight: bold;
     padding-top: .5em;
@@ -2026,7 +2030,7 @@ ul.none {
 }
 
 .inventoryHeaderNotes {
-    width: 16%;
+    width: 14%;
     float: left;
 }
 
@@ -2089,6 +2093,10 @@ ul.none {
 .component-title {
     width: 38%;
     padding: 0 1% 0 1%;
+}
+
+.digital .component-title {
+  width:53%;
 }
 
 .instance .container {
@@ -2187,7 +2195,7 @@ ul.none {
 }
 
 #content-wrapper.digital .daoTable {
-    width: 82%
+    width: 88%
 }
 
 .daoTable img {
@@ -2637,6 +2645,9 @@ div.dscDescription {
     .headerSearch {
       font-size: 1.1em;
     }
+    #tocWrapper, #content-wrapper {
+      top:275px;
+    }
 
 }
 
@@ -2874,6 +2885,12 @@ div.dscDescription {
       font-size: .85em;
       top: 300px;
     }
+    #content-wrapper .thumbnail {
+      display: none;
+    }
+    #content-wrapper.digital .daoTable {
+      width:100%;
+    }
 }
 
 @media screen and (max-width:480px) {
@@ -3088,7 +3105,7 @@ div.dscDescription {
     .tab {
       max-width: 27%;
     }
-    #content-wrapper .daoTable {
+    #content-wrapper .daoTable, #content-wrapper.digital .daoTable {
       width:98%
     }
 }
