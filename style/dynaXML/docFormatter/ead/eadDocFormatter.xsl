@@ -280,7 +280,7 @@
                      <meta itemprop="http://schema.org/telephone" content="(914) 366-6300"/>
                   </div>
                </div>
-               
+
                <!-- Twitter meta tags -->
                <meta name="twitter:card" content="summary"/>
                <meta name="twitter:site" content="@rockarch_org"/>
@@ -425,55 +425,6 @@
 
    <xsl:template name="tabs">
       <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/></xsl:variable>
-      <div class="tabsSelect">
-         <b>Jump to: </b>
-         <select id="tabsSelect">
-            <xsl:variable name="currentTab">
-               <xsl:value-of select="$doc.view"/>
-            </xsl:variable>
-               <xsl:call-template name="make-tab-select-link">
-                  <xsl:with-param name="name" select="'Collection Description'"/>
-                  <xsl:with-param name="id" select="'headerlink'"/>
-                  <xsl:with-param name="doc.view" select="'collection'"/>
-                  <xsl:with-param name="nodes" select="archdesc/did"/>
-                  <xsl:with-param name="currentTab" select="$currentTab"/>
-               </xsl:call-template>
-               <xsl:variable name="nodesLst">
-                  <xsl:choose>
-                     <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file']">archdesc/dsc/child::*</xsl:when>
-                     <xsl:otherwise>archdesc/dsc/child::*[1]</xsl:otherwise>
-                  </xsl:choose>
-               </xsl:variable>
-               <xsl:choose>
-                  <xsl:when test="/ead/archdesc/dsc/child::*">
-                     <xsl:call-template name="make-tab-select-link">
-                        <xsl:with-param name="name" select="'Contents List'"/>
-                        <xsl:with-param name="id" select="'contentsLink'"/>
-                        <xsl:with-param name="doc.view" select="'contents'"/>
-                        <xsl:with-param name="nodes" select="$nodesLst"/>
-                        <xsl:with-param name="currentTab" select="$currentTab"/>
-                     </xsl:call-template>
-                  </xsl:when>
-               </xsl:choose>
-               <xsl:variable name="daonodesLst">
-                  <xsl:choose>
-                     <xsl:when test="/ead/archdesc/dsc/child::*[1][@level = 'file' and exists(dao)]">archdesc/dsc/child::*</xsl:when>
-                     <xsl:otherwise>archdesc/dsc/child::*[xtf:meta/*:type = 'dao'][1]</xsl:otherwise>
-                  </xsl:choose>
-               </xsl:variable>
-               <xsl:choose>
-                  <xsl:when test="/ead/xtf:meta/*:type = 'dao'">
-                     <xsl:call-template name="make-tab-select-link">
-                        <xsl:with-param name="name" select="'Digital Materials'"/>
-                        <xsl:with-param name="id" select="'digitalLink'"/>
-                        <xsl:with-param name="doc.view" select="'dao'"/>
-                        <xsl:with-param name="nodes" select="$daonodesLst"/>
-                        <xsl:with-param name="currentTab" select="$currentTab"/>
-                     </xsl:call-template>
-                  </xsl:when>
-               </xsl:choose>
-         </select>
-      </div>
       <div class="tabs">
          <div class="tab collectionTab">
             <xsl:choose>
@@ -665,108 +616,6 @@
       <xsl:if test="string-length($hit.count) &gt; 0 and $hit.count != '0'">
          <span class="hit"> (<xsl:value-of select="$hit.count"/>)</span>
       </xsl:if>
-   </xsl:template>
-   
-   <xsl:template name="make-tab-select-link">
-      <xsl:param name="name"/>
-      <xsl:param name="id"/>
-      <xsl:param name="doc.view"/>
-      <xsl:param name="nodes"/>
-      <xsl:param name="indent" select="1"/>
-      <xsl:param name="currentTab"/>
-      <xsl:variable name="hit.count">
-         <xsl:choose>
-            <xsl:when test="$doc.view='collection'">
-               <xsl:value-of select="/ead/archdesc/@xtf:hitCount - /ead/archdesc/dsc/@xtf:hitCount"/>
-            </xsl:when>
-            <xsl:when test="$doc.view='contents'">
-               <xsl:value-of select="/ead/archdesc/dsc/@xtf:hitCount"/>
-            </xsl:when>
-            <xsl:otherwise>
-               <xsl:value-of select="'0'"/>
-            </xsl:otherwise>
-         </xsl:choose>
-      </xsl:variable>
-      <xsl:variable name="tracking-id">
-         <xsl:choose>
-            <xsl:when test="$id='contentsLink'">
-               <xsl:value-of select="'Contents List'"/>
-            </xsl:when>
-            <xsl:when test="$id='digitalLink'">
-               <xsl:value-of select="'Digital Materials'"/>
-            </xsl:when>
-            <xsl:otherwise>
-               <xsl:value-of select="'Collection Description'"/>
-            </xsl:otherwise>
-         </xsl:choose>
-      </xsl:variable>
-      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;chunk.id=<xsl:value-of select="$id"/>;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/>&amp;doc.view=<xsl:value-of select="$doc.view"/></xsl:variable>
-      <option onclick="ga('send', 'event', 'finding aid', 'tab', '{$tracking-id}');">
-         
-         <!-- 5/17/2012 DG: create variables for the new href: documentname2, basicchoice2, xtfURL2, href2. Just use chunk.id and doc name for now-->
-         <xsl:variable name="documentname2">
-            <xsl:analyze-string select="$query.string" regex="docId=ead/([A-Z0-9/.^/]+)/([A-Z0-9/.^/]+).xml" flags="i">
-               
-               <xsl:matching-substring>
-                  <xsl:value-of select="regex-group(2)"/>
-               </xsl:matching-substring>
-               
-               <xsl:non-matching-substring>
-                  <xsl:text>no_match_docname</xsl:text>
-               </xsl:non-matching-substring>
-            </xsl:analyze-string>
-         </xsl:variable>
-         
-         <xsl:variable name="basicchoice2">
-            <xsl:choose>
-               <xsl:when test="$id='headerlink'">
-                  <xsl:text>collection</xsl:text>
-               </xsl:when>
-               <xsl:when test="$id='contentsLink'">
-                  <xsl:text>contents</xsl:text>
-               </xsl:when>
-               <xsl:when test="$id='digitalLink'">
-                  <xsl:text>digital</xsl:text>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:text>nomatch_for_</xsl:text>
-                  <xsl:value-of select="$id"/>
-               </xsl:otherwise>
-            </xsl:choose>
-         </xsl:variable>
-         <xsl:variable name="xtfURL2">
-            <!-- remove xtf/ from end, if there.  -->
-            <xsl:analyze-string select="$xtfURL" regex="(.*)xtf/">
-               <xsl:matching-substring>
-                  <xsl:value-of select="regex-group(1)"/>
-               </xsl:matching-substring>
-               <xsl:non-matching-substring>
-                  <xsl:value-of select="$xtfURL"/>
-               </xsl:non-matching-substring>
-            </xsl:analyze-string>
-         </xsl:variable>
-         
-         <xsl:variable name="href2">
-            <xsl:value-of select="concat($xtfURL2,$documentname2,'/',$basicchoice2)"/>
-         </xsl:variable>
-         <!--  end new  DG: created $href2 -->
-         <xsl:attribute name="value">
-            <xsl:choose>
-               <xsl:when test="($query != '0') and ($query != '')">
-                  <xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:value-of select="$href2"/>
-               </xsl:otherwise>
-            </xsl:choose>
-         </xsl:attribute>
-         <xsl:if test="$doc.view=$currentTab">
-            <xsl:attribute name="selected">
-               <xsl:value-of select="'selected'"/>
-            </xsl:attribute>
-         </xsl:if>
-         <xsl:value-of select="$name"/>
-      </option>
    </xsl:template>
 
    <!-- ====================================================================== -->
@@ -1399,12 +1248,12 @@
                      <xsl:otherwise/>
                   </xsl:choose>
                   <xsl:value-of select="$name"/>
-                  <xsl:if test="$dao = 'true'">
-                     <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
-                  </xsl:if>
                   <div class="hit-count">
                       <xsl:if test="$hit.count > 0"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
                   </div>
+                  <xsl:if test="$dao = 'true'">
+                     <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
+                  </xsl:if>
                </div>
             </a>
          </xsl:otherwise>

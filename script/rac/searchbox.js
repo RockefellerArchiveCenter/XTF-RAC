@@ -66,8 +66,4 @@
                       var url = $(this).val();
                       window.location = url;
                     });
-                    $('#tabsSelect').change(function() {
-                      var url = $(this).val();
-                      window.location = url;
-                    });
                 });
