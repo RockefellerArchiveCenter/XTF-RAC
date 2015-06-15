@@ -90,7 +90,7 @@ $(function () {
         dialogSearchTips.dialog("option", "title", 'Searching Tips and Tricks').dialog("open");
     });
 });
-                    
+
 $(function () {
     var dialogDimes = $('#dimes').dialog({
         create: function(event, ui) {
@@ -105,13 +105,13 @@ $(function () {
             $('.ui-dialog').hide();
             }
         });
-       
+
     $("a.dimes").on("click", function (e) {
         e.preventDefault();
         dialogDimes.dialog("option", "title", 'Why DIMES?').dialog("open");
     });
 });
-    
+
 $(function () {
     var dialogTakedown = $('#takedown').dialog({
         create: function(event, ui) {
@@ -194,7 +194,7 @@ $(function () {
         });
     });
 
-$(function () {                      
+$(function () {
         var dscOptions = {
             autoOpen: false,
             create: function(event, ui) {
@@ -203,12 +203,18 @@ $(function () {
             },
             modal: true,
             resizable: true,
-            width: windowWidth/3,
+            width: function () {
+              if(windowWidth > 768){
+                return windowWidth/3
+              } else {
+                return windowWidth/1.5
+              }
+            },
             close: function () {
                 $('.ui-dialog').hide();
             }
         }
-                         
+
         $(".dialog_dsc").click(function (e) {
             e.preventDefault();
             var id = '#' + $(this).parent().parent('div').attr('id') + '_details';
@@ -297,14 +303,14 @@ $(function () {
             var items = '';
                 $('#myListEmail .row').each(function(){
                 if($(this).find('.requestInputs input[name="Request"]').is(":checked")) {
-                    var item = 
+                    var item =
                     '<p><strong>' + $(this).children('.title').children('p').html() + '</strong><br />' +
                     $(this).children('.collectionTitle').children('p').text() + '<br/>' +
                     $(this).children('.containers').text() + '<br/>' +
                     $(this).find('.requestInputs input[name*="ItemSubtitle"]').attr('value')  + '</p>'
 
                     console.log(item)
-                    
+
                     items = items + item;
 
                     }
@@ -353,7 +359,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Send Email", click: function() {
                 if (validate()) {
                     if(sendEmail()) {
@@ -368,7 +374,7 @@ $(function () {
                         dialogMyListEmailError.dialog("open");
                     }
                 }
-            } 
+            }
             },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
@@ -387,14 +393,14 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Close", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/2,
         close: function () {
             $('.ui-dialog').hide();
         }
-    });    
+    });
 
     var dialogMyListEmailError = $('#myListEmailError').dialog({
         create: function(event, ui) {
@@ -405,14 +411,14 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Close", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/2,
         close: function () {
             $('.ui-dialog').hide();
         }
-    }); 
+    });
 
     $(".myListEmail").on("click", function (e) {
         e.preventDefault();
@@ -430,7 +436,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Print", click: function() {
                 if(content()) {
                     window.print();
@@ -467,10 +473,10 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { html: 'Request <span class="listCount">'+listCount+'</span> item(s)', click: function() {
                 console.log('request materials');
-                if(content()) { 
+                if(content()) {
                     if($('#VisitScheduled').is(':checked')) {
                         if($('#myListRequest input[name="ScheduledDate"]').val()) {
                             $('input[name="UserReview"]').val("No");
@@ -504,7 +510,7 @@ $(function () {
                 } else {
                     $('#myListRequest .contentError').show();
                 }
-            } 
+            }
             },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
@@ -523,7 +529,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Close", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/2,
@@ -575,9 +581,9 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Request Copies", click: function() {
-                console.log('request copies'); 
+                console.log('request copies');
                 if(content()) {
                     if(validate()){
                         $('#duplicationForm').submit();
@@ -611,7 +617,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Close", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/2,
@@ -627,15 +633,15 @@ $(function () {
         $(".ui-dialog-buttonpane button:contains('Request Copies')").button("disable");
         $("input#costagree").attr('checked', false);
         });
-        
+
     $("input#costagree").on("click", function() {
         if($("input#costagree").is(':checked')) {
             $(".ui-dialog-buttonpane button:contains('Request Copies')").button("enable");
         } else {
             $(".ui-dialog-buttonpane button:contains('Request Copies')").button("disable");
         }
-    });   
-        
     });
-    
+
+    });
+
 });

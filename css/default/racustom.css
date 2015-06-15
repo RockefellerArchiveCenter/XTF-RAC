@@ -2119,7 +2119,11 @@ ul.none {
 }
 
 .dialog_dsc, .restrict_dsc {
-    width: 100%
+    width: 100%;
+    float:left;
+}
+.restrict_dsc {
+  margin-top: .5em;
 }
 
 /* ===[ LIBRARY RECORDS ]=== */
@@ -2764,6 +2768,7 @@ div.dscDescription {
     #content-wrapper {
         left: 38%;
         top: 300px;
+        font-size: .85em;
     }
 
     #content-wrapper h2 {
@@ -2779,7 +2784,7 @@ div.dscDescription {
     }
 
     .instances {
-        width: 38%
+        width: 25%
     }
 
     .format {
@@ -2799,7 +2804,7 @@ div.dscDescription {
     }
 
     .inventoryHeaderContainers {
-        width: 23%
+        width: 25%
     }
 
     .resultContent>.result.title {
@@ -2996,25 +3001,29 @@ div.dscDescription {
         border-top: 1px solid #666;
     }
 
-    .inventoryHeaderFormat, .inventoryHeaderNotes, .format, .moreInfo {
-        display: none
-    }
-
     .inventoryHeaderContainers {
         width: 30%
     }
 
     .inventoryHeaderTitle {
-        width: 45%
+        width: 40%
+    }
+
+    .inventoryHeaderNotes {
+        width: 18%;
     }
 
     .component-title {
-        width: 41%;
+        width: 36%;
         padding: 0 2% 0 2%;
     }
 
     .instances {
         width: 30%
+    }
+
+    .moreInfo {
+      width:14%
     }
 
     .containerWrapper {
@@ -3060,6 +3069,9 @@ div.dscDescription {
 
     .tab {
       max-width: 27%;
+    }
+    #content-wrapper .daoTable {
+      width:98%
     }
 }
 

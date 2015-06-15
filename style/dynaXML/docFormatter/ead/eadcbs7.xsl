@@ -1726,9 +1726,9 @@
                                 child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |
                                 child::fileplan |  child::odd | child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                 child::otherfindaid |  child::phystech |  child::processinfo | child::relatedmaterial | child::separatedmaterial |  child::controlaccess">
-                     <span class="dialog_dsc">
+                     <div class="dialog_dsc">
                         <a href="#" onClick="ga('send', 'event', 'finding aid', 'view', 'Additional Description');">Additional description</a>
-                     </span>
+                     </div>
                      <xsl:if test="$didHitCount &gt; 0">
                         <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                      </xsl:if>
@@ -1739,9 +1739,9 @@
                      </div>
                   </xsl:if>
                   <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
-                     <span class="restrict_dsc">
+                     <div class="restrict_dsc">
                         <a href="#" onClick="ga('send', 'event', 'finding aid', 'view', 'Restrictions');">Restrictions</a>
-                     </span>
+                     </div>
                      <xsl:if test="$didHitCount &gt; 0">
                         <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                      </xsl:if>
@@ -1843,13 +1843,13 @@
                      <xsl:value-of select="count(descendant-or-self::xtf:hit) - count(did/descendant::xtf:hit)"/>
                   </xsl:variable>
                   <xsl:if
-                     test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement | 
-                     child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc | 
+                     test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement |
+                     child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |
                      child::fileplan |  child::odd | child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                      child::otherfindaid |  child::phystech |  child::processinfo | child::relatedmaterial | child::separatedmaterial |  child::controlaccess">
-                     <span class="dialog_dsc">
+                     <div class="dialog_dsc">
                         <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Additional Description']);">Additional description</a>
-                     </span>
+                     </div>
                      <xsl:if test="$didHitCount &gt; 0">
                         <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                      </xsl:if>
@@ -1860,9 +1860,9 @@
                      </div>
                   </xsl:if>
                   <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
-                     <span class="restrict_dsc">
+                     <div class="restrict_dsc">
                         <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Restrictions']);">Restrictions</a>
-                     </span>
+                     </div>
                      <xsl:if test="$didHitCount &gt; 0">
                         <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
                      </xsl:if>
@@ -1873,7 +1873,7 @@
                      </div>
                   </xsl:if>
                </span>
-               
+
                <span class="inventoryBookbag bookbag">
                   <xsl:if test="child::did/container and not(child::*[@level='file' or @level='item'])">
                      <xsl:call-template name="myListEad">
