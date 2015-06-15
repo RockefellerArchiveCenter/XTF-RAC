@@ -373,7 +373,7 @@ div.docHit {
 }
 
 #docHits .dao .resultIcon {
-    width: 18%
+    width: 14%
 }
 
 #docHits .dao .resultContent {
@@ -650,7 +650,6 @@ div.notesMore div.button a:hover, div.notesLess div.button a:hover {
     color: #c45414;
     text-decoration: none;
     float: left;
-    margin-left: 2em;
 }
 
 /* ===[ RESULTS BAR ]=== */
@@ -2174,7 +2173,7 @@ ul.none {
 
 #docHits .daoTable {
     float: right;
-    width: 82%;
+    width: 86%;
 }
 
 #docHits .subdocument .daoTable {
@@ -2577,6 +2576,13 @@ div.dscDescription {
       max-height: 33px
     }
 
+    #docHits .dao .resultIcon {
+      display: none;
+    }
+    #docHits .daoTable {
+      width:100%;
+    }
+
     #header {
         width: 60%
     }
@@ -2656,6 +2662,10 @@ div.dscDescription {
       .headerSearch {
         font-size:1em;
       }
+      #docHits .daoTable {
+        font-size:.85em;
+      }
+
 }
 
 @media screen and (max-width:768px) {
@@ -2751,6 +2761,10 @@ div.dscDescription {
 
     #docHits .resultText {
         width: 77%
+    }
+
+    #docHits .daoTable {
+      font-size:.7em;
     }
 
     div.docHit {
@@ -2921,6 +2935,10 @@ div.dscDescription {
 
     #docHits {
         width: 100%
+    }
+
+    #docHits .daoTable {
+      font-size:.9em;
     }
 
     .resultContent {

@@ -1013,7 +1013,7 @@
                            </xsl:otherwise>
                         </xsl:choose>
                      </xsl:variable>
-                     <img src="{$daoImg}" alt="Digital object thumbnail" width="75"/>
+                     <img src="{$daoImg}" alt="Digital object thumbnail" width="90%"/>
                   </xsl:when>
                   <xsl:when test="meta/genre[contains(.,'DVD')]">
                      <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>

@@ -1835,7 +1835,7 @@
                         </xsl:otherwise>
                      </xsl:choose>
                   </xsl:variable>
-                  <img src="{$daoImg}" alt="Digital object thumbnail" width="75"/>
+                  <img src="{$daoImg}" alt="Digital object thumbnail" width="90%"/>
                </div>
                <xsl:apply-templates select="did" mode="dsc"/>
                <span class="moreInfo">
