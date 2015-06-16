@@ -181,6 +181,9 @@ div.resultsHeader {
     float: left;
     margin-left: 5%;
 }
+.resultsHeader .actions .btn {
+  margin-bottom: 1em;
+}
 
 .resultsHeader #searchTop {
     height: 0
@@ -2423,7 +2426,7 @@ div.dscDescription {
 
 .myListContents .title {
     float: left;
-    width: 25%;
+    width: 24%;
     margin-right: 1%;
     min-height: 1px;
 }
@@ -2437,7 +2440,7 @@ div.dscDescription {
 
 .myListContents .collectionTitle {
     float: left;
-    width: 31%;
+    width: 30%;
     margin-right: 1%;
     min-height: 1px;
 }
@@ -2450,7 +2453,7 @@ div.dscDescription {
 
 .myListContents .dateAdded {
     float: left;
-    width: 14%;
+    width: 13%;
     min-height: 1px;
 }
 
@@ -2657,6 +2660,7 @@ div.dscDescription {
       top:273px;
     }
 
+
 }
 
 @media screen and (max-width:860px) {
@@ -2683,6 +2687,12 @@ div.dscDescription {
       }
       #docHits .daoTable {
         font-size:.85em;
+      }
+      .myListContents .collectionTitle {
+        width:24%;
+      }
+      .myListContents .date {
+        width:10%;
       }
 
 }
@@ -2903,6 +2913,31 @@ div.dscDescription {
     #toc .subjects, #toc .foundIn {
       font-size: .9em;
     }
+    .resultsHeader .actions {
+      width:98%;
+      margin-left: 1%;
+    }
+    .myListContents {
+      font-size: .85em;
+    }
+    .myListContents .requestInputs {
+      width:4%;
+    }
+    .myListContents .dateAdded {
+      display:none;
+    }
+    .myListContents .date {
+      width:14%;
+    }
+    .myListContents .containers {
+      width:15%;
+    }
+    .myList .third {
+      width:50%
+    }
+    .register {
+      margin:0;
+    }
 }
 
 @media screen and (max-width:480px) {
@@ -3114,6 +3149,19 @@ div.dscDescription {
     }
     #toc .subjects, #toc .foundIn {
       display:none;
+    }
+    .myListContents .list-delete {
+      background: url("../../icons/default/cancel.svg") no-repeat center;
+      text-indent: -9999px;
+      height: 2em;
+      width: 2em;
+      background-size: 80%;
+    }
+    .myListContents .containers {
+      width:20%;
+    }
+    .myList .third {
+      width:50%
     }
 }
 
