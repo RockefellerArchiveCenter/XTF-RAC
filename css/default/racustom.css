@@ -47,6 +47,7 @@ dt {
 }
 
 /* ===[ NAVBAR ]=== */
+
 .navbar {
     font-size: 13px
 }
@@ -97,6 +98,7 @@ dt {
 }
 
 /* ===[ FOOTER ]=== */
+
 .footer {
     margin-left: 1%;
     text-align: center;
@@ -132,6 +134,7 @@ dt {
 }
 
 /* ===[ FORMS ]=== */
+
 form {
     display: inline
 }
@@ -148,6 +151,7 @@ div.form {
 }
 
 /* ===[ RESULTS PAGES ]=== */
+
 #results, #facets, .browse, .docHit, .componentInfo {
     box-shadow: 0px 0px 10px #666
 }
@@ -165,8 +169,8 @@ div.resultsHeader {
     border-top: 1px solid #999;
     border-bottom: 1px solid #999;
     background-color: #ddd;
-    margin:0 1%;
-    padding:1em 0;
+    margin: 0 1%;
+    padding: 1em 0;
     border-radius: 5px 5px 0 0;
 }
 
@@ -181,8 +185,9 @@ div.resultsHeader {
     float: left;
     margin-left: 5%;
 }
+
 .resultsHeader .actions .btn {
-  margin-bottom: 1em;
+    margin-bottom: 1em
 }
 
 .resultsHeader #searchTop {
@@ -291,7 +296,7 @@ div.resultsHeader {
 }
 
 div.results {
-    margin:0 1%;
+    margin: 0 1%;
     background-color: #fff;
     width: 98%;
     border: 1px solid #666;
@@ -358,13 +363,13 @@ div.docHit {
 }
 
 #docHits .resultIcon {
-    float:left;
-    width: 13%
+    float: left;
+    width: 13%;
 }
 
 #docHits .resultContent {
-    float:left;
-    width: 70%
+    float: left;
+    width: 70%;
 }
 
 #docHits .resultLabel {
@@ -463,7 +468,7 @@ div.docHit {
     content: " ";
     float: right;
     margin-top: 1%;
-    margin-right:-10px;
+    margin-right: -10px;
     position: relative;
     z-index: 2;
 }
@@ -656,6 +661,7 @@ div.notesMore div.button a:hover, div.notesLess div.button a:hover {
 }
 
 /* ===[ RESULTS BAR ]=== */
+
 .pages {
     width: 98%;
     padding: 1% 0 1% 0;
@@ -773,6 +779,7 @@ div.notesMore div.button a:hover, div.notesLess div.button a:hover {
 }
 
 /* ===[ ALPHA LIST ]=== */
+
 #currentBrowse, #alphaList {
     text-align: center
 }
@@ -788,7 +795,7 @@ div.notesMore div.button a:hover, div.notesLess div.button a:hover {
 }
 
 #alphaLinksOptions {
-  width: 4em;
+    width: 4em
 }
 
 .alphaLink {
@@ -817,9 +824,10 @@ div.notesMore div.button a:hover, div.notesLess div.button a:hover {
 }
 
 /* ===[ FACETS ]=== */
+
 div.facets {
     width: 25%;
-    margin:0 1%;
+    margin: 0 1%;
     float: left;
 }
 
@@ -840,7 +848,7 @@ div.facetWrapper {
 div.facetName {
     float: left;
     max-width: 94%;
-    margin-right:.2em;
+    margin-right: .2em;
 }
 
 div.facetMore, div.facetLess {
@@ -984,6 +992,7 @@ div.facetShow p {
 }
 
 /* ===[ Date Facet ]=== */
+
 #to, #from {
     width: 3em;
     font-size: 1em;
@@ -1001,15 +1010,15 @@ div.facetShow p {
     margin: 2% 3% 5% 3%
 }
 
-
 /* ===[ Hits ]=== */
+
 .hit, .subhit, a.hit, hit-count {
     color: #c45414 !important;
     font-weight: bold;
 }
 
 .hit-count {
-    display: inline;
+    display: inline
 }
 
 .active .subhit {
@@ -1017,6 +1026,7 @@ div.facetShow p {
 }
 
 /* ===[ HOME PAGE ]=== */
+
 .forms {
     float: left;
     width: 100%;
@@ -1437,6 +1447,7 @@ input[type="submit"].searchbox:active {
 }
 
 /* ===[ DOCUMENT PAGE HEADERS ]=== */
+
 .bbar_custom {
     float: left;
     width: 96%;
@@ -1445,7 +1456,7 @@ input[type="submit"].searchbox:active {
     border-top: 1px solid #999;
     border-bottom: 1px solid #999;
     background-color: #ddd;
-    margin:0 1%;
+    margin: 0 1%;
     padding: 10px 1% 0 1%;
     border-radius: 5px 5px 0 0;
     height: 100px;
@@ -1581,11 +1592,11 @@ input[type="submit"].searchbox:active {
     text-align: left;
     width: 50%;
     margin-top: .5em;
-    font-size:1.3em;
+    font-size: 1.3em;
 }
 
 .headerSearch form {
-    margin: 0;
+    margin: 0
 }
 
 select#searchTarget {
@@ -1598,6 +1609,7 @@ select#searchTarget {
 }
 
 /* ===[ TABS FOR FINDING AIDS ]=== */
+
 .tabs {
     float: left;
     margin-top: 10px;
@@ -1666,6 +1678,7 @@ select#searchTarget {
 }
 
 /* ===[ TOCS for FINDING AIDS ]=== */
+
 #tocWrapper {
     /* required to avoid jumping */
     position: fixed;
@@ -1772,7 +1785,7 @@ select#searchTarget {
 }
 
 #toc .tocSubrow:not(:last-child) {
-  border-bottom: 2px dashed #999
+    border-bottom: 2px dashed #999
 }
 
 #toc .tocSubrow:last-child {
@@ -1780,7 +1793,7 @@ select#searchTarget {
 }
 
 #toc .tocRow img, .tocSubrow img {
-  height: 1.2em;
+    height: 1.2em
 }
 
 #toc .accordionButton:after {
@@ -1822,6 +1835,7 @@ select#searchTarget {
 }
 
 /* ===[ TOC SUBJECTS for FINDING AIDS ]=== */
+
 ul.none {
     list-style: none
 }
@@ -1881,6 +1895,7 @@ ul.none {
 }
 
 /* ===[ MAIN BODY of FINDING AIDS ]=== */
+
 #content-wrapper {
     /* required to avoid jumping */
     position: fixed;
@@ -1963,6 +1978,7 @@ ul.none {
 }
 
 /* ===[ CONTAINER LISTS for FINDING AIDS ]=== */
+
 #content-wrapper .table {
     margin: 1%
 }
@@ -2013,7 +2029,7 @@ ul.none {
 }
 
 .digital .inventoryHeaderTitle {
-  width:55%;
+    width: 55%
 }
 
 .inventoryHeaderFormat, .inventoryHeaderContainers, .inventoryHeaderNotes, .inventoryHeaderBookbag {
@@ -2099,7 +2115,7 @@ ul.none {
 }
 
 .digital .component-title {
-  width:53%;
+    width: 53%
 }
 
 .instance .container {
@@ -2130,10 +2146,11 @@ ul.none {
 
 .dialog_dsc, .restrict_dsc {
     width: 100%;
-    float:left;
+    float: left;
 }
+
 .restrict_dsc {
-  margin-top: .5em;
+    margin-top: .5em
 }
 
 /* ===[ LIBRARY RECORDS ]=== */
@@ -2146,6 +2163,7 @@ ul.none {
 }
 
 /* ===[ DIGITAL OBJECT TABLES ]=== */
+
 .daoTable {
     border-collapse: separate;
     border-spacing: 0;
@@ -2206,6 +2224,7 @@ ul.none {
 }
 
 /* ===[ DIGITAL OBJECT DETAIL PAGES ]=== */
+
 #bookmarkMenu {
     width: 16em;
     height: 2em;
@@ -2234,8 +2253,8 @@ ul.none {
 .digital-thumbnail {
     float: left;
     margin-right: 2%;
-    max-width:300px;
-    width:48%;
+    max-width: 300px;
+    width: 48%;
 }
 
 .digital-thumbnail img {
@@ -2243,8 +2262,8 @@ ul.none {
 }
 
 .description {
-  width:48%;
-  float: left;
+    width: 48%;
+    float: left;
 }
 
 #content-wrapper .thumbnailButtons a {
@@ -2274,6 +2293,7 @@ ul.none {
 }
 
 /* ===[ MODAL DIALOGS ]=== */
+
 .overlay {
     display: none;
     z-index: 10000;
@@ -2560,191 +2580,208 @@ div.dscDescription {
 }
 
 /*===================================*/
+
 /*======= [RESPONSIVE STYLES] =======*/
+
 /*===================================*/
+
 @media screen and (max-width:1450px) {
-  .componentInfo {
-    width:41%;
-  }
+    .componentInfo {
+        width: 41%
+    }
 }
 
 @media screen and (max-width:1060px) {
-  .navbar {
-    font-size:11px
-  }
-  #myListNav {
-    margin-top: 6em;
-  }
-  .resultsHeader #searchbox {
-    top:13em;
-  }
-  .componentInfo {
-    width:40%;
-  }
-  .headerSearch {
-    font-size:1.3em
-  }
+    .navbar {
+        font-size: 11px
+    }
 
+    #myListNav {
+        margin-top: 6em
+    }
+
+    .resultsHeader #searchbox {
+        top: 13em
+    }
+
+    .componentInfo {
+        width: 40%
+    }
+
+    .headerSearch {
+        font-size: 1.3em
+    }
 }
 
 @media screen and (max-width:1024px) {
-  .resultIcon img {
-      max-height: 33px
+    .resultIcon img {
+        max-height: 33px
     }
 
     #docHits .dao .resultIcon {
-      display: none;
+        display: none
     }
+
     #docHits .daoTable {
-      width:100%;
+        width: 100%
     }
 
     #header {
         width: 60%
     }
+
     .tagline {
-      margin-bottom: 1.1em;
+        margin-bottom: 1.1em
     }
 
     #results #hits {
-      width:42%
+        width: 42%
     }
 
     #results .pages, #results #sort {
-      border: none;
-      width: 55%;
-      float:left;
-      text-align: center;
+        border: none;
+        width: 55%;
+        float: left;
+        text-align: center;
     }
 
     #results #sort {
-      margin-top: 1em;
-      padding: 0 1%
+        margin-top: 1em;
+        padding: 0 1%;
     }
 
     div.facets {
-      width:34%;
+        width: 34%
     }
 
     #docHits {
-      width:64%
+        width: 64%
     }
 
     #docHits .resultContent {
-      width: 65%;
+        width: 65%
     }
 
     .subdocuments {
-      width:95%;
-      padding-left: 5%;
+        width: 95%;
+        padding-left: 5%;
     }
 
     .subdocument .title {
-      width: 73%;
+        width: 73%
     }
+
     .tabs {
-      font-size: .8em;
-      margin-top: 20px
+        font-size: .8em;
+        margin-top: 20px;
     }
+
     .tab {
-      height:18px;
-      padding:6px;
+        height: 18px;
+        padding: 6px;
     }
+
     .headerSearch {
-      margin-top:1em;
+        margin-top: 1em
     }
+
     .headerSearch {
-      font-size: 1.1em;
+        font-size: 1.1em
     }
+
     #tocWrapper, #content-wrapper {
-      top:273px;
+        top: 273px
     }
-
-
 }
 
 @media screen and (max-width:860px) {
-      .box, #featured {
-          width: 96%;
-          box-shadow: none;
-          margin: 2%;
-      }
-      .componentInfo {
-        padding:.5em;
-        width:41%
-      }
-      div.facets {
-        width:34%;
-      }
-      #docHits .resultContent {
-        width: 60%;
-      }
-      .tabs {
-        font-size:.7em;
-      }
-      .headerSearch {
-        font-size:1em;
-      }
-      #docHits .daoTable {
-        font-size:.85em;
-      }
-      .myListContents .collectionTitle {
-        width:24%;
-      }
-      .myListContents .date {
-        width:10%;
-      }
+    .box, #featured {
+        width: 96%;
+        box-shadow: none;
+        margin: 2%;
+    }
 
+    .componentInfo {
+        padding: .5em;
+        width: 41%;
+    }
+
+    div.facets {
+        width: 34%
+    }
+
+    #docHits .resultContent {
+        width: 60%
+    }
+
+    .tabs {
+        font-size: .7em
+    }
+
+    .headerSearch {
+        font-size: 1em
+    }
+
+    #docHits .daoTable {
+        font-size: .85em
+    }
+
+    .myListContents .collectionTitle {
+        width: 24%
+    }
+
+    .myListContents .date {
+        width: 10%
+    }
 }
 
 @media screen and (max-width:768px) {
-
     .resultsHeader li {
         font-size: 1em
     }
 
     #header {
-      height: 5em;
-      width: 100%
+        height: 5em;
+        width: 100%;
     }
 
     #header img {
-      display:none
+        display: none
     }
 
     #header h1 {
-      margin-left:0
+        margin-left: 0
     }
 
     .tagline {
-      display:none
+        display: none
     }
 
     #myListNav {
-      margin-top: 0em;
-      margin-bottom: 1em;
+        margin-top: 0em;
+        margin-bottom: 1em;
     }
 
     #searchTop {
-      margin:0
+        margin: 0
     }
 
     input[type="text"].searchbox {
-      width:60%;
-      left:12%;
+        width: 60%;
+        left: 12%;
     }
 
     input[type="submit"].searchbox {
-      left:76%
+        left: 76%
     }
 
     .showAdvanced.closed {
-      right:28%
+        right: 28%
     }
 
     #advancedSearch {
-      width:60%;
-      left:-14%;
+        width: 60%;
+        left: -14%;
     }
 
     .category h3 {
@@ -2752,20 +2789,20 @@ div.dscDescription {
     }
 
     #results #hits {
-      width:100%;
-      text-align: center;
+        width: 100%;
+        text-align: center;
     }
 
     #results .pages, #results #sort {
-      width:96%
+        width: 96%
     }
 
     #alphaLinksSelect {
-        display: block;
+        display: block
     }
 
     #alphaLinks {
-        display: none;
+        display: none
     }
 
     div.facets {
@@ -2793,7 +2830,7 @@ div.dscDescription {
     }
 
     #docHits .daoTable {
-      font-size:.7em;
+        font-size: .7em
     }
 
     div.docHit {
@@ -2817,7 +2854,7 @@ div.dscDescription {
     }
 
     #content-wrapper h2 {
-      padding-top: 0;
+        padding-top: 0
     }
 
     #contentsLink {
@@ -2875,68 +2912,86 @@ div.dscDescription {
     .activeArrow {
         margin-right: -16%
     }
+
     .bbar_custom {
-      height:134px;
+        height: 134px
     }
+
     .headerIcons {
-      display: none;
+        display: none
     }
+
     .documentTitle {
-      width: 98%;
+        width: 98%
     }
+
     .headerSearch .clearHits {
-      display:none;
+        display: none
     }
+
     .headerSearch {
-      font-size: .85em;
-      width: 100%;
-      text-align:center;
-      margin-top: 20px;
+        font-size: .85em;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
     }
+
     .bbform input, .bbform input[type="text"] {
-      padding:.1em;
+        padding: .1em
     }
+
     .tabs {
-      width: 100%;
-      margin-top:10px;
+        width: 100%;
+        margin-top: 10px;
     }
 
     #content-wrapper .thumbnail {
-      display: none;
+        display: none
     }
+
     #content-wrapper.digital .daoTable {
-      width:100%;
+        width: 100%
     }
+
     #bookmarkMenu {
-      width:100%;
+        width: 100%
     }
+
     #toc .subjects, #toc .foundIn {
-      font-size: .9em;
+        font-size: .9em
     }
+
     .resultsHeader .actions {
-      width:98%;
-      margin-left: 1%;
+        width: 98%;
+        margin-left: 1%;
     }
+
     .myListContents {
-      font-size: .85em;
+        font-size: .85em
     }
+
     .myListContents .requestInputs {
-      width:4%;
+        width: 4%
     }
+
     .myListContents .dateAdded {
-      display:none;
+        display: none
     }
+
     .myListContents .date {
-      width:14%;
+        width: 14%
     }
+
     .myListContents .containers {
-      width:15%;
+        width: 15%
     }
+
     .myList .third {
-      width:50%
+        width: 50%
     }
+
     .register {
-      margin:0;
+        margin: 0
     }
 }
 
@@ -2947,7 +3002,7 @@ div.dscDescription {
 
     #header {
         margin-top: 2%;
-        height:3em;
+        height: 3em;
     }
 
     #header h1 {
@@ -2957,8 +3012,8 @@ div.dscDescription {
     }
 
     #myListNav {
-      float: none;
-      text-align: center;
+        float: none;
+        text-align: center;
     }
 
     #searchTop {
@@ -2970,11 +3025,11 @@ div.dscDescription {
     }
 
     #searchbox select {
-      width:100%;
+        width: 100%
     }
 
     #searchbox #date {
-      width:100%
+        width: 100%
     }
 
     .box:hover {
@@ -2994,7 +3049,7 @@ div.dscDescription {
     }
 
     #docHits .daoTable {
-      font-size:.9em;
+        font-size: .9em
     }
 
     .resultContent {
@@ -3046,15 +3101,15 @@ div.dscDescription {
     }
 
     #tocWrapper {
-      width: 98%;
-      position: relative;
-      top: 0;
-      left: 0;
-      border:none;
+        width: 98%;
+        position: relative;
+        top: 0;
+        left: 0;
+        border: none;
     }
 
     .subjects {
-      display:none;
+        display: none
     }
 
     #content-wrapper {
@@ -3084,7 +3139,7 @@ div.dscDescription {
     }
 
     .inventoryHeaderNotes {
-        width: 18%;
+        width: 18%
     }
 
     .component-title {
@@ -3097,7 +3152,7 @@ div.dscDescription {
     }
 
     .moreInfo {
-      width:14%
+        width: 14%
     }
 
     .containerWrapper {
@@ -3110,11 +3165,11 @@ div.dscDescription {
 
     .subdocuments {
         width: 95%;
-        padding-left:5%;
+        padding-left: 5%;
     }
 
     .subdocument, .subdocument.active {
-        margin: 0;
+        margin: 0
     }
 
     .subdocument.active {
@@ -3142,26 +3197,31 @@ div.dscDescription {
     }
 
     .tab {
-      max-width: 27%;
+        max-width: 27%
     }
+
     #content-wrapper .daoTable, #content-wrapper.digital .daoTable {
-      width:98%
+        width: 98%
     }
+
     #toc .subjects, #toc .foundIn {
-      display:none;
+        display: none
     }
+
     .myListContents .list-delete {
-      background: url("../../icons/default/cancel.svg") no-repeat center;
-      text-indent: -9999px;
-      height: 2em;
-      width: 2em;
-      background-size: 80%;
+        background: url("../../icons/default/cancel.svg") no-repeat center;
+        text-indent: -9999px;
+        height: 2em;
+        width: 2em;
+        background-size: 80%;
     }
+
     .myListContents .containers {
-      width:20%;
+        width: 20%
     }
+
     .myList .third {
-      width:50%
+        width: 50%
     }
 }
 
@@ -3179,7 +3239,7 @@ div.dscDescription {
     }
 
     #searchbox {
-        width: 85%;
+        width: 85%
     }
 
     .headerIcons {
