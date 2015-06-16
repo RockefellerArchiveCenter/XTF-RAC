@@ -175,6 +175,7 @@
                      <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
                   </a>
                </div>
+               <xsl:call-template name="myListNav"/>
                <xsl:call-template name="bbar_custom"/>
                <div class="main">
                   <div id="tocWrapper">
@@ -381,7 +382,7 @@
                      </xsl:otherwise>
                   </xsl:choose>
                </xsl:variable>
-               <img src="{$href}" height="300px">
+               <img src="{$href}" width="100%">
                   <xsl:if test="xtf:meta/*:viewable='true'">
                      <xsl:attribute name="class">view</xsl:attribute>
                   </xsl:if>
@@ -616,7 +617,7 @@
                   <xsl:value-of select="xtf:meta/*:size"></xsl:value-of>
                </xsl:otherwise>
             </xsl:choose>
-            
+
          </td>
          <td>
             <a href="{$link}" title="About this file">details</a>

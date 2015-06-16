@@ -90,10 +90,10 @@ dt {
 }
 
 .tagline {
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: #444;
     margin-left: 7em;
-    margin-bottom: 1.6em;
+    margin-bottom: 1.7em;
 }
 
 /* ===[ FOOTER ]=== */
@@ -1666,7 +1666,7 @@ select#searchTarget {
 #tocWrapper {
     /* required to avoid jumping */
     position: fixed;
-    top: 266px;
+    top: 265px;
     left: 1%;
     bottom: 1.6em;
     width: 27%;
@@ -1824,7 +1824,6 @@ ul.none {
 }
 
 #toc .subjects, #toc .foundIn {
-    margin: 1em 0 0 0;
     padding: 0;
     background-color: #eee;
     border-radius: 5px 5px 0 0;
@@ -1882,7 +1881,7 @@ ul.none {
 #content-wrapper {
     /* required to avoid jumping */
     position: fixed;
-    top: 266px;
+    top: 265px;
     right: 1%;
     left: 30%;
     bottom: 1.6em;
@@ -1932,6 +1931,7 @@ ul.none {
 #content-right {
     display: block;
     text-align: left;
+    margin-top: 1em;
 }
 
 .navright .left {
@@ -2207,10 +2207,11 @@ ul.none {
     width: 16em;
     height: 2em;
     opacity: 0;
+    margin-bottom: 1em;
 }
 
 #bookmarkMenu .button {
-    float: left;
+    float: right;
     margin: 0 0 0 1em;
 }
 
@@ -2229,11 +2230,18 @@ ul.none {
 
 .digital-thumbnail {
     float: left;
-    margin-right: 2em;
+    margin-right: 2%;
+    max-width:300px;
+    width:48%;
 }
 
 .digital-thumbnail img {
     cursor: pointer
+}
+
+.description {
+  width:48%;
+  float: left;
 }
 
 #content-wrapper .thumbnailButtons a {
@@ -2561,9 +2569,6 @@ div.dscDescription {
   .navbar {
     font-size:11px
   }
-  .tagline {
-    margin-bottom: 1em;
-  }
   #myListNav {
     margin-top: 6em;
   }
@@ -2593,6 +2598,9 @@ div.dscDescription {
 
     #header {
         width: 60%
+    }
+    .tagline {
+      margin-bottom: 1.1em;
     }
 
     #results #hits {
@@ -2646,7 +2654,7 @@ div.dscDescription {
       font-size: 1.1em;
     }
     #tocWrapper, #content-wrapper {
-      top:275px;
+      top:273px;
     }
 
 }
@@ -2788,6 +2796,8 @@ div.dscDescription {
 
     #tocWrapper {
         width: 35%;
+        font-size: .85em;
+        top: 300px;
     }
 
     #content-wrapper {
@@ -2881,15 +2891,17 @@ div.dscDescription {
       margin-top:10px;
     }
 
-    #tocWrapper {
-      font-size: .85em;
-      top: 300px;
-    }
     #content-wrapper .thumbnail {
       display: none;
     }
     #content-wrapper.digital .daoTable {
       width:100%;
+    }
+    #bookmarkMenu {
+      width:100%;
+    }
+    #toc .subjects, #toc .foundIn {
+      font-size: .9em;
     }
 }
 
@@ -2936,14 +2948,6 @@ div.dscDescription {
 
     #featured {
         width: 96%
-    }
-
-    div[id^='navOption'] {
-        display: none
-    }
-
-    #menu {
-        display: none
     }
 
     .facets {
@@ -3108,6 +3112,9 @@ div.dscDescription {
     #content-wrapper .daoTable, #content-wrapper.digital .daoTable {
       width:98%
     }
+    #toc .subjects, #toc .foundIn {
+      display:none;
+    }
 }
 
 @media screen and (max-width:320px) {
@@ -3117,10 +3124,6 @@ div.dscDescription {
 
     #header h1 {
         font-size: 1.8em
-    }
-
-    #bookbag {
-        width: 16%
     }
 
     .documentTitle {
