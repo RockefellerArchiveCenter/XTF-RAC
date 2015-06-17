@@ -3151,6 +3151,10 @@ div.dscDescription {
         width: 30%
     }
 
+    .instance .format  {
+      display:none;
+    }
+
     .moreInfo {
         width: 14%
     }
@@ -3197,7 +3201,7 @@ div.dscDescription {
     }
 
     .tab {
-        max-width: 27%
+        max-width: 32%
     }
 
     #content-wrapper .daoTable, #content-wrapper.digital .daoTable {
