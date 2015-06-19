@@ -101,6 +101,13 @@
    <xsl:param name="message"/>
    <xsl:param name="stackTrace" select="''"/>
 
+   <xsl:variable name="brand.file">
+     <xsl:copy-of select="document('../../brand/default.xml')"/>
+   </xsl:variable>
+
+   <xsl:variable name="brand.links" select="$brand.file/brand/dynaxml.links/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:variable name="brand.header" select="$brand.file/brand/dynaxml.header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->

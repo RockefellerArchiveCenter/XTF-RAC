@@ -4,30 +4,30 @@
    <!--
       Copyright (c) 2008, Regents of the University of California
       All rights reserved.
-      
-      Redistribution and use in source and binary forms, with or without 
-      modification, are permitted provided that the following conditions are 
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are
       met:
-      
-      - Redistributions of source code must retain the above copyright notice, 
+
+      - Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-      - Redistributions in binary form must reproduce the above copyright 
-      notice, this list of conditions and the following disclaimer in the 
+      - Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
       - Neither the name of the University of California nor the names of its
-      contributors may be used to endorse or promote products derived from 
+      contributors may be used to endorse or promote products derived from
       this software without specific prior written permission.
-      
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
    -->
 
@@ -415,15 +415,25 @@
                <xsl:value-of select="concat(' ',did/unitid)"/>
             </xsl:if>
          </xsl:variable>
+         <xsl:variable name="title">
+           <xsl:choose>
+             <xsl:when test="did/unittitle !=''">
+               <xsl:value-of select="did/unittitle"/>
+             </xsl:when>
+             <xsl:otherwise>
+               <xsl:value-of select="did/unitdate"/>
+             </xsl:otherwise>
+           </xsl:choose>
+         </xsl:variable>
          <xsl:choose>
             <xsl:when test="self::archdesc">
                <parent xtf:meta="true" xtf:tokenize="no">
-                  <xsl:value-of select="concat($level,': ',did/unittitle)"/>
+                  <xsl:value-of select="concat($level,': ',$title)"/>
                </parent>
             </xsl:when>
             <xsl:otherwise>
                <parent xtf:meta="true" xtf:tokenize="no">
-                  <xsl:value-of select="concat($level,$id,': ',did/unittitle)"/>
+                  <xsl:value-of select="concat($level,$id,': ',$title)"/>
                </parent>
             </xsl:otherwise>
          </xsl:choose>
@@ -476,7 +486,7 @@
                            </xsl:for-each>
                      </xsl:if>
                   </xsl:when>
-                  
+
                   <xsl:otherwise>
                      <xsl:choose>
                         <xsl:when test="@level='series'">Series <xsl:value-of select="did/unitid"/>: </xsl:when>
@@ -492,15 +502,15 @@
                      </xsl:choose>
                      <xsl:choose>
                         <xsl:when test="string-length(did/unittitle) &gt; 1">
-                           <xsl:value-of select="did/unittitle"/>       
+                           <xsl:value-of select="did/unittitle"/>
                         </xsl:when>
                         <xsl:when test="string-length(did/unitdate) &gt; 1">
-                           <xsl:value-of select="did/unitdate"/> 
+                           <xsl:value-of select="did/unitdate"/>
                         </xsl:when>
                         <xsl:otherwise>Unknown</xsl:otherwise>
                      </xsl:choose>
                   </xsl:otherwise>
-               </xsl:choose>         
+               </xsl:choose>
             </xsl:variable>
             <xsl:variable name="collTitle">
                <xsl:choose>
@@ -553,7 +563,7 @@
                <xsl:if test="$subtitle">
                   <xsl:if test="not(matches($titleproper, ':\s*$') or matches($subtitle, '^\s*:'))">
                      <xsl:text>: </xsl:text>
-                  </xsl:if>  
+                  </xsl:if>
                   <xsl:value-of select="$subtitle"/>
                </xsl:if>
             </collectionTitle>
@@ -1204,11 +1214,11 @@
                      <xsl:value-of select="concat(substring(string(/ead/eadheader/profiledesc/creation[1]/date[1]),1,4),'-01-01')"/>
                   </xsl:when>
                   <xsl:when test="contains(/ead/eadheader/profiledesc/creation[1]/date[1],'-')">
-                     <xsl:value-of select="concat(parse:year(string(/ead/eadheader/profiledesc/creation[1]/date[1])),'-01-01')"/>                  
+                     <xsl:value-of select="concat(parse:year(string(/ead/eadheader/profiledesc/creation[1]/date[1])),'-01-01')"/>
                   </xsl:when>
                   <xsl:otherwise>
                      <!-\- I don't know, what would you put? -\->
-                     <xsl:value-of select="'1950-01-01'"/>                  
+                     <xsl:value-of select="'1950-01-01'"/>
                   </xsl:otherwise>
                </xsl:choose>
             </xsl:when>
