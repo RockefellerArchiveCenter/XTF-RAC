@@ -14,7 +14,7 @@ $(document).ready(function () {
     var listAdd = '.list-add';
     var listDelete = '.list-delete';
     var listCount = '.listCount';
-    
+
     // Removes link and changes text displayed if cookies are not enabled
     if (! navigator.cookieEnabled) {
         $(listAdd).text('Cookies not enabled');
@@ -40,18 +40,18 @@ $(document).ready(function () {
             if (myList.length > 0) {
             $('#myListNav #myListButton').addClass('hasContents');
             $('.myListContents').append(
-                '<div class="row header-row">' + 
-                    '<div class="requestInputs"><input type="checkbox" checked="checked" name="allRequests"/></div>' + 
+                '<div class="row header-row">' +
+                    '<div class="requestInputs"><input type="checkbox" checked="checked" name="allRequests"/></div>' +
                     '<div class="collectionTitle">Collection/Book Title</div>' +
-                    '<div class="title">Folder Title</div>' + 
-                    '<div class="date">Date</div>' + 
+                    '<div class="title">Folder Title</div>' +
+                    '<div class="date">Date</div>' +
                     '<div class="containers">Containers</div>' +
                     '<div class="dateAdded">Date Added</div>' +
                 '</div>');
             }
         for(var i =0; i <= myList.length-1; i++) {
             var item = myList[i];
-            
+
             //create variables
             function sanitize(value) {
                 if (value) {return value;}
@@ -117,9 +117,9 @@ $(document).ready(function () {
             var callNumber = sanitize(item.callNumber);
             var accessRestrict = sanitize(item.accessRestrict);
             var groupingfield = sanitize(item.groupingfield);
-                                
+
             $('.myListContents').append(
-                '<div class="row">' + 
+                '<div class="row">' +
                     '<div class="requestInputs">' +
                         '<input type="checkbox" checked="checked" name="Request" value="' + identifier + '"/>' +
                         '<input type="hidden" name="ItemInfo1_' + identifier + '" value="' + title + '"/>' +
@@ -133,13 +133,13 @@ $(document).ready(function () {
                         '<input type="hidden" name="CallNumber_' + identifier + '" value="' + callNumber + '"/>' +
                         '<input type="hidden" name="ItemInfo3_' + identifier + '" value="' + url + '"/>' +
                         '<input type="hidden" name="GroupingField_' + identifier + '" value="' + groupingfield + '"/>' +
-                    '</div>' + 
+                    '</div>' +
                     '<div class="collectionTitle"><p>' + collectionTitle + ' (' + item.callNumber + ')</p>' +
                     '<div class="parents">' + formatparents + '</div></div>' +
-                    '<div class="title"><p><a href="' + url + '">' + title + '</a></p></div>' + 
+                    '<div class="title"><p><a href="' + url + '">' + title + '</a></p></div>' +
                     '<div class="date">' + date + ' </div>' +
                     '<div class="containers"><p>' + containers + '</p></div>' +
-                    '<div class="dateAdded"><p>' + dateAdded + '</p></div>' + 
+                    '<div class="dateAdded"><p>' + dateAdded + '</p></div>' +
                     '<button class="list-delete btn" href="#" data-identifier="'+ identifier + '">Delete</button>' +
                 '</div>');
 
@@ -154,16 +154,16 @@ $(document).ready(function () {
         if (count < 1) {
             $('.myListContents').append('<div class="empty">Your List is empty! Click on the icon that looks like this <img alt="bookbag icon" src="/xtf/icons/default/addlist.png"/> next to one or more items in your <a href="">Search Results</a> to add it to your list.</div>');
             $('#myListNav #myListButton').removeClass('hasContents');
-        } 
-        
-        
+        }
+
+
     } else {
         //if list is empty, set count to zero
         $(listCount).text('0');
         $('#myListNav #myListButton').removeClass('hasContents');
     }
-    
-    
+
+
 
     return false;
 
@@ -171,13 +171,13 @@ $(document).ready(function () {
 
     //Might need some functions to sort by various fields, maybe title, collection, creator, date added
     //function sortList(param) {}
-    
+
     //Adds documents to My List
     $(listAdd).on('click', function (e) {
-    
+
         //animate my list button
         $('#myListButton').effect( "highlight", {color:"rgba(196, 84, 20, 0.1)"}, 500 );
-        
+
         var a = $(this);
 
         //data variables
@@ -197,7 +197,7 @@ $(document).ready(function () {
         //Let the user know something is happpening
         a.text('Adding...');
 
-        // Add document to myList in localStorage        
+        // Add document to myList in localStorage
             // figure out if there's an existing list in localStorage
             var localStorage = getList();
             if (localStorage) {
@@ -205,7 +205,7 @@ $(document).ready(function () {
             } else {
                 var myList = new Array();};
 
-            //create a new object to add to the array    
+            //create a new object to add to the array
             var dateAdded = Date.now();
             var doc = {
                 'identifier': identifier,
@@ -231,11 +231,11 @@ $(document).ready(function () {
 
             // update display
             updateDisplay();
-   
+
         e.preventDefault();
 
         //need this so function doesn't run twice
-        return false;   
+        return false;
     });
 
     // Removes documents from My List
@@ -252,7 +252,7 @@ $(document).ready(function () {
                     myList.splice(i, 1)
                 }
             }
-            
+
             // save new list in localStorage
             saveList(myList);
 
@@ -297,7 +297,7 @@ $(function() {
                 $('input[value='+value+"]").parents('.row:not(.header-row)').addClass('disabled');
            }
         }
-        var listCount = $('#requestForm .row > .requestInputs > input[checked="checked"]').length - 1;
+        var listCount = $('#requestForm .row:not(.header-row) > .requestInputs > input[checked="checked"]').length;
         $('.listCount').html(listCount);
     });
 });
@@ -312,7 +312,7 @@ $(function() {
             if(!($(this).parents('.myListContents').hasClass('dialog'))) {
                 $('.requestInputs').parents('.row:not(.header-row)').removeClass('disabled');
             }
-            var listCount = $('#requestForm .row > .requestInputs > input[checked="checked"]').length - 1;
+            var listCount = $('#requestForm .row:not(.header-row) > .requestInputs > input[checked="checked"]').length;
            $('.listCount').html(listCount);
         } else {
             $('.requestInputs input[type="checkbox"]').attr('checked', false);
@@ -320,7 +320,7 @@ $(function() {
             if(!($(this).parents('.myListContents').hasClass('dialog'))) {
                 $('.requestInputs').parents('.row:not(.header-row)').addClass('disabled');
             }
-           var listCount = $('#requestForm .row > .requestInputs > input[checked="checked"]').length;
+           var listCount = $('#requestForm .row:not(.header-row) > .requestInputs > input[checked="checked"]').length;
            $('.listCount').html(listCount);
         }
     });

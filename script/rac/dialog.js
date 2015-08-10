@@ -463,7 +463,7 @@ $(function () {
         });
     });
 $(function () {
-    var listCount = $('#requestForm .row > .requestInputs > input[checked="checked"]').length - 1;
+    var listCount = $('#requestForm .row:not(.header-row) > .requestInputs > input[type=checkbox]:checked').length;
     var dialogMyListRequest = $('#myListRequest').dialog({
         create: function(event, ui) {
             var widget = $(this).dialog("widget");
