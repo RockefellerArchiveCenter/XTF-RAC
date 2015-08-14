@@ -23,19 +23,22 @@
         <xsl:param name="chunk.id"/>
         <xsl:param name="path"/>
         <xsl:param name="docPath"/>
+        <xsl:variable name="quot">"</xsl:variable>
+        <xsl:variable name="apos">'</xsl:variable>
         <xsl:if test="meta/level='file' or meta/level='item' or meta/type='mods'">
             <xsl:variable name="title">
                 <xsl:if test="meta/type='ead'">
                     <xsl:variable name="octothorpe">
                         <xsl:value-of select="replace(meta/title, '#', 'No.')"/>
                     </xsl:variable>
-                    <xsl:variable name="quot">"</xsl:variable>
-                    <xsl:variable name="apos">'</xsl:variable>
                     <xsl:value-of select="replace($octothorpe, $quot, $apos)"/>
                 </xsl:if>
             </xsl:variable>
+            <xsl:variable name="sanitizedDocPath">
+              <xsl:value-of select="replace($docPath, $quot, $apos)"/>
+            </xsl:variable>
             <xsl:variable name="url">
-                <xsl:value-of select="concat($xtfURL, $docPath)"/>
+                <xsl:value-of select="concat($xtfURL, $sanitizedDocPath)"/>
             </xsl:variable>
             <xsl:variable name="creator">
                 <xsl:value-of select="meta/creator[1]"/>
