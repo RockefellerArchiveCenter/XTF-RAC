@@ -261,13 +261,13 @@
          <div class="documentTitle">
             <xsl:attribute name="style">
                <xsl:choose>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'Volume')]">background:
+                  <xsl:when test="/mods:mods/mods:genre[contains(.,'volume')]">background:
                      url(/xtf/icons/default/book.gif) left no-repeat;</xsl:when>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'DVD')]">background:
+                  <xsl:when test="/mods:mods/mods:genre[contains(.,'dvd')]">background:
                      url(/xtf/icons/default/video.gif) left no-repeat;</xsl:when>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'Videocassette')]">background:
+                  <xsl:when test="/mods:mods/mods:genre[contains(.,'videocassette')]">background:
                      url(/xtf/icons/default/video.gif) left no-repeat;</xsl:when>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'Reel')]">background:
+                  <xsl:when test="/mods:mods/mods:genre[contains(.,'reel')]">background:
                      url(/xtf/icons/default/microfilm.gif) left no-repeat;</xsl:when>
                </xsl:choose>
                <xsl:text>min-height: 50px;</xsl:text>

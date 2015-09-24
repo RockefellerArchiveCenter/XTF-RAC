@@ -1124,19 +1124,19 @@
                         select="concat(string-join(tokenize(meta/daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/>
                      <img src="{$daoImg}" alt="Digital object thumbnail"/>
                   </xsl:when>
-                  <xsl:when test="meta/genre[contains(.,'DVD')]">
+                  <xsl:when test="meta/genre[contains(.,'dvd')]">
                      <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
                      <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>-->
                   </xsl:when>
-                  <xsl:when test="meta/genre[contains(.,'Videocassette')]">
+                  <xsl:when test="meta/genre[contains(.,'videocassette')]">
                      <img src="/xtf/icons/default/video.gif" alt="Moving Image" title="Moving Image"/>
                      <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving Image</span>-->
                   </xsl:when>
-                  <xsl:when test="meta/genre[contains(.,'Reel')]">
+                  <xsl:when test="meta/genre[contains(.,'reel')]">
                      <img src="/xtf/icons/default/microfilm.gif" alt="Microfilm" title="Microfilm"/>
                      <!--<span style="font-size:.75em;color:#C45428;display:block;">Microfilm</span>-->
                   </xsl:when>
-                  <xsl:when test="meta/genre[contains(.,'Volume')]">
+                  <xsl:when test="meta/genre[contains(.,'volume')]">
                      <img src="/xtf/icons/default/book.gif" alt="Book" title="Book"/>
                      <!--<span style="font-size:.75em;color:#C45428;display:block;">Book</span>-->
                   </xsl:when>
@@ -1321,25 +1321,25 @@
                <xsl:when test="meta/level = 'collection'">
                   <div class="resultIcon">
                      <xsl:choose>
-                        <xsl:when test="meta/genre[contains(.,'DVD')]">
+                        <xsl:when test="meta/genre[contains(.,'dvd')]">
                            <img src="/xtf/icons/default/video.gif" alt="Moving Image"
                               title="Moving Image"/>
                            <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving
                               Image</span>-->
                         </xsl:when>
-                        <xsl:when test="meta/genre[contains(.,'Videocassette')]">
+                        <xsl:when test="meta/genre[contains(.,'videocassette')]">
                            <img src="/xtf/icons/default/video.gif" alt="Moving Image"
                               title="Moving Image"/>
                            <!--<span style="font-size:.75em;color:#C45428;display:block;">Moving
                               Image</span>-->
                         </xsl:when>
-                        <xsl:when test="meta/genre[contains(.,'Reel')]">
+                        <xsl:when test="meta/genre[contains(.,'reel')]">
                            <img src="/xtf/icons/default/microfilm.gif" alt="Microfilm"
                               title="Microfilm"/>
                            <!--<span style="font-size:.75em;color:#C45428;display:block;"
                               >Microfilm</span>-->
                         </xsl:when>
-                        <xsl:when test="meta/genre[contains(.,'Volume')]">
+                        <xsl:when test="meta/genre[contains(.,'volume')]">
                            <img src="/xtf/icons/default/book.gif" alt="Book" title="Book"/>
                            <!--<span style="font-size:.75em;color:#C45428;display:block;">Book</span>-->
                         </xsl:when>
