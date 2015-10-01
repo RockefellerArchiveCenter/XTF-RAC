@@ -314,13 +314,17 @@ $(function () {
             var items = '';
                 $('#myListEmail .row').each(function(){
                 if($(this).find('.requestInputs input[name="Request"]').is(":checked")) {
-                    var item = 
-                    '<p><strong>' + $(this).children('.title').children('p').html() + '</strong><br />' +
+                    var title;
+                    if ($(this).children('.date').text().trim().length) {
+                        title = $(this).children('.title').children('p').html() + ', ' + $(this).children('.date').html();
+                    } else {
+                        title = $(this).children('.title').children('p').html();
+                    }
+                    var item =
+                    '<p><strong>' + title + '</strong><br />' +
                     $(this).children('.collectionTitle').children('p').text() + '<br/>' +
                     $(this).children('.containers').text() + '<br/>' +
                     $(this).find('.requestInputs input[name*="ItemSubtitle"]').attr('value')  + '</p>'
-
-                    console.log(item)
                     
                     items = items + item;
 
