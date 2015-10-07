@@ -189,6 +189,32 @@
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
+      <xsl:variable name="title">
+         <xsl:choose>
+            <xsl:when test="$chunk.id != '' and starts-with($chunk.id, 'aspace_')">
+               <xsl:value-of select="concat(archdesc/did/unittitle, ', ',archdesc/dsc/descendant::c[@id=$chunk.id]/did/unittitle)"/>
+            </xsl:when>
+            <xsl:when test="$chunk.id != '' and $chunk.id = 'contentsLink'">
+               <xsl:value-of select="concat(archdesc/did/unittitle, ', Contents List')"/>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="archdesc/did/unittitle"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <xsl:variable name="url">
+         <xsl:choose>
+            <xsl:when test="$chunk.id != '' and starts-with($chunk.id, 'aspace_')">
+               <xsl:value-of select="concat($doc.path, ';chunk.id=', $chunk.id, ';brand=', $brand, ';doc.view=', $doc.view)"/>
+            </xsl:when>
+            <xsl:when test="$chunk.id != '' and $chunk.id = 'contentsLink'">
+               <xsl:value-of select="concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/contents')"/>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/collection')"/>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
 
       <xsl:result-document exclude-result-prefixes="#all">
 
@@ -206,13 +232,13 @@
                <!-- Twitter meta tags -->
                <meta name="twitter:card" content="summary"/>
                <meta name="twitter:site" content="@rockarch_org"/>
-               <meta name="twitter:title" content="{archdesc/did/unittitle}"/>
+               <meta name="twitter:title" content="{$title}"/>
                <meta name="twitter:description" content="{$description}"/>
                <meta name="twitter:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}"/>
 
                <!-- Open Graph (Facebook) meta tags -->
-               <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf'), xtf:meta/*:identifier, '/collection')}" />
-               <meta property="og:title" content="{archdesc/did/unittitle}" />
+               <meta property="og:url" content="{$url}" />
+               <meta property="og:title" content="{$title}" />
                <meta property="og:description" content="{$description}" />
                <meta property="og:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}" />
                <meta property="og:image:width" content="200" />
@@ -230,7 +256,7 @@
                   </xsl:if>
                   <meta itemprop="http://schema.org/name">
                      <xsl:attribute name="content">
-                        <xsl:value-of select="archdesc/did/unittitle"/>
+                        <xsl:value-of select="$title"/>
                      </xsl:attribute>
                   </meta>
                   <div itemprop="http://schema.org/contentLocation" itemscope="" itemtype="http://schema.org/Place">
