@@ -2165,37 +2165,65 @@ ul.none {
 /* ===[ DIGITAL OBJECT TABLES ]=== */
 
 .daoTable {
-    border-collapse: separate;
-    border-spacing: 0;
     text-align: center;
     border: 1px solid #666;
     border-radius: 4px;
     margin-top: 1em;
 }
 
-.daoTable tr {
-    height: 2em
+.daoTable div {
+    height: 2em;
+    float:left;
 }
 
-.daoTable tr:nth-of-type(odd) {
+.daoTable .filename {
+    width:75%
+}
+
+.daoTable .format {
+    width:10%
+}
+
+.daoTable .size {
+    width: 15%
+}
+
+.daoTable .row {
+    width: 100%;
+    padding-top:.5em;
+}
+
+.daoTable .row:nth-of-type(odd) {
     background: #fff
 }
 
-.daoTable tr:nth-of-type(even) {
+.daoTable .row:nth-of-type(even) {
     background: #eee
 }
 
-.daoTable td {
-    padding: 2px 5px;
+.daoTable .row:hover {
+    background:#ddd;
+}
+
+.daoTable .row:hover a div {
+    color:#c45414;
+    text-decoration:underline;
+}
+
+.daoTable .row div {
     color: #000;
 }
 
-#content-wrapper .daoTable td a {
+#content-wrapper .daoTable a {
     color: #c45414
 }
 
-.daoTable th {
+.daoTable > .head {
     background: #333;
+    width: 100%;
+}
+
+.daoTable > .head > div {
     color: #eee;
     font-weight: normal;
 }
@@ -2282,6 +2310,14 @@ ul.none {
 
 .thumbnailButtons .btn {
     margin: 1em .5em
+}
+
+iframe {
+    background-image: url("images/ajax-loader.gif");   
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width:99%;
+    height:100%;
 }
 
 .description .creator p {

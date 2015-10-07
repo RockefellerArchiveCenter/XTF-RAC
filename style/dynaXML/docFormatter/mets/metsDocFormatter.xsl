@@ -387,12 +387,12 @@
                      <xsl:attribute name="class">view</xsl:attribute>
                   </xsl:if>
                </img>
-               <xsl:if test="xtf:meta/*:rights='allow'">
+               <xsl:if test="xtf:meta/*:viewable='true'">
                  <div class="thumbnailButtons">
-                    <a href="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}" download="true" class="btn btn-default download"><img src="/xtf/icons/default/download.svg"/> Download</a>
-                    <xsl:if test="xtf:meta/*:viewable='true'">
-                       <a href="#" class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</a>
+                    <xsl:if test="xtf:meta/*:rights='allow'">
+                        <a href="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}" download="true" class="btn btn-default download"><img src="/xtf/icons/default/download.svg"/> Download</a>
                     </xsl:if>
+                    <a href="#" class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</a>
                  </div>
                </xsl:if>
             </div>
@@ -601,40 +601,26 @@
       <xsl:variable name="downloadLink">
          <xsl:value-of select="concat('http://storage.rockarch.org/', xtf:meta/*:identifier, '-', xtf:meta/*:filename)"/>
       </xsl:variable>
-      <tr>
-         <td>
-            <xsl:value-of select="xtf:meta/*:filename"/>
-         </td>
-         <td>
-            <xsl:value-of select="xtf:meta/*:format"/>
-         </td>
-         <td>
-            <xsl:choose>
-               <xsl:when test="string(number(xtf:meta/*:size)) != 'NaN'">
-                  <xsl:value-of select="FileUtils:humanFileSize(xtf:meta/*:size)"/>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:value-of select="xtf:meta/*:size"></xsl:value-of>
-               </xsl:otherwise>
-            </xsl:choose>
-
-         </td>
-         <td>
-            <a href="{$link}" title="About this file">details</a>
-         </td>
-         <td>
-            <xsl:choose>
-               <xsl:when test="$restricted = 'restricted'">
-                  <xsl:text>&#160;</xsl:text>
-               </xsl:when>
-               <xsl:otherwise>
-                  <a href="{$downloadLink}" download="true">
-                     <img src="/xtf/icons/default/download.svg" alt="download digital object" title="Download"/>
-                  </a>
-               </xsl:otherwise>
-            </xsl:choose>
-         </td>
-      </tr>
+      <div class="row">
+         <a href="{$link}">
+            <div class="filename">
+               <xsl:value-of select="xtf:meta/*:filename"/>
+            </div>
+            <div class="format">
+               <xsl:value-of select="xtf:meta/*:format"/>
+            </div>
+            <div class="size">
+               <xsl:choose>
+                  <xsl:when test="string(number(xtf:meta/*:size)) != 'NaN'">
+                     <xsl:value-of select="FileUtils:humanFileSize(xtf:meta/*:size)"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="xtf:meta/*:size"></xsl:value-of>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </div>
+         </a>
+      </div>
    </xsl:template>
 
    <!-- ====================================================================== -->
@@ -642,7 +628,17 @@
    <!-- ====================================================================== -->
 
    <xsl:template name="daoView">
-      <iframe frameborder="0" marginwidth="0" marginheight="0" src="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}"/>
+      <xsl:variable name="srcUrl">
+         <xsl:choose>
+            <xsl:when test="ends-with(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf')">
+               <xsl:value-of select="concat(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '#zoom=100')"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+               <xsl:value-of select="mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href"></xsl:value-of>
+            </xsl:otherwise>
+         </xsl:choose>
+      </xsl:variable>
+      <iframe frameborder="0" marginwidth="0" marginheight="0" src="{$srcUrl}"/>
    </xsl:template>
 
    <xsl:template name="copyLink">
