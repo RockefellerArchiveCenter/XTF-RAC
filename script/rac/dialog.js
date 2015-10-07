@@ -53,10 +53,10 @@ $(function () {
                 $('.ui-dialog').hide();
                 $('.dao-container > iframe').attr("src", "");
                 $('.daoCitation').remove();
-                
+
                 }
         });
-                            
+
         $(".daoLink a, .caption a").on("click", function (e) {
             e.preventDefault();
             var dialogClass = 'dao';
@@ -72,21 +72,21 @@ $(function () {
                 src: src
             });
                                 dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
-                                
+
                             });
-                            
-                            //checks for hash tag jumps to location and opens appropriate diolog 
+
+                            //checks for hash tag jumps to location and opens appropriate diolog
                             if(window.location.hash) {
                               var hash = window.location.hash; //Puts hash in variable, and removes the # character
                               var offset = $(hash).position().top - 50;
                               $(hash).addClass("active");
                               setTimeout(function() {
                                     scrollActive($(hash));}, 100);
-                                        
+
                                function scrollActive(element){
-                                    $('div#content-wrapper').animate({scrollTop: offset}, 500); 
+                                    $('div#content-wrapper').animate({scrollTop: offset}, 500);
                                     }
-                                    
+
                               if($(hash + " > .daoLink a[href]").length) {
                               $(hash + " .daoLink a").each(function (e) {
                                  var dialogClass = 'dao';
@@ -102,12 +102,12 @@ $(function () {
                                     src: src
                                  });
                                  dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
-                                 
+
                               });
-                            } 
+                            }
                           }
                         });
-                    
+
 $(function () {
     var dialogDimes = $('#dimes').dialog({
         create: function(event, ui) {
@@ -122,13 +122,13 @@ $(function () {
             $('.ui-dialog').hide();
             }
         });
-       
+
     $("a.dimes").on("click", function (e) {
         e.preventDefault();
         dialogDimes.dialog("option", "title", 'Why DIMES?').dialog("open");
     });
 });
-    
+
 $(function () {
     var dialogTakedown = $('#takedown').dialog({
         create: function(event, ui) {
@@ -211,7 +211,7 @@ $(function () {
         });
     });
 
-$(function () {                      
+$(function () {
         var dscOptions = {
             autoOpen: false,
             create: function(event, ui) {
@@ -225,7 +225,7 @@ $(function () {
                 $('.ui-dialog').hide();
             }
         }
-                         
+
         $(".dialog_dsc").click(function (e) {
             e.preventDefault();
             var id = '#' + $(this).parent().parent('div').attr('id') + '_details';
@@ -325,7 +325,7 @@ $(function () {
                     $(this).children('.collectionTitle').children('p').text() + '<br/>' +
                     $(this).children('.containers').text() + '<br/>' +
                     $(this).find('.requestInputs input[name*="ItemSubtitle"]').attr('value')  + '</p>'
-                    
+
                     items = items + item;
 
                     }
@@ -374,7 +374,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Send Email", click: function() {
                 if (validate()) {
                     if(sendEmail()) {
@@ -389,7 +389,7 @@ $(function () {
                         dialogMyListEmailError.dialog("open");
                     }
                 }
-            } 
+            }
             },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
@@ -408,14 +408,14 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Close", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/2,
         close: function () {
             $('.ui-dialog').hide();
         }
-    });    
+    });
 
     var dialogMyListEmailError = $('#myListEmailError').dialog({
         create: function(event, ui) {
@@ -426,14 +426,14 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Close", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/2,
         close: function () {
             $('.ui-dialog').hide();
         }
-    }); 
+    });
 
     $(".myListEmail").on("click", function (e) {
         e.preventDefault();
@@ -451,7 +451,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Print", click: function() {
                 if(content()) {
                     window.print();
@@ -488,22 +488,13 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { html: 'Request <span class="listCount">'+listCount+'</span> item(s)', click: function() {
                 console.log('request materials');
-                if(content()) { 
+                if(content()) {
                     if($('#VisitScheduled').is(':checked')) {
                         if($('#myListRequest input[name="ScheduledDate"]').val()) {
                             $('input[name="UserReview"]').val("No");
-                            $.ajax({
-                                type: 'POST',
-                                url: '/xtf/script/rac/myListLog.php',
-                            data: {
-                                email: 'harnold@rockarch.org',
-                                subject: 'myList Request',
-                                message: $('#requestForm').serialize()
-                                }
-                            });
                             $('#requestForm').submit();
                             $(this).dialog("close")
                             $('#myListRequest input[name="ScheduledDate"]').removeClass('error');
@@ -525,7 +516,7 @@ $(function () {
                 } else {
                     $('#myListRequest .contentError').show();
                 }
-            } 
+            }
             },
             { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
             ],
@@ -544,7 +535,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Close", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/2,
@@ -596,9 +587,9 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Request Copies", click: function() {
-                console.log('request copies'); 
+                console.log('request copies');
                 if(content()) {
                     if(validate()){
                         $('#duplicationForm').submit();
@@ -632,7 +623,7 @@ $(function () {
         autoOpen: false,
         modal: true,
         resizable: true,
-        buttons: [ 
+        buttons: [
             { text: "Close", click: function() { $( this ).dialog( "close" ); } }
             ],
         width: windowWidth/2,
@@ -648,15 +639,15 @@ $(function () {
         $(".ui-dialog-buttonpane button:contains('Request Copies')").button("disable");
         $("input#costagree").attr('checked', false);
         });
-        
+
     $("input#costagree").on("click", function() {
         if($("input#costagree").is(':checked')) {
             $(".ui-dialog-buttonpane button:contains('Request Copies')").button("enable");
         } else {
             $(".ui-dialog-buttonpane button:contains('Request Copies')").button("disable");
         }
-    });   
-        
     });
-    
+
+    });
+
 });
