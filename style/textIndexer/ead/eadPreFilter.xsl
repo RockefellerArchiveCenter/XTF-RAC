@@ -1174,7 +1174,14 @@
 
    <!-- rights -->
    <xsl:template name="get-ead-rights">
-      <rights xtf:meta="true">public</rights>
+     <xsl:choose>
+        <xsl:when test="FileUtils:exists(concat('/mnt/images/', substring-after(., 'http://storage.rockarch.org')))">
+           <rights xtf:meta="true" xtf:tokenize="no">allow</rights>
+        </xsl:when>
+        <xsl:otherwise>
+           <rights xtf:meta="true" xtf:tokenize="no">disallow</rights>
+        </xsl:otherwise>
+     </xsl:choose>
    </xsl:template>
 
    <xsl:template name="get-ead-url">
