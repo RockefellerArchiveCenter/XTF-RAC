@@ -1849,6 +1849,10 @@ ul.none {
     width: 100%;
 }
 
+#toc .subjects {
+  margin-top: 1em;
+}
+
 #toc .subjects:hover, #toc .foundIn:hover {
     box-shadow: 0px 0px 5px #666
 }
@@ -2313,7 +2317,7 @@ ul.none {
 }
 
 iframe {
-    background-image: url("images/ajax-loader.gif");   
+    background-image: url("images/ajax-loader.gif");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     width:99%;
