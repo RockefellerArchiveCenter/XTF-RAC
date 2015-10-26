@@ -74,10 +74,10 @@
                      <xsl:apply-templates select="mods:titleInfo[not(@type='uniform' and @type='alternative')]"/>
                   </p>
                </xsl:if>
-               <xsl:if test="mods:name[mods:role/mods:roleTerm != 'Publisher']">
+               <xsl:if test="mods:name[mods:role/mods:roleTerm != 'pub']">
                   <h4>Author/Creator</h4>
                   <p>
-                     <xsl:apply-templates select="mods:name[mods:role/mods:roleTerm != 'Publisher']"/>
+                     <xsl:apply-templates select="mods:name[mods:role/mods:roleTerm != 'pub']"/>
                   </p>
                </xsl:if>
                <xsl:if test="mods:titleInfo[@type='uniform' or @type='alternative']">
@@ -260,14 +260,14 @@
          <br/>
    </xsl:template>
    
-   <xsl:template match="mods:name[mods:role/mods:roleTerm != 'Publisher']">
+   <xsl:template match="mods:name[mods:role/mods:roleTerm != 'pub']">
       <xsl:for-each select="mods:namePart[not(@type='date')]">
          <xsl:apply-templates select="."/><xsl:if test="position()!=last()"> &#160;</xsl:if>
          </xsl:for-each>
       <xsl:if test="mods:namePart[@type='date']">, <xsl:apply-templates select="mods:namePart[@type='date']"/></xsl:if>
       <xsl:if test="mods:role">
          <xsl:choose>
-            <xsl:when test="mods:role/mods:roleTerm = 'Author (aut)'"/>
+            <xsl:when test="mods:role/mods:roleTerm = 'aut'"/>
             <xsl:otherwise>
                (<xsl:value-of select="substring-before(mods:role/mods:roleTerm,' (')"/>)
             </xsl:otherwise>

@@ -131,7 +131,7 @@
       </xsl:copy>
    </xsl:template>
    
-   <xsl:template match="name[role/roleTerm[starts-with(.,'Author')]] | name[role/roleTerm[starts-with(.,'Contributor')]]">
+   <xsl:template match="name[role/roleTerm[starts-with(.,'aut')]] | name[role/roleTerm[starts-with(.,'ctb')]]">
       <xsl:copy>
          <xsl:copy-of select="@*"/>
          <xsl:attribute name="xtf:sectionType" select="'creator'"/>
@@ -233,8 +233,8 @@
    <!-- creator -->
    <xsl:template name="get-mods-creator">
       <xsl:choose>
-         <xsl:when test="/mods/name[role/roleTerm[starts-with(., 'Author')]] | /mods/name[role/roleTerm[starts-with(., 'Contributor')]]">
-            <xsl:for-each select="/mods/name[role/roleTerm[starts-with(., 'Author')]] | /mods/name[role/roleTerm[starts-with(., 'Contributor')]]">
+         <xsl:when test="/mods/name[role/roleTerm[starts-with(., 'aut')]] | /mods/name[role/roleTerm[starts-with(., 'ctb')]]">
+            <xsl:for-each select="/mods/name[role/roleTerm[starts-with(., 'aut')]] | /mods/name[role/roleTerm[starts-with(., 'ctb')]]">
                <creator xtf:meta="true">
                   <xsl:for-each select="namePart">
                      <xsl:value-of select="normalize-space(.)"/><xsl:if test="position() != last()">&#160;</xsl:if>
