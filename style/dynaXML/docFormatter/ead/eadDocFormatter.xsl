@@ -1309,7 +1309,7 @@
          <xsl:value-of select="count(/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:parent)"/>
       </xsl:variable>
       <div>
-      <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:parent[position()&gt;1]">
+      <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:parent[position()=2]">
          <div class="parent row" style="padding-left:{(position())}em">
             <xsl:variable name="seriesLink">
                <xsl:value-of select="concat($xtfURL, $dynaxmlPath, '?docId=', $docId, ';chunk.id=', ../*:seriesID, ';doc.view=contents')"/>
