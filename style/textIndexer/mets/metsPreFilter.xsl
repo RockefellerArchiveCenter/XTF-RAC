@@ -141,12 +141,14 @@
       <xsl:choose>
          <xsl:when test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatName !=''">
             <format xtf:meta="true">
-               <xsl:value-of select="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatName"/>
-               <xsl:if test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatVersion !=''">
-                  <xsl:text> (version </xsl:text>
-                  <xsl:value-of select="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatVersion"/>
-                  <xsl:text>)</xsl:text>
-               </xsl:if>
+               <xsl:choose>
+                  <xsl:when test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatVersion !=''">
+                     <xsl:value-of select="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatVersion"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:format/*:formatDesignation/*:formatName"/>
+                  </xsl:otherwise>
+               </xsl:choose>
             </format>
          </xsl:when>
          <xsl:otherwise>
@@ -162,10 +164,13 @@
                      <xsl:text>Word</xsl:text>
                   </xsl:when>
                   <xsl:when test="$extension='docx'">
-                     <xsl:text>Word (2007-2013)</xsl:text>
+                     <xsl:text>Word 2007-2013</xsl:text>
                   </xsl:when>
                   <xsl:when test="$extension='html'">
                     <xsl:text>HTML</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="$extension='htm'">
+                     <xsl:text>HTML</xsl:text>
                   </xsl:when>
                   <xsl:when test="$extension='iso'">
                     <xsl:text>Disk image</xsl:text>
