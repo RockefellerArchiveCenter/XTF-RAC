@@ -600,9 +600,6 @@
       <xsl:variable name="link">
          <xsl:value-of select="concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)"/>
       </xsl:variable>
-      <xsl:variable name="downloadLink">
-         <xsl:value-of select="concat('http://storage.rockarch.org/', xtf:meta/*:identifier, '-', xtf:meta/*:filename)"/>
-      </xsl:variable>
       <div class="row">
          <a href="{$link}">
             <div class="filename">
