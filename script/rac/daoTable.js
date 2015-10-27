@@ -24,7 +24,7 @@ $(document).ready(function () {
             var resourceId = collectionId.substring(0, collectionId.indexOf('.xml'));
             var filename = $(parents).attr('data-filename');
             var identifier = $(parents).attr('data-identifier');
-            var search = '/xtf/view?docId=ead/' + resourceId + '/' + collectionId + ';chunk.id=aspace_' + componentId + ';doc.view=parents;filename=' + filename + ';identifier=' + identifier;
+            var search = '/xtf/view?docId=ead/' + resourceId + '/' + collectionId + ';chunk.id=' + componentId + ';doc.view=parents;filename=' + filename + ';identifier=' + identifier;
             $.ajax(search).success(function (data) {
                 // If results were retrieved, display them
                 $(parents).replaceWith(data);
