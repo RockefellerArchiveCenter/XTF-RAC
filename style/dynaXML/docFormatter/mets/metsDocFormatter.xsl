@@ -628,6 +628,7 @@
    <!-- ====================================================================== -->
 
    <xsl:template name="daoView">
+      <xsl:if test="xtf:meta/*:viewable='true'">
       <xsl:variable name="srcUrl">
          <xsl:choose>
             <xsl:when test="ends-with(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf')">
@@ -639,6 +640,7 @@
          </xsl:choose>
       </xsl:variable>
       <iframe frameborder="0" marginwidth="0" marginheight="0" src="{$srcUrl}"/>
+      </xsl:if>
    </xsl:template>
 
    <xsl:template name="copyLink">
