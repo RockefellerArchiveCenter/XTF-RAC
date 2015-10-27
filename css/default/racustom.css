@@ -2176,8 +2176,11 @@ ul.none {
 }
 
 .daoTable div {
-    height: 2em;
     float:left;
+}
+
+.daoTable > div {
+    min-height:2em;
 }
 
 .daoTable .filename {
@@ -2225,6 +2228,7 @@ ul.none {
 .daoTable > .head {
     background: #333;
     width: 100%;
+    padding-top:.25em;
 }
 
 .daoTable > .head > div {
