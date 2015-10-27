@@ -1821,6 +1821,7 @@
                   </div>
                </xsl:if>
                <div class="thumbnail">
+                  <xsl:if test="did/dao | dao">
                   <xsl:variable name="daoImg">
                      <xsl:choose>
                         <xsl:when test="count(xtf:meta/*:daoLink) &gt; 1">
@@ -1836,6 +1837,7 @@
                      </xsl:choose>
                   </xsl:variable>
                   <img src="{$daoImg}" alt="Digital object thumbnail" width="90%"/>
+                  </xsl:if>
                </div>
                <xsl:apply-templates select="did" mode="dsc"/>
                <span class="moreInfo">
@@ -1881,7 +1883,9 @@
                      </xsl:call-template>
                   </xsl:if>
                </span>
-               <xsl:call-template name="daoTable"/>
+               <xsl:if test="did/dao | dao">
+                  <xsl:call-template name="daoTable"/>
+               </xsl:if>
             </xsl:when>
          </xsl:choose>
       </xsl:for-each>
