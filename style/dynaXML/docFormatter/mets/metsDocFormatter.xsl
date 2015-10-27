@@ -387,12 +387,14 @@
                      <xsl:attribute name="class">view</xsl:attribute>
                   </xsl:if>
                </img>
-               <xsl:if test="xtf:meta/*:viewable='true'">
+               <xsl:if test="xtf:meta/*:viewable='true' or xtf:meta/*:rights='allow'">
                  <div class="thumbnailButtons">
                     <xsl:if test="xtf:meta/*:rights='allow'">
                         <a href="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}" download="true" class="btn btn-default download"><img src="/xtf/icons/default/download.svg"/> Download</a>
                     </xsl:if>
-                    <a href="#" class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</a>
+                    <xsl:if test="xtf:meta/*:viewable='true'">
+                        <a href="#" class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</a>
+                    </xsl:if>
                  </div>
                </xsl:if>
             </div>
