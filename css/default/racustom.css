@@ -2289,7 +2289,7 @@ ul.none {
     width: 48%;
 }
 
-.digital-thumbnail img {
+.digital-thumbnail img.view {
     cursor: pointer
 }
 
