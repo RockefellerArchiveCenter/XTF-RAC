@@ -9,8 +9,15 @@ $(document).ready(function () {
         var restricted = $(this).attr('data-restricted')
         var search = '/xtf/view?docId=mets/' + identifier + '/' + identifier + '.xml;smode=daoTable;restricted='+restricted;
         $.ajax(search).success(function (data) {
-            // If results were retrieved, display them
-            a.replaceWith(data);
+            parsedData = $.parseHTML(data);
+            // If there is no filename, remove this row
+            if($(parsedData).find(".filename").length == 0){
+                a.remove();
+            }
+            // Otherwise, display results
+            else {
+                a.replaceWith(data);
+            }
         }).fail(function () {
             // If no results were retrieved, change text
             a.replaceWith('<span>Failed!</span>');
