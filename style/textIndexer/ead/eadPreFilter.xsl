@@ -921,6 +921,30 @@
             </userestrict>
          </xsl:otherwise>
       </xsl:choose>
+      
+      <!-- hacky hack to see if there are other components in the same box that have restrictions -->
+      <xsl:if test="did/container[@type='box']">
+         <xsl:variable name="boxnumber">
+            <xsl:value-of select="did/container[@type='box']"/>
+         </xsl:variable>
+         <containerId xtf:meta="true">
+            <xsl:value-of select="$boxnumber"/>
+         </containerId>
+         <xsl:for-each select="preceding-sibling::*[did/container[@type='box']]">
+            <xsl:if test="($boxnumber = did/container[@type='box']) and accessrestrict">
+               <boxaccessrestrict xtf:meta="true">
+                  <xsl:text>Restricted material in this box</xsl:text>
+               </boxaccessrestrict>
+            </xsl:if>
+         </xsl:for-each>
+         <xsl:for-each select="following-sibling::*[did/container[@type='box']]">
+            <xsl:if test="($boxnumber = did/container[@type='box']) and accessrestrict">
+               <boxaccessrestrict xtf:meta="true">
+                  <xsl:text>Restricted material in this box</xsl:text>
+               </boxaccessrestrict>
+            </xsl:if>
+         </xsl:for-each>
+      </xsl:if>
 
    </xsl:template>
 

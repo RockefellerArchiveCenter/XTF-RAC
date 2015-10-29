@@ -71,6 +71,9 @@
                     <xsl:when test="meta/filelevelaccessrestrict">
                         <xsl:value-of select="meta/filelevelaccessrestrict"/>
                     </xsl:when>
+                    <xsl:when test="meta/boxaccessrestrict">
+                        <xsl:value-of select="meta/boxaccessrestrict"/>
+                    </xsl:when>
                     <xsl:otherwise>
                         <xsl:if test="not(contains(meta/accessrestrict,'open for research') or contains(meta/accessrestrict,'Open for research') or contains(meta/accessrestrict,'open for scholarly') or contains(meta/accessrestrict,'Open for scholarly'))">
                            <xsl:value-of select="meta/accessrestrict"/>
@@ -153,6 +156,9 @@
             <xsl:choose>
                 <xsl:when test="xtf:meta/filelevelaccessrestrict">
                     <xsl:value-of select="xtf:meta/filelevelaccessrestrict"/>
+                </xsl:when>
+                <xsl:when test="xtf:meta/boxaccessrestrict">
+                    <xsl:value-of select="xtf:meta/boxaccessrestrict"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:if test="not(contains(xtf:meta/accessrestrict,'open for research') or contains(xtf:meta/accessrestrict,'Open for research') or contains(xtf:meta/accessrestrict,'open for scholarly') or contains(xtf:meta/accessrestrict,'Open for scholarly'))">
