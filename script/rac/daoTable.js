@@ -6,12 +6,12 @@ $(document).ready(function () {
     $(daoTable).each(function () {
         var a = $(this);
         var identifier = $(this).attr('data-identifier');
-        var restricted = $(this).attr('data-restricted')
-        var search = '/xtf/view?docId=mets/' + identifier + '/' + identifier + '.xml;smode=daoTable;restricted='+restricted;
+        var search = '/xtf/view?docId=mets/' + identifier + '/' + identifier + '.xml;smode=daoTable';
         $.ajax(search).success(function (data) {
             parsedData = $.parseHTML(data);
             // If there is no filename, remove this row
             if($(parsedData).find(".filename").length == 0){
+                console.log(parsedData);    
                 a.remove();
             }
             // Otherwise, display results
@@ -36,7 +36,6 @@ $(document).ready(function () {
             var filename = $(parents).attr('data-filename');
             var identifier = $(parents).attr('data-identifier');
             var search = '/xtf/view?docId=ead/' + resourceId + '/' + collectionId + ';chunk.id=' + componentId + ';doc.view=parents;filename=' + filename + ';identifier=' + identifier;
-            console.log(search);
             $.ajax(search).success(function (data) {
                 // If results were retrieved, display them
                 $(parents).replaceWith(data);

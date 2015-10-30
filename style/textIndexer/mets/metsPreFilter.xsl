@@ -200,7 +200,7 @@
       <size xtf:meta="true" xtf:tokenize="no">
          <xsl:choose>
             <xsl:when test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size !=''">
-                <xsl:value-of select="number(/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size)"/>
+                <xsl:value-of select="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size"/>
             </xsl:when>
             <xsl:when test="FileUtils:exists(concat('/mnt/images/', substring-after($uri, 'http://storage.rockarch.org')))">
                <xsl:value-of select="FileUtils:length(concat('/mnt/images/', substring-after($uri, 'http://storage.rockarch.org')))"/>

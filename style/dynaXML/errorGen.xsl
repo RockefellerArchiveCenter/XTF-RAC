@@ -143,7 +143,17 @@
 <xsl:template match="/">
    <xsl:choose>
       <xsl:when test="$smode = 'daoTable'">
-         <p>missing <xsl:value-of select="$docId"/></p>
+        <xsl:choose>
+          <xsl:when test="InvalidDocument
+            or NoPermission">
+            <xsl:apply-templates/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:for-each select="*">
+              <xsl:call-template name="GeneralError"/>
+            </xsl:for-each>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:when>
       <xsl:otherwise>
 

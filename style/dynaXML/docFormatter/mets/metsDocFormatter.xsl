@@ -611,7 +611,7 @@
             <div class="size">
                <xsl:choose>
                   <xsl:when test="string(number(xtf:meta/*:size)) != 'NaN'">
-                     <xsl:value-of select="FileUtils:humanFileSize(xtf:meta/*:size)"/>
+                     <xsl:value-of select="FileUtils :humanFileSize(xtf:meta/*:size)"/>
                   </xsl:when>
                   <xsl:otherwise>
                      <xsl:value-of select="xtf:meta/*:size"></xsl:value-of>
