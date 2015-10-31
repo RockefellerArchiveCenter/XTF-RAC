@@ -209,7 +209,7 @@
                            <indexFile fileName="{$fileName}" 
                               type="XML"
                               preFilter="style/textIndexer/default/defaultPreFilter.xsl"/>
-                           <xsl:message select="'Unrecognized XML structure. Indexing using the default preFilter.'"/>
+                           <xsl:message select="concat('Unrecognized XML structure. Indexing using the default preFilter. ', $file)"/>
                         </xsl:otherwise>
                      </xsl:choose>
                   </xsl:for-each>
