@@ -95,9 +95,9 @@
          <xsl:when test="$hit.num != '0'">
             <xsl:value-of select="key('hit-num-dynamic', string($hit.num))/@rank"/>
          </xsl:when>
-         <xsl:when test="$query and not($query = '0')">
+         <!--<xsl:when test="$query and not($query = '0')">
             <xsl:value-of select="key('hit-num-dynamic', '1')/@rank"/>
-         </xsl:when>
+         </xsl:when>-->
          <xsl:otherwise>
             <xsl:value-of select="'0'"/>
          </xsl:otherwise>
