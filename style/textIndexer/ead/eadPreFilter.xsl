@@ -927,9 +927,6 @@
          <xsl:variable name="boxnumber">
             <xsl:value-of select="did/container[@type='box']"/>
          </xsl:variable>
-         <containerId xtf:meta="true">
-            <xsl:value-of select="$boxnumber"/>
-         </containerId>
          <xsl:for-each select="preceding-sibling::*[did/container[@type='box']]">
             <xsl:if test="($boxnumber = did/container[@type='box']) and accessrestrict">
                <boxaccessrestrict xtf:meta="true">
@@ -1198,14 +1195,7 @@
 
    <!-- rights -->
    <xsl:template name="get-ead-rights">
-     <xsl:choose>
-        <xsl:when test="FileUtils:exists(concat('/mnt/images/', substring-after(., 'http://storage.rockarch.org')))">
-           <rights xtf:meta="true" xtf:tokenize="no">allow</rights>
-        </xsl:when>
-        <xsl:otherwise>
-           <rights xtf:meta="true" xtf:tokenize="no">disallow</rights>
-        </xsl:otherwise>
-     </xsl:choose>
+      <rights xtf:meta="true">public</rights>
    </xsl:template>
 
    <xsl:template name="get-ead-url">
