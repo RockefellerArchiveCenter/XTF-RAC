@@ -1012,7 +1012,7 @@ div.facetShow p {
 
 /* ===[ Hits ]=== */
 
-.hit, .subhit, a.hit, hit-count {
+.hit, .subhit, a.hit, .hit-count {
     color: #c45414 !important;
     font-weight: bold;
 }
