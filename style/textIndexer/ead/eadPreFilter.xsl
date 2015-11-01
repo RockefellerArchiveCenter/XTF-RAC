@@ -927,20 +927,16 @@
          <xsl:variable name="boxnumber">
             <xsl:value-of select="did/container[@type='box']"/>
          </xsl:variable>
-         <xsl:for-each select="preceding-sibling::*[did/container[@type='box']]">
-            <xsl:if test="($boxnumber = did/container[@type='box']) and accessrestrict">
-               <boxaccessrestrict xtf:meta="true">
-                  <xsl:text>Restricted material in this box</xsl:text>
-               </boxaccessrestrict>
-            </xsl:if>
-         </xsl:for-each>
-         <xsl:for-each select="following-sibling::*[did/container[@type='box']]">
-            <xsl:if test="($boxnumber = did/container[@type='box']) and accessrestrict">
-               <boxaccessrestrict xtf:meta="true">
-                  <xsl:text>Restricted material in this box</xsl:text>
-               </boxaccessrestrict>
-            </xsl:if>
-         </xsl:for-each>
+         <xsl:if test="($boxnumber = preceding-sibling::*[did/container[@type='box']]) and accessrestrict">
+            <boxaccessrestrict xtf:meta="true">
+               <xsl:text>Restricted material in this box</xsl:text>
+            </boxaccessrestrict>
+         </xsl:if>
+         <xsl:if test="($boxnumber = following-sibling::*[did/container[@type='box']]) and accessrestrict">
+            <boxaccessrestrict xtf:meta="true">
+               <xsl:text>Restricted material in this box</xsl:text>
+            </boxaccessrestrict>
+         </xsl:if>
       </xsl:if>
 
    </xsl:template>
@@ -1055,7 +1051,7 @@
    <!-- type -->
    <xsl:template name="get-ead-type">
       <type xtf:meta="true">ead</type>
-      <xsl:if test="descendant-or-self::dao">
+      <xsl:if test="descendant-or-self::dao|descendant-or-self::*/dao">
          <type xtf:meta="true">dao</type>
       </xsl:if>
    </xsl:template>
@@ -1063,7 +1059,7 @@
    <!-- format -->
    <xsl:template name="get-ead-format">
       <format xtf:meta="true">Collection</format>
-      <xsl:if test="descendant-or-self::dao">
+      <xsl:if test="descendant-or-self::dao|descendant-or-self::did/dao">
          <format xtf:meta="true">Digital Material</format>
       </xsl:if>
    </xsl:template>
@@ -1199,7 +1195,7 @@
    </xsl:template>
 
    <xsl:template name="get-ead-url">
-      <xsl:if test="descendant-or-self::dao">
+      <xsl:if test="descendant-or-self::dao|descendant-or-self::*/dao">
          <xsl:for-each select="dao/ns2:href|did/dao/@xlink:href">
             <xsl:choose>
                <xsl:when test="../@xlink:show='none' or ../@ns2:show='none'">
@@ -1213,14 +1209,14 @@
                   </daoLink>
                </xsl:otherwise>
             </xsl:choose>
-            <xsl:choose>
+<!--            <xsl:choose>
                <xsl:when test="FileUtils:exists(concat('/mnt/images/', substring-after(., 'http://storage.rockarch.org')))">
                   <viewable xtf:meta="true" xtf:tokenize="no">true</viewable>
                </xsl:when>
                <xsl:otherwise>
                   <viewable xtf:meta="true" xtf:tokenize="no">false</viewable>
                </xsl:otherwise>
-            </xsl:choose>
+            </xsl:choose>-->
          </xsl:for-each>
       </xsl:if>
    </xsl:template>
