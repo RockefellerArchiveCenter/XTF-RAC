@@ -1728,10 +1728,10 @@
                                 child::otherfindaid |  child::phystech |  child::processinfo | child::relatedmaterial | child::separatedmaterial |  child::controlaccess">
                      <div class="dialog_dsc">
                         <a href="#" onClick="ga('send', 'event', 'finding aid', 'view', 'Additional Description');">Additional description</a>
+                        <xsl:if test="$didHitCount &gt; 0">
+                           <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                        </xsl:if>
                      </div>
-                     <xsl:if test="$didHitCount &gt; 0">
-                        <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
-                     </xsl:if>
                      <div id="{@id}_details" class="overlay" rel="{child::did/unittitle}">
                         <div class="details">
                            <xsl:apply-templates select="." mode="moreInfo"/>
@@ -1741,10 +1741,10 @@
                   <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
                      <div class="restrict_dsc">
                         <a href="#" onClick="ga('send', 'event', 'finding aid', 'view', 'Restrictions');">Restrictions</a>
+                        <xsl:if test="$didHitCount &gt; 0">
+                           <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                        </xsl:if>
                      </div>
-                     <xsl:if test="$didHitCount &gt; 0">
-                        <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
-                     </xsl:if>
                      <div id="{@id}_restrictions" class="overlay" rel="{child::did/unittitle}">
                         <div class="restrictions">
                            <xsl:apply-templates select="." mode="restrictions"/>
