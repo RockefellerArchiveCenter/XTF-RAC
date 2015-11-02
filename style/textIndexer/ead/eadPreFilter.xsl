@@ -927,12 +927,12 @@
          <xsl:variable name="boxnumber">
             <xsl:value-of select="did/container[@type='box']"/>
          </xsl:variable>
-         <xsl:if test="($boxnumber = preceding-sibling::*[did/container[@type='box']]) and accessrestrict">
+         <xsl:if test="preceding-sibling::*[(did/container[@type='box'] = $boxnumber) and accessrestrict]">
             <boxaccessrestrict xtf:meta="true">
                <xsl:text>Restricted material in this box</xsl:text>
             </boxaccessrestrict>
          </xsl:if>
-         <xsl:if test="($boxnumber = following-sibling::*[did/container[@type='box']]) and accessrestrict">
+         <xsl:if test="following-sibling::*[(did/container[@type='box'] = $boxnumber) and accessrestrict]">
             <boxaccessrestrict xtf:meta="true">
                <xsl:text>Restricted material in this box</xsl:text>
             </boxaccessrestrict>
