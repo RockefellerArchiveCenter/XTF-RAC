@@ -2184,13 +2184,13 @@ ul.none {
 }
 
 .daoTable .filename {
-    width:75%;
+    width:60%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .daoTable .format {
-    width:10%
+    width:25%
 }
 
 .daoTable .size {
