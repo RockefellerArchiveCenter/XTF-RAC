@@ -2184,7 +2184,9 @@ ul.none {
 }
 
 .daoTable .filename {
-    width:75%
+    width:75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .daoTable .format {
