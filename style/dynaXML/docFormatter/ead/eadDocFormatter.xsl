@@ -1314,8 +1314,18 @@
             <xsl:variable name="seriesLink">
                <xsl:value-of select="concat($xtfURL, $dynaxmlPath, '?docId=', $docId, ';chunk.id=', ../*:seriesID, ';doc.view=contents')"/>
             </xsl:variable>
+            <xsl:variable name="seriesTitle">
+               <xsl:choose>
+                  <xsl:when test="starts-with(., 'unspecified: ')">
+                     <xsl:value-of select="substring-after(., 'unspecified: ')"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="."/>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </xsl:variable>
             <a href="{$seriesLink}">
-               <xsl:value-of select="."/>
+               <xsl:value-of select="$seriesTitle"/>
             </a>
          </div>
          <div class="component row" style="padding-left:{($indent)}em">

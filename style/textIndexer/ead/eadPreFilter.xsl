@@ -402,12 +402,12 @@
                <xsl:when test="@level = 'fonds'">Fonds</xsl:when>
                <xsl:when test="@level = 'subfonds'">Subfonds</xsl:when>
                <xsl:when test="@level = 'class'">Class</xsl:when>
-               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &gt; 1)">
+               <xsl:when test="(@level='otherlevel') and (@otherlevel != 'unspecified')">
                   <xsl:value-of select="@otherlevel"/>
                </xsl:when>
-               <xsl:when test="(@level='otherlevel') and (string-length(@otherlevel) &lt; 1)">Other Level</xsl:when>
                <xsl:when test="@level = 'file'">File</xsl:when>
                <xsl:when test="@level = 'item'">Item</xsl:when>
+               <xsl:otherwise/>
             </xsl:choose>
          </xsl:variable>
          <xsl:variable name="id">
@@ -426,15 +426,33 @@
            </xsl:choose>
          </xsl:variable>
          <xsl:choose>
-            <xsl:when test="self::archdesc">
-               <parent xtf:meta="true" xtf:tokenize="no">
-                  <xsl:value-of select="concat($level,': ',$title)"/>
-               </parent>
+            <xsl:when test="$level != ''">
+               <xsl:choose>
+                  <xsl:when test="self::archdesc">
+                    <parent xtf:meta="true" xtf:tokenize="no">
+                       <xsl:value-of select="concat($level,': ',$title)"/>
+                    </parent>
+                 </xsl:when>
+                 <xsl:otherwise>
+                    <parent xtf:meta="true" xtf:tokenize="no">
+                       <xsl:value-of select="concat($level,$id,': ',$title)"/>
+                    </parent>
+                 </xsl:otherwise>
+               </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
-               <parent xtf:meta="true" xtf:tokenize="no">
-                  <xsl:value-of select="concat($level,$id,': ',$title)"/>
-               </parent>
+               <xsl:choose>
+                  <xsl:when test="self::archdesc">
+                     <parent xtf:meta="true" xtf:tokenize="no">
+                        <xsl:value-of select="$title"/>
+                     </parent>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <parent xtf:meta="true" xtf:tokenize="no">
+                        <xsl:value-of select="$title "/>
+                     </parent>
+                  </xsl:otherwise>
+               </xsl:choose>
             </xsl:otherwise>
          </xsl:choose>
       </xsl:for-each>
