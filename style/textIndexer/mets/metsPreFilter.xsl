@@ -158,7 +158,7 @@
             <format xtf:meta="true">
                <xsl:choose>
                   <xsl:when test="$extension='pdf'">
-                     <xsl:text>PDF</xsl:text>
+                     <xsl:text>Acrobat PDF</xsl:text>
                   </xsl:when>
                   <xsl:when test="$extension='doc'">
                      <xsl:text>Word</xsl:text>
@@ -179,13 +179,13 @@
                     <xsl:text>PowerPoint</xsl:text>
                   </xsl:when>
                   <xsl:when test="$extension='pptx'">
-                    <xsl:text>PowerPoint (2007-2013)</xsl:text>
+                    <xsl:text>PowerPoint 2007-2013</xsl:text>
                   </xsl:when>
                   <xsl:when test="$extension='xls'">
                     <xsl:text>Excel</xsl:text>
                   </xsl:when>
                   <xsl:when test="$extension='xlsx'">
-                    <xsl:text>Excel (2007-2013)</xsl:text>
+                    <xsl:text>Excel 2007-2013</xsl:text>
                   </xsl:when>
                </xsl:choose>
             </format>
