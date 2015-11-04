@@ -1943,10 +1943,6 @@ ul.none {
     text-decoration: none;
 }
 
-#content-wrapper h2 {
-    margin-top: 0
-}
-
 #content-wrapper .thumbnail {
     width: 10%;
     float: left;
@@ -2743,7 +2739,7 @@ div.dscDescription {
     #tocWrapper, #content-wrapper {
         top: 273px
     }
-    
+
     .description {
     width: 49%;
     float: left;
