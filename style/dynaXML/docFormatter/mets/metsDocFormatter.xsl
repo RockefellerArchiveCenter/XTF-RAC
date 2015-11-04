@@ -97,6 +97,7 @@
                   <xsl:value-of select="xtf:meta/*:filename"/>
                   <xsl:text> - </xsl:text>
                   <xsl:value-of select="xtf:meta/*:collectionTitle"/>
+                  <xsl:text> </xsl:text>
                   <xsl:value-of select="$formattedCollectionId"/>
                </title>
                <!-- Twitter Card meta tags -->
@@ -580,7 +581,7 @@
       <div class="pull-right" id="bookmarkMenu">
          <div class="button">
             <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true" data-count="none" data-via="rockarch_org"
-               data-url="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"/>
+               data-url="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-text="{xtf:meta/*:filename}"/>
          </div>
          <div class="button">
             <div class="fb-share-button" data-href="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-layout="button"/>
@@ -611,7 +612,7 @@
             <div class="size">
                <xsl:choose>
                   <xsl:when test="string(number(xtf:meta/*:size)) != 'NaN'">
-                     <xsl:value-of select="FileUtils :humanFileSize(xtf:meta/*:size)"/>
+                     <xsl:value-of select="FileUtils:humanFileSize(xtf:meta/*:size)"/>
                   </xsl:when>
                   <xsl:otherwise>
                      <xsl:value-of select="xtf:meta/*:size"></xsl:value-of>

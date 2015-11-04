@@ -1890,7 +1890,9 @@ ul.none {
 }
 
 #toc .foundIn .parent, #toc .foundIn .component, #toc .foundIn .sibling {
-    padding: .5em 1em
+    padding: .5em 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #toc .foundIn a {
@@ -1942,7 +1944,7 @@ ul.none {
 }
 
 #content-wrapper h2 {
-    padding-top: 1em
+    margin-top: 0
 }
 
 #content-wrapper .thumbnail {
@@ -1967,6 +1969,11 @@ ul.none {
 
 .overview a {
     color: #c45414 !important
+}
+
+.title h2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 #content-right table tr td {
@@ -2264,7 +2271,6 @@ ul.none {
 /* ===[ DIGITAL OBJECT DETAIL PAGES ]=== */
 
 #bookmarkMenu {
-    width: 16em;
     height: 2em;
     opacity: 0;
     margin-bottom: 1em;
@@ -2300,8 +2306,7 @@ ul.none {
 }
 
 .description {
-    width: 48%;
-    float: left;
+    width: 100%;
 }
 
 #content-wrapper .thumbnailButtons a {
@@ -2737,6 +2742,11 @@ div.dscDescription {
 
     #tocWrapper, #content-wrapper {
         top: 273px
+    }
+    
+    .description {
+    width: 49%;
+    float: left;
     }
 }
 
