@@ -178,7 +178,7 @@
                     />
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="concat($uri, ';doc.view=contents;#', @id)"/>
+                    <xsl:value-of select="concat($uri, ';doc.view=contents;chunk.id=contentsLink;#', @id)"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
