@@ -72,7 +72,7 @@
    <!-- ====================================================================== -->
    <xsl:template name="contents">
       <xsl:variable name="collectionId">
-         <xsl:value-of select="substring-before(xtf:meta/*:collectionId, '.xml')"/>
+         <xsl:value-of select="substring-before(xtf:meta/*:collectionId[1], '.xml')"/>
       </xsl:variable>
       <xsl:variable name="formattedCollectionId">
          <xsl:value-of select="concat('(',$collectionId,')')"/>
@@ -205,13 +205,13 @@
    <!-- ====================================================================== -->
    <xsl:template name="bbar_custom">
       <xsl:variable name="collectionTitle">
-         <xsl:value-of select="xtf:meta/*:collectionTitle"/>
+         <xsl:value-of select="xtf:meta/*:collectionTitle[1]"/>
       </xsl:variable>
       <xsl:if test="string-length($collectionTitle) &gt; 175">
          <xsl:attribute name="style"> font-size:1.15em; </xsl:attribute>
       </xsl:if>
       <xsl:variable name="eadId">
-         <xsl:value-of select="xtf:meta/*:collectionId"/>
+         <xsl:value-of select="'xtf:meta/*:collectionId[1]'"/>
       </xsl:variable>
       <xsl:variable name="collectionId">
          <xsl:value-of select="substring-before($eadId, '.xml')"/>
@@ -296,7 +296,7 @@
       <xsl:param name="doc.view"/>
       <xsl:param name="indent" select="1"/>
       <xsl:variable name="collectionId">
-         <xsl:value-of select="substring-before(xtf:meta/*:collectionId, '.xml')"/>
+         <xsl:value-of select="substring-before(xtf:meta/*:collectionId[1], '.xml')"/>
       </xsl:variable>
       <!-- HA todo: add support for queries -->
       <!--<xsl:variable name="hit.count">
@@ -561,10 +561,10 @@
 
    <xsl:template name="foundIn">
       <xsl:variable name="collectionId">
-         <xsl:value-of select="xtf:meta/*:collectionId"/>
+         <xsl:value-of select="xtf:meta/*:collectionId[1]"/>
       </xsl:variable>
       <xsl:variable name="componentId">
-         <xsl:value-of select="xtf:meta/*:componentId"/>
+         <xsl:value-of select="xtf:meta/*:componentId[1]"/>
       </xsl:variable>
       <div class="foundIn">
          <h4>Found In</h4>
