@@ -1348,13 +1348,16 @@
                <xsl:variable name="daoFilename">
                   <xsl:value-of select="substring-after($daoLink, concat($daoIdentifier, '-'))"/>
                </xsl:variable>
+               <xsl:variable name="daoTitle">
+                  <xsl:value-of select="@xlink:title"/>
+               </xsl:variable>
                <xsl:choose>
                   <xsl:when test="matches($daoFilename, $filename)">
-                     <xsl:value-of select="$daoFilename"/>
+                     <xsl:value-of select="$daoTitle"/>
                   </xsl:when>
                   <xsl:otherwise>
                      <a href="/{$daoIdentifier}">
-                        <xsl:value-of select="$daoFilename"/>
+                        <xsl:value-of select="$daoTitle"/>
                      </a>
                   </xsl:otherwise>
                </xsl:choose>

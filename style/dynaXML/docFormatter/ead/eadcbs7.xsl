@@ -1597,48 +1597,53 @@
                   <xsl:if test="controlaccess">
                      <xsl:if test="controlaccess/subject">
                         <h4>Subjects</h4>
-                        <xsl:for-each select="controlaccess/subject">
-                           <span>
-                              <xsl:value-of select="."/>
-                           </span>
-                           <br/>
-                        </xsl:for-each>
+                        <ul class="tags">
+                           <xsl:for-each select="controlaccess/subject">
+                              <li>
+                                 <xsl:value-of select="."/>
+                              </li>
+                           </xsl:for-each>
+                        </ul>
                      </xsl:if>
                      <xsl:if test="controlaccess/persname|controlaccess/famname">
                         <h4>People</h4>
-                        <xsl:for-each select="controlaccess/persname|controlaccess/famname">
-                           <span>
-                              <xsl:value-of select="."/>
-                           </span>
-                           <br/>
-                        </xsl:for-each>
+                        <ul class="tags">
+                           <xsl:for-each select="controlaccess/persname|controlaccess/famname">
+                              <li>
+                                 <xsl:value-of select="."/>
+                              </li>
+                           </xsl:for-each>
+                        </ul>
                      </xsl:if>
                      <xsl:if test="controlaccess/corpname">
                         <h4>Organizations</h4>
-                        <xsl:for-each select="controlaccess/corpname">
-                           <span>
-                              <xsl:value-of select="."/>
-                           </span>
-                           <br/>
-                        </xsl:for-each>
+                        <ul class="tags">
+                         <xsl:for-each select="controlaccess/corpname">
+                            <li>
+                               <xsl:value-of select="."/>
+                            </li>
+                         </xsl:for-each>
+                        </ul>
                      </xsl:if>
                      <xsl:if test="controlaccess/geogname">
                         <h4>Places</h4>
+                        <ul class="tags">
                         <xsl:for-each select="controlaccess/geogname">
-                           <span>
+                           <li>
                               <xsl:value-of select="."/>
-                           </span>
-                           <br/>
+                           </li>
                         </xsl:for-each>
+                        </ul>
                      </xsl:if>
                      <xsl:if test="controlaccess/genreform">
                         <h4>Formats</h4>
-                        <xsl:for-each select="controlaccess/genreform">
-                           <span>
-                              <xsl:value-of select="."/>
-                           </span>
-                           <br/>
-                        </xsl:for-each>
+                        <ul class="tags">
+                           <xsl:for-each select="controlaccess/genreform">
+                              <li>
+                                 <xsl:value-of select="."/>
+                              </li>
+                           </xsl:for-each>
+                        </ul>
                      </xsl:if>
                   </xsl:if>
                </div>

@@ -94,7 +94,7 @@
                   window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
                </script>
                <title>
-                  <xsl:value-of select="xtf:meta/*:filename"/>
+                  <xsl:value-of select="xtf:meta/*:title"/>
                   <xsl:text> - </xsl:text>
                   <xsl:value-of select="xtf:meta/*:collectionTitle"/>
                   <xsl:text> </xsl:text>
@@ -103,12 +103,12 @@
                <!-- Twitter Card meta tags -->
                <meta name="twitter:card" content="summary_large_image"/>
                <meta name="twitter:site" content="@rockarch_org"/>
-               <meta name="twitter:title" content="{xtf:meta/*:filename}"/>
+               <meta name="twitter:title" content="{xtf:meta/*:title}"/>
                <meta name="twitter:description" content="From {xtf:meta/*:collectionTitle} {$formattedCollectionId}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
                <meta name="twitter:image" content="{concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf'), '_thumb300.jpg')}"/>
                <!-- Open Graph meta tags -->
                <meta property="og:url" content="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}"/>
-               <meta property="og:title" content="{xtf:meta/*:filename}"/>
+               <meta property="og:title" content="{xtf:meta/*:title}"/>
                <meta property="og:description" content="From {xtf:meta/*:collectionTitle} {$formattedCollectionId}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
                <meta property="og:image" content="{concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf'), '_thumbfb.jpg')}"/>
                <meta property="og:image:width" content="600"/>
@@ -127,7 +127,7 @@
                   </xsl:if>
                   <meta itemprop="http://schema.org/name">
                      <xsl:attribute name="content">
-                        <xsl:value-of select="xtf:meta/*:filename"/>
+                        <xsl:value-of select="xtf:meta/*:title"/>
                      </xsl:attribute>
                   </meta>
                   <div itemprop="http://schema.org/contentLocation" itemtype="http://schema.org/Place" itemscope="">
@@ -402,7 +402,7 @@
             <div class="description">
                <div class="title">
                   <h2>
-                     <xsl:value-of select="xtf:meta/*:filename"/>
+                     <xsl:value-of select="xtf:meta/*:title"/>
                   </h2>
                </div>
                <div class="creator">
@@ -581,7 +581,7 @@
       <div class="pull-right" id="bookmarkMenu">
          <div class="button">
             <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true" data-count="none" data-via="rockarch_org"
-               data-url="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-text="{xtf:meta/*:filename}"/>
+               data-url="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-text="{xtf:meta/*:title}"/>
          </div>
          <div class="button">
             <div class="fb-share-button" data-href="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-layout="button"/>
@@ -604,7 +604,7 @@
       <div class="row">
          <a href="{$link}">
             <div class="filename">
-               <xsl:value-of select="xtf:meta/*:filename"/>
+               <xsl:value-of select="xtf:meta/*:title"/>
             </div>
             <div class="format">
                <xsl:value-of select="xtf:meta/*:format"/>
