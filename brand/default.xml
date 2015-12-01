@@ -577,7 +577,7 @@
          </div>
       </div>
       <div class="footer">
-         <p>Site design copyright &#169; The Rockefeller Archive Center.  All rights reserved. <a href="http://www.rockarch.org/site.php">Site Index</a> | <a href="#license" class="license" onClick="ga('send', 'event', 'about', 'view', 'license');">Licensing for our descriptive metadata</a> | <a href="#takedown" class="takedown" onClick="ga('send', 'event', 'about', 'view', 'takedown');">Take-down policy</a> | <a href="#archivalMat" class="archivalMat" onClick="ga('send', 'event', 'about', 'view', 'archival materials');">About archival materials</a> | <a href="#dimes" class="dimes" onClick="ga('send', 'event', 'about', 'view', 'website name');">About this website's name</a></p>
+         <p><a href="#license" class="license" onClick="ga('send', 'event', 'about', 'view', 'license');">Licensing for our descriptive metadata</a> | <a href="http://github.com/RockefellerArchiveCenter/data">Bulk data download</a> | <a href="#takedown" class="takedown" onClick="ga('send', 'event', 'about', 'view', 'takedown');">Take-down policy</a> | <a href="#archivalMat" class="archivalMat" onClick="ga('send', 'event', 'about', 'view', 'archival materials');">About archival materials</a> | <a href="#dimes" class="dimes" onClick="ga('send', 'event', 'about', 'view', 'website name');">About this website's name</a></p>
       </div>
    </footer>
 
