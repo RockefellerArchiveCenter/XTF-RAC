@@ -342,20 +342,10 @@
       <div class="bbar_custom">
          <div class="documentTitle ead">
             <h1>
-               <xsl:variable name="title">
-                  <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
-               </xsl:variable>
-               <xsl:if test="string-length($title) &gt; 175">
-                  <xsl:attribute name="style"> font-size:1.15em; </xsl:attribute>
-               </xsl:if>
-               <xsl:choose>
-                  <xsl:when test="eadheader/filedesc/titlestmt/titleproper[@type='filing']">
-                     <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper[not(@type='filing')]"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
-                  </xsl:otherwise>
-               </xsl:choose>
+               <xsl:value-of select="archdesc/did/unittitle"/>
+               <xsl:text> (</xsl:text>
+               <xsl:value-of select="archdesc/did/unitid"/>
+               <xsl:text>)</xsl:text>
             </h1>
          </div>
          <div class="headerIcons">

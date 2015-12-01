@@ -273,19 +273,6 @@
       </xsl:variable>
       <div class="bbar_custom">
          <div class="documentTitle">
-            <xsl:attribute name="style">
-               <xsl:choose>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'Volume')]">background:
-                     url(/xtf/icons/default/book.gif) left no-repeat;</xsl:when>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'DVD')]">background:
-                     url(/xtf/icons/default/video.gif) left no-repeat;</xsl:when>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'Videocassette')]">background:
-                     url(/xtf/icons/default/video.gif) left no-repeat;</xsl:when>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'Reel')]">background:
-                     url(/xtf/icons/default/microfilm.gif) left no-repeat;</xsl:when>
-               </xsl:choose>
-               <xsl:text>min-height: 50px;</xsl:text>
-            </xsl:attribute>
             <h1>
                <xsl:if
                   test="string-length(/mods:mods/mods:titleInfo[not(@type)]/mods:title) &gt; 125">

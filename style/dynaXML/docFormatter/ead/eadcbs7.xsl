@@ -1595,56 +1595,43 @@
                   <xsl:apply-templates select="relatedmaterial"/>
                   <xsl:apply-templates select="separatedmaterial"/>
                   <xsl:if test="controlaccess">
+                     <ul class="tags">
                      <xsl:if test="controlaccess/subject">
-                        <h4>Subjects</h4>
-                        <ul class="tags">
-                           <xsl:for-each select="controlaccess/subject">
-                              <li>
-                                 <xsl:value-of select="."/>
-                              </li>
-                           </xsl:for-each>
-                        </ul>
-                     </xsl:if>
-                     <xsl:if test="controlaccess/persname|controlaccess/famname">
-                        <h4>People</h4>
-                        <ul class="tags">
-                           <xsl:for-each select="controlaccess/persname|controlaccess/famname">
-                              <li>
-                                 <xsl:value-of select="."/>
-                              </li>
-                           </xsl:for-each>
-                        </ul>
-                     </xsl:if>
-                     <xsl:if test="controlaccess/corpname">
-                        <h4>Organizations</h4>
-                        <ul class="tags">
-                         <xsl:for-each select="controlaccess/corpname">
-                            <li>
-                               <xsl:value-of select="."/>
-                            </li>
-                         </xsl:for-each>
-                        </ul>
-                     </xsl:if>
-                     <xsl:if test="controlaccess/geogname">
-                        <h4>Places</h4>
-                        <ul class="tags">
-                        <xsl:for-each select="controlaccess/geogname">
-                           <li>
+                        <xsl:for-each select="controlaccess/subject">
+                           <li class="subject">
                               <xsl:value-of select="."/>
                            </li>
                         </xsl:for-each>
-                        </ul>
+                     </xsl:if>
+                     <xsl:if test="controlaccess/persname|controlaccess/famname">
+                        <xsl:for-each select="controlaccess/persname|controlaccess/famname">
+                           <li class="people">
+                              <xsl:value-of select="."/>
+                           </li>
+                        </xsl:for-each>
+                     </xsl:if>
+                     <xsl:if test="controlaccess/corpname">
+                        <xsl:for-each select="controlaccess/corpname">
+                           <li class="organizations">
+                              <xsl:value-of select="."/>
+                           </li>
+                        </xsl:for-each>
+                     </xsl:if>
+                     <xsl:if test="controlaccess/geogname">
+                        <xsl:for-each select="controlaccess/geogname">
+                           <li class="places">
+                              <xsl:value-of select="."/>
+                           </li>
+                        </xsl:for-each>
                      </xsl:if>
                      <xsl:if test="controlaccess/genreform">
-                        <h4>Formats</h4>
-                        <ul class="tags">
-                           <xsl:for-each select="controlaccess/genreform">
-                              <li>
-                                 <xsl:value-of select="."/>
-                              </li>
-                           </xsl:for-each>
-                        </ul>
+                        <xsl:for-each select="controlaccess/genreform">
+                           <li class="formats">
+                              <xsl:value-of select="."/>
+                           </li>
+                        </xsl:for-each>
                      </xsl:if>
+                     </ul>
                   </xsl:if>
                </div>
                <!-- ADDED 1/4/11: Adds container headings if series/subseries is followed by a file -->
@@ -1986,14 +1973,15 @@
       <xsl:apply-templates select="did/materialspec"/>
       <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c' or name()='dao' or name()='controlaccess')]"/>
       <xsl:if test="string(controlaccess)">
-         <h4>Subjects</h4>
+         <ul class="tags">
          <xsl:for-each
             select="controlaccess/subject | controlaccess/corpname | controlaccess/famname | controlaccess/persname | controlaccess/genreform | controlaccess/title | controlaccess/geogname | controlaccess/occupation">
             <xsl:sort select="." data-type="text" order="ascending"/>
-            <div>
+            <li>
                <xsl:apply-templates/>
-            </div>
+            </li>
          </xsl:for-each>
+         </ul>
       </xsl:if>
    </xsl:template>
    <xsl:template match="*" mode="restrictions">

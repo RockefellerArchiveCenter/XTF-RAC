@@ -1565,25 +1565,17 @@ input[type="submit"].searchbox:active {
 
 .documentTitle {
     text-align: left;
-    font-size: .8em;
     margin: 0;
-    padding-left: .5em;
     float: left;
     width: 89%;
     height: 50px;
 }
 
 .documentTitle h1 {
-    color: #333;
+    color: #222;
     margin: 0;
-    margin-left: 50px;
-    padding: 0;
+    padding: .2em 0 0 0;
     font-size: 1.75em;
-}
-
-.ead {
-    background: url(/xtf/icons/default/collections.gif) left no-repeat;
-    min-height: 50px;
 }
 
 .headerSearch {
@@ -2084,6 +2076,48 @@ ul.none {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.tags li {
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
+    margin: 0 1em 1em 1em;
+    padding: 0 1em;
+    background: #174780;
+    -webkit-border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.tags li:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1em;
+    width: 0;
+    height: 0;
+    border-color: transparent #174780 transparent transparent;
+    border-style: solid;
+    border-width: 1em 1em 1em 0;
+}
+
+.tags li:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 1px;
+    float: left;
+    width: 5px;
+    height: 5px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #fff;
 }
 
 .file:nth-of-type(even), .item:nth-of-type(even) {
