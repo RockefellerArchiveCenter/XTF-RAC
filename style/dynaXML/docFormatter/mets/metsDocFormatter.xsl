@@ -219,10 +219,10 @@
       <div class="bbar_custom">
          <div class="documentTitle ead">
             <h1>
-               <xsl:text>A Guide to the </xsl:text>
                <xsl:value-of select="$collectionTitle"/>
-               <br/>
+               <xsl:text> (</xsl:text>
                <xsl:value-of select="$collectionId"/>
+               <xsl:text>)</xsl:text>
             </h1>
          </div>
          <div class="headerIcons">
@@ -325,7 +325,8 @@
             </xsl:otherwise>
          </xsl:choose>
       </xsl:variable>
-      <a onclick="_gaq.push(['_trackEvent', 'finding aid', 'tab', '{$tracking-id}']);">
+      
+      <a onclick="ga('send', 'event', 'finding aid', 'tab', '{$tracking-id}');">
 
          <xsl:variable name="basicchoice2">
             <xsl:choose>
@@ -383,7 +384,7 @@
                      </xsl:otherwise>
                   </xsl:choose>
                </xsl:variable>
-               <img src="{$href}" width="100%">
+               <img onclick="ga('send', 'event', 'digital object', 'view', 'thumbnail');"  src="{$href}" width="100%">
                   <xsl:if test="xtf:meta/*:viewable='true'">
                      <xsl:attribute name="class">view</xsl:attribute>
                   </xsl:if>
@@ -391,10 +392,10 @@
                <xsl:if test="xtf:meta/*:viewable='true' or xtf:meta/*:rights='allow'">
                  <div class="thumbnailButtons">
                     <xsl:if test="xtf:meta/*:rights='allow'">
-                        <a href="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}" download="true" class="btn btn-default download"><img src="/xtf/icons/default/download.svg"/> Download</a>
+                       <a onclick="ga('send', 'event', 'digital object', 'download', 'button');" href="{mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href}" download="true" class="btn btn-default download"><img src="/xtf/icons/default/download.svg"/> Download</a>
                     </xsl:if>
                     <xsl:if test="xtf:meta/*:viewable='true'">
-                        <a href="#" class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</a>
+                       <a onclick="ga('send', 'event', 'digital object', 'view', 'button');" href="#" class="btn btn-default view"><img src="/xtf/icons/default/view.svg"/> View</a>
                     </xsl:if>
                  </div>
                </xsl:if>
@@ -467,58 +468,15 @@
    <!-- Controlled Terms Templates                                             -->
    <!-- ====================================================================== -->
    <xsl:template name="subjects">
-      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:topic">
+      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject">
          <div class="subjects">
-            <h4>Subjects</h4>
-            <ul class="none">
+            <ul class="tags">
                <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:topic"/>
-            </ul>
-         </div>
-      </xsl:if>
-      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:geographic">
-         <div class="subjects">
-            <h4>Places</h4>
-            <ul class="none">
                <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:subject/mods:geographic"/>
-            </ul>
-         </div>
-      </xsl:if>
-      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='personal']">
-         <div class="subjects">
-            <h4>People</h4>
-            <ul class="none">
                <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='personal']"/>
-            </ul>
-         </div>
-      </xsl:if>
-      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='corporate']">
-         <div class="subjects">
-            <h4>Organizations</h4>
-            <ul class="none">
                <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='corporate']"/>
-            </ul>
-         </div>
-      </xsl:if>
-      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='family']">
-         <div class="subjects">
-            <h4>Families</h4>
-            <ul class="none">
                <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='family']"/>
-            </ul>
-         </div>
-      </xsl:if>
-      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='conference']">
-         <div class="subjects">
-            <h4>Conferences</h4>
-            <ul class="none">
                <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:name[@type='conference']"/>
-            </ul>
-         </div>
-      </xsl:if>
-      <xsl:if test="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:genre">
-         <div class="subjects">
-            <h4>Formats</h4>
-            <ul class="none">
                <xsl:apply-templates select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:genre"/>
             </ul>
          </div>
@@ -579,15 +537,15 @@
 
    <xsl:template name="bookmarkMenu">
       <div class="pull-right" id="bookmarkMenu">
-         <div class="button">
+         <div class="button" onclick="ga('send', 'event', 'digital object', 'share', 'twitter');">
             <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true" data-count="none" data-via="rockarch_org"
                data-url="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-text="{xtf:meta/*:title}"/>
          </div>
          <div class="button">
-            <div class="fb-share-button" data-href="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-layout="button"/>
+            <div onclick="ga('send', 'event', 'digital object', 'share', 'facebook');" class="fb-share-button" data-href="{concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)}" data-layout="button"/>
          </div>
          <div class="button">
-            <button class="btn btn-default link">
+            <button onclick="ga('send', 'event', 'digital object', 'share', 'link');" class="btn btn-default link">
                <img src="/xtf/icons/default/link.svg"/> Link </button>
          </div>
       </div>
@@ -602,7 +560,7 @@
          <xsl:value-of select="concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)"/>
       </xsl:variable>
       <div class="row">
-         <a href="{$link}">
+         <a onclick="ga('send', 'event', 'digital object', 'view', 'contents');" href="{$link}">
             <div class="filename">
                <xsl:value-of select="xtf:meta/*:title"/>
             </div>

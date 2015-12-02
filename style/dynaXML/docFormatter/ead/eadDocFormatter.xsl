@@ -1314,12 +1314,12 @@
                   </xsl:otherwise>
                </xsl:choose>
             </xsl:variable>
-            <a href="{$seriesLink}">
+            <a onclick="ga('send', 'event', 'digital object', 'parents', 'series');" href="{$seriesLink}">
                <xsl:value-of select="$seriesTitle"/>
             </a>
          </div>
          <div class="component row" style="padding-left:{($indent)}em">
-            <a href="{$componentLink}">
+            <a onclick="ga('send', 'event', 'digital object', 'parents', 'component');" href="{$componentLink}">
                <xsl:value-of select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:title"/>
             </a>
          </div>
@@ -1346,7 +1346,7 @@
                      <xsl:value-of select="$daoTitle"/>
                   </xsl:when>
                   <xsl:otherwise>
-                     <a href="/{$daoIdentifier}">
+                     <a onclick="ga('send', 'event', 'digital object', 'parents', 'sibling');" href="/{$daoIdentifier}">
                         <xsl:value-of select="$daoTitle"/>
                      </a>
                   </xsl:otherwise>
