@@ -77,6 +77,13 @@
       <xsl:variable name="formattedCollectionId">
          <xsl:value-of select="concat('(',$collectionId,')')"/>
       </xsl:variable>
+      <xsl:variable name="title">
+         <xsl:analyze-string select="xtf:meta/*:title" regex="(([a-z0-9]{{8}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{12}})-)">
+            <xsl:non-matching-substring>
+               <xsl:value-of select="."/>
+            </xsl:non-matching-substring>
+         </xsl:analyze-string>
+      </xsl:variable>
       <xsl:result-document exclude-result-prefixes="#all">
          <html xml:lang="en" lang="en">
             <head>
@@ -94,7 +101,7 @@
                   window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
                </script>
                <title>
-                  <xsl:value-of select="xtf:meta/*:title"/>
+                  <xsl:value-of select="$title"/>
                   <xsl:text> - </xsl:text>
                   <xsl:value-of select="xtf:meta/*:collectionTitle"/>
                   <xsl:text> </xsl:text>
@@ -103,7 +110,7 @@
                <!-- Twitter Card meta tags -->
                <meta name="twitter:card" content="summary_large_image"/>
                <meta name="twitter:site" content="@rockarch_org"/>
-               <meta name="twitter:title" property="og:title" content="{xtf:meta/*:title}"/>
+               <meta name="twitter:title" property="og:title" content="{$title}"/>
                <meta name="twitter:description" property="og:description" content="From {xtf:meta/*:collectionTitle} {$formattedCollectionId}. {mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/*:xmlData/mods:mods/mods:note[@displayLabel='Scope and Contents Note']}"/>
                <meta name="twitter:image" content="{concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf'), '_thumb300.jpg')}"/>
                <!-- Open Graph meta tags -->
@@ -209,7 +216,7 @@
          <xsl:attribute name="style"> font-size:1.15em; </xsl:attribute>
       </xsl:if>
       <xsl:variable name="eadId">
-         <xsl:value-of select="'xtf:meta/*:collectionId[1]'"/>
+         <xsl:value-of select="xtf:meta/*:collectionId[1]"/>
       </xsl:variable>
       <xsl:variable name="collectionId">
          <xsl:value-of select="substring-before($eadId, '.xml')"/>
@@ -401,7 +408,11 @@
             <div class="description">
                <div class="title">
                   <h2>
-                     <xsl:value-of select="xtf:meta/*:title"/>
+                     <xsl:analyze-string select="xtf:meta/*:title" regex="(([a-z0-9]{{8}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{12}})-)">
+                        <xsl:non-matching-substring>
+                           <xsl:value-of select="."/>
+                        </xsl:non-matching-substring>
+                     </xsl:analyze-string>
                   </h2>
                </div>
                <div class="creator">
@@ -560,7 +571,11 @@
       <div class="row">
          <a onclick="ga('send', 'event', 'digital object', 'view', 'contents');" href="{$link}">
             <div class="filename">
-               <xsl:value-of select="xtf:meta/*:title"/>
+               <xsl:analyze-string select="xtf:meta/*:title" regex="(([a-z0-9]{{8}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{12}})-)">
+                  <xsl:non-matching-substring>
+                     <xsl:value-of select="."/>
+                  </xsl:non-matching-substring>
+               </xsl:analyze-string>
             </div>
             <div class="format">
                <xsl:value-of select="xtf:meta/*:format"/>

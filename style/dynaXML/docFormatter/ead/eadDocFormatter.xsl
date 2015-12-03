@@ -1336,7 +1336,11 @@
                   <xsl:value-of select="substring-after($daoLink, concat($daoIdentifier, '-'))"/>
                </xsl:variable>
                <xsl:variable name="daoTitle">
-                  <xsl:value-of select="@xlink:title"/>
+                  <xsl:analyze-string select="@xlink:title" regex="(([a-z0-9]{{8}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{12}})-)">
+                     <xsl:non-matching-substring>
+                        <xsl:value-of select="."/>
+                     </xsl:non-matching-substring>
+                  </xsl:analyze-string>
                </xsl:variable>
                <xsl:choose>
                   <xsl:when test="matches($daoFilename, $filename)">
