@@ -1842,7 +1842,7 @@
                      child::fileplan |  child::odd | child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                      child::otherfindaid |  child::phystech |  child::processinfo | child::relatedmaterial | child::separatedmaterial |  child::controlaccess">
                      <div class="dialog_dsc">
-                        <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Additional Description']);">Additional description</a>
+                        <a href="#" onClick="ga('send', 'event', 'finding aid', 'view', 'Additional Description');">Additional description</a>
                      </div>
                      <xsl:if test="$didHitCount &gt; 0">
                         <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
@@ -1855,7 +1855,7 @@
                   </xsl:if>
                   <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
                      <div class="restrict_dsc">
-                        <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Restrictions']);">Restrictions</a>
+                        <a href="#" onClick="ga('send', 'event, 'finding aid', 'view', 'Restrictions');">Restrictions</a>
                      </div>
                      <xsl:if test="$didHitCount &gt; 0">
                         <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>

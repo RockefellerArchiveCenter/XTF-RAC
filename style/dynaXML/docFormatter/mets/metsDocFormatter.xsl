@@ -228,7 +228,7 @@
          <div class="headerIcons">
             <ul>
                <li>
-                  <a href="{$xtfURL}/media/pdf/{$collectionId}.pdf" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
+                  <a href="{$xtfURL}/media/pdf/{$collectionId}.pdf" onClick="ga('send', 'event', 'finding aid', 'view', 'pdf');">
                      <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
                   </a>
                </li>
@@ -248,7 +248,7 @@
                <input type="hidden" name="docId" value="{$collectionId}" disabled="disabled"/>
                <input type="hidden" name="chunk.id" value="contentsLink" disabled="disabled"/>
                <input type="hidden" name="doc.view" value="contentsSearch" disabled="disabled"/>
-               <input type="submit" value="Search" onclick="_gaq.push(['_trackEvent', 'finding aid', 'search', 'Digital Object details']);"/>
+               <input type="submit" value="Search" onclick="ga('send', 'event', 'finding aid', 'search', 'Digital Object details');"/>
             </form>
          </div>
          <xsl:call-template name="tabs"/>
