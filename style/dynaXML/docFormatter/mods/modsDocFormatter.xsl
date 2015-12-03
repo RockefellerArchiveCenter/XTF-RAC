@@ -157,14 +157,11 @@
                <!-- Twitter meta tags -->
                <meta name="twitter:card" content="summary"/>
                <meta name="twitter:site" content="@rockarch_org"/>
-               <meta name="twitter:title" content="{mods:titleInfo/mods:title}"/>
-               <meta name="twitter:description" content="{/mods:mods/mods:abstract}"/>
-               <meta name="twitter:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}"/>
+               <meta name="twitter:title" property="og:title" content="{mods:titleInfo/mods:title}"/>
+               <meta name="twitter:description" property="og:description" content="{/mods:mods/mods:abstract}"/>
+               <meta name="twitter:image" property="og:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}"/>
 
                <!-- Open Graph (Facebook) meta tags -->
-               <meta property="og:title" content="{mods:titleInfo/mods:title}" />
-               <meta property="og:description" content="{/mods:mods/mods:abstract}" />
-               <meta property="og:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}" />
                <meta property="og:image:width" content="200" />
                <meta property="og:image:height" content="200" />
             </head>

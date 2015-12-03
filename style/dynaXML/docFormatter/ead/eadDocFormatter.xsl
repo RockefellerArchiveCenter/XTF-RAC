@@ -232,15 +232,12 @@
                <!-- Twitter meta tags -->
                <meta name="twitter:card" content="summary"/>
                <meta name="twitter:site" content="@rockarch_org"/>
-               <meta name="twitter:title" content="{$title}"/>
-               <meta name="twitter:description" content="{$description}"/>
-               <meta name="twitter:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}"/>
+               <meta name="twitter:title" property="og:title" content="{$title}"/>
+               <meta name="twitter:description" property="og:description" content="{$description}"/>
+               <meta name="twitter:image" property="og:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}"/>
 
                <!-- Open Graph (Facebook) meta tags -->
                <meta property="og:url" content="{$url}" />
-               <meta property="og:title" content="{$title}" />
-               <meta property="og:description" content="{$description}" />
-               <meta property="og:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}" />
                <meta property="og:image:width" content="200" />
                <meta property="og:image:height" content="200" />
             </head>
@@ -353,7 +350,7 @@
                <xsl:if test="$doc.view != 'dao'">
                   <li>
                      <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
+                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="ga('send', 'event', 'finding aid', 'view', 'pdf');">
                         <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
                      </a>
                   </li>
