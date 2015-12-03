@@ -101,7 +101,7 @@
                      When you see a facet under "Refine Search" that is of interest to you, you can
                      also dig in deeper by clicking the "more" link (3) to see additional terms.</p>
                   <h4>Get notified when we update the site</h4>
-                  <p>When you see this icon <img src="./icons/default/i_rss.png" alt="rss feed"/> it
+                  <p>When you see this icon <img height="10" src="/xtf/icons/default/rss.svg" alt="rss feed"/> it
                      means there is an RSS feed for this search. You can click on it to subscribe to
                      see the most recent changes and additions in that search in your favorite feed
                      reader.</p>
@@ -134,7 +134,7 @@
             </div>
             <div class="overlay" id="dimes">
                <div class="homeDialog" style="float:left;">
-                  <img src="./icons/default/dimes.jpg"
+                  <img src="{$icon.path}dimes.jpg"
                      alt="John D. Rockefeller, Sr. handing out dimes"
                      style="float:right; width:45%;"/>
                   <p style="float:left; width:50%;">DIMES is an acronym for Digital Information
@@ -178,7 +178,6 @@
                   </div>
                </div>
             </div>
-            <xsl:copy-of select="$brand.feedback"/>
             <xsl:copy-of select="$brand.footer"/>
             <xsl:call-template name="myListCopies"/>
             <xsl:call-template name="myListEmail"/>
@@ -289,8 +288,7 @@
                            });
                   </script>
                   <a href="#" class="showAdvanced closed"
-                     onClick="ga('send', 'event', 'search', 'advanced', 'home page');">show
-                     more search options</a>
+                     onClick="ga('send', 'event', 'search', 'advanced', 'home page');">more search options</a>
                </div>
             </div>
 
@@ -372,7 +370,7 @@
 
             <div id="featured" class="box">
                <h2>From our collections</h2>
-               <img src="/xtf/icons/default/featured/dimes.jpg"
+               <img src="{$icon.path}featured/dimes.jpg"
                   alt="John D. Rockefeller handing out dimes"/>
                <p id="caption">John D. Rockefeller handing out dimes, the inspiration for this <a
                      href="#dimes" class="dimes"

@@ -123,6 +123,12 @@
                   matches($ns,'mods')">
                   <xsl:value-of select="'mods'"/>
                </xsl:when>
+               <!-- HA: added support for METS files -->
+               <xsl:when test="matches($root-element-name,'^mets$') or   
+                  matches($pid,'mets') or 
+                  matches($ns,'mets')">
+                  <xsl:value-of select="'mets'"/>
+               </xsl:when>
                <!-- Look for NLM XML files -->
                <xsl:when test="matches($root-element-name,'^article$') or
                   matches($pid,'NLM') or 
@@ -136,11 +142,6 @@
                   matches($uri,'tei2\.dtd') or 
                   matches($ns,'tei')">
                   <xsl:value-of select="'tei'"/>
-               </xsl:when>
-               <!-- Look for METS-encoded scanned books -->
-               <xsl:when test="matches($root-element-name,'^METS') and 
-                               document($file)//*:book">
-                  <xsl:value-of select="'book'"/>
                </xsl:when>
                <!-- Default processing for XML files -->
                <xsl:otherwise>
@@ -159,6 +160,7 @@
          if (matches($http.URL, $ercPat)) then 'style/dynaXML/docFormatter/erc/ercDocFormatter.xsl'
          else if ($fileType = 'ead') then 'style/dynaXML/docFormatter/ead/eadDocFormatter.xsl'
          else if ($fileType = 'mods') then 'style/dynaXML/docFormatter/mods/modsDocFormatter.xsl'
+         else if ($fileType = 'mets') then 'style/dynaXML/docFormatter/mets/metsDocFormatter.xsl'
          else if ($fileType = 'nlm') then 'style/dynaXML/docFormatter/nlm/nlmDocFormatter.xsl'
          else if ($fileType = 'tei') then 'style/dynaXML/docFormatter/tei/teiDocFormatter.xsl'
          else if ($fileType = 'book') then 'style/dynaXML/docFormatter/bookreader/bookDocFormatter.xsl'
@@ -200,7 +202,8 @@
       -->
       <preFilter path="{
          if      ($fileType = 'ead') then 'style/textIndexer/ead/eadPreFilter.xsl'
-         else if      ($fileType = 'mods') then 'style/textIndexer/mods/modsPreFilter.xsl'
+         else if ($fileType = 'mods') then 'style/textIndexer/mods/modsPreFilter.xsl'
+         else if ($fileType = 'mets') then 'style/textIndexer/mets/metsPreFilter.xsl'
          else if ($fileType = 'nlm') then 'style/textIndexer/nlm/nlmPreFilter.xsl'
          else if ($fileType = 'tei') then 'style/textIndexer/tei/teiPreFilter.xsl'
          else                             'style/textIndexer/default/defaultPreFilter.xsl'}"/>

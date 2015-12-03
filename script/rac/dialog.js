@@ -8,6 +8,8 @@ $('#myListCopies #formatError').hide();
 $('#myListCopies #itemPagesError').hide();
 $('.contentError').hide();
 
+$('#copyLink .success').hide();
+
 function content() {
     if($('.myListContents .empty').length) {
         return false;
@@ -15,6 +17,58 @@ function content() {
         return true;
     }
 }
+
+// Select contents of link copy text input on load
+$('#copyLink input[type="text"]').focus().select();
+
+$('#copyLink button').on('click', function(e) {
+    e.preventDefault();
+    $('#copyLink .success').fadeIn();
+});
+
+$(function () {
+    var copyLink = $('#copyLink').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        width: '57em',
+        height: '100',
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    $("#bookmarkMenu .link").on("click", function (e) {
+        e.preventDefault();
+        copyLink.dialog("open");
+    });
+});
+
+$(function () {
+    var dialogView = $('#daoView').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        width: windowWidth/1.2,
+        height: windowHeight/1.1,
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    $(".digital-thumbnail .view").on("click", function (e) {
+        e.preventDefault();
+        dialogView.dialog("open");
+    });
+});
 
 $(function () {
     var dialogSearchTips = $('#searchTips').dialog({
@@ -36,77 +90,6 @@ $(function () {
         dialogSearchTips.dialog("option", "title", 'Searching Tips and Tricks').dialog("open");
     });
 });
-
-$(function () {
-        var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0"></iframe>');
-        var dialog = $('<div class="dao-container"></div>').append(iframe).appendTo('body').dialog({
-            create: function(event, ui) {
-                var widget = $(this).dialog("widget");
-                $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton dao");
-                },
-            autoOpen: false,
-            modal: true,
-            resizable: true,
-            width: windowWidth/1.2,
-            height: "550",
-            close: function () {
-                $('.ui-dialog').hide();
-                $('.dao-container > iframe').attr("src", "");
-                $('.daoCitation').remove();
-
-                }
-        });
-
-        $(".daoLink a, .caption a").on("click", function (e) {
-            e.preventDefault();
-            var dialogClass = 'dao';
-            var src = $(this).attr("href");
-            var title = $(this).attr("data-title");
-            var width = $(this).attr("data-width");
-            var height = "550";
-            var citation = $(this).attr("data-citation");
-            var buildCitation = $('<div class="daoCitation" style="margin-left:1em; font-size:.9em;"></div>').append(citation)
-            iframe.attr({
-                width: +width,
-                height: +height,
-                src: src
-            });
-                                dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
-
-                            });
-
-                            //checks for hash tag jumps to location and opens appropriate diolog
-                            if(window.location.hash) {
-                              var hash = window.location.hash; //Puts hash in variable, and removes the # character
-                              var offset = $(hash).position().top - 50;
-                              $(hash).addClass("active");
-                              setTimeout(function() {
-                                    scrollActive($(hash));}, 100);
-
-                               function scrollActive(element){
-                                    $('div#content-wrapper').animate({scrollTop: offset}, 500);
-                                    }
-
-                              if($(hash + " > .daoLink a[href]").length) {
-                              $(hash + " .daoLink a").each(function (e) {
-                                 var dialogClass = 'dao';
-                                 var src = $(this).attr("href");
-                                 var title = $(this).attr("data-title");
-                                 var citation = $(this).attr("data-citation");
-                                 var width = $(this).attr("data-width");
-                                 var height = "550";
-                                 var buildCitation = $('<div class="daoCitation"></div>').append(citation)
-                                    iframe.attr({
-                                    width: +width,
-                                    height: +height,
-                                    src: src
-                                 });
-                                 dialog.dialog("option", "title", title).dialog("open").before(buildCitation);
-
-                              });
-                            }
-                          }
-                        });
 
 $(function () {
     var dialogDimes = $('#dimes').dialog({
@@ -220,7 +203,13 @@ $(function () {
             },
             modal: true,
             resizable: true,
-            width: windowWidth/3,
+            width: function () {
+              if(windowWidth > 768){
+                return windowWidth/3
+              } else {
+                return windowWidth/1.5
+              }
+            },
             close: function () {
                 $('.ui-dialog').hide();
             }
@@ -478,7 +467,7 @@ $(function () {
         });
     });
 $(function () {
-    var listCount = $('#requestForm .row > .requestInputs > input[checked="checked"]').length - 1;
+    var listCount = $('#requestForm .row:not(.header-row) > .requestInputs > input[type=checkbox]:checked').length;
     var dialogMyListRequest = $('#myListRequest').dialog({
         create: function(event, ui) {
             var widget = $(this).dialog("widget");

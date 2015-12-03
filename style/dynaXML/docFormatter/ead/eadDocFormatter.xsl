@@ -1,5 +1,6 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xtf="http://cdlib.org/xtf" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml"
-   xmlns:session="java:org.cdlib.xtf.xslt.Session" extension-element-prefixes="session" exclude-result-prefixes="#all" xpath-default-namespace="urn:isbn:1-931666-22-9">
+   xmlns:session="java:org.cdlib.xtf.xslt.Session" xmlns:xlink="http://www.w3.org/1999/xlink" extension-element-prefixes="session" exclude-result-prefixes="#all"
+   xpath-default-namespace="urn:isbn:1-931666-22-9">
 
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    <!-- EAD dynaXML Stylesheet                                                 -->
@@ -119,12 +120,18 @@
 
    <xsl:param name="parentID"/>
 
+   <xsl:param name="filename"/>
+   <xsl:param name="identifier"/>
+
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
 
    <xsl:template match="/ead">
       <xsl:choose>
+         <xsl:when test="$doc.view='parents'">
+            <xsl:call-template name="parents"/>
+         </xsl:when>
          <!-- robot solution -->
          <!--<xsl:when test="matches($http.user-agent,$robots)">
             <xsl:call-template name="robot"/>
@@ -335,21 +342,23 @@
       <div class="bbar_custom">
          <div class="documentTitle ead">
             <h1>
-               <xsl:variable name="title">
-                  <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
-               </xsl:variable>
-               <xsl:if test="string-length($title) &gt; 175">
-                  <xsl:attribute name="style"> font-size:1.15em; </xsl:attribute>
-               </xsl:if>
-               <xsl:choose>
-                  <xsl:when test="eadheader/filedesc/titlestmt/titleproper[@type='filing']">
-                     <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper[not(@type='filing')]"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                     <xsl:apply-templates select="eadheader/filedesc/titlestmt/titleproper"/>
-                  </xsl:otherwise>
-               </xsl:choose>
+               <xsl:value-of select="archdesc/did/unittitle"/>
+               <xsl:text> (</xsl:text>
+               <xsl:value-of select="archdesc/did/unitid"/>
+               <xsl:text>)</xsl:text>
             </h1>
+         </div>
+         <div class="headerIcons">
+            <ul>
+               <xsl:if test="$doc.view != 'dao'">
+                  <li>
+                     <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
+                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'pdf']);">
+                        <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
+                     </a>
+                  </li>
+               </xsl:if>
+            </ul>
          </div>
          <xsl:variable name="searchPage">
             <xsl:choose>
@@ -376,18 +385,6 @@
                </xsl:otherwise>
             </xsl:choose>
          </xsl:variable>
-         <div class="headerIcons">
-            <ul>
-               <xsl:if test="$doc.view != 'dao'">
-                  <li>
-                     <xsl:variable name="pdfID" select="substring-before($docId,'.xml')"/>
-                     <a href="{$xtfURL}/media/pdf/{$pdfID}.pdf" onClick="ga('send', 'event', 'finding aid', 'view', 'pdf');">
-                        <img src="/xtf/icons/default/pdf.gif" alt="PDF" title="PDF"/>
-                     </a>
-                  </li>
-               </xsl:if>
-            </ul>
-         </div>
          <div class="headerSearch">
             <form action="{$xtfURL}{$crossqueryPath}" method="get" class="bbform">
                <xsl:if test="$query">
@@ -1213,6 +1210,9 @@
                      <xsl:otherwise/>
                   </xsl:choose>
                   <xsl:value-of select="$name"/>
+                  <xsl:if test="$dao = 'true'">
+                     <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
+                  </xsl:if>
                   <div class="hit-count">
                      <xsl:if test="$hit.count"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
                   </div>
@@ -1252,13 +1252,13 @@
                   <div class="hit-count">
                       <xsl:if test="$hit.count > 0"> (<xsl:value-of select="$hit.count"/>) </xsl:if>
                   </div>
+                  <xsl:if test="$dao = 'true'">
+                     <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
+                  </xsl:if>
                </div>
             </a>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:if test="$dao = 'true'">
-         <img src="/xtf/icons/default/dao.gif" alt="Contains digital objects" title="Contains digital objects"/>
-      </xsl:if>
    </xsl:template>
 
    <!-- ====================================================================== -->
@@ -1286,6 +1286,75 @@
             <hr/>
          </body>
       </html>
+   </xsl:template>
+
+   <!-- ====================================================================== -->
+   <!-- Show Parents Template (for digital objects)                            -->
+   <!-- ====================================================================== -->
+   <xsl:template name="parents">
+      <xsl:variable name="componentLink">
+         <xsl:value-of select="concat($xtfURL, $dynaxmlPath, '?docId=', $docId, ';chunk.id=', /ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:seriesID, ';doc.view=contents', '#', $chunk.id)"/>
+      </xsl:variable>
+      <xsl:variable name="indent">
+         <xsl:value-of select="count(/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:parent)"/>
+      </xsl:variable>
+      <div>
+      <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:parent[position()=2]">
+         <div class="parent row" style="padding-left:{(position())}em">
+            <xsl:variable name="seriesLink">
+               <xsl:value-of select="concat($xtfURL, $dynaxmlPath, '?docId=', $docId, ';chunk.id=', ../*:seriesID, ';doc.view=contents')"/>
+            </xsl:variable>
+            <xsl:variable name="seriesTitle">
+               <xsl:choose>
+                  <xsl:when test="starts-with(., 'unspecified: ')">
+                     <xsl:value-of select="substring-after(., 'unspecified: ')"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="."/>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </xsl:variable>
+            <a onclick="ga('send', 'event', 'digital object', 'parents', 'series');" href="{$seriesLink}">
+               <xsl:value-of select="$seriesTitle"/>
+            </a>
+         </div>
+         <div class="component row" style="padding-left:{($indent)}em">
+            <a onclick="ga('send', 'event', 'digital object', 'parents', 'component');" href="{$componentLink}">
+               <xsl:value-of select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/xtf:meta/*:title"/>
+            </a>
+         </div>
+            <xsl:for-each select="/ead/archdesc/dsc/descendant-or-self::c[@id=$chunk.id]/did/dao">
+               <div class="sibling row" style="padding-left:{$indent+1}em">
+               <xsl:variable name="daoLink">
+                  <xsl:value-of select="@xlink:href"/>
+               </xsl:variable>
+               <xsl:variable name="daoIdentifier">
+                  <xsl:analyze-string select="$daoLink" regex="(([a-z0-9]{{8}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{12}}))">
+                     <xsl:matching-substring>
+                        <xsl:value-of select="regex-group(1)"/>
+                     </xsl:matching-substring>
+                  </xsl:analyze-string>
+               </xsl:variable>
+               <xsl:variable name="daoFilename">
+                  <xsl:value-of select="substring-after($daoLink, concat($daoIdentifier, '-'))"/>
+               </xsl:variable>
+               <xsl:variable name="daoTitle">
+                  <xsl:value-of select="@xlink:title"/>
+               </xsl:variable>
+               <xsl:choose>
+                  <xsl:when test="matches($daoFilename, $filename)">
+                     <xsl:value-of select="$daoTitle"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <a onclick="ga('send', 'event', 'digital object', 'parents', 'sibling');" href="/{$daoIdentifier}">
+                        <xsl:value-of select="$daoTitle"/>
+                     </a>
+                  </xsl:otherwise>
+               </xsl:choose>
+               </div>
+            </xsl:for-each>
+      </xsl:for-each>
+      </div>
    </xsl:template>
 
 </xsl:stylesheet>

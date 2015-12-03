@@ -101,6 +101,13 @@
    <xsl:param name="message"/>
    <xsl:param name="stackTrace" select="''"/>
 
+   <xsl:variable name="brand.file">
+     <xsl:copy-of select="document('../../brand/default.xml')"/>
+   </xsl:variable>
+
+   <xsl:variable name="brand.links" select="$brand.file/brand/dynaxml.links/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:variable name="brand.header" select="$brand.file/brand/dynaxml.header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
@@ -126,260 +133,20 @@
          <head>
             <title><xsl:value-of select="$reason"/></title>
             <meta name="viewport" content="width=device-width,initial-scale=1"/>
-               <meta name="viewport" content="width=device-width,initial-scale=1"/>
-               <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'/>
-               <link rel="stylesheet" type="text/css" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css"/>
-               <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
-               <link rel="stylesheet" href="http://www.rockarch.org/css/more.css" type="text/css"/>
-               <!-- 9/27/11 WS: Added new stylesheet to contain all RA specific css -->
-               <link rel="shortcut icon" href="icons/default/favicon.png"/>
-               <!-- 9/27/11 WS: RA links and javascript -->
-               <link rel="stylesheet" type="text/css" href="http://www.rockarch.org/css/bootstrap.css"/>
-               <link rel="stylesheet" href="css/default/racustom.css" type="text/css"/>
-               <script id="twitter-wjs" src="http://platform.twitter.com/widgets.js"></script>
-               <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
-               <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-               <script type="text/javascript" src="http://www.rockarch.org/js/bootstrap.js"></script>
-               <script type="text/javascript" language="JavaScript" src="http://www.rockarch.org/js/browserDetect.js"/>
-               <script type="text/javascript" src="/xtf/script/rac/dropdown.js"/>
-               <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
-               <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
-               <script type="text/javascript" src="/xtf/script/rac/active.js"/>
-               <script type="text/javascript" src="/xtf/script/rac/jquery.cookie.js"></script>
-               <!-- Google Analytics -->
-               <script>
-               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-               })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-               ga('create', 'UA-10013579-1', 'auto');
-               ga('send', 'pageview');
-               </script>
+            <xsl:copy-of select="$brand.links"/>
          </head>
          <body>
-            <!-- 1/10/14 HA: Changed to match updated RA header -->
 
-               <div class="navbar">
-                  <div class="navbar-inner">
-                     <div class="container">
+           <xsl:copy-of select="$brand.header"/>
 
-                        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                           <span class="icon-bar"></span>
-                           <span class="icon-bar"></span>
-                           <span class="icon-bar"></span>
-                        </a>
-
-                        <!-- Everything you want hidden at 940px or less, place within here -->
-                        <div class="nav-collapse collapse">
-                           <ul class="nav">
-                              <li class="dropdown">
-                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    About Us
-                                    <b class="caret"></b>
-                                 </a>
-                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/about/" onClick="ga('send', 'event', 'Rockarch Nav', 'About Us', 'Overview');">Overview</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/research/inforesearch.php" onClick="ga('send', 'event', 'Rockarch Nav', 'About Us', 'General Information');">General Information</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/about/staff.php" onClick="ga('send', 'event', 'Rockarch Nav', 'About Us', 'Staff');">Staff</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/about/careers.php" onClick="ga('send', 'event', 'Rockarch Nav', 'About Us', 'Employment Opportunities');">Employment Opportunities</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/about/contact.php" onClick="ga('send', 'event', 'Rockarch Nav', 'About Us', 'Contact Us');">Contact Us</a></li>
-                                 </ul>
-                              </li>
-                              <li class="dropdown">
-                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    Grants
-                                    <b class="caret"></b>
-                                 </a>
-                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/grants/generalgia.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Grants', 'Grant-in-Aid');">Grant-in-Aid</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/grants/ehrlichgrant.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Grants', 'Ehrlich Grants');">Grants to Support Research in the Paul Ehrlich Collection</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/research/inforesearch.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Grants', 'Information for Researchers');">Information for Researchers</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/grants/currentawards.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Grants', 'Grant Awards');">Grant Awards</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/publications/resrep/" onClick="ga('send', 'event', 'Rockarch Nav', 'Grants', 'Research Reports');">Research Reports</a></li>
-                                 </ul>
-                              </li>
-                              <li class="dropdown">
-                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    Collections
-                                    <b class="caret"></b>
-                                 </a>
-                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="http://dimes.rockarch.org/xtf/search" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Search All Collection Guides');">Search All Collection Guides</a></li>
-                                    <li class="dropdown-submenu">
-                                       <a tabindex="-1" href="#">Foundations (A-F)</a>
-                                       <ul class="dropdown-menu">
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/jdr3orgs.php#acc" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Asian Cultural Council');">Asian Cultural Council</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/culpeper.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Charles E. Culpeper Foundation');">Charles E. Culpeper Foundation</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/cmbny.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'China Medical Board');">China Medical Board of New York</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/commonwealth.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Commonwealth Fund');">Commonwealth Fund</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/jdrjrorgs.php#davison" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Davison Fund');">Davison Fund</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/ford/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Ford Foundation');">Ford Foundation</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/fcd.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Foundation for Child Development');">Foundation for Child Development</a></li>
-                                       </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                       <a tabindex="-1" href="#">Foundations (G-M)</a>
-                                       <ul class="dropdown-menu">
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/geb.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'General Education Board');">General Education Board</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/hrf.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Health Research Fund');">Health Research Fund</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/jdrjrorgs.php#ieb" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'International Education Board');">International Education Board</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/markle.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Markle Foundation');">John and Mary Markle Foundation</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/jdr3orgs.php#jdr3" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'JDR 3rd Fund');">JDR 3rd Fund</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/lsrm.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Laura Spelman Rockefeller Memorial');">Laura Spelman Rockefeller Memorial</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/markey.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Lucille P. Markey Charitable Trust');">Lucille P. Markey Charitable Trust</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/miscorgs.php#mbr" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Martha Baird Rockefeller Fund for Music');">Martha Baird Rockefeller Fund for Music</a></li>
-                                       </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                       <a tabindex="-1" href="#">Foundations (N-Z)</a>
-                                       <ul class="dropdown-menu">
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/neareast.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Near East Foundation');">Near East Foundation</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rbf/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Rockefeller Brothers Fund');">Rockefeller Brothers Fund</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rf/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Rockefeller Foundation');">Rockefeller Foundation</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/sage.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Russell Sage Foundation');">Russell Sage Foundation</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/jdrjrorgs.php#sealantic" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Sealantic Fund');">Sealantic Fund</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/miscorgs.php#spelman" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Spelman Fund of New York');">Spelman Fund of New York</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/wtgrant.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'William T. Grant Foundation');">William T. Grant Foundation</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/wwilson.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Woodrow Wilson National Fellowship Foundation');">Woodrow Wilson National Fellowship Foundation</a></li>
-                                       </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                       <a tabindex="-1" href="#">Other Organizations (A-H)</a>
-                                       <ul class="dropdown-menu">
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/jdr3orgs.php#adc" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Agricultural Development Council');">Agricultural Development Council</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/narorgs.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'American International Association for Economic and Social Development');">American International Association for Economic and Social Development</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/miscorgs.php#aeap" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Arts, Education and Americans Panel');">Arts, Education and Americans Panel</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/jdr3orgs.php#asiasoc" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Asia Society');">Asia Society</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/bsh.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Bureau of Social Hygeiene');">Bureau of Social Hygiene</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/counfound.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Council on Foundations');">Council on Foundations</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/miscorgs.php#dlma" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Downtown-Lower Manhattan Association');">Downtown-Lower Manhattan Association, Inc.</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/foundationcenter.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Foundation Center');">Foundation Center</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/miscorgs.php#goldhinz" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Goldstone and Hinz');">Goldstone &amp; Hinz</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/jdrjrorgs.php#hhv" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Historic Hudson Valley Manuscript Collection');">Historic Hudson Valley Manuscript Collection</a></li>
-                                       </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                       <a tabindex="-1" href="#">Other Organizations (I-Z)</a>
-                                       <ul class="dropdown-menu">
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/narorgs.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'International Basic Economy Corporation');">International Basic Economy Corporation</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/miscorgs.php#mskcc" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Memorial Sloan-Kettering Cancer Center');">Memorial Sloan-Kettering Cancer Center</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/popcouncil.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Population Council');">Population Council</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/jdr3orgs.php#poa" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Products of Asia');">Products of Asia</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/hookworm.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Rockefeller Sanitary Commission');">Rockefeller Sanitary Commission</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/nonrockorgs/ssrc.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Social Science Research Council');">Social Science Research Council</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/miscorgs.php#trilateral" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Trilateral Commission');">Trilateral Commission</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/miscorgs.php#uniontank" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Union Tank Car Company');">Union Tank Car Company</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/rockorgs/miscorgs.php#wcph" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Women's Club of Pocantico Hills');">Women's Club of Pocantico Hills</a></li>
-                                       </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                       <a tabindex="-1" href="#">Rockefeller University</a>
-                                       <ul class="dropdown-menu">
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/ru/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Rockefeller University Collections Overview');">Collections Overview</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/ru/rgdescriptions.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Rockefeller University Record Group Descriptions');">Record Group Descriptions</a></li>
-                                       </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                       <a tabindex="-1" href="#">Rockefeller Family</a>
-                                       <ul class="dropdown-menu">
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/family/jdrsr/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'John D. Rockefeller Papers');">John D. Rockefeller Papers</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/family/william.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'William Rockefeller Papers');">William Rockefeller Papers</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/family/omr.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Office of the Messrs. Rockefeller');">Office of the Messrs. Rockefeller</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/family/jdrjr/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'John D. Rockefeller, Jr. Papers');">John D. Rockefeller, Jr. Papers</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/family/abby/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Abby Aldrich Rockefeller Paper');">Abby Aldrich Rockefeller Papers</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/family/abbymauze.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Abby R. Mauze Papers');">Abby R. Mauzé Papers</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/family/jdr3/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'John D. Rockefeller 3rd Papers');">John D. Rockefeller 3rd Papers</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/family/blanchetterockefeller.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Blanchette H. Rockefeller Papers');">Blanchette H. Rockefeller Papers</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/family/laurance.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Laurance S. Rockefeller Papers');">Laurance S. Rockefeller Papers</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/family/nar/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Nelson A. Rockefeller Papers');">Nelson A. Rockefeller Papers</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/family/winthrop.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Winthrop Rockefeller Papers');">Winthrop Rockefeller Papers</a></li>
-                                       </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                       <a tabindex="-1" href="#">Papers of Individuals</a>
-                                       <ul class="dropdown-menu">
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/individuals/rf/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Papers of Individuals - Foundation Related');">Foundation Related</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/individuals/family/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Papers of Individuals - Rockefeller Family Related');">Rockefeller Family Related</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/collections/individuals/ru/" onClick="ga('send', 'event', 'Rockarch Nav', 'Collections', 'Papers of Individuals - Rockefeller University Related');">Rockefeller University Related</a></li>
-                                       </ul>
-                                    </li>
-                                 </ul>
-                              </li>
-                              <li class="dropdown">
-                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    Programs
-                                    <b class="caret"></b>
-                                 </a>
-                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/programs/digital/" onClick="ga('send', 'event', 'Rockarch Nav', 'Programs', 'Digital');">Digital</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/programs/research/" onClick="ga('send', 'event', 'Rockarch Nav', 'Programs', 'Research and Education');">Research &amp; Education</a></li>
-                                    <li class="dropdown-submenu">
-                                       <a tabindex="-1" href="#">Publications</a>
-                                       <ul class="dropdown-menu">
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/publications/guides/" onClick="ga('send', 'event', 'Rockarch Nav', 'Programs', 'Publications - Guides and Subject Surveys');">Guides and Subject Surveys</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/publications/newsletter/" onClick="ga('send', 'event', 'Rockarch Nav', 'Programs', 'Publications - Newsletters');">Newsletters</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/publications/resrep/" onClick="ga('send', 'event', 'Rockarch Nav', 'Programs', 'Publications - Research Reports');">Research Reports</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/publications/biblio/" onClick="ga('send', 'event', 'Rockarch Nav', 'Programs', 'Publications - Bibliographies');">Bibliographies</a></li>
-                                          <li><a tabindex="-1" href="http://www.rockarch.org/publications/conferences/" onClick="ga('send', 'event', 'Rockarch Nav', 'Programs', 'Publications - Conference Proceedings');">Conference Proceedings</a></li>
-                                       </ul>
-                                    </li>
-                                 </ul>
-                              </li>
-                              <li class="dropdown">
-                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    The Rockefellers
-                                    <b class="caret"></b>
-                                 </a>
-                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/bio/famtree.php" onClick="ga('send', 'event', 'Rockarch Nav', 'The Rockefellers', 'Virtual Family Tree');">Virtual Family Tree</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/bio/" onClick="ga('send', 'event', 'Rockarch Nav', 'The Rockefellers', 'Selected Biographies');">Selected Biographies</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/inownwords/" onClick="ga('send', 'event', 'Rockarch Nav', 'The Rockefellers', 'In Their Own Words');">In Their Own Words</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/philanthropy/" onClick="ga('send', 'event', 'Rockarch Nav', 'The Rockefellers', 'Rockefeller Philanthropy');">Rockefeller Philanthropy</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/publications/biblio/bibliofamily.php" onClick="ga('send', 'event', 'Rockarch Nav', 'The Rockefellers', 'Bibliography on the Rockefeller Family and Philanthropies');">Bibliography on the Rockefeller Family and Philanthropies</a></li>
-                                 </ul>
-                              </li>
-                              <li class="dropdown">
-                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    Information for Researchers
-                                    <b class="caret"></b>
-                                 </a>
-                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/research/inforesearch.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Information for Researchers', 'Information for Researchers');">Information for Researchers</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/about/contact.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Information for Researchers', 'Research Inquiries');">Research Inquiries</a></li>
-                                    <li><a tabindex="-1" href="http://www.rockarch.org/research/citations.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Information for Researchers', 'Sample Citations');">Sample Citations</a></li>
-                                 </ul>
-                              </li>
-                              <li><a tabindex="-1" href="http://www.rockarch.org/search/searchmain.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Search', 'Navbar');">Search</a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="comment">
-                  <a href="http://www.rockarch.org/" class="home">Home</a> |
-                  <a href="http://www.rockarch.org/faqs/" class="home">FAQs</a> |
-                  <a href="http://www.rockarch.org/links.php" class="home">Links</a> |
-                  <a href="http://www.rockarch.org/about/contact.php" class="home">E-Mail</a><br/>
-                  <a href="http://www.facebook.com/RockefellerArchiveCenter" onClick="ga('send', 'event', 'Rockarch Home', 'Social', 'Facebook');" target="_blank"><img src="http://www.rockarch.org/images/fb-icon.gif" width="20" height="20" alt="FB" border="0" align="top"/></a>
-                  <a href="https://twitter.com/rockarch_org" onClick="ga('send', 'event', 'Rockarch Home', 'Social', 'Twitter');" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false"></a>
-                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-               </div>
-
-
-
-      <div id="header">
-        <a href="/xtf/search">
-          <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140"
-            alt="The Rockefeller Archive Center" border="0"/>
-          <h1>dimes.rockarch.org</h1>
-          <p class="tagline">The Online Collections and Catalog of Rockefeller Archive
-            Center</p>
-        </a>
-      </div>
-            <div class="searchPage">
+           <div id="header">
+              <a href="/xtf/search">
+                 <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center"/>
+                 <h1>dimes.rockarch.org</h1>
+                 <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
+              </a>
+           </div>
+          <div class="searchPage">
                <div class="forms" style="padding:1%;width:98%">
                <xsl:choose>
                   <xsl:when test="QueryFormat

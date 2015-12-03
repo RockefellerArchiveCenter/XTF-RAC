@@ -8,7 +8,7 @@
    <!-- Author: Winona Salesky wsalesky@gmail.com                              -->
    <!-- Date:   10/10/12                                                       -->
    <!--         Created for  for Rockefeller Archives Center                   -->
-   <!-- 
+   <!--
 	   This files goes in  /var/lib/tomcat6/webapps/xtf/style/dynaXML/docFormatter/mods/
 	-->
 
@@ -17,30 +17,30 @@
    <!--
       Copyright (c) 2008, Regents of the University of California
       All rights reserved.
-      
-      Redistribution and use in source and binary forms, with or without 
-      modification, are permitted provided that the following conditions are 
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are
       met:
-      
-      - Redistributions of source code must retain the above copyright notice, 
+
+      - Redistributions of source code must retain the above copyright notice,
       this list of conditions and the following disclaimer.
-      - Redistributions in binary form must reproduce the above copyright 
-      notice, this list of conditions and the following disclaimer in the 
+      - Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
       - Neither the name of the University of California nor the names of its
-      contributors may be used to endorse or promote products derived from 
+      contributors may be used to endorse or promote products derived from
       this software without specific prior written permission.
-      
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
-      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
-      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
-      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+      CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
       POSSIBILITY OF SUCH DAMAGE.
    -->
 
@@ -85,8 +85,8 @@
    <!-- MODS-specific parameters                                                -->
    <!-- ====================================================================== -->
 
-   <!-- If a query was specified but no particular hit rank, jump to the first hit 
-        (in document order) 
+   <!-- If a query was specified but no particular hit rank, jump to the first hit
+        (in document order)
    -->
    <xsl:param name="hit.num" select="'0'"/>
 
@@ -153,8 +153,23 @@
                <title>
                   <xsl:value-of select="mods:titleInfo/mods:title"/>
                </title>
+
+               <!-- Twitter meta tags -->
+               <meta name="twitter:card" content="summary"/>
+               <meta name="twitter:site" content="@rockarch_org"/>
+               <meta name="twitter:title" content="{mods:titleInfo/mods:title}"/>
+               <meta name="twitter:description" content="{/mods:mods/mods:abstract}"/>
+               <meta name="twitter:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}"/>
+
+               <!-- Open Graph (Facebook) meta tags -->
+               <meta property="og:title" content="{mods:titleInfo/mods:title}" />
+               <meta property="og:description" content="{/mods:mods/mods:abstract}" />
+               <meta property="og:image" content="{concat($xtfURL, 'icons/default/RAC-logo-large.jpg')}" />
+               <meta property="og:image:width" content="200" />
+               <meta property="og:image:height" content="200" />
             </head>
             <body>
+              <!-- Schema.org metadata -->
                <div itemscope="" typeof="http:/schema.org/ItemPage">
                   <xsl:if test="/mods:mods/mods:abstract">
                      <meta itemprop="http:/schema.org/description">
@@ -170,37 +185,37 @@
                   </meta>
                   <div itemprop="http:/schema.org/contentLocation" itemscope=""
                      itemtype="http:/schema.org/Place">
-                     <meta itemprop="http:/schema.org/name" content="Rockefeller Archive Center"/>
-                     <meta itemprop="http:/schema.org/url" content="http://www.rockarch.org"/>
-                     <div itemprop="http:/schema.org/address" itemscop=""
-                        itemtype="http:/schema.org/PostalAddress">
+                     <meta itemprop="http://schema.org/name" content="Rockefeller Archive Center"/>
+                     <meta itemprop="http://schema.org/url" content="http://www.rockarch.org"/>
+                     <div itemprop="http://schema.org/address" itemscop=""
+                        itemtype="http://schema.org/PostalAddress">
                         <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
                         <meta itemprop="addressLocality" content="Sleepy Hollow"/>
                         <meta itemprop="addressRegion" content="NY"/>
                         <meta itemprop="postalCode" content="10591"/>
                      </div>
-                     <div itemprop="http:/schema.org/geo" itemscope=""
-                        itemtype="http:/schema.org/GeoCoordinates">
-                        <meta itemprop="http:/schema.org/latitude" content="41.091845"/>
-                        <meta itemprop="http:/schema.org/longitude" content="-73.835265"/>
+                     <div itemprop="http://schema.org/geo" itemscope=""
+                        itemtype="http://schema.org/GeoCoordinates">
+                        <meta itemprop="http://schema.org/latitude" content="41.091845"/>
+                        <meta itemprop="http://schema.org/longitude" content="-73.835265"/>
                      </div>
-                     <meta itemprop="http:/schema.org/telephone" content="(914) 366-6300"/>
+                     <meta itemprop="http://schema.org/telephone" content="(914) 366-6300"/>
                   </div>
                   <xsl:for-each select="/mods:subject/mods:name[@encodinganalog=('700' or '710')]">
-                     <meta itemprop="http:/schema.org/contributor">
+                     <meta itemprop="http://schema.org/contributor">
                         <xsl:attribute name="content">
                            <xsl:apply-templates/>
                         </xsl:attribute>
                      </meta>
                   </xsl:for-each>
                   <xsl:for-each select="/mods:mods/mods:name/mods:namePart">
-                     <meta itemprop="http:/schema.org/creator">
+                     <meta itemprop="http://schema.org/creator">
                         <xsl:attribute name="content">
                            <xsl:apply-templates/>
                         </xsl:attribute>
                      </meta>
                   </xsl:for-each>
-                  <div itemprop="http:/schema.org/dateCreated" itemscope="" itemtype="Date">
+                  <div itemprop="http://schema.org/dateCreated" itemscope="" itemtype="Date">
                      <meta itemprop="date">
                         <xsl:attribute name="content">
                            <xsl:value-of select="/mods:mods/mods:originInfo/mods:dateIssued"/>
@@ -227,7 +242,6 @@
                   <xsl:call-template name="toc"/>
                   <xsl:call-template name="body"/>
                </div>
-               <xsl:copy-of select="$brand.feedback"/>
                <div class="fixedFooter">
                   <xsl:copy-of select="$brand.footer"/>
                </div>
@@ -259,24 +273,7 @@
       </xsl:variable>
       <div class="bbar_custom">
          <div class="documentTitle">
-            <xsl:attribute name="style">
-               <xsl:choose>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'volume')]">background:
-                     url(/xtf/icons/default/book.gif) left no-repeat;</xsl:when>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'dvd')]">background:
-                     url(/xtf/icons/default/video.gif) left no-repeat;</xsl:when>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'videocassette')]">background:
-                     url(/xtf/icons/default/video.gif) left no-repeat;</xsl:when>
-                  <xsl:when test="/mods:mods/mods:genre[contains(.,'reel')]">background:
-                     url(/xtf/icons/default/microfilm.gif) left no-repeat;</xsl:when>
-               </xsl:choose>
-               <xsl:text>min-height: 50px;</xsl:text>
-            </xsl:attribute>
             <h1>
-               <xsl:if
-                  test="string-length(/mods:mods/mods:titleInfo[not(@type)]/mods:title) &gt; 125">
-                  <xsl:attribute name="style"> font-size:1.15em; </xsl:attribute>
-               </xsl:if>
                <xsl:value-of select="/mods:mods/mods:titleInfo[not(@type)]/mods:title"/>
             </h1>
          </div>
@@ -284,36 +281,6 @@
             <xsl:call-template name="myListMods">
                <xsl:with-param name="url" select="$doc.path"/>
             </xsl:call-template>
-         </div>
-         <div class="headerSearch">
-            <xsl:if test="($query != '0') and ($query != '')">
-               <div class="headerResults">
-                  <strong>
-                     <span class="hit-count">
-                        <xsl:value-of select="$sum"/>
-                     </span>
-                     <xsl:text> </xsl:text>
-                     <xsl:value-of select="$occur"/>
-                     <xsl:text> of </xsl:text>
-                     <span class="hit-count">
-                        <xsl:value-of select="$query"/>
-                     </span>
-                  </strong>
-                  <xsl:text> [</xsl:text>
-                  <a>
-                     <xsl:attribute name="href">
-                        <xsl:value-of select="$doc.path"/>;brand=<xsl:value-of select="$brand"/>
-                     </xsl:attribute>
-                     <xsl:text>Clear Hits</xsl:text>
-                  </a>
-                  <xsl:text>]</xsl:text>
-                  <xsl:choose>
-                     <xsl:when test="$docId"/>
-                     <xsl:otherwise> &#160;[ <a href="{session:getData('queryURL')}"> Back to Search
-                           Results </a> ] </xsl:otherwise>
-                  </xsl:choose>
-               </div>
-            </xsl:if>
          </div>
          <xsl:call-template name="tabs"/>
       </div>

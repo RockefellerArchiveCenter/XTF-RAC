@@ -11,6 +11,8 @@
    <xsl:import href="../../../xtfCommon/xtfCommon.xsl"/>
    <xsl:import href="../../../myList/myListFormatter.xsl"/>
 
+   <xsl:include href="../../../digital/digitalFormatter.xsl"/>
+
    <!-- Creates a variable equal to the value of the number in eadid which serves as the base
       for file names for the various components of the frameset.-->
    <xsl:variable name="file">
@@ -60,6 +62,9 @@
          <xsl:value-of select="/ead/eadheader/eadid"/>
       </xsl:variable>
       <div id="content-wrapper" data-spy="scroll" data-target="#toc" data-offset="100">
+         <xsl:if test="$doc.view='dao'">
+            <xsl:attribute name="class">digital</xsl:attribute>
+         </xsl:if>
          <div id="{$chunk.id}">
             <xsl:choose>
                <xsl:when test="$chunk.id = 'headerlink'">
@@ -771,6 +776,9 @@
    <xsl:template match="scopecontent">
       <h4>
          <xsl:choose>
+            <xsl:when test="head != ''">
+               <xsl:value-of select="head"/>
+            </xsl:when>
             <xsl:when test="parent::archdesc">
                <xsl:call-template name="anchor"/>Collection Description </xsl:when>
             <xsl:when test="parent::*[@level = 'recordgrp']">Record Group Description</xsl:when>
@@ -1190,11 +1198,11 @@
             </xsl:when>
             <xsl:otherwise>
                <xsl:choose>
-                  <xsl:when test="string(number(/ead/archdesc/dsc/descendant::c[@id=$chunk.id]/@xtf:hitCount))='NaN'">
+                  <xsl:when test="string(number(/ead/archdesc/dsc/child::c[@id=$chunk.id]/@xtf:hitCount))='NaN'">
                      <xsl:text>0</xsl:text>
                   </xsl:when>
                   <xsl:when test="($query != '0') and ($query != '')">
-                     <xsl:value-of select="number(/ead/archdesc/dsc/descendant::c[@id=$chunk.id]/@xtf:hitCount)"/>
+                     <xsl:value-of select="number(/ead/archdesc/dsc/child::c[@id=$chunk.id]/@xtf:hitCount)"/>
                   </xsl:when>
                </xsl:choose>
             </xsl:otherwise>
@@ -1369,7 +1377,7 @@
                                                                <xsl:with-param name="level">06</xsl:with-param>
                                                             </xsl:call-template>
                                                             <xsl:for-each select="c|c07">
-                                                               <xsl:if test="@xtf:hitCount">
+                                                               <xsl:if test="@xtf:hitCount or ((@level='file' or @level='item') and parent::c[@xtf:hitCount] and not(preceding-sibling::c[@xtf:hitCount] | following-sibling::c[@xtf:hitCount]))">
                                                                   <div class="{@level} c07" style="width:99%;float:right;">
                                                                      <xsl:call-template name="anchor"/>
                                                                      <xsl:call-template name="clevel">
@@ -1587,51 +1595,43 @@
                   <xsl:apply-templates select="relatedmaterial"/>
                   <xsl:apply-templates select="separatedmaterial"/>
                   <xsl:if test="controlaccess">
+                     <ul class="tags">
                      <xsl:if test="controlaccess/subject">
-                        <h4>Subjects</h4>
                         <xsl:for-each select="controlaccess/subject">
-                           <span>
+                           <li class="subject">
                               <xsl:value-of select="."/>
-                           </span>
-                           <br/>
+                           </li>
                         </xsl:for-each>
                      </xsl:if>
                      <xsl:if test="controlaccess/persname|controlaccess/famname">
-                        <h4>People</h4>
                         <xsl:for-each select="controlaccess/persname|controlaccess/famname">
-                           <span>
+                           <li class="people">
                               <xsl:value-of select="."/>
-                           </span>
-                           <br/>
+                           </li>
                         </xsl:for-each>
                      </xsl:if>
                      <xsl:if test="controlaccess/corpname">
-                        <h4>Organizations</h4>
                         <xsl:for-each select="controlaccess/corpname">
-                           <span>
+                           <li class="organizations">
                               <xsl:value-of select="."/>
-                           </span>
-                           <br/>
+                           </li>
                         </xsl:for-each>
                      </xsl:if>
                      <xsl:if test="controlaccess/geogname">
-                        <h4>Places</h4>
                         <xsl:for-each select="controlaccess/geogname">
-                           <span>
+                           <li class="places">
                               <xsl:value-of select="."/>
-                           </span>
-                           <br/>
+                           </li>
                         </xsl:for-each>
                      </xsl:if>
                      <xsl:if test="controlaccess/genreform">
-                        <h4>Formats</h4>
                         <xsl:for-each select="controlaccess/genreform">
-                           <span>
+                           <li class="formats">
                               <xsl:value-of select="."/>
-                           </span>
-                           <br/>
+                           </li>
                         </xsl:for-each>
                      </xsl:if>
+                     </ul>
                   </xsl:if>
                </div>
                <!-- ADDED 1/4/11: Adds container headings if series/subseries is followed by a file -->
@@ -1659,51 +1659,55 @@
                      <span class="inventoryHeaderTitle">Title</span>
                      <span class="inventoryHeaderContainers">Containers</span>
                      <span class="inventoryHeaderNotes">Notes</span>
-                     <span class="inventoryHeaderBookbag">Bookbag</span>
+                     <span class="inventoryHeaderBookbag">My List</span>
                   </div>
                </xsl:if>
 
                <xsl:apply-templates select="did" mode="dsc"/>
                <div class="instances">
-                  <xsl:for-each select="child::*/container[not(@parent)]">
-                     <div class="instance">
-                        <!--7/16/11 WS: Adjusted Containers -->
-                        <!-- ADDED 3/14/10: Sorts containers alpha numerically -->
-                        <!--<xsl:sort select="."/>-->
-                        <xsl:variable name="id" select="@id"/>
-                        <xsl:variable name="containerSib" select="count(../container[@parent = $id] | ../container[@id = $id])"/>
-                        <span class="container">
-                           <xsl:value-of select="concat(upper-case(substring(@type,1,1)),substring(@type,2))"/>
-                           <xsl:text> </xsl:text>
-                           <xsl:apply-templates select="."/>
-                           <xsl:text> </xsl:text>
-                        </span>
-                        <span class="container">
-                           <xsl:value-of select="concat(upper-case(substring(../container[@parent = $id]/@type,1,1)),substring(../container[@parent = $id]/@type,2))"/>
-                           <xsl:text> </xsl:text>
-                           <xsl:value-of select="../container[@parent = $id]"/>
-                        </span>
-                        <span class="format">
-                           <xsl:variable name="label">
-                              <xsl:choose>
-                                 <xsl:when test="contains(@label, ' (')">
-                                    <xsl:value-of select="substring-before(@label,' (')"/>
-                                 </xsl:when>
-                                 <xsl:otherwise>
-                                    <xsl:value-of select="concat(upper-case(substring(@label,1,1)),substring(@label,2))"/>
-                                 </xsl:otherwise>
-                              </xsl:choose>
-                           </xsl:variable>
-                           <xsl:if test="$label != 'Mixed materials' and $label != 'Mixed Materials' and $label != 'mixed materials'">
-                              <xsl:text> (</xsl:text>
-                              <xsl:value-of select="$label"/>
-                              <xsl:text>)</xsl:text>
-                           </xsl:if>
-                        </span>
-                     </div>
-                  </xsl:for-each>
-                  <!-- need this here in case there's a note but no instance -->
-                  &#160;
+                  <xsl:choose>
+                     <xsl:when test="child::*/container">
+                        <xsl:for-each select="child::*/container[not(@parent)]">
+                           <div class="instance">
+                              <!--7/16/11 WS: Adjusted Containers -->
+                              <!-- ADDED 3/14/10: Sorts containers alpha numerically -->
+                              <!--<xsl:sort select="."/>-->
+                              <xsl:variable name="id" select="@id"/>
+                              <xsl:variable name="containerSib" select="count(../container[@parent = $id] | ../container[@id = $id])"/>
+                              <span class="container">
+                                 <xsl:value-of select="concat(upper-case(substring(@type,1,1)),substring(@type,2))"/>
+                                 <xsl:text> </xsl:text>
+                                 <xsl:apply-templates select="."/>
+                                 <xsl:text> </xsl:text>
+                              </span>
+                              <span class="container">
+                                 <xsl:value-of select="concat(upper-case(substring(../container[@parent = $id]/@type,1,1)),substring(../container[@parent = $id]/@type,2))"/>
+                                 <xsl:text> </xsl:text>
+                                 <xsl:value-of select="../container[@parent = $id]"/>
+                              </span>
+                              <span class="format">
+                                 <xsl:variable name="label">
+                                    <xsl:choose>
+                                       <xsl:when test="contains(@label, ' (')">
+                                          <xsl:value-of select="substring-before(@label,' (')"/>
+                                       </xsl:when>
+                                       <xsl:otherwise>
+                                          <xsl:value-of select="concat(upper-case(substring(@label,1,1)),substring(@label,2))"/>
+                                       </xsl:otherwise>
+                                    </xsl:choose>
+                                 </xsl:variable>
+                                 <xsl:if test="$label != 'Mixed materials' and $label != 'Mixed Materials' and $label != 'mixed materials'">
+                                    <xsl:text> (</xsl:text>
+                                    <xsl:value-of select="$label"/>
+                                    <xsl:text>)</xsl:text>
+                                 </xsl:if>
+                              </span>
+                           </div>
+                        </xsl:for-each>
+                     </xsl:when>
+                     <xsl:otherwise>
+                        <!-- need this here in case there's a note but no instance --> &#160; </xsl:otherwise>
+                  </xsl:choose>
                </div>
                <span class="moreInfo">
                   <xsl:variable name="didHitCount">
@@ -1714,12 +1718,12 @@
                                 child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |
                                 child::fileplan |  child::odd | child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
                                 child::otherfindaid |  child::phystech |  child::processinfo | child::relatedmaterial | child::separatedmaterial |  child::controlaccess">
-                     <span class="dialog_dsc">
+                     <div class="dialog_dsc">
                         <a href="#" onClick="ga('send', 'event', 'finding aid', 'view', 'Additional Description');">Additional description</a>
-                     </span>
-                     <xsl:if test="$didHitCount &gt; 0">
-                        <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
-                     </xsl:if>
+                        <xsl:if test="$didHitCount &gt; 0">
+                           <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                        </xsl:if>
+                     </div>
                      <div id="{@id}_details" class="overlay" rel="{child::did/unittitle}">
                         <div class="details">
                            <xsl:apply-templates select="." mode="moreInfo"/>
@@ -1727,12 +1731,12 @@
                      </div>
                   </xsl:if>
                   <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
-                     <span class="restrict_dsc">
+                     <div class="restrict_dsc">
                         <a href="#" onClick="ga('send', 'event', 'finding aid', 'view', 'Restrictions');">Restrictions</a>
-                     </span>
-                     <xsl:if test="$didHitCount &gt; 0">
-                        <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
-                     </xsl:if>
+                        <xsl:if test="$didHitCount &gt; 0">
+                           <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                        </xsl:if>
+                     </div>
                      <div id="{@id}_restrictions" class="overlay" rel="{child::did/unittitle}">
                         <div class="restrictions">
                            <xsl:apply-templates select="." mode="restrictions"/>
@@ -1748,6 +1752,9 @@
                      </xsl:call-template>
                   </xsl:if>
                </span>
+               <xsl:if test="child::dao | child::did/dao">
+                  <xsl:call-template name="daoTable"/>
+               </xsl:if>
 
             </xsl:when>
             <xsl:otherwise>
@@ -1784,13 +1791,93 @@
                <div class="seriesTitle">
                   <xsl:apply-templates select="did" mode="dsc"/>
                </div>
+               <xsl:if test="child::*[@level][1]/@level='file' or child::*[@level][1]/@level='item' or (child::*[@level][1]/@level='otherlevel'and child::*[@level][1]/child::did/container)">
+                  <div class="inventoryTitle">Inventory</div>
+                  <div class="inventoryHeader">
+                     <span class="thumbnail">&#160;</span>
+                     <span class="inventoryHeaderTitle">Title</span>
+                     <span class="inventoryHeaderNotes">Notes</span>
+                     <span class="inventoryHeaderBookbag">My List</span>
+                  </div>
+               </xsl:if>
             </xsl:when>
             <!-- Items/Files-->
-            <xsl:when test="dao">
-               <xsl:apply-templates select="dao" mode="popout"/>
-            </xsl:when>
-            <xsl:when test="did/dao">
-               <xsl:apply-templates select="did/dao" mode="popout"/>
+            <xsl:when test="@level='file'">
+               <xsl:if test="not(preceding-sibling::xtf:meta/*:dao) and parent::dsc">
+                  <div class="inventoryTitle">Inventory</div>
+                  <div class="inventoryHeader">
+                     <span class="thumbnail">&#160;</span>
+                     <span class="inventoryHeaderTitle">Title</span>
+                     <span class="inventoryHeaderNotes">Notes</span>
+                     <span class="inventoryHeaderBookbag">My List</span>
+                  </div>
+               </xsl:if>
+               <div class="thumbnail">
+                  <xsl:if test="did/dao | dao">
+                  <xsl:variable name="daoImg">
+                     <xsl:choose>
+                        <xsl:when test="count(xtf:meta/*:daoLink) &gt; 1">
+                           <xsl:value-of>/xtf/icons/default/thumbnail-multi.svg</xsl:value-of>
+                        </xsl:when>
+                        <xsl:when test="xtf:meta/*:viewable='true'">
+                           <xsl:variable name="daoFile" select="substring-before(xtf:meta/*:daoLink,'.pdf')"/>
+                           <xsl:value-of select="concat($daoFile,'_thumb75.jpg')"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:value-of>/xtf/icons/default/thumbnail-large.svg</xsl:value-of>
+                        </xsl:otherwise>
+                     </xsl:choose>
+                  </xsl:variable>
+                  <img src="{$daoImg}" alt="Digital object thumbnail" width="90%"/>
+                  </xsl:if>
+               </div>
+               <xsl:apply-templates select="did" mode="dsc"/>
+               <span class="moreInfo">
+                  <xsl:variable name="didHitCount">
+                     <xsl:value-of select="count(descendant-or-self::xtf:hit) - count(did/descendant::xtf:hit)"/>
+                  </xsl:variable>
+                  <xsl:if
+                     test="child::scopecontent |  child::accruals |  child::appraisal |  child::arrangement |
+                     child::bioghist |  child::custodhist |  child::altformavail |  child::originalsloc |
+                     child::fileplan |  child::odd | child::acqinfo |  child::did/langmaterial |  child::accessrestrict[child::legalstatus] |  child::did/materialspec |
+                     child::otherfindaid |  child::phystech |  child::processinfo | child::relatedmaterial | child::separatedmaterial |  child::controlaccess">
+                     <div class="dialog_dsc">
+                        <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Additional Description']);">Additional description</a>
+                     </div>
+                     <xsl:if test="$didHitCount &gt; 0">
+                        <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                     </xsl:if>
+                     <div id="{@id}_details" class="overlay" rel="{child::did/unittitle}">
+                        <div class="details">
+                           <xsl:apply-templates select="." mode="moreInfo"/>
+                        </div>
+                     </div>
+                  </xsl:if>
+                  <xsl:if test="child::accessrestrict[not(child::legalstatus)] | child::userestrict">
+                     <div class="restrict_dsc">
+                        <a href="#" onClick="_gaq.push(['_trackEvent', 'finding aid', 'view', 'Restrictions']);">Restrictions</a>
+                     </div>
+                     <xsl:if test="$didHitCount &gt; 0">
+                        <span class="hit"> (<xsl:value-of select="$didHitCount"/>)</span>
+                     </xsl:if>
+                     <div id="{@id}_restrictions" class="overlay" rel="{child::did/unittitle}">
+                        <div class="restrictions">
+                           <xsl:apply-templates select="." mode="restrictions"/>
+                        </div>
+                     </div>
+                  </xsl:if>
+               </span>
+
+               <span class="inventoryBookbag bookbag">
+                  <xsl:if test="child::did/container and not(child::*[@level='file' or @level='item'])">
+                     <xsl:call-template name="myListEad">
+                        <xsl:with-param name="rootID" select="$rootID"/>
+                     </xsl:call-template>
+                  </xsl:if>
+               </span>
+               <xsl:if test="did/dao | dao">
+                  <xsl:call-template name="daoTable"/>
+               </xsl:if>
             </xsl:when>
          </xsl:choose>
       </xsl:for-each>
@@ -1818,162 +1905,11 @@
    </xsl:template>
    <!--Otherwise render the text in its normal font.-->
    <xsl:template match="did" mode="dsc">
-      <div class="daoLink">
-         <xsl:choose>
-            <xsl:when test="../dao | dao">
-               <xsl:if test="count(../dao | dao) &gt; 1">
-                  <xsl:call-template name="component-did-core"/>
-                  <br/>
-               </xsl:if>
-               <xsl:for-each select="../dao | dao ">
-                  <xsl:variable name="daoLink" select="@ns2:href | @xlink:href"/>
-                  <xsl:variable name="daoTitle" select="@ns2:title | @xlink:title"/>
-                  <xsl:variable name="citation">
-                     <xsl:call-template name="daoCitation"/>
-                  </xsl:variable>
-                  <xsl:choose>
-                     <xsl:when test="(@ns2:actuate | @xlink:actuate) and (@ns2:actuate | @xlink:actuate) != 'none'">
-                        <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384"
-                           onClick="ga('send', 'event', 'digital object', 'view', '{$doc.view}');" title="Digital object">
-                           <xsl:if test="count(../dao | dao) &gt; 1">
-                              <xsl:attribute name="style">margin-left:1em;</xsl:attribute>
-                           </xsl:if>
-                           <xsl:choose>
-                              <xsl:when test="count(../dao | dao) &gt; 1">
-                                 <xsl:value-of select="$daoTitle"/>
-                              </xsl:when>
-                              <xsl:otherwise>
-                                 <xsl:for-each select="../did | ../.">
-                                    <xsl:call-template name="component-did-core"/>
-                                 </xsl:for-each>
-                              </xsl:otherwise>
-                           </xsl:choose>
-                           <img src="/xtf/icons/default/dao.gif" alt="digital materials" align="top"/>
-                        </a>
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:choose>
-                           <xsl:when test="count(../dao | dao) &gt; 1">
-                              <xsl:value-of select="$daoTitle"/>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <xsl:for-each select="../did">
-                                 <xsl:call-template name="component-did-core"/>
-                              </xsl:for-each>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                     </xsl:otherwise>
-                  </xsl:choose>
-               </xsl:for-each>
-
-            </xsl:when>
-            <xsl:otherwise>
-               <xsl:call-template name="component-did-core"/>
-            </xsl:otherwise>
-         </xsl:choose>
+      <div class="component-title">
+         <xsl:call-template name="component-did-core"/>
       </div>
    </xsl:template>
 
-   <xsl:template match="dao" mode="popout">
-      <xsl:if test="$doc.view = 'dao'">
-         <div class="daoItemDisplay" style="float:left; padding:.5em; width:100%;">
-            <xsl:variable name="daoLink" select="@ns2:href | @xlink:href"/>
-            <xsl:variable name="daoTitle" select="@ns2:title | @xlink:title"/>
-            <xsl:variable name="citation">
-               <xsl:call-template name="daoCitation"/>
-            </xsl:variable>
-            <xsl:variable name="daoFile" select="substring-before(tokenize($daoLink,'/')[position()=last()],'.')"/>
-            <xsl:variable name="daoImg" select="concat(string-join(tokenize($daoLink,'/')[position()!=last()],'/'),'/',$daoFile,'_thumb.jpg')"/>
-            <div class="daoLink" style="float:left; width:15%">
-               <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384"
-                  onClick="ga('send', 'event', 'digital object', 'view', '{$doc.view}');">
-                  <xsl:call-template name="component-did-core"/>
-                  <img src="{$daoImg}"/>
-               </a>
-            </div>
-            <div class="caption" style="float:left;padding: 3em 0 0 1em;width: 75%;font-size:1em;">
-               <a href="{$daoLink}" data-citation="{$citation}" data-title="{$daoTitle}" data-width="512" data-height="384"
-                  onClick="ga('send', 'event', 'digital object', 'view', '{$doc.view}');">
-                  <xsl:if test="../did/unittitle != ''">
-                     <xsl:value-of select="../did/unittitle"/>
-                     <xsl:if test="../did/unitdate">
-                        <xsl:text>,&#160;</xsl:text>
-                     </xsl:if>
-                  </xsl:if>
-                  <xsl:if test="../unittitle != ''">
-                     <xsl:value-of select="../unittitle"/>
-                     <xsl:if test="../unitdate">
-                        <xsl:text>,&#160;</xsl:text>
-                     </xsl:if>
-                  </xsl:if>
-                  <xsl:if test="../unittitle != ''">
-                     <xsl:value-of select="../unittitle"/>
-                     <xsl:if test="../unitdate">
-                        <xsl:text>,&#160;</xsl:text>
-                     </xsl:if>
-                  </xsl:if>
-                  <xsl:if test="../did/unitdate">
-                     <xsl:value-of select="../did/unitdate"/>
-                  </xsl:if>
-                  <xsl:if test="../unitdate">
-                     <xsl:value-of select="../unitdate"/>
-                  </xsl:if>
-               </a>
-            </div>
-         </div>
-      </xsl:if>
-   </xsl:template>
-   <xsl:template name="daoCitation">
-      <xsl:for-each select="ancestor::*[@level]">
-         <xsl:variable name="level">
-            <xsl:choose>
-               <xsl:when test="self::archdesc">Collection</xsl:when>
-               <xsl:when test="@level = 'series'">Series</xsl:when>
-               <xsl:when test="@level = 'subseries'">Subseries</xsl:when>
-               <xsl:when test="@level = 'recordgrp'">Record Group</xsl:when>
-               <xsl:when test="@level = 'subgrp'">Subgroup</xsl:when>
-               <xsl:when test="@level = 'fonds'">Fonds</xsl:when>
-               <xsl:when test="@level = 'subfonds'">Subfonds</xsl:when>
-               <xsl:when test="@level = 'class'">Class</xsl:when>
-               <xsl:when test="@level = 'otherlevel'">otherlevel</xsl:when>
-               <xsl:when test="@level = 'file'">File</xsl:when>
-               <xsl:when test="@level = 'item'">Item</xsl:when>
-            </xsl:choose>
-         </xsl:variable>
-         <xsl:variable name="id">
-            <xsl:if test="did/unitid">
-               <xsl:value-of select="concat(' ',did/unitid)"/>
-            </xsl:if>
-         </xsl:variable>
-         <xsl:variable name="title">
-            <xsl:choose>
-               <xsl:when test="did/unittitle != ''">
-                  <xsl:value-of select="did/unittitle"/>
-               </xsl:when>
-               <xsl:when test="did/unitdate !=''">
-                  <xsl:value-of select="did/unitdate"/>
-               </xsl:when>
-               <xsl:otherwise>
-                  <xsl:value-of select="'Unknown'"/>
-               </xsl:otherwise>
-            </xsl:choose>
-         </xsl:variable>
-         <xsl:choose>
-            <xsl:when test="$level='Collection'">
-               <xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title,'&lt;br/&gt;')"/>
-            </xsl:when>
-            <xsl:when test="self::archdesc">
-               <xsl:if test="parent::*[@level]"/>
-               <xsl:value-of select="concat('&lt;strong&gt;',$level,'&lt;/strong&gt;',': ',$title,'&lt;br/&gt;')"/>
-            </xsl:when>
-            <xsl:otherwise>
-               <xsl:if test="parent::*[@level]"/>
-               <xsl:value-of select="concat('&lt;strong&gt;',$level,$id,'&lt;/strong&gt;',': ',$title,'&lt;br/&gt;')"/>
-            </xsl:otherwise>
-         </xsl:choose>
-      </xsl:for-each>
-      <xsl:text>&lt;div class="repository"&gt;Rockefeller Archive Center, Sleepy Hollow, NY.&lt;/div&gt;</xsl:text>
-   </xsl:template>
    <xsl:template name="component-did-core">
       <!--Inserts unitid and a space if it exists in the markup.-->
       <xsl:if test="unitid">
@@ -2037,14 +1973,15 @@
       <xsl:apply-templates select="did/materialspec"/>
       <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c' or name()='dao' or name()='controlaccess')]"/>
       <xsl:if test="string(controlaccess)">
-         <h4>Subjects</h4>
+         <ul class="tags">
          <xsl:for-each
             select="controlaccess/subject | controlaccess/corpname | controlaccess/famname | controlaccess/persname | controlaccess/genreform | controlaccess/title | controlaccess/geogname | controlaccess/occupation">
             <xsl:sort select="." data-type="text" order="ascending"/>
-            <div>
+            <li>
                <xsl:apply-templates/>
-            </div>
+            </li>
          </xsl:for-each>
+         </ul>
       </xsl:if>
    </xsl:template>
    <xsl:template match="*" mode="restrictions">

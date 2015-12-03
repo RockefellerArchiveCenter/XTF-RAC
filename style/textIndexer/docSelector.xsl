@@ -115,8 +115,8 @@
          <xsl:when test="ends-with(@fileName, '.xml')">
             
             <xsl:choose>
-               <!-- Skip document-less METS and DC files -->
-               <xsl:when test="ends-with(@fileName, '.mets.xml') or ends-with(@fileName, '.dc.xml')"/>
+               <!-- Skip document-less DC files -->
+               <xsl:when test="ends-with(@fileName, '.dc.xml')"/>
 
                <!-- Skip bookreader page files -->
                <xsl:when test="matches($dirPath, '^.*bookreader') and matches(@fileName, '\d{8}\.xml')"/>
@@ -166,6 +166,13 @@
                               preFilter="style/textIndexer/mods/modsPreFilter.xsl"
                               displayStyle="style/dynaXML/docFormatter/mods/modsDocFormatter.xsl"/>
                         </xsl:when>
+                        <xsl:when test="matches($root-element-name,'^mets$') or
+                           matches($pid,'mets') or 
+                           matches($ns,'mets')">
+                           <indexFile fileName="{$fileName}"
+                              preFilter="style/textIndexer/mets/metsPreFilter.xsl"
+                              displayStyle="style/dynaXML/docFormatter/mets/metsDocFormatter.xsl"/>
+                        </xsl:when>
                         <!-- Look for NLM XML files -->
                         <xsl:when test="matches($root-element-name,'^article$') or
                                         matches($pid,'NLM') or 
@@ -202,7 +209,7 @@
                            <indexFile fileName="{$fileName}" 
                               type="XML"
                               preFilter="style/textIndexer/default/defaultPreFilter.xsl"/>
-                           <xsl:message select="'Unrecognized XML structure. Indexing using the default preFilter.'"/>
+                           <xsl:message select="concat('Unrecognized XML structure. Indexing using the default preFilter. ', $file)"/>
                         </xsl:otherwise>
                      </xsl:choose>
                   </xsl:for-each>
