@@ -569,7 +569,7 @@
          <xsl:value-of select="concat(substring-before($xtfURL, 'xtf/'), xtf:meta/*:identifier)"/>
       </xsl:variable>
       <div class="row">
-         <a onclick="ga('send', 'event', 'digital object', 'view', 'contents');" href="{$link}">
+         <a onclick="ga('send', 'event', 'digital object', 'view', 'contents');" href="{$link}" title="Digital Object">
             <div class="filename">
                <xsl:analyze-string select="xtf:meta/*:title" regex="(([a-z0-9]{{8}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{4}})-([a-z0-9]{{12}})-)">
                   <xsl:non-matching-substring>

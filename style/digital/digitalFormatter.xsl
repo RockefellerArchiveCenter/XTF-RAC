@@ -16,11 +16,11 @@
 
     <xsl:template name="daoTable">
         <div class="daoTable">
-            <div class="head">
+            <!--<div class="head">
                 <div class="filename">Filename</div>
                 <div class="format">Format</div>
                 <div class="size">Size</div>
-            </div>
+            </div>-->
             <xsl:for-each select="meta/daoLink | xtf:meta/*:daoLink | meta/daoLinkRestricted | xtf:meta/*:daoLinkRestricted">
                 <xsl:if test=".!=''">
                     <xsl:variable name="identifier">

@@ -2211,9 +2211,7 @@ ul.none {
 /* ===[ DIGITAL OBJECT TABLES ]=== */
 
 .daoTable {
-    text-align: center;
-    border: 1px solid #666;
-    border-radius: 4px;
+    border-top: 1px dotted #666;
     margin-top: 1em;
 }
 
@@ -2229,28 +2227,42 @@ ul.none {
     width:60%;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-decoration: underline
 }
 
 .daoTable .format {
-    width:25%
+    width:25%;
+    text-decoration: underline
 }
 
 .daoTable .size {
-    width: 15%
+    width: 10%;
+    text-decoration: underline
+}
+
+.daoTable .row:before {
+    content: " ";
+    background-image: url('../../icons/default/dao.gif');
+    background-repeat: no-repeat;
+    margin-top: -2px;
+    height: 20px;
+    width: 30px;
+    float: left;
 }
 
 .daoTable .row {
-    width: 100%;
+    width: 99%;
     padding-top:.5em;
+    padding-left: 1%
 }
 
-.daoTable .row:nth-of-type(odd) {
+/*.daoTable .row:nth-of-type(odd) {
     background: #fff
 }
 
 .daoTable .row:nth-of-type(even) {
     background: #eee
-}
+}*/
 
 .daoTable .row:hover {
     background:#ddd;
@@ -2291,12 +2303,12 @@ ul.none {
 
 #content-wrapper .daoTable {
     float: left;
-    width: 88%;
-    margin-left: 1%;
+    width: 86%;
+    margin-left: 3%;
 }
 
 #content-wrapper.digital .daoTable {
-    width: 88%
+    width: 86%
 }
 
 .daoTable img {
