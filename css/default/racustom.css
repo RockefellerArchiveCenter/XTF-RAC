@@ -350,7 +350,7 @@ div.docHit {
     margin: 0;
 }
 
-.result.creator {
+.result.creator, .docHit .active .result.creator {
     color: #555
 }
 
@@ -2224,7 +2224,7 @@ ul.none {
 }
 
 .daoTable .filename {
-    width:60%;
+    width:52%;
     overflow: hidden;
     text-overflow: ellipsis;
     text-decoration: underline
@@ -2236,7 +2236,7 @@ ul.none {
 }
 
 .daoTable .size {
-    width: 10%;
+    width: 15%;
     text-decoration: underline
 }
 
