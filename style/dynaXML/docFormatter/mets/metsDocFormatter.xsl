@@ -187,7 +187,6 @@
                   <div id="tocWrapper">
                      <div id="toc">
                         <xsl:call-template name="foundIn"/>
-                        <xsl:call-template name="subjects"/>
                      </div>
                   </div>
                   <xsl:call-template name="body"/>
@@ -431,6 +430,7 @@
                      </xsl:if>
                   </p>
                </div>
+               <xsl:call-template name="subjects"/>
                <div class="notes">
                   <xsl:for-each select="mets:dmdSec/mets:mdWrap[@MDTYPE='MODS']/mets:xmlData/mods:mods/mods:note[not(@type='originalsloc')]">
                      <xsl:apply-templates select="."/>
