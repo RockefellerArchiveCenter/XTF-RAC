@@ -190,17 +190,7 @@
          </xsl:choose>
       </xsl:variable>
       <xsl:variable name="title">
-         <xsl:choose>
-            <xsl:when test="$chunk.id != '' and starts-with($chunk.id, 'aspace_')">
-               <xsl:value-of select="concat(archdesc/did/unittitle, ', ',archdesc/dsc/descendant::c[@id=$chunk.id]/did/unittitle)"/>
-            </xsl:when>
-            <xsl:when test="$chunk.id != '' and $chunk.id = 'contentsLink'">
-               <xsl:value-of select="concat(archdesc/did/unittitle, ', Contents List')"/>
-            </xsl:when>
-            <xsl:otherwise>
-               <xsl:value-of select="archdesc/did/unittitle"/>
-            </xsl:otherwise>
-         </xsl:choose>
+         <xsl:value-of select="archdesc/did/unittitle"/>
       </xsl:variable>
       <xsl:variable name="url">
          <xsl:choose>
