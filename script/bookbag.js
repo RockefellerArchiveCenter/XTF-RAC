@@ -328,7 +328,7 @@ $(function() {
 
 
 //shows or hides scheduled date and user review sections
-$(function () {
+/*$(function () {
 
     function showSection(root) {
         root.show();
@@ -378,4 +378,4 @@ $(function () {
         }
     });
 
-}());
+}());*/

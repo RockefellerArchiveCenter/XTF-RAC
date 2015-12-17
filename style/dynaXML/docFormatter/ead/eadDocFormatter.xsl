@@ -313,6 +313,7 @@
                <xsl:call-template name="myListEmail"/>
                <xsl:call-template name="myListPrint"/>
                <xsl:call-template name="myListRequest"/>
+               <xsl:call-template name="myListSave"/>
                <div class="fixedFooter">
                   <xsl:copy-of select="$brand.footer"/>
                </div>
