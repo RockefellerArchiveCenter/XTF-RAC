@@ -481,26 +481,16 @@ $(function () {
             { html: 'Request <span class="listCount">'+listCount+'</span> item(s)', click: function() {
                 console.log('request materials');
                 if(content()) {
-                    if($('#VisitScheduled').is(':checked')) {
-                        if($('#myListRequest input[name="ScheduledDate"]').val()) {
-                            $('input[name="UserReview"]').val("No");
-                            $('#requestForm').submit();
-                            $(this).dialog("close")
-                            $('#myListRequest input[name="ScheduledDate"]').removeClass('error');
-                            $('#myListRequest #dateError').hide();
-                            dialogMyListRequestConfirm.dialog("open");
-                        } else {
-                            $('#myListRequest input[name="ScheduledDate"]').addClass('error');
-                            $('#myListRequest #dateError').show();
-                            return false;
-                        }
-                    } else if ($('#VisitReview').is(':checked')) {
-                        $('input[name="UserReview"]').val("Yes");
+                    if($('#myListRequest input[name="ScheduledDate"]').val()) {
                         $('#requestForm').submit();
                         $(this).dialog("close")
                         $('#myListRequest input[name="ScheduledDate"]').removeClass('error');
                         $('#myListRequest #dateError').hide();
                         dialogMyListRequestConfirm.dialog("open");
+                    } else {
+                        $('#myListRequest input[name="ScheduledDate"]').addClass('error');
+                        $('#myListRequest #dateError').show();
+                        return false;
                     }
                 } else {
                     $('#myListRequest .contentError').show();
@@ -539,6 +529,66 @@ $(function () {
         dialogMyListRequest.dialog("option", "title", "Request in Reading Room").dialog("open");
         });
     });
+    
+$(function () {
+    var listCount = $('#requestForm .row:not(.header-row) > .requestInputs > input[type=checkbox]:checked').length;
+    var dialogMyListRequest = $('#myListSave').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            $(".ui-dialog-content").addClass("myList");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        buttons: [
+            { html: 'Save <span class="listCount">'+listCount+'</span> item(s)', click: function() {
+                console.log('request materials');
+                if(content()) {
+                    $('#saveForm').submit();
+                    $(this).dialog("close")
+                    $('#myListRequest input[name="ScheduledDate"]').removeClass('error');
+                    $('#myListRequest #dateError').hide();
+                    dialogMyListRequestConfirm.dialog("open");
+                } else {
+                    $('#myListRequest .contentError').show();
+                }
+            }
+            },
+            { text: "Cancel", click: function() { $( this ).dialog( "close" ); } }
+            ],
+        width: windowWidth/1.2,
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    var dialogMyListRequestConfirm = $('#myListSaveConfirm').dialog({
+        create: function(event, ui) {
+            var widget = $(this).dialog("widget");
+            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
+            $(".ui-dialog-content").addClass("myList");
+            },
+        autoOpen: false,
+        modal: true,
+        resizable: true,
+        buttons: [
+            { text: "Close", click: function() { $( this ).dialog( "close" ); } }
+            ],
+        width: windowWidth/2,
+        close: function () {
+            $('.ui-dialog').hide();
+        }
+    });
+
+    $(".myListSave").on("click", function (e) {
+        e.preventDefault();
+        $('.myListContents.dialog').css('max-height', windowHeight-(windowHeight/2.2));
+        dialogMyListRequest.dialog("option", "title", "Save in RACcess").dialog("open");
+        });
+    });
+
+
 $(function () {
     function validate(){
         if ($('#myListCopies select[name="Format"]').val()) {

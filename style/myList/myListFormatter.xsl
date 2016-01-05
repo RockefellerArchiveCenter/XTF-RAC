@@ -291,6 +291,9 @@
                         <a href="#" class="myListRequest" onClick="ga('send', 'event', 'My List', 'Reading Room Request', 'My List Button');">Request in Reading Room</a>
                     </li>
                     <li>
+                        <a href="#" class="myListSave" onClick="ga('send', 'event', 'My List', 'Save in RACcess', 'My List Button');">Save in RACcess</a>
+                    </li>
+                    <li>
                         <a href="#" class="myListCopies" onClick="ga('send', 'event', 'My List', 'Duplication Request', 'My List Button');">Request copies</a>
                     </li>
                 </ul>
@@ -319,6 +322,7 @@
             <a class="btn btn-default myListEmail" onClick="ga('send', 'event', 'My List', 'Email', 'My List Header');"><img src="/xtf/icons/default/email-list.svg"/> E-mail</a>
             <a class="btn btn-default myListPrint" onClick="ga('send', 'event', 'My List', 'Print', 'My List Header');"><img src="/xtf/icons/default/print-list.png"/> Print</a>
             <a class="btn btn-default myListRequest" onClick="ga('send', 'event', 'My List', 'Reading Room Request', 'My List Header');"><img src="/xtf/icons/default/reading-room-request.png"/> Request in Reading Room</a>
+            <a class="btn btn-default myListSave" onClick="ga('send', 'event', 'My List', 'Save Request', 'My List Header');"><img src="/xtf/icons/default/save.svg"/> Save in RACcess</a>
             <a class="btn btn-default myListCopies" onClick="ga('send', 'event', 'My List', 'Duplication Request', 'My List Header');"><img src="/xtf/icons/default/duplication-request.png"/> Request Copies</a>
             <a class="btn btn-default myListRemoveAll" onClick="ga('send', 'event', 'My List', 'Remove All Items', 'My List Header');"><img src="/xtf/icons/default/delete-all.png"/> Remove All Items</a>
         </div>
@@ -410,27 +414,12 @@
                     <xsl:call-template name="emptyList"/>
                 </div>
                 <div class="third">
-                    <div>
-                        <div class="radio">
-                            <input id="VisitReview" name="Visit" type="radio"> Keep for My
-                                Review</input>
-                        </div>
-                        <div class="radio">
-                            <input id="VisitScheduled" name="Visit" type="radio" checked="checked">
-                                Schedule Retrieval</input>
-                        </div>
-                    </div>
-
                     <div class="form-group scheduledDate">
                         <label class="control-label required" for="scheduledDate">Scheduled
                             Date</label>
                         <input id="ScheduledDate" class="form-control" name="ScheduledDate"
                             type="text" placeholder="Enter the date of your research visit"/>
                         <div id="dateError" class="error">Please enter the date of your research visit.</div>
-                    </div>
-                    <div class="form-group userReview">
-                        <span class="help-block">This request will be saved in RACcess, but won't be
-                            retrieved until you submit it for processing.</span>
                     </div>
                 </div>
                 <div class="third notes">
@@ -454,6 +443,67 @@
         </div>
 
         <div class="overlay" id="myListRequestConfirm">
+            <div class="confirm">
+                <h1>Your request has been sent to RACcess!</h1>
+                <p>You must be logged into <a href="https://raccess.rockarch.org">RACcess</a> in order for your request to be submitted. <a href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="ga('send', 'event', 'My List', 'Log In', 'Reading Room Request Confirm Dialog');">
+                    Click here</a> to view your requests.</p>
+            </div>
+        </div>
+    </xsl:template>
+    
+    <!-- Saves Aeon requests for items in My List -->
+    <xsl:template name="myListSave">
+        <div class="overlay" id="myListSave">
+            <form id="saveForm" method="post" target="new"
+                action="https://raccess.rockarch.org/aeon.dll">
+                <!-- Aeon inputs -->
+                <input type="hidden" name="AeonForm" value="EADRequest"/>
+                <input type="hidden" name="WebRequestForm" value="DefaultRequest"/>
+                <input type="hidden" name="RequestType" value="Loan"/>
+                <input type="hidden" name="DocumentType" value="Default"/>
+                <input type="hidden" name="GroupingIdentifier" value="GroupingField"/>
+                <input type="hidden" name="GroupingOption_ItemInfo1" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_ItemDate" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_ItemTitle" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemAuthor" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemSubtitle" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemVolume" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemIssue" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_ItemInfo2" value="Concatenate"/>
+                <input type="hidden" name="GroupingOption_CallNumber" value="FirstValue"/>
+                <input type="hidden" name="GroupingOption_ItemInfo3" value="FirstValue"/>
+                <input type="hidden" name="SubmitButton" value="Submit Request"/>
+                <input type="hidden" name="UserReview" value="Yes"/>
+                <div class="myListContents dialog">
+                    <xsl:call-template name="emptyList"/>
+                </div>
+                <div class="third">
+                    <div class="form-group userReview">
+                        <label class="control-label">This request will be saved in RACcess, but won't be
+                            retrieved until you submit it for processing.</label>
+                    </div>
+                </div>
+                <div class="third notes">
+                    <div class="form-group">
+                        <label class="control-label" for="SpecialRequest">Special Requests/Questions</label>
+                        <textarea class="form-control" rows="2" name="SpecialRequest"/>
+                        <span class="help-block">Please enter any special requests or questions for RAC staff.</span>
+                    </div>
+                </div>
+                <div class="third notes">
+                    <div class="form-group">
+                        <label class="control-label" for="Notes">Notes</label>
+                        <textarea class="form-control" rows="2" name="Notes"/>
+                        <span class="help-block">Enter any notes about this request for your personal reference here.</span>
+                    </div>
+                </div>
+            </form>
+            <div class="register">
+                <strong>Good to know:</strong> Folders in the same box may be grouped together in a
+                single request. </div>
+        </div>
+        
+        <div class="overlay" id="myListSaveConfirm">
             <div class="confirm">
                 <h1>Your request has been sent to RACcess!</h1>
                 <p>You must be logged into <a href="https://raccess.rockarch.org">RACcess</a> in order for your request to be submitted. <a href="https://raccess.rockarch.org/aeon.dll" target="_blank" onClick="ga('send', 'event', 'My List', 'Log In', 'Reading Room Request Confirm Dialog');">

@@ -183,6 +183,7 @@
             <xsl:call-template name="myListEmail"/>
             <xsl:call-template name="myListPrint"/>
             <xsl:call-template name="myListRequest"/>
+            <xsl:call-template name="myListSave"/>
          </body>
       </html>
 
