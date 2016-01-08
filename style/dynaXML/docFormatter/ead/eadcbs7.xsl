@@ -819,7 +819,12 @@
             <xsl:when test="self::otherfindaid">Other Finding Aids</xsl:when>
             <xsl:when test="self::relatedmaterial">Related Archival Materials</xsl:when>
             <xsl:when test="self::originalsloc">Location of Originals</xsl:when>
-            <xsl:when test="self::odd">General Note</xsl:when>
+            <xsl:when test="self::odd">
+               <xsl:choose>
+                  <xsl:when test="child::*[name() = 'head']"><xsl:value-of select="child::*[name() = 'head']"/></xsl:when>
+                  <xsl:otherwise>General Note</xsl:otherwise>
+               </xsl:choose>
+            </xsl:when>
             <xsl:when test="self::custodhist">Custodial History</xsl:when>
             <xsl:when test="self::altformavail">Location of Copies</xsl:when>
             <xsl:when test="self::fileplan">File Plan</xsl:when>
