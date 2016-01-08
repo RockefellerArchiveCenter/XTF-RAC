@@ -634,6 +634,7 @@
                <xsl:call-template name="myListEmail"/>
                <xsl:call-template name="myListPrint"/>
                <xsl:call-template name="myListRequest"/>
+               <xsl:call-template name="myListSave"/>
                <xsl:call-template name="myListCopies"/>
             </div>
          </body>
@@ -852,6 +853,7 @@
             <xsl:call-template name="myListEmail"/>
             <xsl:call-template name="myListPrint"/>
             <xsl:call-template name="myListRequest"/>
+            <xsl:call-template name="myListSave"/>
             <xsl:call-template name="myListCopies"/>
 
          </body>
