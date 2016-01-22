@@ -129,7 +129,9 @@
          <xsl:apply-templates select="$meta/*:subjectcorp" mode="facet"/>
          <xsl:apply-templates select="$meta/*:geogname" mode="facet"/>
          <xsl:apply-templates select="$meta/*:collection" mode="facet"/>
-         <xsl:apply-templates select="$meta/*:format" mode="facet"/>
+         <xsl:if test="$meta/*:type">
+            <xsl:apply-templates select="$meta/*:format" mode="facet"/>
+         </xsl:if>
          
          <xsl:apply-templates select="$meta/*:title[1]" mode="browse"/>
          <!-- Removed the [1] to select all creators for browsing -->         

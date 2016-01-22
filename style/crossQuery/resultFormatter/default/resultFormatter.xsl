@@ -598,7 +598,7 @@
                                     </xsl:for-each>
                                  </xsl:when>
                                  <xsl:otherwise>
-                                    <xsl:for-each-group select="docHit" group-by="@path">
+                                    <xsl:for-each-group select="docHit[*:meta/*:type]" group-by="@path">
                                        <xsl:call-template name="docHitColl"/>
                                     </xsl:for-each-group>
                                  </xsl:otherwise>
