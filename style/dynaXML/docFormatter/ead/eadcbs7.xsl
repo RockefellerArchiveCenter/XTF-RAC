@@ -358,7 +358,7 @@
          </h4>
       </xsl:if>
       <xsl:choose>
-         <xsl:when test="defitem">
+         <xsl:when test="@type = 'defitem'">
             <dl>
                <xsl:apply-templates select="defitem"/>
             </dl>
