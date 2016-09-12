@@ -2384,7 +2384,7 @@ ul.none {
     margin: 1em .5em
 }
 
-iframe {
+#daoView iframe {
     background-image: url("images/ajax-loader.gif");
     background-repeat: no-repeat;
     background-position: 50% 50%;

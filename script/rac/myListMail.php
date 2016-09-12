@@ -1,7 +1,33 @@
 <?php
+    
+    include_once("config.inc.php");
 
     // Only process POST requests.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        echo "Sending CAPTCHA";
+        // reCAPTCHA
+        $secret = $config["reCAPTCHA"];
+        $response = ($_POST["g-captcha-response"]);
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = array('secret' => $secret, 'response' => = $response);
+        
+        //use key 'http' even if you send the request to https://...
+        $options = array(
+            'http' => array(
+               'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+               'method'  => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
+        $context  = stream_context_create($options);
+        echo $context
+        $result = file_get_contents($url, false, $context);
+        echo $result
+        if ($result === FALSE) { 
+            exit(1); 
+        }
+                
+        
         // Get the form fields and remove whitespace.
         $subject = trim($_POST["subject"]);
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
@@ -33,6 +59,8 @@
             //http_response_code(500);
             echo "Oops! Something went wrong and we couldn't send your message.";
         }
+        
+        var_dump($result);
 
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
