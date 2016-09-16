@@ -101,6 +101,15 @@ $(document).ready(function () {
                     return '';
                 }
             };
+            
+            function getRefId(rawIdentifier) {
+             if(item.identifier.indexOf("aspace_") >= 0) {
+                finalIdentifier = item.identifier.substring(item.identifier.indexOf("aspace_")+7, item.identifier.length);
+             } else {
+                finalIdentifier = item.identifier
+             }
+               return finalIdentifier;
+            }
 
             var title = sanitize(item.title);
             var date = sanitize(item.date);
@@ -109,6 +118,7 @@ $(document).ready(function () {
             var dateAdded = dateConvert(item.dateAdded);
             var identifier = sanitize(item.identifier);
             var url = sanitize(item.URL);
+            var refId = getRefId(item.identifier);
             var parents = sanitize(item.parents);
             var formatparents = splitparents(item.parents);
             var container1 = sanitize(item.container1);
@@ -132,6 +142,7 @@ $(document).ready(function () {
                         '<input type="hidden" name="ItemInfo2_' + identifier + '" value="' + accessRestrict + '"/>' +
                         '<input type="hidden" name="CallNumber_' + identifier + '" value="' + callNumber + '"/>' +
                         '<input type="hidden" name="ItemInfo3_' + identifier + '" value="' + url + '"/>' +
+                        '<input type="hidden" name="ItemCitation_' + identifier + '" value="' + refId + '"/>' +
                         '<input type="hidden" name="GroupingField_' + identifier + '" value="' + groupingfield + '"/>' +
                     '</div>' +
                     '<div class="collectionTitle"><p>' + collectionTitle + ' (' + item.callNumber + ')</p>' +
