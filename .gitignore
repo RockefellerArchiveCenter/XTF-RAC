@@ -12,3 +12,4 @@ classpath.pl
 .DS\_Store
 infinitescroll*
 *config.inc.php
+*myListMail.php

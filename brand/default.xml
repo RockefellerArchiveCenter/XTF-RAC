@@ -21,11 +21,11 @@
       <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
       <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
       <script type="text/javascript" src="/xtf/script/rac/active.js"/>
-      <script type="text/javascript" src="/xtf/script/rac/dialog.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/dialog.js?v=1"/>
       <script type="text/javascript" src="/xtf/script/rac/datepicker.js"/>
       <script type="text/javascript" src="/xtf/script/rac/componentInfo.js"/>
       <script type="text/javascript" src="/xtf/script/rac/daoTable.js"/>
-      <script type="text/javascript" src="/xtf/script/bookbag.js"/>
+      <script type="text/javascript" src="/xtf/script/bookbag.js?v=1"/>
       <script src='https://www.google.com/recaptcha/api.js'></script>
 
       <!-- Google Analytics -->

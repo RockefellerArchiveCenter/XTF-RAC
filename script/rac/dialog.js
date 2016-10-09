@@ -327,18 +327,16 @@ $(function () {
         var text = $('#myListEmail textarea[name="message"]').val();
         var items = getItems();
         var message = text + '\r\n' + items;
+        var recaptcha = $('#myListMail').serialize()
 
             // Submit the form using AJAX.
             $.ajax({
                 type: $('#myListMail').attr('method'),
                 url: $('#myListMail').attr('action'),
-                data: {
-                    email: address,
-                    subject: subject,
-                    message: message
-                }
+                data: recaptcha
             })
             .done(function(response) {
+                console.log(response)
                 // Clear the form.
                 $('input[name="email"]').val('');
                 $('input[name="subject"]').val('');
