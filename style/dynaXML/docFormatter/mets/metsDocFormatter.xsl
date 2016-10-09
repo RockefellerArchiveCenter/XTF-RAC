@@ -137,7 +137,7 @@
                   </meta>
                   <div itemprop="http://schema.org/contentLocation" itemtype="http://schema.org/Place" itemscope="">
                      <meta itemprop="http://schema.org/name" content="Rockefeller Archive Center"/>
-                     <meta itemprop="http://schema.org/url" content="http://www.rockarch.org"/>
+                     <meta itemprop="http://schema.org/url" content="http://rockarch.org"/>
                      <div itemprop="http://schema.org/address" itemscope="" itemtype="http://schema.org/PostalAddress">
                         <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
                         <meta itemprop="addressLocality" content="Sleepy Hollow"/>
@@ -176,7 +176,7 @@
                <xsl:copy-of select="$brand.header"/>
                <div id="header">
                   <a href="/xtf/search">
-                     <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center" border="0"/>
+                     <img src="http://rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center" border="0"/>
                      <h1>dimes.rockarch.org</h1>
                      <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
                   </a>

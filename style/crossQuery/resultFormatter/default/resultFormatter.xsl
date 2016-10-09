@@ -241,7 +241,7 @@
                <!-- 9/27/11 WS:  Adjusted results header for a cleaner look-->
                <div id="header">
                   <a href="/xtf/search">
-                     <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center"/>
+                     <img src="http://rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center"/>
                      <h1>dimes.rockarch.org</h1>
                      <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
                   </a>
@@ -664,7 +664,7 @@
             <!-- result header -->
             <div id="header">
                <a href="/xtf/search">
-                  <img src="http://www.rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center" border="0"/>
+                  <img src="http://rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center" border="0"/>
                   <h1>dimes.rockarch.org</h1>
                   <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
                </a>
