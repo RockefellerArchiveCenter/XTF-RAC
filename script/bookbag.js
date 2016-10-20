@@ -103,10 +103,10 @@ $(document).ready(function () {
             };
             
             function getRefId(rawIdentifier) {
-             if(item.identifier.indexOf("aspace_") >= 0) {
-                finalIdentifier = item.identifier.substring(item.identifier.indexOf("aspace_")+7, item.identifier.length);
+             if(rawIdentifier.indexOf("aspace_") >= 0) {
+                var finalIdentifier = rawIdentifier.substring(rawIdentifier.indexOf("aspace_")+7, rawIdentifier.length);
              } else {
-                finalIdentifier = item.identifier
+                finalIdentifier = rawIdentifier
              }
                return finalIdentifier;
             }
