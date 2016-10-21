@@ -84,6 +84,9 @@
             <xsl:variable name="identifier">
                 <xsl:value-of select="meta/identifier"/>
             </xsl:variable>
+            <xsl:variable name="refid">
+                <xsl:value-of select="substring-after($identifier, 'aspace_')"/>
+            </xsl:variable>
             <xsl:variable name="container1">
                 <xsl:choose>
                     <xsl:when test="contains(meta/containers[1], ',')">
@@ -130,7 +133,7 @@
                 data-ItemSubtitle="{$parents}" data-ItemAuthor="{$creator}" data-ItemDate="{$date}"
                 data-CallNumber="{$callNo}" data-ItemVolume="{$container1}"
                 data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
-                data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}"
+                data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}" data-itemcitation="{$refid}"
                 data-GroupingField="{$groupingfield}" onClick="ga('send', 'event', 'My List', 'Add', '{$type} Search Results');">
                 <img src="/xtf/icons/default/addlist.png" alt="Add to My List" title="Add to My List"/>
             </a>
@@ -148,6 +151,9 @@
             <xsl:variable name="quot">"</xsl:variable>
             <xsl:variable name="apos">'</xsl:variable>
             <xsl:value-of select="replace($octothorpe, $quot, $apos)"/>
+        </xsl:variable>
+        <xsl:variable name="refid">
+            <xsl:value-of select="substring-after($identifier, 'aspace_')"/>
         </xsl:variable>
         <xsl:variable name="collectionTitle">
             <xsl:value-of select="xtf:meta/collectionTitle"/>
@@ -223,7 +229,7 @@
             data-ItemTitle="{$collectionTitle}" data-ItemSubtitle="{$parents}"
             data-ItemAuthor="{$creator}" data-ItemDate="{$date}" data-CallNumber="{$rootID}"
             data-ItemVolume="{$container1}" data-ItemIssue="{$container2}" data-ItemInfo1="{$title}"
-            data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}"
+            data-ItemInfo2="{$restrictions}" data-ItemInfo3="{$url}" data-itemcitation="{$refid}"
             data-GroupingField="{$groupingfield}" onClick="ga('send', 'event', 'My List', 'Add', 'Archival Container List');">
             <img src="/xtf/icons/default/addlist.png" alt="Add to My List" title="Add to My List"/>
         </a>
