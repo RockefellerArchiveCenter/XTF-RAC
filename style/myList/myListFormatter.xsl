@@ -361,6 +361,7 @@
                     <div class="form-group">
                         <label class="control-label" for="message">Message</label>
                         <textarea class="form-control" type="textarea" name="message" rows="4"/>
+                        <div class="g-recaptcha" data-sitekey="6LdQiSkTAAAAAPsOlHq_QmykPBEF9jdq3qQL_D9a"></div>
                     </div>
                 </div>
             </form>
