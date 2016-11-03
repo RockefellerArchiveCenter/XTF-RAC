@@ -85,7 +85,14 @@
                 <xsl:value-of select="meta/identifier"/>
             </xsl:variable>
             <xsl:variable name="refid">
-                <xsl:value-of select="substring-after($identifier, 'aspace_')"/>
+                <xsl:analyze-string select="$identifier" regex=".*aspace_.*">
+                    <xsl:matching-substring>
+                        <xsl:value-of select="substring-after($identifier, 'aspace_')"/>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:value-of select="$identifier"/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
             </xsl:variable>
             <xsl:variable name="container1">
                 <xsl:choose>
@@ -153,7 +160,14 @@
             <xsl:value-of select="replace($octothorpe, $quot, $apos)"/>
         </xsl:variable>
         <xsl:variable name="refid">
-            <xsl:value-of select="substring-after($identifier, 'aspace_')"/>
+            <xsl:analyze-string select="$identifier" regex=".*aspace_.*">
+                <xsl:matching-substring>
+                    <xsl:value-of select="substring-after($identifier, 'aspace_')"/>
+                </xsl:matching-substring>
+                <xsl:non-matching-substring>
+                    <xsl:value-of select="$identifier"/>
+                </xsl:non-matching-substring>
+            </xsl:analyze-string>
         </xsl:variable>
         <xsl:variable name="collectionTitle">
             <xsl:value-of select="xtf:meta/collectionTitle"/>
