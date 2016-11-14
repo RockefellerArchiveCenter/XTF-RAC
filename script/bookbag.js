@@ -103,8 +103,8 @@ $(document).ready(function () {
             };
             
             function getRefId(rawIdentifier) {
-             if(rawIdentifier.indexOf("aspace_") >= 0) {
-                var finalIdentifier = rawIdentifier.substring(rawIdentifier.indexOf("aspace_")+7, rawIdentifier.length);
+             if(rawIdentifier.indexOf(item.callNumber) >= 0) {
+                var finalIdentifier = rawIdentifier.substring(item.callNumber.length+1, rawIdentifier.length);
              } else {
                 finalIdentifier = rawIdentifier
              }
