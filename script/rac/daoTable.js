@@ -27,11 +27,7 @@ $(document).ready(function () {
     $(function () {
         if ($('.foundIn').length) {
             var collectionId = $(parents).attr('data-collectionId');
-            var componentId
-            if($(parents).attr('data-componentId').match("^aspace_")) {
-            var componentId = $(parents).attr('data-componentId');} else {
-            var componentId = "aspace_"+$(parents).attr('data-componentId');
-            }
+            var componentId = $(parents).attr('data-componentId');
             var resourceId = collectionId.substring(0, collectionId.indexOf('.xml'));
             var filename = $(parents).attr('data-filename');
             var identifier = $(parents).attr('data-identifier');
