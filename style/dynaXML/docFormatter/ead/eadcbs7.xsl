@@ -909,6 +909,13 @@
       </xsl:if>
       <xsl:apply-templates/>
    </xsl:template>
+   
+   <xsl:template match="did/langmaterial">
+      <h4>Language</h4>
+         <p>
+            <xsl:value-of select="."/>
+         </p>
+   </xsl:template>
 
    <!-- 10/30/11 WS for RA: added choose statment to print accruals and bibliography at collection level only-->
    <xsl:template match="accruals | bibliography">
@@ -1976,6 +1983,7 @@
       <xsl:apply-templates select="did/origination | did/unitdate[not(@type)] | did/unitdate[@type != 'bulk']" mode="dsc"/>
       <xsl:apply-templates select="did/physdesc"/>
       <xsl:apply-templates select="did/materialspec"/>
+      <xsl:apply-templates select="did/langmaterial"/>
       <xsl:apply-templates select="*[not(name() = 'did' or name() = 'accessrestrict' or name() = 'userestrict' or name() = 'c' or name()='dao' or name()='controlaccess')]"/>
       <xsl:if test="string(controlaccess)">
          <ul class="tags">
