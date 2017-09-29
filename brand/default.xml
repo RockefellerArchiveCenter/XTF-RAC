@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css" type="text/css"/>
       <link rel="stylesheet" href="http://rockarch.org/css/more.css" type="text/css"/>
       <link rel="stylesheet" href="http://rockarch.org/css/bootstrap.css" type="text/css"/>
-      <link rel="stylesheet" href="/xtf/css/default/racustom.css" type="text/css"/>
+      <link rel="stylesheet" href="/xtf/css/default/racustom.css?v=1" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/print.css" type="text/css" media="print"/>
 
       <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"/>
@@ -38,7 +38,7 @@
       ga('create', 'UA-10013579-1', 'auto');
       ga('send', 'pageview');
       </script>
-      
+
       <!-- Hotjar Tracking Code -->
       <script>
            (function(h,o,t,j,a,r){
@@ -50,7 +50,7 @@
                a.appendChild(r);
            })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
        </script>
-             
+
 
     </links>
 
@@ -91,7 +91,7 @@
       ga('create', 'UA-10013579-1', 'auto');
       ga('send', 'pageview');
       </script>
-      
+
       <!-- Hotjar Tracking Code -->
       <script>
            (function(h,o,t,j,a,r){
