@@ -161,11 +161,11 @@ div.form {
 
 /* ===[ RESULTS PAGES ]=== */
 
-#results, #facets, .browse, .docHit, .componentInfo {
+.componentInfo {
     box-shadow: 0px 0px 10px #666
 }
 
-#results:hover, #facets:hover, .browse:hover, .docHit:hover {
+.browse:hover, .docHit:hover {
     box-shadow: 0px 0px 5px #666
 }
 
@@ -1048,12 +1048,7 @@ div.facetShow p {
     background: #EEEEEE;
     float: left;
     border-radius: 5px 5px 0px 0px;
-    box-shadow: 0px 0px 10px #666;
     width: 31%;
-}
-
-.box:hover {
-    box-shadow: 0px 0px 5px #666
 }
 
 .box h2 {
@@ -1638,13 +1633,8 @@ select#searchTarget {
     border-top: 1px solid #999;
     border-right: 1px solid #999;
     border-left: 1px solid #999;
-    box-shadow: 0px -6px 8px #666;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-}
-
-.tab:hover {
-    box-shadow: 0px -3px 5px #666
 }
 
 .tabs a {
@@ -1816,17 +1806,12 @@ select#searchTarget {
 
 .contents, .contentsList {
     border-radius: 5px 5px 0 0;
-    box-shadow: 0px 0px 10px #666;
     float: left;
     width: 100%;
 }
 
 .contents .accordionButton {
     background-color: #eee
-}
-
-.contents:hover {
-    box-shadow: 0px 0px 5px #666
 }
 
 .moreLess {
@@ -1845,17 +1830,12 @@ ul.none {
     padding: 0;
     background-color: #eee;
     border-radius: 5px 5px 0 0;
-    box-shadow: 0px 0px 10px #666;
     float: left;
     width: 100%;
 }
 
 #toc .subjects {
   margin-top: 1em;
-}
-
-#toc .subjects:hover, #toc .foundIn:hover {
-    box-shadow: 0px 0px 5px #666
 }
 
 #toc .subjects h4, #toc .foundIn h4 {
@@ -2810,7 +2790,6 @@ div.dscDescription {
 @media screen and (max-width:860px) {
     .box, #featured {
         width: 96%;
-        box-shadow: none;
         margin: 2%;
     }
 
@@ -3143,10 +3122,6 @@ div.dscDescription {
 
     #searchbox #date {
         width: 100%
-    }
-
-    .box:hover {
-        box-shadow: none
     }
 
     #featured {
