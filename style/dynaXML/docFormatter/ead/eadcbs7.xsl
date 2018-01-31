@@ -909,7 +909,7 @@
       </xsl:if>
       <xsl:apply-templates/>
    </xsl:template>
-   
+
    <xsl:template match="did/langmaterial">
       <h4>Language</h4>
          <p>
@@ -1702,6 +1702,9 @@
                                     <xsl:choose>
                                        <xsl:when test="contains(@label, ' (')">
                                           <xsl:value-of select="substring-before(@label,' (')"/>
+                                       </xsl:when>
+                                       <xsl:when test="contains(@label, ' [')">
+                                          <xsl:value-of select="substring-before(@label,' [')"/>
                                        </xsl:when>
                                        <xsl:otherwise>
                                           <xsl:value-of select="concat(upper-case(substring(@label,1,1)),substring(@label,2))"/>
