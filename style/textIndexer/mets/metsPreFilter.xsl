@@ -132,6 +132,9 @@
       <xsl:variable name="filename">
          <xsl:value-of select="substring-after($uri, concat($identifier, '-'))"/>
       </xsl:variable>
+      <xsl:variable name="extension">
+         <xsl:value-of select="substring-after($filename, '.')"/>
+      </xsl:variable>
       <identifier xtf:meta="true" xtf:tokenize="no">
          <xsl:value-of select="$identifier"/>
       </identifier>
@@ -152,9 +155,6 @@
             </format>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:variable name="extension">
-               <xsl:value-of select="substring-after($filename, '.')"/>
-            </xsl:variable>
             <format xtf:meta="true">
                <xsl:choose>
                   <xsl:when test="$extension='pdf'">
@@ -189,14 +189,14 @@
                   </xsl:when>
                </xsl:choose>
             </format>
-            <viewable xtf:meta="true">
-               <xsl:choose>
-                  <xsl:when test="$extension='pdf' or $extension='jpg'">true</xsl:when>
-                  <xsl:otherwise>false</xsl:otherwise>
-               </xsl:choose>
-            </viewable>
          </xsl:otherwise>
       </xsl:choose>
+      <viewable xtf:meta="true">
+         <xsl:choose>
+            <xsl:when test="$extension='pdf' or $extension='jpg'">true</xsl:when>
+            <xsl:otherwise>false</xsl:otherwise>
+         </xsl:choose>
+      </viewable>
       <size xtf:meta="true" xtf:tokenize="no">
          <xsl:choose>
             <xsl:when test="/mets/amdSec/techMD[@ID=$fileid]/mdWrap/xmlData/*:object/*:objectCharacteristics/*:size !=''">
@@ -293,14 +293,7 @@
                </xsl:choose>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:choose>
-              <xsl:when test="FileUtils:exists(concat('/mnt/images/', substring-after($uri, 'http://storage.rockarch.org')))">
-                <xsl:text>allow</xsl:text>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:text>disallow</xsl:text>
-              </xsl:otherwise>
-            </xsl:choose>
+            <xsl:text>allow</xsl:text>
           </xsl:otherwise>
        </xsl:choose>
       </rights>
