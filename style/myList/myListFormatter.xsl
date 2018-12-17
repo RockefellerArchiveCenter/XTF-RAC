@@ -433,15 +433,15 @@
                 <div class="third notes">
                     <div class="form-group">
                         <label class="control-label" for="SpecialRequest">Special Requests/Questions</label>
-                        <textarea class="form-control" rows="2" name="SpecialRequest"/>
-                        <span class="help-block">Please enter any special requests or questions for RAC staff.</span>
+                        <textarea class="form-control" rows="2" name="SpecialRequest" maxlength="255"/>
+                        <span class="help-block">Please enter any special requests or questions for RAC staff (255 characters maximum).</span>
                     </div>
                 </div>
                 <div class="third notes">
                     <div class="form-group">
                         <label class="control-label" for="Notes">Notes</label>
-                        <textarea class="form-control" rows="2" name="Notes"/>
-                        <span class="help-block">Enter any notes about this request for your personal reference here.</span>
+                        <textarea class="form-control" rows="2" name="Notes" maxlength="255"/>
+                        <span class="help-block">Enter any notes about this request for your personal reference here (255 characters maximum).</span>
                     </div>
                 </div>
             </form>
@@ -458,7 +458,7 @@
             </div>
         </div>
     </xsl:template>
-    
+
     <!-- Saves Aeon requests for items in My List -->
     <xsl:template name="myListSave">
         <div class="overlay" id="myListSave">
@@ -495,15 +495,15 @@
                 <div class="third notes">
                     <div class="form-group">
                         <label class="control-label" for="SpecialRequest">Special Requests/Questions</label>
-                        <textarea class="form-control" rows="2" name="SpecialRequest"/>
-                        <span class="help-block">Please enter any special requests or questions for RAC staff.</span>
+                        <textarea class="form-control" rows="2" name="SpecialRequest" maxlength="255"/>
+                        <span class="help-block">Please enter any special requests or questions for RAC staff (255 characters maximum).</span>
                     </div>
                 </div>
                 <div class="third notes">
                     <div class="form-group">
                         <label class="control-label" for="Notes">Notes</label>
-                        <textarea class="form-control" rows="2" name="Notes"/>
-                        <span class="help-block">Enter any notes about this request for your personal reference here.</span>
+                        <textarea class="form-control" rows="2" name="Notes" maxlength="255"/>
+                        <span class="help-block">Enter any notes about this request for your personal reference here (255 characters maximum).</span>
                     </div>
                 </div>
             </form>
@@ -511,7 +511,7 @@
                 <strong>Good to know:</strong> Folders in the same box may be grouped together in a
                 single request. </div>
         </div>
-        
+
         <div class="overlay" id="myListSaveConfirm">
             <div class="confirm">
                 <h1>Your request has been sent to RACcess!</h1>
@@ -565,7 +565,7 @@
                         <label class="control-label required" for="ItemInfo4">Description of
                             Materials</label>
                         <input id="ItemInfo4" class="form-control" name="ItemInfo4" type="text"
-                            placeholder="Describe the materials you want reproduced"/>
+                            placeholder="Describe the materials you want reproduced" maxlength="255"/>
                         <p class="help-block text-danger" id="itemPagesError">Please enter a
                             description of the materials you want reproduced.</p>
                     </div>
@@ -577,15 +577,15 @@
                 <div class="third notes">
                     <div class="form-group">
                         <label class="control-label" for="SpecialRequest">Special Requests/Questions</label>
-                        <textarea class="form-control" rows="2" name="SpecialRequest"/>
-                        <span class="help-block">Please enter any special requests or questions for RAC staff.</span>
+                        <textarea class="form-control" rows="2" name="SpecialRequest" maxlength="255"/>
+                        <span class="help-block">Please enter any special requests or questions for RAC staff (255 characters maximum).</span>
                     </div>
                 </div>
                 <div class="third notes">
                     <div class="form-group">
                         <label class="control-label" for="Notes">Notes</label>
-                        <textarea class="form-control" rows="2" name="Notes"/>
-                        <span class="help-block">Enter any notes about this request for your personal reference here.</span>
+                        <textarea class="form-control" rows="2" name="Notes" maxlength="255"/>
+                        <span class="help-block">Enter any notes about this request for your personal reference here (255 characters maximum).</span>
                     </div>
                 </div>
             </form>
