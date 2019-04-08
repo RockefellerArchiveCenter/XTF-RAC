@@ -233,7 +233,7 @@
             </head>
             <body>
                <!-- Schema.org metadata -->
-               <div itemscope="" itemtype="http://schema.org/CollectionPage" >
+               <div itemscope="" itemtype="http://schema.org/ArchiveComponent">
                   <xsl:if test="$description">
                      <meta itemprop="http://schema.org/description">
                         <xsl:attribute name="content">
@@ -246,7 +246,7 @@
                         <xsl:value-of select="$title"/>
                      </xsl:attribute>
                   </meta>
-                  <div itemprop="http://schema.org/contentLocation" itemscope="" itemtype="http://schema.org/Place">
+                  <div itemprop="http://schema.org/holdingArchive" itemscope="" itemtype="http://schema.org/ArchiveOrganization">
                      <meta itemprop="http://schema.org/name" content="Rockefeller Archive Center"/>
                      <meta itemprop="http://schema.org/url" content="http://rockarch.org"/>
                      <div itemprop="http://schema.org/address" itemscope="" itemtype="http://schema.org/PostalAddress">
@@ -280,18 +280,16 @@
                         <xsl:value-of select="archdesc/did/unitdate[@type != 'bulk']"/>
                      </xsl:attribute>
                   </meta>
+                  <meta itemprop="http://schema.org/materialExtent">
+                    <xsl:attribute name="content">
+                      <xsl:for-each select="archdesc/did/physdesc">
+                         <xsl:value-of select="extent[1]"/>
+                         <xsl:if test="extent[position() &gt; 1]">, <xsl:value-of select="extent[position() &gt; 1]"/>
+                         </xsl:if>
+                      </xsl:for-each>
+                    </xsl:attribute>
+                  </meta>
                   <meta itemprop="http://schema.org/inLanguage" content="en"/>
-                  <div itemprop="http://schema.org/publisher" itemscope="" itemtype="http://schema.org/organization">
-                     <meta itemprop="http://schema.org/name" content="Rockefeller Archive Center"/>
-                     <meta itemprop="http://schema.org/url" content="http://rockarch.org"/>
-                     <div itemprop="http://schema.org/address" itemscope="" itemtype="http://schema.org/PostalAddress">
-                        <meta itemprop="streetAddress" content="15 Dayton Avenue"/>
-                        <meta itemprop="addressLocality" content="Sleepy Hollow"/>
-                        <meta itemprop="addressRegion" content="NY"/>
-                        <meta itemprop="postalCode" content="10591"/>
-                     </div>
-                     <meta itemprop="http://schema.org/telephone" content="(914) 366-6300"/>
-                  </div>
                </div>
 
                <xsl:copy-of select="$brand.header"/>
