@@ -6,17 +6,17 @@
       <meta name="viewport" content="width=device-width,initial-scale=1"/>
       <link rel="shortcut icon" href="/xtf/icons/default/favicon.png"/>
 
-      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Questrial" type="text/css"/>
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Questrial" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css" type="text/css"/>
-      <link rel="stylesheet" href="http://rockarch.org/css/more.css" type="text/css"/>
-      <link rel="stylesheet" href="http://rockarch.org/css/bootstrap.css" type="text/css"/>
+      <link rel="stylesheet" href="//rockarch.org/css/more.css" type="text/css"/>
+      <link rel="stylesheet" href="//rockarch.org/css/bootstrap.css" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/racustom.css?v=1" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/print.css" type="text/css" media="print"/>
 
-      <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"/>
-      <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"/>
-      <script type="text/javascript" src="http://rockarch.org/js/bootstrap.js"/>
-      <script type="text/javascript" src="http://rockarch.org/js/browserDetect.js"/>
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"/>
+      <script type="text/javascript" src="//code.jquery.com/ui/1.9.2/jquery-ui.js"/>
+      <script type="text/javascript" src="//rockarch.org/js/bootstrap.js"/>
+      <script type="text/javascript" src="//rockarch.org/js/browserDetect.js"/>
       <script type="text/javascript" src="/xtf/script/rac/dropdown.js"/>
       <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
       <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
@@ -26,7 +26,7 @@
       <script type="text/javascript" src="/xtf/script/rac/componentInfo.js"/>
       <script type="text/javascript" src="/xtf/script/rac/daoTable.js"/>
       <script type="text/javascript" src="/xtf/script/bookbag.js?v=1"/>
-      <script src='https://www.google.com/recaptcha/api.js'></script>
+      <script src='//www.google.com/recaptcha/api.js'></script>
 
       <!-- Google Analytics -->
       <script>
@@ -58,16 +58,16 @@
       <meta name="viewport" content="width=device-width,initial-scale=1"/>
       <link rel="shortcut icon" href="/xtf/icons/default/favicon.png"/>
 
-      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Questrial" type="text/css"/>
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Questrial" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css" type="text/css"/>
-      <link rel="stylesheet" href="http://rockarch.org/css/more.css" type="text/css"/>
-      <link rel="stylesheet" href="http://rockarch.org/css/bootstrap.css" type="text/css"/>
+      <link rel="stylesheet" href="//rockarch.org/css/more.css" type="text/css"/>
+      <link rel="stylesheet" href="//rockarch.org/css/bootstrap.css" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/racustom.css" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/print.css" type="text/css" media="print"/>
 
-      <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"/>
-      <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"/>
-      <script type="text/javascript" src="http://rockarch.org/js/bootstrap.js"/>
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"/>
+      <script type="text/javascript" src="//code.jquery.com/ui/1.9.2/jquery-ui.js"/>
+      <script type="text/javascript" src="//rockarch.org/js/bootstrap.js"/>
       <script type="text/javascript" src="/xtf/script/rac/dropdown.js"/>
       <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
       <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
@@ -79,7 +79,7 @@
       <script type="text/javascript" src="/xtf/script/bookbag.js"/>
       <script type="text/javascript" src="/xtf/script/rac/componentInfo.js"/>
       <script type="text/javascript" src="/xtf/script/rac/daoTable.js"/>
-      <script src='https://www.google.com/recaptcha/api.js'></script>
+      <script src='//www.google.com/recaptcha/api.js'></script>
 
       <!-- Google Analytics -->
       <script>
