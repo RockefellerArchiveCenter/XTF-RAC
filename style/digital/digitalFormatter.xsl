@@ -24,8 +24,8 @@
             <xsl:for-each select="meta/daoLink | xtf:meta/*:daoLink | meta/daoLinkRestricted | xtf:meta/*:daoLinkRestricted">
                 <xsl:if test=".!=''">
                     <xsl:variable name="identifier">
-                        <!--http://storage.rockarch.org/46d03fe1-c30d-49b9-b1ff-da164a414ec3-rac_rfdiaries_12-2_mason_1928-1936_006.pdf-->
-                        <xsl:analyze-string select="." regex="http://storage.rockarch.org/(([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+))\-(.*)" flags="i">
+                        <!--https://storage.rockarch.org/46d03fe1-c30d-49b9-b1ff-da164a414ec3-rac_rfdiaries_12-2_mason_1928-1936_006.pdf-->
+                        <xsl:analyze-string select="." regex="https://storage.rockarch.org/(([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+)\-([A-Z0-9^/]+))\-(.*)" flags="i">
                             <xsl:matching-substring>
                                 <xsl:value-of select="regex-group(1)"/>
                             </xsl:matching-substring>

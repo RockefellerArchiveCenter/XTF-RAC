@@ -939,7 +939,7 @@
             </userestrict>
          </xsl:otherwise>
       </xsl:choose>
-      
+
       <!-- hacky hack to see if there are other components in the same box that have restrictions -->
       <xsl:if test="did/container[@type='box']">
          <xsl:variable name="boxnumber">
@@ -1228,7 +1228,7 @@
                </xsl:otherwise>
             </xsl:choose>
 <!--            <xsl:choose>
-               <xsl:when test="FileUtils:exists(concat('/mnt/images/', substring-after(., 'http://storage.rockarch.org')))">
+               <xsl:when test="FileUtils:exists(concat('/mnt/images/', substring-after(., 'https://storage.rockarch.org')))">
                   <viewable xtf:meta="true" xtf:tokenize="no">true</viewable>
                </xsl:when>
                <xsl:otherwise>
