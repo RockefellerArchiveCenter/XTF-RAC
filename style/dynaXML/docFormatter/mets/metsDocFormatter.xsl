@@ -381,7 +381,7 @@
                <xsl:variable name="href">
                   <xsl:choose>
                      <xsl:when test="xtf:meta/*:viewable='true'">
-                        <xsl:value-of select="concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf'), '_thumb300.jpg')"/>
+                        <xsl:value-of select="concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.'), '_thumb300.jpg')"/>
                      </xsl:when>
                      <xsl:otherwise>
                         <xsl:value-of>/xtf/icons/default/thumbnail-large.svg</xsl:value-of>
