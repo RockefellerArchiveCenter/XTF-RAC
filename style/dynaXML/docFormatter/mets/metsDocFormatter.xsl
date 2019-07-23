@@ -381,7 +381,12 @@
                <xsl:variable name="href">
                   <xsl:choose>
                      <xsl:when test="xtf:meta/*:viewable='true'">
-                        <xsl:value-of select="concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.'), '_thumb300.jpg')"/>
+                        <xsl:if test="ends-with(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf')">
+                          <xsl:value-of select="concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf'), '_thumb300.jpg')"/>
+                        </xsl:if>
+                        <xsl:if test="ends-with(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.jpg')">
+                          <xsl:value-of select="concat(substring-before(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.jpg'), '_thumb300.jpg')"/>
+                        </xsl:if>
                      </xsl:when>
                      <xsl:otherwise>
                         <xsl:value-of>/xtf/icons/default/thumbnail-large.svg</xsl:value-of>
@@ -600,17 +605,20 @@
 
    <xsl:template name="daoView">
       <xsl:if test="xtf:meta/*:viewable='true'">
-      <xsl:variable name="srcUrl">
          <xsl:choose>
             <xsl:when test="ends-with(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '.pdf')">
-               <xsl:value-of select="concat(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '#zoom=100')"></xsl:value-of>
+              <xsl:variable name="srcUrl">
+                <xsl:value-of select="concat(mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href, '#zoom=100')"></xsl:value-of>
+              </xsl:variable>
+              <iframe frameborder="0" marginwidth="0" marginheight="0" src="{$srcUrl}"/>
             </xsl:when>
             <xsl:otherwise>
-               <xsl:value-of select="mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href"></xsl:value-of>
+              <xsl:variable name="srcUrl">
+                <xsl:value-of select="mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href"></xsl:value-of>
+              </xsl:variable>
+                <img frameborder="0" marginwidth="0" marginheight="0" src="{$srcUrl}"/>
             </xsl:otherwise>
          </xsl:choose>
-      </xsl:variable>
-      <iframe frameborder="0" marginwidth="0" marginheight="0" src="{$srcUrl}"/>
       </xsl:if>
    </xsl:template>
 
