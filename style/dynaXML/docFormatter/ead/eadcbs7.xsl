@@ -1817,7 +1817,7 @@
                </xsl:if>
             </xsl:when>
             <!-- Items/Files-->
-            <xsl:when test="@level='file'">
+            <xsl:when test="@level='file' or @level='item'">
                <xsl:if test="not(preceding-sibling::xtf:meta/*:dao) and parent::dsc">
                   <div class="inventoryTitle">Inventory</div>
                   <div class="inventoryHeader">
