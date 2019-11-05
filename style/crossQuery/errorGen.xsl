@@ -141,7 +141,7 @@
 
            <div id="header">
               <a href="/xtf/search">
-                 <img src="//rockarch.org/images/RAC-logo.png" width="103" height="140" alt="The Rockefeller Archive Center"/>
+                 <img src="/xtf/css/default/images/rockefeller_archive_center_logo.png" height="140" alt="The Rockefeller Archive Center"/>
                  <h1>dimes.rockarch.org</h1>
                  <p class="tagline">The Online Collections and Catalog of Rockefeller Archive Center</p>
               </a>

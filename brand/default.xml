@@ -8,15 +8,15 @@
 
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Questrial" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css" type="text/css"/>
-      <link rel="stylesheet" href="//rockarch.org/css/more.css" type="text/css"/>
-      <link rel="stylesheet" href="//rockarch.org/css/bootstrap.css" type="text/css"/>
+      <link rel="stylesheet" href="/xtf/css/default/more.css" type="text/css"/>
+      <link rel="stylesheet" href="/xtf/css/default/bootstrap.css" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/racustom.css?v=1" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/print.css" type="text/css" media="print"/>
 
       <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"/>
       <script type="text/javascript" src="//code.jquery.com/ui/1.9.2/jquery-ui.js"/>
-      <script type="text/javascript" src="//rockarch.org/js/bootstrap.js"/>
-      <script type="text/javascript" src="//rockarch.org/js/browserDetect.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/bootstrap.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/browserDetect.js"/>
       <script type="text/javascript" src="/xtf/script/rac/dropdown.js"/>
       <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
       <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
@@ -60,14 +60,14 @@
 
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Questrial" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/jquery-ui/css/rac-custom/jquery-ui.css" type="text/css"/>
-      <link rel="stylesheet" href="//rockarch.org/css/more.css" type="text/css"/>
-      <link rel="stylesheet" href="//rockarch.org/css/bootstrap.css" type="text/css"/>
+      <link rel="stylesheet" href="/xtf/css/default/more.css" type="text/css"/>
+      <link rel="stylesheet" href="/xtf/css/default/bootstrap.css" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/racustom.css" type="text/css"/>
       <link rel="stylesheet" href="/xtf/css/default/print.css" type="text/css" media="print"/>
 
       <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"/>
       <script type="text/javascript" src="//code.jquery.com/ui/1.9.2/jquery-ui.js"/>
-      <script type="text/javascript" src="//rockarch.org/js/bootstrap.js"/>
+      <script type="text/javascript" src="/xtf/script/rac/bootstrap.js"/>
       <script type="text/javascript" src="/xtf/script/rac/dropdown.js"/>
       <script type="text/javascript" src="/xtf/script/rac/searchbox.js"/>
       <script type="text/javascript" src="/xtf/script/rac/accordion.js"/>
@@ -112,14 +112,14 @@
             <div class="container">
 
                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-               <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <!-- <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
-               </a>
+               </a> -->
 
                <!-- Everything you want hidden at 940px or less, place within here -->
-               <div class="nav-collapse collapse">
+               <!-- <div class="nav-collapse collapse">
                   <ul class="nav">
                      <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -301,7 +301,7 @@
                      <li><a tabindex="-1" href="http://rockarch.org/search/searchmain.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Search', 'Navbar');">Search</a>
                      </li>
                   </ul>
-               </div>
+               </div> -->
             </div>
          </div>
       </div>
@@ -323,14 +323,14 @@
             <div class="container">
 
                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-               <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <!-- <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
-               </a>
+               </a> -->
 
                <!-- Everything you want hidden at 940px or less, place within here -->
-               <div class="nav-collapse collapse">
+               <!-- <div class="nav-collapse collapse">
                   <ul class="nav">
                      <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -512,7 +512,7 @@
                      <li><a tabindex="-1" href="http://rockarch.org/search/searchmain.php" onClick="ga('send', 'event', 'Rockarch Nav', 'Search', 'Navbar');">Search</a>
                      </li>
                   </ul>
-               </div>
+               </div> -->
             </div>
          </div>
       </div>
