@@ -546,7 +546,7 @@
                 <div class="myListContents dialog">
                     <xsl:call-template name="emptyList"/>
                 </div>
-                <div class="register"><input id="costagree" type="checkbox"/> I agree to pay the duplication costs for this request. See our <a href="http://rockarch.org/research/inforesearch.php#photocopying" target="_blank" onClick="ga('send', 'event', 'My List', 'Fee Schedule', 'Duplication Dialog');">fee schedule</a>.</div>
+                <div class="register"><input id="costagree" type="checkbox"/> I agree to pay the duplication costs for this request. See our <a href="https://rockarch.org/collections/access-and-request-materials/#duplication-services-and-fee-schedule" target="_blank" onClick="ga('send', 'event', 'My List', 'Fee Schedule', 'Duplication Dialog');">fee schedule</a>.</div>
                 <div class="third">
                     <div class="form-group">
                         <label class="control-label required" for="Format">Format</label>
