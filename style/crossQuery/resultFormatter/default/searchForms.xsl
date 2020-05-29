@@ -403,15 +403,6 @@
                </ul>
             </div>
 
-            <div id="disclaimer">
-               <p>We are still in the process of adding collections information to DIMES. Some large
-                  collections, like those of the Ford Foundation, Population Council, and
-                  Rockefeller University, are only partially represented; other smaller collections
-                  are not yet represented at all. Please <a
-                     href="http://rockarch.org/about/contact.php">contact archival staff</a> for
-                  further information.</p>
-            </div>
-
          </div>
 
       </form>
