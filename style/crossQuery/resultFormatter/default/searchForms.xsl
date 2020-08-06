@@ -387,9 +387,6 @@
                         href="/xtf/search?keyword=rockefeller%20foundation;f1-format=Digital%20Material"
                         >available online!</a> Additional diaries will be available within the
                      month.</li>
-                  <li>Guides for many Rockefeller University collections are <a
-                        href="/xtf/search?text=rockefeller%20university;sectionType=title;smode=advanced;type=ead"
-                        >now available</a>.</li>
                   <li>Guides for selected Ford Foundation collections are <a
                         href="/xtf/search?text=ford%20foundation;sectionType=title;type=ead">now
                         available</a>.</li>
