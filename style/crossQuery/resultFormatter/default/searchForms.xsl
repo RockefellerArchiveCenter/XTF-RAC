@@ -228,17 +228,8 @@
                            <option value="">All Materials</option>
                            <option value="ead">Archival Collections</option>
                            <option value="dao">Digital Materials</option>
-                           <option value="mods">Library Materials</option>
                         </select>
                         <!-- 6/21/2013 HA: adding advanced search to home page -->
-                        <select name="sectionType" id="library">
-                           <option value="">All Fields</option>
-                           <option value="title">Title</option>
-                           <option value="creator">Author</option>
-                           <option value="callNumber">Call Number</option>
-                           <option value="isbn">ISBN/ISSN</option>
-                           <option value="lccn">LCCN</option>
-                        </select>
                         <select name="sectionType" id="collections">
                            <option value="">All Fields</option>
                            <option value="title">Title</option>
@@ -320,30 +311,6 @@
                   </li>
                </div>
                <div class="accordionButton category">
-                  <h3><img src="/xtf/icons/default/book.gif" alt="library materials" height="25px"
-                     />Library Materials</h3>
-               </div>
-               <div class="accordionContent">
-                  <li class="browseOption">
-                     <a
-                        href="{$xtfURL}{$crossqueryPath}?sort=title&amp;browse-all=yes;level=collection;type=mods"
-                        onClick="ga('send', 'event', 'search', 'browse', 'library');">Browse
-                        All</a>
-                  </li>
-                  <li class="browseOption">
-                     <a
-                        href="{$xtfURL}{$crossqueryPath}?browse-title=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                        onClick="ga('send', 'event', 'search', 'browse', 'library-title');"
-                        >By Title</a>
-                  </li>
-                  <li class="browseOption">
-                     <a
-                        href="{$xtfURL}{$crossqueryPath}?browse-creator=first;sort=title&amp;browse-all=yes;level=collection;type=mods"
-                        onClick="ga('send', 'event', 'search', 'browse', 'library-creator');"
-                        >By Creator</a>
-                  </li>
-               </div>
-               <div class="accordionButton category">
                   <h3><img src="/xtf/icons/default/dao_large.gif" alt="digital materials"
                         height="25px"/>Digital Materials</h3>
                </div>
@@ -382,6 +349,8 @@
             <div id="news" class="box">
                <h2>News</h2>
                <ul>
+                  <li>Looking for library materials? Head over to our new catalog at
+                    <a href="https://library.rockarch.org">library.rockarch.org</a>.</li>
                   <li>Select diaries from Rockefeller Foundation officers have been digitized and
                      are now <a
                         href="/xtf/search?keyword=rockefeller%20foundation;f1-format=Digital%20Material"
@@ -390,8 +359,8 @@
                   <li>Guides for selected Ford Foundation collections are <a
                         href="/xtf/search?text=ford%20foundation;sectionType=title;type=ead">now
                         available</a>.</li>
-                  <li>Check out our website celebrating the <a href="http://rockefeller100.org/"
-                        >Rockefeller Foundation's Centennial</a>, with lots of digitized
+                  <li>Check out our website celebrating the <a href="http://rockfound.rockarch.org/"
+                        >Rockefeller Foundation's history</a>, with lots of digitized
                      material!</li>
                   <li> View <a
                         href="{$xtfURL}{$crossqueryPath}?sort=dateStamp&amp;browse-all=yes;level=collection;type=ead"
