@@ -342,7 +342,7 @@
                 <xsl:call-template name="emptyList"/>
             </div>
             <p class="help-block text-danger contentError">There's nothing to email!</p>
-            <form id="myListMail" action="{$xtfURL}script/rac/myListMail.php" method="POST"
+            <form id="myListMail" action="{$xtfURL}script/rac/send_message.php" method="POST"
                 class="form" role="form">
                 <div class="half">
                     <div class="form-group">
