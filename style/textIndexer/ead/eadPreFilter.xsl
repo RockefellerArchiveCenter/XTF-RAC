@@ -1043,7 +1043,7 @@
          </xsl:when>
          <xsl:when test="/ead/archdesc/did/unitdate[@type='inclusive']">
             <date xtf:meta="true">
-               <xsl:value-of select="replace(string(/ead/archdesc/did/unitdate[@type='inclusive'][0]/@normal[1]),'/','-')"/>
+               <xsl:value-of select="string-join(/ead/archdesc/did/unitdate[@type='inclusive']/replace(@normal, '/', '-'), ', ')"/>
             </date>
             <collectionDate xtf:meta="true">
                <xsl:value-of select="/ead/archdesc/did/unitdate[@type='inclusive']"/>
