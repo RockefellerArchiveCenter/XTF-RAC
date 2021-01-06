@@ -113,26 +113,6 @@ $(function () {
 });
 
 $(function () {
-    var dialogTakedown = $('#takedown').dialog({
-        create: function(event, ui) {
-            var widget = $(this).dialog("widget");
-            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-            },
-        autoOpen: false,
-        modal: true,
-        resizable: true,
-        width: windowWidth/3,
-        close: function () {
-            $('.ui-dialog').hide();
-        }
-    });
-
-    $("a.takedown").on("click", function (e) {
-        e.preventDefault();
-        dialogTakedown.dialog("option", "title", 'Take-Down Policy').dialog("open");
-    });
-});
-$(function () {
     var dialogDscDescription = $('#dscDescription').dialog({
         create: function(event, ui) {
             var widget = $(this).dialog("widget");
@@ -150,26 +130,6 @@ $(function () {
     $("a.dscDescription").on("click", function (e) {
         e.preventDefault();
         dialogDscDescription.dialog("option", "title", 'About Collection Guides').dialog("open");
-    });
-});
-$(function () {
-    var dialogTakedown = $('#license').dialog({
-        create: function(event, ui) {
-            var widget = $(this).dialog("widget");
-            $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-myCloseButton");
-            },
-        autoOpen: false,
-        modal: true,
-        resizable: true,
-        width: windowWidth/1.5,
-        close: function () {
-            $('.ui-dialog').hide();
-        }
-    });
-
-    $("a.license").on("click", function (e) {
-        e.preventDefault();
-        dialogTakedown.dialog("option", "title", 'Licensing for our descriptive metadata').dialog("open");
     });
 });
 
@@ -532,7 +492,7 @@ $(function () {
         dialogMyListRequest.dialog("option", "title", "Request in Reading Room").dialog("open");
         });
     });
-    
+
 $(function () {
     var listCount = $('#requestForm .row:not(.header-row) > .requestInputs > input[type=checkbox]:checked').length;
     var dialogMyListRequest = $('#myListSave').dialog({
